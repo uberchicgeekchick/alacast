@@ -1,0 +1,21 @@
+<?php	return array(
+		''=>array(
+			'www'=>"",
+			'irc'=>"",
+			'stream'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'irc'=>"",
+			'stream'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+	);
+?>
