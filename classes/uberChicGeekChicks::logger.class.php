@@ -119,7 +119,7 @@
 			if( $this->logs_fp )
 				fclose( $this->logs_fp );
 			
-			if(!( ($this->logs_fp = fopen( ($this->log_file = "{$this->logs_path}/{$this->program_name}'s log for {$this->year}-{$this->month}-{$this->day} from ".(($this->starting_hour<10)?"0":"")."{$this->starting_hour}:00 through ".(($this->ending_hour<10)?"0":""))."{$this->ending_hour}:59.log" ), "a" )) )) {
+			if(!( ($this->logs_fp = fopen( ($this->log_file = "{$this->logs_path}/{$this->program_name}'s log for {$this->year}-{$this->month}-{$this->day} from ".(($this->starting_hour<10)?"0":"")."{$this->starting_hour}:00 through ".(($this->ending_hour<10)?"0":"")."{$this->ending_hour}:59.log" ), "a" )) )) {
 				fprintf( STDERR, "I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n" );
 				$this->disable_logging();
 			}
