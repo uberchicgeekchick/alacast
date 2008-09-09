@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Security podcasts</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title=' PaulDotCom' text='PaulDotcom Security Weekly' htmlUrl='http://pauldotcom.com/security_weekly/' xmlUrl='http://pauldotcom.com/podcast/psw.xml' type='rss' description=''/>
+	</body>
+</opml>

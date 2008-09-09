@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>ABC.net.au&#039; Podcasts</title>
+	</head>
+	<body>
+		<outline type='link' title='ABC Radio National' url='http://abc.net.au/rn/' text='ABC Radio National' description='ABC Radio National&#039; homepage'/>
+		<outline type='link' title='triple j' url='http://triplej.net.au/' text='' description='triple j&#039; homepage'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='hack on triple j' text='' htmlUrl='' xmlUrl='' type='rss' description=''/>
+	</body>
+</opml>

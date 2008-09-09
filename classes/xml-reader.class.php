@@ -38,9 +38,9 @@
 	 * 	&& ||
 	 * 	"The Mentor's Last Words: The Hackers Manifesto"
 	 */
-	namespace template;
+	namespace alaccast::xml;
 
-	class template {
+	class xml_reader extends xml_core {
 
 		public function __construct() {
 		}//method: public function __construct();

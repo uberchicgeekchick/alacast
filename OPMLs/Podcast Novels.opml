@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Podcast Novels</title>
+	</head>
+	<body>
+		<outline type='link' title='Podiobooks.com' url='http://www.podiobooks.com/' text='Podiobooks.com&#039;s homepage' description='Podiobooks.com - Free online serialized fiction.'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='Antithesis, Book 1: Predestination and Other Games of Chance' text='Antithesis, Book 1: Predestination and Other Games of Chance' htmlUrl='http://www.jdsawyer.net/books/antithesis' xmlUrl='http://jdsawyer.net/?feed=podcast' type='rss' description=''/>
+	</body>
+</opml>

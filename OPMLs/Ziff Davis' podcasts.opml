@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Ziff Davis&#039; podcasts</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='CrankyGeeks' text='' htmlUrl='http://crankygeeks.com/' xmlUrl='' type='rss' description='' />
+		<outline title='DL.TV' text='' htmlUrl='http://dl.tv/' xmlUrl='' type='rss' description='' />
+		<outline title='ExtremeTech' text='' htmlUrl='http://ExtremeTech.Com/' xmlUrl='' type='rss' description='' />
+		<outline title='PCMag Radio' text='' htmlUrl='http://www.pcmag.com/category2/0,1738,2007098,00.asp' xmlUrl='http://feeds.feedburner.com/ziffdavis%2fpcmagradio?format=xml' type='rss' description='' />
+	</body>
+</opml>

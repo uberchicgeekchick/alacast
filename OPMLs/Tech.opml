@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Tech Podcasts</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<outline type='link' title='TechPodcasts.Com' url='http://TechPodcasts.Com/' text='TechPodcasts.Com' description='TechPodcasts.Com - If its tech its here.'/>
+		<outline type='link' title='FriendsInTech.Com' url='http://TechPodcasts.Com/' text='FriendsInTech.Com' description='FriendsInTech.Com'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='' text='' htmlUrl='' xmlUrl='' type='rss' description='' />
+	</body>
+</opml>

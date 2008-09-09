@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Science podcasts</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<outline type='link' title='SciencePdcasters.Org' url='http://docartemis.com/sciencepodcasters/' text='SciencePdcasters.Org' description='SciencePdcasters.Org'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='This Week in Science' text='This Week in Science: The Kick-Ass Science Podcast' htmlUrl='http://twis.org/' xmlUrl='http://feeds.twis.org/twis%2fscience?format=xml' type='rss' description=''/>
+		<outline title='Diffusion Science Radio' text='Diffusion Science Radio' htmlUrl='' xmlUrl='http://feeds.feedburner.com/diffusionradio?format=xml' type='rss' description='If you like a good, broad mix of Science - new science, hard science, pop science, historical science and very silly science, listen to Diffusion.'/>
+		<outline title='Explorations w/Michio Kaku' text='' htmlUrl='' xmlUrl='http://archive.wbai.org/files/xml/explora.xml' type='rss' description=''/>
+		<outline type='rss' title='RadioLab' htmlUrl='http://www.wnyc.org/shows/radiolab/' xmlUrl='http://www.wnyc.org/shows/radiolab/rss' text='RadioLab' description='Where sound illuminates ideas, and the boundaries blur between science, philosophy, and human experience. Big questions are investigated, tinkered with, and encouraged to grow. Bring your curiosity, and we&#039;ll feed it with possibility.'/>
+		<outline title='SciencePdcasters.Org' text='' htmlUrl='http://docartemis.com/sciencepodcasters/' xmlUrl='http://feeds.feedburner.com/sciencepodcasters?format=xml' type='rss' description=''/>
+		<outline title='Mr. Science Show Podcast' text='' htmlUrl='http://www.mrscienceshow.com/' xmlUrl='http://feeds.feedburner.com/MrSciencePodcast?format=xml' type='rss' description=''/>
+		<outline type='rss' title='mindcore' htmlUrl='http://mindcore.podbean.com/' xmlUrl='http://mindcore.podbean.com/feed/' text='mindcore' description='shockjock science'/> 
+		<outline type='rss' title='The Chemistry World Podcast' htmlUrl='http://www.rsc.org/chemistryworld/podcast/CWpodcast.asp' xmlUrl='http://www.rsc.org/chemistryworld/podcast/cw_podcast.xml' text='The Chemistry World Podcast' description='Chemistry World&#039;s very own podcast, including news, interviews and discussions on the latest topics in science'/>
+		<outline type='rss' title='Chemistry in its element' htmlUrl='http://www.rsc.org/chemistryworld/podcast/element.asp' xmlUrl='http://www.rsc.org/chemistryworld/podcast/elements_podcast.xml' text='Chemistry in its element' description='A leading scientist or author tells the stories behind the elements in each weekly five minute podcast'/>
+	</body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Audio Story Series</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<!--<outline title='podcast&#039;s feed' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+        <outline title='Escape Pod' type='rss' xmlUrl='http://escapepod.org/podcast.xml' text='The Science Fiction Podcast Magazine' htmlUrl='http://escapepod.org/'/>
+        <outline title='PodCastle' type='rss' xmlUrl='http://feeds.escapeartists.net/PodCastle_Main?format=xml'text='The Fantasy Podcast Magazine' />
+        <outline text='The Sound of Horror' title='Pseudopod' type='rss' xmlUrl='http://feeds.pseudopod.org/Pseudopod?format=xml'/>
+		<outline title='clonepod' xmlUrl='http://feeds.feedburner.com/clonepod?format=xml' type='rss' htmlUrl='http://www.clonepod.org/' text='clonepod' description='Voices of the Future, Podcasting Today&#039;s Science Fiction and Fantasy Join the Clones every other week for an exciting science fiction or fantasy story brought to you by the Clonepod team for your listening pleasure.'/>
+        <outline title='The Sonic Society' type='rss' xmlUrl='http://sonic.libsyn.com/rss' htmlUrl='http://sonicsociety.org/' text='Highlighting modern audio drama around the world.'/>
+	</body>
+</opml>

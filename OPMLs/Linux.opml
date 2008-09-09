@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Linux podcasts</title>
+	</head>
+	<body>
+		<outline type='link' title='website&#039;s homepage' url='http://thelinuxlink.net/' text='website&#039;s homepage' description='website&#039;s homepage'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='LinuxCranks: OGG feed' text='LinuxCranks: OGG feed' htmlUrl='http://linuxcranks.info/' xmlUrl='http://feeds.feedburner.com/LinuxCranks?format=xml' type='rss' description=''/>
+		<outline title='LinuxCranks: MP3 feed' text='LinuxCranks: MP3 feed' htmlurl='http://linuxcranks.info/' xmlurl='http://recordings.talkshoe.com/rss20037.xml' type='rss' description=''/>
+	        <outline title='Linux Journal' text='Linux Journal' type='rss' htmlUrl='' xmlUrl='http://linuxjournal.blip.tv/rss' description='Linux Journal, first published in 1994, is the original publication of the global Linux community, covering topics critical to intelligent implementation of the Linux operation system. With its award-winning Linux how-tos, tutorials, reviews, in-depth reporting, tips and tricks, and market analysis, Linux Journal has become well-known as the industry standard. Pick up a copy of Linux Journal on major newsstands and in bookstores worldwide or subscribe by calling 1-888-66-LINUX or visiting http://www.linuxjournal.com/subscribe.'/>
+	        <outline title='Linux Outlaws' text='Linux Outlaws Ogg Feed' type='rss' htmlUrl='' xmlUrl='http://feeds.feedburner.com/linuxoutlaws-ogg?format=xml' description='Open source talk with a serious attitude'/>
+		<outline title='Linux.com' text='Linux.Com Videos: News &amp; Interviews' type='rss' htmlUrl='' xmlUrl='http://linuxcom.blip.tv/rss' description=''/>
+		<outline title='LinuxCast' text='LinuxCast' type='rss' xmlUrl='http://www.linuxworld.com/podcasts/linux/index.xml' description='Don Marti brings you the latest Linux news and interviews with Linux insiders.'/>
+	</body>
+</opml>

@@ -539,18 +539,28 @@
 
 	function get_filenames_extension( &$podcastsFilename ) {
 		switch( ($ext = preg_replace(
-			"/^.*\.([a-zA-Z0-9]{2,4})$/",
+			"/^.*\.([a-zA-Z0-9]{2,7})$/",
 			"$1",
-			$podcastsFilename
+			(rtrim( $podcastsFilename ))
 		)) ) {
 			case "xml": case "html":
 				return null;
+			
+			/*case "pdf":
+				return null;*/
 			
 			case "m4v": case "mov":
 				return "mp4";
 			
 			case "divx": case "xvid":
 				return "avi";
+			
+			case "torrent":
+				/*TODO: implement torent download.
+				 * 1st - vby forking a program.
+				 *soon I'd like to write a PECL torrent extension.
+				*/
+				return "torrent";
 			
 			default:
 				return $ext;

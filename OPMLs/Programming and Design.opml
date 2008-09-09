@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Alacast#039;s Podcasts</title>
+	</head>
+	<body>
+		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
+		<outline type='link' title='PHP Podcasts.Com' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='P3: php|architect&#039;s podcast' text='P3: php|architect&#039;s podcast' htmlUrl='http://c7y.phparch.com/' xmlUrl='http://podcast.phparch.com/podcast/rss/index.xml' type='rss' description=''/>
+		<outline title='Screen Space' text='Screen Space' htmlUrl='http://screenspace.org/' xmlUrl='http://www.screenspace.org/?feed=podcast' type='rss' description='Screen Space: A blog &amp; podcast about users, texts, and technology'/>
+		<outline type='rss' title='The Command Line Podcast' htmlUrl='http://thecommandline.net/' xmlUrl='http://feeds.feedburner.com/cmdln_free?format=xml' text='The Command Line Podcast&#039;s OGG feed' description=''/>
+		<outline title='Software Engineering Radio' text='Software Engineering Radio' htmlUrl='http://se-radio.net/' xmlUrl='http://se-radio.net/rss' type='rss' description='Software Engineering Radio - Podcast &amp; Information for professional software developers architects.'/>
+		<outline type='rss' title='IBM developerWorks' htmlUrl='http://www.ibm.com/developerworks/podcast/' xmlUrl='http://www.ibm.com/developerworks/podcast/channel-dwall.rss' text='IBM developerWorks' description='Scott Laningham, editor of developerWorks podcasts, talks with thought leaders in many fields, paying extra attention to the computing and software element with each focus.'/>
+		<outline title='GDC Radio' text='GDC Radio' htmlUrl='http://www.gdcradio.net/' xmlUrl='http://feeds.feedburner.com/GDCRadio?format=xml' type='rss' description=''/>
+	</body>
+</opml>

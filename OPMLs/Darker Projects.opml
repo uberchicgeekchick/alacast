@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Darker Projects</title>
+	</head>
+	<body>
+		<outline type='link' title='' url='http://www.darkerprojects.com/' text='' description='Homepage'/>
+		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline title='Tales From The Museum' text='Tales From The Museum' htmlUrl='http://www.darkerprojects.com/tales_from_the_museum.html' xmlUrl='http://feeds.feedburner.com/TalesFromTheMuseum?format=xml' type='rss' description=''/>
+		<outline title='Batman: No Man&#039;s Land' text='' htmlUrl='http://www.darkerprojects.com/nomansland.html' xmlUrl='http://feeds.feedburner.com/BatmanNoMansLand?format=xml' type='rss' description=''/>
+		<outline title='Doctor Who ' text='Doctor Who ' htmlUrl='http://www.darkerprojects.com/doctorwho.html' xmlUrl='http://feeds.feedburner.com/DoctorWhoTimeTales?format=xml' type='rss' description=''/>
+		<outline title='Star Trek - Lost Frontier' text='Star Trek - Lost Frontier' htmlUrl='http://www.darkerprojects.com/lostfrontier.html' xmlUrl='http://feeds.feedburner.com/Star-Trek-Lost-Frontier?format=xml' type='rss' description=''/>
+		<outline type='rss' title='The Falcon Banner' htmlUrl='http://www.darkerprojects.com/falconbanner.html' xmlUrl='http://feeds.feedburner.com/thefalconbanner?format=xml' text='The Falcon Banner' description=''/>
+		<outline title='The Byron Chronicles' text='The Byron Chronicles' htmlUrl='http://www.darkerprojects.com/byronchronicles.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsTheByronChronicles?format=xml' type='rss' description=''/>
+		<outline title='Gothik' htmlUrl='' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGothik?format=xml' type='rss' text='Gothik' description='An original horror audio drama set in a city where the sun never rises ... where the supernatural explains what science cannot ... where modern man and ancient myths collide ... and monsters are very, very real.'/>
+		<outline type='rss' title='Generation 1' htmlUrl='http://www.darkerprojects.com/generation1.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGeneration1?format=xml' text='Generation 1' description=''/>
+		<outline type='rss' title='Alive Inside' htmlUrl='http://www.darkerprojects.com/aliveinside.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsAliveInside?format=xml' text='Alive Inside' description='The human race? Forget about them. Laid waste by the Great Catastrophe, the remnants of humanity fight for survival is a world scarred by a plague that causes the dead to walk again. Now, the zombie hordes add to their infernal ranks with every fresh victim.&nbsp; Can a bold venture across the wastelands of the former United States of America hold the key to our salvation? Or does the future belong to the zombies? '/>
+	</body>
+</opml>

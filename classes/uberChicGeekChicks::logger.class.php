@@ -101,18 +101,24 @@
 			$this->ending_hour = $this->starting_hour + 5;
 		}//method: private function setup_logging_data();
 		
-		private function new_log_check() {
+		private function check_log() {
 			if(
 				( ($this->current_hour = date( "H" )) > $this->ending_hour )
 				||
 				( $this->current_hour < $this->starting_hour )
+				||
+				(!
+					(file_exists( $this->log_file ))
+					&&
+					$this->logs_fp
+				)
 			)
 				return true;
 			return false;
 		}//method:private function check_log();
 		
 		private function rotate_log() {
-			if(!( ($this->new_log_check()) ))
+			if(!( ($this->check_log()) ))
 				return false;
 			
 			$this->setup_logging_data();
@@ -120,24 +126,29 @@
 				fclose( $this->logs_fp );
 			
 			if(!( ($this->logs_fp = fopen( ($this->log_file = "{$this->logs_path}/{$this->program_name}'s log for {$this->year}-{$this->month}-{$this->day} from ".(($this->starting_hour<10)?"0":"")."{$this->starting_hour}:00 through ".(($this->ending_hour<10)?"0":"")."{$this->ending_hour}:59.log" ), "a" )) )) {
-				fprintf( STDERR, "I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n" );
+				fwrite( STDERR, "I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n" );
 				$this->disable_logging();
 			}
 		}//method: private function rotate_log();
 		
-		public function output( $string, $error = false ) {
+		public function log_output( &$string, &$error ) {
 			if( $this->logging_enabled ) {
 				$this->rotate_log();
-				@fprintf( $this->logs_fp, $string );
+				@fwrite( $this->logs_fp, ( ($error===true) ? "*ERROR*:" : "" ) . $string );
 			}
-			
-			if( $error )
-				return @fprintf( STDERR, $string );
+		
+		}//method: private function log_output();
+		
+		public function output( $string, $error = false ) {
+			$this->log_output( $string, $error );
+		
+			if( $error === true )
+				return @fwrite( STDERR, $string );
 			
 			if( $this->silence_output )
 				return false;
 			
-			return @fprintf( STDOUT, $string );
+			return @fwrite( STDOUT, $string );
 			
 		}//method:public function output( $error = false );
 		
