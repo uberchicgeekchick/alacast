@@ -6,11 +6,8 @@
 	<body>
 		<outline type='link' title='ABC.net.au&#039; T.V.' url='http://abc.net.au/tv/video/download.htm' text='ABC.net.au&#039; Videos' description='ABC.net.au&#039; Vodcasts &amp; Video downloads'/>
 		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='Catalyst' text='Catalyst' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=downloadcatalyst' xmlUrl='http://www.abc.net.au/catalyst/vodcast_mp4.xml' type='rss' description=''/>
-		<outline title='The New Inventors' text='The New Inventors' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=downloadinventors' xmlUrl='http://abc.net.au/tv/newinventors/video/newinventors_mp4.xml' type='rss' description=''/>
 		<outline title='Can We Help?' text='Can We Help?' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=canwehelp' xmlUrl='http://abc.net.au/tv/canwehelp/video/vodcast_mp4.xml' type='rss' description=''/>
 		<outline title='Enough Rope' text='Enough Rope' htmlUrl='http://www.abc.net.au/tv/enoughrope/' xmlUrl='http://www.abc.net.au/tv/enoughrope/video/enoughrope_mp4.xml' type='rss' description=''/>
 		<outline title='triplej tv' text='' htmlUrl='' xmlUrl='http://www.abc.net.au/jtv/vodcast/vodcastMp4.xml' type='rss' description=''/>
-		<outline title='Message Stick' text='Message Stick' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=messagestick' xmlUrl='http://www.abc.net.au/tv/messagestick/xml/vodcast_mp4.xml' type='rss' description=''/>
 	</body>
 </opml>
