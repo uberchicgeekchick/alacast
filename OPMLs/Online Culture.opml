@@ -6,8 +6,5 @@
 	<body>
 		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
 		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='NewsReal with Sean Kennedy' text='64kbs feed' htmlUrl='http://www.rantmedia.ca/newsreal/' xmlUrl='http://bur.st/~clintman/cgi-bin/newsreal.cgi/podcast.xml' type='rss' description=''/>
-		<outline title='NewsReal with Sean Kennedy(binrev#039; mirror)' text='64kbs  archives feed' htmlUrl='http://umap.binrev.com/archives/rantradio_newsreal/' xmlUrl='http://umap.binrev.com/?id=rantradio_newsreal&podcast=1' type='rss' description=''/>
-		<outline title='NewsReal with Sean Kennedy(binrev&#039; update mirror)' text='64kbs feed mirror' htmlUrl='http://umap.binrev.com/archives/rantradio_newsreal/' xmlUrl='http://umap.binrev.com/archives/rantradio_newsreal/podcast/' type='rss' description=''/>
 	</body>
 </opml>

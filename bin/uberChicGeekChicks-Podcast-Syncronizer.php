@@ -473,7 +473,8 @@
 				continue;
 			
 			$podcastsXML_filename = sprintf( "%s/%s/index.xml", GPODDER_DL_DIR, $podcastsGUID );
-			exec("touch {$podcastsXML_filename}");
+			if( (file_exists($podcastsXML_filename)) )
+				exec("touch {$podcastsXML_filename}");
 			
 			if( (isset( $podcastsFiles )) )
 				unset( $podcastsFiles );

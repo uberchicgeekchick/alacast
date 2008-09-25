@@ -6,6 +6,8 @@
 	<body>
 		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
 		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline type='rss' title='Anita Borg Institute for Women and Technology' htmlUrl='http://anitaborg.org/community/connect/' xmlUrl='http://anitaborg.org/category/news/podcasts/feed' text=''/>
+		<outline type='rss' title='National Center for Women in Technology (NCWIT)' htmlUrl='' xmlUrl='http://www.informit.com/podcasts/index_rss.aspx?c=19' text='' description='The National Center for Women in Technology (NCWIT) interviews women entrepreneurs in information technology (IT) careers, sponsored by the NCWIT Entrepreneurial Alliance and the Ewing Marion Kauffman Foundation. Listen as these successful, creative, and technical women discuss their lives and their work -- how they first got into technology, why they chose to be entrepreneurs, and what advice they would give to young people interested in IT or entrepreneurship.'/>
 		<outline title='TechieDiva&#039;s Videos' text='' htmlUrl='http://techiediva.blip.tv/' xmlUrl='http://techiediva.blip.tv/rss' type='rss' description=''/>
 		<outline title='' text='' htmlUrl='' xmlUrl='' type='rss' description=''/>
 	</body>

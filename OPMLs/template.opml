@@ -4,8 +4,8 @@
 		<title>Category&#039;s Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='website&#039;s homepage' url='http:///' type='link' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
-		<!--<outline title='podcast&#039;s feed' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='podcast&#039;s feed' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>
 	</body>
 </opml>

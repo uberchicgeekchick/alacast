@@ -126,7 +126,7 @@
 				fclose( $this->logs_fp );
 			
 			if(!( ($this->logs_fp = fopen( ($this->log_file = "{$this->logs_path}/{$this->program_name}'s log for {$this->year}-{$this->month}-{$this->day} from ".(($this->starting_hour<10)?"0":"")."{$this->starting_hour}:00 through ".(($this->ending_hour<10)?"0":"")."{$this->ending_hour}:59.log" ), "a" )) )) {
-				fwrite( STDERR, "I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n" );
+				fwrite( STDERR, (utf8_encode("I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n")) );
 				$this->disable_logging();
 			}
 		}//method: private function rotate_log();
@@ -134,7 +134,7 @@
 		public function log_output( &$string, &$error ) {
 			if( $this->logging_enabled ) {
 				$this->rotate_log();
-				@fwrite( $this->logs_fp, ( ($error===true) ? "*ERROR*:" : "" ) . $string );
+				fwrite( $this->logs_fp, (utf8_encode( (($error==true) ? "*ERROR*:" : "" ) . $string )) );
 			}
 		
 		}//method: private function log_output();
@@ -143,13 +143,12 @@
 			$this->log_output( $string, $error );
 		
 			if( $error === true )
-				return @fwrite( STDERR, $string );
+				return fwrite( STDERR, (utf8_encode($string)) );
 			
 			if( $this->silence_output )
 				return false;
 			
-			return @fwrite( STDOUT, $string );
-			
+			return fwrite( STDOUT, (utf8_encode($string)) );
 		}//method:public function output( $error = false );
 		
 		private function close_log() {

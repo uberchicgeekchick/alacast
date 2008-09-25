@@ -5,9 +5,11 @@
 	</head>
 	<body>
 		<outline type='link' title='ABC.net.au&#039; T.V.' url='http://abc.net.au/tv/video/download.htm' text='ABC.net.au&#039; Videos' description='ABC.net.au&#039; Vodcasts &amp; Video downloads'/>
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<!--<outline type='rss' title='' xmlUrl='' htmlUrl='' text='' description=''/>-->
 		<outline title='Can We Help?' text='Can We Help?' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=canwehelp' xmlUrl='http://abc.net.au/tv/canwehelp/video/vodcast_mp4.xml' type='rss' description=''/>
 		<outline title='Enough Rope' text='Enough Rope' htmlUrl='http://www.abc.net.au/tv/enoughrope/' xmlUrl='http://www.abc.net.au/tv/enoughrope/video/enoughrope_mp4.xml' type='rss' description=''/>
-		<outline title='triplej tv' text='' htmlUrl='' xmlUrl='http://www.abc.net.au/jtv/vodcast/vodcastMp4.xml' type='rss' description=''/>
+		<outline type='rss' title='' xmlUrl='http://abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml' htmlUrl='http://www.abc.net.au/triplej/hackhalfhour/default.htm' text='' description=''/>
+		<outline type='rss' title='all triple j vodcasts' xmlUrl='http://abc.net.au/triplej/tv/vodcast/vodcastMp4.xml' htmlUrl='http://www.abc.net.au/triplej/tv/vodcast/default.htm' text='' description='Every week we make a special triple j tv program that you can download, play and keep on your computer or on your portable device.'/>
+		<outline title='triplej tv' xmlUrl='http://www.abc.net.au/jtv/vodcast/vodcastMp4.xml' text='' htmlUrl=''type='rss' description=''/>
 	</body>
 </opml>
