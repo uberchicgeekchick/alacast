@@ -63,7 +63,7 @@
 
 
 	function paintPodcastsHtml(&$subscribe) {
-		print("<html>\n\t<head>\n\t\t<title>Al&aacute;cast</title>\n\t\t<style type='text/css'>\n\t\t/*<![CDATA[*/\n\t\t\t@import url('stylesheet.css');\n\t\t\t/*]]!>*/\n\t\t</style>\n\t</head>\n\t<body>\n\t\t<div class='subscribeToAllPodcasts'>\n\t\t\t");
+		print("<html>\n\t<head>\n\t\t<title>Alacast</title>\n\t\t<style type='text/css'>\n\t\t/*<![CDATA[*/\n\t\t\t@import url('stylesheet.css');\n\t\t\t/*]]!>*/\n\t\t</style>\n\t</head>\n\t<body>\n\t\t<div class='subscribeToAllPodcasts'>\n\t\t\t");
 		
 		if($_GET['channel']!="SHOW_ALL_CHANNELS")
 			print("[<a href='./?channel=SHOW_ALL_CHANNELS&amp;subscribe={$_GET['subscribe']}' class='subscribeToAllPodcasts'>show all categories links</a>]");
@@ -126,7 +126,7 @@
 			else
 				print("\n\t\t\t\t\t<a href='./?subscribe={$_GET['subscribe']}&amp;channel=".(rawurlencode($channel['category']))."'>{$channel['category']} podcasts</a><br/>");
 		
-		print("\n\t\t\t\t<br />\n\t\t\t\t<input type='submit' value='Ala`cast'> <input type='reset' value='unselect all podcasts'>\n\t\t\t</div>\n\t\t\t</form>\n\t</body>\n</html>");
+		print("\n\t\t\t\t<br />\n\t\t\t\t<input type='submit' value='Alacast'> <input type='reset' value='unselect all podcasts'>\n\t\t\t</div>\n\t\t\t</form>\n\t</body>\n</html>");
 	}//end 'paintPodcastsHtml' function.
 
 
@@ -134,7 +134,7 @@
 	function paintPodcastsOpml($Valid_XML=True) {
 		header( "Content-disposition: attachment; filename=channels.opml" );
 		
-		printf("<?xml version='1.0' encoding='utf-8'?>\n<opml version=\"1.1\">\n\t<head>\n\t\t<title>Ala`cast</title>\n\t\t<dateCreated>%s</dateCreated>\n\t</head>\n\t<body>\n", (date("D M d H:i:s Y")) );
+		printf("<?xml version='1.0' encoding='utf-8'?>\n<opml version=\"1.1\">\n\t<head>\n\t\t<title>Alacast</title>\n\t\t<dateCreated>%s</dateCreated>\n\t</head>\n\t<body>\n", (date("D M d H:i:s Y")) );
 		$channels=getPodcasts();
 		foreach($channels as $channel) {
 			$an_or_a="a".
@@ -166,7 +166,7 @@
 
 
 	function paintRawPodcastList($spacer="\n") {
-		print("<html>\n\t<head>\n\t\t<title>Ala`cast</title>\n\t</head>\n\t<body style='background-color:#ffddee;'>\n\t\t<textarea style='width:90%; height:90%;'>");
+		print("<html>\n\t<head>\n\t\t<title>Alacast</title>\n\t</head>\n\t<body style='background-color:#ffddee;'>\n\t\t<textarea style='width:90%; height:90%;'>");
 		$channels=getPodcasts();
 		$podcastsStarted=0;
 		foreach($channels as $channel) {
