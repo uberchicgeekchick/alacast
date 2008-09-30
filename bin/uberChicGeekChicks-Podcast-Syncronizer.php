@@ -463,18 +463,16 @@
 		$totalMovedPodcasts=0;
 		$gPoddersPodcastDir = opendir(GPODDER_DL_DIR);
 		while($podcastsGUID = readdir($gPoddersPodcastDir)) {
-			if(
-				(preg_match("/^\.+$/", $podcastsGUID))
-				||
-				(!(
-					(is_dir(GPODDER_DL_DIR."/".$podcastsGUID))
-				))
-			)
+			if(!(
+				(is_dir( (sprintf( "%s/%s", GPODDER_DL_DIR, $podcastsGUID )) ))
+				&&
+				(preg_match("/^[^.]+/", $podcastsGUID))
+				&&
+				(file_exists( ($podcastsXML_filename=(sprintf( "%s/%s/index.xml", GPODDER_DL_DIR, $podcastsGUID )) ) ))
+			))
 				continue;
 			
-			$podcastsXML_filename = sprintf( "%s/%s/index.xml", GPODDER_DL_DIR, $podcastsGUID );
-			if( (file_exists($podcastsXML_filename)) )
-				exec("touch {$podcastsXML_filename}");
+			exec("touch {$podcastsXML_filename}");
 			
 			if( (isset( $podcastsFiles )) )
 				unset( $podcastsFiles );

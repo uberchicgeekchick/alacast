@@ -8,5 +8,6 @@
 		<outline type='link' title='triple j' url='http://triplej.net.au/' text='' description='triple j&#039; homepage'/>
 		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
 		<outline title='hack on triple j' text='' htmlUrl='' xmlUrl='' type='rss' description=''/>
+		<outline type='rss' title='Radio New Zealand: Saturday Morning' htmlUrl='http://www.radionz.co.nz/national/programmes/saturday' xmlUrl='http://www.radionz.co.nz/podcasts/saturday.rss' text='Saturday Morning' description='A magazine programme of feature interviews, current affairs, science, literature, food, music and more.'/>
 	</body>
 </opml>

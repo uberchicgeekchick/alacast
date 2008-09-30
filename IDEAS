@@ -1,0 +1,9 @@
+IPvision:
+An XULRunner based RSS reader &podcatcher:
+-------------------------------------------
+use libxine1/xine-devel, mplayer-devel, vlc-devel.
+fork or think Miro(ater they support python 2.5)
+add libraries
+
+**ACTUAL podcasts &audio stupport**
+option for background ffmpeg(-devel) onversion to open standard codecs.  i.e., Ogg Theora/Vordis.

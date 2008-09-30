@@ -1,0 +1,26 @@
+body{background-color:#ffddee;}
+a{color:#990000;}
+a:hover{color:#ff0066;}
+a.visited:hover{color:#ff0066;}
+div.close{text-align:right;}
+
+
+div.subscriptionOptions{display:inline; position:absolute; right:5px; font-size:small; text-align:right; width:35%;}
+
+form.exportForm{position:absolute; display:block; z-axis:2; padding-top:0.05%;}
+form.subscriptionForm{position:absolute; display:block; z-axis:1; padding-left:50%; padding-top:0.05%;}
+
+
+iframe.podcastPreview{position:absolute; display:block; top: 45px; right:0px; width:975px; height:425px; border:4px #990000 groove; z-axis:-1;}
+
+
+div.subscribeToAllPodcasts{width:100%; margin-top:0px; text-align:center;}
+div.podcastsListings{position:absolute; display:block; z-axis:1;}
+
+
+label.copyright{position:inline; opacity:0.4; color:#000000;}
+
+
+hr{width:75%; display:inline; position:absolute; left:0%;}
+
+div.smallcaps{font-variant:small-caps;}
