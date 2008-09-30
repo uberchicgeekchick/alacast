@@ -1,5 +1,5 @@
 <?php
-
+	//To access Alacast's OPML add this QUERY_STRING '?subscribe=export&format=OPML' to Alacast URI.
 	ini_set("display_errors", "true");
 	ini_set("error_reporting", E_ALL | E_STRICT);
 

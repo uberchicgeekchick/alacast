@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Audio Dramas</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Horror Addicts' xmlUrl='http://www.mevio.com/feeds/horroraddicts.xml' type='rss' htmlUrl='http://www.horroraddicts.net/' text='Horror Addicts' description=''/>
+		<outline title='Frequency of Fear' xmlUrl='http://frequencyoffear.com/podcasts-only/rss2.aspx' type='rss' htmlUrl='http://frequencyoffear.com/' text='' description=''/>
+	</body>
+</opml>
