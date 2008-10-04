@@ -1,5 +1,5 @@
 #!/bin/tcsh
-if ( "${?1}" != "" && ( "${1}" == "--output" || "${1}" == "-o" ) ) then
+if ( "${?1}" != "0" && ( "${1}" == "--output" || "${1}" == "-o" ) ) then
 	set output_file = "true"
 	shift
 endif
@@ -15,9 +15,8 @@ foreach index ( `find "${gpodder_dl_dir}" -name index.xml` )
 	set index_file = `/usr/bin/grep --color --perl-regexp --with-filename --line-number "${1}" "${index}" | cut -d":" -f1`
 	if ( "${index_file}" != "" && -e "${index_file}" ) then
 		printf "%s\n" ${index_file}
-		if ( "${?output_file}" == "1" ) cat ${index_file}
+		if ( "${?output_file}" == "1" ) cat "${index_file}"
 	endif
-
 end
 
 shift

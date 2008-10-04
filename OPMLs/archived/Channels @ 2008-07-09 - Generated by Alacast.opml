@@ -1,10 +1,8 @@
-
-Strict Standards: date(): It is not safe to rely on the system's timezone settings. Please use the date.timezone setting, the TZ environment variable or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'America/Denver' for 'MDT/-6.0/DST' instead in /Art/MyProjects/Alacast/functions/display.php on line 137
 <?xml version='1.0' encoding='utf-8'?>
 <opml version="1.1">
 	<head>
 		<title>Alacast</title>
-		<dateCreated>Tue Sep 30 01:03:13 2008</dateCreated>
+		<dateCreated>Tue Sep 30 01:27:40 2008</dateCreated>
 	</head>
 	<body>
 		<outline title="OurSQL" text="&quot;OurSQL&quot; is an uberChicGeekChicks podcast" type="rss" xmlUrl="http://technocation.org/index2.php?option=com_podcast&amp;feed=RSS2.0&amp;no_html=1" htmlUrl="http://technocation.org/"/>

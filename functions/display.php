@@ -124,7 +124,8 @@
 			))
 				paintSubscribeLinks($channel['category'], (require_once("{$GLOBALS['podcastsDir']}{$channel['podcastsPHP']}")), $subscribe);
 			else
-				print("\n\t\t\t\t\t<a href='./?subscribe={$_GET['subscribe']}&amp;channel=".(rawurlencode($channel['category']))."'>{$channel['category']} podcasts</a><br/>");
+				print("\n\t\t\t\t\t<a href='./?subscribe={$_GET['subscribe']}&amp;channel=".(rawurlencode($channel['category'] ))."'>{$channel['category']} podcasts</a><br/>");
+				//print("\n\t\t\t\t\t<a href='./?subscribe={$_GET['subscribe']}&amp;channel=".(rawurlencode( (iconv("UTF-8", 'ASCII', $channel['category'] )) ))."'>{$channel['category']} podcasts</a><br/>");
 		
 		print("\n\t\t\t\t<br />\n\t\t\t\t<input type='submit' value='Alacast'> <input type='reset' value='unselect all podcasts'>\n\t\t\t</div>\n\t\t\t</form>\n\t</body>\n</html>");
 	}//end 'paintPodcastsHtml' function.

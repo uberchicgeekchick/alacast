@@ -6,5 +6,7 @@
 	<body>
 		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
 		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
+		<outline type='rss' title='' htmlUrl='http://soccergirlwp.mevio.com/' xmlUrl='http://www.mevio.com/feeds/soccergirlincorporated.xml' text='' description=''/>
+		<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>
 	</body>
 </opml>

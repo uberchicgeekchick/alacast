@@ -141,15 +141,15 @@
 		fclose( $gPodder_config_fp );
 		
 		if(!(
+			(define( "GPODDER_SYNC_DIR", (preg_replace( "/.*mp3_player_folder = ([^\t]*).*/", "$1", $gPodder_config )) ))
+			&&
 			(define( "GPODDER_DL_DIR", (preg_replace( "/.*download_dir = ([^\t]*).*/", "$1", $gPodder_config )) ))
 			&&
 			(is_dir( GPODDER_DL_DIR ))
 			&&
-			(define( "GPODDER_SYNC_DIR", (preg_replace( "/.*mp3_player_folder = ([^\t]*).*/", "$1", $gPodder_config )) ))
-			&&
 			( is_dir( GPODDER_SYNC_DIR ) )
 		))
-			return gPodder_Config_Error( "I couldn't load either gPodder's:\n\t\t'download_dir'({$GLOBALS['homeDir']}) or it's 'mp3_player_folder'(".GPODDER_SYNC_DIR.".\n\tPlease check gPodder's settings." );
+			return gPodder_Config_Error( "I couldn't load either gPodder's:\n\t\t'download_dir'(".GPODDER_DL_DIR.") or it's 'mp3_player_folder'(".GPODDER_SYNC_DIR.".\n\tPlease check gPodder's settings." );
 		
 		chdir( dirname( GPODDER_DL_DIR ) );
 		
@@ -627,7 +627,7 @@
 	//here's where my progie uberChicGeekChick's Podcast Syncronizer actually starts.
 	if( (in_array("--help", $_SERVER['argv']) ))
 		help();//this exits uberChicGeekChick's Podcast Syncronizer
-
+	
 	if(!( (load_settings()) ))
 		exit( -1 );
 
@@ -639,7 +639,7 @@
 	);
 	
 	$podcatcher = new uberChicGeekChicks::podcatcher::program();
-	
+
 	while( (move_gPodders_Podcasts()) ) {
 		if(!( (in_array("--interactive", $_SERVER['argv'])) ))
 			break;
