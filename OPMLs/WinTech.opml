@@ -9,5 +9,6 @@
 		<outline type='link' title='FriendsInTech.Com' url='http://TechPodcasts.Com/' text='FriendsInTech.Com' description='FriendsInTech.Com'/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Mind of Root' xmlUrl='http://podcast.acoupleofadmins.com/media/ACOAPRSS.xml' type='rss' text='' htmlUrl='http://www.mindofroot.com/' description='' />
+		<outline title='Aussie Geek Podcast' xmlUrl='http://www.aussiegeekpodcast.com/category/podcast/feed' type='rss' htmlUrl='http://www.aussiegeekpodcast.com/' text='Aussie Geek Podcast' description=''/>
 	</body>
 </opml>
