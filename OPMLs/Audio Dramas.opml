@@ -9,5 +9,6 @@
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='New World Army' text='In Another Time, On Another Planet: Servants, Become Rulers.  Rulers, Become Outcasts.  Rebels are Hunted.  Few will Survive, but Who will Lead them?  As they Stand Against-the New-World-Army' htmlUrl='http://jrd-now.com/blog/2007/11/01/nwa-audio/' xmlUrl='http://feeds.feedburner.com/NewWorldArmy?format=xml' type='rss' description=''/>
 		<outline title='Texas Radio Theatre Company' xmlUrl='http://texasradio.libsyn.com/rss' type='rss' htmlUrl='http://texasradio.libsyn.com/' text='Texas Radio Theatre Company' description=''/>
+		<outline title='Voices of Babylon' xmlUrl='http://www.voicesofbabylon.com/category/tes/feed/' type='rss' htmlUrl='http://www.voicesofbabylon.com/' text='Voices of Babylon' description=''/>
 	</body>
 </opml>

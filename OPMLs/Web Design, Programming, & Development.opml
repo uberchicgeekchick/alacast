@@ -6,6 +6,7 @@
 	<body>
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline text="Learning Ruby on Rails, for Web Designers and Developers" title="Learning Rails" type="rss" xmlUrl="http://feeds.feedburner.com/learning-rails"/>
 		<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>
 	</body>
 </opml>
