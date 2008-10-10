@@ -22,7 +22,7 @@ foreach episode ( `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url
 
 		wget --quiet "${episode}"
 	
-		if ( -e "${episodes_filename}" ) then
+		if( -x "${episodes_filename}" ) then
 			echo "done\n"
 		else
 			echo "failed\n"
