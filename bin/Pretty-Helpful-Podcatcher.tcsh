@@ -20,9 +20,9 @@ foreach episode ( `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url
 	else
 		echo -n "Downloading episode:\n\t${episodes_filename}\n\t"
 
-		wget --quiet "${episode}"
+		wget --quiet -O "${episodes_filename}" "${episode}"
 	
-		if( -x "${episodes_filename}" ) then
+		if( -e "${episodes_filename}" ) then
 			echo "done\n"
 		else
 			echo "failed\n"
