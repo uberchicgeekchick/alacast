@@ -1,12 +1,12 @@
 #!/bin/tcsh
-if ( ! ${?1} ) then
-	echo "Usage: "`basename ${0}`" RSS_URI"
+if ( "${?1}" == "0" ) then
+	printf "Usage: %s RSS_URI\n" `basename ${0}`
 	exit 1
 endif
 
 set limit_episodes = ""
-if ( ${?2} ) then
-	if ( ${2} >= 1 ) limit_episodes = " | head -${2}"
+if ( "${?2}" == "1" ) then
+	if ( ${2} >= 1 ) set limit_episodes = " | head -${2}"
 endif
 
 echo "Downloading podcast's feed."
