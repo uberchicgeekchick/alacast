@@ -62,6 +62,6 @@ foreach episode ( `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url
 	endsw
 end
 
-echo "*w00t*, I'm done; have fun girl!\n\n&Remember: I ^created^, *coded*, &_wrote_ this!  I am an uberChick!\nYou go girl!  I can do this!"
+echo "*w00t*, I'm done; enjoy online media at its best!"
 
 rm episodes.xml
