@@ -20,10 +20,13 @@ else
 		case "--dl_newest_only":
 			set limit_episode = " | head -1"
 		breaksw
+		default:
+			goto set_limit
 	endsw
 	shift
 endif
 
+set_limit:
 if ( "${?2}" == "1" ) then
 	if ( ${2} >= 1 ) set limit_episodes = " | head -${2}"
 endif
