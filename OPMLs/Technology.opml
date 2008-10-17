@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Technology Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='gdgt weekly' xmlUrl='http://feeds.gdgt.com/gdgt%2fpodcast-mp3?format=xml' type='rss' htmlUrl='http://www.gdgt.com/' text='gdgt weekly' description='gdgt weekly, distributed in MP3'/>
+	</body>
+</opml>

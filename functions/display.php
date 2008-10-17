@@ -132,7 +132,7 @@
 
 
 	function paintPodcastsOpml($Valid_XML=True) {
-		header( "Content-disposition: attachment; filename=channels.opml" );
+		header( (sprintf( "Content-disposition: attachment; filename=Alacast's Channels on %s.opml", (date("Y-m-d @ H:i:s")) )) );
 		
 		printf("<?xml version='1.0' encoding='utf-8'?>\n<opml version=\"1.1\">\n\t<head>\n\t\t<title>Alacast</title>\n\t\t<dateCreated>%s</dateCreated>\n\t</head>\n\t<body>\n", (date("D M d H:i:s Y")) );
 		$channels=getPodcasts();

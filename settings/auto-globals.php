@@ -1,5 +1,5 @@
 <?php
-	$GLOBALS['podcastsDir']="./OPMLs/podcast_arrays/";
+	$GLOBALS['podcastsDir']="./podcast_arrays/";
 
 	if (!(isset($_GET['channel'])))
 		$_GET['channel']="";
