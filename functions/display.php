@@ -18,7 +18,7 @@
 			if(!($links['rss'])){ $link2=''; $link3=''; }
 			else {
 				$link2=rawurlencode( ((binary)$links['rss']) );
-				$link3=base64_encode( $links['rss'] );
+				$link3=base64_encode( ((binary)$links['rss']) );
 				if( $i > 1 )
 					$sub2all .= "&amp;";
 				$sub2all .= "{$subscribe['get']}{$i}={$link2}";
@@ -132,7 +132,7 @@
 
 
 	function paintPodcastsOpml($Valid_XML=True) {
-		header( (sprintf( "Content-disposition: attachment; filename=Alacast's Channels on %s.opml", (date("Y-m-d @ H:i:s")) )) );
+		header( (sprintf( "Content-disposition: attachment; filename=\"Alacast's Channels on %s.opml\"", (date("Y-m-d @ H:i:s")) )) );
 		
 		printf("<?xml version='1.0' encoding='utf-8'?>\n<opml version=\"1.1\">\n\t<head>\n\t\t<title>Alacast</title>\n\t\t<dateCreated>%s</dateCreated>\n\t</head>\n\t<body>\n", (date("D M d H:i:s Y")) );
 		$channels=getPodcasts();
