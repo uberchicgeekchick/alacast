@@ -28,7 +28,7 @@
 '				'All Entertainment'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2fentertainment?format=xml",
 '				'Channel Surfing'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2ftv?format=xml",
 '				'DVD Digigods'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2fdigigods?format=xml",
-'				'Keepin' it Reel'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2fmovies?format=xml",
+'				'Keepin&#039; it Reel'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2fmovies?format=xml",
 '				'Tech Fetish'=>"http://feeds.ign.com/ignfeeds%2fpodcasts%2fgear?format=xml",
 			),
 		),
