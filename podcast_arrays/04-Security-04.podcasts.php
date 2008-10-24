@@ -11,62 +11,83 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'PaulDotCom' => array(
-			'www' => "http://pauldotcom.com/",
-			'rss' => "http://pauldotcom.com/podcast/psw.xml"
+		'PaulDotCom'=>array(
+			'www'=>"http://pauldotcom.com/",
+			'rss'=>array(
+				'default'=>"http://pauldotcom.com/podcast/psw.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Network Security Podcasts' => array(
-			'www' => "http://netsecpodcast.com/",
-			//'www' => "http://www.mckeay.net/",
-			'rss' => "http://mckeay.libsyn.com/rss"
+		'Network Security Podcasts'=>array(
+			'www'=>"http://netsecpodcast.com/",
+			//'www'=>"http://www.mckeay.net/",
+			'rss'=>array(
+				'default'=>"http://mckeay.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
-		
-		'CyberSpeak' => array(
-			'www' => "http://cyberspeak.libsyn.com/",
-			'rss' => "http://cyberspeak.libsyn.com/rss"
+		'CyberSpeak'=>array(
+			'www'=>"http://cyberspeak.libsyn.com/",
+			'rss'=>array(
+				'default'=>"http://cyberspeak.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
-		
-		'StillSecure, After All These Years' => array(
-			'www' => "http://www.clickcaster.com/ss",
-			'rss' => "http://www.clickcaster.com/channels/ss.xml"
+		'StillSecure, After All These Years'=>array(
+			'www'=>"http://www.clickcaster.com/ss",
+			'rss'=>array(
+				'default'=>"http://www.clickcaster.com/channels/ss.xml",
+			),
+			'tags'=>"",
 		),
-		
-		/*'StillSecure, After All These Years' => array(
-			'www' => "http://www.stillsecureafteralltheseyears.com/",
-			'rss' => "http://feeds.feedburner.com/StillsecureAfterAllTheseYearsclickcastercom"
+		/*'StillSecure, After All These Years'=>array(
+			'www'=>"http://www.stillsecureafteralltheseyears.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/StillsecureAfterAllTheseYearsclickcastercom",
+			),
+			'tags'=>"",
 		),*/
-		
-		'Security Catalyst' => Array (
-			'www' => "http://www.securitycatalyst.com/blog/tag/podcast/",
-			'rss' => "http://www.securitycatalyst.com/blog/feed/"
+		'Security Catalyst'=>Array (
+			'www'=>"http://www.securitycatalyst.com/blog/tag/podcast/",
+			'rss'=>array(
+				'default'=>"http://www.securitycatalyst.com/blog/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Silver Bullet Podcast' => array(
-			'www' => "http://www.cigital.com/silverbullet/",
-			'rss' => "http://www.cigital.com/silverbullet/feed/"
+		'Silver Bullet Podcast'=>array(
+			'www'=>"http://www.cigital.com/silverbullet/",
+			'rss'=>array(
+				'default'=>"http://www.cigital.com/silverbullet/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'OnSecurity' => array(
-			'www' => "http://onpodcastweekly.com/",
-			'rss' => "http://podcastingforacause.com/onsec.xml"
+		'OnSecurity'=>array(
+			'www'=>"http://onpodcastweekly.com/",
+			'rss'=>array(
+				'default'=>"http://podcastingforacause.com/onsec.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'The &quot;Rear Guard&quot; Podcast' => array(
-			'www' => "http://www.rearguardsecurity.com/",
-			'rss' => "http://www.rearguardsecurity.com/rss.xml"
+		'The &quot;Rear Guard&quot; Podcast'=>array(
+			'www'=>"http://www.rearguardsecurity.com/",
+			'rss'=>array(
+				'default'=>"http://www.rearguardsecurity.com/rss.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

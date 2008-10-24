@@ -14,47 +14,74 @@
 		
 		'The Command Line' => array(
 			'www' => "http://thecommandline.net/",
-			'rss' => "http://thecommandline.net/feed"
+			'rss'=>array(
+				'default'=>"http://thecommandline.net/feed",
+			),
+			'tags'=>"",
 		),
 		
 		'Software Engineering Radio' => array(
 			'www' => "http://se-radio.org/",
-			'rss' => "http://se-radio.net/rss"
+			'rss'=>array(
+				'default'=>"http://se-radio.net/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'RedMonkTV' => array(
 			'www' => "http://redmonk.com/tv/",
-			'rss' => "http://feeds.feedburner.com/RedMonkTV?format=xml"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/RedMonkTV?format=xml",
+			),
+			'tags'=>"",
 		),
 		
 		'IBM developerWorks' => array(
 			'www' => "http://www.ibm.com/developerworks/podcast/",
-			'rss' => "http://www.ibm.com/developerworks/podcast/channel-dwall.rss"
+			'rss'=>array(
+				'default'=>"http://www.ibm.com/developerworks/podcast/channel-dwall.rss",
+			),
+			'tags'=>"",
 		),
 		
 		'Python 411 Podcast Series' => array(
 			'www' => "http://www.awaretek.com/python/",
-			'rss' => "http://www.awaretek.com/python/index.xml"
+			'rss'=>array(
+				'default'=>"http://www.awaretek.com/python/index.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Perlcast' => array(
 			'www' => "http://www.perlcast.com/",
-			'rss' => "http://www.perlcast.com/rss/current.xml"
+			'rss'=>array(
+				'default'=>"http://www.perlcast.com/rss/current.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'SPaMCAST' => array(
 			'www' => "http://spamcast.libsyn.com/",
-			'rss' => "http://spamcast.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://spamcast.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 		
 	);

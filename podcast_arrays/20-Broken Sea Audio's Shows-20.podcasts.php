@@ -11,50 +11,68 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Broken Sea Audio&#39;s Website' => array(
-			'www' => "http://brokensea.com/",
-			'rss' => ""
+		'Broken Sea Audio&#39;s Website'=>array(
+			'www'=>"http://brokensea.com/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'Broken Sea Audio&#39;s: Feedback' => array(
-			'www' => "http://brokensea.com/feedback/",
-			'rss' => "http://brokensea.com/feedback/feed/"
+		'Broken Sea Audio&#39;s: Feedback'=>array(
+			'www'=>"http://brokensea.com/feedback/",
+			'rss'=>array(
+				'default'=>"http://brokensea.com/feedback/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Broken Sea Audio&#39;s: Doctor Who' => array(
-			'www' => "http://brokensea.com/drwho/",
-			'rss' => "http://brokensea.com/drwho/feed/"
+		'Broken Sea Audio&#39;s: Doctor Who'=>array(
+			'www'=>"http://brokensea.com/drwho/",
+			'rss'=>array(
+				'default'=>"http://brokensea.com/drwho/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Broken Sea Audio&#39;s: Star Trek: Archimedes' => array(
-			'www' => "http://brokensea.com/archimedes/",
-			'rss' => "http://brokensea.com/archimedes/feed/"
+		'Broken Sea Audio&#39;s: Star Trek: Archimedes'=>array(
+			'www'=>"http://brokensea.com/archimedes/",
+			'rss'=>array(
+				'default'=>"http://brokensea.com/archimedes/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Broken Sea Audio&#39;s: Ulysses Galactic Guides and Bounties Inc.' => array(
-			'www' => "http://www.brokensea.com/ulysses/",
-			'rss' => "http://www.brokensea.com/ulysses/feed/"
+		'Broken Sea Audio&#39;s: Ulysses Galactic Guides and Bounties Inc.'=>array(
+			'www'=>"http://www.brokensea.com/ulysses/",
+			'rss'=>array(
+				'default'=>"http://www.brokensea.com/ulysses/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Broken Sea Audio&#39;s: Jake Sampson: Monster Hunter' => array(
-			'www' => "http://brokensea.com/jakesampson/",
-			'rss' => "http://brokensea.com/jakesampson/feed/"
+		'Broken Sea Audio&#39;s: Jake Sampson: Monster Hunter'=>array(
+			'www'=>"http://brokensea.com/jakesampson/",
+			'rss'=>array(
+				'default'=>"http://brokensea.com/jakesampson/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		/*'Broken Sea Audio&#39;s: ' => array(
-			'www' => "",
-			'rss' => ""
+		/*'Broken Sea Audio&#39;s: '=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),*/
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

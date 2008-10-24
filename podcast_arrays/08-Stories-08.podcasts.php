@@ -11,60 +11,82 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'DrabbleCast' => array(
-			'www' => "http://drabblecast.org/",
-			'rss' => "http://feeds.feedburner.com/TheDrabblecast"
+		'DrabbleCast'=>array(
+			'www'=>"http://drabblecast.org/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/TheDrabblecast",
+			),
+			'tags'=>"",
 		),
-		
-		'Stranger things' => Array(
-			'www' => "http://www.strangerthings.tv/",
-			'rss' => "http://www.strangerthings.tv/?feed=rss2"
+		'Stranger things'=>Array(
+			'www'=>"http://www.strangerthings.tv/",
+			'rss'=>array(
+				'default'=>"http://www.strangerthings.tv/?feed=rss2",
+			),
+			'tags'=>"",
 		),
-		
-		'Castle Pod' => Array(
-			'www' => "http://podcastle.org/",
-			'rss' => "http://podcastle.org/podcast.xml"
+		'Castle Pod'=>Array(
+			'www'=>"http://podcastle.org/",
+			'rss'=>array(
+				'default'=>"http://podcastle.org/podcast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Escape Pod' => Array(
-			'www' => "http://escapepod.org/",
-			'rss' => "http://escapepod.org/podcast.xml"
+		'Escape Pod'=>Array(
+			'www'=>"http://escapepod.org/",
+			'rss'=>array(
+				'default'=>"http://escapepod.org/podcast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Psuedo Pod' => Array(
-			'www' => "http://pseudopod.org/",
-			'rss' => "http://feeds.pseudopod.org/Pseudopod"
+		'Psuedo Pod'=>Array(
+			'www'=>"http://pseudopod.org/",
+			'rss'=>array(
+				'default'=>"http://feeds.pseudopod.org/Pseudopod",
+			),
+			'tags'=>"",
 		),
-		
-		'Voices of Babylon' => Array(
-			'www' => "http://voicesofbabylon.com/",
-			'rss' => "http://www.voicesofbabylon.com/category/tes/feed/"
+		'Voices of Babylon'=>Array(
+			'www'=>"http://voicesofbabylon.com/",
+			'rss'=>array(
+				'default'=>"http://www.voicesofbabylon.com/category/tes/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Radio Yesterday' => Array(
-			'www' => "http://radioyesterday.chuckchat.com/",
-			'rss' => "http://radioyesterday.chuckchat.com/rss.php"
+		'Radio Yesterday'=>Array(
+			'www'=>"http://radioyesterday.chuckchat.com/",
+			'rss'=>array(
+				'default'=>"http://radioyesterday.chuckchat.com/rss.php",
+			),
+			'tags'=>"",
 		),
-		
-		'Librivox New Releases Podcast' => array(
-			'www' => "http://librivox.org/",
-			'rss' => "http://feeds.feedburner.com/LibrivoxNewReleasesPodcast"
+		'Librivox New Releases Podcast'=>array(
+			'www'=>"http://librivox.org/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/LibrivoxNewReleasesPodcast",
+			),
+			'tags'=>"",
 		),
-		
-		'Librivox Books Podcast' => array(
-			'www' => "http://librivox.org/",
-			'rss' => "http://librivox.org/podcast.xml"
+		'Librivox Books Podcast'=>array(
+			'www'=>"http://librivox.org/",
+			'rss'=>array(
+				'default'=>"http://librivox.org/podcast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

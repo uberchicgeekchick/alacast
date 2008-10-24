@@ -2,51 +2,87 @@
 	return array(
 		'Society Shows'=>array(
 			'www'=>"http://sonic.libsyn.com/",
-			'rss'=>"http://sonic.libsyn.com/rss",
+			'rss'=>array(
+				'default'=>"http://sonic.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		'Decoder Ring'=>array(
 			'www'=>"http://decoderring.libsyn.com/",
-			'rss'=>"http://decoderring.libsyn.com/rss",
+			'rss'=>array(
+				'default'=>"http://decoderring.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		'Astral Audio Productions'=>array(
 			'www'=>"http://www.astralaudio.net/",
-			'rss'=>"http://feeds.feedburner.com/astralaudio?format=xml",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/astralaudio?format=xml",
+			),
+			'tags'=>"",
 		),
 		'FinalRune Productions'=>array(
 			'www'=>"http://www.finalrune.com/",
-			'rss'=>"http://feeds.feedburner.com/FinalRune?format=xml",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/FinalRune?format=xml",
+			),
+			'tags'=>"",
 		),
 		'Kung Fu Action Theatre'=>array(
 			'www'=>"http://kfat.libsyn.com/",
-			'rss'=>"http://kfat.libsyn.com/rss",
+			'rss'=>array(
+				'default'=>"http://kfat.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		'Icebox Radio Theater'=>array(
 			'www'=>"http://iceboxradio.libsyn.com/",
-			'rss'=>"http://iceboxradio.libsyn.com/rss",
+			'rss'=>array(
+				'default'=>"http://iceboxradio.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		'Imagination Lane'=>array(
 			'www'=>"http://imaginationlane.net/backroads/",
-			'rss'=>"http://imaginationlane.net/backroads/?feed=podcast",
+			'rss'=>array(
+				'default'=>"http://imaginationlane.net/backroads/?feed=podcast",
+			),
+			'tags'=>"",
 		),
 		'Misfits Audio'=>array(
 			'www'=>"http://misfitsaudio.com/comments/",
-			'rss'=>"http://misfitsaudio.com/comments/?feed=podcast",
+			'rss'=>array(
+				'default'=>"http://misfitsaudio.com/comments/?feed=podcast",
+			),
+			'tags'=>"",
 		),
 		'Planet Retcon Radio'=>array(
 			'www'=>"http://planetretcon.com/podcast/",
-			'rss'=>"http://planetretcon.com/podcast/feed.xml",
+			'rss'=>array(
+				'default'=>"http://planetretcon.com/podcast/feed.xml",
+			),
+			'tags'=>"",
 		),
 		'Tales of the Extraordinary'=>array(
 			'www'=>"http://emptysea.net/tote/",
-			'rss'=>"http://emptysea.net/tote/podcast1.xml",
+			'rss'=>array(
+				'default'=>"http://emptysea.net/tote/podcast1.xml",
+			),
+			'tags'=>"",
 		),
 		'Texas Radio Theatre'=>array(
 			'www'=>"http://texasradio.libsyn.com/",
-			'rss'=>"http://texasradio.libsyn.com/rss",
+			'rss'=>array(
+				'default'=>"http://texasradio.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		'The Wireless Theatre Company'=>array(
 			'www'=>"http://www.wirelesstheatrecompany.co.uk/",
-			'rss'=>"http://feeds.feedburner.com/WirelesstcsWeblog?format=xml",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/WirelesstcsWeblog?format=xml",
+			),
+			'tags'=>"",
 		),
 	);
 ?>

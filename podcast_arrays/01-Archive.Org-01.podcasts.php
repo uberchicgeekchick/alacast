@@ -14,17 +14,26 @@
 		
 		'Archive.org' => array(
 			'www' => "http://archive.org/",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "http://www.digitaltippingpoint.com/",
-			'rss' => "http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint"
+			'rss'=>array(
+				'default'=>"http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 		
 	);

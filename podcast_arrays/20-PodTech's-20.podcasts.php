@@ -11,45 +11,61 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'PodTech' => array(
-			'www' => "http://www.podtech.net/",
-			'rss' => "http://www.podtech.net/home/category/tech/feed"
+		'PodTech'=>array(
+			'www'=>"http://www.podtech.net/",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/tech/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'TechOne' => array(
-			'www' => "http://www.podtech.net/home/index.php?cat=195",
-			'rss' => "http://www.podtech.net/home/category/techone/feed"
+		'TechOne'=>array(
+			'www'=>"http://www.podtech.net/home/index.php?cat=195",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/techone/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'Rocky Mountain Voices' => array(
-			'www' => "http://www.rockymountainvoices.com/blog/",
-			'rss' => "http://feeds.feedburner.com/rockymountainvoices"
+		'Rocky Mountain Voices'=>array(
+			'www'=>"http://www.rockymountainvoices.com/blog/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/rockymountainvoices",
+			),
+			'tags'=>"",
 		),
-		
-		'Inside Silicon Valley' => array(
-			'www' => "http://www.podtech.net/home/category/inside-silicon-valley/",
-			'rss' => "http://www.podtech.net/home/category/tech/feed"
+		'Inside Silicon Valley'=>array(
+			'www'=>"http://www.podtech.net/home/category/inside-silicon-valley/",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/tech/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'Social Media' => array(
-			'www' => "http://www.podtech.net/home/index.php?cat=174",
-			'rss' => "http://www.podtech.net/home/category/social-media/feed"
+		'Social Media'=>array(
+			'www'=>"http://www.podtech.net/home/index.php?cat=174",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/social-media/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'Clean Tech' => array(
-			'www' => "http://www.podtech.net/home/index.php?cat=171",
-			'rss' => "http://www.podtech.net/home/category/clean-tech/feed"
+		'Clean Tech'=>array(
+			'www'=>"http://www.podtech.net/home/index.php?cat=171",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/clean-tech/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'Digital Entertainment' => array(
-			'www' => "http://www.podtech.net/home/index.php?cat=151",
-			'rss' => "http://www.podtech.net/home/category/entertainment/feed"
+		'Digital Entertainment'=>array(
+			'www'=>"http://www.podtech.net/home/index.php?cat=151",
+			'rss'=>array(
+				'default'=>"http://www.podtech.net/home/category/entertainment/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

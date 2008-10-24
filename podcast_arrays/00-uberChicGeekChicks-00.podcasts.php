@@ -14,134 +14,213 @@
 		
 		'OurSQL' => array(
 			'www' => "http://technocation.org/",
-			'rss' => "http://technocation.org/index2.php?option=com_podcast&feed=RSS2.0&no_html=1"
+			'rss'=>array(
+				'default'=>"http://technocation.org/index2.php?option=com_podcast&feed=RSS2.0&no_html=1",
+			),
+			'tags'=>"",
 		),
 		
 		'webbAlert' => array(
 			'www' => "http://webbalert.com/",
-			'rss' => "http://feeds.feedburner.com/webbalert?format=xml"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/webbalert?format=xml",
+			),
+			'tags'=>"",
 		),
 		
 		'GeekBrief.TV' => array(
 			'www' => "http://geekbrief.tv/",
-			'rss' => "http://www.podshow.com/feeds/hd.xml"
-			//'rss' => "http://www.podshow.com/feeds/gbtv.xml"
+			'rss'=>array(
+				'default'=>"",
+				'Hi-Def'=>"http://www.podshow.com/feeds/hd.xml",
+				'Standard Def'=>"http://www.podshow.com/feeds/gbtv.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Geek Entertainment TV' => array(
 			'www' => "http://www.geekentertainment.tv/",
-			'rss' => "http://feeds.feedburner.com/getv"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/getv",
+			),
+			'tags'=>"",
 		),
 		
 		'commandN' => array(
 			'www' => "http://commandn.tv/",
-			'rss' => "http://feeds.feedburner.com/command-n/h264"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/command-n/h264",
+			),
+			'tags'=>"",
 		),
 		
 		'net@night on TWiT' => array(
 			'www' => "http://www.twit.tv/ITN",
-			'rss' => "http://leoville.tv/podcasts/itn.xml"
+			'rss'=>array(
+				'default'=>"http://leoville.tv/podcasts/itn.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'WITI' => array(
 			'www' => "http://www.witi.com/podcasts/",
-			'rss' => "http://witi.castmetrix.com/rss/180143985094819841"
+			'rss'=>array(
+				'default'=>"http://witi.castmetrix.com/rss/180143985094819841",
+			),
+			'tags'=>"",
 		),
 		
 		'WITI: Women &amp;Tech Summit 2007' => array(
 			'www' => "http://www.witi.com/podcasts/conferences/2007/women_and_technology_summit/",
-			'rss' => "http://witi.castmetrix.com/rss/180143985094819843"
+			'rss'=>array(
+				'default'=>"http://witi.castmetrix.com/rss/180143985094819843",
+			),
+			'tags'=>"",
 		),
 		
 		'IT New Digest' => array(
 			'www' => "http://blogs.techrepublic.com.com/tech-news/",
-			'rss' => "http://blogs.techrepublic.com.com/tech-news/wp-rss2.php"
+			'rss'=>array(
+				'default'=>"http://blogs.techrepublic.com.com/tech-news/wp-rss2.php",
+			),
+			'tags'=>"",
 		),
 		
 		'O&#39;Rielly Conferences by Dawn Applegate' => array(
 			'www' => "http://www.oreillynet.com/conferences/blog/",
-			'rss' => "http://www.oreillynet.com/conferences/blog/index.xml"
+			'rss'=>array(
+				'default'=>"http://www.oreillynet.com/conferences/blog/index.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Rules for the Revolution' => array(
 			'www' => "http://www.rulesfortherevolution.com/",
-			'rss' => "http://www.rulesfortherevolution.com/feed/rss2/"
+			'rss'=>array(
+				'default'=>"http://www.rulesfortherevolution.com/feed/rss2/",
+			),
+			'tags'=>"",
 		),
 		
 		'Grammer Girl' => array(
 			'www' => "http://grammar.qdnow.com/",
-			'rss' => "http://www.qdnow.com/grammar.xml"
+			'rss'=>array(
+				'default'=>"http://www.qdnow.com/grammar.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Virtual Vices' => array(
 			'www' => "http://fbi945virtualvices.libsyn.com/",
-			'rss' => "http://fbi945virtualvices.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://fbi945virtualvices.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'The Sassy Ladies' => array(
 			'www' => "http://www.thesassyladies.com/",
-			'rss' => "http://www.thesassyladies.com/portals/0/media/podcast_site.xml"
+			'rss'=>array(
+				'default'=>"http://www.thesassyladies.com/portals/0/media/podcast_site.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Strangely Literal' => array(
 			'www' => "http://strangelyliteral.libsyn.com/",
-			'rss' => "http://strangelyliteral.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://strangelyliteral.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'GeekGirl.TV' => array(
 			'www' => "http://geekgirl.tv/",
-			'rss' => "http://geekgirl.blip.tv/?skin=rss"
+			'rss'=>array(
+				'default'=>"http://geekgirl.blip.tv/?skin=rss",
+			),
+			'tags'=>"",
 		),
 		
 		'PodChick' => array(
 			'www' => "http://www.podchick.com/",
-			'rss' => "http://www.podchick.com/podchick.xml"
+			'rss'=>array(
+				'default'=>"http://www.podchick.com/podchick.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Disability411' => array(
 			'www' => "http://disability411.jinkle.com/",
-			'rss' => "http://disability411.jinkle.com/disability411.xml"
+			'rss'=>array(
+				'default'=>"http://disability411.jinkle.com/disability411.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Podcast Junky' => array(
 			'www' => "http://www.podcastjunky.com/",
-			'rss' => "http://podcastjunky.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://podcastjunky.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'Gadgettes' => array(
 			'www' => "http://reviews.cnet.com/4520-12552_7-6515274-1.html?tag=txt",
-			'rss' => "http://cnet.com/i/pod/cnet_gadgetgirls.xml"
+			'rss'=>array(
+				'default'=>"http://cnet.com/i/pod/cnet_gadgetgirls.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Gamer Girls Radio' => array(
 			'www' => "http://www.gamergirlsradio.com/",
-			'rss' => "http://www.blogtalkradio.com/GamerGirlsRadio/feed"
+			'rss'=>array(
+				'default'=>"http://www.blogtalkradio.com/GamerGirlsRadio/feed",
+			),
+			'tags'=>"",
 		),
 		
 		'playdigital' => array(
 			'www' => "http://www.playdigital.tv/",
-			'rss' => "http://feeds.feedburner.com/Playdigital-AVI?format=xml"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/Playdigital-AVI?format=xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Views From The Coop' => array(
 			'www' => "http://viewsfromthecoop.com/",
-			'rss' => "http://viewsfromthecoop.com/feed/"
+			'rss'=>array(
+				'default'=>"http://viewsfromthecoop.com/feed/",
+			),
+			'tags'=>"",
 		),
 		
 		'Loaded' => array(
 			//'www' => "http://www.natalidelconte.com/",
 			'www' => "http://www.cnettv.com/9743-1_53-0.html?type=node&value=13991",
-			'rss' => "http://loadedpodcast.cnettv.com/"
+			'rss'=>array(
+				'default'=>"http://loadedpodcast.cnettv.com/",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

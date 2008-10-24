@@ -11,67 +11,83 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'C|Net' => array(
-			'www' => "http://podcast.cnet.com/",
-			'rss' => ""
+		'C|Net'=>array(
+			'www'=>"http://podcast.cnet.com/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-	
-		'UK Crave' => array(
-			'www' => "http://crave.cnet.co.uk/podcast/",
-			'rss' => "http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss"
+		'UK Crave'=>array(
+			'www'=>"http://crave.cnet.co.uk/podcast/",
+			'rss'=>array(
+				'default'=>"http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss",
+			),
+			'tags'=>"",
 		),
-		
-		'the 404' => array(
-			'www' => "http://reviews.cnet.com/8300-13952_7-81.html",
-			'rss' => "http://the404podcast.cnet.com/"
+		'the 404'=>array(
+			'www'=>"http://reviews.cnet.com/8300-13952_7-81.html",
+			'rss'=>array(
+				'default'=>"http://the404podcast.cnet.com/",
+			),
+			'tags'=>"",
 		),
-		
-		'Crave' => array(
-			'www' => "http://crave.cnet.com/8300-1_105-1-0.html?categoryId=1997&tag=sb_cat",
-			'rss' => "http://crave.cnet.com/av/vcast/crave.xml"
+		'Crave'=>array(
+			'www'=>"http://crave.cnet.com/8300-1_105-1-0.html?categoryId=1997&tag=sb_cat",
+			'rss'=>array(
+				'default'=>"http://crave.cnet.com/av/vcast/crave.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'C|NET Live' => array(
-			'www' => "http://www.cnettv.com/9743-1_53-0.html?name=CNET%20Live&type=node&value=13485",
-			'rss' => "http://feeds.feedburner.com/cnet/cnetlive"
+		'C|NET Live'=>array(
+			'www'=>"http://www.cnettv.com/9743-1_53-0.html?name=CNET%20Live&type=node&value=13485",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/cnet/cnetlive",
+			),
+			'tags'=>"",
 		),
-		
-		'The Queue' => array(
-			'www' => "http://www.cnettv.com/8300-13415_53-11-0.html?categoryId=9703469",
-			'rss' => "http://feeds.feedburner.com/cnet/thequeue"
+		'C|NET News.com'=>array(
+			'www'=>"http://news.com.com/News.com+daily+podcast/2030-11424_3-5845846.html",
+			'rss'=>array(
+				'default'=>"http://news.com.com/2325-11424_3-0.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'C|NET News.com' => array(
-			'www' => "http://news.com.com/News.com+daily+podcast/2030-11424_3-5845846.html",
-			'rss' => "http://news.com.com/2325-11424_3-0.xml"
+		'The Real Deal'=>array(
+			'www'=>"http://reviews.cnet.com/4520-12518_7-6491288-1.html",
+			'rss'=>array(
+				'default'=>"http://www.cnet.com/i/pod/realdeal.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'The Real Deal' => array(
-			'www' => "http://reviews.cnet.com/4520-12518_7-6491288-1.html",
-			'rss' => "http://www.cnet.com/i/pod/realdeal.xml"
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
-		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 		/*
-		
-		'cnet.com.au videos' => array(
-			'www' => "http://www.cnet.com.au/videos/",
-			'rss' => "http://www.cnet.com.au/feeds/rss/?tag=latest_videos"
+		'cnet.com.au videos'=>array(
+			'www'=>"http://www.cnet.com.au/videos/",
+			'rss'=>array(
+				'default'=>"http://www.cnet.com.au/feeds/rss/?tag=latest_videos",
+			),
+			'tags'=>"",
 		),
-		
-		'C|NET tv' => array(
-			'www' => "http://www.cnettv.com/",
-			'rss' => "http://reviews.cnet.com/html/xml/2001-12839_7-0.xml"
+		'C|NET tv'=>array(
+			'www'=>"http://www.cnettv.com/",
+			'rss'=>array(
+				'default'=>"http://reviews.cnet.com/html/xml/2001-12839_7-0.xml",
+			),
+			'tags'=>"",
 		),*/
 	);
 ?>

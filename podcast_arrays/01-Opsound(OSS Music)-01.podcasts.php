@@ -14,32 +14,50 @@
 		
 		'Opsound: new songs' => array(
 			'www' => "http://opsound.org/",
-			'rss' => "http://feeds.feedburner.com/OpsoundNewSongs"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/OpsoundNewSongs",
+			),
+			'tags'=>"",
 		),
 		
 		'Opsound: genre algorithmic' => array(
 			'www' => "http://opsound.org/genre/algorithmic",
-			'rss' => "http://opsound.org/feed/genre/algorithmic"
+			'rss'=>array(
+				'default'=>"http://opsound.org/feed/genre/algorithmic",
+			),
+			'tags'=>"",
 		),
 		
 		'Opsound: genre ambient' => array(
 			'www' => "http://opsound.org/genre/ambient",
-			'rss' => "http://opsound.org/feed/genre/ambient"
+			'rss'=>array(
+				'default'=>"http://opsound.org/feed/genre/ambient",
+			),
+			'tags'=>"",
 		),
 		
 		'Opsound: genre ' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'Opsound: genre ' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'Opsound: genre ' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 		
 	);

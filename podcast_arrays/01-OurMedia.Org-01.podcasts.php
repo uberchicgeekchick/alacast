@@ -14,62 +14,98 @@
 		
 		'OurMedia.Org' => array(
 			'www' => "http://ourmedia.org/",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		/*'New Media' => array(
 			'www' => "http://ourmedia.org/",
-			'rss' => "http://ourmedia.org/mediarss"
+			'rss'=>array(
+				'default'=>"http://ourmedia.org/mediarss",
+			),
+			'tags'=>"",
 		),*/
 		
 		'New Channels' => array(
 			'www' => "http://ourmedia.org/",
-			'rss' => "http://channels.ourmedia.org/og/all/feed"
+			'rss'=>array(
+				'default'=>"http://channels.ourmedia.org/og/all/feed",
+			),
+			'tags'=>"",
 		),
 		
 		'Featured Videos' => array(
 			'www' => "http://ourmedia.org/",
-			'rss' => "http://channels.ourmedia.org/mediarss/channel?gid=3"
+			'rss'=>array(
+				'default'=>"http://channels.ourmedia.org/mediarss/channel?gid=3",
+			),
+			'tags'=>"",
 		),
 		
 		'Featured Podcast' => array(
 			'www' => "http://ourmedia.org/",
-			'rss' => "http://channels.ourmedia.org/mediarss/channel?gid=10"
+			'rss'=>array(
+				'default'=>"http://channels.ourmedia.org/mediarss/channel?gid=10",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 		
 	);

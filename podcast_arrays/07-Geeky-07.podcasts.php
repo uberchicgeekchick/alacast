@@ -11,75 +11,103 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Boing Boing TV' => array(
-			'www' => "http://tv.boingboing.net/",
-			'rss' => "http://feeds.boingboing.net/boingboing/tv"
+		'Boing Boing TV'=>array(
+			'www'=>"http://tv.boingboing.net/",
+			'rss'=>array(
+				'default'=>"http://feeds.boingboing.net/boingboing/tv",
+			),
+			'tags'=>"",
 		),
-		
-		'GeekNights' => array(
-			'www' => "http://www.frontrowcrew.com/",
-			'rss' => "http://feeds.feedburner.com/GeekNights"
+		'GeekNights'=>array(
+			'www'=>"http://www.frontrowcrew.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/GeekNights",
+			),
+			'tags'=>"",
 		),
-		
-		'GeekNights Experimental' => array(
-			'www' => "http://www.frontrowcrew.com/",
-			'rss' => "http://feeds.feedburner.com/GNexperimental"
+		'GeekNights Experimental'=>array(
+			'www'=>"http://www.frontrowcrew.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/GNexperimental",
+			),
+			'tags'=>"",
 		),
-		
-		'Ask A Ninja' => array(
-			'www' => "http://AskANinja.com/",
-			'rss' => "http://feeds.feedburner.com/AskANinja"
+		'Ask A Ninja'=>array(
+			'www'=>"http://AskANinja.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/AskANinja",
+			),
+			'tags'=>"",
 		),
-		
-		'Geek Cred' => array(
-			'www' => "http://www.geekcred.net/",
-			'rss' => "http://feeds.feedburner.com/geekcred"
+		'Geek Cred'=>array(
+			'www'=>"http://www.geekcred.net/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/geekcred",
+			),
+			'tags'=>"",
 		),
-		
-		'This Week In Geek' => array(
-			'www' => "http://thisweekingeek.net/",
-			'rss' => "http://feeds.feedburner.com/thisweekingeek"
+		'This Week In Geek'=>array(
+			'www'=>"http://thisweekingeek.net/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/thisweekingeek",
+			),
+			'tags'=>"",
 		),
-		
-		'Friday Night Party Line Podcast' => array(
-			'www' => "http://thaed.libsyn.com/index.php?post_category=podcasts",
-			'rss' => "http://thaed.libsyn.com/rss?post_category=podcasts"
+		'Friday Night Party Line Podcast'=>array(
+			'www'=>"http://thaed.libsyn.com/index.php?post_category=podcasts",
+			'rss'=>array(
+				'default'=>"http://thaed.libsyn.com/rss?post_category=podcasts",
+			),
+			'tags'=>"",
 		),
-		
-		'Way of the Geek &rarr; Week In Geek' => array(
-			'www' => "http://wayofthegeek.org/",
-			'rss' => "http://feeds.feedburner.com/WotG_WeekInGeek"
+		'Way of the Geek &rarr; Week In Geek'=>array(
+			'www'=>"http://wayofthegeek.org/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/WotG_WeekInGeek",
+			),
+			'tags'=>"",
 		),
-		
-		'P9[podcast nine]' => array(
-			'www' => "http://www.requiemoftheoutcast.com/podcast9/",
-			'rss' => "http://feeds.feedburner.com/podcast9"
+		'P9[podcast nine]'=>array(
+			'www'=>"http://www.requiemoftheoutcast.com/podcast9/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/podcast9",
+			),
+			'tags'=>"",
 		),
-		
-		'The Geek Spin' => array(
-			'www' => "http://www.thegeekspin.com/",
-			'rss' => "http://feeds.feedburner.com/TheGeekSpin"
+		'The Geek Spin'=>array(
+			'www'=>"http://www.thegeekspin.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/TheGeekSpin",
+			),
+			'tags'=>"",
 		),
-		
-		'PodCulture' => array(
-			'www' => "http://www.podculture.net/",
-			'rss' => "http://www.podculture.net/feed/"
+		'PodCulture'=>array(
+			'www'=>"http://www.podculture.net/",
+			'rss'=>array(
+				'default'=>"http://www.podculture.net/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'The Stealth Geek' => array(
-			'www' => "http://thestealthgeek.com/",
-			'rss' => "http://www.thestealthgeek.com/cast/feed.xml"
+		'The Stealth Geek'=>array(
+			'www'=>"http://thestealthgeek.com/",
+			'rss'=>array(
+				'default'=>"http://www.thestealthgeek.com/cast/feed.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

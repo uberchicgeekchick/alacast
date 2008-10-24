@@ -11,51 +11,68 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Technology Review' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => ""
+		'Technology Review'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'Top Stories' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_top_stories"
+		'Top Stories'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_top_stories?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Infotech' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_infotech"
+		'Infotech'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_infotech?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Biotech' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_biotech"
+		'Biotech'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_biotech?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Nanotech' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_nanotech"
+		'Nanotech'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_nanotech?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Energy' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_energy"
+		'Energy'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_energy?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Biztech' => array(
-			'www' => "http://www.technologyreview.com/corp/rss.aspx#podcast",
-			'rss' => "http://feeds.technologyreview.com/technology_review_audio_biztech"
+		'Biztech'=>array(
+			'www'=>"http://www.technologyreview.com/corp/rss.aspx#podcast",
+			'rss'=>array(
+				'default'=>"http://feeds.technologyreview.com/technology_review_audio_biztech?format=xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

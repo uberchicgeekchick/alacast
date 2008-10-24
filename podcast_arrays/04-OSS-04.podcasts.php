@@ -11,45 +11,61 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'The Linux Action Show' => array(
-			'www' => "http://www.linuxactionshow.com/?cat=4",
-			'rss' => "http://feeds.feedburner.com/TheLinuxActionShowOGG"
+		'The Linux Action Show'=>array(
+			'www'=>"http://www.linuxactionshow.com/?cat=4",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/TheLinuxActionShowOGG",
+			),
+			'tags'=>"",
 		),
-		
-		'Valid Syntax' => array(
-			'www' => "http://www.validsyntax.com/",
-			'rss' => "http://www.validsyntax.com/rss.php"
+		'Valid Syntax'=>array(
+			'www'=>"http://www.validsyntax.com/",
+			'rss'=>array(
+				'default'=>"http://www.validsyntax.com/rss.php",
+			),
+			'tags'=>"",
 		),
-		
-		'Going Linux' => array(
-			'www' => "http://goinglinux.com/",
-			'rss' => "http://goinglinux.com/oggpodcast.xml"
+		'Going Linux'=>array(
+			'www'=>"http://goinglinux.com/",
+			'rss'=>array(
+				'default'=>"http://goinglinux.com/oggpodcast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'FLOSS Weekly' => array(
-			'www' => "http://www.twit.tv/FLOSS",
-			'rss' => "http://leoville.tv/podcasts/floss.xml"
+		'FLOSS Weekly'=>array(
+			'www'=>"http://www.twit.tv/FLOSS",
+			'rss'=>array(
+				'default'=>"http://leoville.tv/podcasts/floss.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Linux Basement' => array(
-			'www' => "http://www.linuxbasement.com/ogg",
-			'rss' => "http://www.linuxbasement.com/ogg/feed"
+		'Linux Basement'=>array(
+			'www'=>"http://www.linuxbasement.com/ogg",
+			'rss'=>array(
+				'default'=>"http://www.linuxbasement.com/ogg/feed",
+			),
+			'tags'=>"",
 		),
-		
-		'Linux Resonance' => array(
-			'www' => "http://www.linuxresonance.com/",
-			'rss' => "http://www.linuxresonance.com/?feed=podcast"
+		'Linux Resonance'=>array(
+			'www'=>"http://www.linuxresonance.com/",
+			'rss'=>array(
+				'default'=>"http://www.linuxresonance.com/?feed=podcast",
+			),
+			'tags'=>"",
 		),
-		
-		'Its A Good Linux Morning' => array(
-			'www' => "http://www.tyrannozaurus.com/?q=itsagoodlinuxmorning",
-			'rss' => "http://feeds.feedburner.com/ItsAGoodLinuxMorning"
+		'Its A Good Linux Morning'=>array(
+			'www'=>"http://www.tyrannozaurus.com/?q=itsagoodlinuxmorning",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/ItsAGoodLinuxMorning",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

@@ -14,47 +14,74 @@
 		
 		'EPIC&middot;fu' => array(
 			'www' => "http://jetset.blip.tv/",
-			'rss' => "http://jetset.blip.tv/?skin=rss"
+			'rss'=>array(
+				'default'=>"http://jetset.blip.tv/?skin=rss",
+			),
+			'tags'=>"",
 		),
 		
 		'Buzz Report' => array(
 			'www' => "http://reviews.cnet.com/4520-12578_7-6527356-1.html",
-			'rss' => "http://www.cnet.com/av/vcast/buzz_video.xml"
+			'rss'=>array(
+				'default'=>"http://www.cnet.com/av/vcast/buzz_video.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'TWiL' => array(
 			'www' => "http://www.twit.tv/twil",
-			'rss' => "http://leoville.tv/podcasts/twil.xml"
+			'rss'=>array(
+				'default'=>"http://leoville.tv/podcasts/twil.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Geek Fu Morning Show' => array(
 			'www' => "http://geekfuactiongrip.com/",
-			'rss' => "http://geekfuactiongrip.com/podcast.xml"
+			'rss'=>array(
+				'default'=>"http://geekfuactiongrip.com/podcast.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Secret Life Of Girl Gamers' => array(
 			'www' => "http://secretlifeofgirlgamers.blogspot.com/",
-			'rss' => "http://feeds.feedburner.com/SecretLifeOfGirlGamers"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/SecretLifeOfGirlGamers",
+			),
+			'tags'=>"",
 		),
 		
 		'Unwind with Anji Bee' => array(
 			'www' => "http://unwind.podshow.com/",
-			'rss' => "http://www.podshow.com/feeds/unwind.xml"
+			'rss'=>array(
+				'default'=>"http://www.podshow.com/feeds/unwind.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Better l8 than never' => array(
 			'www' => "http://betterl8thannevr.libsyn.com/",
-			'rss' => "http://betterl8thannevr.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://betterl8thannevr.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

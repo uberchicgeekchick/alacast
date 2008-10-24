@@ -11,37 +11,47 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'WFMU' => array(
-			'www' => "http://www.wfmu.org/podcast",
-			'rss' => ""
+		'WFMU'=>array(
+			'www'=>"http://www.wfmu.org/podcast",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'Dave Emory: Anti-fascist researcher' => array(
-			'www' => "http://www.wfmu.org/playlists/DX",
-			'rss' => "http://www.wfmu.org/podcast/DX.xml"
+		'Dave Emory: Anti-fascist researcher'=>array(
+			'www'=>"http://www.wfmu.org/playlists/DX",
+			'rss'=>array(
+				'default'=>"http://www.wfmu.org/podcast/DX.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Do or DIY with People Like Us' => array(
-			'www' => "http://www.wfmu.org/playlists/PL",
-			'rss' => "http://www.wfmu.org/podcast/PL.xml"
+		'Do or DIY with People Like Us'=>array(
+			'www'=>"http://www.wfmu.org/playlists/PL",
+			'rss'=>array(
+				'default'=>"http://www.wfmu.org/podcast/PL.xml",
+			),
+			'tags'=>"",
 		),
-		
-		
-		'The Speakeasy with Dorian' => array(
-			'www' => "http://www.wfmu.org/playlists/SE",
-			'rss' => "http://www.wfmu.org/podcast/SE.xml"
+		'The Speakeasy with Dorian'=>array(
+			'www'=>"http://www.wfmu.org/playlists/SE",
+			'rss'=>array(
+				'default'=>"http://www.wfmu.org/podcast/SE.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

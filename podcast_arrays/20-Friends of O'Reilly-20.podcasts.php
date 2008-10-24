@@ -11,26 +11,33 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Friends of O&#039;Reilly' => array(
-			'www' => "http://www.oreillynet.com/foocasts/",
-			'rss' => "http://www.oreillynet.com/pub/feed/32?format=rss2"
+		'Friends of O&#039;Reilly'=>array(
+			'www'=>"http://www.oreillynet.com/foocasts/",
+			'rss'=>array(
+				'default'=>"http://www.oreillynet.com/pub/feed/32?format=rss2",
+			),
+			'tags'=>"",
 		),
-		
-		'Digital Media Insider' => array(
-			'www' => "http://digitalmedia.oreilly.com/",
-			'rss' => "http://www.oreillynet.com/pub/feed/72?format=rss2"
+		'Digital Media Insider'=>array(
+			'www'=>"http://digitalmedia.oreilly.com/",
+			'rss'=>array(
+				'default'=>"http://www.oreillynet.com/pub/feed/72?format=rss2",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

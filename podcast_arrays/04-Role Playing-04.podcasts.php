@@ -11,50 +11,68 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Dragons Landing' => array(
-			'www' => "http://www.dragonslanding.com/dli/",
-			'rss' => "http://feeds.feedburner.com/DragonsLandingPodcast"
+		'Dragons Landing'=>array(
+			'www'=>"http://www.dragonslanding.com/dli/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/DragonsLandingPodcast",
+			),
+			'tags'=>"",
 		),
-		
-		'All Games Considered' => array(
-			'www' => "http://allgamesconsidered.blogspot.com/",
-			'rss' => "http://feeds.feedburner.com/AllGamesConsidered"
+		'All Games Considered'=>array(
+			'www'=>"http://allgamesconsidered.blogspot.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/AllGamesConsidered",
+			),
+			'tags'=>"",
 		),
-		
-		'The Rolemonkeys' => array(
-			'www' => "http://RoleMonkeys.Info/",
-			'rss' => "http://feeds.feedburner.com/RoleMonkeys"
+		'The Rolemonkeys'=>array(
+			'www'=>"http://RoleMonkeys.Info/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/RoleMonkeys",
+			),
+			'tags'=>"",
 		),
-		
-		'rpgmp3&#39;s EPICS Podcast' => array(
-			'www' => "http://rpgmp3.com/",
-			'rss' => "http://www.rpgmp3.com/downloads/data/wld/rss.xml"
+		'rpgmp3&#39;s EPICS Podcast'=>array(
+			'www'=>"http://rpgmp3.com/",
+			'rss'=>array(
+				'default'=>"http://www.rpgmp3.com/downloads/data/wld/rss.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'rpgmp3&#39;s Community Podcast' => array(
-			'www' => "http://rpgmp3.com/",
-			'rss' => "http://www.rpgmp3.com/downloads/data/bw/bwpodcast.xml"
+		'rpgmp3&#39;s Community Podcast'=>array(
+			'www'=>"http://rpgmp3.com/",
+			'rss'=>array(
+				'default'=>"http://www.rpgmp3.com/downloads/data/bw/bwpodcast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

@@ -16,42 +16,66 @@
 		
 		'ill doctrine' => array(
 			'www' => "http://illdoctrine.com/",
-			'rss' => "http://feeds.feedburner.com/illdoctrine"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/illdoctrine",
+			),
+			'tags'=>"",
 		),
 		
 		'I Should Be Writing' => array(
 			'www' => "http://isbw.murlafferty.com/",
-			'rss' => "http://feeds.feedburner.com/IShouldBeWriting"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/IShouldBeWriting",
+			),
+			'tags'=>"",
 		),
 		
 		':: Le Laboratoire ::' => array(
 			'www' => "http://isbw.murlafferty.com/",
-			'rss' => "http://www.lelaboratoire.org/fluxlabo_en_utf.xml"
+			'rss'=>array(
+				'default'=>"http://www.lelaboratoire.org/fluxlabo_en_utf.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'J. C. Hutchins' => array(
 			'www' => "http://jchutchins.net/",
-			'rss' => "http://jchutchins.net/site/feed/rss/"
+			'rss'=>array(
+				'default'=>"http://jchutchins.net/site/feed/rss/",
+			),
+			'tags'=>"",
 		),
 		
 		'Ink n Doodles Radio' => array(
 			'www' => "http://inkndoodles.com/category/podcasts/",
-			'rss' => "http://feeds.feedburner.com/InknDoodlesRadio"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/InknDoodlesRadio",
+			),
+			'tags'=>"",
 		),
 		
 		'The Merlin Mann Show' => array(
 			'www' => "http://themerlinshow.blip.tv/",
-			'rss' => "http://themerlinshow.blip.tv/rss"
+			'rss'=>array(
+				'default'=>"http://themerlinshow.blip.tv/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

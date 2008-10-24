@@ -11,21 +11,26 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Romeo Theater' => array(
-			'www' => "http://romeo.libsyn.com/",
-			'rss' => "http://romeo.libsyn.com/rss"
+		'Romeo Theater'=>array(
+			'www'=>"http://romeo.libsyn.com/",
+			'rss'=>array(
+				'default'=>"http://romeo.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

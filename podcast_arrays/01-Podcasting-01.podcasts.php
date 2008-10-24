@@ -14,47 +14,74 @@
 		
 		'this week in media' => array(
 			'www' => "http://pixelcorps.tv/this_week_in_media",
-			'rss' => "http://thisweekinmedia.libsyn.com/rss"
+			'rss'=>array(
+				'default'=>"http://thisweekinmedia.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
 		
 		'Podcast Tools' => array(
 			'www' => "http://www.podcasttools.com/",
-			'rss' => "http://feeds.feedburner.com/ThePodcasttoolscomPodcast?format=xml"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/ThePodcasttoolscomPodcast?format=xml",
+			),
+			'tags'=>"",
 		),
 		
 		'Podcast 411' => array(
 			'www' => "http://www.podcast411.com/",
-			'rss' => "http://feeds.feedburner.com/podcast411a?format=xml"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/podcast411a?format=xml",
+			),
+			'tags'=>"",
 		),
 		
 		'On The Pod' => array(
 			'www' => "http://www.onthepod.com/podcast.html",
-			'rss' => "http://www.onthepod.com/podcast/On_The_Pod/rss.xml"
+			'rss'=>array(
+				'default'=>"http://www.onthepod.com/podcast/On_The_Pod/rss.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'OnThePod.Net' => array(
 			'www' => "http://onthepod.net/",
-			'rss' => "http://pseudojoe.podomatic.com/rss2.xml"
+			'rss'=>array(
+				'default'=>"http://pseudojoe.podomatic.com/rss2.xml",
+			),
+			'tags'=>"",
 		),
 		
 		'The Clip Show' => array(
 			'www' => "http://theclipshow.com/",
-			'rss' => "http://feeds.feedburner.com/clipshow"
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/clipshow",
+			),
+			'tags'=>"",
 		),
 		
 		'Podcast Promo Show' => array(
 			'www' => "http://podcastclicks.com/podcast/",
-			'rss' => "http://podcastclicks.com/podcast/feed/"
+			'rss'=>array(
+				'default'=>"http://podcastclicks.com/podcast/feed/",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

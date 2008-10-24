@@ -11,55 +11,60 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'The Metamor City Podcast' => array(
-			'www' => "http://metamorcity.com/",
-			'rss' => "http://feeds.feedburner.com/metamorcity"
+		'The Metamor City Podcast'=>array(
+			'www'=>"http://metamorcity.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/metamorcity",
+			),
+			'tags'=>"",
 		),
-		
-		'Morevi: Remastered' => array(
-			'www' => "http://www.teemorris.com/morevipodcast/",
-			'rss' => "http://feeds.feedburner.com/morevi"
+		'Morevi: Remastered'=>array(
+			'www'=>"http://www.teemorris.com/morevipodcast/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/morevi",
+			),
+			'tags'=>"",
 		),
-		
-		'Murder at Avedon Hill' => array(
-			'www' => "http://pgholyfield.com/maah/",
-			'rss' => "http://www.pgholyfield.com/maah/?feed=rss2"
+		'Murder at Avedon Hill'=>array(
+			'www'=>"http://pgholyfield.com/maah/",
+			'rss'=>array(
+				'default'=>"http://www.pgholyfield.com/maah/?feed=rss2",
+			),
+			'tags'=>"",
 		),
-		
-		'DarkAge: A Fantasy Fiction Podcast Novel' => array(
-			'www' => "http://kirkcast.com/",
-			'rss' => "http://kirkcast.com/podcasts-only/rss2.aspx"
+		'DarkAge: A Fantasy Fiction Podcast Novel'=>array(
+			'www'=>"http://kirkcast.com/",
+			'rss'=>array(
+				'default'=>"http://kirkcast.com/podcasts-only/rss2.aspx",
+			),
+			'tags'=>"",
 		),
-		
-		'Nights&#39; Knights' => array(
-			'www' => "http://vamp.podshow.com/",
-			'rss' => "http://www.podshow.com/feeds/vamp.xml"
+		'Nights&#39; Knights'=>array(
+			'www'=>"http://vamp.podshow.com/",
+			'rss'=>array(
+				'default'=>"http://www.podshow.com/feeds/vamp.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Space Casey' => array(
-			'www' => "http://www.spacecasey.com/",
-			'rss' => "http://www.spacecasey.com/?feed=podcast"
+		'Chasing the Bard'=>array(
+			'www'=>"http://www.chasingthebard.com/",
+			'rss'=>array(
+				'default'=>"http://www.chasingthebard.com/?feed=rss",
+			),
+			'tags'=>"",
 		),
-		
-		'Crescent Station' => array(
-			'www' => "http://www.crescentstation.net/",
-			'rss' => "http://feeds.feedburner.com/CrescentStation"
+		'The Library of Jack &amp; Shannon'=>array(
+			'www'=>"http://www.libraryofjs.com/",
+			'rss'=>array(
+				'default'=>"http://www.libraryofjs.com/?feed=rss2",
+			),
 		),
-		
-		'Chasing the Bard' => array(
-			'www' => "http://www.chasingthebard.com/",
-			'rss' => "http://www.chasingthebard.com/?feed=rss"
-		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
-		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

@@ -11,31 +11,40 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Volcanicast: Google Zeitgeist' => array(
-			'www' => "http://www.volcanicast.com/",
-			'rss' => "http://planetretcon.com/podcast/volcanicast.xml"
+		'Volcanicast: Google Zeitgeist'=>array(
+			'www'=>"http://www.volcanicast.com/",
+			'rss'=>array(
+				'default'=>"http://planetretcon.com/podcast/volcanicast.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'Driving the Digital Revolution' => array(
-			'www' => "http://www.cis.cornell.edu/alumniblog/",
-			'rss' => "http://www.cis.cornell.edu/alumniblog/feed/"
+		'Driving the Digital Revolution'=>array(
+			'www'=>"http://www.cis.cornell.edu/alumniblog/",
+			'rss'=>array(
+				'default'=>"http://www.cis.cornell.edu/alumniblog/feed/",
+			),
+			'tags'=>"",
 		),
-		
-		'Digital Tipping Point' => array(
-			'www' => "http://www.archive.org/details.php?identifier=digitaltippingpoint",
-			'rss' => "http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint"
+		'Digital Tipping Point'=>array(
+			'www'=>"http://www.archive.org/details.php?identifier=digitaltippingpoint",
+			'rss'=>array(
+				'default'=>"http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

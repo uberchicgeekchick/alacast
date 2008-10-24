@@ -11,46 +11,61 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'0nPodcastWeekly' => array(
-			'www' => "http://onpodcastweekly.com/",
-			'rss' => ""
+		'0nPodcastWeekly'=>array(
+			'www'=>"http://onpodcastweekly.com/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'OnSoftware (Video + Audio)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=dadf92ca-3bdc-484e-9cd8-cbfe0cfc0de6",
-			'rss' => "http://podcastingforacause.com/onsoft.xml"
+		'OnSoftware (Video + Audio)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=dadf92ca-3bdc-484e-9cd8-cbfe0cfc0de6",
+			'rss'=>array(
+				'default'=>"http://podcastingforacause.com/onsoft.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'OnOpenSource (Video)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=1977eb71-4a34-42dd-a7d0-7952a08c527e",
-			'rss' => "http://www.informit.com/podcasts/index_rss.aspx?c=11"
+		'OnOpenSource (Video)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=1977eb71-4a34-42dd-a7d0-7952a08c527e",
+			'rss'=>array(
+				'default'=>"http://www.informit.com/podcasts/index_rss.aspx?c=11",
+			),
+			'tags'=>"",
 		),
-		
-		'OnSOA (Audio)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=5df34b2c-c83c-4430-af38-8ace6edf9a1b",
-			'rss' => "http://www.informit.com/podcasts/index_rss.aspx?c=16"
+		'OnSOA (Audio)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=5df34b2c-c83c-4430-af38-8ace6edf9a1b",
+			'rss'=>array(
+				'default'=>"http://www.informit.com/podcasts/index_rss.aspx?c=16",
+			),
+			'tags'=>"",
 		),
-		
-		'OnNetworking (Video)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=efe8cc1f-a28a-4c9d-b6a7-961ed8948f75",
-			'rss' => "http://www.informit.com/podcasts/index_rss.aspx?c=10"
+		'OnNetworking (Video)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=efe8cc1f-a28a-4c9d-b6a7-961ed8948f75",
+			'rss'=>array(
+				'default'=>"http://www.informit.com/podcasts/index_rss.aspx?c=10",
+			),
+			'tags'=>"",
 		),
-		
-		'OnSecurity (Video)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=e68a419a-cd64-44cd-a64f-25cf8fbe4497",
-			'rss' => "http://www.informit.com/podcasts/index_rss.aspx?c=6"
+		'OnSecurity (Video)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=e68a419a-cd64-44cd-a64f-25cf8fbe4497",
+			'rss'=>array(
+				'default'=>"http://www.informit.com/podcasts/index_rss.aspx?c=6",
+			),
+			'tags'=>"",
 		),
-		
-		'OnTechLife (Audio)' => array(
-			'www' => "http://www.informit.com/podcasts/channel.aspx?c=ecc603ce-7669-486c-b803-d0915ee0a9cf",
-			'rss' => "http://www.informit.com/podcasts/index_rss.aspx?c=14"
+		'OnTechLife (Audio)'=>array(
+			'www'=>"http://www.informit.com/podcasts/channel.aspx?c=ecc603ce-7669-486c-b803-d0915ee0a9cf",
+			'rss'=>array(
+				'default'=>"http://www.informit.com/podcasts/index_rss.aspx?c=14",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

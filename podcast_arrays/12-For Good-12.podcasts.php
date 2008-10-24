@@ -11,25 +11,33 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Hey Josh' => array(
-			'www' => "http://heyjosh.tv/",
-			'rss' => "http://feeds.feedburner.com/joshshipp"
+		'Hey Josh'=>array(
+			'www'=>"http://heyjosh.tv/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/joshshipp",
+			),
+			'tags'=>"",
 		),
-		
-		'NetSquared' => array(
-			'www' => "http://www.NetSquared.org/",
-			'rss' => "http://feeds.feedburner.com/libsyn/NetSquared"
+		'NetSquared'=>array(
+			'www'=>"http://www.NetSquared.org/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/libsyn/NetSquared",
+			),
+			'tags'=>"",
 		),
-		
-		'501c3cast' => array(
-			'www' => "http://501c3cast.com/",
-			'rss' => "http://feeds.feedburner.com/501c3cast"
+		'501c3cast'=>array(
+			'www'=>"http://501c3cast.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/501c3cast",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
 	);
 ?>

@@ -11,26 +11,33 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'Ambient @ GarageBand.com' => array(
-			'www' => "http://www.garageband.com/genre/ambient/podcast/",
-			'rss' => "http://www.garageband.com/genre/ambient/podcast/totw.xml"
+		'Ambient @ GarageBand.com'=>array(
+			'www'=>"http://www.garageband.com/genre/ambient/podcast/",
+			'rss'=>array(
+				'default'=>"http://www.garageband.com/genre/ambient/podcast/totw.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'The Song Of The Day' => array(
-			'www' => "http://thesongoftheday.com/",
-			'rss' => "http://thesongoftheday.com/rss/rss_i.xml"
+		'The Song Of The Day'=>array(
+			'www'=>"http://thesongoftheday.com/",
+			'rss'=>array(
+				'default'=>"http://thesongoftheday.com/rss/rss_i.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

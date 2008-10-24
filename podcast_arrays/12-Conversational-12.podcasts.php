@@ -11,56 +11,75 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'East Meets West' => array(
-			'www' => "http://www.subbrilliant.com/emw/",
-			'rss' => "http://www.subbrilliant.com/emw/?feed=rss2"
+		'East Meets West'=>array(
+			'www'=>"http://www.subbrilliant.com/emw/",
+			'rss'=>array(
+				'default'=>"http://www.subbrilliant.com/emw/?feed=rss2",
+			),
+			'tags'=>"",
 		),
-		
-		'Kulture Kast' => array(
-			'www' => "http://kulturekast.com/",
-			'rss' => "http://www.kulturekast.libsyn.com/rss"
+		'Kulture Kast'=>array(
+			'www'=>"http://kulturekast.com/",
+			'rss'=>array(
+				'default'=>"http://www.kulturekast.libsyn.com/rss",
+			),
+			'tags'=>"",
 		),
-		
-		'ADD Cast' => Array(
-			'www' => "http://addcast.net/",
-			'rss' => "http://addcast.net/?feed=podcast"
+		'ADD Cast'=>Array(
+			'www'=>"http://addcast.net/",
+			'rss'=>array(
+				'default'=>"http://addcast.net/?feed=podcast",
+			),
+			'tags'=>"",
 		),
-		
-		'No Agenda' => array(
-			'www' => "http://noagenda.podshow.com/",
-			'rss' => "http://www.btpodshow.com/feeds/noagenda.xml"
+		'No Agenda'=>array(
+			'www'=>"http://noagenda.podshow.com/",
+			'rss'=>array(
+				'default'=>"http://www.btpodshow.com/feeds/noagenda.xml",
+			),
+			'tags'=>"",
 		),
-		
-		'David Allen: win the game of work &business of life' => array(
-			'www' => "http://davidco.com/podcast.php",
-			'rss' => "http://davidco.com/podcast.php"
+		'David Allen: win the game of work &business of life'=>array(
+			'www'=>"http://davidco.com/podcast.php",
+			'rss'=>array(
+				'default'=>"http://davidco.com/podcast.php",
+			),
+			'tags'=>"",
 		),
-		
-		'Intellectual Icebergs' => array(
-			'www' => "http://www.intellectualicebergs.org/",
-			'rss' => "http://www.intellectualicebergs.org/mainfeed.rss"
+		'Intellectual Icebergs'=>array(
+			'www'=>"http://www.intellectualicebergs.org/",
+			'rss'=>array(
+				'default'=>"http://www.intellectualicebergs.org/mainfeed.rss",
+			),
+			'tags'=>"",
 		),
-		
-		'International Detective Dragons From Outer Space' => array(
-			'www' => "http://www.anim5.com/IDDFOS/",
-			'rss' => "http://www.anim5.com/IDDFOS/iddfos.rss"
+		'International Detective Dragons From Outer Space'=>array(
+			'www'=>"http://www.anim5.com/IDDFOS/",
+			'rss'=>array(
+				'default'=>"http://www.anim5.com/IDDFOS/iddfos.rss",
+			),
+			'tags'=>"",
 		),
-		
-		'The Gang' => array(
-			'www' => "http://www.facebook.com/group.php?gid=6117476303",
-			'rss' => "http://feeds.gillmorgroup.com/TheGangFeed"
+		'The Gang'=>array(
+			'www'=>"http://www.facebook.com/group.php?gid=6117476303",
+			'rss'=>array(
+				'default'=>"http://feeds.gillmorgroup.com/TheGangFeed",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>

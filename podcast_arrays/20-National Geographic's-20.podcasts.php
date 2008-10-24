@@ -11,88 +11,119 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'National Geographic Podcasts' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/",
-			'rss' => ""
+		'National Geographic Podcasts'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'National Geographic News' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/ngnews.html",
-			'rss' => "http://podcast.nationalgeographic.com/ng-news/"
+		'National Geographic News'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/ngnews.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/ng-news/",
+			),
+			'tags'=>"",
 		),
-		
-		'Walks of a Lifetime' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/walks.html",
-			'rss' => "http://podcast.nationalgeographic.com/walks-of-a-lifetime/"
+		'Walks of a Lifetime'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/walks.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/walks-of-a-lifetime/",
+			),
+			'tags'=>"",
 		),
-		
-		'World Talk' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/worldtalk.html",
-			'rss' => "http://podcast.nationalgeographic.com/world-talk/"
+		'World Talk'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/worldtalk.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/world-talk/",
+			),
+			'tags'=>"",
 		),
-		
-		'The Best of National Geographic Magazine' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/ngm.html",
-			'rss' => "http://podcast.nationalgeographic.com/best-of-ngm/"
+		'The Best of National Geographic Magazine'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/ngm.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/best-of-ngm/",
+			),
+			'tags'=>"",
 		),
-		
-		'Atmosphere' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/atmosphere.html",
-			'rss' => "http://podcast.nationalgeographic.com/ng-atmosphere/"
+		'Atmosphere'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/atmosphere.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/ng-atmosphere/",
+			),
+			'tags'=>"",
 		),
-		
-		'National Geographic Minutes' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/minutes.html",
-			'rss' => "http://podcast.nationalgeographic.com/ng-minutes/"
+		'National Geographic Minutes'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/minutes.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/ng-minutes/",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => "http://podcast.nationalgeographic.com//"
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com//",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => "http://podcast.nationalgeographic.com//"
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com//",
+			),
+			'tags'=>"",
 		),
-		
 		// Their video podcasts.
-		'Video Shorts' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/shorts.html",
-			'rss' => "http://podcast.nationalgeographic.com/ng-video-shorts/"
+		'Video Shorts'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/shorts.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/ng-video-shorts/",
+			),
+			'tags'=>"",
 		),
-		
-		'Wild Chronicles' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/",
-			'rss' => "http://podcast.nationalgeographic.com/wild-chronicles/"
+		'Wild Chronicles'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/wild-chronicles/",
+			),
+			'tags'=>"",
 		),
-		
-		'Dog Whisperer' => array(
-			'www' => "http://channel.nationalgeographic.com/channel/dogwhisperer/podcast.html",
-			'rss' => "http://podcast.nationalgeographic.com/dog-whisperer/"
+		'Dog Whisperer'=>array(
+			'www'=>"http://channel.nationalgeographic.com/channel/dogwhisperer/podcast.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/dog-whisperer/",
+			),
+			'tags'=>"",
 		),
-		
 		// Their musically focused podcasts.
-		'World Music Spotlight' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/spotlight.html",
-			'rss' => "http://podcast.nationalgeographic.com/world-music-spotlight/"
+		'World Music Spotlight'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/spotlight.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/world-music-spotlight/",
+			),
+			'tags'=>"",
 		),
-		
-		'World Music Profiles' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/profiles.html",
-			'rss' => "http://podcast.nationalgeographic.com/world-music-profiles/"
+		'World Music Profiles'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/profiles.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/world-music-profiles/",
+			),
+			'tags'=>"",
 		),
-		
-		'Afropop Worldwide' => array(
-			'www' => "http://www.nationalgeographic.com/podcasts/afropop.html",
-			'rss' => "http://podcast.nationalgeographic.com/afropop/"
+		'Afropop Worldwide'=>array(
+			'www'=>"http://www.nationalgeographic.com/podcasts/afropop.html",
+			'rss'=>array(
+				'default'=>"http://podcast.nationalgeographic.com/afropop/",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		)
-		
 	);
 ?>
