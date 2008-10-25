@@ -60,12 +60,26 @@
 			),
 			'tags'=>"",
 		),
+		'openSuSE Videos'=>array(
+			'www'=>"http://opensuse.blip.tv/",
+			'rss'=>array(
+				'default'=>"http://opensuse.blip.tv/rss",
+			),
+			'tags'=>"",
+		),
+		'progbox.vid'=>array(
+			'www'=>"http://www.progbox.co.uk/",
+			'rss'=>array(
+				'default'=>"http://www.progbox.co.uk/wordpress/?feed=podcast",
+			),
+			'tags'=>"",
+		),
 		''=>array(
 			'www'=>"",
 			'rss'=>array(
 				'default'=>"",
 			),
 			'tags'=>"",
-		)
+		),
 	);
 ?>
