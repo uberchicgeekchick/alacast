@@ -527,7 +527,7 @@
 			$GLOBALS['uberChicGeekChicks_logger']->output(  "^_^ There are no new podcasts."  );
 		
 		$GLOBALS['uberChicGeekChicks_logger']->output(
-			"  Have fun girl! ^_^\n\n"
+			"  Have fun! ^_^\n\n"
 			. ($GLOBALS['podcatcher']->set_status( "syncronizing podcasts", false ))
 		);
 		
