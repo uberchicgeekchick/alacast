@@ -34,7 +34,11 @@ endif
 echo "Downloading podcast's feed."
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 
-foreach episode ( `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}` )
+set episodes =`grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+
+
+
+foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
 
 	if ( -e "${episodes_filename}" ) then
@@ -46,20 +50,19 @@ foreach episode ( `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url
 		case "theend.mp3":
 		case "caughtup.mp3":
 			echo "Skipping ${episodes_filename}"
-		breaksw
-
-		default:
-			echo -n "Downloading episode:\n\t${episodes_filename}\n\t"
-
-			wget --quiet -O "${episodes_filename}" "${episode}"
-	
-			if( -e "${episodes_filename}" ) then
-				echo "done\n"
-			else
-				echo "failed\n"
-			endif
+			continue
 		breaksw
 	endsw
+
+	echo -n "Downloading episode:\n\t${episodes_filename}\n\t"
+
+	wget --quiet -O "${episodes_filename}" "${episode}"
+	
+	if( -e "${episodes_filename}" ) then
+		echo "done\n"
+	else
+		echo "failed\n"
+	endif
 end
 
 echo "*w00t*, I'm done; enjoy online media at its best!"

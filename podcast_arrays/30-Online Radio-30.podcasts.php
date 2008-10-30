@@ -11,25 +11,33 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
 		'Live365' => array(
 			'www' => "http://Live365.com/",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'<a href="http://opsound.org/">opsound</a>' => array(
+		'opsound' => array(
 			'www' => "http://tess.fast-serv.com:8900/listen.pls",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'' => array(
 			'www' => "",
-			'rss' => ""
-		)
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
 	);
 ?>

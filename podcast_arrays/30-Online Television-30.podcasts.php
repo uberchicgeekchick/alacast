@@ -11,51 +11,68 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
-		'current_' => array(
-			'www' => "http://current.tv/tv",
-			'rss' => ""
+		'current_'=>array(
+			'www'=>"http://current.tv/tv",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'hulu.com: NBC &amp;FOX' => array(
-			'www' => "http://www.hulu.com/browse/on_air",
-			'rss' => ""
+		'hulu.com: NBC &amp;FOX'=>array(
+			'www'=>"http://www.hulu.com/browse/on_air",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'CBS: Innertube' => array(
-			'www' => "http://www.cbs.com/innertube/player.php?cat=113891&vid=&format=&auto=0",
-			'rss' => ""
+		'CBS: Innertube'=>array(
+			'www'=>"http://www.cbs.com/innertube/player.php?cat=113891&vid=&format=&auto=0",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'sci-fi channel&#39;s: pulse' => array(
-			'www' => "http://www.scifi.com/pulse/",
-			'rss' => ""
+		'sci-fi channel&#39;s: pulse'=>array(
+			'www'=>"http://www.scifi.com/pulse/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'Discovery Channel' => array(
-			'www' => "http://dsc.discovery.com/video/",
-			'rss' => ""
+		'Discovery Channel'=>array(
+			'www'=>"http://dsc.discovery.com/video/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'ABC' => array(
-			'www' => "http://abc.go.com/index",
-			'rss' => ""
+		'ABC'=>array(
+			'www'=>"http://abc.go.com/index",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'AOL Video(Time Warner)' => array(
-			'www' => "http://video.aol.com/",
-			'rss' => ""
+		'AOL Video(Time Warner)'=>array(
+			'www'=>"http://video.aol.com/",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
-		)
-		
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
 	);
 ?>

@@ -14,7 +14,7 @@
 			preg_replace("/(%3D)/", "=",
 				preg_replace( "/(%26)/", "&amp;",
 					rawurlencode(
-						$uri_parts[1]
+						((binary)$uri_parts[1])
 					)
 				)
 			);

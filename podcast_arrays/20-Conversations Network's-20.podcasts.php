@@ -11,45 +11,15 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		'Social Innovation Conversations'=>array(
-			'www'=>"http://sic.conversationsnetwork.org/",
+		'Conversations Network'=>array(
+			'www'=>"http://www.conversationsnetwork.org/",
 			'rss'=>array(
-				'default'=>"http://sic.conversationsnetwork.org/rss.html",
-			),
-			'tags'=>"",
-		),
-		'Skoll World Forum'=>array(
-			'www'=>"http://sic.conversationsnetwork.org/series/skoll.html",
-			'rss'=>array(
-				'default'=>"http://rss.conversationsnetwork.org/rss.php?series=skoll.xml",
-			),
-			'tags'=>"",
-		),
-		'IT Conversations'=>array(
-			'www'=>"http://sic.conversationsnetwork.org/",
-			'rss'=>array(
-				'default'=>"http://feeds.conversationsnetwork.org/gigavox/channel/itconversations",
-			),
-			'tags'=>"",
-		),
-		'Technometria'=>array(
-			'www'=>"http://itc.conversationsnetwork.org/series/technometria.html",
-			'rss'=>array(
-				'default'=>"http://rss.conversationsnetwork.org/rss.php?series=technometria",
-			),
-			'tags'=>"",
-		),
-		'Opening Move with Scott Mace'=>array(
-			'www'=>"http://itc.conversationsnetwork.org/series/openingmove.html",
-			'rss'=>array(
-				'default'=>"http://rss.conversationsnetwork.org/rss.php?series=openingmove",
-			),
-			'tags'=>"",
-		),
-		'Media Conversations'=>array(
-			'www'=>"http://mc.conversationsnetwork.org/",
-			'rss'=>array(
-				'default'=>"http://feeds.conversationsnetwork.org/channel/mediaconversations",
+				'default'=>"",
+				'Social Innovation Conversations'=>"http://sic.conversationsnetwork.org/rss.html",
+				//'IT Conversations'=>"http://feeds.conversationsnetwork.org/gigavox/channel/itconversations",
+				'Technometria'=>"http://rss.conversationsnetwork.org/rss.php?series=technometria",
+				'Opening Move with Scott Mace'=>"http://rss.conversationsnetwork.org/rss.php?series=openingmove",
+				'Media Conversations'=>"http://feeds.conversationsnetwork.org/channel/mediaconversations",
 			),
 			'tags'=>"",
 		),

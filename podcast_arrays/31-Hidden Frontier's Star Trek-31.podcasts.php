@@ -11,35 +11,47 @@
 	 * Know it!  Feel it! Be it! Be proud of it!
 	 */
 	return array(
-		
 		'Hidden Frontier' => array(
 			'www' => "http://www.hiddenfrontier.com/",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'Star Trek: Hidden Frontier' => array(
 			'www' => "http://www.hiddenfrontier.com/episodes/indexhf.php",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'Star Trek: The Helena Chronicles' => array(
 			'www' => "http://www.hiddenfrontier.com/episodes/indexhc.php",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'Star Trek: Odyssey' => array(
 			'www' => "http://www.hiddenfrontier.com/episodes/indexody.php",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'' => array(
 			'www' => "",
-			'rss' => ""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
-		
 		'' => array(
 			'www' => "",
-			'rss' => ""
-		)
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
 	);
 ?>

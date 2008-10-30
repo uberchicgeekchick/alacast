@@ -2,7 +2,7 @@
 	
 	$aggregators=array(
 		"podnova", "odeo", "miro", "podcast_ready",
-		'total'=>3
+		'total'=>4
 	);
 	
 	$subscribe=require_once("settings/exportFormats.php");

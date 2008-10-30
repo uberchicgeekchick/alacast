@@ -2,10 +2,10 @@ body{background-color:#ffddee;}
 a{color:#990000;}
 a:hover{color:#ff0066;}
 a.visited:hover{color:#ff0066;}
-div.close{text-align:right;}
-
+div.close{text-align:right; padding-right:5em;}
 
 div.subscriptionOptions{display:inline; position:absolute; right:5px; font-size:small; text-align:right; width:35%;}
+div.subscribe{text-indent:5em; vertical-align:top; font-size:small;}
 
 form.exportForm{position:absolute; display:block; z-axis:2; padding-top:0.05%;}
 form.subscriptionForm{position:absolute; display:block; z-axis:1; padding-left:50%; padding-top:0.05%;}
