@@ -11,6 +11,5 @@
 		<outline text='The Sound of Horror' title='Pseudopod' type='rss' xmlUrl='http://feeds.pseudopod.org/Pseudopod?format=xml'/>
 		<outline title='clonepod' xmlUrl='http://feeds.feedburner.com/clonepod?format=xml' type='rss' htmlUrl='http://www.clonepod.org/' text='clonepod' description='Voices of the Future, Podcasting Today&#039;s Science Fiction and Fantasy Join the Clones every other week for an exciting science fiction or fantasy story brought to you by the Clonepod team for your listening pleasure.'/>
 		<outline title='The Sonic Society' type='rss' xmlUrl='http://sonic.libsyn.com/rss' htmlUrl='http://sonicsociety.org/' text='Highlighting modern audio drama around the world.'/>
-		<outline title='SFFaudio' xmlUrl='http://www.sffaudio.com/?feed=podcast' type='rss' htmlUrl='http://www.sffaudio.com/' text='SFFaudio' description='News, Reviews, and Commentary on all forms of science fiction, fantasy, and horror audio.  Audiobooks, audio drama, podcasts; we discuss all of it here.  Mystery, crime, and noir audio are also fair game.'/>
 	</body>
 </opml>
