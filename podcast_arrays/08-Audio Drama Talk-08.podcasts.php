@@ -1,6 +1,6 @@
 <?php
 	return array(
-		'Society Shows'=>array(
+		'The Sonic Society'=>array(
 			'www'=>"http://sonic.libsyn.com/",
 			'rss'=>array(
 				'default'=>"http://sonic.libsyn.com/rss",
