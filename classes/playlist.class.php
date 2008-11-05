@@ -16,13 +16,19 @@
 	namespace uberChicGeekChicks;
 	
 	class playlist{
-		
-		public function __construct(){
-			
+		private $playlist_filename;
+		private $playlist_fp;
+		private $total;
+
+		public function __construct(array &$new_podcasts){
+			if(!($this->total=count($new_podcasts)) )
+				return;
+			$this->playlist_fp=fopen($this->playlist_filename);
 		}//__construct
 		
 		public function __destruct(){
-			
+			if( (isset($this->playlist_fp)) )
+				fclose($this->playlist_fp);
 		}//__destruct
 		
 	}

@@ -16,16 +16,16 @@
 	namespace uberChicGeekChicks::playlist;
 	
 	class m3u extends uberChicGeekChicks::playlist{
+		private $playlist_filename;
 		private $playlist_fp;
+		private $total;
 		
 		public function __construct(array &$new_podcasts){
-			
+			parent::__construct($new_podcasts);
 		}//__construct
 		
 		public function __destruct(){
-			if( (isset($this->playlist_fp)) )
-				fclose($this->playlist_fp);
+			parent::__destruct();
 		}//__destruct
-		
 	}
 ?>
