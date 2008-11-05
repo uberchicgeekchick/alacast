@@ -23,7 +23,8 @@
 		}//__construct
 		
 		public function __destruct(){
-			
+			if( (isset($this->playlist_fp)) )
+				fclose($this->playlist_fp);
 		}//__destruct
 		
 	}
