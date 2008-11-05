@@ -21,7 +21,7 @@
 		'Slashdot&#39;s Festival'=>array(
 			'www'=>"http://slashdot.org/",
 			'rss'=>array(
-				'default'=>"http://feeds.feedburner.com/slashdot/audio",
+				'default'=>"http://feeds.feedburner.com/slashdot%2faudio?format=xml",
 			),
 			'tags'=>"",
 		),

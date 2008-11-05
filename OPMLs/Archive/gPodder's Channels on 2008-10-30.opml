@@ -363,7 +363,6 @@
         <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml"/>
         <outline text="Learning about Python" title="python411" type="rss" xmlUrl="http://www.awaretek.com/python/index.xml"/>
         <outline text="A skeptical review of SCAM's (mp3 version)" title="QuackCast" type="rss" xmlUrl="http://www.quackcast.com/spodcasts/files/mp3rss.xml"/>
-        <outline text="Every week you will be treated to a new Railscasts episode featuring tips and tricks with Ruby on Rails, the popular web development framework. These screencasts are short and focus on one technique so you can quickly move on to applying it to your own project. The topics are geared toward the intermediate Rails developer, but beginners and experts will get something out of it as well. This is the full resolution version, an iPod specific format is also available." title="Railscasts" type="rss" xmlUrl="http://feeds.feedburner.com/railscasts?format=xml"/>
         <outline text="tangential transmissions from a disorganized mind" title="Random Signal" type="rss" xmlUrl="http://feeds.feedburner.com/RandomSignal?format=xml"/>
         <outline text="http://umap.binrev.com/?id=rantradio_newsreal&amp;podcast=1" title="rantradio_newsreal" type="rss" xmlUrl="http://umap.binrev.com/?id=rantradio_newsreal&amp;podcast=1"/>
         <outline text="http://feeds.feedburner.com/reasonabledoubts%2fMsxh?format=xml" title="Reasonable Doubts Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/reasonabledoubts%2fMsxh?format=xml"/>

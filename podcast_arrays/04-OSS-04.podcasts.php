@@ -39,6 +39,7 @@
 			),
 			'tags'=>"",
 		),
+		/*
 		'Linux Basement'=>array(
 			'www'=>"http://www.linuxbasement.com/ogg",
 			'rss'=>array(
@@ -46,6 +47,7 @@
 			),
 			'tags'=>"",
 		),
+*/
 		'Linux Resonance'=>array(
 			'www'=>"http://www.linuxresonance.com/",
 			'rss'=>array(

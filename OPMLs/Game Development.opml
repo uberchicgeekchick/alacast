@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Game Development</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='GDC Radio' text='GDC Radio' htmlUrl='http://www.gdcradio.net/' xmlUrl='http://feeds.feedburner.com/GDCRadio?format=xml' type='rss' description=''/>
+	</body>
+</opml>

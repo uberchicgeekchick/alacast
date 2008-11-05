@@ -45,6 +45,20 @@
 	ini_set( "date.timezone", "America/Denver" );
 
 
+	chdir( (dirname( $_SERVER['argv'][0] )) );
+	
+	require_once( "../classes/uberChicGeekChicks::logger.class.php" );
+	require_once( "../classes/uberChicGeekChicks::helper.class.php" );
+	
+	require_once( "../classes/playlist.class.php" );
+	require_once( "../classes/playlists/m3u.class.php" );
+	
+	require_once( "../classes/podcatcher/program.class.php" );
+
+	//here's where my progie uberChicGeekChick's Podcast Syncronizer actually starts.
+	if( (in_array("--help", $_SERVER['argv']) ))
+		help();//this exits uberChicGeekChick's Podcast Syncronizer
+	
 	function help() {
 		print( "Usage: uberChicGeekChicks-Podcast-Syncronizer.php [options]..."
 			."\n\tOptions:"
@@ -616,17 +630,6 @@
 	}//end:function move_podcasts_episodes();
 	
 	// Program == `uberChicGeekChicks-Podcast-Syncronizer.php` starts here.
-	
-	chdir( (dirname( $_SERVER['argv'][0] )) );
-	
-	require_once( "../classes/uberChicGeekChicks::logger.class.php" );
-	require_once( "../classes/uberChicGeekChicks::helper.class.php" );
-	
-	require_once( "../classes/podcatcher/program.class.php" );
-
-	//here's where my progie uberChicGeekChick's Podcast Syncronizer actually starts.
-	if( (in_array("--help", $_SERVER['argv']) ))
-		help();//this exits uberChicGeekChick's Podcast Syncronizer
 	
 	if(!( (load_settings()) ))
 		exit( -1 );
