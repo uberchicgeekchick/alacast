@@ -16,8 +16,9 @@
 	namespace uberChicGeekChicks::playlist;
 	
 	class m3u extends uberChicGeekChicks::playlist{
+		private $playlist_fp;
 		
-		public function __construct(){
+		public function __construct(array &$new_podcasts){
 			
 		}//__construct
 		
