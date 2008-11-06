@@ -84,5 +84,85 @@
 			),
 			'tags'=>"",
 		),
+		'Neo Hoo Doo Studios'=>array(
+			'www'=>"http://neohoodoo.libsyn.com/",
+			'rss'=>array(
+				'default'=>"http://neohoodoo.libsyn.com/rss/",
+				'19 Nocturne Boulevard'=>"http://neohoodoo.libsyn.com/rss/nocturne",
+				'The Unspeakable and the Inhuman'=>"http://neohoodoo.libsyn.com/rss/unspeakable",
+				''=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		'Broken Sea Audio&#39;s Website'=>array(
+			'www'=>"http://brokensea.com/",
+			'rss'=>array(
+				'default'=>"",
+				'Feedback: A Hero&#039;s Calling'=>'http://brokensea.com/feedback/feed/',
+				'Doctor Who'=>"http://brokensea.com/drwho/feed/",
+				'Star Trek: Archimedes'=>"http://brokensea.com/archimedes/feed/",
+				'Ulysses Galactic Guides and Bounties Inc.'=>"http://www.brokensea.com/ulysses/feed/",
+				'Hyborean Saga'=>'http://brokensea.com/hyboreansagas/feed/',
+				'Maudelayne'=>'http://brokensea.com/maudelayne/feed/',
+				'Jake Sampson: Monster Hunter'=>'http://brokensea.com/jakesampson/feed/'
+				'Greenpond'=>'http://brokensea.com/greenpond/feed/',
+				'G.U.S.U.'=>'http://brokensea.com/gusu/feed/',
+				'Electric Grasshopper'=>'http://brokensea.com/electricgrasshopper/feed/',
+			),
+			'tags'=>"",
+		),
+		'Darker Projects'=>array(
+			'www'=>"http://darkerprojects.com/",
+			'rss'=>array(
+				'default'=>"",
+				'Quantum Retribution'=>"http://darkerprojects.com/feeds/Quantum_Retribution.xml",
+				'Star Trek &ndash; Lost Frontier'=>"http://feeds.feedburner.com/Star-Trek-Lost-Frontier",
+				'Tales From The Museum'=>"http://darkerprojects.com/feeds/Tales_From_The_Museum.xml",
+				'Dark Matter'=>"http://darkerprojects.com/feeds/DarkMatter.xml",
+				'Alive Inside'=>"http://darkerprojects.com/feeds/AliveInside.xml",
+				'Far Horizons'=>"http://darkerprojects.com/feeds/FarHorizons.xml",
+				'Falcon Banner'=>"http://darkerprojects.com/feeds/FalconBanner.xml",
+				'Sword Of Windsor'=>"http://darkerprojects.com/feeds/SwordOfWindsor.xml",
+				'Night Terrors'=>"http://darkerprojects.com/feeds/NightTerrors.xml",
+				'Byron Chronicles'=>"http://darkerprojects.com/feeds/ByronChronicles.xml",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
 	);
 ?>

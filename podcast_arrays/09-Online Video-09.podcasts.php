@@ -25,12 +25,5 @@
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
-			'rss'=>array(
-				'default'=>"",
-			),
-			'tags'=>"",
-		)
 	);
 ?>

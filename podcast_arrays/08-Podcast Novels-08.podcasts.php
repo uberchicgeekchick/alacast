@@ -53,11 +53,26 @@
 			),
 			'tags'=>"",
 		),
-		'The Library of Jack &amp; Shannon'=>array(
-			'www'=>"http://www.libraryofjs.com/",
+		'Librivox New Releases Podcast'=>array(
+			'www'=>"http://librivox.org/",
 			'rss'=>array(
-				'default'=>"http://www.libraryofjs.com/?feed=rss2",
+				'default'=>"http://feeds.feedburner.com/LibrivoxNewReleasesPodcast?format=xml",
 			),
+			'tags'=>"",
+		),
+		'Librivox Books Podcast'=>array(
+			'www'=>"http://librivox.org/",
+			'rss'=>array(
+				'default'=>"http://librivox.org/podcast.xml",
+			),
+			'tags'=>"",
+		),
+		'Lady From Day: Books I, II, & III'=>array(
+			'www'=>"http://www.ladyfromday.com/",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/LadyFromDay?format=xml",
+			),
+			'tags'=>"",
 		),
 		''=>array(
 			'www'=>"",
@@ -65,6 +80,41 @@
 				'default'=>"",
 			),
 			'tags'=>"",
-		)
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
+		),
 	);
 ?>
