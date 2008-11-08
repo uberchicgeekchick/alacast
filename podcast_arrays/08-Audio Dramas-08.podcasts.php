@@ -154,10 +154,10 @@
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'Circus-13 Productions'=>array(
+			'www'=>"http://www.circus13productions.com/",
 			'rss'=>array(
-				'default'=>"",
+				'default'=>"http://circus13.mypodcast.com/rss.xml",
 			),
 			'tags'=>"",
 		),

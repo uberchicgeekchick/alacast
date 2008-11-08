@@ -126,6 +126,7 @@
 				'Sword Of Windsor'=>"http://darkerprojects.com/feeds/SwordOfWindsor.xml",
 				'Night Terrors'=>"http://darkerprojects.com/feeds/NightTerrors.xml",
 				'Byron Chronicles'=>"http://darkerprojects.com/feeds/ByronChronicles.xml",
+				'Beta Flight'=>"http://brokensea.com/betaflight/feed",
 			),
 			'tags'=>"",
 		),

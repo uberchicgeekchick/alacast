@@ -1,15 +1,12 @@
 <?php
 	return array(
-		
-		'' => array(
-			'www' => "",
-			'rss' => ""
+		''=>array(
+			'www'=>"",
+			'rss'=>""
 		),
-		
 		'' => array(
-			'www' => "",
-			'rss' => ""
-		)
-		
+			'www'=>"",
+			'rss'=>""
+		),
 	);
 ?>
