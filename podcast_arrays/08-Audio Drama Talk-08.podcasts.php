@@ -130,24 +130,57 @@
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'Circus-13 Productions'=>array(
+			'www'=>"http://www.circus13productions.com/",
 			'rss'=>array(
-				'default'=>"",
+				'default'=>"http://circus13.mypodcast.com/rss.xml",
 			),
 			'tags'=>"",
 		),
-		''=>array(
+		'Cross Mass Productions'=>array(
 			'www'=>"",
+			'info'=>array(
+				'default'=>"",
+				'Estalvins Legacy'=>"Ranging across the many parallel, and not so parallel, alternate realities of the Cossmass. Things aren't right in the greater reality know as the Cossmass. It encompasses thousands upon thousands of alternate realities. The stability of the Cossmass has been weakening.",
+			),
 			'rss'=>array(
 				'default'=>"",
+				'Estalvins Legacy'=>"http://feeds.feedburner.com/cossmass%2festalvinslegacy?format=xml",
+				'Rebels of the Red Planet'=>"http://feeds.feedburner.com/cossmass/rebelsredplanet?format=xml",
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'Darker Projects&#39;'=>array(
+			'www'=>"http://darkerprojects.com/",
 			'rss'=>array(
 				'default'=>"",
+				'Quantum Retribution'=>"http://darkerprojects.com/feeds/Quantum_Retribution.xml",
+				'Star Trek &ndash; Lost Frontier'=>"http://feeds.feedburner.com/Star-Trek-Lost-Frontier",
+				'The Section 31 Files'=>"http://feeds.feedburner.com/TheSection31Files?format=xml",
+				'Pioneers'=>"http://feeds.feedburner.com/startrekpioneers?format=xml",
+				'Tales From The Museum'=>"http://darkerprojects.com/feeds/Tales_From_The_Museum.xml",
+				'Dark Matter'=>"http://darkerprojects.com/feeds/DarkMatter.xml",
+				'Alive Inside'=>"http://darkerprojects.com/feeds/AliveInside.xml",
+				'Far Horizons'=>"http://darkerprojects.com/feeds/FarHorizons.xml",
+				'Falcon Banner'=>"http://darkerprojects.com/feeds/FalconBanner.xml",
+				'Sword Of Windsor'=>"http://darkerprojects.com/feeds/SwordOfWindsor.xml",
+				'Night Terrors'=>"http://darkerprojects.com/feeds/NightTerrors.xml",
+				'Byron Chronicles'=>"http://darkerprojects.com/feeds/ByronChronicles.xml",
+			),
+			'tags'=>"",
+		),
+		'Curious Echoes'=>array(
+			'www'=>"http://www.curiousecho.org/wordpress/category/moon-wraith/",
+			'rss'=>array(
+				'default'=>"",
+				'Moon Wraith'=>"http://www.curiousecho.org/wordpress/category/moon-wraith/feed",
+			),
+			'tags'=>"",
+		),
+		'Fairy Tale Corner'=>array(
+			'www'=>"http://www.chestnutbay.com/ftc.htm",
+			'rss'=>array(
+				'default'=>"http://feeds.feedburner.com/FTC?format=xml",
 			),
 			'tags'=>"",
 		),

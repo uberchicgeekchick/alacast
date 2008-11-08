@@ -154,24 +154,18 @@
 			),
 			'tags'=>"",
 		),
-		'Circus-13 Productions'=>array(
-			'www'=>"http://www.circus13productions.com/",
+		'Star Trek: Diplomatic Relations'=>array(
+			'www'=>"http://www.startrekdiplomaticrelations.com/",
 			'rss'=>array(
-				'default'=>"http://circus13.mypodcast.com/rss.xml",
+				'default'=>"http://feeds.feedburner.com/StarTrekDiplomaticRelations?format=xml",
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'Never Was'=>array(
+			'www'=>"http://www.mcleanweb.ca/neverwas/index.php",
 			'rss'=>array(
-				'default'=>"",
-			),
-			'tags'=>"",
-		),
-		''=>array(
-			'www'=>"",
-			'rss'=>array(
-				'default'=>"",
+				'default'=>"",//"http://www.mcleanweb.ca/neverwas/index.php/feed/",
+				'Podango'=>"http://www.podango.com/feeds/feed.php?pid=1360&amid=1&returnType=all",
 			),
 			'tags'=>"",
 		),
