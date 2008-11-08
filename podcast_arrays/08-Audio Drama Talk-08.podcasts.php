@@ -184,10 +184,21 @@
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'Pendant Productions'=>array(
+			'www'=>"http://www.pendantaudio.com/",
 			'rss'=>array(
 				'default'=>"",
+				'Seminar'=>"http://www.pendantaudio.com/seminar-podcast.xml",
+				'Batman: The Ace of Detectives'=>"http://www.pendantaudio.com/batman_podcast.xml",
+				'Umket Industries Presents: The Dixie Stenberg and Brassy Battalion Adventure Theater'=>"http://www.pendantaudio.com/dixie-podcast.xml",
+				''=>"",
+				''=>"",
+				''=>"",
+				''=>"",
+				''=>"",
+				''=>"",
+				''=>"",
+				''=>"",
 			),
 			'tags'=>"",
 		),
@@ -195,6 +206,47 @@
 			'www'=>"",
 			'rss'=>array(
 				'default'=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+				''=>"",
+			),
+			'tags'=>"",
+		),
+		''=>array(
+			'www'=>"",
+			'rss'=>array(
+				'default'=>"",
+				''=>"",
 			),
 			'tags'=>"",
 		),

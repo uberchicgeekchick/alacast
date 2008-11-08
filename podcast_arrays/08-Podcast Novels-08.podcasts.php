@@ -74,10 +74,12 @@
 			),
 			'tags'=>"",
 		),
-		''=>array(
-			'www'=>"",
+		'DarkSide Sally'=>array(
+			'www'=>"http://darksidesally.com/",
 			'rss'=>array(
 				'default'=>"",
+				'Podnovel: Collapse At Hidden Verse Three Three Two'=>"http://www.podiobooks.com/title/collapse-at-hidden-verse-three-three-two/feed",
+				'Podcast Insanity'=>"http://podcast.darksidesally.com/podcasts-only/rss2.aspx",
 			),
 			'tags'=>"",
 		),
