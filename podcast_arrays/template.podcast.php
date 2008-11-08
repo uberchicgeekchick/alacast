@@ -2,11 +2,17 @@
 	return array(
 		''=>array(
 			'www'=>"",
-			'rss'=>""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 		'' => array(
 			'www'=>"",
-			'rss'=>""
+			'rss'=>array(
+				'default'=>"",
+			),
+			'tags'=>"",
 		),
 	);
 ?>
