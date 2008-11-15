@@ -1,100 +1,11 @@
-<?php
-	//art; programming, development, creativity, &uber podcasts
-	return array(
-		
-		'P3::C7Y' => array(
-			'www' => "http://c7y.phparch.com/",
-			'rss'=>array(
-				'default'=>"http://c7y.phparch.com/c/tag/podcast?feed=atom",
-			),
-			'tags'=>"",
-		),
-		
-		'PHP Podcasts' => array(
-			'www' => "http://www.phppodcasts.com/",
-			'rss'=>array(
-				'default'=>"http://www.phppodcasts.com/feed/",
-			),
-			'tags'=>"",/*,
-			'exp' => false
-			//whether to include this rss when exporting podcasts(i.e., in opml format)
-			*/
-		),
-		
-		'WebDev Radio' => array(
-			'www' => "http://www.webdevradio.com/",
-			'rss'=>array(
-				'default'=>"http://feeds.feedburner.com/WebdevradioPodcastHome",
-			),
-			'tags'=>"",
-		),
-		
-		'The ZendCon Sessions' => array(
-			'www' => "http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage",
-			'rss'=>array(
-				'default'=>"http://feeds.feedburner.com/ZendDeveloperZone",
-			),
-			'tags'=>"",
-		),
-		
-		'php_abstract' => array(
-			'www' => "http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers",
-			'rss'=>array(
-				'default'=>"http://feeds.feedburner.com/phpabstract",
-			),
-			'tags'=>"",
-		),
-		
-		/*'phpBB Podcast' => array(
-			'www' => "http://podcast.phpbb.com/",
-			'rss'=>array(
-				'default'=>"http://podcast.phpbb.com/feed/",
-			),
-			'tags'=>"",
-		),
-		
-		'phpBBweekly' => array(
-			'www' => "http://www.phpbbweekly.net/",
-			//'rss'=>array(
-				'default'=>"http://recordings.talkshoe.com/rss12418.xml",
-			),
-			'tags'=>"",
-			'rss'=>array(
-				'default'=>"http://feeds.feedburner.com/phpBBweekly",
-			),
-			'tags'=>"",
-		),
-		
-		'Lullabot&#39;s Drupal Podcast' => array(
-			'www' => "http://www.lullabot.com/podcast/",
-			'rss'=>array(
-				'default'=>"http://www.lullabot.com/podcast/feed",
-			),
-			'tags'=>"",
-		),
-		
-		'The WordPress Podcast' => array(
-			'www' => "http://wp-community.org/",
-			'rss'=>array(
-				'default'=>"http://wp-community.org/wp/?feed=podcast",
-			),
-			'tags'=>"",
-		),
-		
-		'The Show : The Show for CakePHP' => array(
-			'www' => "http://live.cakephp.org/",
-			'rss'=>array(
-				'default'=>"http://live.cakephp.org/shows/index.rss",
-			),
-			'tags'=>"",
-		),*/
-		
-		'' => array(
-			'www' => "",
-			'rss'=>array(
-				'default'=>"",
-			),
-			'tags'=>"",
-		)
-	);
-?>
+		<outline title='P3::C7Y' xmlUrl='http://c7y.phparch.com/c/tag/podcast?feed=atom' type='rss' text='P3::C7Y' htmlUrl='http://c7y.phparch.com/' description=''/>
+		<outline title='PHP Podcasts' xmlUrl='http://www.phppodcasts.com/feed/' type='rss' text='PHP Podcasts' htmlUrl='http://www.phppodcasts.com/' description=''/>
+		<outline title='WebDev Radio' xmlUrl='http://feeds.feedburner.com/WebdevradioPodcastHome' type='rss' text='WebDev Radio' htmlUrl='http://www.webdevradio.com/' description=''/>
+		<outline title='The ZendCon Sessions' xmlUrl='http://feeds.feedburner.com/ZendDeveloperZone' type='rss' text='The ZendCon Sessions' htmlUrl='http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage' description=''/>
+		<outline title='php_abstract' xmlUrl='http://feeds.feedburner.com/phpabstract' type='rss' text='php_abstract' htmlUrl='http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers' description=''/>
+		<outline title='phpBB Podcast' xmlUrl='http://podcast.phpbb.com/feed/' type='rss' text='phpBB Podcast' htmlUrl='http://podcast.phpbb.com/' description=''/>
+		<outline title='phpBBweekly' xmlUrl='http://recordings.talkshoe.com/rss12418.xml' type='rss' text='phpBBweekly' htmlUrl='http://www.phpbbweekly.net/' description=''/>
+ 		<outline title='phpBBweekly' xmlUrl='http://feeds.feedburner.com/phpBBweekly' type='rss' text='phpBBweekly' htmlUrl='http://www.phpbbweekly.com/' description=''/>
+		<outline title='Lullabot&#39;s Drupal Podcast' xmlUrl='http://www.lullabot.com/podcast/feed' type='rss' text='Lullabot&#39;s Drupal Podcast' htmlUrl='http://www.lullabot.com/podcast/' description=''/>
+		<outline title='The WordPress Podcast' xmlUrl='http://wp-community.org/wp/?feed=podcast' type='rss' text='The WordPress Podcast' htmlUrl='http://wp-community.org/' description=''/>
+		<outline title='The Show : The Show for CakePHP' xmlUrl='http://live.cakephp.org/shows/index.rss' type='rss' text='The Show : The Show for CakePHP' htmlUrl='http://live.cakephp.org/' description=''/>
