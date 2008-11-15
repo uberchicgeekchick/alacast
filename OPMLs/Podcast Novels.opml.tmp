@@ -1,12 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
-	<head>
-		<title>Podcast Novels</title>
-	</head>
-	<body>
-		<outline type='link' title='Podiobooks.com' url='http://www.podiobooks.com/' text='Podiobooks.com&#039;s homepage' description='Podiobooks.com - Free online serialized fiction.'/>
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='Antithesis, Book 1: Predestination and Other Games of Chance' text='Antithesis, Book 1: Predestination and Other Games of Chance' htmlUrl='http://www.jdsawyer.net/books/antithesis' xmlUrl='http://jdsawyer.net/?feed=podcast' type='rss' description=''/>
+<?PHP
+	/* ATTN:  Come on hon, work on: Alacast, gPodder, something more!
+	 * Please, don't get distracted working on these files!
+	 * Be proud to be an uberChick; Open Source Artist; a DevChick!
+	 *
+	 * So we all can get our communites &podcasts started growing - so I can find my place
+	 * Be proud &happy of being a welcome part of the community to which we belong;  something larger than myself.
+	 *
+	 * I'm above other things I'm a:
+	 * 	program, code, devevlop, engineer software.
+	 * Know it!  Feel it! Be it! Be proud of it!
+	 */
 		<outline title='The Metamor City Podcast' xmlUrl='' text='The Metamor City Podcast' htmlUrl='http://metamorcity.com/' description=''/>,
 		<outline title='Morevi: Remastered' xmlUrl='' text='Morevi: Remastered' htmlUrl='http://www.teemorris.com/morevipodcast/' description=''/>,
 		<outline title='Murder at Avedon Hill' xmlUrl='' text='Murder at Avedon Hill' htmlUrl='http://pgholyfield.com/maah/' description=''/>,
@@ -18,5 +21,3 @@
 		<outline title='Lady From Day: Books I, II, & III' xmlUrl='' text='Lady From Day: Books I, II, & III' htmlUrl='http://www.ladyfromday.com/' description=''/>,
 		<outline title='DarkSide Sally&#039;s Podnovel: Collapse At Hidden Verse Three Three Two' xmlUrl='http://www.podiobooks.com/title/collapse-at-hidden-verse-three-three-two/feed' text='DarkSide Sally' htmlUrl='http://darksidesally.com/' description=''/>
 		<outline title='Podiobooker' xmlUrl='http://feedproxy.google.com/podiobooker' text='Podiobooker' htmlUrl='http://www.podiobooks.com/blog/' description='News &amp; updates from the staff of Podiobooks.com'/>
-	</body>
-</opml>

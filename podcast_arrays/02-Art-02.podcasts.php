@@ -14,64 +14,64 @@
 	//art; programming, development, creativity, &uber podcasts
 	return array(
 		
-		'ill doctrine' => array(
-			'www' => "http://illdoctrine.com/",
+		'ill doctrine'=>array(
+			'www'=>"http://illdoctrine.com/",
 			'rss'=>array(
 				'default'=>"http://feeds.feedburner.com/illdoctrine",
 			),
 			'tags'=>"",
 		),
 		
-		'I Should Be Writing' => array(
-			'www' => "http://isbw.murlafferty.com/",
+		'I Should Be Writing'=>array(
+			'www'=>"http://isbw.murlafferty.com/",
 			'rss'=>array(
 				'default'=>"http://feeds.feedburner.com/IShouldBeWriting",
 			),
 			'tags'=>"",
 		),
 		
-		':: Le Laboratoire ::' => array(
-			'www' => "http://isbw.murlafferty.com/",
+		':: Le Laboratoire ::'=>array(
+			'www'=>"http://isbw.murlafferty.com/",
 			'rss'=>array(
 				'default'=>"http://www.lelaboratoire.org/fluxlabo_en_utf.xml",
 			),
 			'tags'=>"",
 		),
 		
-		'J. C. Hutchins' => array(
-			'www' => "http://jchutchins.net/",
+		'J. C. Hutchins'=>array(
+			'www'=>"http://jchutchins.net/",
 			'rss'=>array(
 				'default'=>"http://jchutchins.net/site/feed/rss/",
 			),
 			'tags'=>"",
 		),
 		
-		'Ink n Doodles Radio' => array(
-			'www' => "http://inkndoodles.com/category/podcasts/",
+		'Ink n Doodles Radio'=>array(
+			'www'=>"http://inkndoodles.com/category/podcasts/",
 			'rss'=>array(
 				'default'=>"http://feeds.feedburner.com/InknDoodlesRadio",
 			),
 			'tags'=>"",
 		),
 		
-		'The Merlin Mann Show' => array(
-			'www' => "http://themerlinshow.blip.tv/",
+		'The Merlin Mann Show'=>array(
+			'www'=>"http://themerlinshow.blip.tv/",
 			'rss'=>array(
 				'default'=>"http://themerlinshow.blip.tv/rss",
 			),
 			'tags'=>"",
 		),
 		
-		'' => array(
-			'www' => "",
+		''=>array(
+			'www'=>"",
 			'rss'=>array(
 				'default'=>"",
 			),
 			'tags'=>"",
 		),
 		
-		'' => array(
-			'www' => "",
+		''=>array(
+			'www'=>"",
 			'rss'=>array(
 				'default'=>"",
 			),

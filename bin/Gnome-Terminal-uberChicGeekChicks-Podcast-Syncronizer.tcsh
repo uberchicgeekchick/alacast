@@ -2,7 +2,7 @@
 
 set alacasts_path = `dirname "${0}"`
 set alacasts_exec = "${alacasts_path}/uberChicGeekChicks-Podcast-Syncronizer.php"
-set alacasts_options = "--update=detailed --logging --player=xine --interactive ${argv}"
+set alacasts_options = "--update=detailed --logging --player=xine --interactive"
 
 
 set alacasts_resolution = "";
@@ -19,6 +19,7 @@ endif
 /usr/bin/gnome-terminal \
 	--geometry="${alacasts_resolution}" \
 	--hide-menubar \
-	--title="uberChicGeekChick's Interactive Syncronizer" \
+	--profile="uberChicGeekChicks-Podcast-Syncronizer" \
+	--title="uberChicGeekChick's Podcast Syncronizer" \
 	--working-directory="${alacasts_path}" \
 	--command="${alacasts_exec} ${alacasts_options} ${argv}" &

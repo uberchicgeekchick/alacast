@@ -38,17 +38,27 @@
 	 * 	&& ||
 	 * 	"The Mentor's Last Words: The Hackers Manifesto"
 	 */
-	namespace alaccast::xml;
+	namespace uberChicGeekChicks;
 
-	class xml_reader extends xml_core {
+	class XML {
+		private $filename;
+		private $fp;
 
-		public function __construct() {
-		}//method: public function __construct();
+		public function __construct(&$filename) {
+			$this->filename=$filename;
+		}//__construct
 
+
+		private function open(){
+			if( (file_exists($this->filename)) )
+				$this->fp=fopen($this->filename);
+		}//open
 
 
 		public function __destruct() {
-		}//method: public function __destruct();
+			if( $this->fp )
+				fclose( $this->fp );
+		}//__destruct
 
 	}//namespace:template
 	

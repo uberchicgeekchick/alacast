@@ -20,3 +20,9 @@
 #	Coverting OPMLs to PHP Array:
 #		s/^.*title=\('[^']\+'\).*xmlUrl='\([^']\+\)'.*htmlUrl='\([^']\+\)'.*/\t\t\1=>array(\r\t\t\t'www'=>"\3",\r\t\t\t'rss'=>array(\r\t\t\t\t"\2",\r\t\t\t),\r\t\t),/
 #
+#	Converts PHP arrays to OPML items:
+#		With 'info' tags:
+#			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'info'=>"\([^"]\+\)"[,\t\r\n]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\4' type='rss' text=\1 htmlUrl='\2' description='\3'\/>/g
+#		Without 'info' tags:
+#			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\4' type='rss' text=\1 htmlUrl='\2' description=''\/>/g
+#
