@@ -24,5 +24,5 @@
 #		With 'info' tags:
 #			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'info'=>"\([^"]\+\)"[,\t\r\n]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\4' type='rss' text=\1 htmlUrl='\2' description='\3'\/>/g
 #		Without 'info' tags:
-#			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\4' type='rss' text=\1 htmlUrl='\2' description=''\/>/g
+#			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\3' type='rss' text=\1 htmlUrl='\2' description=''\/>/g
 #
