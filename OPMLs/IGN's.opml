@@ -1,0 +1,15 @@
+			<outline title='All Games' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fgames?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='All ofIGN&#039; Game podcasts' description=''/>
+			<outline title='Command Prompt' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fpc?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Command Prompt podcast' description=''/>
+			<outline title='GameScoop!' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fgamescoop?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: GameScoop! podcast' description=''/>
+			<outline title='GameSages' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fgamesages?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: GameSages podcast' description=''/>
+			<outline title='Nintendo Voice Chat' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fwii?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Nintendo Voice Chat podcast' description=''/>
+			<outline title='Podcast Beyond' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fbeyond?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Podcast Beyond podcast' description=''/>
+			<outline title='RetroCity' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fretro?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: RetroCity podcast' description=''/>
+			<outline title='Three Red Lights' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fxbox360?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Three Red Lights podcast' description=''/>
+			<outline title='To Catch an Editor' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2finsider?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: To Catch an Editor podcast' description=''/>
+
+			<outline title='All Entertainment' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fentertainment?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='All of IGN&#039; Entertainment podcasts' description=''/>
+			<outline title='Channel Surfing' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2ftv?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Channel Surfing podcast' description=''/>
+			<outline title='DVD Digigods' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fdigigods?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: DVD Digigods podcast' description=''/>
+			<outline title='Keepin&#039; it Reel' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fmovies?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Keepin&#039; it Reel podcast' description=''/>
+			<outline title='Tech Fetish' xmlUrl='http://feeds.ign.com/ignfeeds%2fpodcasts%2fgear?format=xml' type='rss' htmlUrl='http://www.ign.com/index/podcasts.html' text='IGN&#039;: Tech Fetish podcast' description=''/>
