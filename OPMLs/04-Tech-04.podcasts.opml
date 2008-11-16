@@ -1,5 +1,5 @@
 		<outline title='AlternaGeek' xmlUrl='http://alternageek.com/feed/' type='rss' text='AlternaGeek' htmlUrl='http://alternageek.com/' description=''/>
-		<outline title='Slashdot&#39;s Festival' xmlUrl='http://feeds.feedburner.com/slashdot%2faudio?format=xml' type='rss' text='Slashdot&#39;s Festival' htmlUrl='http://slashdot.org/' description=''/>
+		<outline title='Slashdot&#39;s Festival' xmlUrl='http://feeds.feedburner.com/slashdot/audio?format=xml' type='rss' text='Slashdot&#39;s Festival' htmlUrl='http://slashdot.org/' description=''/>
 		<outline title='TechOne' xmlUrl='http://www.podtech.net/home/category/techone/feed' type='rss' text='TechOne' htmlUrl='http://www.podtech.net/home/category/thetechoneshow' description=''/>
 		<outline title='Cranky Geeks' xmlUrl='http://rssnewsapps.ziffdavis.com/audioblogs/crankygeeks/cg.h.264.xml' type='rss' text='Cranky Geeks' htmlUrl='http://www.crankygeeks.com/' description=''/>
 		<outline title='dl.tv' xmlUrl='http://feeds.ziffdavis.com/ziffdavis/dltvdivxvideo' type='rss' text='dl.tv' htmlUrl='http://dl.tv/' description=''/>

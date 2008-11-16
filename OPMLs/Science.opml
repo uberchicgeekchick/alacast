@@ -6,7 +6,7 @@
 	<body>
 		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
 		<outline type='link' title='SciencePdcasters.Org' url='http://docartemis.com/sciencepodcasters/' text='SciencePdcasters.Org' description='SciencePdcasters.Org'/>
-		<outline title='This Week in Science' text='This Week in Science: The Kick-Ass Science Podcast' htmlUrl='http://twis.org/' xmlUrl='http://feeds.twis.org/twis%2fscience?format=xml' type='rss' description=''/>
+		<outline title='This Week in Science' text='This Week in Science: The Kick-Ass Science Podcast' htmlUrl='http://twis.org/' xmlUrl='http://feeds.twis.org/twis/science?format=xml' type='rss' description=''/>
 		<outline title='Diffusion Science Radio' text='Diffusion Science Radio' htmlUrl='http://www.diffusionradio.com/' xmlUrl='http://feeds.feedburner.com/diffusionradio?format=xml' type='rss' description='If you like a good, broad mix of Science - new science, hard science, pop science, historical science and very silly science, listen to Diffusion.'/>
 		<outline title='Explorations w/Michio Kaku' text='' htmlUrl='' xmlUrl='http://archive.wbai.org/files/xml/explora.xml' type='rss' description=''/>
 		<outline type='rss' title='CERN Podcast' htmlUrl='http://www.cernpodcast.com/' xmlUrl='http://www.cernpodcast.com/?feed=rss2' text='CERN Podcast: Podcasting the LHC.' description='Take the biggest experiment in the history of the universe (well, this universe anyway). Take some well known people from all sorts of walks of life. Take a former keyboard player from D:Ream, now a physics professor. Mix them altogether for half an hour or so to serve up a cocktail of entertaining chat shows with a bit of particle physics thrown in.'/>

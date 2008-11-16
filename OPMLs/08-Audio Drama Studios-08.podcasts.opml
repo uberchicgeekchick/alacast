@@ -41,7 +41,7 @@
 			'info'=>array(
 				'default'=>"",
 				'Estalvins Legacy'=>"Ranging across the many parallel, and not so parallel, alternate realities of the Cossmass. Things aren't right in the greater reality know as the Cossmass. It encompasses thousands upon thousands of alternate realities. The stability of the Cossmass has been weakening.",
-				'Estalvins Legacy'=>"http://feeds.feedburner.com/cossmass%2festalvinslegacy?format=xml",
+				'Estalvins Legacy'=>"http://feeds.feedburner.com/cossmass/estalvinslegacy?format=xml",
 				'Rebels of the Red Planet'=>"http://feeds.feedburner.com/cossmass/rebelsredplanet?format=xml",
 		<outline title='Darker Projects&#39;' xmlUrl='' type='rss' text='Darker Projects&#39;' htmlUrl='http://darkerprojects.com/' description=''/>,
 				'Quantum Retribution'=>"http://darkerprojects.com/feeds/Quantum_Retribution.xml",

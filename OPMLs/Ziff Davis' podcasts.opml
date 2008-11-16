@@ -9,6 +9,6 @@
 		<outline title='CrankyGeeks' text='' htmlUrl='http://crankygeeks.com/' xmlUrl='' type='rss' description='' />
 		<outline title='DL.TV' text='' htmlUrl='http://dl.tv/' xmlUrl='' type='rss' description='' />
 		<outline title='ExtremeTech' text='' htmlUrl='http://ExtremeTech.Com/' xmlUrl='' type='rss' description='' />
-		<outline title='PCMag Radio' text='' htmlUrl='http://www.pcmag.com/category2/0,1738,2007098,00.asp' xmlUrl='http://feeds.feedburner.com/ziffdavis%2fpcmagradio?format=xml' type='rss' description='' />
+		<outline title='PCMag Radio' text='' htmlUrl='http://www.pcmag.com/category2/0,1738,2007098,00.asp' xmlUrl='http://feeds.feedburner.com/ziffdavis/pcmagradio?format=xml' type='rss' description='' />
 	</body>
 </opml>
