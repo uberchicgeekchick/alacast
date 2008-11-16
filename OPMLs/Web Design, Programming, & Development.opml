@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <opml version='2.0'>
 	<head>
-		<title>Podcasts</title>
+		<title>Web Design, Programming, &amp; Development podcasts</title>
 	</head>
 	<body>
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline text="Learning Ruby on Rails, for Web Designers and Developers" title="Learning Rails" type="rss" xmlUrl="http://feeds.feedburner.com/learning-rails"/>
+		<outline title='sitepoint' xmlUrl='http://www.sitepoint.com/blogs/category/podcast/feed' type='rss' htmlUrl='http://www.sitepoint.com/blogs/category/podcast/' text='sitepoint podcast' description='News, opinion, and fresh thinking for web developers and designers. The official podcast of sitepoint.com.'/>
 		<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>
 	</body>
 </opml>
