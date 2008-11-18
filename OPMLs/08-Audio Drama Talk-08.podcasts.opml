@@ -1,5 +1,3 @@
-<?php
-	return array(
 		<outline title='The Sonic Society' xmlUrl='http://sonic.libsyn.com/rss' type='rss' text='The Sonic Society' htmlUrl='http://sonic.libsyn.com/' description=''/>
 		<outline title='Decoder Ring' xmlUrl='http://decoderring.libsyn.com/rss' type='rss' text='Decoder Ring' htmlUrl='http://decoderring.libsyn.com/' description=''/>
 		<outline title='Astral Audio Productions' xmlUrl='http://feeds.feedburner.com/astralaudio?format=xml' type='rss' text='Astral Audio Productions' htmlUrl='http://www.astralaudio.net/' description=''/>

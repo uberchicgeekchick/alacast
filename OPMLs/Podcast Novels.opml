@@ -5,18 +5,20 @@
 	</head>
 	<body>
 		<outline type='link' title='Podiobooks.com' url='http://www.podiobooks.com/' text='Podiobooks.com&#039;s homepage' description='Podiobooks.com - Free online serialized fiction.'/>
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='Antithesis, Book 1: Predestination and Other Games of Chance' text='Antithesis, Book 1: Predestination and Other Games of Chance' htmlUrl='http://www.jdsawyer.net/books/antithesis' xmlUrl='http://jdsawyer.net/?feed=podcast' type='rss' description=''/>
-		<outline title='The Metamor City Podcast' xmlUrl='' text='The Metamor City Podcast' htmlUrl='http://metamorcity.com/' description=''/>,
-		<outline title='Morevi: Remastered' xmlUrl='' text='Morevi: Remastered' htmlUrl='http://www.teemorris.com/morevipodcast/' description=''/>,
-		<outline title='Murder at Avedon Hill' xmlUrl='' text='Murder at Avedon Hill' htmlUrl='http://pgholyfield.com/maah/' description=''/>,
-		<outline title='DarkAge: A Fantasy Fiction Podcast Novel' xmlUrl='' text='DarkAge: A Fantasy Fiction Podcast Novel' htmlUrl='http://kirkcast.com/' description=''/>,
-		<outline title='Nights&#39; Knights' xmlUrl='' text='Nights&#39; Knights' htmlUrl='http://vamp.podshow.com/' description=''/>,
-		<outline title='Chasing the Bard' xmlUrl='' text='Chasing the Bard' htmlUrl='http://www.chasingthebard.com/' description=''/>,
-		<outline title='Librivox New Releases Podcast' xmlUrl='' text='Librivox New Releases Podcast' htmlUrl='http://librivox.org/' description=''/>,
-		<outline title='Librivox Books Podcast' xmlUrl='' text='Librivox Books Podcast' htmlUrl='http://librivox.org/' description=''/>,
-		<outline title='Lady From Day: Books I, II, & III' xmlUrl='' text='Lady From Day: Books I, II, & III' htmlUrl='http://www.ladyfromday.com/' description=''/>,
-		<outline title='DarkSide Sally&#039;s Podnovel: Collapse At Hidden Verse Three Three Two' xmlUrl='http://www.podiobooks.com/title/collapse-at-hidden-verse-three-three-two/feed' text='DarkSide Sally' htmlUrl='http://darksidesally.com/' description=''/>
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Podiobooker' xmlUrl='http://feedproxy.google.com/podiobooker' text='Podiobooker' htmlUrl='http://www.podiobooks.com/blog/' description='News &amp; updates from the staff of Podiobooks.com'/>
+		<outline title='Librivox New Releases Podcast' xmlUrl='' text='Librivox New Releases Podcast' htmlUrl='http://librivox.org/' description=''/>
+		<outline title='Librivox Books Podcast' xmlUrl='' text='Librivox Books Podcast' htmlUrl='http://librivox.org/' description=''/>
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Antithesis, Book 1: Predestination and Other Games of Chance' text='Antithesis, Book 1: Predestination and Other Games of Chance' htmlUrl='http://www.jdsawyer.net/books/antithesis' xmlUrl='http://jdsawyer.net/?feed=podcast' type='rss' description=''/>
+		<outline title='The Metamor City Podcast' xmlUrl='http://feeds.feedburner.com/metamorcity?format=xml' text='The Metamor City Podcast' htmlUrl='http://metamorcity.com/' description='A sci-fi/fantasy podcast series created by Chris Lester.'/>
+		<outline title='Morevi: Remastered' xmlUrl='http://feeds.feedburner.com/morevi?format=xml' text='Morevi: Remastered' htmlUrl='http://www.teemorris.com/morevipodcast/' description='The Official Podcast of Rafe and Askana.'/>
+		<outline title='Murder at Avedon Hill' xmlUrl='http://www.pgholyfield.com/maah/?feed=rss2' text='Murder at Avedon Hill' htmlUrl='http://pgholyfield.com/maah/' description='Murder at Avedon Hill Podcast Novel'/>
+		<outline title='DarkAge: A Fantasy Fiction Podcast Novel' xmlUrl='http://www.mevio.com/feeds/darkage.xml' text='DarkAge: A Fantasy Fiction Podcast Novel' htmlUrl='http://kirkcast.com/' description='A group of friends become trapped inside a fantasy role-playing game.'/>
+		<outline title='Nights&#39; Knights' xmlUrl='http://www.mevio.com/feeds/vamp.xml' text='Nights&#39; Knights' htmlUrl='http://vamp.podshow.com/' description='A vampire novel by Emerian Rich.'/>
+		<outline title='Chasing the Bard' xmlUrl='http://feeds.feedburner.com/ChasingTheBard?format=xml' text='Chasing the Bard' htmlUrl='http://www.chasingthebard.com/' description='Follow Shakespeare in to the Fey.'/>
+		<outline title='Lady From Day' xmlUrl='http://feeds.feedburner.com/LadyFromDay' text='Lady From Day: Books I, II, & III' htmlUrl='http://www.ladyfromday.com/' description='Lady from Day is a story about an adventurer Lia (Sophie Neveu) and her group of companions and their quest to save the princess Daschl Feyris (Cerhiunnhn) from her malady. The princess is cursed with an appetite that doesn&#039;t cease unless she is asleep. She is always hungry and has been eating all of the kingdom&#039;s food. Lia, her counterpart Siegfried (JauntyHat) roam Feyris and the outlying regions in search of a cure for the princess. Through their journey they meet up with some unexpected people and encounter some horrible creatures such as the gorlags (Emcgo, Moose, Klaymen) and beautiful places like Harper Wood. Come listen to the story over a course of three Books. View full cast and audio credits from production link'/>
+		<outline title='Collapse At Hidden Verse Three Three Two' xmlUrl='http://www.podiobooks.com/title/collapse-at-hidden-verse-three-three-two/feed' text='DarkSide Sally&#039;s Podnovel: Collapse At Hidden Verse Three Three Two' htmlUrl='http://darksidesally.com/' description=''/>
+		<outline title='Caryns Castle' xmlUrl='http://www.carynscastle.com/rss/cnw.xml' type='rss' htmlUrl='http://www.carynscastle.com/' text='Caryns Castle' description='Caryn&#039;s New World, The Valley of New Beginnings. A narrated adventure story about a single mother, her courage and persistence, a war, a new land where reality and fantasy are the norm and a host of dangerous encounters, clues, riddles and mysteries.'/>
 	</body>
 </opml>

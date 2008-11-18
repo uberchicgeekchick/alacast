@@ -26,3 +26,6 @@
 #		Without 'info' tags:
 #			1,$s/\('[^']\+'\)=>array([\r\n\t]\+'www'=>"\([^"]*\)"[,\r\n\t]\+'rss'=>array([,\r\n\t]\+'default'=>"\([^"]*\)"[\t\r\n),]*'tags'=>"",[\t\r\n]*),\c/<outline title=\1 xmlUrl='\3' type='rss' text=\1 htmlUrl='\2' description=''\/>/g
 #
+#	Reformating OPML outline entries to the order I prefer:
+#		1,$s/^\([\t]*<outline\) \(title='[^']*'\) \(text='[^']*'\) \(htmlUrl='[^']*'\) \(xmlUrl='[^']*'\) \(type='rss'\) \(description='[^']*'\)\ \(\/>\)$/\1 \2 \5 \6 \3 \4 \6 \7\8/g
+#

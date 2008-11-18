@@ -1,4 +1,4 @@
-		<outline title='Neo Hoo Doo Studios' xmlUrl='' type='rss' text='Neo Hoo Doo Studios' htmlUrl='http://neohoodoo.libsyn.com/' description=''/>,
+		<outline title='Neo Hoo Doo Studios' type='link' text='Neo Hoo Doo Studios' url='http://neohoodoo.libsyn.com/' description=''/>,
 				'19 Nocturne Boulevard'=>"http://neohoodoo.libsyn.com/rss/nocturne",
 				'The Unspeakable and the Inhuman'=>"http://neohoodoo.libsyn.com/rss/unspeakable",
 				''=>"",
@@ -6,7 +6,7 @@
 			),
 			'tags'=>"",
 		),
-		<outline title='Broken Sea Audio&#39;s Website' xmlUrl='' type='rss' text='Broken Sea Audio&#39;s Website' htmlUrl='http://brokensea.com/' description=''/>,
+		<outline title='Broken Sea Audio&#39;s Website' type='link' text='Broken Sea Audio&#39;s Website' url='http://brokensea.com/' description=''/>,
 				'Feedback: A Hero&#039;s Calling'=>'http://brokensea.com/feedback/feed/',
 				'Doctor Who'=>"http://brokensea.com/drwho/feed/",
 				'Star Trek: Archimedes'=>"http://brokensea.com/archimedes/feed/",
@@ -20,7 +20,7 @@
 			),
 			'tags'=>"",
 		),
-		<outline title='Darker Projects' xmlUrl='' type='rss' text='Darker Projects' htmlUrl='http://darkerprojects.com/' description=''/>,
+		<outline title='Darker Projects' type='link' text='Darker Projects' url='http://darkerprojects.com/' description=''/>,
 				'Quantum Retribution'=>"http://darkerprojects.com/feeds/Quantum_Retribution.xml",
 				'Star Trek &ndash; Lost Frontier'=>"http://feeds.feedburner.com/Star-Trek-Lost-Frontier",
 				'Tales From The Museum'=>"http://darkerprojects.com/feeds/Tales_From_The_Museum.xml",
@@ -35,7 +35,7 @@
 			),
 			'tags'=>"",
 		),
-		<outline title='Circus-13 Productions' xmlUrl='' type='rss' text='Circus-13 Productions' htmlUrl='http://www.circus13productions.com/' description=''/>
+		<outline title='Circus-13 Productions' type='link' text='Circus-13 Productions' url='http://www.circus13productions.com/' description=''/>
 		'Cross Mass Productions'=>array(
 			'www'=>"http://cossmass.co.uk/",
 			'info'=>array(
@@ -56,7 +56,7 @@
 				'Sword Of Windsor'=>"http://darkerprojects.com/feeds/SwordOfWindsor.xml",
 				'Night Terrors'=>"http://darkerprojects.com/feeds/NightTerrors.xml",
 				'Byron Chronicles'=>"http://darkerprojects.com/feeds/ByronChronicles.xml",
-		<outline title='Curious Echoes' xmlUrl='' type='rss' text='Curious Echoes' htmlUrl='http://www.curiousecho.org/wordpress/category/moon-wraith/' description=''/>,
+		<outline title='Curious Echoes' type='link' text='Curious Echoes' url='http://www.curiousecho.org/wordpress/category/moon-wraith/' description=''/>,
 				'Moon Wraith'=>"http://www.curiousecho.org/wordpress/category/moon-wraith/feed",
 		<outline title='Pendant Productions' xmlUrl='' type='rss' text='Pendant Productions' htmlUrl='http://www.pendantaudio.com/' description=''/>,
 				'Seminar'=>"http://www.pendantaudio.com/seminar-podcast.xml",
