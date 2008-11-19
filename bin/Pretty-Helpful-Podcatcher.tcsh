@@ -9,16 +9,22 @@ if ( "${?1}" == "0" || "${1}" == "" ) then
 endif
 switch ( "${1}" )
 	case "--silent":
+		shift
 		set what_to_output = "nothing"
 	breaksw
 	case "--quiet":
+		shift
 		set what_to_output = "very_lil"
 	breaksw
 	case "--verbose":
+		shift
 		set what_to_output = "everything"
 	breaksw
 	case "--dl_newest_only":
+		shift
 		set limit_episode = " | head -1"
+	breaksw
+	default:
 	breaksw
 endsw
 
@@ -30,7 +36,7 @@ endif
 echo "Downloading podcast's feed."
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 
-set title = `/usr/bin/grep -r '<title>' episodes.xml | sed 's/<title>\([^<]*\)<\/title>/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/'`
+set title = `/usr/bin/grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
 if ( ! -d "${title}" ) mkdir -p "${title}"
 
 #foreach current_title ( $titles )
@@ -42,9 +48,9 @@ if ( ! -d "${title}" ) mkdir -p "${title}"
 #	exit -1
 #end
 
-set episodes = `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+set episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
 
-set total_episodes = `grep --regexp 'enclosure.*url=' episodes.xml | sed '+s/^.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
+set total_episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
 
 
 printf "Downloading %s total episodes\n" "${total_episodes}"

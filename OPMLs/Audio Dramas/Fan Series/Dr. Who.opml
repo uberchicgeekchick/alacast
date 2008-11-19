@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Dr. Who Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Dr. Who: Audio Dramas' xmlUrl='http://www.dwad.net/podcast.xml' type='rss' htmlUrl='http://www.dwad.net/' text='Dr. Who&#039; Audio Drama Archive' description='The Doctor Who Audio Dramas is the world&#039;s longest running fan production of Doctor Who.  Started in 1982, this series spans five Doctors, a host of companions, and over 170 stories.'/>
+		<outline title='Doctor Who Fan Audio' xmlUrl='http://feeds.feedburner.com/dredoctorwho?format=xml' type='rss' htmlUrl='http://www.dregold.net/DOCTOR%20WHO.htm' text='DRE Presents: Doctor Who Fan Audio' description='Are you a fan of the BBC&#039;s Doctor Who? If you are, you won&#039;t want to miss DRE&#039;s take on the classic series! Join the Doctor and his companions for thrilling original full-length adventures not available anywhere else!'/>
+	</body>
+</opml>

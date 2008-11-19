@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Star Trek inspired podcasts</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Star Trek: Dimensions' xmlUrl='http://feeds.feedburner.com/GGP_StarTrekDimensions?format=xml' type='rss' htmlUrl='http://giantgnome.com/std.html' text='Star Trek: Dimensions' description=''/>
+	</body>
+</opml>
