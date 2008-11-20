@@ -1,5 +1,5 @@
 #!/usr/bin/tcsh -f
-setenv PATH "/usr/bin"
+setenv PATH "/bin:/usr/bin:/usr/local/bin"
 rehash
 set what_to_output = "default"
 
