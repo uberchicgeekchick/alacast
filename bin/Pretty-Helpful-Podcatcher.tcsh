@@ -1,4 +1,6 @@
-#!/bin/tcsh
+#!/usr/bin/tcsh -f
+setenv PATH "/usr/bin"
+rehash
 set what_to_output = "default"
 
 set limit_episodes = ""
@@ -39,14 +41,12 @@ wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 set title = `/usr/bin/grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
 if ( ! -d "${title}" ) mkdir -p "${title}"
 
-#foreach current_title ( $titles )
-#	set title = ""
-#	while ( `echo "${current_title}" | sed /[^\"]/` )
-#		set title = "${title} ${current_title}"
-#	end
-#	echo "-->${title}<--"
-#	exit -1
-#end
+#et titles = `"grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1\n/g' | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g'"`
+#oreach title ( $titles )
+#echo "-->${title}<--"
+#nd
+#rintf "%s" ${titles}
+#xit
 
 set episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
 
