@@ -6,10 +6,11 @@
 	<body>
 		<!--<outline type='link' title='' url='http:///' text='' description=''/>-->
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline title='Escape Pod' type='rss' xmlUrl='http://escapepod.org/podcast.xml' text='The Science Fiction Podcast Magazine' htmlUrl='http://escapepod.org/'/>
-		<outline title='PodCastle' type='rss' xmlUrl='http://feeds.escapeartists.net/PodCastle_Main?format=xml'text='The Fantasy Podcast Magazine' />
-		<outline text='The Sound of Horror' title='Pseudopod' type='rss' xmlUrl='http://feeds.pseudopod.org/Pseudopod?format=xml'/>
+		<outline title='Prometheus Radio Theatre' xmlUrl='http://www.prometheusradiotheatre.com/' type='rss' htmlUrl='http://prometheus.libsyn.com/rss' text='Prometheus Radio Theatre' description='Prometheus Radio Theatre features all-original Science Fiction and Horror audio theatre content.'/>
+		<outline title='Escape Pod' xmlUrl='http://escapepod.org/podcast.xml' type='rss' htmlUrl='http://escapepod.org/' text='Escape Pod' description='The Science Fiction Podcast Magazine.'/>
+		<outline title='PodCastle' xmlUrl='http://feeds.escapeartists.net/PodCastle_Main?format=xml' type='rss' text='Podcastle' description='The Fantasy Podcast Magazine'/>
+		<outline title='Pseudopod' xmlUrl='http://feeds.pseudopod.org/Pseudopod?format=xml' type='rss' text='Pseudopod' description='The Sound of Horror'/>
 		<outline title='clonepod' xmlUrl='http://feeds.feedburner.com/clonepod?format=xml' type='rss' htmlUrl='http://www.clonepod.org/' text='clonepod' description='Voices of the Future, Podcasting Today&#039;s Science Fiction and Fantasy Join the Clones every other week for an exciting science fiction or fantasy story brought to you by the Clonepod team for your listening pleasure.'/>
-		<outline title='The Sonic Society' type='rss' xmlUrl='http://sonic.libsyn.com/rss' htmlUrl='http://sonicsociety.org/' text='Highlighting modern audio drama around the world.'/>
+		<outline title='The Sonic Society' xmlUrl='http://sonic.libsyn.com/rss' type='rss' htmlUrl='http://sonicsociety.org/' text='The Sonic Society' description='Highlighting modern audio drama around the world.'/>
 	</body>
 </opml>

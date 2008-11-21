@@ -8,8 +8,6 @@
 		<outline type='link' title='Podiobooks.com' url='http://www.podiobooks.com/' text='Podiobooks.com&#039;s homepage' description='Podiobooks.com - Free online serialized fiction.'/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Podiobooker' xmlUrl='http://feedproxy.google.com/podiobooker' type='rss' text='Podiobooker' htmlUrl='http://www.podiobooks.com/blog/' description='News &amp; updates from the staff of Podiobooks.com'/>
-		<outline title='Librivox New Releases Podcast' xmlUrl='http://feeds.feedburner.com/LibrivoxNewReleasesPodcast?format=xml' text='Librivox New Releases Podcast' htmlUrl='http://librivox.org/' description='A biweekly listing of recent new releases from librivox.org'/>
-		<outline title='Librivox Audiobooks Podcast' xmlUrl='http://librivox.org/podcast.xml' text='Librivox Books Podcast' htmlUrl='http://librivox.org/' description='Free, public domain audio books, recorded by volunteers'/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Antithesis, Book 1: Predestination and Other Games of Chance' text='Antithesis, Book 1: Predestination and Other Games of Chance' htmlUrl='http://www.jdsawyer.net/books/antithesis' xmlUrl='http://jdsawyer.net/?feed=podcast' type='rss' description=''/>
 		<outline title='The Metamor City Podcast' xmlUrl='http://feeds.feedburner.com/metamorcity?format=xml' text='The Metamor City Podcast' htmlUrl='http://metamorcity.com/' description='A sci-fi/fantasy podcast series created by Chris Lester.'/>

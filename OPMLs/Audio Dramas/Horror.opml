@@ -7,5 +7,6 @@
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Mercy Bend' xmlUrl='http://www.mevio.com/feeds/mercybend.xml' type='rss' htmlUrl='http://mercybend.mevio.com/' text='Mercy Bend' description='They sit in a dark corner of The Hell Hole Tavern, escaped residents of the Mercy Bend Sanitarium, failed experiments of secret government experiments.  The sit in the tavern and dream of lives that have been lived, lives that are being lived, and lives that will one day occur.  They will tell you these tales if you buy them a beer, but beware, you may not like what you hear.'/>
+		<outline title='Horror Addicts' xmlUrl='http://www.mevio.com/feeds/horroraddicts.xml' type='rss' htmlUrl='http://www.horroraddicts.net/' text='Horror Addicts' description='A horror podcast for all horror writers, artists, musicians, gamers, and fanatics.'/>
 	</body>
 </opml>

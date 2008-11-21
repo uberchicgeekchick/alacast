@@ -5,7 +5,9 @@
 	</head>
 	<body>
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<outline title='Star Wars Fanworks' url='http://www.starwarsfanworks.com/' type='link' text='Star Wars Fanworks' description=''/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Star Trek: Dimensions' xmlUrl='http://feeds.feedburner.com/GGP_StarTrekDimensions?format=xml' type='rss' htmlUrl='http://giantgnome.com/std.html' text='Star Trek: Dimensions' description=''/>
+		<outline title='Star Trek: Excelsior' xmlUrl='http://feeds.feedburner.com/StarTrekExcelsior' type='rss' htmlUrl='http://starshipexcelsior.com/' text='Star Trek: Excelsior' description='In the year 2382, seven years after the Dominion War, the Federation has opened the Delta Quadrant to exploration, with the Starship Excelsior at the front lines of Task Force 38: Defense Force Delta.  Released semi-monthly or better.'/>
 	</body>
 </opml>
