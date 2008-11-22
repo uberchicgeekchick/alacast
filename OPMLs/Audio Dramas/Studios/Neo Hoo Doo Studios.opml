@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Neo Hoo Doo Studios</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<outline title='Neo Hoo Doo Studios' type='link' text='Neo Hoo Doo Studios' url='http://neohoodoo.libsyn.com/' description=''/>
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='19 Nocturne Boulevard' xmlUrl='http://neohoodoo.libsyn.com/rss/nocturne' type='rss' htmlUrl='http://neohoodoo.libsyn.com/' text='19 Nocturne Boulevard' description=''/>
+		<outline title='The Unspeakable and the Inhuman' xmlUrl='http://neohoodoo.libsyn.com/rss/unspeakable' type='rss' htmlUrl='http://neohoodoo.libsyn.com/' text='The Unspeakable and the Inhuman' description=''/>
+	</body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Pendant Productions&#039; podcasts</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<outline title='Pendant Productions' type='link' url='http://www.pendantaudio.com/' text='' description=''/>
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Star Trek: Defiant' xmlUrl='http://www.pendantaudio.com/defiant_podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/defiant.php' text='Star Trek: Defiant' description=''/>
+		<outline title='Seminar' xmlUrl='http://www.pendantaudio.com/seminar-podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/seminar.php' text='Seminar' description=''>
+		<outline title='Batman: The Ace of Detectives' xmlUrl='http://www.pendantaudio.com/batman_podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/batman.php' text='Batman: The Ace of Detectives' description=''>
+		<outline title='Umket Industries Presents: The Dixie Stenberg and Brassy Battalion Adventure Theater' xmlUrl='http://www.pendantaudio.com/dixie-podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/dixie.php' text='Umket Industries Presents: The Dixie Stenberg and Brassy Battalion Adventure Theater' description=''>
+	</body>
+</opml>
