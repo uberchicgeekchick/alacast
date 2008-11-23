@@ -7,7 +7,6 @@
 		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Project: Shadow Informant' xmlUrl='http://www.mevio.com/feeds/projectshadow.xml' type='rss' htmlUrl='http://projectshadow.com/' text='P:SI - Project: Shadow Informant' description='The P:SI is a vision, come to life. It’s goal: to gather dashPunk fans, by creating a place where fans of different media, series, and genres can explore their infinite diversity through infinite combinations.'/>-->
-		<outline type='rss' title='soccer girl inc.' htmlUrl='http://soccergirlwp.mevio.com/' xmlUrl='http://www.mevio.com/feeds/soccergirlincorporated.xml' text='' description=''/>
-		<outline title='The Zombie Chronicles: Escape' xmlUrl='http://www.podiobooks.com/title/the-zombie-chronicles-escape/feed/' type='rss' htmlUrl='http://jamesmelzer.net/' text='' description=''/>
+		<outline type='rss' title='soccer girl inc.' htmlUrl='http://soccergirlwp.mevio.com/' xmlUrl='http://www.mevio.com/feeds/soccergirlincorporated.xml' text='soccer girl inc.' description=''/>
 	</body>
 </opml>

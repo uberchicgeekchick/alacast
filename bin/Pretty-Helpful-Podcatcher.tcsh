@@ -30,7 +30,7 @@ switch ( "${1}" )
 	breaksw
 endsw
 
-if ( "${?2}" == "1" && ${2} >= 1 ) then
+if ( "${?2}" == "1" && ${#2} >= 1 ) then
 		set limit_episodes = " | head -${2}"
 	endif
 endif
@@ -53,7 +53,7 @@ set episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\
 set total_episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
 
 
-printf "Downloading %s total episodes\n" "${total_episodes}"
+printf "Found %s total episodes\n" "${total_episodes}"
 
 foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
@@ -64,12 +64,21 @@ foreach episode ( $episodes )
 #	endif
 
 	switch ( "${episodes_filename}" )
-		case -e:
-		case "theend.mp3":
-		case "caughtup.mp3":
-		case "caught_up_1.mp3":
-			echo "Skipping ${episodes_filename}"
-			continue
+	case -e:
+	case "theend.mp3":
+	case "caughtup.mp3":
+	case "caught_up_1.mp3":
+		echo "Skipping ${episodes_filename}"
+		continue
+		breaksw
+	endsw
+
+	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
+	switch ( "${is_commentary}" )
+	case "Commentary":
+	case "commentary":
+		echo "Skipping commentary episode: ${episodes_filename}"
+		continue
 		breaksw
 	endsw
 
