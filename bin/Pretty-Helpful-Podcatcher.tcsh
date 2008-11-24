@@ -7,8 +7,8 @@ if ( "${?1}" == "0" || "${1}" == "" ) then
 	exit -1
 endif
 
-set limit_episodes = "${2}"
-if ( "${?2}" == "1" && ${#limit_episodes} >= 1 ) then
+set limit_episodes = ""
+if ( "${?2}" == "1" && ${2} >= 1 ) then
 	set limit_episodes = " | head -${2}"
 else
 	set limit_episodes = ""
@@ -27,13 +27,18 @@ switch ( "${1}" )
 		shift
 		set what_to_output = "everything"
 	breaksw
-	case "--dl_newest_only":
+	case "--newest":
 		shift
 		set limit_episodes = " | head -1"
 	breaksw
 	default:
 	breaksw
 endsw
+
+# TODO
+# I need to implement support for limiting how many enclosures are downloaded, maybe.
+# I will actually prolly just drop this feature as I get closer to releasing Alacast 2.0 alapha.
+set limit_episodes = ""
 
 echo "Downloading podcast's feed."
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
