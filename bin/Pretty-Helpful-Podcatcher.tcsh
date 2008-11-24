@@ -1,14 +1,19 @@
 #!/usr/bin/tcsh -f
-setenv PATH "/bin:/usr/bin:/usr/local/bin"
-rehash
-set what_to_output = "default"
 
-set limit_episodes = ""
+set what_to_output = "default"
 
 if ( "${?1}" == "0" || "${1}" == "" ) then
 	printf "Usage: %s RSS_URI\n" `basename ${0}`
 	exit -1
 endif
+
+set limit_episodes = "${2}"
+if ( "${?2}" == "1" && ${#limit_episodes} >= 1 ) then
+	set limit_episodes = " | head -${2}"
+else
+	set limit_episodes = ""
+endif
+
 switch ( "${1}" )
 	case "--silent":
 		shift
@@ -24,16 +29,11 @@ switch ( "${1}" )
 	breaksw
 	case "--dl_newest_only":
 		shift
-		set limit_episode = " | head -1"
+		set limit_episodes = " | head -1"
 	breaksw
 	default:
 	breaksw
 endsw
-
-if ( "${?2}" == "1" && ${#2} >= 1 ) then
-		set limit_episodes = " | head -${2}"
-	endif
-endif
 
 echo "Downloading podcast's feed."
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`

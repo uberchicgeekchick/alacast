@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <opml version='2.0'>
 	<head>
-		<title>Podcasts</title>
+		<title>CrossMass Productions</title>
 	</head>
 	<body>
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<outline title='Circus-13 Productions' type='link' text='Circus-13 Productions' url='http://www.circus13productions.com/' description=''/>
+		<outline title='Crossmass Productions' type='link' text='CrossMass Productions' url='http://crossmass.co.uk/' description=''/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='Estalvins Legacy' xmlUrl='http://feeds.feedburner.com/cossmass/estalvinslegacy?format=xml' type='rss' htmlUrl='http://crossmass.co.uk/' text='Estalvins Legacy' description='<[!CDATA[Ranging across the many parallel, and not so parallel, alternate realities of the Cossmass. Things aren&#039;t right in the greater reality know as the Cossmass. It encompasses thousands upon thousands of alternate realities. The stability of the Cossmass has been weakening.]]>'/>
 		<outline title='Rebels of the Red Planet' xmlUrl='http://feeds.feedburner.com/cossmass/rebelsredplanet?format=xml' type='rss' htmlUrl='http://crossmass.co.uk/' text='Rebels of the Red Planet' description=''/>

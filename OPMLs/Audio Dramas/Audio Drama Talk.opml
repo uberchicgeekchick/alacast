@@ -5,6 +5,8 @@
 	</head>
 	<body>
 		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<outline title='Audio Drama Talk' url='http://audiodramatalk.com/' type='link' text='Audio Drama Talk' description=''/>-->
+		<outline title='Circus-13 Productions' type='link' text='Circus-13 Productions' url='http://www.circus13productions.com/' description=''/>
 		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
 		<outline title='The Sonic Society' xmlUrl='http://sonic.libsyn.com/rss' type='rss' htmlUrl='http://sonic.libsyn.com/' text='The Sonic Society' description=''/>
 		<outline title='Decoder Ring' xmlUrl='http://decoderring.libsyn.com/rss' type='rss' htmlUrl='http://decoderring.libsyn.com/' text='Decoder Ring' description=''/>

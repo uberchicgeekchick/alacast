@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>BTR Productions</title>
+	</head>
+	<body>
+		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
+		<outline title='BTR Productions' url='http://www.btrproductions.org/' type='link' text='BTR Productions' description=''/>
+		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Doctor Who' xmlUrl='http://feeds.feedburner.com/btrdwcd?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Doctor Who' description='Join the BTR Ninth Doctor and his companions as they travel across Time and Space, fight monsters, and save planets. One of the most popular fan audio series ever!'/>
+		<outline title='Doctor Who: Short Trips & Side Steps' xmlUrl='http://feeds.feedburner.com/btrdwstss?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Doctor Who: Short Trips & Side Steps' description='A collection of both serious and comedic adventures across space and time with that mysterious traveller known only as Doctor Who!'/>
+		<outline title='Blakes Legacy: Restoration' xmlUrl='http://feeds.feedburner.com/btrb7cd?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Blakes Legacy: Restoration' description='The legend of Roj Blake, Kerr Avon, and the crew of the Liberator lives on with a new band of rebels fighting a new cause, but still against the same Federation!'/>
+	</body>
+</opml>
