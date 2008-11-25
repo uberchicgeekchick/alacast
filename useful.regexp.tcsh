@@ -28,4 +28,8 @@
 #
 #	Reformating OPML outline entries to the order I prefer:
 #		1,$s/^\([\t]*<outline\) \(title='[^']*'\) \(text='[^']*'\) \(htmlUrl='[^']*'\) \(xmlUrl='[^']*'\) \(type='rss'\) \(description='[^']*'\)\ \(\/>\)$/\1 \2 \5 \6 \3 \4 \6 \7\8/g
-#
+# 
+#	Reordering <outline/> 'title' to the front of the outline:
+#		1,$s/^\([\t]\+\)\(<outline \)\(.*\)\(title='[^']\+' \)\(.*\)$/\1\2\4\3\5/g
+#		1,$s/^\([\t]\+<outline \)\(.*\)\(htmlUrl='[^']*' \)\(.*\)\(description='[^']*'\/>\)$/\1\2\4\3\5/g
+#		1,$s/^\([\t]\+<outline title='[^']*' xmlUrl='[^']*' \)\(.*\)\(type='rss' \)\(.*\)\(description='[^']*'\/>\)$/\1\3\2\4\5/g

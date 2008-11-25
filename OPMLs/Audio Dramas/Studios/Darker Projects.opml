@@ -4,16 +4,40 @@
 		<title>Darker Projects</title>
 	</head>
 	<body>
-		<outline type='link' title='' url='http://www.darkerprojects.com/' text='' description='Homepage'/>
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='Tales From The Museum' text='Tales From The Museum' htmlUrl='http://www.darkerprojects.com/tales_from_the_museum.html' xmlUrl='http://feeds.feedburner.com/TalesFromTheMuseum?format=xml' type='rss' description=''/>
-		<outline title='Batman: No Man&#039;s Land' text='' htmlUrl='http://www.darkerprojects.com/nomansland.html' xmlUrl='http://feeds.feedburner.com/BatmanNoMansLand?format=xml' type='rss' description=''/>
-		<outline title='Doctor Who ' text='Doctor Who ' htmlUrl='http://www.darkerprojects.com/doctorwho.html' xmlUrl='http://feeds.feedburner.com/DoctorWhoTimeTales?format=xml' type='rss' description=''/>
-		<outline title='Star Trek - Lost Frontier' text='Star Trek - Lost Frontier' htmlUrl='http://www.darkerprojects.com/lostfrontier.html' xmlUrl='http://feeds.feedburner.com/Star-Trek-Lost-Frontier?format=xml' type='rss' description=''/>
-		<outline type='rss' title='The Falcon Banner' htmlUrl='http://www.darkerprojects.com/falconbanner.html' xmlUrl='http://feeds.feedburner.com/thefalconbanner?format=xml' text='The Falcon Banner' description=''/>
-		<outline title='The Byron Chronicles' text='The Byron Chronicles' htmlUrl='http://www.darkerprojects.com/byronchronicles.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsTheByronChronicles?format=xml' type='rss' description=''/>
-		<outline title='Gothik' htmlUrl='' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGothik?format=xml' type='rss' text='Gothik' description='An original horror audio drama set in a city where the sun never rises ... where the supernatural explains what science cannot ... where modern man and ancient myths collide ... and monsters are very, very real.'/>
-		<outline type='rss' title='Generation 1' htmlUrl='http://www.darkerprojects.com/generation1.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGeneration1?format=xml' text='Generation 1' description=''/>
-		<outline type='rss' title='Alive Inside' htmlUrl='http://www.darkerprojects.com/aliveinside.html' xmlUrl='http://feeds.feedburner.com/DarkerProjectsAliveInside?format=xml' text='Alive Inside' description='The human race? Forget about them. Laid waste by the Great Catastrophe, the remnants of humanity fight for survival is a world scarred by a plague that causes the dead to walk again. Now, the zombie hordes add to their infernal ranks with every fresh victim.&nbsp; Can a bold venture across the wastelands of the former United States of America hold the key to our salvation? Or does the future belong to the zombies? '/>
+		<outline title='Darker Projects' type='link' url='http://www.darkerprojects.com/' text='Darker Projects' description='Audio Fiction, with a Darker side.'/>
+		<!--<outline xmlUrl='' title='' type='rss' htmlUrl='' text='' description=''/>-->
+		<outline title='Tales From The Museum' text='Tales From The Museum' xmlUrl='http://feeds.feedburner.com/TalesFromTheMuseum?format=xml' type='rss' htmlUrl='http://www.darkerprojects.com/tales_from_the_museum.html' description=''/>
+		<outline title='Batman: No Man&#039;s Land' text='' xmlUrl='http://feeds.feedburner.com/BatmanNoMansLand?format=xml' type='rss' htmlUrl='http://www.darkerprojects.com/nomansland.html' description=''/>
+		<outline title='Doctor Who ' text='Doctor Who ' xmlUrl='http://feeds.feedburner.com/DoctorWhoTimeTales?format=xml' type='rss' htmlUrl='http://www.darkerprojects.com/doctorwho.html' description=''/>
+		<outline title='Star Trek - Lost Frontier' text='Star Trek - Lost Frontier' xmlUrl='http://feeds.feedburner.com/Star-Trek-Lost-Frontier?format=xml' type='rss' htmlUrl='http://www.darkerprojects.com/lostfrontier.html' description=''/>
+		<outline title='The Falcon Banner' type='rss' xmlUrl='http://feeds.feedburner.com/thefalconbanner?format=xml' text='The Falcon Banner' htmlUrl='http://www.darkerprojects.com/falconbanner.html' description=''/>
+		<outline title='The Byron Chronicles' text='The Byron Chronicles' xmlUrl='http://feeds.feedburner.com/DarkerProjectsTheByronChronicles?format=xml' type='rss' htmlUrl='http://www.darkerprojects.com/byronchronicles.html' description=''/>
+		<outline title='Gothik' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGothik?format=xml' type='rss' text='Gothik' htmlUrl='' description='An original horror audio drama set in a city where the sun never rises ... where the supernatural explains what science cannot ... where modern man and ancient myths collide ... and monsters are very, very real.'/>
+		<outline title='Generation 1' type='rss' xmlUrl='http://feeds.feedburner.com/DarkerProjectsGeneration1?format=xml' text='Generation 1' htmlUrl='http://www.darkerprojects.com/generation1.html' description=''/>
+		<outline title='Alive Inside' type='rss' xmlUrl='http://feeds.feedburner.com/DarkerProjectsAliveInside?format=xml' text='Alive Inside' htmlUrl='http://www.darkerprojects.com/aliveinside.html' description='The human race? Forget about them. Laid waste by the Great Catastrophe, the remnants of humanity fight for survival is a world scarred by a plague that causes the dead to walk again. Now, the zombie hordes add to their infernal ranks with every fresh victim.&nbsp; Can a bold venture across the wastelands of the former United States of America hold the key to our salvation? Or does the future belong to the zombies? '/>
+		<outline title='Quantum Retribution' xmlUrl='http://darkerprojects.com/feeds/Quantum_Retribution.xml' type='rss' text='Quantum Retribution' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Star Trek &ndash; Lost Frontier' xmlUrl='http://feeds.feedburner.com/Star-Trek-Lost-Frontier' type='rss' text='Star Trek &ndash; Lost Frontier' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Tales From The Museum' xmlUrl='http://darkerprojects.com/feeds/Tales_From_The_Museum.xml' type='rss' text='Tales From The Museum' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Dark Matter' xmlUrl='http://darkerprojects.com/feeds/DarkMatter.xml' type='rss' text='Dark Matter' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Alive Inside' xmlUrl='http://darkerprojects.com/feeds/AliveInside.xml' type='rss' text='Alive Inside' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Far Horizons' xmlUrl='http://darkerprojects.com/feeds/FarHorizons.xml' type='rss' text='Far Horizons' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Falcon Banner' xmlUrl='http://darkerprojects.com/feeds/FalconBanner.xml' type='rss' text='Falcon Banner' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Sword Of Windsor' xmlUrl='http://darkerprojects.com/feeds/SwordOfWindsor.xml' type='rss' text='Sword Of Windsor' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Night Terrors' xmlUrl='http://darkerprojects.com/feeds/NightTerrors.xml' type='rss' text='Night Terrors' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Byron Chronicles' xmlUrl='http://darkerprojects.com/feeds/ByronChronicles.xml' type='rss' text='Byron Chronicles' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Beta Flight' xmlUrl='http://brokensea.com/betaflight/feed' type='rss' text='Beta Flight' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Quantum Retribution' xmlUrl='http://darkerprojects.com/feeds/Quantum_Retribution.xml' type='rss' text='Quantum Retribution' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Star Trek: Lost Frontier' xmlUrl='http://feeds.feedburner.com/Star-Trek-Lost-Frontier' type='rss' text='Star Trek &ndash; Lost Frontier' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Star Trek: The Section 31 Files' xmlUrl='http://feeds.feedburner.com/TheSection31Files?format=xml' type='rss' text='The Section 31 Files' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Star Trek: Pioneers' xmlUrl='http://feeds.feedburner.com/startrekpioneers?format=xml' type='rss' text='Pioneers' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Tales From The Museum' xmlUrl='http://darkerprojects.com/feeds/Tales_From_The_Museum.xml' type='rss' text='Tales From The Museum' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Dark Matter' xmlUrl='http://darkerprojects.com/feeds/DarkMatter.xml' type='rss' text='Dark Matter' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Alive Inside' xmlUrl='http://darkerprojects.com/feeds/AliveInside.xml' type='rss' text='Alive Inside' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Far Horizons' xmlUrl='http://darkerprojects.com/feeds/FarHorizons.xml' type='rss' text='Far Horizons' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Falcon Banner' xmlUrl='http://darkerprojects.com/feeds/FalconBanner.xml' type='rss' text='Falcon Banner' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Sword Of Windsor' xmlUrl='http://darkerprojects.com/feeds/SwordOfWindsor.xml' type='rss' text='Sword Of Windsor' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Night Terrors' xmlUrl='http://darkerprojects.com/feeds/NightTerrors.xml' type='rss' text='Night Terrors' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='Byron Chronicles' xmlUrl='http://darkerprojects.com/feeds/ByronChronicles.xml' type='rss' text='Byron Chronicles' htmlUrl='http://darkerprojects.com/' description=''/>
+		<outline title='ZomPod' xmlUrl='http://feedproxy.google.com/darkerprojectszompod?format=xml' type='rss' text='ZomPod' htmlUrl='http://www.darkerprojects.com/zompod.php' description=''/>
 	</body>
 </opml>
