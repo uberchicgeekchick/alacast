@@ -4,8 +4,8 @@
 		<title>C|Net&#039;s Podcasts</title>
 	</head>
 	<body>
-		<outline type='link' title='CNet&#039;s podcasting homepage' url='http://cnet.com/podcasts/' text='website&#039;s homepage' description='website&#039;s homepage'/>
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline title='the404' text='the 404 from CNet' htmlUrl='http://the404.cnet.com/' xmlUrl='http://feeds.feedburner.com/the404?format=xml' type='rss' description=''/>
+		<outline type='link' title='<![CDATA[CNet&#039;s podcasting homepage]]>' url='http://cnet.com/podcasts/' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>
+		<!--<outline type='rss' title='<![CDATA[]]>' htmlUrl='' xmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[the404]]>' text='<![CDATA[the 404 from CNet]]>' htmlUrl='http://the404.cnet.com/' xmlUrl='http://feeds.feedburner.com/the404?format=xml' type='rss' description='<![CDATA[]]>'/>
 	</body>
 </opml>

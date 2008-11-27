@@ -1,2 +1,2 @@
-		<outline title='Ambient @ GarageBand.com' xmlUrl='http://www.garageband.com/genre/ambient/podcast/totw.xml' type='rss' text='Ambient @ GarageBand.com' htmlUrl='http://www.garageband.com/genre/ambient/podcast/' description=''/>
-		<outline title='The Song Of The Day' xmlUrl='http://thesongoftheday.com/rss/rss_i.xml' type='rss' text='The Song Of The Day' htmlUrl='http://thesongoftheday.com/' description=''/>
+		<outline title='<![CDATA[Ambient @ GarageBand.com]]>' xmlUrl='http://www.garageband.com/genre/ambient/podcast/totw.xml' type='rss' text='<![CDATA[Ambient @ GarageBand.com]]>' htmlUrl='http://www.garageband.com/genre/ambient/podcast/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[The Song Of The Day]]>' xmlUrl='http://thesongoftheday.com/rss/rss_i.xml' type='rss' text='<![CDATA[The Song Of The Day]]>' htmlUrl='http://thesongoftheday.com/' description='<![CDATA[]]>'/>

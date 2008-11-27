@@ -1,8 +1,8 @@
-		<outline title='The Bungee Line' xmlUrl='http://feeds.feedburner.com/TheBungeeLine' type='rss' text='The Bungee Line' htmlUrl='http://bungeeconnect.wordpress.com/category/podcast/the-bungee-line/' description=''/>
-		<outline title='audible ajax' xmlUrl='http://media.ajaxian.com/' type='rss' text='audible ajax' htmlUrl='http://ajaxian.com/podcast/' description=''/>
-		<outline title='Ruby on Rails podcast' xmlUrl='http://feeds.feedburner.com/rubyonrailspodcast' type='rss' text='Ruby on Rails podcast' htmlUrl='http://podcast.rubyonrails.com/' description=''/>
-		<outline title='Rails&lsquo; Screencasts' xmlUrl='http://feeds.feedburner.com/railscasts' type='rss' text='Rails&lsquo; Screencasts' htmlUrl='http://railscasts.com/' description=''/>
-		<outline title='Learning Rails Podcast' xmlUrl='http://feeds.feedburner.com/learning-rails' type='rss' text='Learning Rails Podcast' htmlUrl='http://www.buildingwebapps.com/learning_rails' description=''/>
-		<outline title='Boag World' xmlUrl='http://feeds.feedburner.com/boagworldpodcast' type='rss' text='Boag World' htmlUrl='http://www.boagworld.com/podcast/' description=''/>
-		<outline title='webStandards w/Imagination' xmlUrl='http://www.dustindiaz.com/feed' type='rss' text='webStandards w/Imagination' htmlUrl='http://www.dustindiaz.com/' description=''/>
-		<outline title='Web Axe' xmlUrl='http://feeds.feedburner.com/webaxe' type='rss' text='Web Axe' htmlUrl='http://webaxe.blogspot.com/' description=''/>
+		<outline title='<![CDATA[The Bungee Line]]>' xmlUrl='http://feeds.feedburner.com/TheBungeeLine' type='rss' text='<![CDATA[The Bungee Line]]>' htmlUrl='http://bungeeconnect.wordpress.com/category/podcast/the-bungee-line/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[audible ajax]]>' xmlUrl='http://media.ajaxian.com/' type='rss' text='<![CDATA[audible ajax]]>' htmlUrl='http://ajaxian.com/podcast/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Ruby on Rails podcast]]>' xmlUrl='http://feeds.feedburner.com/rubyonrailspodcast' type='rss' text='<![CDATA[Ruby on Rails podcast]]>' htmlUrl='http://podcast.rubyonrails.com/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Rails&lsquo; Screencasts]]>' xmlUrl='http://feeds.feedburner.com/railscasts' type='rss' text='<![CDATA[Rails&lsquo; Screencasts]]>' htmlUrl='http://railscasts.com/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Learning Rails Podcast]]>' xmlUrl='http://feeds.feedburner.com/learning-rails' type='rss' text='<![CDATA[Learning Rails Podcast]]>' htmlUrl='http://www.buildingwebapps.com/learning_rails' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Boag World]]>' xmlUrl='http://feeds.feedburner.com/boagworldpodcast' type='rss' text='<![CDATA[Boag World]]>' htmlUrl='http://www.boagworld.com/podcast/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[webStandards w/Imagination]]>' xmlUrl='http://www.dustindiaz.com/feed' type='rss' text='<![CDATA[webStandards w/Imagination]]>' htmlUrl='http://www.dustindiaz.com/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Web Axe]]>' xmlUrl='http://feeds.feedburner.com/webaxe' type='rss' text='<![CDATA[Web Axe]]>' htmlUrl='http://webaxe.blogspot.com/' description='<![CDATA[]]>'/>

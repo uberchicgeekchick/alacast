@@ -4,8 +4,8 @@
 		<title>Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline title='Digital Podcast&#039; New Podcast Update' xmlUrl='http://feeds.feedburner.com/DigitalPodcastNewPodcastUpdate?format=xml' type='rss' htmlUrl='http://digitalpodcast.com/' text='Digital Podcast.Com' description='New Podcast Update'/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Digital Podcast&#039; New Podcast Update]]>' xmlUrl='http://feeds.feedburner.com/DigitalPodcastNewPodcastUpdate?format=xml' type='rss' htmlUrl='http://digitalpodcast.com/' text='<![CDATA[Digital Podcast.Com]]>' description='<![CDATA[New Podcast Update]]>'/>
 	</body>
 </opml>

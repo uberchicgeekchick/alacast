@@ -4,7 +4,7 @@
 		<title>Alacast#039;s Podcasts</title>
 	</head>
 	<body>
-		<!--<outline text='TypeOf Podcasts' type='include' url='OPMLs/?.opml'/>-->
-		<outline text='Science Podcasts' type='include' url='OPMLs/Science.opml'/>
+		<!--<outline text='<![CDATA[TypeOf Podcasts]]>' type='include' url='OPMLs/?.opml'/>-->
+		<outline text='<![CDATA[Science Podcasts]]>' type='include' url='OPMLs/Science.opml'/>
 	</body>
 </opml>

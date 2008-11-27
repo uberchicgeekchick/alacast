@@ -4,11 +4,11 @@
 		<title>BTR Productions</title>
 	</head>
 	<body>
-		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<outline title='BTR Productions' url='http://www.btrproductions.org/' type='link' text='BTR Productions' description=''/>
-		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline title='Doctor Who' xmlUrl='http://feeds.feedburner.com/btrdwcd?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Doctor Who' description='Join the BTR Ninth Doctor and his companions as they travel across Time and Space, fight monsters, and save planets. One of the most popular fan audio series ever!'/>
-		<outline title='Doctor Who: Short Trips & Side Steps' xmlUrl='http://feeds.feedburner.com/btrdwstss?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Doctor Who: Short Trips & Side Steps' description='A collection of both serious and comedic adventures across space and time with that mysterious traveller known only as Doctor Who!'/>
-		<outline title='Blakes Legacy: Restoration' xmlUrl='http://feeds.feedburner.com/btrb7cd?format=xml' type='rss' htmlUrl='' text='BTR Productions :: Blakes Legacy: Restoration' description='The legend of Roj Blake, Kerr Avon, and the crew of the Liberator lives on with a new band of rebels fighting a new cause, but still against the same Federation!'/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[BTR Productions]]>' url='http://www.btrproductions.org/' type='link' text='<![CDATA[BTR Productions]]>' description='<![CDATA[]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Doctor Who]]>' xmlUrl='http://feeds.feedburner.com/btrdwcd?format=xml' type='rss' htmlUrl='' text='<![CDATA[BTR Productions :: Doctor Who]]>' description='<![CDATA[Join the BTR Ninth Doctor and his companions as they travel across Time and Space, fight monsters, and save planets. One of the most popular fan audio series ever!]]>'/>
+		<outline title='<![CDATA[Doctor Who: Short Trips & Side Steps]]>' xmlUrl='http://feeds.feedburner.com/btrdwstss?format=xml' type='rss' htmlUrl='' text='<![CDATA[BTR Productions :: Doctor Who: Short Trips & Side Steps]]>' description='<![CDATA[A collection of both serious and comedic adventures across space and time with that mysterious traveller known only as Doctor Who!]]>'/>
+		<outline title='<![CDATA[Blake&#039;s Legacy: Restoration]]>' xmlUrl='http://feeds.feedburner.com/btrb7cd?format=xml' type='rss' htmlUrl='' text='<![CDATA[BTR Productions :: Blake&#039;s Legacy: Restoration]]>' description='<![CDATA[The legend of Roj Blake, Kerr Avon, and the crew of the Liberator lives on with a new band of rebels fighting a new cause, but still against the same Federation!]]>'/>
 	</body>
 </opml>

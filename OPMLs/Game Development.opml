@@ -4,8 +4,8 @@
 		<title>Game Development</title>
 	</head>
 	<body>
-		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline title='GDC Radio' text='GDC Radio' htmlUrl='http://www.gdcradio.net/' xmlUrl='http://feeds.feedburner.com/GDCRadio?format=xml' type='rss' description=''/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[GDC Radio]]>' text='<![CDATA[GDC Radio]]>' htmlUrl='http://www.gdcradio.net/' xmlUrl='http://feeds.feedburner.com/GDCRadio?format=xml' type='rss' description='<![CDATA[]]>'/>
 	</body>
 </opml>

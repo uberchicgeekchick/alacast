@@ -1,4 +1,4 @@
-		<outline title='Artist Alley' xmlUrl='http://feeds.feedburner.com/ArtistalleyPodcast' type='rss' text='Artist Alley' htmlUrl='http://ArtistAlley.net/' description=''/>
-		<outline title='Make: Magazine | Make: Podcast' xmlUrl='http://www.makezine.com/blog/archive/make_podcast/index.xml' type='rss' text='Make: Magazine | Make: Podcast' htmlUrl='http://www.makezine.com/blog/archive/make_podcast/' description=''/>
-		<outline title='Crafty Pod' xmlUrl='http://feeds.feedburner.com/craftypod' type='rss' text='Crafty Pod' htmlUrl='http://www.craftypod.com/?page_id=50' description=''/>
-		<outline title='Media Artist Secrets' xmlUrl='http://fmstudio.com/podcasts/rss2.xml' type='rss' text='Media Artist Secrets' htmlUrl='http://www.fmstudio.com/category/media-artist-secrets/' description=''/>
+		<outline title='<![CDATA[Artist Alley]]>' xmlUrl='http://feeds.feedburner.com/ArtistalleyPodcast' type='rss' text='<![CDATA[Artist Alley]]>' htmlUrl='http://ArtistAlley.net/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Make: Magazine | Make: Podcast]]>' xmlUrl='http://www.makezine.com/blog/archive/make_podcast/index.xml' type='rss' text='<![CDATA[Make: Magazine | Make: Podcast]]>' htmlUrl='http://www.makezine.com/blog/archive/make_podcast/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Crafty Pod]]>' xmlUrl='http://feeds.feedburner.com/craftypod' type='rss' text='<![CDATA[Crafty Pod]]>' htmlUrl='http://www.craftypod.com/?page_id=50' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Media Artist Secrets]]>' xmlUrl='http://fmstudio.com/podcasts/rss2.xml' type='rss' text='<![CDATA[Media Artist Secrets]]>' htmlUrl='http://www.fmstudio.com/category/media-artist-secrets/' description='<![CDATA[]]>'/>

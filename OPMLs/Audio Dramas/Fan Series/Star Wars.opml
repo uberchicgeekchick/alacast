@@ -4,8 +4,8 @@
 		<title>Star Wars podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<!--<outline titlet='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline titlet='Star Wars&#039; Fanworks' xmlUrl='http://starwarsfanworks.libsyn.com/rss' type='rss' htmlUrl='http://starwarsfanworks.libsyn.com/' text='Star Wars Fanworks' description='Fan created audio &amp; video fiction.'/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline titlet='' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline titlet='Star Wars&#039; Fanworks' xmlUrl='http://starwarsfanworks.libsyn.com/rss' type='rss' htmlUrl='http://starwarsfanworks.libsyn.com/' text='<![CDATA[Star Wars Fanworks]]>' description='<![CDATA[Fan created audio &amp; video fiction.]]>'/>
 	</body>
 </opml>

@@ -4,9 +4,9 @@
 		<title>Curious Echoes</title>
 	</head>
 	<body>
-		<!--<outline title='' url='http:///' type='link' text='' description=''/>-->
-		<outline title='Curious Echoes' type='link' text='Curious Echoes' url='http://www.curiousecho.org/' description=''/>
-		<!--<outline title='' xmlUrl='' type='rss' htmlUrl='' text='' description=''/>-->
-		<outline title='Moon Wraith' xmlUrl='http://www.curiousecho.org/wordpress/category/moon-wraith/feed' type='rss' htmlUrl='http://www.curiousecho.org/wordpress/category/moon-wraith/' text='Moon Wraith' description=''/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Curious Echoes]]>' type='link' text='<![CDATA[Curious Echoes]]>' url='http://www.curiousecho.org/' description='<![CDATA[]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Moon Wraith]]>' xmlUrl='http://www.curiousecho.org/wordpress/category/moon-wraith/feed' type='rss' htmlUrl='http://www.curiousecho.org/wordpress/category/moon-wraith/' text='<![CDATA[Moon Wraith]]>' description='<![CDATA[]]>'/>
 	</body>
 </opml>

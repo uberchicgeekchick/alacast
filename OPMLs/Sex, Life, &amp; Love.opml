@@ -4,11 +4,11 @@
 		<title>Category&#039;s Podcasts</title>
 	</head>
 	<body>
-		<!--<outline type='link' title='website&#039;s homepage' url='http:///' text='website&#039;s homepage' description='website&#039;s homepage'/>-->
-		<!--<outline type='rss' title='' htmlUrl='' xmlUrl='' text='' description=''/>-->
-		<outline type='rss' title='Polyamory Weekly' htmlUrl='http://polyweekly.libsyn.com/' xmlUrl='http://polyweekly.libsyn.com/rss' text='Polyamory Weekly' description='Tales from the front of responsible non-monogamy from a pansexual, kink-friendly point of view.'/>
-		<outline type='rss' title='Sex is Fun!' htmlUrl='http://www.greatsexgames.com/podcast/index.html' xmlUrl='http://feeds.feedburner.com/GSGPodcasts?format=xml' text='Sex is Fun!' description='Dedicated to the rational discussion of human sexuality from the apporoach of fun, enjoyment and pleasure. Each episode features a different topic that will discuss how to maximize sexual enjoyment while avoiding all the dangers of sex.'/>
-		<outline type='rss' title='Sex is Fun Theater!' htmlUrl='http://www.greatsexgames.com/podcast/videos/' xmlUrl='http://feeds.feedburner.com/SexIsFunVideocast?format=xml' text='Sex is Fun!' description='Dedicated to the rational discussion of human sexuality from the apporoach of fun, enjoyment and pleasure. Each episode features a different topic that will discuss how to maximize sexual enjoyment while avoiding all the dangers of sex.'/>
-		<outline type='rss' title='Open Source Sex' htmlUrl='http://violetblue.libsyn.com/' xmlUrl='http://violetblue.libsyn.com/rss' text='Open Source Sex' description=''/>
+		<!--<outline type='link' title='<![CDATA[website&#039;s homepage]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>-->
+		<!--<outline type='rss' title='<![CDATA[]]>' htmlUrl='' xmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline type='rss' title='<![CDATA[Polyamory Weekly]]>' htmlUrl='http://polyweekly.libsyn.com/' xmlUrl='http://polyweekly.libsyn.com/rss' text='<![CDATA[Polyamory Weekly]]>' description='<![CDATA[Tales from the front of responsible non-monogamy from a pansexual, kink-friendly point of view.]]>'/>
+		<outline type='rss' title='<![CDATA[Sex is Fun!]]>' htmlUrl='http://www.greatsexgames.com/podcast/index.html' xmlUrl='http://feeds.feedburner.com/GSGPodcasts?format=xml' text='<![CDATA[Sex is Fun!]]>' description='<![CDATA[Dedicated to the rational discussion of human sexuality from the apporoach of fun, enjoyment and pleasure. Each episode features a different topic that will discuss how to maximize sexual enjoyment while avoiding all the dangers of sex.]]>'/>
+		<outline type='rss' title='<![CDATA[Sex is Fun Theater!]]>' htmlUrl='http://www.greatsexgames.com/podcast/videos/' xmlUrl='http://feeds.feedburner.com/SexIsFunVideocast?format=xml' text='<![CDATA[Sex is Fun!]]>' description='<![CDATA[Dedicated to the rational discussion of human sexuality from the apporoach of fun, enjoyment and pleasure. Each episode features a different topic that will discuss how to maximize sexual enjoyment while avoiding all the dangers of sex.]]>'/>
+		<outline type='rss' title='<![CDATA[Open Source Sex]]>' htmlUrl='http://violetblue.libsyn.com/' xmlUrl='http://violetblue.libsyn.com/rss' text='<![CDATA[Open Source Sex]]>' description='<![CDATA[]]>'/>
 	</body>
 </opml>

@@ -1,3 +1,3 @@
-		<outline title='Hey Josh' xmlUrl='http://feeds.feedburner.com/joshshipp' type='rss' text='Hey Josh' htmlUrl='http://heyjosh.tv/' description=''/>
-		<outline title='NetSquared' xmlUrl='http://feeds.feedburner.com/libsyn/NetSquared' type='rss' text='NetSquared' htmlUrl='http://www.NetSquared.org/' description=''/>
-		<outline title='501c3cast' xmlUrl='http://feeds.feedburner.com/501c3cast' type='rss' text='501c3cast' htmlUrl='http://501c3cast.com/' description=''/>
+		<outline title='<![CDATA[Hey Josh]]>' xmlUrl='http://feeds.feedburner.com/joshshipp' type='rss' text='<![CDATA[Hey Josh]]>' htmlUrl='http://heyjosh.tv/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[NetSquared]]>' xmlUrl='http://feeds.feedburner.com/libsyn/NetSquared' type='rss' text='<![CDATA[NetSquared]]>' htmlUrl='http://www.NetSquared.org/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[501c3cast]]>' xmlUrl='http://feeds.feedburner.com/501c3cast' type='rss' text='<![CDATA[501c3cast]]>' htmlUrl='http://501c3cast.com/' description='<![CDATA[]]>'/>
