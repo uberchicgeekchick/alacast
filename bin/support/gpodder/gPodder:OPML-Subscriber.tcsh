@@ -4,7 +4,7 @@ if ( "${?1}" == "0" && "${1}" == "" && -e "${1}" ) then
 	exit
 endif
 
-grep -e xmlUrl=\[\"\']\[^\"\']+ OPMLs/Audio\ Dramas/Studios/Darker\ Projects.opml | sed 's/.*xmlUrl=["'\'']\([^"'\'']\+\)['\''"].*/\1/' >! .alacast.opml.dump.lst
+grep -e xmlUrl=\[\"\']\[^\"\']+ "${1}" | sed 's/.*xmlUrl=["'\'']\([^"'\'']\+\)['\''"].*/\1/' >! .alacast.opml.dump.lst
 
 foreach podcast ( "`cat .alacast.opml.dump.lst`" )
 	printf "Adding:\n\t %s" "${podcast}"
