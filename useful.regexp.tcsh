@@ -33,3 +33,6 @@
 #		1,$s/^\([\t]\+\)\(<outline \)\(.*\)\(title='[^']\+' \)\(.*\)$/\1\2\4\3\5/g
 #		1,$s/^\([\t]\+<outline \)\(.*\)\(htmlUrl='[^']*' \)\(.*\)\(description='[^']*'\/>\)$/\1\2\4\3\5/g
 #		1,$s/^\([\t]\+<outline title='[^']*' xmlUrl='[^']*' \)\(.*\)\(type='rss' \)\(.*\)\(description='[^']*'\/>\)$/\1\3\2\4\5/g
+#
+#	Adding CDATA padding to outlines:
+#		1,$s/\v(title|text|description)(\=\')([^\<']*)([^\<']*)\'/\1\2<![CDATA[\3\4]]>'/g

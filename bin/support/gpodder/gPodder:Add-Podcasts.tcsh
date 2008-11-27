@@ -1,27 +1,20 @@
-#!/bin/tcsh
-set add_or_del = ""
-set podcast_list = ""
-while ( "${add_or_del}" == "" )
-	switch ( "${1}" )
-	case -e:
-		set podcast_list = "${1}"
-		breaksw
-	case "del":
-		set add_or_del = "del"
-		breaksw
-	default:
-		set add_or_del = "add"
-		breaksw
-	shift
-	endsw
-end
+#!/bin/tcsh -f
+set add_or_del = "add"
+set message = "Add"
+set podcast_list = "${1}"
 
-if ( "${podcast_list}" == "" || ! -e "${podcast_list}" ) then
-	printf "Usage: %s [lists_of_podcasts]" `basename "${0}"`
-	exit -1
+if ( "${1}" == "del" ) then
+	set message = "Delet"
+	set add_or_del = "del"
 endif
 
-foreach podcast ( `cat "${podcast_list}"` )
-	gpodder --"${add_or_del}"="${podcast}"
+if ( "${podcast_list}" == "" || ! -e "${podcast_list}" ) then
+	printf "Usage: %s [add|del] (wordlist of podcasts)" `basename "${0}"`
+	exit
+endif
+
+foreach podcast ( "`cat ${podcast_list}`" )
+	printf "%sing:\n\t%s\n" "${message}" "${podcast}"
+	gpodder --${add_or_del}="${podcast}"
 end
 
