@@ -14,6 +14,7 @@
 		<outline title='<![CDATA[Fandom Corridor]]>' xmlUrl='http://imaginationlane.net/fandomcorridor/feed' type='rss' htmlUrl='http://imaginationlane.net/fandomcorridor/' text='<![CDATA[Imagination Lane&#039;s: &quot;Fandom Corridor&quot;]]>' description='<![CDATA[The fan shows of Imagination Lane.]]>'/>
 		<outline title='<![CDATA[Saxonbloc]]>' xmlUrl='http://imaginationlane.net/saxonboc/feed' type='rss' htmlUrl='http://imaginationlane.net/saxonboc/' text='<![CDATA[Imagination Lane&#039;s: &quot;Saxonboc&quot;]]>' description='<![CDATA[Translation and adaptation of Anglo-Saxon writings.]]>'/>
 		<outline title='<![CDATA[The Importance of Being Earnest]]>' xmlUrl='http://imaginationlane.net/earnest/feed' type='rss' htmlUrl='http://imaginationlane.net/earnest/' text='<![CDATA[Imagination Lane&#039;s: &quot;The Importance of Being Earnest&quot;]]>' description='<![CDATA[The diverting play.]]>'/>
+		<outline title='<![CDATA[Dracula]]>' xmlUrl='' type='rss' htmlUrl='http://imaginationlane.net/showsdracula.html' text='<![CDATA[Imagination Lane&#039;s: &quot;Dracula&quot;]]>' description='<![CDATA[Take a trip back to the days of old radio, turn off the lights, and let us thrill and chill you with Bram Stoker&#039;s Dracula as Orson Welles intended it.]]>'/>
 		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>' description='<![CDATA[]]>'/>-->
 	</body>
 </opml>
