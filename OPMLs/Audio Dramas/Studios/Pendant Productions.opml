@@ -11,5 +11,6 @@
 		<outline title='<![CDATA[Seminar]]>' xmlUrl='http://www.pendantaudio.com/seminar-podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/seminar.php' text='<![CDATA[Seminar]]>' description='<![CDATA[]]>'>
 		<outline title='<![CDATA[Batman: The Ace of Detectives]]>' xmlUrl='http://www.pendantaudio.com/batman_podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/batman.php' text='<![CDATA[Batman: The Ace of Detectives]]>' description='<![CDATA[]]>'>
 		<outline title='<![CDATA[Umket Industries Presents: The Dixie Stenberg and Brassy Battalion Adventure Theater]]>' xmlUrl='http://www.pendantaudio.com/dixie-podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/dixie.php' text='<![CDATA[Umket Industries Presents: The Dixie Stenberg and Brassy Battalion Adventure Theater]]>' description='<![CDATA[]]>'>
+			<outline title='<![CDATA[Catwoman: Queen of Thieves]]>' xmlUrl='http://www.pendantaudio.com/catwoman_podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/catwoman.php' text='<![CDATA[Pendant Productions - Catwoman: Queen of Thieves]]>' description='<![CDATA[Pendant Productions - Catwoman: Queen of Thieves MP3 and Podcast]]>'/>
 	</body>
 </opml>
