@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Pendant Productions]]>" type="link" url="http://www.pendantaudio.com/" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Pendant Productions]]>" type="link" url="http://www.pendantaudio.com/" text="<![CDATA[Pendant Productions]]>" description="<![CDATA[Pendant Productions&#039; Original Series &amp; FanFic Audio Drama MP3s and Podcasts]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[Pendant Productions -  MP3 and Podcast]]>"/>-->
 		<outline title="<![CDATA[Star Trek: Defiant]]>" xmlUrl="http://www.pendantaudio.com/defiant_podcast.xml" type="rss" htmlUrl="http://www.pendantaudio.com/defiant.php" text="<![CDATA[Pendant Productions - Star Trek: Defiant]]>" description="<![CDATA[Pendant Productions - Star Trek: Defiant MP3 and Podcast]]>"/>
 		<outline title="<![CDATA[Seminar]]>" xmlUrl="http://www.pendantaudio.com/seminar-podcast.xml" type="rss" htmlUrl="http://www.pendantaudio.com/seminar.php" text="<![CDATA[Pendant Productions - Seminar]]>" description="<![CDATA[ MP3 and Podcast]]>">
