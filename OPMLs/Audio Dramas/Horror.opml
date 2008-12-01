@@ -1,15 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Horror podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<outline title='<![CDATA[Wormwood: A Serialized Mystery]]>' xmlUrl='http://feeds.feedburner.com/WormwoodMystery?format=xml' type='rss' text='<![CDATA[Wormwood: A Serialized Mystery]]>' htmlUrl='http://wormwoodshow.com/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Mercy Bend]]>' xmlUrl='http://www.mevio.com/feeds/mercybend.xml' type='rss' htmlUrl='http://mercybend.mevio.com/' text='<![CDATA[Mercy Bend]]>' description='<![CDATA[They sit in a dark corner of The Hell Hole Tavern, escaped residents of the Mercy Bend Sanitarium, failed experiments of secret government experiments.  The sit in the tavern and dream of lives that have been lived, lives that are being lived, and lives that will one day occur.  They will tell you these tales if you buy them a beer, but beware, you may not like what you hear.]]>'/>
-		<outline title='<![CDATA[Horror Addicts]]>' xmlUrl='http://www.mevio.com/feeds/horroraddicts.xml' type='rss' htmlUrl='http://www.horroraddicts.net/' text='<![CDATA[Horror Addicts]]>' description='<![CDATA[A horror podcast for all horror writers, artists, musicians, gamers, and fanatics.]]>'/>
-		<outline title='<![CDATA[The Zombie Chronicles: Escape]]>' xmlUrl='http://www.podiobooks.com/title/the-zombie-chronicles-escape/feed/' type='rss' htmlUrl='http://jamesmelzer.net/' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[One Eighteen: Migration]]>' xmlUrl='http://oneeighteen.libsyn.com/rss' type='rss' text='<![CDATA[One Eighteen: Migration]]>' htmlUrl='http://oneeighteen.libsyn.com/' description='<![CDATA[A Post Apocalyptic Podcast Adventure of Zombies and Madness]]>'/>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Wormwood: A Serialized Mystery]]>" xmlUrl="http://feeds.feedburner.com/WormwoodMystery?format=xml" type="rss" text="<![CDATA[Wormwood: A Serialized Mystery]]>" htmlUrl="http://wormwoodshow.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Mercy Bend]]>" xmlUrl="http://www.mevio.com/feeds/mercybend.xml" type="rss" htmlUrl="http://mercybend.mevio.com/" text="<![CDATA[Mercy Bend]]>" description="<![CDATA[They sit in a dark corner of The Hell Hole Tavern, escaped residents of the Mercy Bend Sanitarium, failed experiments of secret government experiments.  The sit in the tavern and dream of lives that have been lived, lives that are being lived, and lives that will one day occur.  They will tell you these tales if you buy them a beer, but beware, you may not like what you hear.]]>"/>
+		<outline title="<![CDATA[Horror Addicts]]>" xmlUrl="http://www.mevio.com/feeds/horroraddicts.xml" type="rss" htmlUrl="http://www.horroraddicts.net/" text="<![CDATA[Horror Addicts]]>" description="<![CDATA[A horror podcast for all horror writers, artists, musicians, gamers, and fanatics.]]>"/>
+		<outline title="<![CDATA[The Zombie Chronicles: Escape]]>" xmlUrl="http://www.podiobooks.com/title/the-zombie-chronicles-escape/feed/" type="rss" htmlUrl="http://jamesmelzer.net/" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[One Eighteen: Migration]]>" xmlUrl="http://oneeighteen.libsyn.com/rss" type="rss" text="<![CDATA[One Eighteen: Migration]]>" htmlUrl="http://oneeighteen.libsyn.com/" description="<![CDATA[A Post Apocalyptic Podcast Adventure of Zombies and Madness]]>"/>
 	</body>
 </opml>

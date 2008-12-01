@@ -1,12 +1,12 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Online Culture</title>
 	</head>
 	<body>
-		<!--<outline type='link' title='<![CDATA[website&#039;s homepage]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<outline title='<![CDATA[Project: Shadow Informant]]>' xmlUrl='http://www.mevio.com/feeds/projectshadow.xml' type='rss' htmlUrl='http://projectshadow.com/' text='<![CDATA[P:SI - Project: Shadow Informant]]>' description='<![CDATA[The P:SI is a vision, come to life. It’s goal: to gather dashPunk fans, by creating a place where fans of different media, series, and genres can explore their infinite diversity through infinite combinations.]]>'/>-->
-		<outline type='rss' title='<![CDATA[soccer girl inc.]]>' htmlUrl='http://soccergirlwp.mevio.com/' xmlUrl='http://www.mevio.com/feeds/soccergirlincorporated.xml' text='<![CDATA[soccer girl inc.]]>' description='<![CDATA[]]>'/>
+		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Project: Shadow Informant]]>" xmlUrl="http://www.mevio.com/feeds/projectshadow.xml" type="rss" htmlUrl="http://projectshadow.com/" text="<![CDATA[P:SI - Project: Shadow Informant]]>" description="<![CDATA[The P:SI is a vision, come to life. It’s goal: to gather dashPunk fans, by creating a place where fans of different media, series, and genres can explore their infinite diversity through infinite combinations.]]>"/>-->
+		<outline type="rss" title="<![CDATA[soccer girl inc.]]>" htmlUrl="http://soccergirlwp.mevio.com/" xmlUrl="http://www.mevio.com/feeds/soccergirlincorporated.xml" text="<![CDATA[soccer girl inc.]]>" description="<![CDATA[]]>"/>
 	</body>
 </opml>

@@ -1,12 +1,12 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Category&#039;s Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<outline title='<![CDATA[ChicGeek Podcast: Almost as good as a closet full of shoes!]]>' xmlUrl='http://www.switchpod.com/users/chicgeekpodcast/feed.xml' type='rss' htmlUrl='http://chicgeekpodcast.blogspot.com/' text='<![CDATA[ChicGeek Podcast]]>' description='<![CDATA[Almost as good as a closet full of shoes!]]>'/>
-		<outline title='<![CDATA[Geek is Chic]]>' xmlUrl='http://feeds.feedburner.com/geekischic?format=xml' type='rss' htmlUrl='http://www.geekischic.org/' text='<![CDATA[Geek is Chic]]>' description='<![CDATA[]]>'/>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[ChicGeek Podcast: Almost as good as a closet full of shoes!]]>" xmlUrl="http://www.switchpod.com/users/chicgeekpodcast/feed.xml" type="rss" htmlUrl="http://chicgeekpodcast.blogspot.com/" text="<![CDATA[ChicGeek Podcast]]>" description="<![CDATA[Almost as good as a closet full of shoes!]]>"/>
+		<outline title="<![CDATA[Geek is Chic]]>" xmlUrl="http://feeds.feedburner.com/geekischic?format=xml" type="rss" htmlUrl="http://www.geekischic.org/" text="<![CDATA[Geek is Chic]]>" description="<![CDATA[]]>"/>
 	</body>
 </opml>

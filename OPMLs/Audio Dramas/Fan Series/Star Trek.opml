@@ -1,12 +1,12 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Star Trek inspired podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<outline title='<![CDATA[Star Trek: Dimensions]]>' xmlUrl='http://feeds.feedburner.com/GGP_StarTrekDimensions?format=xml' type='rss' htmlUrl='http://giantgnome.com/std.html' text='<![CDATA[Star Trek: Dimensions]]>' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Star Trek: Excelsior]]>' xmlUrl='http://feeds.feedburner.com/StarTrekExcelsior?format=xml' type='rss' htmlUrl='http://starshipexcelsior.com/' text='<![CDATA[Star Trek: Excelsior]]>' description='<![CDATA[In the year 2382, seven years after the Dominion War, the Federation has opened the Delta Quadrant to exploration, with the Starship Excelsior at the front lines of Task Force 38: Defense Force Delta.  Released semi-monthly or better.]]>'/>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Star Trek: Dimensions]]>" xmlUrl="http://feeds.feedburner.com/GGP_StarTrekDimensions?format=xml" type="rss" htmlUrl="http://giantgnome.com/std.html" text="<![CDATA[Star Trek: Dimensions]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Star Trek: Excelsior]]>" xmlUrl="http://feeds.feedburner.com/StarTrekExcelsior?format=xml" type="rss" htmlUrl="http://starshipexcelsior.com/" text="<![CDATA[Star Trek: Excelsior]]>" description="<![CDATA[In the year 2382, seven years after the Dominion War, the Federation has opened the Delta Quadrant to exploration, with the Starship Excelsior at the front lines of Task Force 38: Defense Force Delta.  Released semi-monthly or better.]]>"/>
 	</body>
 </opml>

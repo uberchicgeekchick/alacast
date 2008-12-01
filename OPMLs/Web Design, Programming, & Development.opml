@@ -1,13 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Web Design, Programming, &amp; Development podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline text="Learning Ruby on Rails, for Web Designers and Developers" title="Learning Rails" type="rss" xmlUrl="http://feeds.feedburner.com/learning-rails"/>
-		<outline title='<![CDATA[sitepoint]]>' xmlUrl='http://www.sitepoint.com/blogs/category/podcast/feed' type='rss' htmlUrl='http://www.sitepoint.com/blogs/category/podcast/' text='<![CDATA[sitepoint podcast]]>' description='<![CDATA[News, opinion, and fresh thinking for web developers and designers. The official podcast of sitepoint.com.]]>'/>
-		<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+		<outline title="<![CDATA[sitepoint]]>" xmlUrl="http://www.sitepoint.com/blogs/category/podcast/feed" type="rss" htmlUrl="http://www.sitepoint.com/blogs/category/podcast/" text="<![CDATA[sitepoint podcast]]>" description="<![CDATA[News, opinion, and fresh thinking for web developers and designers. The official podcast of sitepoint.com.]]>"/>
+		<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
 	</body>
 </opml>
