@@ -40,18 +40,19 @@ endsw
 # I will actually prolly just drop this feature as I get closer to releasing Alacast 2.0 alapha.
 set limit_episodes = ""
 
-echo "Downloading podcast's feed."
+printf "Downloading podcast's feed.\n"
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 
 set title = `/usr/bin/grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
 if ( ! -d "${title}" ) mkdir -p "${title}"
+printf "\n\tDownloading all episodes of %s\n" "${title}"
 
-#et titles = `"grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1\n/g' | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g'"`
-#oreach title ( $titles )
-#echo "-->${title}<--"
-#nd
-#rintf "%s" ${titles}
-#xit
+#set titles = `"grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1\n/g' | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g'"`
+#foreach title ( $titles )
+#	echo "-->${title}<--"
+#end
+#printf "%s" ${titles}
+#exit
 
 set episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
 
@@ -73,7 +74,7 @@ foreach episode ( $episodes )
 	case "theend.mp3":
 	case "caughtup.mp3":
 	case "caught_up_1.mp3":
-		echo "Skipping ${episodes_filename}"
+		printf "\n\tSkipping ${episodes_filename}"
 		continue
 		breaksw
 	endsw
@@ -82,20 +83,21 @@ foreach episode ( $episodes )
 	switch ( "${is_commentary}" )
 	case "Commentary":
 	case "commentary":
-		echo "Skipping commentary episode: ${episodes_filename}"
+		printf "\n\tSkipping commentary episode: %s\n" "${episodes_filename}"
 		continue
 		breaksw
 	endsw
 
-	echo -n "Downloading episode: ${episodes_filename} "
+	printf "\n\tDownloading episode: %s\n" "${episodes_filename} "
 
 	wget --quiet -O "${title}/${episodes_filename}" "${episode}"
-	echo -n "\t\t"
+	printf "\t\t\t[download"
 	if( -e "${title}/${episodes_filename}" ) then
-		echo "done\n"
+		printf "succeeded"
 	else
-		echo "failed\n"
+		printf "failed"
 	endif
+	printf "]\n"
 end
 
 echo "*w00t\!*, I'm done; enjoy online media at its best!"
