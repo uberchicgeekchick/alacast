@@ -43,26 +43,30 @@ set limit_episodes = ""
 printf "Downloading podcast's feed.\n"
 wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 
-set title = `/usr/bin/grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
-if ( ! -d "${title}" ) mkdir -p "${title}"
+set title = `/usr/bin/grep '<title.*>' episodes.xml | sed 's/<\!\[CDATA\[\(.*\)\]\]>/\1/' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
 printf "\n\tDownloading all episodes of %s\n" "${title}"
+if ( ! -d "${title}" ) mkdir -p "${title}"
 
-#set titles = `"grep -r '<title>' episodes.xml | sed 's/.*<title>\([^<]*\)<\/title>.*/\1\n/g' | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g'"`
+#set titles = `/usr/bin/grep '<title.*>' episodes.xml | sed 's/<\!\[CDATA\[\(.*\)\]\]>/\1/' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/'`
 #foreach title ( $titles )
 #	echo "-->${title}<--"
 #end
 #printf "%s" ${titles}
 #exit
 
-set episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+set episodes = `/usr/bin/grep 'enclosure' episodes.xml | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
 
-set total_episodes = `/usr/bin/grep --regexp 'enclosure.*url=' episodes.xml | sed 's/\(<enclosure\)/\n\1/g' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
+set total_episodes = `/usr/bin/grep 'enclosure' episodes.xml | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
 
 
 printf "Found %s total episodes\n" "${total_episodes}"
 
 foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
+	switch ( `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'` )
+	case "pdf":
+		goto skip_episode
+	endsw
 
 #	if ( -e "${episodes_filename}" ) then
 #		echo "Skipping ${episodes_filename}"
@@ -70,36 +74,36 @@ foreach episode ( $episodes )
 #	endif
 
 	switch ( "${episodes_filename}" )
-	case -e:
-	case "theend.mp3":
-	case "caughtup.mp3":
-	case "caught_up_1.mp3":
-		printf "\n\tSkipping ${episodes_filename}"
-		continue
-		breaksw
+	case -e: case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
+		goto skip_episode
 	endsw
 
 	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
 	switch ( "${is_commentary}" )
-	case "Commentary":
-	case "commentary":
-		printf "\n\tSkipping commentary episode: %s\n" "${episodes_filename}"
-		continue
-		breaksw
+	case "Commentary": case "commentary":
+		goto skip_episode
 	endsw
 
 	printf "\n\tDownloading episode: %s\n" "${episodes_filename} "
 
 	wget --quiet -O "${title}/${episodes_filename}" "${episode}"
-	printf "\t\t\t[download"
-	if( -e "${title}/${episodes_filename}" ) then
-		printf "succeeded"
+	printf "\t\t\t["
+	if ( ! -e "${title}/${episodes_filename}" ) then
+		printf "*epic fail*?"
 	else
-		printf "failed"
+		printf "*w00t*, FTW!"
 	endif
 	printf "]\n"
+	next_episode:
 end
 
 echo "*w00t\!*, I'm done; enjoy online media at its best!"
 
 rm episodes.xml
+
+exit
+
+skip_episode:
+printf "\n\tSkipping ${episodes_filename}"
+goto next_episode
+
