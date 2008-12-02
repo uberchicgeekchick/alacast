@@ -1,7 +1,7 @@
-			<outline title="<![CDATA[The Command Line]]>" xmlUrl="http://thecommandline.net/feed" type="rss" text="<![CDATA[The Command Line]]>" htmlUrl="http://thecommandline.net/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[Software Engineering Radio]]>" xmlUrl="http://se-radio.net/rss" type="rss" text="<![CDATA[Software Engineering Radio]]>" htmlUrl="http://se-radio.org/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[RedMonkTV]]>" xmlUrl="http://feeds.feedburner.com/RedMonkTV?format=xml" type="rss" text="<![CDATA[RedMonkTV]]>" htmlUrl="http://redmonk.com/tv/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[IBM developerWorks]]>" xmlUrl="http://www.ibm.com/developerworks/podcast/channel-dwall.rss" type="rss" text="<![CDATA[IBM developerWorks]]>" htmlUrl="http://www.ibm.com/developerworks/podcast/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[Python 411 Podcast Series]]>" xmlUrl="http://www.awaretek.com/python/index.xml" type="rss" text="<![CDATA[Python 411 Podcast Series]]>" htmlUrl="http://www.awaretek.com/python/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[Perlcast]]>" xmlUrl="http://www.perlcast.com/rss/current.xml" type="rss" text="<![CDATA[Perlcast]]>" htmlUrl="http://www.perlcast.com/" description="<![CDATA[]]>"/>
-			<outline title="<![CDATA[SPaMCAST]]>" xmlUrl="http://spamcast.libsyn.com/rss" type="rss" text="<![CDATA[SPaMCAST]]>" htmlUrl="http://spamcast.libsyn.com/" description="<![CDATA[]]>"/>
+			<outline title='<![CDATA[The Command Line]]>' xmlUrl='http://thecommandline.net/feed' type='rss' text='<![CDATA[The Command Line]]>' htmlUrl='http://thecommandline.net/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[Software Engineering Radio]]>' xmlUrl='http://se-radio.net/rss' type='rss' text='<![CDATA[Software Engineering Radio]]>' htmlUrl='http://se-radio.org/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[RedMonkTV]]>' xmlUrl='http://feeds.feedburner.com/RedMonkTV?format=xml' type='rss' text='<![CDATA[RedMonkTV]]>' htmlUrl='http://redmonk.com/tv/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[IBM developerWorks]]>' xmlUrl='http://www.ibm.com/developerworks/podcast/channel-dwall.rss' type='rss' text='<![CDATA[IBM developerWorks]]>' htmlUrl='http://www.ibm.com/developerworks/podcast/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[Python 411 Podcast Series]]>' xmlUrl='http://www.awaretek.com/python/index.xml' type='rss' text='<![CDATA[Python 411 Podcast Series]]>' htmlUrl='http://www.awaretek.com/python/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[Perlcast]]>' xmlUrl='http://www.perlcast.com/rss/current.xml' type='rss' text='<![CDATA[Perlcast]]>' htmlUrl='http://www.perlcast.com/' description='<![CDATA[]]>'/>
+			<outline title='<![CDATA[SPaMCAST]]>' xmlUrl='http://spamcast.libsyn.com/rss' type='rss' text='<![CDATA[SPaMCAST]]>' htmlUrl='http://spamcast.libsyn.com/' description='<![CDATA[]]>'/>

@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
 	<head>
 		<title>Alacast#039;s Podcasts</title>
 	</head>
 	<body>
-		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
-		<outline type="link" title="<![CDATA[PHP Podcasts.Com]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>
-		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[P3: php|architect&#039;s podcast]]>" text="<![CDATA[P3: php|architect&#039;s podcast]]>" htmlUrl="http://c7y.phparch.com/" xmlUrl="http://podcast.phparch.com/podcast/rss/index.xml" type="rss" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Screen Space]]>" text="<![CDATA[Screen Space]]>" htmlUrl="http://screenspace.org/" xmlUrl="http://www.screenspace.org/?feed=podcast" type="rss" description="<![CDATA[Screen Space: A blog &amp; podcast about users, texts, and technology]]>"/>
-		<outline type="rss" title="<![CDATA[The Command Line Podcast]]>" htmlUrl="http://thecommandline.net/" xmlUrl="http://feeds.feedburner.com/cmdln_free?format=xml" text="<![CDATA[The Command Line Podcast&#039;s OGG feed]]>" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Software Engineering Radio]]>" text="<![CDATA[Software Engineering Radio]]>" htmlUrl="http://se-radio.net/" xmlUrl="http://se-radio.net/rss" type="rss" description="<![CDATA[Software Engineering Radio - Podcast &amp; Information for professional software developers architects.]]>"/>
-		<outline type="rss" title="<![CDATA[IBM developerWorks]]>" htmlUrl="http://www.ibm.com/developerworks/podcast/" xmlUrl="http://www.ibm.com/developerworks/podcast/channel-dwall.rss" text="<![CDATA[IBM developerWorks]]>" description="<![CDATA[Scott Laningham, editor of developerWorks podcasts, talks with thought leaders in many fields, paying extra attention to the computing and software element with each focus.]]>"/>
-		<outline text="Every week you will be treated to a new Railscasts episode featuring tips and tricks with Ruby on Rails, the popular web development framework. These screencasts are short and focus on one technique so you can quickly move on to applying it to your own project. The topics are geared toward the intermediate Rails developer, but beginners and experts will get something out of it as well. This is the full resolution version, an iPod specific format is also availasble." title="Railscasts" type="rss" xmlUrl="http://feeds.feedburner.com/railscasts?format=xml"/>
+		<!--<outline type='link' title='<![CDATA[website&#039;s homepage]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>-->
+		<outline type='link' title='<![CDATA[PHP Podcasts.Com]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>
+		<!--<outline type='rss' title='<![CDATA[]]>' htmlUrl='' xmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[P3: php|architect&#039;s podcast]]>' text='<![CDATA[P3: php|architect&#039;s podcast]]>' htmlUrl='http://c7y.phparch.com/' xmlUrl='http://podcast.phparch.com/podcast/rss/index.xml' type='rss' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Screen Space]]>' text='<![CDATA[Screen Space]]>' htmlUrl='http://screenspace.org/' xmlUrl='http://www.screenspace.org/?feed=podcast' type='rss' description='<![CDATA[Screen Space: A blog &amp; podcast about users, texts, and technology]]>'/>
+		<outline type='rss' title='<![CDATA[The Command Line Podcast]]>' htmlUrl='http://thecommandline.net/' xmlUrl='http://feeds.feedburner.com/cmdln_free?format=xml' text='<![CDATA[The Command Line Podcast&#039;s OGG feed]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Software Engineering Radio]]>' text='<![CDATA[Software Engineering Radio]]>' htmlUrl='http://se-radio.net/' xmlUrl='http://se-radio.net/rss' type='rss' description='<![CDATA[Software Engineering Radio - Podcast &amp; Information for professional software developers architects.]]>'/>
+		<outline type='rss' title='<![CDATA[IBM developerWorks]]>' htmlUrl='http://www.ibm.com/developerworks/podcast/' xmlUrl='http://www.ibm.com/developerworks/podcast/channel-dwall.rss' text='<![CDATA[IBM developerWorks]]>' description='<![CDATA[Scott Laningham, editor of developerWorks podcasts, talks with thought leaders in many fields, paying extra attention to the computing and software element with each focus.]]>'/>
+		<outline text='Every week you will be treated to a new Railscasts episode featuring tips and tricks with Ruby on Rails, the popular web development framework. These screencasts are short and focus on one technique so you can quickly move on to applying it to your own project. The topics are geared toward the intermediate Rails developer, but beginners and experts will get something out of it as well. This is the full resolution version, an iPod specific format is also availasble.' title='Railscasts' type='rss' xmlUrl='http://feeds.feedburner.com/railscasts?format=xml'/>
 	</body>
 </opml>

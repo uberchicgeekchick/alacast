@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
 	<head>
 		<title>Audio Dramas</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Horror Addicts]]>" xmlUrl="http://www.mevio.com/feeds/horroraddicts.xml" type="rss" htmlUrl="http://www.horroraddicts.net/" text="<![CDATA[Horror Addicts]]>" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Frequency of Fear]]>" xmlUrl="http://frequencyoffear.com/podcasts-only/rss2.aspx" type="rss" htmlUrl="http://frequencyoffear.com/" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Horror Addicts]]>' xmlUrl='http://www.mevio.com/feeds/horroraddicts.xml' type='rss' htmlUrl='http://www.horroraddicts.net/' text='<![CDATA[Horror Addicts]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Frequency of Fear]]>' xmlUrl='http://frequencyoffear.com/podcasts-only/rss2.aspx' type='rss' htmlUrl='http://frequencyoffear.com/' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
 	</body>
 </opml>

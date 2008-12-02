@@ -1,7 +1,7 @@
-		<outline title="<![CDATA[current_]]>" xmlUrl="" type="rss" text="<![CDATA[current_]]>" htmlUrl="http://current.tv/tv" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[hulu.com: NBC &amp;FOX]]>" xmlUrl="" type="rss" text="<![CDATA[hulu.com: NBC &amp;FOX]]>" htmlUrl="http://www.hulu.com/browse/on_air" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[CBS: Innertube]]>" xmlUrl="" type="rss" text="<![CDATA[CBS: Innertube]]>" htmlUrl="http://www.cbs.com/innertube/player.php?cat=113891&vid=&format=&auto=0" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[sci-fi channel&#39;s: pulse]]>" xmlUrl="" type="rss" text="<![CDATA[sci-fi channel&#39;s: pulse]]>" htmlUrl="http://www.scifi.com/pulse/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Discovery Channel]]>" xmlUrl="" type="rss" text="<![CDATA[Discovery Channel]]>" htmlUrl="http://dsc.discovery.com/video/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[ABC]]>" xmlUrl="" type="rss" text="<![CDATA[ABC]]>" htmlUrl="http://abc.go.com/index" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[AOL Video(Time Warner)]]>" xmlUrl="" type="rss" text="<![CDATA[AOL Video(Time Warner)]]>" htmlUrl="http://video.aol.com/" description="<![CDATA[]]>"/>
+		<outline title='<![CDATA[current_]]>' xmlUrl='' type='rss' text='<![CDATA[current_]]>' htmlUrl='http://current.tv/tv' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[hulu.com: NBC &amp;FOX]]>' xmlUrl='' type='rss' text='<![CDATA[hulu.com: NBC &amp;FOX]]>' htmlUrl='http://www.hulu.com/browse/on_air' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[CBS: Innertube]]>' xmlUrl='' type='rss' text='<![CDATA[CBS: Innertube]]>' htmlUrl='http://www.cbs.com/innertube/player.php?cat=113891&vid=&format=&auto=0' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[sci-fi channel&#39;s: pulse]]>' xmlUrl='' type='rss' text='<![CDATA[sci-fi channel&#39;s: pulse]]>' htmlUrl='http://www.scifi.com/pulse/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Discovery Channel]]>' xmlUrl='' type='rss' text='<![CDATA[Discovery Channel]]>' htmlUrl='http://dsc.discovery.com/video/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[ABC]]>' xmlUrl='' type='rss' text='<![CDATA[ABC]]>' htmlUrl='http://abc.go.com/index' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[AOL Video(Time Warner)]]>' xmlUrl='' type='rss' text='<![CDATA[AOL Video(Time Warner)]]>' htmlUrl='http://video.aol.com/' description='<![CDATA[]]>'/>

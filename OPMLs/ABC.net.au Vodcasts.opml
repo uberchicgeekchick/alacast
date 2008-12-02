@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
 	<head>
 		<title>ABC.net.au&#039; Vodcasts</title>
 	</head>
 	<body>
-		<outline type="link" title="<![CDATA[ABC.net.au&#039; T.V.]]>" url="http://abc.net.au/tv/video/download.htm" text="<![CDATA[ABC.net.au&#039; Videos]]>" description="<![CDATA[ABC.net.au&#039; Vodcasts &amp; Video downloads]]>"/>
-		<!--<outline type="rss" title="<![CDATA[]]>" xmlUrl="" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Can We Help?]]>" text="<![CDATA[Can We Help?]]>" htmlUrl="http://www.abc.net.au/tv/video/downloads.htm#?vid=canwehelp" xmlUrl="http://abc.net.au/tv/canwehelp/video/vodcast_mp4.xml" type="rss" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Enough Rope]]>" text="<![CDATA[Enough Rope]]>" htmlUrl="http://www.abc.net.au/tv/enoughrope/" xmlUrl="http://www.abc.net.au/tv/enoughrope/video/enoughrope_mp4.xml" type="rss" description="<![CDATA[]]>"/>
-		<outline type="rss" title="<![CDATA[]]>" xmlUrl="http://abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml" htmlUrl="http://www.abc.net.au/triplej/hackhalfhour/default.htm" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
-		<outline type="rss" title="<![CDATA[all triple j vodcasts]]>" xmlUrl="http://abc.net.au/triplej/tv/vodcast/vodcastMp4.xml" htmlUrl="http://www.abc.net.au/triplej/tv/vodcast/default.htm" text="<![CDATA[]]>" description="<![CDATA[Every week we make a special triple j tv program that you can download, play and keep on your computer or on your portable device.]]>"/>
-		<outline title="<![CDATA[triplej tv]]>" xmlUrl="http://www.abc.net.au/jtv/vodcast/vodcastMp4.xml" text="<![CDATA[]]>" htmlUrl=""type="rss" description="<![CDATA[]]>"/>
+		<outline type='link' title='<![CDATA[ABC.net.au&#039; T.V.]]>' url='http://abc.net.au/tv/video/download.htm' text='<![CDATA[ABC.net.au&#039; Videos]]>' description='<![CDATA[ABC.net.au&#039; Vodcasts &amp; Video downloads]]>'/>
+		<!--<outline type='rss' title='<![CDATA[]]>' xmlUrl='' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Can We Help?]]>' text='<![CDATA[Can We Help?]]>' htmlUrl='http://www.abc.net.au/tv/video/downloads.htm#?vid=canwehelp' xmlUrl='http://abc.net.au/tv/canwehelp/video/vodcast_mp4.xml' type='rss' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Enough Rope]]>' text='<![CDATA[Enough Rope]]>' htmlUrl='http://www.abc.net.au/tv/enoughrope/' xmlUrl='http://www.abc.net.au/tv/enoughrope/video/enoughrope_mp4.xml' type='rss' description='<![CDATA[]]>'/>
+		<outline type='rss' title='<![CDATA[]]>' xmlUrl='http://abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml' htmlUrl='http://www.abc.net.au/triplej/hackhalfhour/default.htm' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+		<outline type='rss' title='<![CDATA[all triple j vodcasts]]>' xmlUrl='http://abc.net.au/triplej/tv/vodcast/vodcastMp4.xml' htmlUrl='http://www.abc.net.au/triplej/tv/vodcast/default.htm' text='<![CDATA[]]>' description='<![CDATA[Every week we make a special triple j tv program that you can download, play and keep on your computer or on your portable device.]]>'/>
+		<outline title='<![CDATA[triplej tv]]>' xmlUrl='http://www.abc.net.au/jtv/vodcast/vodcastMp4.xml' text='<![CDATA[]]>' htmlUrl=''type='rss' description='<![CDATA[]]>'/>
 	</body>
 </opml>

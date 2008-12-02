@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
 	<head>
 		<title>CrossMass Productions</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Crossmass Productions]]>" type="link" text="<![CDATA[CrossMass Productions]]>" url="http://crossmass.co.uk/" description="<![CDATA[]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Estalvins Legacy]]>" xmlUrl="http://feeds.feedburner.com/cossmass/estalvinslegacy?format=xml" type="rss" htmlUrl="http://crossmass.co.uk/" text="<![CDATA[Estalvins Legacy]]>" description="<![CDATA[Ranging across the many parallel, and not so parallel, alternate realities of the Cossmass. Things aren&#039;t right in the greater reality know as the Cossmass. It encompasses thousands upon thousands of alternate realities. The stability of the Cossmass has been weakening.]]>"/>
-		<outline title="<![CDATA[Rebels of the Red Planet]]>" xmlUrl="http://feeds.feedburner.com/cossmass/rebelsredplanet?format=xml" type="rss" htmlUrl="http://crossmass.co.uk/" text="<![CDATA[Rebels of the Red Planet]]>" description="<![CDATA[]]>"/>
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Crossmass Productions]]>' type='link' text='<![CDATA[CrossMass Productions]]>' url='http://crossmass.co.uk/' description='<![CDATA[]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Estalvins Legacy]]>' xmlUrl='http://feeds.feedburner.com/cossmass/estalvinslegacy?format=xml' type='rss' htmlUrl='http://crossmass.co.uk/' text='<![CDATA[Estalvins Legacy]]>' description='<![CDATA[Ranging across the many parallel, and not so parallel, alternate realities of the Cossmass. Things aren&#039;t right in the greater reality know as the Cossmass. It encompasses thousands upon thousands of alternate realities. The stability of the Cossmass has been weakening.]]>'/>
+		<outline title='<![CDATA[Rebels of the Red Planet]]>' xmlUrl='http://feeds.feedburner.com/cossmass/rebelsredplanet?format=xml' type='rss' htmlUrl='http://crossmass.co.uk/' text='<![CDATA[Rebels of the Red Planet]]>' description='<![CDATA[]]>'/>
 	</body>
 </opml>

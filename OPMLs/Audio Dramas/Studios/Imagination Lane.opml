@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
 	<head>
 		<title>Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Imagination Lane&#039;s Shows]]>" url="http://imaginationlane.net/shows.html" type="link" text="<![CDATA[Imagination Lane&#039;s Shows]]>" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Imagination Lane]]>" xmlUrl="http://imaginationlane.net/backroads/?feed=podcast" type="rss" htmlUrl="http://imaginationlane.net/backroads/" text="<![CDATA[Imagination Lane&#039;s: &quot;Backroads&quot;]]>" description="<![CDATA[The overall catch all feed for Imagination Lane shows as well as behind the scenes.]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Tam Lynn:PI]]>" xmlUrl="http://imaginationlane.net/tamlynn/?feed=podcast" type="rss" htmlUrl="http://imaginationlane.net/tamlynn/" text="<![CDATA[Imagination Lane&#039;s: &quot;Tam Lynn:PI&quot;]]>" description="<![CDATA[Not your mother&#039;s private eye!]]>"/>
-		<outline title="<![CDATA[0012: Lara Bond]]>" xmlUrl="http://imaginationlane.net/larabond/" type="rss" htmlUrl="http://imaginationlane.net/larabond/feed" text="<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>" description="<![CDATA[Join the adventure in a spy spinoff series.]]>"/>
-		<outline title="<![CDATA[H.M.S. Lydia]]>" xmlUrl="http://imaginationlane.net/hmslydia/" type="rss" htmlUrl="http://imaginationlane.net/hmslydia/feed" text="<![CDATA[Imagination Lane&#039;s: &quot;H.M.S. Lydia&quot;]]>" description="<![CDATA[In the year 1805, His Britannic Majesty’s ship Lydia on a clandestine mission from the king safeguards the waters from creatures claiming to be from other worlds.]]>"/>
-		<outline title="<![CDATA[Fandom Corridor]]>" xmlUrl="http://imaginationlane.net/fandomcorridor/feed" type="rss" htmlUrl="http://imaginationlane.net/fandomcorridor/" text="<![CDATA[Imagination Lane&#039;s: &quot;Fandom Corridor&quot;]]>" description="<![CDATA[The fan shows of Imagination Lane.]]>"/>
-		<outline title="<![CDATA[Saxonbloc]]>" xmlUrl="http://imaginationlane.net/saxonboc/feed" type="rss" htmlUrl="http://imaginationlane.net/saxonboc/" text="<![CDATA[Imagination Lane&#039;s: &quot;Saxonboc&quot;]]>" description="<![CDATA[Translation and adaptation of Anglo-Saxon writings.]]>"/>
-		<outline title="<![CDATA[The Importance of Being Earnest]]>" xmlUrl="http://imaginationlane.net/earnest/feed" type="rss" htmlUrl="http://imaginationlane.net/earnest/" text="<![CDATA[Imagination Lane&#039;s: &quot;The Importance of Being Earnest&quot;]]>" description="<![CDATA[The diverting play.]]>"/>
-		<outline title="<![CDATA[Dracula]]>" xmlUrl="" type="rss" htmlUrl="http://imaginationlane.net/showsdracula.html" text="<![CDATA[Imagination Lane&#039;s: &quot;Dracula&quot;]]>" description="<![CDATA[Take a trip back to the days of old radio, turn off the lights, and let us thrill and chill you with Bram Stoker&#039;s Dracula as Orson Welles intended it.]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Imagination Lane&#039;s Shows]]>' url='http://imaginationlane.net/shows.html' type='link' text='<![CDATA[Imagination Lane&#039;s Shows]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Imagination Lane]]>' xmlUrl='http://imaginationlane.net/backroads/?feed=podcast' type='rss' htmlUrl='http://imaginationlane.net/backroads/' text='<![CDATA[Imagination Lane&#039;s: &quot;Backroads&quot;]]>' description='<![CDATA[The overall catch all feed for Imagination Lane shows as well as behind the scenes.]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Tam Lynn:PI]]>' xmlUrl='http://imaginationlane.net/tamlynn/?feed=podcast' type='rss' htmlUrl='http://imaginationlane.net/tamlynn/' text='<![CDATA[Imagination Lane&#039;s: &quot;Tam Lynn:PI&quot;]]>' description='<![CDATA[Not your mother&#039;s private eye!]]>'/>
+		<outline title='<![CDATA[0012: Lara Bond]]>' xmlUrl='http://imaginationlane.net/larabond/' type='rss' htmlUrl='http://imaginationlane.net/larabond/feed' text='<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>' description='<![CDATA[Join the adventure in a spy spinoff series.]]>'/>
+		<outline title='<![CDATA[H.M.S. Lydia]]>' xmlUrl='http://imaginationlane.net/hmslydia/' type='rss' htmlUrl='http://imaginationlane.net/hmslydia/feed' text='<![CDATA[Imagination Lane&#039;s: &quot;H.M.S. Lydia&quot;]]>' description='<![CDATA[In the year 1805, His Britannic Majesty’s ship Lydia on a clandestine mission from the king safeguards the waters from creatures claiming to be from other worlds.]]>'/>
+		<outline title='<![CDATA[Fandom Corridor]]>' xmlUrl='http://imaginationlane.net/fandomcorridor/feed' type='rss' htmlUrl='http://imaginationlane.net/fandomcorridor/' text='<![CDATA[Imagination Lane&#039;s: &quot;Fandom Corridor&quot;]]>' description='<![CDATA[The fan shows of Imagination Lane.]]>'/>
+		<outline title='<![CDATA[Saxonbloc]]>' xmlUrl='http://imaginationlane.net/saxonboc/feed' type='rss' htmlUrl='http://imaginationlane.net/saxonboc/' text='<![CDATA[Imagination Lane&#039;s: &quot;Saxonboc&quot;]]>' description='<![CDATA[Translation and adaptation of Anglo-Saxon writings.]]>'/>
+		<outline title='<![CDATA[The Importance of Being Earnest]]>' xmlUrl='http://imaginationlane.net/earnest/feed' type='rss' htmlUrl='http://imaginationlane.net/earnest/' text='<![CDATA[Imagination Lane&#039;s: &quot;The Importance of Being Earnest&quot;]]>' description='<![CDATA[The diverting play.]]>'/>
+		<outline title='<![CDATA[Dracula]]>' xmlUrl='' type='rss' htmlUrl='http://imaginationlane.net/showsdracula.html' text='<![CDATA[Imagination Lane&#039;s: &quot;Dracula&quot;]]>' description='<![CDATA[Take a trip back to the days of old radio, turn off the lights, and let us thrill and chill you with Bram Stoker&#039;s Dracula as Orson Welles intended it.]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[Imagination Lane&#039;s: &quot;&quot;]]>' description='<![CDATA[]]>'/>-->
 	</body>
 </opml>

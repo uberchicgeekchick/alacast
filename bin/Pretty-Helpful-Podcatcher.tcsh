@@ -41,54 +41,60 @@ endsw
 set limit_episodes = ""
 
 printf "Downloading podcast's feed.\n"
-wget --quiet -O episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
+wget --quiet -O ./episodes.xml `echo "${1}" | sed '+s/\?/\\\?/g'`
 
-set title = `/usr/bin/grep '<title.*>' episodes.xml | sed 's/<\!\[CDATA\[\(.*\)\]\]>/\1/' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/' | head -1 | sed 's/^[\s\t]\+\(.*\)[\s\t]*$/\1/g' | sed 's/[\r\n]//g'`
-printf "\n\tDownloading all episodes of %s\n" "${title}"
+# Grabs the titles of the podcast and all episodes.
+/usr/bin/grep '<title.*>' ./episodes.xml | sed 's/<\!\[CDATA\[\(.*\)\]\]>/\1/' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/' | sed 's/\&(\#8217|\#039|rsquo|lsquo)\;/'\''/g' | sed 's/\&[^\;]\+\;[\ \t\s]*//g' | sed 's/^[\ \s\t]\+\(.*\)[\ \s\t]\+$/\1/g' >! "./00-titles.lst"
+
+set title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 if ( ! -d "${title}" ) mkdir -p "${title}"
 
-#set titles = `/usr/bin/grep '<title.*>' episodes.xml | sed 's/<\!\[CDATA\[\(.*\)\]\]>/\1/' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/'`
-#foreach title ( $titles )
-#	echo "-->${title}<--"
-#end
-#printf "%s" ${titles}
-#exit
+ex -s '+1,2d' '+wq' './00-titles.lst'
 
-set episodes = `/usr/bin/grep 'enclosure' episodes.xml | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+set download_log = "${title}/00-"`basename "${0}"`".log"
+if ( ! -e "${download_log}" ) touch "${download_log}"
 
-set total_episodes = `/usr/bin/grep 'enclosure' episodes.xml | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed '+s/\?/\\\?/g' | wc -l`
-
-
-printf "Found %s total episodes\n" "${total_episodes}"
+set episodes = `/usr/bin/grep 'enclosure' ./episodes.xml | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+printf "\n\tDownloading %s episodes of %s\n" "${#episodes}" "${title}"
 
 foreach episode ( $episodes )
+	# This removes redirection & problems it causes.
 	set episodes_filename = `basename ${episode}`
-	switch ( `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'` )
+	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
+	ex -s '+1d' '+wq' './00-titles.lst'
+
+	printf "Episode: %s ( %s )\n\t\tURL: %s\n\n" \
+		"${episodes_title}" "${episodes_filename}" "${episode}" \
+		>> "${download_log}"
+
+	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
+	switch ( "${extension}" )
 	case "pdf":
 		goto skip_episode
+		breaksw
 	endsw
 
-#	if ( -e "${episodes_filename}" ) then
-#		echo "Skipping ${episodes_filename}"
-#		continue
-#	endif
+	if ( -e "${title}/${episodes_title}.${extension}" ) goto skip_episode
 
 	switch ( "${episodes_filename}" )
-	case -e: case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
+	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
 		goto skip_episode
+		breaksw
 	endsw
 
 	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
 		goto skip_episode
+		breaksw
 	endsw
 
-	printf "\n\tDownloading episode: %s\n" "${episodes_filename} "
+	download_episode:
+	printf "\n\tDownloading episode:\n\t\t%s\n\t\t( %s )\n" "${episodes_title}" "${episodes_filename} "
 
-	wget --quiet -O "${title}/${episodes_filename}" "${episode}"
+	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
 	printf "\t\t\t["
-	if ( ! -e "${title}/${episodes_filename}" ) then
+	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
 		printf "*epic fail*?"
 	else
 		printf "*w00t*, FTW!"
@@ -97,10 +103,10 @@ foreach episode ( $episodes )
 	next_episode:
 end
 
-echo "*w00t\!*, I'm done; enjoy online media at its best!"
+printf "*w00t\!*, I'm done; enjoy online media at its best!\a"
 
-rm episodes.xml
-
+rm ./episodes.xml
+rm './00-titles.lst'
 exit
 
 skip_episode:
