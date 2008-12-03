@@ -1,3 +1,0 @@
-+1,$s/[
-]\+//g +s/<\/\(item\|entry\)>/<\/\1>/g +1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/g +1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[
-]\+//ig +1,$s/\&\(\#8217|\#039|rsquo|lsquo\)\;/g'/g +1,$s/\&[^\;]\+\;[\ 	\s]*//g +$d +wq
