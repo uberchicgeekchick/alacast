@@ -56,12 +56,11 @@ set download_log = "${title}/00-"`basename "${0}"`".log"
 if ( ! -e "${download_log}" ) touch "${download_log}"
 
 set episodes = `/usr/bin/grep 'enclosure' "./episodes.xml" | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
-printf "\n\tDownloading %s episodes of %s\n" "${#episodes}" "${title}"
+printf "\n\tI have found %s episodes of %s\n" "${#episodes}" "${title}"
 
 foreach episode ( $episodes )
 	# This removes redirection & problems it causes.
 	set episodes_filename = "`basename '${episode}'`"
-	set episodes_title = "`echo '${episodes_filename}' | sed 's/\(.*\)\.[^.]*$/\1 - /'`"
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	ex -s '+1d' '+wq' './00-titles.lst'
 
