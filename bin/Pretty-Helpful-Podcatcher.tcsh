@@ -62,6 +62,7 @@ foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	ex -s '+1d' '+wq' './00-titles.lst'
+	if ( "${episodes_title}" == "" ) set episodes_title = "`echo '${episodes_filename}' | sed 's/\(.*\)\.[^.]*$/\1/'`"
 
 	printf "Episode: %s ( %s )\n\t\tURL: %s\n\n" \
 		"${episodes_title}" "${episodes_filename}" "${episode}" \
