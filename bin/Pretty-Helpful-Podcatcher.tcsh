@@ -41,26 +41,27 @@ endsw
 set limit_episodes = ""
 
 printf "Downloading podcast's feed.\n"
-wget --quiet -O "./episodes.xml" `echo "${1}" | sed '+s/\?/\\\?/g'`
+wget --quiet -O './00-episodes.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 
 # Grabs the titles of the podcast and all episodes.
-cp "./episodes.xml" "./00-titles.lst"
-ex '+1,$s/[\n]\+//g' '+s/<\/\(item\|entry\)>/<\/\1>\r/g' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/g' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+1,$s/\&\(\#8217\|\#039\|rsquo\|lsquo\)\;/g'\''/g' '+1,$s/\&[^\;]\+\;[\ \t\s]*//g' '+$d' '+wq' "./00-titles.lst"
+cp './00-episodes.xml' './00-titles.lst'
+ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+1,$s/\&\(\#8217\|\#039\|rsquo\|lsquo\)\;/g'\''/ig' '+1,$s/\&[^\;]\+\;[\ \t\s]*//g' '+$d' '+wq' './00-titles.lst'
 
-set title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
+set title = "`/usr/bin/grep '<title.*>' './00-episodes.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/g' | head -1 | sed 's/[\r\n]//g'`"
 if ( ! -d "${title}" ) mkdir -p "${title}"
 
-ex -s '+1,2d' '+wq' './00-titles.lst'
+cp './00-titles.lst' './00-episodes.xml' "./${title}"
 
 set download_log = "${title}/00-"`basename "${0}"`".log"
 if ( ! -e "${download_log}" ) touch "${download_log}"
 
-set episodes = `/usr/bin/grep 'enclosure' "./episodes.xml" | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
-printf "\n\tI have found %s episodes of %s\n" "${#episodes}" "${title}"
+set episodes = `/usr/bin/grep 'enclosure' './00-episodes.xml' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
+
+printf "\n\tI have found %s episodes of:\n\t\t'%s'\n" "${#episodes}" "${title}"
 
 foreach episode ( $episodes )
 	# This removes redirection & problems it causes.
-	set episodes_filename = "`basename '${episode}'`"
+	set episodes_filename = `basename "${episode}"`
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	ex -s '+1d' '+wq' './00-titles.lst'
 
@@ -86,11 +87,10 @@ foreach episode ( $episodes )
 		breaksw
 	endsw
 
-	download_episode:
 	set download_message = `printf "Downloading episode: %s\n\t\tURL: %s\n\n" \
-				"${episodes_title}" "${episode}";
-	printf "%s" "${episodes_title}" >> "${download_log}";
-	printf "%s" "${episodes_title}"
+				"${episodes_title}" "${episode}"`;
+	printf "%s" "${download_message}" >> "${download_log}";
+	printf "%s" "${download_message}"
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
 	printf "\t\t\t["
@@ -105,7 +105,7 @@ end
 
 printf "*w00t\!*, I'm done; enjoy online media at its best!\a"
 
-rm "./episodes.xml"
+rm './00-episodes.xml'
 rm './00-titles.lst'
 exit
 
