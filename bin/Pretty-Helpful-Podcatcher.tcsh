@@ -68,32 +68,36 @@ foreach episode ( $episodes )
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 	switch ( "${extension}" )
 	case "pdf":
-		goto skip_episode
+		printf "\n\tSkipping ${episodes_filename}"
+		continue
 		breaksw
 	endsw
 
-	if ( -e "${title}/${episodes_title}.${extension}" ) goto skip_episode
+	if ( -e "${title}/${episodes_title}.${extension}" ) then
+		printf "\n\tSkipping ${episodes_filename}"
+		continue
+	endif
 
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
-		goto skip_episode
+		printf "\n\tSkipping ${episodes_filename}"
+		continue
 		breaksw
 	endsw
 
 	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
-		goto skip_episode
+		printf "\n\tSkipping ${episodes_filename}"
+		continue
 		breaksw
 	endsw
 
-	set download_message = `printf "Downloading episode: %s\n\t\tURL: %s\n\n" \
-				"${episodes_title}" "${episode}"`;
-	printf "%s" "${download_message}" >> "${download_log}";
-	printf "%s" "${download_message}"
+	download_episode:
+	printf "Downloading episode: %s\n\t\t%s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" >> "${download_log}"
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
-	printf "\t\t\t["
+	printf "\n\t\t\t["
 	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
 		printf "*epic fail*?"
 	else
