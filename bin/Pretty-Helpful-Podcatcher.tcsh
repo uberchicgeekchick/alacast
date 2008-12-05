@@ -65,25 +65,26 @@ foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	ex -s '+1d' '+wq' './00-titles.lst'
-	printf "\n\n\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
+	
+	if ( -e "${title}/${episodes_title}.${extension}" ) then
+		printf "\n\t\t\t[skipping existing file]\n\n"
+		continue
+	endif
+
 
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 	switch ( "${extension}" )
 	case "pdf":
-		printf "\n\t\t\t[skipping pdf]"
+		printf "\n\t\t\t[skipping pdf]\n\n"
 		continue
 		breaksw
 	endsw
 
-	if ( -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\t\t\t[skipping existing file]"
-		continue
-	endif
-
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
-		printf "\n\t\t\t[skipping podiobook.com notice]"
+		printf "\n\t\t\t[skipping podiobook.com notice]\n\n"
 		continue
 		breaksw
 	endsw
@@ -91,12 +92,12 @@ foreach episode ( $episodes )
 	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
-		printf "\n\t\t\t[skipped commentary track]"
+		printf "\n\t\t\t[skipped commentary track]\n\n"
 		continue
 		breaksw
 	endsw
 
-	printf "\n\n\t\tDownloading episode: %s\n\t\t%s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\n\n\t\tDownloading episode: %s\n\t\t%s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
 	       	>> "${download_log}"
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
@@ -106,11 +107,10 @@ foreach episode ( $episodes )
 	else
 		printf "*w00t\!*, FTW\!"
 	endif
-	printf "]"
+	printf "]\n\n"
 end
 
 printf "*w00t\!*, I'm done; enjoy online media at its best!\a"
 
-rm './00-episodes.xml'
-rm './00-titles.lst'
+rm './00-episodes.xml' './00-titles.lst'
 

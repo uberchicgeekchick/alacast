@@ -17,5 +17,7 @@
 		<outline title='<![CDATA[]]>' xmlUrl='http://www.podiobooks.com/title/secret-world-chronicle-book-one/feed/' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[]]>' xmlUrl='http://www.podiobooks.com/title/secret-world-chronicle-book-two/feed/' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[The Zombie Chronicles: Escape]]>' xmlUrl='http://podiobooks.com/title/the-zombie-chronicles-escape/feed/' type='rss' htmlUrl='http://jamesmelzer.net/' text='<![CDATA[The Zombie Chronicles: Escape]]>' description='<![CDATA[]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Pieces]]>' xmlUrl='http://www.podiobooks.com/title/pieces/feed/' type='rss' htmlUrl='http://www.podiobooks.com/title/pieces/feed/' text='<![CDATA[Pieces - compiled by Nobilis]]>' description='<![CDATA[Joan&#039;s world has literally fallen apart.  She lives in one tiny piece of the shattered universe, bounded on all sides by shimmering veils.  When the creator god, calling himself "Cassius", stumbles into the cathedral where she lives, she is drawn into an adventure of cosmic proportions.The story is told through the cracked lens of seven experienced podcast authors.  Nobilis, Christiana Ellis, Chris Lester, Graydancer, Paul S. Jenkins, Philippa Ballantine, Brandon Crose and John Tanzer take turns, chapter by chapter writing and reading episodes of the story.]]>'/>
 	</body>
 </opml>
