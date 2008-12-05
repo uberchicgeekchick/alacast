@@ -45,7 +45,7 @@ wget --quiet -O './00-episodes.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 
 # Grabs the titles of the podcast and all episodes.
 cp './00-episodes.xml' './00-titles.lst'
-ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+$d' '+wq' './00-titles.lst'
+ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+wq' './00-titles.lst'
 ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+$d' '+wq' './00-titles.lst'
 
 set title = "`/usr/bin/grep '<title.*>' './00-episodes.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/g' | head -1 | sed 's/[\r\n]//g'`"
