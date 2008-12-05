@@ -45,7 +45,8 @@ wget --quiet -O './00-episodes.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 
 # Grabs the titles of the podcast and all episodes.
 cp './00-episodes.xml' './00-titles.lst'
-ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+1,$s/\&\(\#8217\|\#039\|rsquo\|lsquo\)\;/g'\''/ig' '+1,$s/\&[^\;]\+\;[\ \t\s]*//g' '+$d' '+wq' './00-titles.lst'
+ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+$d' '+wq' './00-titles.lst'
+ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+$d' '+wq' './00-titles.lst'
 
 set title = "`/usr/bin/grep '<title.*>' './00-episodes.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/g' | head -1 | sed 's/[\r\n]//g'`"
 if ( ! -d "${title}" ) mkdir -p "${title}"
@@ -61,26 +62,28 @@ printf "\n\tI have found %s episodes of:\n\t\t'%s'\n" "${#episodes}" "${title}"
 
 foreach episode ( $episodes )
 	# This removes redirection & problems it causes.
-	set episodes_filename = `basename "${episode}"`
+	set episodes_filename = `basename ${episode}`
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	ex -s '+1d' '+wq' './00-titles.lst'
+	printf "\n\n\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+		;
 
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 	switch ( "${extension}" )
 	case "pdf":
-		printf "\n\tSkipping ${episodes_filename}"
+		printf "\n\t\t\t[skipping pdf]"
 		continue
 		breaksw
 	endsw
 
 	if ( -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\tSkipping ${episodes_filename}"
+		printf "\n\t\t\t[skipping existing file]"
 		continue
 	endif
 
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
-		printf "\n\tSkipping ${episodes_filename}"
+		printf "\n\t\t\t[skipping podiobook.com notice]"
 		continue
 		breaksw
 	endsw
@@ -88,32 +91,26 @@ foreach episode ( $episodes )
 	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
-		printf "\n\tSkipping ${episodes_filename}"
+		printf "\n\t\t\t[skipped commentary track]"
 		continue
 		breaksw
 	endsw
 
-	download_episode:
-	printf "Downloading episode: %s\n\t\t%s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" >> "${download_log}"
+	printf "\n\n\t\tDownloading episode: %s\n\t\t%s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	       	>> "${download_log}"
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
 	printf "\n\t\t\t["
 	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
-		printf "*epic fail*?"
+		printf "*epic fail* :("
 	else
-		printf "*w00t*, FTW!"
+		printf "*w00t\!*, FTW\!"
 	endif
-	printf "]\n"
-	next_episode:
+	printf "]"
 end
 
 printf "*w00t\!*, I'm done; enjoy online media at its best!\a"
 
 rm './00-episodes.xml'
 rm './00-titles.lst'
-exit
-
-skip_episode:
-printf "\n\tSkipping ${episodes_filename}"
-goto next_episode
 
