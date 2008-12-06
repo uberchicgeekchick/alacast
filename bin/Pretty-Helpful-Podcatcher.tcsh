@@ -46,7 +46,7 @@ wget --quiet -O './00-episodes.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 # Grabs the titles of the podcast and all episodes.
 cp './00-episodes.xml' './00-titles.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n]\+//ig' '+wq' './00-titles.lst'
-ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+$d' '+wq' './00-titles.lst'
+ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+1,$s/#//g' '+$d' '+wq' './00-titles.lst'
 
 set title = "`/usr/bin/grep '<title.*>' './00-episodes.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/g' | head -1 | sed 's/[\r\n]//g'`"
 if ( ! -d "${title}" ) mkdir -p "${title}"
@@ -58,7 +58,7 @@ if ( ! -e "${download_log}" ) touch "${download_log}"
 
 set episodes = `/usr/bin/grep 'enclosure' './00-episodes.xml' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed '+s/\?/\\\?/g'${limit_episodes}`
 
-printf "\n\tI have found %s episodes of:\n\t\t'%s'\n" "${#episodes}" "${title}"
+printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
 
 foreach episode ( $episodes )
 	# This removes redirection & problems it causes.
@@ -68,12 +68,6 @@ foreach episode ( $episodes )
 	printf "\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
 	
-	if ( -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\t\t\t[skipping existing file]\n\n"
-		continue
-	endif
-
-
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 	switch ( "${extension}" )
 	case "pdf":
@@ -81,7 +75,12 @@ foreach episode ( $episodes )
 		continue
 		breaksw
 	endsw
-
+	if ( -e "${title}/${episodes_title}.${extension}" ) then
+		printf "\n\t\t\t[skipping existing file]\n\n"
+		continue
+	endif
+	
+	
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
 		printf "\n\t\t\t[skipping podiobook.com notice]\n\n"
