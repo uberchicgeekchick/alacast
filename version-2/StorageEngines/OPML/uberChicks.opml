@@ -5,10 +5,10 @@
 	</head>
 	<body>
 		<!--<outline type='link' title='<![CDATA[website&#039;s homepage]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>-->
-		<!--<outline type='rss' title='<![CDATA[]]>' htmlUrl='' xmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
 		<outline type='rss' title='<![CDATA[Anita Borg Institute for Women and Technology]]>' htmlUrl='http://anitaborg.org/community/connect/' xmlUrl='http://anitaborg.org/category/news/podcasts/feed' text='<![CDATA[]]>'/>
 		<outline type='rss' title='<![CDATA[National Center for Women in Technology (NCWIT)]]>' htmlUrl='' xmlUrl='http://www.informit.com/podcasts/index_rss.aspx?c=19' text='<![CDATA[]]>' description='<![CDATA[The National Center for Women in Technology (NCWIT) interviews women entrepreneurs in information technology (IT) careers, sponsored by the NCWIT Entrepreneurial Alliance and the Ewing Marion Kauffman Foundation. Listen as these successful, creative, and technical women discuss their lives and their work -- how they first got into technology, why they chose to be entrepreneurs, and what advice they would give to young people interested in IT or entrepreneurship.]]>'/>
 		<outline title='<![CDATA[TechieDiva&#039;s Videos]]>' text='<![CDATA[]]>' htmlUrl='http://techiediva.blip.tv/' xmlUrl='http://techiediva.blip.tv/rss' type='rss' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[]]>' text='<![CDATA[]]>' htmlUrl='' xmlUrl='' type='rss' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Science Geek Girl]]>' xmlUrl='http://scienceteachingtips.podomatic.com/rss2.xml' type='rss' text='<![CDATA[Science Geek Girl&#039;s Science Snacks]]>' htmlUrl='http://scienceteachingtips.podomatic.com/' description='<![CDATA[Science Snacks for the classroom.]]>'/>
 	</body>
 </opml>

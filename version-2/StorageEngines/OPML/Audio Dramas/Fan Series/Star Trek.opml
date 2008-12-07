@@ -8,5 +8,6 @@
 		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
 		<outline title='<![CDATA[Star Trek: Dimensions]]>' xmlUrl='http://feeds.feedburner.com/GGP_StarTrekDimensions?format=xml' type='rss' htmlUrl='http://giantgnome.com/std.html' text='<![CDATA[Star Trek: Dimensions]]>' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[Star Trek: Excelsior]]>' xmlUrl='http://feeds.feedburner.com/StarTrekExcelsior?format=xml' type='rss' htmlUrl='http://starshipexcelsior.com/' text='<![CDATA[Star Trek: Excelsior]]>' description='<![CDATA[In the year 2382, seven years after the Dominion War, the Federation has opened the Delta Quadrant to exploration, with the Starship Excelsior at the front lines of Task Force 38: Defense Force Delta.  Released semi-monthly or better.]]>'/>
+		<outline title='<![CDATA[Star Trek: Defiant]]>' xmlUrl='http://www.pendantaudio.com/defiant_podcast.xml' type='rss' htmlUrl='http://www.pendantaudio.com/defiant.php' text='<![CDATA[Star Trek: Defiant - by Pendant Productions]]>' description='<![CDATA[Pendant Productions - Star Trek: Defiant MP3 and Podcast]]>'/>
 	</body>
 </opml>
