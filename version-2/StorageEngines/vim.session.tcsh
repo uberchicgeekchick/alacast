@@ -1,0 +1,2 @@
+#!/bin/tcsh -f
+vim-enhanced -p "./OPML/uberChicks.opml" "./OPML/Audio Dramas/Audio Drama Talk.opml" "./OPML/Audio Dramas/Audio Dramas.opml" "./OPML/Audio Dramas/Studios/Darker Projects.opml" "./OPML/Audio Dramas/Studios/Pendant Productions.opml" "./OPML/Audio Dramas/Podnovels/Podcast Novels.opml" "./OPML/Audio Dramas/Podnovels/Librivox.opml" "./OPML/Audio Dramas/Podnovels/Podiobooks.com.opml" "./OPML/Audio Dramas/Horror.opml" 
