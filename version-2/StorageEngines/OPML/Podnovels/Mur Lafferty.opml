@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>Mur Lafferty&#039;s Works</title>
+	</head>
+	<body>
+		<!--<outline title='<![CDATA[]]>' url='' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Murverse.com]]>' url='' type='link' text='<![CDATA[Murverse.com]]>' description='<![CDATA[]]>'/>
+		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Playing for Keeps]]>' xmlUrl='' type='rss' htmlUrl='http://playingforkeepsnovel.com/' text='<![CDATA[Playing for Keeps Novel]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Heaven: Season 1 - Heavan]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Heaven: Season 2 - Earth]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[Heaven: Season 3 - Hell]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
+	</body>
+</opml>
