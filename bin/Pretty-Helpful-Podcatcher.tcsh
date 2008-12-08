@@ -88,22 +88,30 @@ foreach episode ( $episodes )
 
 	ex -s '+1d' '+wq' './00-titles.lst'
 
-	printf "\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
+	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	       	>> "${download_log}"
+
 	switch ( "${extension}" )
 	case "pdf":
+		printf "\n\t\t\t[skipping pdf]\n\n" >> "${download_log}"
 		printf "\n\t\t\t[skipping pdf]\n\n"
 		continue
 		breaksw
 	endsw
+
+	# Skipping existing files.
 	if ( -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\t\t\t[skipping existing file]\n\n"
+		printf "\n\t\t\t[skipping existing file]\n\n" >> "${download_log}"
+		printf "\n\t\t\t[skipped existing file]\n\n"
 		continue
 	endif
 	
 	
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
+		printf "\n\t\t\t[skipping podiobook.com notice]\n\n" >> "${download_log}"
 		printf "\n\t\t\t[skipping podiobook.com notice]\n\n"
 		continue
 		breaksw
@@ -112,22 +120,20 @@ foreach episode ( $episodes )
 	set is_commentary = `printf '%s' "${episodes_filename}" | sed 's/.*\(commentary\).*/\1/gi'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
+		printf "\n\t\t\t[skipped commentary track]\n\n" >> "${download_log}"
 		printf "\n\t\t\t[skipped commentary track]\n\n"
 		continue
 		breaksw
 	endsw
 
-	printf "\n\n\t\tDownloading episode: %s\n\t\t%s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
-	       	>> "${download_log}"
-
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
-	printf "\n\t\t\t["
 	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
-		printf "*epic fail* :("
+		printf "\n\t\t\t[*epic fail* :(]\n\n" >> "${download_log}"
+		printf "\n\t\t\t[*epic fail* :(]\n\n"
 	else
-		printf "*w00t\!*, FTW\!"
+		printf "\n\t\t\t[*w00t\!*, FTW\!]\n\n" >> "${download_log}"
+		printf "\n\t\t\t[*w00t\!*, FTW\!]\n\n"
 	endif
-	printf "]\n\n"
 end
 
 printf "*w00t\!*, I'm done; enjoy online media at its best!"
