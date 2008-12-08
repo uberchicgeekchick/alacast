@@ -88,7 +88,7 @@ foreach episode ( $episodes )
 
 	ex -s '+1d' '+wq' './00-titles.lst'
 
-	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\n" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
 	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
 	       	>> "${download_log}"
