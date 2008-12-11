@@ -36,19 +36,10 @@
 	 *	Find joy!
 	 */
 	
-	ini_set( "display_errors", true );
-	ini_set( "error_reporting", E_ALL | E_STRICT );
-	ini_set( "date.timezone", "America/Denver" );
+	ini_set("display_errors", true);
+	ini_set("error_reporting", E_ALL | E_STRICT);
+	ini_set("date.timezone", "America/Denver");
 
-	// And now, *gulp*, just do each step; step by step, baby steps, comment &verbose variables are fun.
-	// program for fun.  If I forget than read 'Hackers &Painters' &'Hackers Manifesto'.
-	
-	// For projects:
-	//	require_once( "./__autoloader.php" );
-	
 	// For XHTML based programs.
-	
-	header("Content-disposition: inline; filename=uberChicGeekChick's coded art.html");
-	header("Content-Type: text/html; charset=utf-8");
-	
+	require_once("./UI/__detect_agent.inc.php");
 ?>
