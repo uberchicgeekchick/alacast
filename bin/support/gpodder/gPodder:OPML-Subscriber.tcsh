@@ -4,6 +4,18 @@ if ( "${?1}" == "0" && "${1}" == "" && -e "${1}" ) then
 	exit
 endif
 
+set action = "add"
+if ( "${?2}" != "0" && "${2}" != "" ) then
+	switch ( "${2}" )
+	case 'delete': case 'unsubscribe':
+		set action = "del"
+		breaksw
+	case 'add': case 'subscribe': default:
+		set action = "add"
+		breaksw
+	endsw
+endif
+
 /usr/bin/grep --perl-regexp -e 'xmlUrl=["'\''][^"'\'']+["'\'']' "${1}" | sed 's/.*xmlUrl=["'\'']\([^"'\'']\+\)["'\''].*/\1/g' >! .alacast.opml.dump.lst
 
 foreach podcast ( "`cat .alacast.opml.dump.lst`" )
