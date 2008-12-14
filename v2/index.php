@@ -36,10 +36,10 @@
 	 *	Find joy!
 	 */
 	
-	ini_set("display_errors", true);
-	ini_set("error_reporting", E_ALL | E_STRICT);
-	ini_set("date.timezone", "America/Denver");
+	INI_Set("display_errors", true);
+	INI_Set("error_reporting", E_ALL | E_STRICT);
+	INI_Set("date.timezone", "America/Denver");
 
 	// For XHTML based programs.
-	require_once("./UI/__detect_agent.inc.php");
+	Require_Once("./UI/__detect_agent.inc.php");
 ?>
