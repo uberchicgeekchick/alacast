@@ -85,54 +85,60 @@ foreach episode ( $episodes )
 
 	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
 	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
-
 	ex -s '+1d' '+wq' './00-titles.lst'
 
-	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
+
+#	set numbers = ( "Zero|0=00" "One|1=01" "Two|2=02" "Three|3=03" "Four|4=04" "Five|5=05" "Six|6=06" "Seven|7=07" "Eight|8=08" "Nine|9=09" )
+#	foreach number ( "${numbers}" )
+#		set regex = `printf "%s" "${number}" | cut -d'=' -f1`
+#		set replace = `printf "%s" "${number}" | cut -d'=' -f2`
+#		set episodes_title = "`printf '%s\n' '${episodes_title}' | sed 's/\ \(${regex}\)/\ ${replace}/g'`"
+#	end
+
+	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
-	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 	       	>> "${download_log}"
 
 	switch ( "${extension}" )
 	case "pdf":
-		printf "\n\t\t\t[skipping pdf]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[skipping pdf]\n\n"
+		printf "[skipping pdf]\n\n" >> "${download_log}"
+		printf "[skipping pdf]\n\n"
 		continue
 		breaksw
 	endsw
 
 	# Skipping existing files.
 	if ( -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\t\t\t[skipping existing file]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[skipped existing file]\n\n"
+		printf "[skipping existing file]\n\n" >> "${download_log}"
+		printf "[skipped existing file]\n\n"
 		continue
 	endif
 	
-	
 	switch ( "${episodes_filename}" )
 	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
-		printf "\n\t\t\t[skipping podiobook.com notice]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[skipping podiobook.com notice]\n\n"
+		printf "[skipping podiobook.com notice]\n\n" >> "${download_log}"
+		printf "[skipping podiobook.com notice]\n\n"
 		continue
 		breaksw
 	endsw
 
-	set is_commentary = `printf '%s' "${episodes_filename}" | sed 's/.*\(commentary\).*/\1/gi'`
+	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([C|c]ommentary\).*/\1/gi'`
 	switch ( "${is_commentary}" )
 	case "Commentary": case "commentary":
-		printf "\n\t\t\t[skipped commentary track]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[skipped commentary track]\n\n"
+		printf "[skipped commentary track]\n\n" >> "${download_log}"
+		printf "[skipped commentary track]\n\n"
 		continue
 		breaksw
 	endsw
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
 	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
-		printf "\n\t\t\t[*epic fail* :(]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[*epic fail* :(]\n\n"
+		printf "[*epic fail* :(]\n\n" >> "${download_log}"
+		printf "[*epic fail* :(]\n\n"
 	else
-		printf "\n\t\t\t[*w00t\!*, FTW\!]\n\n" >> "${download_log}"
-		printf "\n\t\t\t[*w00t\!*, FTW\!]\n\n"
+		printf "[*w00t\!*, FTW\!]\n\n" >> "${download_log}"
+		printf "[*w00t\!*, FTW\!]\n\n"
 	endif
 end
 

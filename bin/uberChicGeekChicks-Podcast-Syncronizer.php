@@ -24,10 +24,10 @@
 	 * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
 	 * language governing rights and limitations under the RPL.
 	 *
-	 * ---------------------------------------------------------------------------------
-	 * |	A copy of the RPL 1.5 may be found with this project or online at	|
-	 * |		http://opensource.org/licenses/rpl1.5.txt					|
-	 * ---------------------------------------------------------------------------------
+	 * ------------------------------------------------------------------
+	 * |	The RPL 1.5 may be found with this project or online at:    |
+	 * |		http://opensource.org/licenses/rpl1.5.txt	    |
+	 * ------------------------------------------------------------------
 	 */
 	
 	/*
