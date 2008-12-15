@@ -83,19 +83,18 @@ foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 
-	set episodes_title = "`cat './00-titles.lst' | head -1 | sed 's/[\r\n]//g'`"
+	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed s/\'/\\\'/g`"
 	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
 	ex -s '+1d' '+wq' './00-titles.lst'
 
-
-#	set numbers = ( "Zero|0=00" "One|1=01" "Two|2=02" "Three|3=03" "Four|4=04" "Five|5=05" "Six|6=06" "Seven|7=07" "Eight|8=08" "Nine|9=09" )
+#	set numbers = ( "Zero\|0=00" "One\|1=01" "Two\|2=02" "Three\|3=03" "Four\|4=04" "Five\|5=05" "Six\|6=06" "Seven\|7=07" "Eight\|8=08" "Nine\|9=09" )
 #	foreach number ( "${numbers}" )
-#		set regex = `printf "%s" "${number}" | cut -d'=' -f1`
-#		set replace = `printf "%s" "${number}" | cut -d'=' -f2`
-#		set episodes_title = "`printf '%s\n' '${episodes_title}' | sed 's/\ \(${regex}\)/\ ${replace}/g'`"
+#		set regex = `printf "${number}" | cut -d'=' -f1`
+#		set replace = `printf "${number}" | cut -d'=' -f2`
+#		set episodes_title = "`echo '${episodes_title}' | sed 's/\ \(${regex}\)/\ ${replace}/g' | sed s/\'/\\\'/g`"
 #	end
 
-	printf "\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
+	printf "\n\n\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
 	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 	       	>> "${download_log}"
