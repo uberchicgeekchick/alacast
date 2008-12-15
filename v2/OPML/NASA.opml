@@ -36,7 +36,7 @@
 		<outline title='<![CDATA[Chandra X-Ray Observatory]]>' xmlUrl='http://chandra.harvard.edu/resources/podcasts/podcasts.xml' type='rss' htmlUrl='' text='<![CDATA[Chandra X-Ray Observatory]]>' description='<![CDATA[Chandra X-Ray Observatory]]>'/>
 		<outline title='<![CDATA[Digital Learning Network]]>' xmlUrl='http://nasadln.nmsu.edu/dln/content/podcast/dlnpodcast.xml' type='rss' htmlUrl='' text='<![CDATA[Digital Learning Network]]>' description='<![CDATA[Digital Learning Network]]>'/>
 		<outline title='<![CDATA[Hubble Watch]]>' xmlUrl='http://hubblesite.org/skywatch.xml' type='rss' htmlUrl='' text='<![CDATA[Hubble Watch]]>' description='<![CDATA[Hubble Watch]]>'/>
-		<outline title='<![CDATA[JPL (Center Podcast)]]>' xmlUrl='http://www.jpl.nasa.govhttp://www.nasa.gov/multimedia/podcast/podfeed.xml' type='rss' htmlUrl='' text='<![CDATA[JPL (Center Podcast)]]>' description='<![CDATA[JPL (Center Podcast)]]>'/>
+		<outline title='<![CDATA[JPL (Center Podcast)]]>' xmlUrl='http://www.nasa.gov/multimedia/podcast/podfeed.xml' type='rss' htmlUrl='http://www.jpl.nasa.gov/' text='<![CDATA[JPL (Center Podcast)]]>' description='<![CDATA[JPL (Center Podcast)]]>'/>
 		<!--<outline title='<![CDATA[PlanetQuest]]>' xmlUrl='http://planetquest.jpl.nasa.gov/podcast.xml' type='rss' htmlUrl='' text='<![CDATA[PlanetQuest]]>' description='<![CDATA[PlanetQuest]]>'/>-->
 		<outline title='<![CDATA[Science@NASA]]>' xmlUrl='http://science.nasa.gov/podcast.xml' type='rss' htmlUrl='' text='<![CDATA[Science@NASA]]>' description='<![CDATA[Science@NASA]]>'/>
 		<outline title='<![CDATA[Spitzer Audio]]>' xmlUrl='http://www.spitzer.caltech.edu/features/podcasts/podfeed.xml' type='rss' htmlUrl='' text='<![CDATA[Spitzer Audio]]>' description='<![CDATA[Spitzer Audio]]>'/>

@@ -6,6 +6,7 @@
 	<body>
 		<!--<outline type='link' title='<![CDATA[website&#039;s homepage]]>' url='http:///' text='<![CDATA[website&#039;s homepage]]>' description='<![CDATA[website&#039;s homepage]]>'/>-->
 		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title='<![CDATA[Bob&#039;s Yer Uncle!]]>' xmlUrl='http://feeds.feedburner.com/bobsyeruncle/bob' type='rss' htmlUrl='http://www.bobsyeruncle.net/' text='<![CDATA[Bob&#039;s Yer Uncle!]]>' description='<![CDATA[Each week Zan and Jana provide uninformed comment on unimportant issues, as well as regular segments which every now and then contain useful information.]]>'/>
 		<outline title='<![CDATA[Project: Shadow Informant]]>' xmlUrl='http://www.mevio.com/feeds/projectshadow.xml' type='rss' htmlUrl='http://projectshadow.com/' text='<![CDATA[P:SI - Project: Shadow Informant]]>' description='<![CDATA[The P:SI is a vision, come to life. It’s goal: to gather dashPunk fans, by creating a place where fans of different media, series, and genres can explore their infinite diversity through infinite combinations.]]>'/>-->
 		<outline type='rss' title='<![CDATA[soccer girl inc.]]>' htmlUrl='http://soccergirlwp.mevio.com/' xmlUrl='http://www.mevio.com/feeds/soccergirlincorporated.xml' text='<![CDATA[soccer girl inc.]]>' description='<![CDATA[]]>'/>
 	</body>

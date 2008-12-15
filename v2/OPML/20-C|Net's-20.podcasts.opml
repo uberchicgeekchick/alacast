@@ -1,4 +1,4 @@
-		<outline title='<![CDATA[C|Net]]>' xmlUrl='' type='rss' text='<![CDATA[C|Net]]>' htmlUrl='http://podcast.cnet.com/' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[C|Net]]>' type='link' text='<![CDATA[C|Net]]>' url='http://podcast.cnet.com/' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[UK Crave]]>' xmlUrl='http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss' type='rss' text='<![CDATA[UK Crave]]>' htmlUrl='http://crave.cnet.co.uk/podcast/' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[the 404]]>' xmlUrl='http://the404podcast.cnet.com/' type='rss' text='<![CDATA[the 404]]>' htmlUrl='http://reviews.cnet.com/8300-13952_7-81.html' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[Crave]]>' xmlUrl='http://crave.cnet.com/av/vcast/crave.xml' type='rss' text='<![CDATA[Crave]]>' htmlUrl='http://crave.cnet.com/8300-1_105-1-0.html?categoryId=1997&tag=sb_cat' description='<![CDATA[]]>'/>

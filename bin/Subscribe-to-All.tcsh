@@ -1,5 +1,5 @@
 #!/bin/tcsh -f
-cd "`dirname '${0}'`"
+cd "`dirname '${0}'`"/..
 
 set message = "Subscribing"
 set action = "add"
@@ -15,11 +15,11 @@ case 'add': case 'subscribe': default:
 	breaksw
 endsw
 
-/usr/bin/grep  -r --perl-regexp -e '^[\t\s\ ]*[^<][^\!][^\-][^\-].*xmlUrl=["'\''][^"'\'']+["'\'']' "v2/OPML" | sed 's/.*xmlUrl=["'\'']\([^"'\'']\+\)["'\''].*/\1/g' >! .alacast.opml.dump.lst
+/usr/bin/grep  -r -e "^[^\!]\+<outline.*xmlUrl=["\""'][^"\""']\+["\""'].*" "v2/OPML" | sed "s/.*xmlUrl=["\""']\([^"\""']\+\)["\""'].*/\1/g" >! .alacast.opml.dump.lst
 
 foreach podcast ( "`cat .alacast.opml.dump.lst`" )
-	set escaped_podcast = `echo "${podcast}" | sed 's/\([\/\-\?\&=+]\)/\\\1/g' | sed 's/[\r\n]//g'`
-	if ( `/usr/bin/grep -e "xmlUrl=["\""']${escaped_podcast}['"\""]" "${HOME}/.config/gpodder/channels.opml" | sed "s/.*xmlUrl=["\""']\([^"\""']\+\)["\""'].*/\1/g"` == "${podcast}" ) continue
+	set escaped_podcast = "`echo '${podcast}' | sed 's/\([\/\-\?\&\=\+\.]\)/\\\1/g' | sed 's/[\r\n]//g'`"
+	if ( `/usr/bin/grep -e "${escaped_podcast}" "${HOME}/.config/gpodder/channels.opml" | sed "s/.*xmlUrl=["\""']\([^"\""']\+\)["\""'].*/\1/g"` == "${podcast}" ) continue
 
 	printf "\n\t${message} to:\n\t\t %s" "${podcast}"
 	continue
