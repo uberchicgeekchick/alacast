@@ -43,23 +43,34 @@ set limit_episodes = ""
 printf "Downloading podcast's feed.\n"
 wget --quiet -O './00-feed.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 
+set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g'`"
+if ( ! -d "${title}" ) mkdir -p "${title}"
+
 # Grabs the titles of the podcast and all episodes.
 cp './00-feed.xml' './00-titles.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' './00-titles.lst'
 ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+1,$s/#//g' '+wq' './00-titles.lst'
 
-set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/g' | head -1 | sed 's/[\r\n]//g'`"
-if ( ! -d "${title}" ) mkdir -p "${title}"
+# This will be my last update to any part of Alacast v1
+# This fixes episode & chapter titles so that they will sort correctly
+ex '+1,$s/\ \([0-9]\{1\}\)\([^0-9]\)/\ 0\1\2/g' '+wq' './00-titles.lst'
 
-set download_log = "${title}/00-"`basename "${0}"`".log"
-if ( ! -e "${download_log}" ) touch "${download_log}"
+# This needs to be implemented but extented.  If I implemented just this Sixty would be 06ty.
+# Any easy fix would introduce other bugs and issues.
+# I am leaving this as a 'reminder' that Alacast v2 needs to support Twenty, Seventy, and etc.
+#
+#ex '+1,$s/\ \(Zero\)/\ 00/gi' '+1,$s/\ \(One\)/\ 01/gi' '+1,$s/\ \(Two\)/\ 02/gi' '+1,$s/\ \(Three\)/\ 03/gi' '+1,$s/\ \(Four\)/\ 04/gi' '+wq' './00-titles.lst'
+#ex '+1,$s/\ \(Five\)/\ 05/g' '+1,$s/\ \(Six\)/\ 06/g' '+1,$s/\ \(Seven\)/\ 07/g' '+1,$s/\ \(Eight\)/\ 08/g' '+1,$s/\ \(Nine\)/\ 09/g' '+wq' './00-titles.lst'
 
+# Grabs the enclosures from the feed.
+# This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/[\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-01.lst'
 
+# This second method grabs all enclosures.
 cp '00-feed.xml' '00-enclosures-02.lst'
-/usr/bin/grep 'enclosure' './00-feed.xml' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/g' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/g' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/g' | sed 's/\?/\\\?/g' | sed 's/[\r\n]//g' >! './00-enclosures-02.lst'
+/usr/bin/girep 'enclosure' './00-feed.xml' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/gi' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/\?/\\\?/gi' | sed 's/[\r\n]//gi' >! './00-enclosures-02.lst'
 
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
 set enclosure_count_02 = `cat "./00-enclosures-02.lst"`
@@ -71,11 +82,14 @@ else
 	rm "./00-enclosures-01.lst"
 endif
 
-cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}"
+if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
 
 set episodes = `cat './00-enclosures.lst'${limit_episodes}`
 
 printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
+
+set download_log = "${title}/00-"`basename "${0}"`".log"
+touch "${download_log}"
 
 foreach episode ( $episodes )
 	# This removes redirection & problems it causes.
@@ -86,13 +100,6 @@ foreach episode ( $episodes )
 	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed s/\'/\\\'/g`"
 	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
 	ex -s '+1d' '+wq' './00-titles.lst'
-
-#	set numbers = ( "Zero\|0=00" "One\|1=01" "Two\|2=02" "Three\|3=03" "Four\|4=04" "Five\|5=05" "Six\|6=06" "Seven\|7=07" "Eight\|8=08" "Nine\|9=09" )
-#	foreach number ( "${numbers}" )
-#		set regex = `printf "${number}" | cut -d'=' -f1`
-#		set replace = `printf "${number}" | cut -d'=' -f2`
-#		set episodes_title = "`echo '${episodes_title}' | sed 's/\ \(${regex}\)/\ ${replace}/g' | sed s/\'/\\\'/g`"
-#	end
 
 	printf "\n\n\t\tFound episode: %s\n\t\tTitle: %s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 		;
