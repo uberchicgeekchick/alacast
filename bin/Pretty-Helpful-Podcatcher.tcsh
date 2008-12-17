@@ -53,7 +53,7 @@ ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|r
 
 # This will be my last update to any part of Alacast v1
 # This fixes episode & chapter titles so that they will sort correctly
-ex '+1,$s/\ \([0-9]\{1\}\)\([^0-9]\)/\ 0\1\2/g' '+wq' './00-titles.lst'
+ex '+1,$s/^\([0-9]\)\([^0-9]\)/0\1\2/' '+1,$s/\([^0-9]\)\([0-9]\)\([^0-9]\)/\10\2\3/g' '+1,$s/\([^0-9]\)\([0-9]\)$/\10\2/' '+wq' './00-titles.lst'
 
 # This needs to be implemented but extented.  If I implemented just this Sixty would be 06ty.
 # Any easy fix would introduce other bugs and issues.
