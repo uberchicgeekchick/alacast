@@ -82,7 +82,7 @@ else
 	rm "./00-enclosures-01.lst"
 endif
 
-if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
+if ( "${?2}" == "1" && "${2}" == "--clean-up" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
 
 set episodes = `cat './00-enclosures.lst'${limit_episodes}`
 
@@ -92,7 +92,6 @@ set download_log = "${title}/00-"`basename "${0}"`".log"
 touch "${download_log}"
 
 foreach episode ( $episodes )
-	# This removes redirection & problems it causes.
 	set episode = `echo "${episode}" | sed 's/[\r\n]$//'`
 	set episodes_filename = `basename ${episode}`
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
@@ -129,14 +128,12 @@ foreach episode ( $episodes )
 		breaksw
 	endsw
 
-	set is_commentary = `echo "${episodes_filename}" | sed 's/.*\([C|c]ommentary\).*/\1/gi'`
-	switch ( "${is_commentary}" )
-	case "Commentary": case "commentary":
+	set is_commentary = `printf "%s==%s" "${episodes_title}" "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
+	if ( "${is_commentary}" != "${episodes_title}==${episodes_filename}" ) then
 		printf "[skipped commentary track]\n\n" >> "${download_log}"
 		printf "[skipped commentary track]\n\n"
 		continue
-		breaksw
-	endsw
+	endif
 
 	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
 	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
@@ -151,4 +148,3 @@ end
 printf "*w00t\!*, I'm done; enjoy online media at its best!"
 
 rm './00-feed.xml' './00-titles.lst' './00-enclosures.lst'
-

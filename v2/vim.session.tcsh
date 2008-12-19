@@ -1,2 +1,2 @@
 #!/bin/tcsh -f
-vim-enhanced -p "./OPML/Podnovels/Librivox.opml" "./OPML/Podnovels/Podiobooks.com.opml" "./OPML/Audio Dramas/Audio Drama Talk.opml" "./OPML/Audio Dramas/Audio Dramas.opml" 
+vim-enhanced -p "./Apps/Alacast/Podcasts/OPMLs/Podnovels/Podcast Novels.opml" "./Apps/Alacast/Podcasts/OPMLs/Podnovels/Librivox.opml" "./Apps/Alacast/Podcasts/OPMLs/Podnovels/Podiobooks.com.opml" "./Apps/Alacast/Podcasts/OPMLs/Audio Dramas/Audio Drama Talk.opml" "./Apps/Alacast/Podcasts/OPMLs/Audio Dramas/Audio Dramas.opml" 
