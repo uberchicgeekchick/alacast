@@ -1,8 +1,0 @@
-(c) 2008 Kaity G. B.
-Released under the RPL 1.5
-
-Alacast is an online media browser & server. Requires PHP 5.3+, PHP-GTK, & PHP-GST.
-
-Support for almost any format will be provided by use of libvlc, ffmpeg, or libxine.
-My goal is to have Alacast work like cable / satalite provider's channel browsers.
-For online media, including Audio & Video.  Focused on long form content.
