@@ -1,6 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<opml version='2.0'>
+	<head>
+		<title>C|Net&#039;s audio &amp; video podcasts</title>
+	</head>
+	<body>
 		<outline title='<![CDATA[C|Net]]>' type='link' text='<![CDATA[C|Net]]>' url='http://podcast.cnet.com/' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[UK Crave]]>' xmlUrl='http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss' type='rss' text='<![CDATA[UK Crave]]>' htmlUrl='http://crave.cnet.co.uk/podcast/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[the 404]]>' xmlUrl='http://the404podcast.cnet.com/' type='rss' text='<![CDATA[the 404]]>' htmlUrl='http://reviews.cnet.com/8300-13952_7-81.html' description='<![CDATA[]]>'/>
+		<outline title='<![CDATA[The 404]]>' xmlUrl='http://feeds.feedburner.com/the404?format=xml' type='rss' text='<![CDATA[The 404 from CNet]]>' htmlUrl='http://the404.cnet.com/' description='<![CDATA[The 404 is where...well...you won&#039;t find much of anything to help you stay connected to the latest news. You will, however, find three guys who are obsessed with tech talking about music, movies, games, and anything else in pop culture that uses technology. Get in on the show by e-mailing us at <a ="mailto:the404@cnet.com">the404@cnet.com</a> or leave us a message at 1-866-404-CNET (2638). Or join up with our Facebook group and get in on the action. Visit the blog at <a href="http://the404.cnet.com/">http://the404.cnet.com/</a>.]]>'/>
 		<outline title='<![CDATA[Crave]]>' xmlUrl='http://crave.cnet.com/av/vcast/crave.xml' type='rss' text='<![CDATA[Crave]]>' htmlUrl='http://crave.cnet.com/8300-1_105-1-0.html?categoryId=1997&tag=sb_cat' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[C|NET Live]]>' xmlUrl='http://feeds.feedburner.com/cnet/cnetlive' type='rss' text='<![CDATA[C|NET Live]]>' htmlUrl='http://www.cnettv.com/9743-1_53-0.html?name=CNET%20Live&type=node&value=13485' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[C|NET News.com]]>' xmlUrl='http://news.com.com/2325-11424_3-0.xml' type='rss' text='<![CDATA[C|NET News.com]]>' htmlUrl='http://news.com.com/News.com+daily+podcast/2030-11424_3-5845846.html' description='<![CDATA[]]>'/>
@@ -9,3 +15,5 @@
 		<outline title='<![CDATA[cnet.com.au videos]]>' xmlUrl='http://www.cnet.com.au/feeds/rss/?tag=latest_videos' type='rss' text='<![CDATA[cnet.com.au videos]]>' htmlUrl='http://www.cnet.com.au/videos/' description='<![CDATA[]]>'/>
 		<outline title='<![CDATA[C|NET tv]]>' xmlUrl='http://reviews.cnet.com/html/xml/2001-12839_7-0.xml' type='rss' text='<![CDATA[C|NET tv]]>' htmlUrl='http://www.cnettv.com/' description='<![CDATA[]]>'/>
 		-->
+	</body>
+</opml>
