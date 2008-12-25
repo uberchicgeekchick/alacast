@@ -43,8 +43,11 @@ set limit_episodes = ""
 printf "Downloading podcast's feed.\n"
 wget --quiet -O './00-feed.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
 
-set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
-if ( ! -d "${title}" ) mkdir -p "${title}"
+set feed_type = "rss"
+if ( "`/usr/bin/grep -i '<channel' './00-feed.xml'`" == "" ) then
+	set feed_type = "atom"
+endif
+
 
 # Grabs the titles of the podcast and all episodes.
 cp './00-feed.xml' './00-titles.lst'
@@ -65,12 +68,16 @@ ex '+1,$s/^\([0-9]\)\([^0-9]\)/0\1\2/' '+1,$s/\([^0-9]\)\([0-9]\)\([^0-9]\)/\10\
 # Grabs the enclosures from the feed.
 # This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
+#ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''][^>]*type=["'\'']\(audio\|video\).*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
-ex '+1,$s/[\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-01.lst'
+ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-01.lst'
 
 # This second method grabs all enclosures.
 cp '00-feed.xml' '00-enclosures-02.lst'
-/usr/bin/girep 'enclosure' './00-feed.xml' | sed '+s/.*url[^"'\'']*.\([^"'\'']*\).*/\1/gi' | sed 's/.*href=["'\'']\([^"'\'']*\).*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/\?/\\\?/gi' | sed 's/[\r\n]//gi' >! './00-enclosures-02.lst'
+/usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*type=["'\'']\(audio\|video\).*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' | sed 's/\?/\\\?/gi' >! './00-enclosures-02.lst'
+ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-02.lst'
+
+exit
 
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
 set enclosure_count_02 = `cat "./00-enclosures-02.lst"`
@@ -82,21 +89,25 @@ else
 	rm "./00-enclosures-01.lst"
 endif
 
-if ( "${?2}" == "1" && "${2}" == "--clean-up" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
+set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
+if ( ! -d "${title}" ) mkdir -p "${title}"
+
+if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
 
 set episodes = `cat './00-enclosures.lst'${limit_episodes}`
 
-printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
-
 set download_log = "${title}/00-"`basename "${0}"`".log"
 touch "${download_log}"
+
+printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
+printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}" >! "${download_log}"
 
 foreach episode ( $episodes )
 	set episode = `echo "${episode}" | sed 's/[\r\n]$//'`
 	set episodes_filename = `basename ${episode}`
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 
-	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed s/\'/\\\'/g`"
+	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed s/\'/\\\'/g | sed 's/\?//g'`"
 	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
 	ex -s '+1d' '+wq' './00-titles.lst'
 
