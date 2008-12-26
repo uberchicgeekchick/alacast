@@ -14,3 +14,4 @@
 #
 #	Adding CDATA padding to outlines:
 #		1,$s/\v(title|text|description)(\=')([^\<']*)([^\<']*)'/\1\2<![CDATA[\3\4]]>'/g
+#		1,$s/\(title\|text\|description\)\(='\)\([^<']\+\)\('\)/\1\2<![CDATA[\3]]>\4/g
