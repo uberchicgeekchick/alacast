@@ -41,5 +41,5 @@
 	INI_Set("date.timezone", "America/Denver");
 
 	// For XHTML based programs.
-	Require_Once("./UI/__detect_agent.inc.php");
+	Require_Once("Init.inc.php");
 ?>

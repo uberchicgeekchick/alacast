@@ -77,8 +77,6 @@ cp '00-feed.xml' '00-enclosures-02.lst'
 /usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*type=["'\'']\(audio\|video\).*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' | sed 's/\?/\\\?/gi' >! './00-enclosures-02.lst'
 ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-02.lst'
 
-exit
-
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
 set enclosure_count_02 = `cat "./00-enclosures-02.lst"`
 if ( ${#enclosure_count_01} >= ${#enclosure_count_02} ) then
@@ -139,7 +137,7 @@ foreach episode ( $episodes )
 		breaksw
 	endsw
 
-	set is_commentary = `printf "%s==%s" "${episodes_title}" "${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
+	set is_commentary = "`printf '%s==%s' '${episodes_title}' '${episodes_filename}' | sed 's/.*\([Cc]ommentary\).*/\1/gi'`"
 	if ( "${is_commentary}" != "${episodes_title}==${episodes_filename}" ) then
 		printf "[skipped commentary track]\n\n" >> "${download_log}"
 		printf "[skipped commentary track]\n\n"
