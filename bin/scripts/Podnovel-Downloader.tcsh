@@ -56,8 +56,8 @@ ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|r
 
 # This will be my last update to any part of Alacast v1
 # This fixes episode & chapter titles so that they will sort correctly
-ex '+1,$s/\(Zero\)/0/gi' '+1,$s/\(One\)/1/gi' '+1,$s/\(Two\)/2/gi' '+1,$s/\(Three\)/3/gi' '+1,$s/\(Four\)/4/gi' '+1,$s/\(Five\)/5/gi' '+wq' './0-titles.lst'
-ex '+1,$s/\(Six\)/6/gi' '+1,$s/\(Seven\)/7/gi' '+1,$s/\(Eight\)/8/gi' '+1,$s/\(Nine\)/9/gi' '+1,$s/\(Ten\)/10/gi' '+wq' './0-titles.lst'
+ex '+1,$s/\(Zero\)/0/gi' '+1,$s/\(One\)/1/gi' '+1,$s/\(Two\)/2/gi' '+1,$s/\(Three\)/3/gi' '+1,$s/\(Four\)/4/gi' '+1,$s/\(Five\)/5/gi' '+wq' './00-titles.lst'
+ex '+1,$s/\(Six\)/6/gi' '+1,$s/\(Seven\)/7/gi' '+1,$s/\(Eight\)/8/gi' '+1,$s/\(Nine\)/9/gi' '+1,$s/\(Ten\)/10/gi' '+wq' './00-titles.lst'
 
 ex '+1,$s/\([0-9]\)ty/\10/gi' '+1,$s/(Fifty)/50/gi' '+1,$s/(Thirty)/30/gi' '+1,$s/(Twenty)/20/gi' '+wq' './00-titles.lst'
 ex '+1,$s/\([0-9]\)teen/1\1/gi' '+1,$s/(Fifteen)/15/gi' '+1,$s/(Thirteen)/13/gi' '+1,$s/(Twelve)/12/gi' '+1,$s/(Eleven)/11/gi' '+1,$s/(Ten)/10/gi' '+wq' './00-titles.lst'
