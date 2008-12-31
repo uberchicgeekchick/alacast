@@ -1,13 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Comedy</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='http:///' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
-		<outline title='<![CDATA[The O-Line Mysteries]]>' xmlUrl='http://www.olinemysteries.com/Podcast/rss.xml' type='rss' htmlUrl='http://www.olinemysteries.com/Welcome.html' text='<![CDATA[The O-Line Mysteries]]>' description='<![CDATA[Welcome to The O Line Mystery show - an original scripted work of audio fiction, told in the fashion of radio serials from the 1920&#039;s-1950&#039;s.&nbsp;  Each week our characters battle for truth or justice or some other random pillar of jurisprudence.]]>'/>
-		<outline title='<![CDATA[Video Adventures Of Dr. Floyd]]>' xmlUrl='http://www.doctorfloyd.com/video/rss.xml' type='rss' text='<![CDATA[Video Adventures Of Dr. Floyd]]>' htmlUrl='http://www.doctorfloyd.com/video/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Radio Adventures Of Dr. Floyd]]>' xmlUrl='http://www.doctorfloyd.com/blog/rss.xml' type='rss' text='<![CDATA[Radio Adventures Of Dr. Floyd]]>' htmlUrl='http://www.doctorfloyd.com/' description='<![CDATA[]]>'/>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The O-Line Mysteries]]>" xmlUrl="http://www.olinemysteries.com/Podcast/rss.xml" type="rss" htmlUrl="http://www.olinemysteries.com/Welcome.html" text="<![CDATA[The O-Line Mysteries]]>" description="<![CDATA[Welcome to The O Line Mystery show - an original scripted work of audio fiction, told in the fashion of radio serials from the 1920&#039;s-1950&#039;s.&nbsp;  Each week our characters battle for truth or justice or some other random pillar of jurisprudence.]]>"/>
+		<outline title="<![CDATA[Video Adventures Of Dr. Floyd]]>" xmlUrl="http://www.doctorfloyd.com/video/rss.xml" type="rss" text="<![CDATA[Video Adventures Of Dr. Floyd]]>" htmlUrl="http://www.doctorfloyd.com/video/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Radio Adventures Of Dr. Floyd]]>" xmlUrl="http://www.doctorfloyd.com/blog/rss.xml" type="rss" text="<![CDATA[Radio Adventures Of Dr. Floyd]]>" htmlUrl="http://www.doctorfloyd.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

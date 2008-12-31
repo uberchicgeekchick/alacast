@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Mystery Audio Dramas</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Wormwood: A Serialized Mystery]]>" xmlUrl="http://feeds.feedburner.com/WormwoodMystery?format=xml" type="rss" text="<![CDATA[Wormwood: A Serialized Mystery]]>" htmlUrl="http://wormwoodshow.com/" description="<![CDATA[A weekly mystery podcast from Habit Forming Films, LLC.]]>"/>
+		<outline title="<![CDATA[One Eighteen: Migration]]>" xmlUrl="http://oneeighteen.libsyn.com/rss" type="rss" text="<![CDATA[One Eighteen: Migration]]>" htmlUrl="http://oneeighteen.libsyn.com/" description="<![CDATA[A Post Apocalyptic Podcast Adventure of Zombies and Madness]]>"/>
+	</body>
+</opml>

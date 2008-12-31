@@ -104,7 +104,7 @@ foreach episode ( $episodes )
 	set episodes_filename = `basename ${episode}`
 	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
 
-	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed s/\'/\\\'/g | sed 's/\?//g'`"
+	set episodes_title = "`head -1 './00-titles.lst' | sed 's/[\r\n]//g' | sed 's/\?//g'`"
 	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
 	ex -s '+1d' '+wq' './00-titles.lst'
 
@@ -129,14 +129,16 @@ foreach episode ( $episodes )
 	endif
 	
 	switch ( "${episodes_filename}" )
-	case "theend.mp3": case "caughtup.mp3": case "caught_up_1.mp3":
+	case "theend.mp3":
+	case "caughtup.mp3":
+	case "caught_up_1.mp3":
 		printf "[skipping podiobook.com notice]\n\n" >> "${download_log}"
 		printf "[skipping podiobook.com notice]\n\n"
 		continue
 		breaksw
 	endsw
 
-	set is_commentary = "`printf '%s==%s' '${episodes_title}' '${episodes_filename}' | sed 's/.*\([Cc]ommentary\).*/\1/gi'`"
+	set is_commentary = `printf "${episodes_title}==${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
 	if ( "${is_commentary}" != "${episodes_title}==${episodes_filename}" ) then
 		printf "[skipped commentary track]\n\n" >> "${download_log}"
 		printf "[skipped commentary track]\n\n"

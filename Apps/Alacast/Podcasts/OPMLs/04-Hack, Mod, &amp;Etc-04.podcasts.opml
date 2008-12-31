@@ -1,10 +1,10 @@
-		<outline title='<![CDATA[Hacker Media]]>' type='link' text='<![CDATA[Hacker Media]]>' url='http://www.hackermedia.org/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Hak.5]]>' xmlUrl='http://hak5xvid.libsyn.com/rss' type='rss' text='<![CDATA[Hak.5]]>' htmlUrl='http://hak5.org/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Hak.5 Radio]]>' xmlUrl='' type='rss' text='<![CDATA[Hak.5 Radio]]>' htmlUrl='http://hak5radio.com/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Hacker Public Radio]]>' xmlUrl='http://hackerpublicradio.org/hpr_rss.php' type='rss' text='<![CDATA[Hacker Public Radio]]>' htmlUrl='http://hackerpublicradio.org/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[BSOD]]>' xmlUrl='http://bsodtv.org/rss/episodes.rss' type='rss' text='<![CDATA[BSOD]]>' htmlUrl='http://bsodtv.org/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[Digital Underground]]>' xmlUrl='http://digitalunderground.tv/feeds/du-ipod.xml' type='rss' text='<![CDATA[Digital Underground]]>' htmlUrl='http://digitalunderground.tv/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[DDP HackRadio]]>' xmlUrl='http://www.ddphackradio.org/podcast/' type='rss' text='<![CDATA[DDP HackRadio]]>' htmlUrl='http://www.ddphackradio.org/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[SploitCast]]>' xmlUrl='http://sploitcast.libsyn.com/rss' type='rss' text='<![CDATA[SploitCast]]>' htmlUrl='http://sploitcast.com/' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[stage6: IPTV]]>' xmlUrl='http://www.stage6.com/rss/channel/channel:IPTV' type='rss' text='<![CDATA[stage6: IPTV]]>' htmlUrl='http://www.stage6.com/IPTV' description='<![CDATA[]]>'/>
-		<outline title='<![CDATA[stage6.com: videos]]>' xmlUrl='http://www.stage6.com/rss/videos/order:date' type='rss' text='<![CDATA[stage6.com: videos]]>' htmlUrl='http://www.stage6.com/videos/order:date' description='<![CDATA[]]>'/>
+		<outline title="<![CDATA[Hacker Media]]>" type="link" text="<![CDATA[Hacker Media]]>" url="http://www.hackermedia.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Hak.5]]>" xmlUrl="http://hak5xvid.libsyn.com/rss" type="rss" text="<![CDATA[Hak.5]]>" htmlUrl="http://hak5.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Hak.5 Radio]]>" xmlUrl="" type="rss" text="<![CDATA[Hak.5 Radio]]>" htmlUrl="http://hak5radio.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Hacker Public Radio]]>" xmlUrl="http://hackerpublicradio.org/hpr_rss.php" type="rss" text="<![CDATA[Hacker Public Radio]]>" htmlUrl="http://hackerpublicradio.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[BSOD]]>" xmlUrl="http://bsodtv.org/rss/episodes.rss" type="rss" text="<![CDATA[BSOD]]>" htmlUrl="http://bsodtv.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Digital Underground]]>" xmlUrl="http://digitalunderground.tv/feeds/du-ipod.xml" type="rss" text="<![CDATA[Digital Underground]]>" htmlUrl="http://digitalunderground.tv/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[DDP HackRadio]]>" xmlUrl="http://www.ddphackradio.org/podcast/" type="rss" text="<![CDATA[DDP HackRadio]]>" htmlUrl="http://www.ddphackradio.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[SploitCast]]>" xmlUrl="http://sploitcast.libsyn.com/rss" type="rss" text="<![CDATA[SploitCast]]>" htmlUrl="http://sploitcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[stage6: IPTV]]>" xmlUrl="http://www.stage6.com/rss/channel/channel:IPTV" type="rss" text="<![CDATA[stage6: IPTV]]>" htmlUrl="http://www.stage6.com/IPTV" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[stage6.com: videos]]>" xmlUrl="http://www.stage6.com/rss/videos/order:date" type="rss" text="<![CDATA[stage6.com: videos]]>" htmlUrl="http://www.stage6.com/videos/order:date" description="<![CDATA[]]>"/>
