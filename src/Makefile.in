@@ -1,4 +1,5 @@
-shell=tcsh
+shell=/bin/tcsh
+data_dir=/usr
 cache="/var/alacast/cache"
 log="/var/log/alacast"
 

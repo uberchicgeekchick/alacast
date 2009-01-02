@@ -1,0 +1,17 @@
+#!/bin/tcsh
+set data_dir = "/usr"
+set use_clutter = "/usr/include/clutter-0.8"
+set use_php = "/usr/include/php-5.2"
+set disable_php = "no"
+set disable = "no"
+
+foreach arg ( "${argv}" )
+	set option = "`printf '${arg}' | sed 's/^\([^=]*\)=\?\(.*\)$/\1/g'`"
+	set value = "`printf '${arg}' | sed 's/^\([^=]*\)=\?\(.*\)$/\2/g'`"
+	switch ( "${option}" )
+	case "--prefix":
+	breaksw
+end
+
+install_clutter:
+
