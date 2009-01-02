@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 	/*
 	 * (c) 2007-Present Kathryn G. Bohmont <uberChicGeekChick.Com -at- uberChicGeekChick.Com>
@@ -33,20 +34,14 @@
 	 * TODO
 	 *	Have fun with this project!
 	 *	If not pick another or do something different.
-	 *	Findder("Content-disposition: inline; filename=Expressive+Programming.html");
-	 *	joy!
+	 *	Find joy!
 	 */
-	
 	INI_Set("display_errors", true);
 	INI_Set("error_reporting", E_ALL | E_STRICT);
 	INI_Set("date.timezone", "America/Denver");
 
-	/*
-	 * For XHTML web applications:
-	 * 
-	 * 	Header("Content-Type: text/html; charset=utf-8");
-	 * 	Header("Content-disposition: inline; filename=AOPHP.html");
-	 */
+	Header("Content-Type: text/html; charset=utf-8");
+	Header("Content-disposition: inline; filename=Expressive+Programming.html");
+	
 
-	Require_Once("Init.inc.php");
 ?>

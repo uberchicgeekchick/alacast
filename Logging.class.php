@@ -49,7 +49,7 @@
 		private $log_file;
 		private $logs_fp;
 		
-		public function __construct( $logs_path = ".", $programs_name = "uberChicGeekChick's logger", $logging_enable = true, $silence_output = false ) {
+		public function __construct( $logs_path = ".", $programs_name = "AOPHP-App", $logging_enable = true, $silence_output = false ) {
 			$this->program_name = $programs_name;
 			
 			if( $silence_output )
@@ -59,12 +59,16 @@
 			
 			if( ! $logging_enable )
 				return $this->disable_logging();
-			
+
 			$this->log_file = "";
+			try( (is_dir($logs_path)) && (is_writable($logs_path)) ) {
+				$this->logs_path=preg_replace("/\/$/", "", $logs_path);
+			}catch(false){
+				new Exception("I was unable to open the log's path for writing.");
+			}
+
 			if(!( (is_dir( $logs_path )) ))
 				$this->logs_path = ".";
-			else
-				$this->logs_path = preg_replace( "/\/$/", "", $logs_path );
 			
 			$this->logging_enabled = true;
 			$this->ending_hour = -1;

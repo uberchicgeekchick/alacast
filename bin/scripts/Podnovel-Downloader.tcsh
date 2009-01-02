@@ -139,7 +139,7 @@ foreach episode ( $episodes )
 	endsw
 
 	set is_commentary = `printf "${episodes_title}==${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
-	if ( "${is_commentary}" != "${episodes_title}==${episodes_filename}" ) then
+	if ( "${is_commentary}" != `printf "${episodes_title}==${episodes_filename}"` ) then
 		printf "[skipped commentary track]\n\n" >> "${download_log}"
 		printf "[skipped commentary track]\n\n"
 		continue

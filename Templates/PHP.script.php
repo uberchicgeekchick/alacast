@@ -36,4 +36,5 @@
 	 *	If not pick another or do something different.
 	 *	Find joy!
 	 */
+	Header("Content-Type: text/plain; charset=utf-8");
 ?>
