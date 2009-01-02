@@ -62,12 +62,13 @@ ex '+1,$s/\(Six\)/6/gi' '+1,$s/\(Seven\)/7/gi' '+1,$s/\(Eight\)/8/gi' '+1,$s/\(N
 ex '+1,$s/\([0-9]\)ty/\10/gi' '+1,$s/(Fifty)/50/gi' '+1,$s/(Thirty)/30/gi' '+1,$s/(Twenty)/20/gi' '+wq' './00-titles.lst'
 ex '+1,$s/\([0-9]\)teen/1\1/gi' '+1,$s/(Fifteen)/15/gi' '+1,$s/(Thirteen)/13/gi' '+1,$s/(Twelve)/12/gi' '+1,$s/(Eleven)/11/gi' '+1,$s/(Ten)/10/gi' '+wq' './00-titles.lst'
 
-ex '+1,$s/^\([0-9]\{1\}\)\([^0-9]\{1\}\)/0\1\2/' '+1,$s/\([^0-9]\{1\}\)\([0-9]\{1\}\)\([^0-9]\{1\}\)/\10\2\3/g' '+1,$s/\([^0-9]\{1\}\)\([0-9]\{1\}\)$/\10\2/' '+1,$s/\//\ \-\ /g' '+wq' './00-titles.lst'
+ex '+1,$s/^\([0-9]\{1\}\)\([^0-9]\{1\}\)/0\1\2/' '+1,$s/\([^0-9]\{1\}\)\([0-9]\{1\}\)\([^0-9]\{1\}\)/\10\2\3/g' '+1,$s/\([^0-9]\{1\}\)\([0-9]\{1\}\)$/\10\2/' '+wq' './00-titles.lst'
+
+ex '+1,$s/\//\ \-\ /g' '+1,$s/\ \ /\ /g' '+wq' './00-titles.lst'
 
 # Grabs the enclosures from the feed.
 # This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
-#ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''][^>]*type=["'\'']\(audio\|video\).*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-01.lst'
 
