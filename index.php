@@ -39,7 +39,7 @@
 	
 	INI_Set("display_errors", true);
 	INI_Set("error_reporting", E_ALL | E_STRICT);
-	INI_Set("date.timezone", "America/Denver");
+	INI_Set("date.timezone", "America/Denver")
 
 	/*
 	 * For XHTML web applications:
