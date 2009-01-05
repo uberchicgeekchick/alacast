@@ -1,2 +1,0 @@
-#!/bin/tcsh -f
-vim-enhanced -p '+tabdo $-2' "./Logging.class.php" "./src/configure" "./src/Makefile.in" "./Apps/Alacast/Podcasts/OSS/TheLinuxLink.Net.opml" "./Apps/Alacast/Podcasts/Science.opml" "./Apps/Alacast/Podcasts/Geeky/Wedonverse.opml" "./Apps/Alacast/Podcasts/Audio Dramas/Audio Drama Talk.opml" "./Apps/Alacast/Podcasts/Audio Dramas/Audio Dramas.opml" "./Apps/Alacast/Podcasts/Podnovels/Podcast Novels.opml" "./Apps/Alacast/Podcasts/Podnovels/Podiobooks.com.opml"
