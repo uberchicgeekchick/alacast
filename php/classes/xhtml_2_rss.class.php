@@ -38,10 +38,14 @@
 		private $url;
 		private $preg;
 
-		private $rss;
+		private $xml;
 
-		public function __construct($url, $preg) {
+		public function __construct($url, array $preg_replacements){
 			$this->url=$url;
+			$this->preg_replacements=array_merge( (array( array("/[\r\n]+/",""), array("/(<\/a>)/","\1\r") )), $preg_replacements );
 		}//__construct
+
+		private function parse(){
+		}//parse
 	}//xhtml_2_rss
 ?>

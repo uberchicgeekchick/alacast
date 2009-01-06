@@ -1,11 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>Wedonverse&#039;s News &amp; Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title='<![CDATA[]]>' url='' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="Joss&#039;d" type="rss" xmlUrl="http://feeds.feedburner.com/JossdThePodcast?format=xml" text="Joss&#039;" htmlUrl="http://jossd.com/" description="a podcast dedicated to all things Joss Whedon and the extended Whedonverse"/>
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

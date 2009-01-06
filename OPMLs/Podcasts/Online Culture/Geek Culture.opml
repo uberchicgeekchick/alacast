@@ -1,11 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<opml version='2.0'>
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
 	<head>
 		<title>&#039;s sites, news, &amp; podcasts feeds.</title>
 	</head>
 	<body>
-		<outline title='<![CDATA[]]>' url='' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>
-		<!--<outline title='<![CDATA[]]>' url='' type='link' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[GeekNights]]>" xmlUrl="http://feeds.feedburner.com/GeekNights?format=xml" type="rss" text="<![CDATA[GeekNights]]>" htmlUrl="http://www.frontrowcrew.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[GeekNights Experimental]]>" xmlUrl="http://feeds.feedburner.com/GNexperimental?format=xml" type="rss" text="<![CDATA[GeekNights Experimental]]>" htmlUrl="http://www.frontrowcrew.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Geek Cred]]>" xmlUrl="http://feeds.feedburner.com/geekcred?format=xml" type="rss" text="<![CDATA[Geek Cred]]>" htmlUrl="http://www.geekcred.net/" description="<![CDATA[]]>"/>
@@ -13,7 +13,7 @@
 		<outline title="<![CDATA[P9[podcast nine]]]>" xmlUrl="http://feeds.feedburner.com/podcast9?format=xml" type="rss" text="<![CDATA[P9[podcast nine]]]>" htmlUrl="http://www.requiemoftheoutcast.com/podcast9/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[PodCulture]]>" xmlUrl="http://www.podculture.net/feed/" type="rss" text="<![CDATA[PodCulture]]>" htmlUrl="http://www.podculture.net/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The Stealth Geek]]>" xmlUrl="http://www.thestealthgeek.com/cast/feed.xml" type="rss" text="<![CDATA[The Stealth Geek]]>" htmlUrl="http://thestealthgeek.com/" description="<![CDATA[]]>"/>
-		<!--<outline title='<![CDATA[]]>' xmlUrl='' type='rss' htmlUrl='' text='<![CDATA[]]>' description='<![CDATA[]]>'/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>
 
