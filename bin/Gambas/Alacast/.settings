@@ -1,0 +1,16 @@
+[Breakpoints]
+Count=0
+
+[FFind]
+SearchIn="Module"
+CaseSensitive=False
+SearchWord=False
+SearchComment=False
+SearchString=True
+
+[OpenFile]
+File[1]="FMain.form"
+Active=1
+File[2]="FMain.class:0.0"
+Count=2
+
