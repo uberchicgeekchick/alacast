@@ -20,11 +20,16 @@ if ( "${?1}" == "0" || "${1}" == "" || ! -e "${1}" ) then
 	exit
 endif
 
-set podcasts = "`/usr/bin/grep --perl-regexp -e '^[\t\ \s]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""]' '${1}' | sed 's/^[\ \s\t]\+<outline.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g'`"
+/usr/bin/grep --perl-regexp -e '^[\t\ \s]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""'\'']' "${1}" | sed 's/^[\ \s\t]\+<outline.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' >! ./.alacast.podcasts.lst
 
-if ( "${action}" == "" ) exit
+if ( "${action}" == "" ) then
+	cat ./.alacast.podcasts.lst
+	rm ./.alacast.podcasts.lst
+	exit
+endif
 
-foreach podcast ( "${podcasts}" )
+
+foreach podcast ( "`cat ./.alacast.podcasts.lst`" )
 	printf "Adding:\n\t %s" "${podcast}"
 	set result = "`gpodder --${action}='${podcast}' | sed 's/^\([A-Z]\)/\1/'`"
 	printf "\t\t["
@@ -38,9 +43,11 @@ foreach podcast ( "${podcasts}" )
 	case "E":
 		printf "error"
 		breaksw
-	endsw
 	default:
 		printf "unknown]\n\t[message:%s" "${result}"
+		breaksw
+	endsw
 	printf "]\n\n"
 end
+if ( -e "./.alacast.podcasts.lst" ) rm "./.alacast.podcasts.lst"
 

@@ -5,9 +5,9 @@ case "gedit":
 	breaksw
 case "vim":
 default:
-	set my_editor = 'vim -p "+tabdo $-2"'
+	set args = `printf '-p '\''+tabdo %s-2'\' '$'`
 	breaksw
 endsw
 
-${my_editor} "./src/configure" "./src/Makefile.in" "./OPMLs/Podcasts/OSS/TheLinuxLink.Net.opml" "./OPMLs/Podcasts/Science/Science.opml" "./OPMLs/Podcasts/Geeky/Wedonverse.opml" "./OPMLs/Podcasts/Audio Dramas/Audio Drama Talk.opml" "./OPMLs/Podcasts/Audio Dramas/Audio Dramas.opml" "./OPMLs/Podcasts/Podnovels/Podcast Novels.opml" "./OPMLs/Podcasts/Podnovels/Podiobooks.com.opml" "./gedit.session.tcsh" "./frequencylite.html"
+${my_editor} ${args} "./src/configure" "./src/Makefile.in" "./OPMLs/Podcasts/OSS/TheLinuxLink.Net.opml" "./OPMLs/Podcasts/Science/Science.opml" "./OPMLs/Podcasts/Geeky/Wedonverse.opml" "./OPMLs/Library/Audio Dramas/Audio Drama Talk.opml" "./OPMLs/Library/Audio Dramas/Audio Dramas.opml" "./OPMLs/Library/Podnovels/Podcast Novels.opml" "./OPMLs/Library/Podnovels/Podiobooks.com.opml"
 
