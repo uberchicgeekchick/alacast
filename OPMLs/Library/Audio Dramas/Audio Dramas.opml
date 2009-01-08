@@ -30,6 +30,8 @@
 		<outline title="<![CDATA[Never Was]]>" xmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/feed" type="rss" text="<![CDATA[Never Was]]>" htmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Well Told Tales]]>" xmlUrl="http://welltoldtales.com/category/podcast/feed" type="rss" text="<![CDATA[Well Told Tales]]>" htmlUrl="http://welltoldtales.com/category/podcast/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[DrabbleCast]]>" xmlUrl="http://feeds.feedburner.com/TheDrabblecast" type="rss" text="<![CDATA[DrabbleCast]]>" htmlUrl="http://drabblecast.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[DrabbleCast&#0039;s B-sides]]>" xmlUrl="http://feeds.feedburner.com/DrabblecastB-sides?format=xml" type="rss" text="<![CDATA[DrabbleCast&#0039;]]>" htmlUrl="http://web.me.com/normsherman/Site/Drabblecast_B-Sides/Drabblecast_B-Sides.html" description="<![CDATA[The weirdest of the weird.<br/>The grossest of the gross.<br/><br/>Stories, songs and ramblings from the far side of weird.<br/><br/>Not for everyone.  Content not intended for children or mature audiences.  The rest of you should get a kick out of it though.]]>"/>
+		<outline title="<![CDATA[Transmissions From Beyond]]>" xmlUrl="http://transmissionsfrombeyond.com/feed" type="rss" htmlUrl="http://transmissionsfrombeyond.com/" text="<![CDATA[Transmissions From Beyond]]>" description="<![CDATA[Transmissions From Beyond, The TTA Press Podcast; Featuring stories from Interzone (SF & Fantasy), Black Static (Horror), and Crimewave (Crime) magazines]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[New World Army]]>" xmlUrl="http://feeds.feedburner.com/NewWorldArmy?format=xml" type="rss" text="<![CDATA[New-World-Army]]>" htmlUrl="http://drupal.roneyzone.com/content/new-world-army" description="<![CDATA[A serialized thriller about a band of rebels fighting to survive against a mysterious, tyrannical army of robots.  In Another Time, On Another Planet: Servants, Become Rulers.  Rulers, Become Outcasts.  Rebels are Hunted.  Few will Survive, but Who will Lead them?  As they Stand Against-the New-World-Army]]>"/>
 		<outline title="<![CDATA[Texas Radio Theatre Company]]>" xmlUrl="http://texasradio.libsyn.com/rss" type="rss" htmlUrl="http://texasradio.libsyn.com/" text="<![CDATA[Texas Radio Theatre Company]]>" description="<![CDATA[]]>"/>
@@ -38,3 +40,4 @@
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>
+http://feeds.feedburner.com/DrabblecastB-sides?format=xml

@@ -7,7 +7,7 @@ endif
 set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" )
 
 while ( "${?1}" == "1" && "${1}" != "" )
-	foreach podcast_uri ( "`/usr/bin/grep -r --perl-regex -e 'xmlUrl=["\""'\''][^"\""'\'']*["\""'\'']' '${1}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' | sed 's/\([?&+]\)/\\\1/g'`" )
+	foreach podcast_uri ( "`/usr/bin/grep -r --perl-regex -e '^[\ \s\t]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""'\''].*\/>' '${1}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' | sed 's/\(&amp;\)/\&/g' | sed 's/\([?+]\)/\\\1/g'`" )
 		set found_podcast = "FALSE"
 		foreach podcast_catalog ( ${catalogs} )
 			set result = ""
@@ -20,8 +20,7 @@ while ( "${?1}" == "1" && "${1}" != "" )
 		end
 		if ( "${found_podcast}" == "FALSE" ) then
 			# printf cannot be used here in case the uri includes uri hex codes
-			echo -n "${podcast_uri}\n" | sed 's/\\\([?&+]\)/\1/g'
-			continue
+			/usr/bin/grep -r --perl-regex -e "^[\ \s\t]+<outline.*xmlUrl=["\""'\'']${podcast_uri}[^"\""'\'']*["\""'\''].*\/>" "${1}"
 		endif
 	end
 	shift
