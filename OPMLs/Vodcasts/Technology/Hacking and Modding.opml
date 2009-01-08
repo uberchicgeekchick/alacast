@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Hacking &amp; Modding vodcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Hak.5]]>" xmlUrl="http://hak5xvid.libsyn.com/rss" type="rss" text="<![CDATA[Hak.5]]>" htmlUrl="http://hak5.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[BSOD]]>" xmlUrl="http://bsodtv.org/videofeeds/xvid.rss" type="rss" text="<![CDATA[BSOD]]>" htmlUrl="http://bsodtv.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Digital Underground]]>" xmlUrl="http://digitalunderground.tv/feeds/du-ipod.xml" type="rss" text="<![CDATA[Digital Underground]]>" htmlUrl="http://digitalunderground.tv/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[stage6: IPTV]]>" xmlUrl="http://www.stage6.com/rss/channel/channel:IPTV" type="rss" text="<![CDATA[stage6: IPTV]]>" htmlUrl="http://www.stage6.com/IPTV" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[stage6.com: videos]]>" xmlUrl="http://www.stage6.com/rss/videos/order:date" type="rss" text="<![CDATA[stage6.com: videos]]>" htmlUrl="http://www.stage6.com/videos/order:date" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
