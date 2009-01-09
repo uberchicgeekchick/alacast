@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Environmental Sciences&#039; News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[EarthSky Clear Voices for Science]]>" xmlUrl="http://feedproxy.google.com/earthsky/clearvoices" type="rss" htmlUrl="http://earthandsky.com/clear-voices/" text="<![CDATA[EarthSky Clear Voices for Science podcast]]>" description="<![CDATA[World renowned scientists share their insights with EarthSky reporters in these extended interviews.]]>"/>
+		<outline title="<![CDATA[Earth &amp; Sky]]>" xmlUrl="http://feedproxy.google.com/earthsky" type="rss" htmlUrl="http://www.earthsky.org/radioshows/" text="<![CDATA[Earth &amp; Sky Radio]]>" description="<![CDATA[Science. Nature. People.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+
