@@ -13,5 +13,5 @@ foreach arg ( "${argv}" )
 	breaksw
 end
 
-install_clutter:
+
 
