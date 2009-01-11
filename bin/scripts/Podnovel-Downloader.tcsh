@@ -114,14 +114,6 @@ foreach episode ( $episodes )
 	printf "\n\n\t\tFound episode: %s\n\t\t%s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episode}" \
 	       	>> "${download_log}"
 
-	switch ( "${extension}" )
-	case "pdf":
-		printf "[skipping pdf]\n\n" >> "${download_log}"
-		printf "[skipping pdf]\n\n"
-		continue
-		breaksw
-	endsw
-
 	# Skipping existing files.
 	if ( -e "${title}/${episodes_title}.${extension}" ) then
 		printf "[skipping existing file]\n\n" >> "${download_log}"
