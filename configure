@@ -1,17 +1,90 @@
 #!/bin/tcsh
-set data_dir = "/usr"
+set prefix = "/usr"
+set use_libxml = "/usr/include/libxml"
 set use_clutter = "/usr/include/clutter-0.8"
-set use_php = "/usr/include/php-5.2"
-set disable_php = "no"
-set disable = "no"
 
+set option = ""
+set value = ""
+
+goto parse_argv
+done_parse_argv:
+
+
+set php_libs = ""
+set php_includes = ""
+goto setup_php
+done_setup_php:
+
+exit
+
+parse_argv:
 foreach arg ( "${argv}" )
-	set option = "`printf '${arg}' | sed 's/^\([^=]*\)=\?\(.*\)$/\1/g'`"
-	set value = "`printf '${arg}' | sed 's/^\([^=]*\)=\?\(.*\)$/\2/g'`"
+	set option = "`printf '${arg}' | sed 's/^\-\-\([^=]*\)=\?\(.*\)/\1/g'`"
+	set value = "`printf '${arg}' | sed 's/^\-\-\([^=]*\)=\?\(.*\)/\2/g'`"
+
+	set use_or_enable = "`printf ${option} | sed 's/^\(enable\|disable\|use\)\-\(.*\)/\1/g'`"
+	if ( "${use_or_enable}" == "enable" ) then
+		set value = "`printf ${option} | sed 's/^\(enable\)\-\(.*\)/\2/g'`"
+		goto parse_enable
+		done_parse_enable:
+		continue
+	endif
+	if ( "${use_or_enable}" == "disable" ) then
+		set value = "`printf ${option} | sed 's/^\(disable\)\-\(.*\)/\2/g'`"
+		goto parse_disable
+		done_parse_disable:
+		continue
+	endif
+	if ( "${use_or_enable}" == "use" ) then
+		set option = "`printf ${option} | sed 's/^\(use\)\-\(.*\)/\2/g'`"
+		goto parse_use
+		done_parse_use:
+		continue
+	endif
+	
 	switch ( "${option}" )
-	case "--prefix":
-	breaksw
+	case "prefix":
+		set prefix = "${value}"
+		breaksw
+	endsw
 end
+goto done_parse_argv
+
+parse_enable:
+switch ( "${value}" )
+case "php":
+	set enable_php = "TRUE"
+	breaksw
+endsw
+goto done_parse_enable
 
 
+parse_disable:
+switch ( "${value}" )
+case "php":
+	set enable_php = "FALSE"
+	breaksw
+endsw
+goto done_parse_disable
 
+
+parse_use:
+switch ( "${option}" )
+case "libxml2":
+	set use_libxml2 = "${value}"
+	breaksw
+case "clutter":
+	set use_clutter = "${value}"
+	breaksw
+case "php":
+	set use_php = "${value}"
+	breaksw
+endsw
+goto done_parse_use
+
+setup_php:
+foreach php_config ( "php-config" "php-config5" "php-config6" )
+	set php_includes = "`${php_config} --includes`"
+	set php_libs = "`${php_config} --libs`"
+end
+goto done_setup_php

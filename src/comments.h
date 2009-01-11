@@ -35,10 +35,9 @@
  * ---------------------------------------------------------------------------
  */
 
-#ifndef ALACAST_COMMENTS_H
-	#define ALACAST_COMMENTS_H
-	char *about_alacast = "Alacast is a social media browser it is designed to make viewing, listening to, and participating in social media fun and easy."
+#ifndef CONNECTED_COMMENTS_H
+	#define CONNECTED_COMMENTS_H
+	gchar *about_connectED = "connectED is a colaborative and social networking IDE for GTK+/GNOME.";
 #endif
-
 
 

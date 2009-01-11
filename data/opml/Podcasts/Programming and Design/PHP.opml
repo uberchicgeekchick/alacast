@@ -5,38 +5,19 @@
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[sitepoint]]>" xmlUrl="http://www.sitepoint.com/blogs/category/podcast/feed" type="rss" htmlUrl="http://www.sitepoint.com/blogs/category/podcast/" text="<![CDATA[sitepoint podcast]]>" description="<![CDATA[News, opinion, and fresh thinking for web developers and designers. The official podcast of sitepoint.com.]]>"/>
-		<outline title="<![CDATA[The Bungee Line]]>" xmlUrl="http://feeds.feedburner.com/TheBungeeLine?format=xml" type="rss" text="<![CDATA[The Bungee Line]]>" htmlUrl="http://bungeeconnect.wordpress.com/category/podcast/the-bungee-line/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[audible ajax]]>" xmlUrl="http://media.ajaxian.com/" type="rss" text="<![CDATA[audible ajax]]>" htmlUrl="http://ajaxian.com/podcast/" description="<![CDATA[Ben and Dion of Ajaxian.com discuss issues around the new Web technology called Ajax (a.k.a. dhtml) and interview various Ajax notables.]]>"/>
-		<outline title="<![CDATA[Tech Luminaries]]>" xmlUrl="http://feeds.feedburner.com/TechLuminaries?format=xml" type="rss" htmlUrl="http://techluminaries.com/" text="<![CDATA[Tech Luminaries]]>" description="<![CDATA[Interviewing the luminaries in our industry.]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[P3::C7Y]]>" xmlUrl="http://c7y.phparch.com/c/tag/podcast?feed=atom" type="rss" text="<![CDATA[P3::C7Y]]>" htmlUrl="http://c7y.phparch.com/" description="<![CDATA[php|architect&#039;s: c<sub>7</sub>y p<sup>3</sup> podcast]]>"/>
 		<outline title="<![CDATA[PHP Podcasts]]>" xmlUrl="http://www.phppodcasts.com/feed/" type="rss" text="<![CDATA[PHP Podcasts]]>" htmlUrl="http://www.phppodcasts.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[WebDev Radio]]>" xmlUrl="http://feeds.feedburner.com/WebdevradioPodcastHome" type="rss" text="<![CDATA[WebDev Radio]]>" htmlUrl="http://www.webdevradio.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[The ZendCon Sessions]]>" xmlUrl="http://feeds.feedburner.com/ZendDeveloperZone" type="rss" text="<![CDATA[The ZendCon Sessions]]>" htmlUrl="http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[php_abstract]]>" xmlUrl="http://feeds.feedburner.com/phpabstract" type="rss" text="<![CDATA[php_abstract]]>" htmlUrl="http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The ZendCon Sessions]]>" xmlUrl="http://feeds.feedburner.com/ZendDeveloperZone?format=xml" type="rss" text="<![CDATA[The ZendCon Sessions]]>" htmlUrl="http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[php_abstract]]>" xmlUrl="http://feeds.feedburner.com/phpabstract?format=xml" type="rss" text="<![CDATA[php_abstract]]>" htmlUrl="http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[phpBB Podcast]]>" xmlUrl="http://podcast.phpbb.com/feed/" type="rss" text="<![CDATA[phpBB Podcast]]>" htmlUrl="http://podcast.phpbb.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[phpBBweekly]]>" xmlUrl="http://recordings.talkshoe.com/rss12418.xml" type="rss" text="<![CDATA[phpBBweekly]]>" htmlUrl="http://www.phpbbweekly.net/" description="<![CDATA[]]>"/>
- 		<outline title="<![CDATA[phpBBweekly]]>" xmlUrl="http://feeds.feedburner.com/phpBBweekly" type="rss" text="<![CDATA[phpBBweekly]]>" htmlUrl="http://www.phpbbweekly.com/" description="<![CDATA[]]>"/>
+ 		<outline title="<![CDATA[phpBBweekly]]>" xmlUrl="http://feeds.feedburner.com/phpBBweekly?format=xml" type="rss" text="<![CDATA[phpBBweekly]]>" htmlUrl="http://www.phpbbweekly.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Lullabot&#39;s Drupal Podcast]]>" xmlUrl="http://www.lullabot.com/podcast/feed" type="rss" text="<![CDATA[Lullabot&#39;s Drupal Podcast]]>" htmlUrl="http://www.lullabot.com/podcast/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The WordPress Podcast]]>" xmlUrl="http://wp-community.org/wp/?feed=podcast" type="rss" text="<![CDATA[The WordPress Podcast]]>" htmlUrl="http://wp-community.org/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The Show : The Show for CakePHP]]>" xmlUrl="http://live.cakephp.org/shows/index.rss" type="rss" text="<![CDATA[The Show : The Show for CakePHP]]>" htmlUrl="http://live.cakephp.org/" description="<![CDATA[]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[The Command Line]]>" xmlUrl="http://thecommandline.net/feed" type="rss" text="<![CDATA[The Command Line]]>" htmlUrl="http://thecommandline.net/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Software Engineering Radio]]>" xmlUrl="http://se-radio.net/rss" type="rss" text="<![CDATA[Software Engineering Radio]]>" htmlUrl="http://se-radio.org/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[RedMonkTV]]>" xmlUrl="http://feeds.feedburner.com/RedMonkTV?format=xml" type="rss" text="<![CDATA[RedMonkTV]]>" htmlUrl="http://redmonk.com/tv/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[IBM developerWorks]]>" xmlUrl="http://www.ibm.com/developerworks/podcast/channel-dwall.rss" type="rss" text="<![CDATA[IBM developerWorks]]>" htmlUrl="http://www.ibm.com/developerworks/podcast/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Python 411 Podcast Series]]>" xmlUrl="http://www.awaretek.com/python/index.xml" type="rss" text="<![CDATA[Python 411 Podcast Series]]>" htmlUrl="http://www.awaretek.com/python/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Perlcast]]>" xmlUrl="http://www.perlcast.com/rss/current.xml" type="rss" text="<![CDATA[Perlcast]]>" htmlUrl="http://www.perlcast.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[SPaMCAST]]>" xmlUrl="http://spamcast.libsyn.com/rss" type="rss" text="<![CDATA[SPaMCAST]]>" htmlUrl="http://spamcast.libsyn.com/" description="<![CDATA[]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Boag World]]>" xmlUrl="http://feeds.feedburner.com/boagworldpodcast" type="rss" text="<![CDATA[Boag World]]>" htmlUrl="http://www.boagworld.com/podcast/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[webStandards w/Imagination]]>" xmlUrl="http://www.dustindiaz.com/feed" type="rss" text="<![CDATA[webStandards w/Imagination]]>" htmlUrl="http://www.dustindiaz.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Web Axe]]>" xmlUrl="http://feeds.feedburner.com/webaxe" type="rss" text="<![CDATA[Web Axe]]>" htmlUrl="http://webaxe.blogspot.com/" description="<![CDATA[]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Ruby on Rails podcast]]>" xmlUrl="http://feeds.feedburner.com/rubyonrailspodcast" type="rss" text="<![CDATA[Ruby on Rails podcast]]>" htmlUrl="http://podcast.rubyonrails.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Rails&lsquo; Screencasts]]>" xmlUrl="http://feeds.feedburner.com/railscasts" type="rss" text="<![CDATA[Rails&lsquo; Screencasts]]>" htmlUrl="http://railscasts.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Learning Rails]]>" type="rss" xmlUrl="http://feeds.feedburner.com/learning-rails?format=xml" htmlUrl="http://www.buildingwebapps.com/learningrails/" text="<![CDATA[Learning Rails]]>" description="<![CDATA[Learning Ruby on Rails, for Web Designers and Developers]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

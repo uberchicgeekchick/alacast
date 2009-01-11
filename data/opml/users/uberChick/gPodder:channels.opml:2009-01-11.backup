@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Fri Jan  9 11:07:58 2009
+            Sun Jan 11 00:24:24 2009
         </dateCreated>
     </head>
     <body>
@@ -77,6 +77,7 @@
         <outline text="Voices of Tomorrow Bringing you Today\'s Science Fiction and Fantasy" title="clonepod" type="rss" xmlUrl="http://feeds.feedburner.com/clonepod?format=xml"/>
         <outline text="The CNET News staff delivers a daily summary of the top tech news." title="CNET News Daily Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/cnet/newsdaily?format=xml"/>
         <outline text="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss" title="CNET UK Podcast" type="rss" xmlUrl="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss"/>
+        <outline text="commandN is a weekly online TV show covering tech news, reviews, and how-to's. commandN is hosted and produced by Amber Mac, Mike Lazazzera, and Jeff MacArthur, with video production by Chris Dick.  This is the XviD direct download feed." title="commandN XviD" type="rss" xmlUrl="http://feeds.feedburner.com/command-n/xvid?format=xml"/>
         <outline text="The Universe exists - for now" title="Cossmass Productions - Estalvins Legacy" type="rss" xmlUrl="http://feeds.feedburner.com/cossmass/estalvinslegacy?format=xml"/>
         <outline text="CrankyGeeks, hosted by PC Magazine contributing editor John C. Dvorak.  Each week a group of expert panelists discuss the most controversial topics in tech. CrankyGeeks airs on Wednesdays at 3:30pm eastern, and can be downloaded at www.CrankyGeeks.com" title="Cranky Geeks for the iPod Video" type="rss" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/cgmpeg4video?format=xml"/>
         <outline text="CrankyGeeks, hosted by PC Magazine contributing editor John C. Dvorak.  Each week a group of expert panelists discuss the most controversial topics in tech. CrankyGeeks airs on Wednesdays at 3:30pm eastern, and can be downloaded at www.CrankyGeeks.com" title="Cranky Geeks H.264 Video" type="rss" xmlUrl="http://rssnewsapps.ziffdavis.com/audioblogs/crankygeeks/cg.h.264.xml"/>
@@ -84,7 +85,6 @@
         <outline text="Curious Echo Radio Theater" title="Curious Echoes » Moon Wraith" type="rss" xmlUrl="http://www.curiousecho.org/wordpress/category/moon-wraith/feed"/>
         <outline text="Computer Forensics, Cyber Crime and Computer Security." title="CyberSpeak's Podcast" type="rss" xmlUrl="http://cyberspeak.libsyn.com/rss"/>
         <outline text="Inspiration, Motivation and perspective ..." title="Daily Quote Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/dailyquotepodcast?format=xml"/>
-        <outline text="A group of friends become trapped inside a fantasy role-playing game." title="DarkAge" type="rss" xmlUrl="http://www.mevio.com/feeds/darkage.xml"/>
         <outline text="Post-apocalyptic Zombie Audio Theater Podcast" title="Darker Projects: Alive Inside" type="rss" xmlUrl="http://feeds.feedburner.com/DarkerProjectsAliveInside?format=xml"/>
         <outline text="Science Fiction Audio Theater Anthology Podcast" title="Darker Projects: Dark Matter" type="rss" xmlUrl="http://feedproxy.google.com/DarkerProjectsDarkMatter?format=xml"/>
         <outline text="Original Science Fiction Audio Theater Podcast" title="Darker Projects: Far Horizons" type="rss" xmlUrl="http://feedproxy.google.com/DarkerProjectsFarHorizons?format=xml"/>
@@ -102,6 +102,7 @@
         <outline text="Skepticism and critical thinking in a world of new age, religion and credulous pop culture" title="Digital Bits Skeptic" type="rss" xmlUrl="http://www.dbskeptic.com/podcast"/>
         <outline text="Technology and Entertainment Video Network" title="Digital Entertainment - Powered by PodTech.net" type="rss" xmlUrl="http://www.podtech.net/home/category/entertainment/feed"/>
         <outline text="The O'Reilly Digital Media site (http://digitalmedia.oreilly.com) explores the future of audio, video, and photography to help you get more creative with technology. In this podcast series, ODM Audio Editor David Battino goes inside the online tutorials to uncover new audio-production tips and ideas." title="Digital Media Insider" type="rss" xmlUrl="http://www.oreillynet.com/pub/feed/72?format=rss2"/>
+        <outline text="Disability411 - The Podcast for Disability Information" title="Disability411 Podcast" type="rss" xmlUrl="http://disability411.jinkle.com/disability411.xml"/>
         <outline text="Stay on top of the latest developments in science news, including space exploration, technological breakthroughs, archaeological findings, animals, environmental research and more." title="Discovery  News  (Video)" type="rss" xmlUrl="http://www.discovery.com/radio/xml/news_video.xml"/>
         <outline text="The best of Discovery Channel now on your iPod!  Subscribe and listen to your favorite Discovery Channel series and specials." title="Discovery Channel Features" type="rss" xmlUrl="http://www.discovery.com/radio/xml/dscfeatures.xml"/>
         <outline text="Explore your world with Discovery Channel video podcasts!  Watch behind-the-scenes interviews with your favorite Discovery Channel hosts; go inside the making of Discovery specials and hit series; get an inside glimpse into the world of Discovery." title="Discovery Channel Video Podcasts" type="rss" xmlUrl="http://www.discovery.com/radio/xml/discovery_video.xml"/>
@@ -135,6 +136,7 @@
         <outline text="The Science Fiction Podcast Magazine" title="Escape Pod" type="rss" xmlUrl="http://escapepod.org/podcast.xml"/>
         <outline text="Explorations" title="Explorations - WBAI-FM, New York" type="rss" xmlUrl="http://archive.wbai.org/files/xml/explora.xml"/>
         <outline text="News, reviews and technology updates from ExtremeTech.com" title="ExtremeTech.com" type="rss" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/extremetechpodcast?format=xml"/>
+        <outline text="With Chloe Lake" title="FBi 94.5's Virtual Vices" type="rss" xmlUrl="http://fbi945virtualvices.libsyn.com/rss"/>
         <outline text="http://channels.ourmedia.org/mediarss/channel?gid=10" title="Featured podcasts" type="rss" xmlUrl="http://channels.ourmedia.org/mediarss/channel?gid=10"/>
         <outline text="A podcast all about Joss Whedon's Firefly and Serenity, featuring weekly articles and news, forum recaps, and fan-fiction reviews." title="Firefly Talk, A Firefly Podcast" type="rss" xmlUrl="http://fireflytalk.libsyn.com/rss"/>
         <outline text="Podcasts from O'Reilly and Friends" title="FOO Casts: Podcasts from O'Reilly and Friends" type="rss" xmlUrl="http://www.oreillynet.com/pub/feed/32?format=rss2"/>
@@ -144,6 +146,7 @@
         <outline text="Smart guests.  Eclectic topics.  Really, anything is fair game." title="Friday Night Party Line Podcast" type="rss" xmlUrl="http://thaed.libsyn.com/rss?post_category=podcasts"/>
         <outline text="The Full Circle Podcast, produced in association with Full Circle Magazine.  Gives discussion on the latest Ubuntu and Linux news." title="Full Circle Magazine » podcast" type="rss" xmlUrl="http://fullcirclemagazine.org/category/podcast/feed"/>
         <outline text="Explore the world of genetics, cloning, protein folding, genome mapping, and more with the most important researchers in the field. Hosted by Marc Pelletier and Leo Laporte. Part of the TWiT.tv podcast network. Released every Wednesday." title="Futures in Biotech" type="rss" xmlUrl="http://leoville.tv/podcasts/fib.xml"/>
+        <outline text="Gamer girls Radio is the first ever all female hosted gaming podcast. The hosts, are currently very active in the gaming community and strive for community awareness. We welcome all gamers, clans and female gamer websites to be apart of gamergirlsradio.c" title="Gamer Girls Radio | BlogTalkRadio Feed" type="rss" xmlUrl="http://www.blogtalkradio.com/GamerGirlsRadio/feed"/>
         <outline text="Saving the world, one level at a time." title="GAMERadio" type="rss" xmlUrl="http://www.hwhq.com/rssOGG.xml"/>
         <outline text="GarageBand.com: Discover Independent Music - delivered fresh every week via podcast!" title="GarageBand.com Acoustic top tracks" type="rss" xmlUrl="http://www.garageband.com/genre/acoustic/podcast/totw.xml"/>
         <outline text="GarageBand.com: Discover Independent Music - delivered fresh every week via podcast!" title="GarageBand.com Alternative Metal top tracks" type="rss" xmlUrl="http://www.garageband.com/genre/alt_metal/podcast/totw.xml"/>
@@ -195,6 +198,8 @@
         <outline text="Recordings from the Game Developers Conferce &amp; from editors at Gamastura and other CMPGame.com sites." title="GDC Radio" type="rss" xmlUrl="http://feeds.feedburner.com/GDCRadio?format=xml"/>
         <outline text="gdgt weekly, distributed in MP3" title="gdgt weekly" type="rss" xmlUrl="http://feeds.gdgt.com/gdgt/podcast-mp3"/>
         <outline text="http://feeds.feedburner.com/geekcred?format=xml" title="Geek Cred" type="rss" xmlUrl="http://feeds.feedburner.com/geekcred?format=xml"/>
+        <outline text="Geek Entertainment TV is an emerging global media empire, reporting from deep inside the bubble as it re-inflates. GETV covers buzzword compliant topics such as web 2.0, tagging, AJAX, social software and the bubble juice known as VCs. We like robots, so" title="Geek Entertainment TV" type="rss" xmlUrl="http://feeds.feedburner.com/getv"/>
+        <outline text="Each week, Geek Girl talks about movies, TV, video games, books, table games, role playing, computers and anything else geeky." title="Geek Girl" type="rss" xmlUrl="http://geekgirl.blip.tv/?skin=rss"/>
         <outline text="Where technology is fashionable and practical" title="Geek Is Chic" type="rss" xmlUrl="http://feeds.feedburner.com/geekischic?format=xml"/>
         <outline text="The world's only virtual sci-pop festival. Be there and be square." title="geek pop" type="rss" xmlUrl="http://geekpop.podbean.com/category/music/feed/"/>
         <outline text="GeekNights Experimental: The GeekNights 3.0 Beta Test" title="GeekNights Experimental" type="rss" xmlUrl="http://feeds.feedburner.com/GNexperimental?format=xml"/>
@@ -205,6 +210,7 @@
         <outline text="Search results for query: [&quot;Advanced Topics In Programming Languages Series&quot; is:free]" title="Google Video - &quot;Advanced Topics In Programming Languages Series&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22Advanced%20Topics%20In%20Programming%20Languages%20Series%22+is:free&amp;num=50&amp;format=any"/>
         <outline text="Search results for query: [&quot;web development&quot; is:free]" title="Google Video - &quot;web development&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22web%20development%22+is:free&amp;num=50&amp;format=any"/>
         <outline text="Search results for query: [engEDU]" title="Google Video - engEDU" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=engEDU&amp;so=1&amp;num=50&amp;output=rss"/>
+        <outline text="Quick and Dirty Tips for Better Writing" title="Grammar Girl's Quick and Dirty Tips for Better Writing" type="rss" xmlUrl="http://www.qdnow.com/grammar.xml"/>
         <outline text="Learn the ways of the Brotherhood of the Green Ring" title="Green Ring Ethos" type="rss" xmlUrl="http://greenringethos.com/greenringethos.xml"/>
         <outline text="A free audiobook by Leslie Ann Moore" title="Griffin's Daughter" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/314/book.xml"/>
         <outline text="All the science fit to air...and even some that is not" title="Groks Science Radio Show and Podcast" type="rss" xmlUrl="http://www.groks.net/groks.rss"/>
@@ -431,7 +437,9 @@
         <outline text="A free audio novel of underpowered superheroes." title="Playing For Keeps » Specials" type="rss" xmlUrl="http://www.playingforkeepsnovel.com/category/specials/feed/"/>
         <outline text="Discover Great Content One Promo At a Time" title="Podcast Promo Show" type="rss" xmlUrl="http://podcastclicks.com/podcast/feed/"/>
         <outline text="podCast411 is a show about interviewing other Podcasters, similar to Inside the Actors Studio except for Podcasting" title="podCast411 -  Learn about Podcasting and Podcasters" type="rss" xmlUrl="http://feeds.feedburner.com/podcast411a?format=xml"/>
+        <outline text="What are You Listening to?" title="PodcastJunky" type="rss" xmlUrl="http://podcastjunky.libsyn.com/rss"/>
         <outline text="The Fantasy Podcast Magazine" title="PodCastle" type="rss" xmlUrl="http://feeds.escapeartists.net/PodCastle_Main?format=xml"/>
+        <outline text="PodChick is Positive Vibe" title="PodChick" type="rss" xmlUrl="http://www.podchick.com/podchick.xml"/>
         <outline text="Equal Opportunity Geekness" title="PodCulture" type="rss" xmlUrl="http://www.podculture.net/feed/"/>
         <outline text="Science, Skepticism, Rationalism, Humanism -- The Podcast and Radio Show of the Center for Inquiry" title="Point of Inquiry" type="rss" xmlUrl="http://pointofinquiry.libsyn.com/rss"/>
         <outline text="Tales from the front of responsible non-monogamy from a pansexual, kink-friendly point of view" title="Polyamory Weekly" type="rss" xmlUrl="http://polyweekly.libsyn.com/rss"/>
@@ -448,6 +456,7 @@
         <outline text="Rocky Mountains Technology and Entrepreneurial Audio &amp; Video Podcasts" title="Rocky Mountain Voices" type="rss" xmlUrl="http://feeds.feedburner.com/rockymountainvoices"/>
         <outline text="News and interviews about the Ruby language and the Rails website framework." title="Ruby on Rails Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/rubyonrailspodcast?format=xml"/>
         <outline text="News and interviews about the Ruby language and the Rails website framework." title="Ruby on Rails Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/rubyonrailspodcast"/>
+        <outline text="Answering your questions about podcasting, new media and the law." title="Rules For The Revolution: The Podcast" type="rss" xmlUrl="http://www.rulesfortherevolution.com/feed/rss2/"/>
         <outline text="A magazine programme with interviews, food, books and music." title="Saturday Morning with Kim Hill" type="rss" xmlUrl="http://www.radionz.co.nz/podcasts/saturday.rss"/>
         <outline text="Translation and adaptation of Anglo-Saxon writings." title="Saxonboc" type="rss" xmlUrl="http://imaginationlane.net/saxonboc/feed"/>
         <outline text="Explore. Discover. Understand. With Science" title="Science @ NASA Feature Stories Podcast" type="rss" xmlUrl="http://science.nasa.gov/podcast.xml"/>
@@ -510,7 +519,6 @@
         <outline text="Explore the Emerging Richly Interactive Internet with Bungee Labs" title="The Bungee Line" type="rss" xmlUrl="http://feeds.feedburner.com/TheBungeeLine?format=xml"/>
         <outline text="The Clip Show is a once a week video podcast reviewing an assortment of Cast and Casters, some of which are entertaining, inventive, funny, nasty, terrible, boring however all of which leave us wondering why we are still watching. Watch The Clip show ever" title="The Clip Show" type="rss" xmlUrl="http://feeds.feedburner.com/clipshow"/>
         <outline text="A free audiobook by Stacey Cochran, narrated by Owen Daly" title="The Colorado Sequence" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/275/book.xml"/>
-        <outline text="http://thecommandline.net/feed" title="The Command Line" type="rss" xmlUrl="http://thecommandline.net/feed"/>
         <outline text="A regularly published podcast by a self-described hacker, curmudgeon and hacktivist about the practice and profession of programming drawing on over a decade of professional experience and a lifetime spent hacking, the intersection of politics and society" title="The Command Line Podcast (Ogg Feed)" type="rss" xmlUrl="http://feeds.feedburner.com/cmdln_free?format=xml"/>
         <outline text="A podcast novel." title="The Corridor" type="rss" xmlUrl="http://feeds.feedburner.com/the-corridor"/>
         <outline text="Center for Inquiry On Campus" title="The Course of Reason" type="rss" xmlUrl="http://www.centerforinquiry.net/oncampus/podcast/courseofreason.xml"/>
@@ -546,6 +554,7 @@
         <outline text="A podcast about computer security" title="The Rear Guard" type="rss" xmlUrl="http://www.rearguardsecurity.com/rss.xml"/>
         <outline text="Don't believe everything you think" title="The Reason Driven Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/TheReasonDrivenPodcast?format=xml"/>
         <outline text="Fun short films and the stories behind them. Hosted by John Romeo." title="The Romeo Theater - Short Films" type="rss" xmlUrl="http://romeo.libsyn.com/rss"/>
+        <outline text="Wisdom For Spirited Entrepreneurs" title="The Sassy Ladies" type="rss" xmlUrl="http://www.thesassyladies.com/portals/0/media/podcast_site.xml"/>
         <outline text="RN's science flagship: your essential source of what's making news in the complex world of scientific research, scandal and discovery. The Science Show with Robyn Williams is one of the longest running programs on Australian radio." title="The Science Show" type="rss" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/science.xml"/>
         <outline text="A free audiobook by J.A. Areces" title="The Secret Society of Seven Sorcerers" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/333/book.xml"/>
         <outline text="A free audiobook by Mercedes Lackey and Steve Libbey" title="The Secret World Chronicle, Book Two: The Hunt" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/225/book.xml"/>
@@ -584,10 +593,12 @@
         <outline text="http://www.validsyntax.com/rss.php" title="Valid Syntax" type="rss" xmlUrl="http://www.validsyntax.com/rss.php"/>
         <outline text="Welcome to Variant Frequencies. Month to month our podcast brings you fiction stories from a different channel - sci-fi, fantasy, horror, and some odd bands in-between." title="Variant Frequencies" type="rss" xmlUrl="http://www.variantfrequencies.com/feed/"/>
         <outline text="A free audiobook by Mike Luoma" title="Vatican Abdicator" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/307/book.xml"/>
+        <outline text="Don't be Afraid to Cross the Technology Road" title="Views From The Coop" type="rss" xmlUrl="http://viewsfromthecoop.com/feed/"/>
         <outline text="365 Tomorrows" title="Voices Of Tomorrow" type="rss" xmlUrl="http://voicesoftomorrow.libsyn.com/rss"/>
         <outline text="http://planetretcon.com/podcast/volcanicast.xml" title="Volcanicast » Podcast" type="rss" xmlUrl="http://planetretcon.com/podcast/volcanicast.xml"/>
         <outline text="Your One Stop Geek Shop" title="Way of the Geek » week in geek" type="rss" xmlUrl="http://feeds.feedburner.com/WotG_WeekInGeek?format=xml"/>
         <outline text="Practical web accessibility tips. Blog and podcast for programmers, coders, or anyone else interested in techniques for web accessibility (see WAI, Section 508, WebAIM)." title="Web Axe - Practical Web Design Accessibility Tips - Podcast and Blog" type="rss" xmlUrl="http://feeds.feedburner.com/webaxe"/>
+        <outline text="Your Daily Tech Roundup" title="WebbAlert" type="rss" xmlUrl="http://feeds.feedburner.com/webbalert?format=xml"/>
         <outline text="Topics, tools and tips for web application developers, including testing strategies, upcoming conferences, interviews with developers, seo techniques, optimization tip and more." title="WebDevRadio.com - web development podcast" type="rss" xmlUrl="http://feeds.feedburner.com/WebdevradioPodcastHome"/>
         <outline text="Pulp-fiction podcast" title="Well Told Tales: Pulpy horror, sci-fi and hardboiled fiction : Podcast » Podcast" type="rss" xmlUrl="http://welltoldtales.com/category/podcast/feed"/>
         <outline text="Pulp-fiction podcast" title="Well Told Tales: Pulpy horror, sci-fi and hardboiled fiction » awesomeman" type="rss" xmlUrl="http://welltoldtales.com/tag/awesomeman/feed"/>
@@ -595,9 +606,11 @@
         <outline text="WFMU presents experimental sound collage." title="WFMU's Do or DIY with People Like Us" type="rss" xmlUrl="http://www.wfmu.org/podcast/PL.xml"/>
         <outline text="WFMU presents discussions about the arts, sciences, media, and politics." title="WFMU's The Speakeasy with Dorian" type="rss" xmlUrl="http://www.wfmu.org/podcast/SE.xml"/>
         <outline text="Watch videos from National Geographic, including Mysteries of Lost Civilizations, the World's Most Unusual Foods, Extreme Healing, the World's Toughest Jobs, Spotlights of countries around the world, and more!" title="Wild Chronicles Digital Shorts" type="rss" xmlUrl="http://podcast.nationalgeographic.com/ng-video-shorts/?format=xml"/>
+        <outline text="http://witi.castmetrix.com/rss/180143985094819841" title="WITICast" type="rss" xmlUrl="http://witi.castmetrix.com/rss/180143985094819841"/>
         <outline text="On Radio Lab, science meets culture and information sounds like music. Each episode of Radio Lab® is an investigation -- a patchwork of people, sounds, stories and experiences centered around One Big Idea. Hosted by Jad Abumrad and Robert Krulwich, Radio" title="WNYC's Radio Lab" type="rss" xmlUrl="http://www.wnyc.org/shows/radiolab/rss"/>
         <outline text="The National Center for Women in Technology (NCWIT) interviews women in IT careers about how they first got into technology, why they chose to be entrepreneurs, and what advice they would give to young people interested in IT or entrepreneurship." title="Women in Technology (Audio)" type="rss" xmlUrl="http://www.informit.com/podcasts/index_rss.aspx?c=19"/>
         <outline text="A Weekly Mystery Podcast from Habit Forming Films" title="Wormwood: A Serialized Mystery » podcast" type="rss" xmlUrl="http://feeds.feedburner.com/WormwoodMystery?format=xml"/>
         <outline text="A Sanctuary for young free thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
+        <outline text="Loaded is your daily technology news show." title="Loaded" type="rss" xmlUrl="http://loadedpodcast.cnettv.com/"/>
     </body>
 </opml>

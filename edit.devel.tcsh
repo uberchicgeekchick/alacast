@@ -7,7 +7,7 @@ case "opml":
 	breaksw
 case "devel":
 default:
-	${my_editor} '+tabdo $-2' -p "./configure" "./Makefile" "./Makefile.in" "./src/Makefile" "./src/Makefile.in"
+	${my_editor} '+tabdo $-2' -p "./src/Alacast.c" "./src/Alacast.h" "./configure" "./Makefile" "./Makefile.in" "./src/Makefile" "./src/Makefile.in"
 	breaksw
 endsw
 

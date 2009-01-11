@@ -1,12 +1,16 @@
-SHELL=/bin/tcsh -f
 prefix=@prefix@
 data_dir=$(prefix)/share
 cache="/var/alacast/cache"
 log="/var/log/alacast"
 wget_cmd="/usr/bin/wget --silent -O"
+#php_include=/usr/include/php6
+php_include=@php_include@
+#clutter_include=/usr/include/clutter-0.8
+clutter_include=@clutter_include@
 
-PHP_INCLUDE_PATH="-I./src/./src/.deps/php/src -I./src/./src/.deps/php/src/include -I./src/./src/.deps/php/src/main -I./src/./src/.deps/php/src/Zend -I./src/./src/.deps/php/src/TSRM"
-INCLUDE_PATH="$(PHP_INCLUDE_PATH) -I/usr/include/clutter-0.8"
+SHELL=/bin/tcsh -f
+PHP_INCLUDE_PATH=-I@php_include@ -I@php_include@/include -I@php_include@/main -I@php_include@/Zend -I@php_include@/TSRM
+INCLUDE_PATH=$(PHP_INCLUDE_PATH) -I
 
 check-clutter:
 	if ( ! -d ./src/.deps/clutter ) mkdir -p ./src/.deps/clutter
