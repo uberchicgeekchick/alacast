@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Politics and Law News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Law and Disorder]]>" xmlUrl="http://feeds.feedburner.com/lawanddisorder?format=xml" type="rss" htmlUrl="http://lawanddisorder.org/" text="<![CDATA[Law and Disorder Radio]]>" description="<![CDATA[Four of the top progressive lawyers and activists in the growing fight for civil liberties, civil rights and human rights host a weekly/one hour talk radio show, Law &amp; Disorder.  Every Monday at 10AM on WBAI 99.5 FM]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

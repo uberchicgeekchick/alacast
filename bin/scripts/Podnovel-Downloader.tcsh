@@ -70,12 +70,12 @@ ex '+1,$s/\//\ \-\ /g' '+1,$s/\ \ /\ /g' '+wq' './00-titles.lst'
 # This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
-ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-01.lst'
+ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00-enclosures-01.lst'
 
 # This second method grabs all enclosures.
 cp '00-feed.xml' '00-enclosures-02.lst'
-/usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*type=["'\'']\(audio\|video\).*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' | sed 's/\?/\\\?/gi' >! './00-enclosures-02.lst'
-ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/\?/\\\?/g' '+wq' './00-enclosures-02.lst'
+/usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*type=["'\'']\(audio\|video\).*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' >! './00-enclosures-02.lst'
+ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00-enclosures-02.lst'
 
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
 set enclosure_count_02 = `cat "./00-enclosures-02.lst"`
