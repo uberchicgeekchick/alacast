@@ -51,7 +51,8 @@ endif
 
 # Grabs the titles of the podcast and all episodes.
 cp './00-feed.xml' './00-titles.lst'
-ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' './00-titles.lst'
+ex '+1,$s/[\r\n]*//g' '+wq' './00-titles.lst'
+ex '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' './00-titles.lst'
 ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+1,$s/#//g' '+1,$s/\//\ \-\ /g' '+wq' './00-titles.lst'
 
 # This will be my last update to any part of Alacast v1
@@ -69,12 +70,13 @@ ex '+1,$s/\//\ \-\ /g' '+1,$s/\ \ /\ /g' '+wq' './00-titles.lst'
 # Grabs the enclosures from the feed.
 # This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
+ex '+1,$s/[\r\n]*//g' '+wq' './00-enclosures-01.lst'
 ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00-enclosures-01.lst'
 
 # This second method grabs all enclosures.
 cp '00-feed.xml' '00-enclosures-02.lst'
-/usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*type=["'\'']\(audio\|video\).*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' >! './00-enclosures-02.lst'
+/usr/bin/grep --perl-regex '.*<.*enclosure[^>]*>.*' './00-feed.xml' | sed 's/.*url=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/.*<link[^>]\+href=["'\'']\([^"'\'']\+\)["'\''].*/\1/gi' | sed 's/^\(http:\/\/\).*\(http:\/\/.*$\)/\2/gi' | sed 's/<.*>[\r\n]\+//ig' >! './00-enclosures-02.lst'
 ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00-enclosures-02.lst'
 
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
