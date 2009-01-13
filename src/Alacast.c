@@ -29,14 +29,15 @@
  * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
  * language governing rights and limitations under the RPL.
  *
- * ---------------------------------------------------------------------------
- * |	A copy of the RPL 1.5 may be found with this project or online @:    |
- * |		http://opensource.org/licenses/rpl1.5.txt                    |
- * ---------------------------------------------------------------------------
+ * ----------------------------------------------------------------------------
+ * |	A copy of the RPL 1.5 may be found with this project or online @:	  |
+ * |		http://opensource.org/licenses/rpl1.5.txt              		      |
+ * ----------------------------------------------------------------------------
  */
 
 #include "Alacast.h"
 #include <glib.h>
 
 int main(int argv, char **argc){
+		return 0;
 }//main

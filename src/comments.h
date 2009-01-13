@@ -31,7 +31,7 @@
  *
  * ---------------------------------------------------------------------------
  * |	A copy of the RPL 1.5 may be found with this project or online @:    |
- * |		http://opensource.org/licenses/rpl1.5.txt                    |
+ * |		http://opensource.org/licenses/rpl1.5.txt                        |
  * ---------------------------------------------------------------------------
  */
 
