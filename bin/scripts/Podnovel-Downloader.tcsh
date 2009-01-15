@@ -42,6 +42,10 @@ set limit_episodes = ""
 
 printf "Downloading podcast's feed.\n"
 wget --quiet -O './00-feed.xml' `echo "${1}" | sed '+s/\?/\\\?/g'`
+set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
+if ( ! -d "${title}" ) mkdir -p "${title}"
+mv './00-feed.xml' "./${title}/00-feed.xml"
+cd "${title}"
 
 set feed_type = "rss"
 if ( "`/usr/bin/grep -i '<channel' './00-feed.xml'`" == "" ) then
@@ -88,14 +92,9 @@ else
 	rm "./00-enclosures-01.lst"
 endif
 
-set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
-if ( ! -d "${title}" ) mkdir -p "${title}"
-
-if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-feed.xml' './00-titles.lst' './00-enclosures.lst' "./${title}/"
-
 set episodes = `cat './00-enclosures.lst'${limit_episodes}`
 
-set download_log = "${title}/00-"`basename "${0}"`".log"
+set download_log = "./00-"`basename "${0}"`".log"
 touch "${download_log}"
 
 printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
@@ -116,7 +115,7 @@ foreach episode ( $episodes )
 	       	>> "${download_log}"
 
 	# Skipping existing files.
-	if ( -e "${title}/${episodes_title}.${extension}" ) then
+	if ( -e "./${episodes_title}.${extension}" ) then
 		printf "[skipping existing file]\n\n" >> "${download_log}"
 		printf "[skipped existing file]\n\n"
 		continue
@@ -139,8 +138,8 @@ foreach episode ( $episodes )
 		continue
 	endif
 
-	wget --quiet -O "${title}/${episodes_title}.${extension}" "${episode}"
-	if ( ! -e "${title}/${episodes_title}.${extension}" ) then
+	wget --quiet -O "./${episodes_title}.${extension}" "${episode}"
+	if ( ! -e "./${episodes_title}.${extension}" ) then
 		printf "[*epic fail* :(]\n\n" >> "${download_log}"
 		printf "[*epic fail* :(]\n\n"
 	else
@@ -151,4 +150,4 @@ end
 
 printf "*w00t\!*, I'm done; enjoy online media at its best!"
 
-rm './00-feed.xml' './00-titles.lst' './00-enclosures.lst'
+if ( ! ( "${?2}" == "1" && "${2}" == "--debug" ) ) rm './00-feed.xml' './00-titles.lst' './00-enclosures.lst'
