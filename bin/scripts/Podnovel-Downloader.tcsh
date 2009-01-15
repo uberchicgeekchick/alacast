@@ -47,11 +47,11 @@ set feed_type = "rss"
 if ( "`/usr/bin/grep -i '<channel' './00-feed.xml'`" == "" ) then
 	set feed_type = "atom"
 endif
-
+# Concatinates all data into one single string:
+ex '+1,$s/[\r\n]*//g' '+wq' './00-feed.xml'
 
 # Grabs the titles of the podcast and all episodes.
 cp './00-feed.xml' './00-titles.lst'
-ex '+1,$s/[\r\n]*//g' '+wq' './00-titles.lst'
 ex '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' './00-titles.lst'
 ex '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*//ig' '+1,$s/<\!\[CDATA[\(.*\)\]\]>/\1/g' '+1,$s/#//g' '+1,$s/\//\ \-\ /g' '+wq' './00-titles.lst'
 
@@ -70,8 +70,7 @@ ex '+1,$s/\//\ \-\ /g' '+1,$s/\ \ /\ /g' '+wq' './00-titles.lst'
 # Grabs the enclosures from the feed.
 # This 1st method only grabs one enclosure per item/entry.
 cp '00-feed.xml' '00-enclosures-01.lst'
-ex '+1,$s/[\r\n]*//g' '+wq' './00-enclosures-01.lst'
-ex '+1,$s/[\r\n]*//g' '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
+ex '+1,$s/<\/\(item\|entry\)>/\<\/\1\>\r/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<.*enclosure[^>]*\(url\|href\)=["'\'']\([^"'\'']\+\)["'\''].*<\/\(item\|entry\)>$/\4/ig' '+1,$s/.*<\(item\|entry\)>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+$d' '+wq' '00-enclosures-01.lst'
 ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00-enclosures-01.lst'
 
 # This second method grabs all enclosures.
@@ -92,7 +91,7 @@ endif
 set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
 if ( ! -d "${title}" ) mkdir -p "${title}"
 
-if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-titles.lst' './00-feed.xml' './00-enclosures.lst' "./${title}/"
+if ( "${?2}" == "1" && "${2}" == "--debug" ) cp './00-feed.xml' './00-titles.lst' './00-enclosures.lst' "./${title}/"
 
 set episodes = `cat './00-enclosures.lst'${limit_episodes}`
 
