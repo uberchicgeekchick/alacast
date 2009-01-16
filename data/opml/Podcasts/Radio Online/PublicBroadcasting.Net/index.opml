@@ -196,7 +196,7 @@
 		<outline title="<![CDATA[To The Point]]>" xmlUrl="http://kcrw.com/podcast/show/tp" type="rss" htmlUrl="http://www.moretothepoint.com/" text="<![CDATA[To The Point&#0039;s podcast from PublicBroadcasting.Net]]>" description="<![CDATA[PublicBroadcasting&#0039; To The Point podcast]]>"/>
 		<outline title="<![CDATA[Today]]>" xmlUrl="http://downloads.bbc.co.uk/rmhttp/downloadtrial/radio4/today/rss.xml" type="rss" htmlUrl="http://bbc.co.uk/radio4/today/" text="<![CDATA[Today&#0039;s podcast from PublicBroadcasting.Net]]>" description="<![CDATA[PublicBroadcasting&#0039; Today podcast]]>"/>
 		<outline title="<![CDATA[WUWM News]]>" xmlUrl="http://www.publicbroadcasting.net/wuwm/podcast/1.xml" type="rss" htmlUrl="http://www.publicbroadcasting.net/wuwm/news.newsmain" text="<![CDATA[WUWM News&#0039;s podcast from PublicBroadcasting.Net]]>" description="<![CDATA[PublicBroadcasting&#0039; WUWM News podcast]]>"/>
-		<outline title="<![CDATA[WYPR News in Maryland]]>" xmlUrl="http://www.publicbroadcasting.net/wypr/podcast/1.xml" type="rss" htmlUrl="http://www.wypr.org/" text="<![CDATA[WYPR News in Maryland&#0039;s podcast from PublicBroadcasting.Net]]>" description="<![CDATA[PublicBroadcasting&#0039; WYPR News in Maryland podcast]]>"/>
+		<!--<outline title="<![CDATA[WYPR News in Maryland]]>" xmlUrl="http://www.publicbroadcasting.net/wypr/podcast/1.xml" type="rss" htmlUrl="http://www.wypr.org/" text="<![CDATA[WYPR News in Maryland&#0039;s podcast from PublicBroadcasting.Net]]>" description="<![CDATA[PublicBroadcasting&#0039; WYPR News in Maryland podcast]]>"/>-->
 
 
 		<!--PublicBroadcasting.Net's Regional and Local podcasts -->

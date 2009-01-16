@@ -14,3 +14,8 @@
 #
 #	Adding CDATA padding to outlines:
 #		1,$s/\(title\|text\|description\)="\([^<"]\+\)"/\1="<!\[CDATA\[\2\]\]>"/g
+#
+#	Fixing quotes inside of titles, texts, and descriptions:
+#		1,$s/\(title\|text\|description\)\(="<!\[CDATA\[[^"\]]\+\)"\([^\]]\+\]\]>"\)/\1\2\&quot;\3/g
+#		1,$s/\(title\|text\|description\)\(="<!\[CDATA\[[^'\]]\+\)'\([^\]]\+\]\]>"\)/\1\2\&#0039;\3/g
+#	
