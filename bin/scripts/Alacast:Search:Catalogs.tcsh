@@ -49,10 +49,10 @@ foreach catalog ( ${catalogs} )
 	foreach opml_and_outline ( "`/usr/bin/grep -ri --perl-regex -e '[^<][^\-][^\-]<outline.*${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}'`" )
 		if ( "${be_verbose}" == "TRUE" ) then
 			printf "The %s you're searching for was found in:\n\t" "${attrib}"
-			printf "${opml_and_outline}" | cut -d'	' -f1 | sed 's/:$//g'
+			printf "%s" "${opml_and_outline}" | cut -d'	' -f1 | sed 's/:$//g'
 			printf "%s's value is: " "${attrib}"
 		endif
-		printf "${opml_and_outline}" | sed "s/.*${search_for}=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/"
+		printf "%s" "${opml_and_outline}" | sed "s/.*${search_for}=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/"
 
 		if ( "${be_verbose}" == "TRUE" ) printf "\n"
 		printf "\n"
@@ -62,6 +62,6 @@ end
 exit
 
 usage:
-	printf "Usage| %s --[title|xmlUrl|htmlUrl|text|description]='[search_term]' [attribute-to-display. default: xmlUrl]\n" `basename "${0}"`
+	printf "Usage| %s [--verbose] [--title|(default)xmlUrl|htmlUrl|text|description]='[search_term]' [attribute-to-display. default: xmlUrl]\n" `basename "${0}"`
 	exit
 
