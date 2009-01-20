@@ -21,10 +21,10 @@ default:
 	breaksw
 endsw
 
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" )
+set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 
 foreach catalog ( ${catalogs} )
-	foreach podcasts_xmlUrl ( "`/usr/bin/grep --perl-regex -e -r '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/'`" )
+	foreach podcasts_xmlUrl ( "`/usr/bin/grep --binary-files=without-match -ri --perl-regex -e '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/'`" )
 		goto get_newest
 		find_next_newest:
 	end

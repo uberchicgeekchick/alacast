@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="FSRN&#039;s Headlines" xmlUrl="http://www.fsrn.org/taxonomy/term/3/0/feed" type="rss" text="Free Speech Radio News: Headlines" htmlUrl="http://www.fsrn.org/taxonomy/term/3/0/feed" description="Headlines podcast feed: Headlines produced by Free Speech Radio News <a href='http://www.fsrn.org/'>fsrn.org</a>"/>
+		<outline title="FSRN&#039;s News Segments" xmlUrl="http://www.fsrn.org/taxonomy/term/5/0/feed" type="rss" text="Free Speech Radio News: News Segments" htmlUrl="http://www.fsrn.org/taxonomy/term/5/0/feed" description="News Segment podcast feed: News Segments produced by Free Speech Radio News <a href='http://www.fsrn.org/'>fsrn.org</a>"/>
+		<outline title="FSRN&#039;s Newscast" xmlUrl="http://www.fsrn.org/taxonomy/term/4/0/feed" type="rss" text="Free Speech Radio News: Newscast" htmlUrl="http://www.fsrn.org/taxonomy/term/4/0/feed" description="Newscast Podcast Feed: Newscast produced by Free Speech Radio News <a href='http://www.fsrn.org/'>fsrn.org</a>"/>
+		<outline title="FSRN&#039;s Specials " xmlUrl="http://www.fsrn.org/taxonomy/term/9/0/feed" type="rss" text="Free Speech Radio News: Specials " htmlUrl="http://www.fsrn.org/taxonomy/term/9/0/feed" description="Specials fedd: Specials  produced by Free Speech Radio News <a href='http://www.fsrn.org/'>fsrn.org</a>"/>
+		<outline title="FSRN&#039;s Documentaries" xmlUrl="http://www.fsrn.org/taxonomy/term/7/0/feed" type="rss" text="Free Speech Radio News: Documentaries" htmlUrl="http://www.fsrn.org/taxonomy/term/7/0/feed" description="Documentaries feed: Documentaries produced by Free Speech Radio News <a href='http://www.fsrn.org/'>fsrn.org</a>"/>
+	</body>
+</opml>

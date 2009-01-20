@@ -43,7 +43,7 @@ default:
 	set search_for = "xmlUrl"
 	breaksw
 endsw
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" )
+set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 
 foreach catalog ( ${catalogs} )
 	foreach opml_and_outline ( "`/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\t\ ]+<outline.*${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}'`" )

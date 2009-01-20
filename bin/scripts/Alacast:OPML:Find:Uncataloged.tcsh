@@ -4,7 +4,7 @@ if ( ! ( "${?1}" == "1" && -e "${1}" ) ) then
 	exit
 endif
 
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" )
+set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 
 while ( "${?1}" == "1" && "${1}" != "" )
 	foreach podcast_uri ( "`/usr/bin/grep -r --perl-regex -e '^[\ \s\t]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""'\''].*\/>' '${1}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' | sed 's/\(&amp;\)/\&/g' | sed 's/\([?+]\)/\\\1/g'`" )

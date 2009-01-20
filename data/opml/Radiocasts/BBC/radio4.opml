@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="EN">
+	<head>
+			<title>BBC - Radio - Podcasts - Directory - Radio 4</title>
+<meta name="description" content="Find, download and subscribe to podcasts from BBC Radio"/>
+<meta name="keywords" content="help, podcasts, radio, download, subscribe, mp3" />
+			<meta name="author" content="BBC" />
+			<meta name="created" content="20070711" />
+			<meta name="updated" content="20070711" />
+			
+			
+			<link rel="schema.dcterms" href="../waystolisten/digitaltv/ "></link>
+			
+
+
+
+
+
+
+
+
+
+
+
+<!-- do not mothball (variable set via radiosub.site) -->
+
+
+			
+
+ 
+			
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--[if IE]><![if gte IE 6]><![endif]-->
+	<style type="text/css">
+		@import '/includes/bbcpage/v3-1/toolbar.css';
+	</style>
+<!--[if IE]><![endif]><![endif]-->
+<!--[if gte IE 6]>
+	<style type="text/css" media="screen">
+		#bbcpageExplore a {height:22px;}
+	</style>
+<![endif]-->
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function popmailwin(x, y) {window.open(x,y,'status=no,scrollbars=yes,resizable=yes,width=350,height=400');}
+// -->
+</script>
+
+
+
+
+
+
+	
+	
+
+	
+		
+			
+
+
+
+<script type="text/javascript">if(typeof BBC == "undefined") {var BBC = {}}; BBC.adverts = {setZone: function(){}, configure: function(){}, write: function(){}, show: function(){}}; </script>
+<script type="text/javascript" src="/bbc.com/script/3/direct_ads.js?v=3.22"></script>
+
+
+	
+	
+
+
+
+<link href="/bbc.com/css/adverts.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript"><!--
+
+(function(){
+	var zone = "zones_v5";
+	var zoneOverride = false;
+
+	if(/[?|&]zone=(\w*\/*\w+)(&|$)/.test(window.location.search)) {
+		zone = RegExp.$1;
+		zoneOverride = false;
+	};
+
+	if(/[?|&]zone=(http:\/\/.+(\.bbc\.co\.uk){1}.*(bbc\.com){1}.*\.js)(&|$)/.test(window.location.search)) {
+		if (RegExp.$1.indexOf("/../") === -1) {
+			zone = RegExp.$1;
+			zoneOverride = true;
+		};
+	};
+
+	BBC.adverts.init({
+		domain: "www.bbc.co.uk",
+		location: "/radio/podcasts/directory/station/radio4/index.shtml",
+		zoneVersion: zone,
+		zoneOverride: zoneOverride,
+		inclusionstyle: "direct_ads"
+	});
+
+})();
+
+--></script>
+		
+	
+
+
+
+	
+	
+
+
+
+
+			<script src="/radio/aod/radioplayer.js" type="text/javascript"></script>
+			<style type="text/css">
+@import url("/radio/styles/global.css");
+@import url("/radio/styles/podcastdirectory.css");
+@import url("/radio/styles/barley.css");
+</style>
+
+
+<!-- ## Begin JSTools ## -->
+<script src="/cs/jst/mod/1/jst_core.v1.3.js" type="text/javascript"></script>
+<script src="/cs/jst/mod/1/jst_forms.v1.2.js" type="text/javascript"></script>
+<script src="/cs/jst/mod/1/jst_cookies.v1.1.js" type="text/javascript"></script>
+<!-- ## End JSTools ## -->
+
+			<meta name="robots" content="all" />
+
+	</head>
+
+	<body style="margin:0px"><!-- page layout templates v3.1 --><!-- GLOBAL NAVIGATION  --><a name="top" id="top"></a><ul class="bbcpageHide"><li><a href="#startcontent" accesskey="2">Skip to main content</a></li><li><a href="/cgi-bin/education/betsie/parser.pl">Text only version of this page</a></li><li><a href="/accessibility/accesskeys/keys.shtml" accesskey="0">Access keys help</a></li></ul><div id="toolbarContainer"><form method="get" action="http://www.bbc.co.uk/cgi-bin/search/results.pl" accept-charset="utf-8"><table id="bbcpageToolbarTable" width="100%" cellpadding="0" cellspacing="0" border="0" lang="en"><tr valign="middle"><td width="200" id="bbcpageBlocks"><font size="2"><a href="http://www.bbc.co.uk/go/toolbar/blocks/-/home/d/" accesskey="1"><img src="/images/bbcpage/v3-0/bbc.gif" width="77" height="22" alt="BBC" border="0" hspace="2" vspace="0" /> Home</a></font></td><td width="295" align="right"><input type="text" id="bbcpageSearch" name="q" style="font-family:arial,helvetica,sans-serif;" title="BBC Search" accesskey="4" /></td><td width="105"><input type="submit" name="Search" value="Search" id="bbcpageSearchButton" /><input type="hidden" name="uri" value="/radio/podcasts/directory/station/radio4/" /></td><td width="170" align="right" class="bbcpageblue"><font size="2" id="bbcpageExplore"><a href="/go/toolbar/wlm/-/a-z/">Explore the BBC</a></font></td></tr></table></form></div><table cellspacing="0" cellpadding="0" border="0" width="100%" id="bbcpageTableTop"><tr><td class="bbcpageToplefttd" width="140" valign="top"><table cellspacing="0" cellpadding="0" border="0"><tr><td width="8"><img src="/f/t.gif" width="8" height="1" alt="" /></td><td width="132"><img src="/f/t.gif" width="132" height="1" alt="" /><br clear="all" /><font face="arial, helvetica, sans-serif" size="1" class="bbcpageToplefttd" ><img src="/f/t.gif" width="1" height="6" alt="" /><br clear="all" /><a class="bbcpageTopleftlink" style="text-decoration:underline;" href="/accessibility/">Accessibility help</a><br /><a class="bbcpageTopleftlink" style="text-decoration:underline;" href="/cgi-bin/education/betsie/parser.pl">Text only</a><br /><a href="/" class="bbcpageTopleftlink" style="text-decoration:underline;">BBC Homepage</a><br /><a href="/music/" class="bbcpageTopleftlink" style="text-decoration:underline;">BBC Music</a></font></td></tr></table></td><td width="100%" valign="top"><div id="banner">
+<h1 title="Radio"><a href="/radio/"><img src="/radio/images/logos/radio.gif" width="195" height="69" alt="BBC Radio" border="0" /></a></h1>
+<div id="listenagain" class="topc listentw181">
+	<div class="botc listenbw181">
+		<div class="borderbanner">
+		<ul>
+		<li class="button"><a href="/iplayer/radio/">Listen with BBC iPlayer</a></li>
+			
+		<li class="gethelp"><a href="http://iplayerhelp.external.bbc.co.uk/">Need help listening?</a></li>
+	
+
+		</ul>
+		</div>
+	</div>
+</div>
+</div></td></tr></table><table style="margin:0px;" cellspacing="0" cellpadding="0" border="0" align="left" id="bbcpageTableNav" width="140"><tr><td class="bbcpageCrumb" width="8"><img src="/f/t.gif" width="8" height="1" alt="" /></td><td class="bbcpageCrumb" width="130"><img src="/f/t.gif" width="130" height="1" alt="" /><br clear="all" /><font face="arial, helvetica,sans-serif" size="2"></font></td><td width="2" class="bbcpageCrumb"><img src="/f/t.gif" width="2" height="1" alt="" /></td><td class="bbcpageGutter" valign="top" width="10" rowspan="4"><img src="/f/t.gif" width="10" height="1" vspace="0" hspace="0" alt="" align="left" /></td></tr><tr><td class="bbcpageLocal" colspan="3"><!-- begin IPS 2.52 rev.081031 tplid:3628619 pgid:105997 pd:Fri, 28 Nov 2008 14:33:33 GMT--><div id="toc"><div class="topc bannertw130"><div class="botc bw130"><div class="tocborder"><ul><li class="shaded pos1"><a href="/radio/" >Radio Home</a></li></ul></div></div></div><div class="topc tw130"><div class="botc bw130"><div class="tocborder"><ul><li class="shaded title">Ways To Listen</li><li class="shaded pos1"><a href="/radio/waystolisten/digitalradio/" >DAB Digital Radio</a></li><li class="shaded pos2"><a href="/radio/podcasts/" >Podcasts</a></li><li class="shaded pos3"><a href="/radio/waystolisten/analogue/" >Analogue Radio</a></li><li class="shaded pos4"><a href="/radio/waystolisten/digitaltv/" >Digital Television</a></li><li class="shaded pos5"><a href="/radio/waystolisten/internet/" >Internet</a></li><li class="shaded pos6"><a href="/radio/waystolisten/mobile/" >Mobile Phone</a></li></ul></div></div></div><div class="topc tw130"><div class="botc bw130"><div class="tocborder"><ul><li class="shaded pos1"><a href="/radio/siteusage/" >Site Usage</a></li><li class="shaded pos2"><a href="/radio/labs/" >Radio Labs</a></li><li class="shaded pos3"><a href="/radio/info/" >About BBC Radio</a></li><li class="shaded pos4"><a href="/radio/help/" >Help</a></li></ul></div></div></div></div><script type="text/javascript"> var toc = {}; toc.container = document.getElementById( "toc" ); toc.links = toc.container.getElementsByTagName( 'a' ); for ( var i=1; i < toc.links.length; i++ ) { var str = window.location + ""; if ( str.indexOf( toc.links[i].href ) != -1 ) { toc.links[i].parentNode.className += " active"; } } </script><!-- end IPS 2.52 pgid:105997--></td></tr><tr><td class="bbcpageLocal" colspan="3"><img src="/f/t.gif" width="1" height="5" alt="" /></td></tr><tr><td class="bbcpageServices"><img src="/f/t.gif" width="1" height="1" alt="" /></td><td class="bbcpageServices"><hr width="50" align="left" /><font face="arial, helvetica, sans-serif" size="2"><a class="bbcpageServices" href="/feedback/">Contact Us</a><br /><br /><font size="1">Like this page?<br /><a class="bbcpageServices" onclick="popmailwin('/cgi-bin/navigation/mailto.pl?GO=1&REF=http://www.bbc.co.uk/radio/podcasts/directory/station/radio4/index.shtml','Mailer')" href="/cgi-bin/navigation/mailto.pl?GO=1&REF=http://www.bbc.co.uk/radio/podcasts/directory/station/radio4/index.shtml" target="Mailer">Send it to a friend!</a></font><br />&nbsp;</font></td><td class="bbcpageServices"><img src="/f/t.gif" width="1" height="1" alt="" /></td></tr></table><table width="620" cellspacing="0" cellpadding="0" border="0" id="bbcpageTableContent" style="margin:0px;" style="float:left;"><tr><td><!-- End of GLOBAL NAVIGATION  --><a name="startcontent" id="startcontent"></a>
+
+
+		<div class="outer_container_620">
+			<div class="inner_container_620">
+				<div class="border clearme">
+ 					<div id="intro_box">
+						<h1>Podcast Directory</h1>
+						<div id="intro_gettingstarted" class="clearme">
+	<p>Enjoy BBC audio on the move - a wide range of programmes and highlights are available as podcasts for you to download for free.</p>
+	<ul>
+		<li><a href="/radio/help/faq/what_is_a_podcast.shtml">What is a podcast?</a></li>
+		<li><a href="/radio/help/podcasts/getting_started.shtml">Getting started</a></li>								
+	</ul>
+</div>
+						<div id="browsebychoice" class="clearme">
+	<ul>
+	<li class="selected"><a href="/radio/podcasts/directory/station/">Browse by radio station</a></li>
+	<li class="middle"><a href="/radio/podcasts/directory/genre/">Browse by genre</a></li>
+	<li><a href="/radio/podcasts/directory/title/">Browse by A-Z</a></li>
+	</ul>
+</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="outer_container_lower_620">
+			<div class="inner_container_lower_620">
+				<div class="border clearme">
+				<h3>Podcasts from BBC Radio 4</h3>
+						<!-- 3x4 navigation -->
+<div id="subnavigation" class="clearme">
+	<ul>
+					
+		<li class="shaded pos1"><a href="/radio/podcasts/directory/station/radio1/">Radio 1</a></li>
+		
+		
+					
+		<li class="shaded pos2"><a href="/radio/podcasts/directory/station/radio2/">Radio 2</a></li>
+		
+		
+					
+		<li class="shaded pos3"><a href="/radio/podcasts/directory/station/radio3/">Radio 3</a></li>
+		
+		
+		
+		<li class="shaded pos4"><a href="/radio/podcasts/directory/station/radio4/" class="nav-active">Radio 4</a></li>
+		
+		
+					
+		<li class="shaded pos5"><a href="/radio/podcasts/directory/station/fivelive/">Radio 5 live</a></li>
+
+		
+		
+	</ul>
+	<ul class="middle">
+					
+		<li class="shaded pos1"><a href="/radio/podcasts/directory/station/1xtra/">1Xtra</a></li>
+
+		
+		
+					
+		<li class="shaded pos2"><a href="/radio/podcasts/directory/station/6music/">6 Music</a></li>
+
+		
+		
+					
+		<li class="shaded pos3"><a href="/radio/podcasts/directory/station/bbc7/">Radio 7</a></li>
+
+		
+		
+					
+		<li class="shaded pos4"><a href="/radio/podcasts/directory/station/asiannetwork/">Asian Network</a></li>
+
+		
+		
+					
+		<li class="shaded pos5"><a href="/radio/podcasts/directory/station/worldservice/">World Service</a></li>
+
+		
+		
+
+	</ul>
+	<ul>
+					
+		<li class="shaded pos1"><a href="/radio/podcasts/directory/station/scotland/">Radio Scotland / nan Gaidheal</a></li>		
+
+		
+		
+					
+		<li class="shaded pos2"><a href="/radio/podcasts/directory/station/ulster/">Radio Ulster / Foyle</a></li>
+
+		
+		
+					
+		<li class="shaded pos3"><a href="/radio/podcasts/directory/station/wales/">Radio Wales / Cymru</a></li>
+
+		
+		
+
+					
+		<li class="shaded pos4"><a href="/radio/podcasts/directory/station/local/">English local radio</a></li>
+
+		
+		
+
+					
+		<li class="shaded pos5"><a href="/radio/podcasts/directory/station/crossstation/">Cross-station</a></li>
+
+		
+
+
+	</ul>
+</div><!-- end 3x4 navigation -->
+						<div id="sortby" class="clearme"><!-- sort by -->
+							<ul>
+								<li>Sort by:</li>
+								<li><a href="ascending/">Duration: shortest first</a></li>
+								<li> | </li>
+								<li>A-Z</li>
+
+						</ul></div><!-- end sort by -->
+
+						<div id="results_cells" class="clearme">
+						<div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/analysis/">Analysis</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/analysis/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/analysis/"><img src="http://www.bbc.co.uk/radio/podcasts/analysis/assets/_70x70.jpg" alt="Analysis" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 30 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Analysis makes sense of the ideas that change the world. What made Islam political...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/pov/">A Point of View</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/pov/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/pov/"><img src="http://www.bbc.co.uk/radio/podcasts/pov/assets/_70x70.jpg" alt="A Point of View" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 10 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>A ten minute topical audio essay by a leading commentator. Contributors include Cl...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/nathistory/">Best of Natural History Radio</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/nathistory/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/nathistory/"><img src="http://www.bbc.co.uk/radio/podcasts/nathistory/assets/_70x70.jpg" alt="Best of Natural History Radio" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>World On the Move: throughout 2008 the Philippa Forrester and Brett Westwood are j...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/today/">Best of Today</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/today/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/today/"><img src="http://www.bbc.co.uk/radio/podcasts/today/assets/_70x70.jpg" alt="Best of Today" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Programme Highlights</li><li>Typical Duration: 10 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Insight, analysis and expert debate as key policy makers are challenged on the lat...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/belief/">Beyond Belief</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/belief/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/belief/"><img src="http://www.bbc.co.uk/radio/podcasts/belief/assets/_70x70.jpg" alt="Beyond Belief" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 27 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Debates exploring the place of religion and faith in today's complex world. Ernie ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/bh/">Broadcasting House</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/bh/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/bh/"><img src="http://www.bbc.co.uk/radio/podcasts/bh/assets/_70x70.jpg" alt="Broadcasting House" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 55 Mins.</li><li>
+        Latest Episode: Sun, 18 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>News, discussion &amp; a few gags. The Sunday papers &amp; the BH quiz. Broadcast every Su...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/cc/">Crossing Continents</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/cc/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/cc/"><img src="http://www.bbc.co.uk/radio/podcasts/cc/assets/_70x70.jpg" alt="Crossing Continents" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>On the ground reporting from around the world which focuses on the human dimension...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/excessbag/">Excess Baggage</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/excessbag/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/excessbag/"><img src="http://www.bbc.co.uk/radio/podcasts/excessbag/assets/_70x70.jpg" alt="Excess Baggage" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Travellers' Tales from home and around the world: their destinations, experiences ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/farming/">Farming Today</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/farming/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/farming/"><img src="http://www.bbc.co.uk/radio/podcasts/farming/assets/_70x70.jpg" alt="Farming Today" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 14 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>All rural life is here: daily news of food, farming, the countryside and the envir...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/fileon4/">File on 4</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/fileon4/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/fileon4/"><img src="http://www.bbc.co.uk/radio/podcasts/fileon4/assets/_70x70.jpg" alt="File on 4" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 37 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>A podcast offering Radio 4's award winning, flagship investigative series File on ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/fricomedy/">Friday Night Comedy from BBC Radio 4</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/fricomedy/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/fricomedy/"><img src="http://www.bbc.co.uk/radio/podcasts/fricomedy/assets/_70x70.jpg" alt="Friday Night Comedy from BBC Radio 4" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Multi Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Bringing you both The Now Show and The News Quiz from BBC Radio 4. Enjoy a satiric...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/fooc/">From Our Own Correspondent</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/fooc/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/fooc/"><img src="http://www.bbc.co.uk/radio/podcasts/fooc/assets/_70x70.jpg" alt="From Our Own Correspondent" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Insight, wit and analysis as the BBC's foreign correspondents take a closer look a...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/frontrow/">Front Row Highlights</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/frontrow/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/frontrow/"><img src="http://www.bbc.co.uk/radio/podcasts/frontrow/assets/_70x70.jpg" alt="Front Row Highlights" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Programme Highlights</li><li>Typical Duration: 30 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Interviews with leading novelists, musicians, film directors, artists and more, fr...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/greatlives/">Great Lives</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/greatlives/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/greatlives/"><img src="http://www.bbc.co.uk/radio/podcasts/greatlives/assets/_70x70.jpg" alt="Great Lives" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Biography series exploring the greatest people who ever lived. Matthew Parris inte...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/iot/">In Our Time With Melvyn Bragg</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/iot/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/iot/"><img src="http://www.bbc.co.uk/radio/podcasts/iot/assets/_70x70.jpg" alt="In Our Time With Melvyn Bragg" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 42 Mins.</li><li>
+        Latest Episode: Thu, 15 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>The history of ideas discussed by Melvyn Bragg and guests including  Philosophy, s...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/intouch/">In Touch: News for Blind People</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/intouch/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/intouch/"><img src="http://www.bbc.co.uk/radio/podcasts/intouch/assets/_70x70.jpg" alt="In Touch: News for Blind People" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 20 Mins.</li><li>
+        Latest Episode: Wed, 14 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>News, views and information for people who are blind or visually impaired. Present...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/ipm/">iPM: Share What You Know</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/ipm/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/ipm/"><img src="http://www.bbc.co.uk/radio/podcasts/ipm/assets/_70x70.jpg" alt="iPM: Share What You Know" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 24 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Weekly podcast featuring passionate debate from across the web with Eddie Mair. Al...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/law/">Law in Action</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/law/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/law/"><img src="http://www.bbc.co.uk/radio/podcasts/law/assets/_70x70.jpg" alt="Law in Action" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Sharp, insightful and witty reporting on the week’s legal news in language everyon...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/material/">Material World</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/material/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/material/"><img src="http://www.bbc.co.uk/radio/podcasts/material/assets/_70x70.jpg" alt="Material World" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Thu, 15 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Weekly science conversation, on everything from archaeology to zoology, from abacu...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/media/">Media Show</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/media/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/media/"><img src="http://www.bbc.co.uk/radio/podcasts/media/assets/_70x70.jpg" alt="Media Show" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 30 Mins.</li><li>
+        Latest Episode: Wed, 14 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>BBC Radio 4's new topical programme The Media Show, presented by journalist and fo...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/medmatters/">Medical Matters</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/medmatters/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/medmatters/"><img src="http://www.bbc.co.uk/radio/podcasts/medmatters/assets/_70x70.jpg" alt="Medical Matters" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Multi Programme</li><li>Typical Duration: 25 Mins.</li><li>
+        Latest Episode: Tue, 13 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>The latest medical information and advice from Radio 4's health programmes. In Cas...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/midweek/">Midweek: Diverse conversation</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/midweek/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/midweek/"><img src="http://www.bbc.co.uk/radio/podcasts/midweek/assets/_70x70.jpg" alt="Midweek: Diverse conversation" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 42 Mins.</li><li>
+        Latest Episode: Thu, 15 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Diverse conversation with Libby Purves and her four guests. The focus of Midweek i...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/moneybox/">Money Box</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/moneybox/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/moneybox/"><img src="http://www.bbc.co.uk/radio/podcasts/moneybox/assets/_70x70.jpg" alt="Money Box" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>All that matters about money with Paul Lewis. News of savings and investments, cre...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/moreorless/">More or Less: Behind the Stats</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/moreorless/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/moreorless/"><img src="http://www.bbc.co.uk/radio/podcasts/moreorless/assets/_70x70.jpg" alt="More or Less: Behind the Stats" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>More or Less makes sense of the numbers that surround us and that rule our world. ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/newspod/">NewsPod</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/newspod/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/newspod/"><img src="http://www.bbc.co.uk/radio/podcasts/newspod/assets/_70x70.jpg" alt="NewsPod" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio</li><li>Programme Highlights</li><li>Typical Duration: 35 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Daily programme highlights from BBC Radio News. Interviews and reports from BBC Ra...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/worldbiz/">Peter Day's World of Business</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/worldbiz/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/worldbiz/"><img src="http://www.bbc.co.uk/radio/podcasts/worldbiz/assets/_70x70.jpg" alt="Peter Day's World of Business" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio</li><li>Multi Programme</li><li>Typical Duration: 25 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Insights into the business world with Peter Day - featuring content from his Radio...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/profile/">Profile</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/profile/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/profile/"><img src="http://www.bbc.co.uk/radio/podcasts/profile/assets/_70x70.jpg" alt="Profile" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 14 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Series of profiles of people who are currently making headlines. Broadcast on BBC ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/r4choice/">Radio 4 Choice</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/r4choice/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/r4choice/"><img src="http://www.bbc.co.uk/radio/podcasts/r4choice/assets/_70x70.jpg" alt="Radio 4 Choice" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 30 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>The Radio 4 Choice podcast brings you our pick of the best of the week's documenta...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/ramblings/">Ramblings with Clare Balding</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/ramblings/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/ramblings/"><img src="http://www.bbc.co.uk/radio/podcasts/ramblings/assets/_70x70.jpg" alt="Ramblings with Clare Balding" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Clare Balding discovers why and where we walk. In each programme she walks with a ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/satlive/">Saturday Live</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/satlive/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/satlive/"><img src="http://www.bbc.co.uk/radio/podcasts/satlive/assets/_70x70.jpg" alt="Saturday Live" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 58 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions ukonly">Available in the UK only</li></ul></div><p>Real life but not as you know it. Radio 4's Saturday morning show is full of the s...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/stw/">Start the Week with Andrew Marr</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/stw/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/stw/"><img src="http://www.bbc.co.uk/radio/podcasts/stw/assets/_70x70.jpg" alt="Start the Week with Andrew Marr" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 42 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Start The Week sets the cultural agenda for the week ahead, with  high-profile gue...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/sunday/">Sunday: Religious News</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/sunday/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/sunday/"><img src="http://www.bbc.co.uk/radio/podcasts/sunday/assets/_70x70.jpg" alt="Sunday: Religious News" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 40 Mins.</li><li>
+        Latest Episode: Sun, 18 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Roger Bolton presents religious news and analysis into the top stories from the UK...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/archers/">The Archers</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/archers/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/archers/"><img src="http://www.bbc.co.uk/radio/podcasts/archers/assets/_70x70.jpg" alt="The Archers" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 15 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Contemporary drama in a rural setting from the world's longest running radio soap ...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/bottomline/">The Bottom Line with Evan Davis</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/bottomline/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/bottomline/"><img src="http://www.bbc.co.uk/radio/podcasts/bottomline/assets/_70x70.jpg" alt="The Bottom Line with Evan Davis" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 25 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Insights into business from the people at the top; Evan Davis meets 3 or 4 powerfu...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/film/">The Film Programme</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/film/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/film/"><img src="http://www.bbc.co.uk/radio/podcasts/film/assets/_70x70.jpg" alt="The Film Programme" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 27 Mins.</li><li>
+        Latest Episode: Fri, 16 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Interviews and analysis from the world of cinema. Francine Stock talks to director...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/ta/">Thinking Allowed</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/ta/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/ta/"><img src="http://www.bbc.co.uk/radio/podcasts/ta/assets/_70x70.jpg" alt="Thinking Allowed" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 27 Mins.</li><li>
+        Latest Episode: Wed, 14 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Laurie Taylor explores the latest research into how society works and discusses cu...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/thought/">Thought For The Day</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/thought/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/thought/"><img src="http://www.bbc.co.uk/radio/podcasts/thought/assets/_70x70.jpg" alt="Thought For The Day" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 3 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>A unique reflection from a faith perspective on topical issues and news events.  S...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/tip/">Today in Parliament</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/tip/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/tip/"><img src="http://www.bbc.co.uk/radio/podcasts/tip/assets/_70x70.jpg" alt="Today in Parliament" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Mon, 19 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>BBC correspondents report from Westminster on the most significant of the day's st...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/wpr/">Weekly Political Review</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/wpr/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/wpr/"><img src="http://www.bbc.co.uk/radio/podcasts/wpr/assets/_70x70.jpg" alt="Weekly Political Review" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 28 Mins.</li><li>
+        Latest Episode: Sat, 17 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Top political commentators reflect on the week's political events in discussion wi...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/whnews/">Woman's Hour: News, Politics, Culture</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/whnews/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/whnews/"><img src="http://www.bbc.co.uk/radio/podcasts/whnews/assets/_70x70.jpg" alt="Woman's Hour: News, Politics, Culture" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Whole Programme</li><li>Typical Duration: 10 Mins.</li><li>
+        Latest Episode: Tue, 20 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Radio 4's Woman's Hour brings you topical subjects in the news, interviews and dic...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/yydisab/">You and Yours - Disability</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/yydisab/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/yydisab/"><img src="http://www.bbc.co.uk/radio/podcasts/yydisab/assets/_70x70.jpg" alt="You and Yours - Disability" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Programme Highlights</li><li>Typical Duration: 10 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Latest news on legislation, public policy and social trends  and their impact on p...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/yyenv/">You and Yours - Environment</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/yyenv/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/yyenv/"><img src="http://www.bbc.co.uk/radio/podcasts/yyenv/assets/_70x70.jpg" alt="You and Yours - Environment" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Programme Highlights</li><li>Typical Duration: 10 Mins.</li><li>
+        Latest Episode: none
+      
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Latest news on 'green' consumerism from taxes on aviation to food miles to availab...</p></div></div></div></div></div><div class="cell_radio4 podcastcell"><div class="box"><div class="outer"><div class="inner"><div class="content"><div class="headline clearme"><h3><a href="/radio/podcasts/yyhealth/">You and Yours - Health</a></h3><div class="buttonOuter"><div class="buttonInner"><div class="buttonContent"><a href="/radio/podcasts/yyhealth/">Podcast</a></div></div></div></div><div class="podcastdetails clearme"><a href="/radio/podcasts/yyhealth/"><img src="http://www.bbc.co.uk/radio/podcasts/yyhealth/assets/_70x70.jpg" alt="You and Yours - Health" width="70" height="70"/></a><ul class="clearme"><li>BBC Radio 4</li><li>Programme Highlights</li><li>Typical Duration: 15 Mins.</li><li>
+        Latest Episode: Thu, 15 Jan 2009
+</li><li class="restrictions none">Available to all listeners</li></ul></div><p>Latest news on how changes in the NHS affect patient care. Private medicine, scien...</p></div></div></div></div></div>
+
+						</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- begin footer --></td></tr></table><!--if no nav or stretchy but not both --><br clear="all" /><table  cellpadding="0" cellspacing="0" border="0" lang="en" id="bbcpageTableFooter"><tr><td class="bbcpageFooterMargin" width="140"><img src="/f/t.gif" width="140" height="1" alt="" /></td><td class="bbcpageFooterGutter" width="10"><img src="/f/t.gif" width="10" height="1" alt="" /></td><td class="bbcpageFooter" width="620" align="center"><img src="/f/t.gif" width="620" height="1" alt="" /><br /><font face="arial, helvetica, sans-serif" size="1"><a class="bbcpageFooter" href="/info/">About the BBC</a> | <a class="bbcpageFooter" href="/help/">Help</a> | <a class="bbcpageFooter" href="/terms/">Terms of Use</a> | <a class="bbcpageFooter" href="/privacy/">Privacy &amp; Cookies Policy</a><br /><a class="bbcpageFooter" href="/bbc.com/furtherinformation/">Advertise with us</a><br />&nbsp;</font></td></tr></table><br clear="all" /><script src="/includes/linktrack.js?2" type="text/javascript"></script><script type="text/javascript" src="/bbc.com/script/analytics/vs/vs.js"></script><!-- end footer -->
+
+	</body>
+
+</html>
