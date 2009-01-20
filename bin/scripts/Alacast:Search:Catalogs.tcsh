@@ -46,11 +46,11 @@ endsw
 set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" )
 
 foreach catalog ( ${catalogs} )
-	foreach opml_and_outline ( "`/usr/bin/grep -ri --perl-regex -e '[^<][^\-][^\-]<outline.*${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}'`" )
+	foreach opml_and_outline ( "`/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\t\ ]+<outline.*${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}'`" )
 		if ( "${be_verbose}" == "TRUE" ) then
 			printf "The %s you're searching for was found in:\n\t" "${attrib}"
 			printf "%s" "${opml_and_outline}" | cut -d'	' -f1 | sed 's/:$//g'
-			printf "%s's value is: " "${attrib}"
+			printf "\tIt's %s's value is: " "${search_for}"
 		endif
 		printf "%s" "${opml_and_outline}" | sed "s/.*${search_for}=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/"
 
