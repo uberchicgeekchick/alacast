@@ -4,17 +4,15 @@
 		<title>Podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[AlternaGeek]]>" xmlUrl="http://alternageek.com/feed/" type="rss" text="<![CDATA[AlternaGeek]]>" htmlUrl="http://alternageek.com/" description="<![CDATA[]]>"/>
+		<outline type="link" title="<![CDATA[TechPodcasts.Com]]>" url="http://TechPodcasts.Com/" text="<![CDATA[TechPodcasts.Com]]>" description="<![CDATA[TechPodcasts.Com - If its tech its here.]]>"/>
+		<outline type="link" title="<![CDATA[FriendsInTech.Com]]>" url="http://TechPodcasts.Com/" text="<![CDATA[FriendsInTech.Com]]>" description="<![CDATA[FriendsInTech.Com]]>"/>
+		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Slashdot&#39;s Festival]]>" xmlUrl="http://feeds.feedburner.com/slashdot/audio?format=xml" type="rss" text="<![CDATA[Slashdot&#39;s Festival]]>" htmlUrl="http://slashdot.org/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[TechOne]]>" xmlUrl="http://www.podtech.net/home/category/techone/feed" type="rss" text="<![CDATA[TechOne]]>" htmlUrl="http://www.podtech.net/home/category/thetechoneshow" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Cranky Geeks]]>" xmlUrl="http://rssnewsapps.ziffdavis.com/audioblogs/crankygeeks/cg.h.264.xml" type="rss" text="<![CDATA[Cranky Geeks]]>" htmlUrl="http://www.crankygeeks.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[dl.tv]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/dltvdivxvideo?format=xml" type="rss" text="<![CDATA[dl.tv]]>" htmlUrl="http://dl.tv/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[The Global Geek Podcast]]>" xmlUrl="http://globalgeek.thepodcastnetwork.com/feed/" type="rss" text="<![CDATA[The Global Geek Podcast]]>" htmlUrl="http://globalgeek.thepodcastnetwork.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Aussie Geek Podcast]]>" xmlUrl="http://www.aussiegeekpodcast.com/category/podcast/feed" type="rss" htmlUrl="http://www.aussiegeekpodcast.com/" text="<![CDATA[Aussie Geek Podcast]]>" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[austechNews]]>" xmlUrl="http://feeds.feedburner.com/AustechNews?format=xml" type="rss" text="<![CDATA[austechNews]]>" htmlUrl="http://austechnews.blogspot.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[The Extraordinary Everyday Lives Show]]>" xmlUrl="http://extraordinary.thepodcastnetwork.com/feed/" type="rss" text="<![CDATA[The Extraordinary Everyday Lives Show]]>" htmlUrl="http://extraordinary.thepodcastnetwork.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[GeekMuse]]>" xmlUrl="http://geekmuse.net/podcast/" type="rss" text="<![CDATA[GeekMuse]]>" htmlUrl="http://geekmuse.dreamhosters.com/wp/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Casting From The Server Room]]>" xmlUrl="http://feeds.feedburner.com/CastingFromTheServerRoom?format=xml" type="rss" text="<![CDATA[Casting From The Server Room]]>" htmlUrl="http://www.castingfromtheserverroom.com/podcast/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[CSTechcast]]>" xmlUrl="http://feeds.feedburner.com/CsTechcast?format=xml" type="rss" text="<![CDATA[CSTechcast]]>" htmlUrl="http://www.cstechcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Mind of Root]]>" xmlUrl="http://podcast.acoupleofadmins.com/media/ACOAPRSS.xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://www.mindofroot.com/" description="<![CDATA[]]>" />
 		<outline title="<![CDATA[Tech5]]>" xmlUrl="http://www.btpodshow.com/feeds/tech5.xml" type="rss" text="<![CDATA[Tech5]]>" htmlUrl="http://tech5.podshow.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[TWiT]]>" xmlUrl="http://leoville.tv/podcasts/twit-ogg.xml" type="rss" text="<![CDATA[TWiT]]>" htmlUrl="http://www.twit.tv/TWiT" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Extreme Tech]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/extremetechpodcast?format=xml" type="rss" text="<![CDATA[Extreme Tech]]>" htmlUrl="http://www.extremetech.com/article2/0,1697,1860164,00.asp" description="<![CDATA[]]>"/>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Cranky Geeks]]>" xmlUrl="http://rssnewsapps.ziffdavis.com/audioblogs/crankygeeks/cg.h.264.xml" type="rss" text="<![CDATA[Cranky Geeks]]>" htmlUrl="http://www.crankygeeks.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[dl.tv]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/dltvdivxvideo?format=xml" type="rss" text="<![CDATA[dl.tv]]>" htmlUrl="http://dl.tv/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[TechOne]]>" xmlUrl="http://www.podtech.net/home/category/techone/feed" type="rss" text="<![CDATA[TechOne]]>" htmlUrl="http://www.podtech.net/home/category/thetechoneshow" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Channel Flip&#39;s: unwired]]>" xmlUrl="http://feeds.feedburner.com/Unwired-AVI?format=xml" type="rss" text="<![CDATA[Channel Flip&#39;s: unwired]]>" htmlUrl="http://www.unwiredshow.tv/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
