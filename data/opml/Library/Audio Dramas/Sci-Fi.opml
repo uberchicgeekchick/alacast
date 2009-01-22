@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Science Fiction Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[365 Tomorrows&#039; Voices of Tomorrow]]>" xmlUrl="http://voicesoftomorrow.libsyn.com/rss" type="rss" text="<![CDATA[365 Tomorrows&#039; Voices of Tomorrow]]>" htmlUrl="http://voicesoftomorrow.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Escape Pod]]>" xmlUrl="http://escapepod.org/podcast.xml" type="rss" htmlUrl="http://escapepod.org/" text="<![CDATA[Escape Pod]]>" description="<![CDATA[The Science Fiction Podcast Magazine.]]>"/>
+		<outline title="<![CDATA[Nova Star Hunters]]>" xmlUrl="http://feeds2.feedburner.com/novastarhunters?format=xml" type="rss" htmlUrl="http://www.novastarhunters.com/" text="<![CDATA[Nova Star Hunters]]>" description="<![CDATA[Website of the sci-fi show Nova Star Hunters]]>"/>
+		<outline title="<![CDATA[Children of The Gods]]>" xmlUrl="http://childrenofthegods.net/rss.xml" type="rss" text="<![CDATA[Children of The Gods]]>" htmlUrl="http://childrenofthegods.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Voices of Babylon]]>" xmlUrl="http://www.voicesofbabylon.com/category/tes/feed/" type="rss" text="<![CDATA[Voices of Babylon]]>" htmlUrl="http://voicesofbabylon.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[New World Army]]>" xmlUrl="http://feeds.feedburner.com/NewWorldArmy?format=xml" type="rss" text="<![CDATA[New-World-Army]]>" htmlUrl="http://drupal.roneyzone.com/content/new-world-army" description="<![CDATA[A serialized thriller about a band of rebels fighting to survive against a mysterious, tyrannical army of robots.  In Another Time, On Another Planet: Servants, Become Rulers.  Rulers, Become Outcasts.  Rebels are Hunted.  Few will Survive, but Who will Lead them?  As they Stand Against-the New-World-Army]]>"/>
+		<outline title="<![CDATA[Never Was]]>" xmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/feed" type="rss" text="<![CDATA[Never Was]]>" htmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

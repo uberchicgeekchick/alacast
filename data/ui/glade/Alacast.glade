@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.3 on Mon Jan  5 08:42:46 2009 -->
+<!--Generated with glade3 3.4.3 on Thu Jan 22 00:05:15 2009 -->
 <glade-interface>
   <requires lib="bonobo"/>
   <requires lib="gnome"/>
@@ -12,6 +12,7 @@
     <property name="window_position">GTK_WIN_POS_CENTER</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
+    <signal name="close" handler="gtk_widget_destroy"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="about_alacast">
         <property name="visible">True</property>
