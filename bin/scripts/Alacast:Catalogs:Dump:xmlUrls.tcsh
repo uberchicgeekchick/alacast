@@ -23,8 +23,8 @@ if ( "${?1}" == "0" || "${1}" == "" || ! -e "${1}" ) then
 endif
 
 cd `dirname "${0}"`/../../data/opml
+source set_catalogs.tcsh
 
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 foreach podcast_catalog ( ${catalogs} )
 	foreach opml ( "`find './${podcast_catalog}' -iname '*.opml'`" )
 		/usr/bin/grep --perl-regexp -e '^[\t\ \s]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""'\'']' "${opml}" | sed 's/^[\ \s\t]\+<outline.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' >! ./.alacast.podcasts.lst

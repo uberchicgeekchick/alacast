@@ -1,8 +1,10 @@
 #!/bin/tcsh -f
 if ( "${?1}" == "0" || "${1}" == "" ) goto usage
 
-cd `dirname "${0}"`/../../data/opml
 printf "${cwd}"
+
+cd `dirname "${0}"`/../../data/opml
+source set_catalogs.tcsh
 
 set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
 set value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
@@ -20,8 +22,6 @@ default:
 	goto usage
 	breaksw
 endsw
-
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 
 foreach catalog ( ${catalogs} )
 	foreach podcasts_xmlUrl ( "`/usr/bin/grep --binary-files=without-match -ri --perl-regex -e '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/'`" )

@@ -2,6 +2,7 @@
 if ( ! ( "${?1}" != "0" && "${1}" != "" ) ) goto usage
 
 cd `dirname "${0}"`/../../data/opml
+source set_catalogs.tcsh
 
 set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
 set value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
@@ -37,7 +38,6 @@ default:
 	set search_for = "xmlUrl"
 	breaksw
 endsw
-set catalogs = ( "IP.TV" "Library" "Podcasts" "Vodcasts" "Radiocasts" )
 
 foreach catalog ( ${catalogs} )
 	foreach opml_and_outline ( "`/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\t\ ]+<outline.*${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}'`" )
