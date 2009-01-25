@@ -22,18 +22,19 @@ sub print_usage{
 
 sub search_catalog{
 	my $catalog=shift;
-	my $grep_command = "/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*$attrib=[\"\'\\\'\'].*$value.*[\"\'\\\'\']' '$opml_files_path/$catalog'";
+	my $grep_command = sprintf("/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*%s=[\"\'\\\'\'][^\"\'\\\'\']*%s[^\"\'\\\'\']*[\"\'\\\'\']' '%s/%s'", $attrib, $value, $opml_files_path, $catalog );
 	
 	foreach my $opml_and_outline ( `$grep_command` ) {
 		$opml_and_outline =~ s/[\r\n]+//g;
 		my $opml_file = $opml_and_outline;
+		$opml_file =~ s/^$opml_files_path\///;
 		$opml_file =~ s/^(.*):\t.*$/\1/;
 
 		my $opml_attribute = $opml_and_outline;
 		$opml_attribute =~ s/.*$show_attribute=["']([^"']+)["'].*/\1/;
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf( "%s@%s\n", $opml_attribute, $opml_file );
+		printf( "%s: %s\n", $opml_attribute, $opml_file );
 	}
 }
 
