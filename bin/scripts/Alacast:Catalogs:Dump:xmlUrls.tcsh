@@ -22,7 +22,7 @@ if ( "${?1}" == "0" || "${1}" == "" || ! -e "${1}" ) then
 	exit
 endif
 
-cd `dirname "${0}"`/../../data/opml
+cd `dirname "${0}"`/../../data/xml/opml
 source set_catalogs.tcsh
 
 foreach podcast_catalog ( ${catalogs} )

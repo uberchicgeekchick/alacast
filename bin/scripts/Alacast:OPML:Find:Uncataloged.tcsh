@@ -4,7 +4,7 @@ if ( ! ( "${?1}" == "1" && -e "${1}" ) ) then
 	exit
 endif
 
-cd `dirname "${0}"`/../../data/opml
+cd `dirname "${0}"`/../../data/xml/opml
 source set_catalogs.tcsh
 
 while ( "${?1}" == "1" && "${1}" != "" )

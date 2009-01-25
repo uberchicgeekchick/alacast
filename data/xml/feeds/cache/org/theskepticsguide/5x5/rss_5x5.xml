@@ -1,0 +1,467 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:itunes='http://www.itunes.com/dtds/podcast-1.0.dtd' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:cc='http://web.resource.org/cc/'>
+
+
+    <channel>
+		<image><url>http://www.theskepticsguide.org/5X5/images/5X5_logo_175.gif</url>
+				<title>The Skeptics Guide 5X5</title>
+				<link>http://www.theskepticsguide.org/5x5</link>
+				<width>144</width>
+				<height>144</height>
+		</image>
+        <title>The Skeptics' Guide 5X5</title>
+        <description>SGU 5x5 - Five Minutes with Five Skeptics. A weekly science podcast discussing news in the world of science and pseudoscience. A companion to The Skeptics' Guide to the Universe weekly podcast.  www.theskepticsguide.org/5x5</description>
+        <link>http://www.theskepticsguide.org/5X5</link>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <language>en-us</language>
+        <managingEditor>stevennovella@comcast.net (Steven Novella)</managingEditor>
+        <lastBuildDate>Tue, 08 Jan 2008 08:00:00 -0400</lastBuildDate>
+        <pubDate>Tue, 08 Jan 2008 08:00:00 -0400</pubDate>
+        <ttl>60</ttl>
+        <webMaster>jay@bearclawsoftware.com (Jay Novella)</webMaster>
+        <itunes:author>Dr. Steven Novella</itunes:author>
+        <itunes:owner>
+			<itunes:name>Dr. Steven Novella MD</itunes:name>
+			<itunes:email>info@theskepticsguide.org</itunes:email>
+		</itunes:owner>
+        <itunes:image href='http://www.theskepticsguide.org/5X5/images/5X5_logo_175.gif'/>
+		<itunes:keywords>skeptic,skepticism,science,paranormal,psuedoscience,fringe-science</itunes:keywords>
+		<itunes:subtitle>Your Escape To Reality</itunes:subtitle>
+		<itunes:summary>SGU 5x5 - Five Minutes with Five Skeptics. A weekly science podcast discussing news in the world of science and pseudoscience. A companion to The Skeptics' Guide to the Universe weekly podcast.  www.theskepticsguide.org/5x5</itunes:summary>
+		<itunes:category text='Science &amp; Medicine' />
+		<itunes:explicit>no</itunes:explicit>
+
+
+<item>
+     <title>SGU 5x5 #54 - January 21st, 2009</title>
+     <description>Skepticism 101 - False Dichotomy</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52009-01-21.mp3' length='1984814' type='audio/mpeg' />
+     <pubDate>Sat, 24 Jan 2009 07:30:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=54</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #53 - January 13th, 2009</title>
+     <description>Anecdotal Evidence</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52009-01-13.mp3' length='2021020' type='audio/mpeg' />
+     <pubDate>Fri, 16 Jan 2009 07:39:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=53</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #52 - January 6th, 2009</title>
+     <description>Atlantis</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52009-01-06.mp3' length='3079293' type='audio/mpeg' />
+     <pubDate>Fri, 9 Jan 2009 08:45:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=52</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #51 - December 29th, 2008</title>
+     <description>Skepticism 101 - Channeling</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-12-29.mp3' length='2177089' type='audio/mpeg' />
+     <pubDate>Thu, 1 Jan 2009 13:40:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=51</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #50 - December 15th, 2008</title>
+     <description>Skepticism 101 - The Argument from Ignorance</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-12-15.mp3' length='2076366' type='audio/mpeg' />
+     <pubDate>Thu, 18 Dec 2008 08:08:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=50</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #49 - December 8th, 2008</title>
+     <description>Skepticism 101 - Argument from Authority</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-12-08.mp3' length='2232923' type='audio/mpeg' />
+     <pubDate>Sun, 14 Dec 2008 07:56:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=49</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #48 - December 1st, 2008</title>
+     <description>The 10% Brain Myth</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-12-01.mp3' length='2673117' type='audio/mpeg' />
+     <pubDate>Fri, 5 Dec 2008 11:30:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=48</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #47 - November 24th, 2008</title>
+     <description>Remote Viewing</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-11-24.mp3' length='2402988' type='audio/mpeg' />
+     <pubDate>Wed, 26 Nov 2008 08:08:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=47</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #46 - November 18th, 2008</title>
+     <description>Skepticism 101 - Correlation and Causation</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-11-18.mp3' length='2551547' type='audio/mpeg' />
+     <pubDate>Thu, 20 Nov 2008 08:08:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=46</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #44 - November 11th, 2008</title>
+     <description>Chi and other forms of vitalism</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-11-10.mp3' length='2003448' type='audio/mpeg' />
+     <pubDate>Thu, 13 Nov 2008 23:38:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=45</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #44 - November 4th, 2008</title>
+     <description>homonculus-based medical pseudoscience</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-11-04.mp3' length='2005680' type='audio/mpeg' />
+     <pubDate>Wed, 5 Nov 2008 08:15:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=44</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #43 - October 29th, 2008</title>
+     <description>Holocaust Denial</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-10-27.mp3' length='2804444' type='audio/mpeg' />
+     <pubDate>Wed, 29 Oct 2008 14:49:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=43</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #42 - October 22nd, 2008</title>
+     <description>Skepticism 101 - Confirmation Bias</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-10-22.mp3' length='2480377' type='audio/mpeg' />
+     <pubDate>Fri, 24 Oct 2008 10:41:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=42</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #41 - October 15th, 2008</title>
+     <description>Skepticism 101 - Logical Fallacies: Straw Man Argument</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-10-15.mp3' length='1859602' type='audio/mpeg' />
+     <pubDate>Thu, 16 Oct 2008 08:05:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=41</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #40 - October 8th, 2008</title>
+     <description>Skepticism 101 - Extraordinary claims require extraordinary evidence.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-10-08.mp3' length='2176677' type='audio/mpeg' />
+     <pubDate>Thu, 9 Oct 2008 10:49:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=40</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #39 - October 1st, 2008</title>
+     <description>Skepticism 101 - The Ideomotor Effect</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-10-01.mp3' length='2439419' type='audio/mpeg' />
+     <pubDate>Thu, 2 Oct 2008 08:08:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=39</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #38 - September 24th, 2008</title>
+     <description>Skepticism 101 - Pareidolia</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-09-24.mp3' length='2275827' type='audio/mpeg' />
+     <pubDate>Thu, 25 Sep 2008 07:23:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=38</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #37 - September 17th, 2008</title>
+     <description>Skepticism 101 - The Scientific Method</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-09-17.mp3' length='2460297' type='audio/mpeg' />
+     <pubDate>Thu, 18 Sep 2008 08:03:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=37</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #36 - September 10th, 2008</title>
+     <description>Skepticism 101 - Cold Reading</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-09-10.mp3' length='2763808' type='audio/mpeg' />
+     <pubDate>Thu, 11 Sep 2008 21:36:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=36</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #35 - September 3rd, 2008</title>
+     <description>No sunspots in August - will this lead to a period of solar cooling?</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-09-03.mp3' length='2462247' type='audio/mpeg' />
+     <pubDate>Thu, 4 Sep 2008 20:11:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=35</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #34 - August 27th, 2008</title>
+     <description>Woman claims wires grow out of her body.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-08-27.mp3' length='7597312' type='audio/mpeg' />
+     <pubDate>Thu, 28 Aug 2008 08:01:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=34</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #33 - August 20th, 2008</title>
+     <description>The Shroud of Turn - Shroud scientists try to resurrect the controversy</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-08-20.mp3' length='2635720' type='audio/mpeg' />
+     <pubDate>Thu, 21 Aug 2008 08:10:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=33</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #32 - August 11th, 2008</title>
+     <description>Skepticism 101 - Occam's Razor</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-08-11.mp3' length='2466636' type='audio/mpeg' />
+     <pubDate>Wed, 13 Aug 2008 08:35:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=32</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #31 - August 4th, 2008</title>
+     <description>Digital Homeopathy 20 years after Benveniste</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-08-04.mp3' length='2353787' type='audio/mpeg' />
+     <pubDate>Tue, 5 Aug 2008 23:54:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #30 - July 29th, 2008</title>
+     <description>Evaluation of a UCONN study of therapeutic touch on bone cells in culture.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-07-29.mp3' length='2545594' type='audio/mpeg' />
+     <pubDate>Wed, 30 Jul 2008 14:51:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=30</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #29 - July 20th, 2008</title>
+     <description>The SGU celebrates the 39th anniversary of Apollo 11 by debunking some moon landing hoax myths, and they are joined by Phil Plait, the Bad Astronomer.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-07-20.mp3' length='4375821' type='audio/mpeg' />
+     <pubDate>Wed, 23 Jul 2008 15:19:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=29</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #28 - July 13th, 2008</title>
+     <description>Exposing the logical fallacy of equating faith healing with medical care.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-07-13.mp3' length='2224637' type='audio/mpeg' />
+     <pubDate>Wed, 16 Jul 2008 08:25:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=28</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #27 - July 6th, 2008</title>
+     <description>Cracking the Dogu Code - Ancient Astronauts</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-07-06.mp3' length='2125111' type='audio/mpeg' />
+     <pubDate>Wed, 9 Jul 2008 18:42:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=27</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #26 - June 29th, 2008</title>
+     <description>New study sheds light on genetic vs environmental contributions to sexuality.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-06-29.mp3' length='3175668' type='audio/mpeg' />
+     <pubDate>Wed, 2 Jul 2008 13:54:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=26</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #25 - June 22nd, 2008</title>
+     <description>NASA Plans Probe to the Sun.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-06-22.mp3' length='2126992' type='audio/mpeg' />
+     <pubDate>Tue, 24 Jun 2008 23:29:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=25</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 - June 15th, 2008</title>
+     <description>New strategy for SETI - The Search for ExtraTerrestrial Intelligence.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-06-15.mp3' length='2219878' type='audio/mpeg' />
+     <pubDate>Wed, 18 Jun 2008 09:19:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=24</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #23 - June 8th, 2008</title>
+     <description>Lame car design analogy to intelligent design from the Discovery Institute.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-06-08.mp3' length='2249245' type='audio/mpeg' />
+     <pubDate>Wed, 11 Jun 2008 08:23:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=23</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #22 - June 1st, 2008</title>
+     <description>Researchers allow monkey to control robotic arm with its mind.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-06-01.mp3' length='2124056' type='audio/mpeg' />
+     <pubDate>Thu, 5 Jun 2008 07:57:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=22</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #21 - May 25th, 2008</title>
+     <description>Family claims women miraculously brought back to life after rigor mortis</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-05-25.mp3' length='2397986' type='audio/mpeg' />
+     <pubDate>Wed, 28 May 2008 20:16:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=21</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #20 - May 18th, 2008</title>
+     <description>SPAM Chainletter e-mails do not spread as virally as thought.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-05-18.mp3' length='2166802' type='audio/mpeg' />
+     <pubDate>Wed, 21 May 2008 08:25:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=20</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #19 - May 11th, 2008</title>
+     <description>The Science of Science-Fiction Movies</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-05-11.mp3' length='2505036' type='audio/mpeg' />
+     <pubDate>Thu, 15 May 2008 08:06:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=19</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #18 - May 4th, 2008</title>
+     <description>Man Regenerates Finger - Bad Science News Reporting</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-05-04.mp3' length='2561304' type='audio/mpeg' />
+     <pubDate>Wed, 7 May 2008 14:03:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=18</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #17 - April 27th, 2008</title>
+     <description>T-Rex proteins closely related to chickens</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-04-27.mp3' length='2104678' type='audio/mpeg' />
+     <pubDate>Wed, 30 Apr 2008 23:37:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=17</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #16 - April 20th, 2008</title>
+     <description>Surgery under hypnosis.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-04-20.mp3' length='2310371' type='audio/mpeg' />
+     <pubDate>Wed, 23 Apr 2008 08:23:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=16</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #15 - April 13th, 2008</title>
+     <description>Examining a fossilized snake - with legs.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-04-13.mp3' length='2225891' type='audio/mpeg' />
+     <pubDate>Wed, 16 Apr 2008 08:14:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=15</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #14 - April 6th, 2008</title>
+     <description>Nomophobia - the fear of being out of cell phone range.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-04-06.mp3' length='2270033' type='audio/mpeg' />
+     <pubDate>Wed, 9 Apr 2008 16:01:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=14</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #13 - March 30th, 2008</title>
+     <description>Man convicted of molestation claims he was raped by Bigfoot.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-03-30.mp3' length='2012160' type='audio/mpeg' />
+     <pubDate>Wed, 2 Apr 2008 01:42:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=13</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #12 - March 23rd, 2008</title>
+     <description>Faith-healing cult leads to child death from medical neglect.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-03-23.mp3' length='2241878' type='audio/mpeg' />
+     <pubDate>Wed, 26 Mar 2008 08:24:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=12</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #11 - March 16th, 2008</title>
+     <description>The Rogues discuss an art project to give the city of Portland, Oregon acupuncture.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-03-16.mp3' length='2280278' type='audio/mpeg' />
+     <pubDate>Wed, 19 Mar 2008 08:10:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=11</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #10 - March 9th, 2008</title>
+     <description>Steven Spielberg to create new paranormal online community.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-03-09.mp3' length='2291720' type='audio/mpeg' />
+     <pubDate>Thu, 13 Mar 2008 00:09:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=10</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #9 - March 2nd, 2008</title>
+     <description>An Emmy award winning actress and her 911 conspiracy theory</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-03-02.mp3' length='2040631' type='audio/mpeg' />
+     <pubDate>Fri, 07 Mar 2008 16:00:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=9</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #8 - February 25th, 2008</title>
+     <description>Crytozoology - Hunting for the Thunderbird.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-02-25.mp3' length='2040631' type='audio/mpeg' />
+     <pubDate>Thu, 28 Feb 2008 19:41:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=8</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #7 - February 17th, 2008</title>
+     <description>The panel discusses a proposed center for exorcism in Poland.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-02-17.mp3' length='1957718' type='audio/mpeg' />
+     <pubDate>Thu, 21 Feb 2008 22:18:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=7</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #6 - February 11th, 2008</title>
+     <description>Dr. Harris's Pain Relief Snake Oil Infomercial</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-02-11.mp3' length='2180246' type='audio/mpeg' />
+     <pubDate>Wed, 13 Feb 2008 08:30:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=6</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #5 - February 3rd, 2008</title>
+     <description>Pope Benedict XVI takes on science.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-02-03.mp3' length='2034205' type='audio/mpeg' />
+     <pubDate>Tue, 5 Feb 2008 23:04:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=5</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #4 - January 28th, 2008</title>
+     <description>Do celebrity deaths come in threes? The rogues take on numerology.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-01-28.mp3' length='4213287' type='audio/mpeg' />
+     <pubDate>Tue, 29 Jan 2008 23:45:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=4</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #3 - January 20th, 2008</title>
+     <description>Multilevel Marketing and Pyramid Schemes</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-01-20.mp3' length='3862457' type='audio/mpeg' />
+     <pubDate>Mon, 21 Jan 2008 23:32:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=3</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #2 - January 13th, 2008</title>
+     <description>Ghost Photographs - the SGU crew discovers a new form of photographic artifact mistaken for "ghost" photos.</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-01-13.mp3' length='2040631' type='audio/mpeg' />
+     <pubDate>Mon, 14 Jan 2008 22:36:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5x5/podcastinfo.asp?pid=2</guid>
+   </item>
+
+<item>
+     <title>SGU 5x5 #1 - January 6th, 2008</title>
+     <description>The National Health Service of the UK plans to regulate alternative medicine. www.timesonline.co.uk/tol/life_and_style/health/article3134337.ece</description>
+     <enclosure url='http://media.libsyn.com/media/sgu5x5/SGU5x52008-01-06.mp3' length='2023860' type='audio/mpeg' />
+     <pubDate>Tue, 8 Jan 2008 12:00:00 -0400</pubDate>
+     <guid>http://www.theskepticsguide.org/5X5/podcastinfo.asp?pid=1</guid>
+   </item>
+
+</channel></rss>

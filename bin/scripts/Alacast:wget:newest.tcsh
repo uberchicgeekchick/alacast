@@ -3,7 +3,7 @@ if ( "${?1}" == "0" || "${1}" == "" ) goto usage
 
 printf "${cwd}"
 
-cd `dirname "${0}"`/../../data/opml
+cd `dirname "${0}"`/../../data/xml/opml
 source set_catalogs.tcsh
 
 set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
