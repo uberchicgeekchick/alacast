@@ -6,6 +6,6 @@
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[PC Gamer Podcast]]>" xmlUrl="http://www.pcgamerpodcast.com/?feed=rss2&category_name=podcasts" type="rss" htmlUrl="http://www.pcgamerpodcast.com/" text="<![CDATA[PC Gamer Podcast]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[PC Gamer Podcast]]>" xmlUrl="http://www.pcgamerpodcast.com/?feed=rss2&category_name=podcasts" type="rss" text="<![CDATA[PC Gamer Podcast]]>" htmlUrl="http://www.pcgamerpodcast.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

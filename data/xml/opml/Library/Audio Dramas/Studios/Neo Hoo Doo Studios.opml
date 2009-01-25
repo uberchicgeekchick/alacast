@@ -7,7 +7,7 @@
 		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Neo Hoo Doo Studios]]>" type="link" text="<![CDATA[Neo Hoo Doo Studios]]>" url="http://neohoodoo.libsyn.com/" description="<![CDATA[]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[19 Nocturne Boulevard]]>" xmlUrl="http://neohoodoo.libsyn.com/rss/nocturne" type="rss" htmlUrl="http://neohoodoo.libsyn.com/" text="<![CDATA[19 Nocturne Boulevard]]>" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[The Unspeakable and the Inhuman]]>" xmlUrl="http://neohoodoo.libsyn.com/rss/unspeakable" type="rss" htmlUrl="http://neohoodoo.libsyn.com/" text="<![CDATA[The Unspeakable and the Inhuman]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[19 Nocturne Boulevard]]>" xmlUrl="http://neohoodoo.libsyn.com/rss/nocturne" type="rss" text="<![CDATA[19 Nocturne Boulevard]]>" htmlUrl="http://neohoodoo.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Unspeakable and the Inhuman]]>" xmlUrl="http://neohoodoo.libsyn.com/rss/unspeakable" type="rss" text="<![CDATA[The Unspeakable and the Inhuman]]>" htmlUrl="http://neohoodoo.libsyn.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

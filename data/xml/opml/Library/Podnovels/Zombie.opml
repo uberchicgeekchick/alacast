@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Zombie Podnovels &amp; Audio Dramas</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The Zombie Chronicles]]>" xmlUrl="http://jamesmelzer.net/?feed=podcast" type="rss" text="<![CDATA[The Zombie Chronicles: Season 1: Escape]]>" htmlUrl="http://thezombiechronicles.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[One Eighteen: Migration]]>" xmlUrl="http://oneeighteen.libsyn.com/rss" type="rss" text="<![CDATA[One Eighteen: Migration]]>" htmlUrl="http://oneeighteen.libsyn.com/" description="<![CDATA[A Post Apocalyptic Podcast Adventure of Zombies and Madness]]>"/>
+		<outline title="<![CDATA[The Takeover]]>" xmlUrl="http://murverse.com/category/podcasts/the-takeover/feed/" type="rss" text="<![CDATA[The Takeover]]>" htmlUrl="http://murverse.com/category/podcasts/the-takeover/" description="<![CDATA[Zomb inc&#039;s merger with a local web company. Be sure to take a listen to find out what goes on in a day-to-day office environment with zombies, humans, and a mad scientist. Why does a web design company need a mad scientist? Well, why not?]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

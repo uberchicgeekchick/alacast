@@ -14,9 +14,9 @@
 		<outline title="<![CDATA[P9[podcast nine]]]>" xmlUrl="http://feeds.feedburner.com/podcast9?format=xml" type="rss" text="<![CDATA[P9[podcast nine]]]>" htmlUrl="http://www.requiemoftheoutcast.com/podcast9/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[PodCulture]]>" xmlUrl="http://www.podculture.net/feed/" type="rss" text="<![CDATA[PodCulture]]>" htmlUrl="http://www.podculture.net/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The Stealth Geek]]>" xmlUrl="http://www.thestealthgeek.com/cast/feed.xml" type="rss" text="<![CDATA[The Stealth Geek]]>" htmlUrl="http://thestealthgeek.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Fanboyhell]]>" xmlUrl="http://fanboyhell.libsyn.com/rss" type="rss" htmlUrl="http://fanboyhell.libsyn.com/" text="<![CDATA[Fanboyhell Podcast]]>" description="<![CDATA[A biweekly podcast.]]>"/>
-		<outline title="<![CDATA[The Adventures of Indiana Jim]]>" xmlUrl="http://podcast.indianajim.net/category/podcasts/feed/" type="rss" htmlUrl="http://podcast.indianajim.net/category/podcasts/" text="<![CDATA[The Adventures of Indiana Jim &#0187; podcasts]]>" description="<![CDATA[Adventures in a World of Audio Wonder]]>"/>
-		<outline title="<![CDATA[Grailwolf&#039;s Geek Life]]>" xmlUrl="http://www.grailwolf.com/rss" type="rss" htmlUrl="http://www.grailwolf.com/" text="<![CDATA[Grailwolf&#039;s Geek Life]]>" description="<![CDATA[Tales of the Geek Renaissance]]>"/>
+		<outline title="<![CDATA[Fanboyhell]]>" xmlUrl="http://fanboyhell.libsyn.com/rss" type="rss" text="<![CDATA[Fanboyhell Podcast]]>" htmlUrl="http://fanboyhell.libsyn.com/" description="<![CDATA[A biweekly podcast.]]>"/>
+		<outline title="<![CDATA[The Adventures of Indiana Jim]]>" xmlUrl="http://podcast.indianajim.net/category/podcasts/feed/" type="rss" text="<![CDATA[The Adventures of Indiana Jim &#0187; podcasts]]>" htmlUrl="http://podcast.indianajim.net/category/podcasts/" description="<![CDATA[Adventures in a World of Audio Wonder]]>"/>
+		<outline title="<![CDATA[Grailwolf&#039;s Geek Life]]>" xmlUrl="http://www.grailwolf.com/rss" type="rss" text="<![CDATA[Grailwolf&#039;s Geek Life]]>" htmlUrl="http://www.grailwolf.com/" description="<![CDATA[Tales of the Geek Renaissance]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

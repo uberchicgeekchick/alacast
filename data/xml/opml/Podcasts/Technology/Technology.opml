@@ -8,7 +8,7 @@
 		<outline type="link" title="<![CDATA[FriendsInTech.Com]]>" url="http://TechPodcasts.Com/" text="<![CDATA[FriendsInTech.Com]]>" description="<![CDATA[FriendsInTech.Com]]>"/>
 		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Slashdot&#39;s Festival]]>" xmlUrl="http://feeds.feedburner.com/slashdot/audio?format=xml" type="rss" text="<![CDATA[Slashdot&#39;s Festival]]>" htmlUrl="http://slashdot.org/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Aussie Geek Podcast]]>" xmlUrl="http://www.aussiegeekpodcast.com/category/podcast/feed" type="rss" htmlUrl="http://www.aussiegeekpodcast.com/" text="<![CDATA[Aussie Geek Podcast]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Aussie Geek Podcast]]>" xmlUrl="http://www.aussiegeekpodcast.com/category/podcast/feed" type="rss" text="<![CDATA[Aussie Geek Podcast]]>" htmlUrl="http://www.aussiegeekpodcast.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[austechNews]]>" xmlUrl="http://feeds.feedburner.com/AustechNews?format=xml" type="rss" text="<![CDATA[austechNews]]>" htmlUrl="http://austechnews.blogspot.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[GeekMuse]]>" xmlUrl="http://geekmuse.net/podcast/" type="rss" text="<![CDATA[GeekMuse]]>" htmlUrl="http://geekmuse.dreamhosters.com/wp/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Casting From The Server Room]]>" xmlUrl="http://feeds.feedburner.com/CastingFromTheServerRoom?format=xml" type="rss" text="<![CDATA[Casting From The Server Room]]>" htmlUrl="http://www.castingfromtheserverroom.com/podcast/" description="<![CDATA[]]>"/>
