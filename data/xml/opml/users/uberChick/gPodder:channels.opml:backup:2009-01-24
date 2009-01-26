@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sun Jan 25 03:04:47 2009
+            Sun Jan 25 10:58:27 2009
         </dateCreated>
     </head>
     <body>
@@ -242,7 +242,6 @@
         <outline text="a hip-hop video blog" title="Ill Doctrine" type="rss" xmlUrl="http://feeds.feedburner.com/illdoctrine"/>
         <outline text="www.imaginationlane.net" title="Imagination Backroads" type="rss" xmlUrl="http://imaginationlane.net/backroads/?feed=podcast"/>
         <outline text="This is for all of you creative types out there! We talk about creativity, the creative process, what's going on at Ink 'n Doodles Creative Workshop, and we play the best podsafe music to help you get your creative groove on.What are you waiting for? Subs" title="Ink 'n Doodles Radio" type="rss" xmlUrl="http://feeds.feedburner.com/InknDoodlesRadio"/>
-        <outline text="The most recent additions to the Internet Archive collections.  This RSS feed is generated dynamically" title="Internet Archive - Collection: digitaltippingpoint" type="rss" xmlUrl="http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint"/>
         <outline text="IT Conversations is the longest-running podcast on the planet, publishing a new audio program nearly every day, from the most important tech conferences to our unique programs. Not just IT, it's everything tech and beyond." title="IT Conversations" type="rss" xmlUrl="http://feeds.conversationsnetwork.org/gigavox/channel/itconversations"/>
         <outline text="Welcome to J.C. Hutchins' &quot;New Fiction and Updates&quot; podcast. In 2006 and 2007, Hutchins released the groundbreaking 7th Son trilogy, the most popular podcast novel series in history. This year, Hutchins released 7th Son: OBSIDIAN, a history-making short s" title="J.C. Hutchins: New Fiction And Author Updates" type="rss" xmlUrl="http://jchutchins.net/site/feed/rss/"/>
         <outline text="a podcast dedicated to all things Joss Whedon and the extended Whedonverse" title="Joss'd" type="rss" xmlUrl="http://feeds.feedburner.com/JossdThePodcast?format=xml"/>
@@ -511,7 +510,6 @@
         <outline text="Star Wars Podcasts, Dramas, and Parodies" title="Star Wars Fanworks Audio Feed" type="rss" xmlUrl="http://starwarsfanworks.libsyn.com/rss"/>
         <outline text="A weekly discussion on relevant topics in infosecurity. Including IDS, IPS, vulnerability managemet, NAC and general security news. By the Chief Strategy Officer and Chief Technology Officer of StillSecure" title="StillSecure, After all these years" type="rss" xmlUrl="http://www.clickcaster.com/channels/ss.xml"/>
         <outline text="Arts Interviews" title="Strange Angels" type="rss" xmlUrl="http://www.artboy.info/strange/rss.xml"/>
-        <outline text="Ordinary people intrigue us just as much as celebrities do: everday life stories that connect you to the wider world. Street Stories is a weekly half hour program devoted to social documentaries. You'll hear stories and experiences from far and wide, and from people who might live next door, or on a different continent." title="Street Stories" type="rss" xmlUrl="http://abc.net.au/rn/podcast/feeds/streets.xml"/>
         <outline text="PRI?s Peabody Award-winning Studio 360 with Kurt Andersen from WNYC is public radio?s smart and surprising guide to what's happening in pop culture and the arts. Each week, Kurt Andersen introduces you to the people who are creating and shaping our cultur" title="Studio 360 with Kurt Andersen" type="rss" xmlUrl="http://www.studio360.org/index.xml"/>
         <outline text="http://abc.net.au/sundayprofile/features/rsssundayprofile.xml" title="Sunday Profile" type="rss" xmlUrl="http://abc.net.au/sundayprofile/features/rsssundayprofile.xml"/>
         <outline text="Original Pulp Mystery Audio Theater Podcast" title="Tales From The Museum" type="rss" xmlUrl="http://feeds.feedburner.com/TalesFromTheMuseum?format=xml"/>
