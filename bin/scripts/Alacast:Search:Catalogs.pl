@@ -13,11 +13,11 @@ if ( @ARGV < 0 || "$ARGV[0]" eq "" ) { print_usage(); }
 my $attrib;
 my $value;
 my $searching_list="";
-my $show_attribute = "";
+my $output = "";
 my $be_verbose=0;#False
 
 sub print_usage{
-	printf( "Usage:\n\t %s [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--show=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
+	printf( "Usage:\n\t %s [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
 	exit(-1);
 }
 
@@ -32,10 +32,10 @@ sub search_catalog{
 		$opml_file =~ s/^(.*):\t.*$/\1/;
 
 		my $opml_attribute = $opml_and_outline;
-		$opml_attribute =~ s/.*$show_attribute=["']([^"']+)["'].*/\1/;
+		$opml_attribute =~ s/.*$output=["']([^"']+)["'].*/\1/;
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf( "%s: %s\n", $opml_attribute, $opml_file );
+		printf( "%s@%s\n", $opml_attribute, $opml_file );
 		
 		if($be_verbose){printf($opml_and_outline);}
 	}
@@ -70,15 +70,11 @@ for ( ; $i<@ARGV; $i++ ) {
 	}
 	if ( -e $value ) { $searching_list = $value; }
 	
-	$show_attribute = "";
-	$i++;
-	if ( $ARGV[$i] eq "--show=title" || $ARGV[$i] eq "--show=htmlUrl" || $ARGV[$i] eq "--show=text" || $ARGV[$i] eq "--show=description" ) {
-		$show_attribute = $ARGV[$i];
-		$show_attribute =~ s/\-\-([^=]+)=(.*)/\2/g;
-	} else {
-		$i--;
-		$show_attribute = "xmlUrl";
-	}
+	$output=$ARGV[$i+1];
+	if("$output"eq"--output=title"||"$output"eq"--output=htmlUrl"||"$output"eq"--output=text"||"$output"eq"--output=description"||"$output"eq"--output=xmlUrl"){
+		$i++;
+		$output=~s/\-\-([^=]+)=(.*)/\2/g;
+	} else {$output="xmlUrl";}
 	
 	search_catalogs();
 }
