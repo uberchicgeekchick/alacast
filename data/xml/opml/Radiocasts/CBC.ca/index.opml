@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>&#039;s News &amp; Podcasts</title>
+		<title>CBC.ca Radio&#039;s News, Events, Arts, &amp; Music Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[CBC.ca Radio&#039;s Podcasts]]>" url="http://www.cbc.ca/podcasting/" type="link" text="<![CDATA[CBC Radio&#039;s News, Events, Arts, &amp; Music Podcasts]]>" description="<![CDATA[CBC Radio&#039;s News, Events, Arts, &amp; Music Podcasts of their radio programs.  Including &quot;Best of&quot; of their weekly programs, full podcasts of their daily radio programs, &amp; podcast of their award winning specials.]]>"/>
 		<outline title="<![CDATA[Search Engine]]>" xmlUrl="http://www.cbc.ca/podcasting/includes/searchengine.xml" type="rss" text="<![CDATA[CBC Radio&#039;s: Search Engine]]>" htmlUrl="http://www.cbc.ca/searchengine/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Definitely Not the Opera]]>" xmlUrl="http://www.cbc.ca/podcasting/includes/dnto.xml" type="rss" text="<![CDATA[CBC Radio&#039;s: Definitely Not the Opera]]>" htmlUrl="http://www.cbc.ca/dnto" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[the Q]]>" xmlUrl="http://www.cbc.ca/podcasting/includes/qpodcast.xml" type="rss" text="<![CDATA[CBC Radio&#039;s: the Q]]>" htmlUrl="http://www.cbc.ca/q" description="<![CDATA[]]>"/>

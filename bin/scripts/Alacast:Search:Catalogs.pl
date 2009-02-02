@@ -14,6 +14,7 @@ my $attrib;
 my $value;
 my $searching_list="";
 my $show_attribute = "";
+my $be_verbose=0;#False
 
 sub print_usage{
 	printf( "Usage:\n\t %s [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--show=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
@@ -22,7 +23,7 @@ sub print_usage{
 
 sub search_catalog{
 	my $catalog=shift;
-	my $grep_command = sprintf("/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*%s=[\"\'\\\'\'][^\"\'\\\'\']*%s[^\"\'\\\'\']*[\"\'\\\'\']' '%s/%s'", $attrib, $value, $opml_files_path, $catalog );
+	my $grep_command = sprintf("/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*%s=[\"\'\\\'\'][^\"\'\\\'\']*%s[^\"\'\\\'\']\*[\"\'\\\'\']' '%s/%s'", $attrib, $value, $opml_files_path, $catalog );
 	
 	foreach my $opml_and_outline ( `$grep_command` ) {
 		$opml_and_outline =~ s/[\r\n]+//g;
@@ -35,6 +36,8 @@ sub search_catalog{
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
 		printf( "%s: %s\n", $opml_attribute, $opml_file );
+		
+		if($be_verbose){printf($opml_and_outline);}
 	}
 }
 
@@ -49,7 +52,10 @@ sub search_catalogs{
 	}
 }
 
-for ( my $i=0; $i<@ARGV; $i++ ) {
+my $i=0;
+if("$ARGV[0]" eq "--verbose"){$i++; $be_verbose=$i;}#$i==1 eq True
+
+for ( ; $i<@ARGV; $i++ ) {
 	$attrib = $ARGV[$i];
 	$attrib =~ s/^\-\-([^=]+)=(.*)$/\1/g;
 	$value = $ARGV[$i];;
