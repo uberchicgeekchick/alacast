@@ -1,7 +1,13 @@
 #!/bin/tcsh -f
+if ( "${?1}" == "0" || "${1}" == "" || ! -e "${1}" ) then
+	printf "Usage: %s [--del|--delete|--unsubscribe|--add|--subscribe]"
+	exit
+endif
+
 set action = ""
 if ( "${?1}" != "0" && "${1}" != "" ) then
 	switch ( "${1}" )
+	case "--del":
 	case '--delete':
 	case '--unsubscribe':
 		shift
@@ -11,15 +17,11 @@ if ( "${?1}" != "0" && "${1}" != "" ) then
 	case '--add':
 	case '--subscribe':
 		shift
+	default:
 		set message = "Add"
 		set action = "add"
 		breaksw
 	endsw
-endif
-
-if ( "${?1}" == "0" || "${1}" == "" || ! -e "${1}" ) then
-	printf "Usage: %s OPML_file"
-	exit
 endif
 
 cd `dirname "${0}"`/../../data/xml/opml
