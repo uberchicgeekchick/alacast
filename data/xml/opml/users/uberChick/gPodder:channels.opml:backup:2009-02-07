@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Feb  7 02:26:24 2009
+            Sun Feb  8 10:45:18 2009
         </dateCreated>
     </head>
     <body>
@@ -40,7 +40,7 @@
         <outline text="Science with a Sense of Humour - The Naked Scientists Radio Show" title="Ask the Naked Scientists PODCAST" type="rss" xmlUrl="http://www.thenakedscientists.com/rss/ask_the_naked_scientists.xml"/>
         <outline text="Astronomy Cast offers you a fact based journey through the cosmos. Each week Fraser Cain (Universe Today) and Dr. Pamela Gay (SIUE / Slacker Astronomy) take on topics ranging from the nearby planets to ubiquitous dark matter." title="Astronomy Cast" type="rss" xmlUrl="http://www.astronomycast.com/podcast.xml"/>
         <outline text="Cleaning up websites with Ajax" title="Audible Ajax" type="rss" xmlUrl="http://media.ajaxian.com/"/>
-        <outline text="Fresh tech news and gaming buzz" title="ausTech news" type="rss" xmlUrl="http://feeds.feedburner.com/AustechNews"/>
+        <outline text="Fresh tech news and gaming buzz" title="ausTech news" type="rss" xmlUrl="http://feeds.feedburner.com/AustechNews?format=xml"/>
         <outline text="Audio Theater Podcast" title="Batman: No Man's Land" type="rss" xmlUrl="http://feedproxy.google.com/BatmanNoMansLand?format=xml"/>
         <outline text="One band. One year. 365 Free Songs. TheSongOfTheDay.com" title="Beatnik Turtle's Song of the Day" type="rss" xmlUrl="http://thesongoftheday.com/rss/rss_i.xml"/>
         <outline text="Join MAinPA as she sticks her head out of the sand, and joins the world again! She'll talk about movies, tv, anime, really - anything she wants to. And doing all the things she's missed over the years. Better Late Than Never!" title="Better Late Than Never" type="rss" xmlUrl="http://betterl8thannevr.libsyn.com/rss"/>
@@ -48,7 +48,7 @@
         <outline text="BFBS Radio 2 Podcasts" title="BFBS Radio 2" type="rss" xmlUrl="http://www.bfbs2.com/sitrep.xml"/>
         <outline text="http://rss.streamos.com/streamos/rss/genfeed.php?feedid=591&amp;groupname=xmsatelliteradio" title="Bob Edwards Weekend" type="rss" xmlUrl="http://rss.streamos.com/streamos/rss/genfeed.php?feedid=591&amp;groupname=xmsatelliteradio"/>
         <outline text="with Zan  Jana." title="Bob's Yer Uncle!" type="rss" xmlUrl="http://feeds.feedburner.com/bobsyeruncle/bob?format=xml"/>
-        <outline text="http://feeds.boingboing.net/boingboing/tv??format=xml" title="Boing Boing Video" type="rss" xmlUrl="http://feeds.boingboing.net/boingboing/tv??format=xml"/>
+        <outline text="http://feeds.boingboing.net/boingboing/tv?format=xml" title="Boing Boing Video" type="rss" xmlUrl="http://feeds.boingboing.net/boingboing/tv?format=xml"/>
         <outline text="Dr. Ginger Campbell, who also hosts the Brain Science Podcast, uses this podcast to explore her love of reading and ideas, including science, philosophy, history, and what ever else she is reading. This podcast comes out about once a month and often conta" title="Books and Ideas Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/booksandideaspodcast?format=xml"/>
         <outline text="http://www.brainready.com/braincasts/index.xml" title="BrainReady BrainCasts™ | BrainReady | BrainReady.com" type="rss" xmlUrl="http://www.brainready.com/braincasts/index.xml"/>
         <outline text="Stories on science, curiosities, and general knowledge" title="Brains Matter" type="rss" xmlUrl="http://feeds.feedburner.com/BrainsMatter"/>
@@ -58,7 +58,7 @@
         <outline text="The Fantasy Audio Adventure" title="BrokenSea - Greenpond" type="rss" xmlUrl="http://brokensea.com/greenpond/feed/"/>
         <outline text="http://brokensea.com/jakesampson/feed/" title="BrokenSea - Jake Sampson: Monster Hunter" type="rss" xmlUrl="http://brokensea.com/jakesampson/feed/"/>
         <outline text="http://brokensea.com/maudelayne/feed/" title="BrokenSea - Maudelayne" type="rss" xmlUrl="http://brokensea.com/maudelayne/feed/"/>
-        <outline text="http://www.brokensea.com/ulysses/feed/" title="BrokenSea - Ulysses Galactic Guides and Bounties Inc." type="rss" xmlUrl="http://www.brokensea.com/ulysses/feed/"/>
+        <outline text="http://brokensea.com/ulysses/feed/" title="BrokenSea - Ulysses Galactic Guides and Bounties Inc." type="rss" xmlUrl="http://www.brokensea.com/ulysses/feed/"/>
         <outline text="http://brokensea.com/archimedes/feed/" title="BrokenSea Audio Productions" type="rss" xmlUrl="http://brokensea.com/archimedes/feed/"/>
         <outline text="Talking about the BSD family of free operating systems." title="bsdtalk Ogg Vorbis feed" type="rss" xmlUrl="http://www2.madphilosopher.ca/bsdtalk_ogg.xml"/>
         <outline text="The legend of Roj Blake, Kerr Avon, and the crew of the Liberator lives on with a new band of rebels fighting a new cause, but still against the same Federation!" title="BTR Productions :: Blakes Legacy: Restoration" type="rss" xmlUrl="http://feeds.feedburner.com/btrb7cd?format=xml"/>
@@ -216,9 +216,9 @@
         <outline text="http://www.geologicpodcast.com/rss" title="Geologic Podcast" type="rss" xmlUrl="http://www.geologicpodcast.com/rss"/>
         <outline text="The best stories, interviews and on the spot reporting from around the world including highlights from Newshour, The World Today and World Briefing. Up to 30 minutes Compiled twice a day from the 24 hour News coverage from the BBC World Service." title="Global News" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/globalnews/rss.xml"/>
         <outline text="Mike Luoma reads from his Books." title="Glow-in-the-Dark Radio" type="rss" xmlUrl="http://www.clickcaster.com/channels/glowinthedarkradio.xml"/>
-        <outline text="Search results for query: [&quot;Advanced Topics In Programming Languages Series&quot; is:free]" title="Google Video - &quot;Advanced Topics In Programming Languages Series&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22Advanced%20Topics%20In%20Programming%20Languages%20Series%22+is:free&amp;format=any&amp;so=1&amp;num=50&amp;output=rss"/>
-        <outline text="Search results for query: [&quot;web development&quot; is:free]" title="Google Video - &quot;web development&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22web%20development%22+is:free&amp;format=any&amp;so=1&amp;num=50&amp;output=rss"/>
-        <outline text="Search results for query: [engEDU]" title="Google Video - engEDU" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=engEDU&amp;format=any&amp;so=1&amp;num=50&amp;output=rss"/>
+        <outline text="Search results for query: [&quot;Advanced Topics In Programming Languages Series&quot; is:free]" title="Google Video - &quot;Advanced Topics In Programming Languages Series&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22Advanced%20Topics%20In%20Programming%20Languages%20Series%22+is:free&amp;so=1&amp;num=50&amp;output=rss"/>
+        <outline text="Search results for query: [&quot;web development&quot; is:free]" title="Google Video - &quot;web development&quot; is:free" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=%22web%20development%22+is:free&amp;so=1&amp;num=50&amp;output=rss"/>
+        <outline text="Search results for query: [engEDU]" title="Google Video - engEDU" type="rss" xmlUrl="http://video.google.com/videofeed?type=search&amp;q=engEDU&amp;so=1&amp;num=50&amp;output=rss"/>
         <outline text="Learn the ways of the Brotherhood of the Green Ring" title="Green Ring Ethos" type="rss" xmlUrl="http://greenringethos.com/greenringethos.xml"/>
         <outline text="A free audiobook by Leslie Ann Moore" title="Griffin's Daughter" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/314/book.xml"/>
         <outline text="All the science fit to air...and even some that is not" title="Groks Science Radio Show and Podcast" type="rss" xmlUrl="http://www.groks.net/groks.rss"/>
@@ -453,7 +453,6 @@
         <outline text="http://feeds.feedburner.com/reasonabledoubts/Msxh?format=xml" title="Reasonable Doubts Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/reasonabledoubts/Msxh?format=xml"/>
         <outline text="RedMonkTV brings you video from the RedMonk universe. Interviews, demos, and gonzo analysis and commentary from the RedMonk gang." title="redmonk" type="rss" xmlUrl="http://feeds.feedburner.com/RedMonkTV?format=xml"/>
         <outline text="Rocky Mountains Technology and Entrepreneurial Audio &amp; Video Podcasts" title="Rocky Mountain Voices" type="rss" xmlUrl="http://feeds.feedburner.com/rockymountainvoices?format=xml"/>
-        <outline text="News and interviews about the Ruby language and the Rails website framework." title="Ruby on Rails Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/rubyonrailspodcast?format=xml"/>
         <outline text="Answering your questions about podcasting, new media and the law." title="Rules For The Revolution: The Podcast" type="rss" xmlUrl="http://www.rulesfortherevolution.com/feed/rss2/"/>
         <outline text="A magazine programme with interviews, food, books and music." title="Saturday Morning with Kim Hill" type="rss" xmlUrl="http://www.radionz.co.nz/podcasts/saturday.rss"/>
         <outline text="Translation and adaptation of Anglo-Saxon writings." title="Saxonboc" type="rss" xmlUrl="http://imaginationlane.net/saxonboc/feed"/>
