@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[The Linux Action Show]]>" xmlUrl="http://feeds.feedburner.com/TheLinuxActionShowOGG" type="rss" text="<![CDATA[The Linux Action Show]]>" htmlUrl="http://www.linuxactionshow.com/?cat=4" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Valid Syntax]]>" xmlUrl="http://www.validsyntax.com/rss.php" type="rss" text="<![CDATA[Valid Syntax]]>" htmlUrl="http://www.validsyntax.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Going Linux]]>" xmlUrl="http://goinglinux.com/oggpodcast.xml" type="rss" text="<![CDATA[Going Linux]]>" htmlUrl="http://goinglinux.com/" description="<![CDATA[]]>"/>
@@ -6,3 +13,6 @@
 		<outline title="<![CDATA[Its A Good Linux Morning]]>" xmlUrl="http://feeds.feedburner.com/ItsAGoodLinuxMorning" type="rss" text="<![CDATA[Its A Good Linux Morning]]>" htmlUrl="http://www.tyrannozaurus.com/?q=itsagoodlinuxmorning" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[openSuSE Videos]]>" xmlUrl="http://opensuse.blip.tv/rss" type="rss" text="<![CDATA[openSuSE Videos]]>" htmlUrl="http://opensuse.blip.tv/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[progbox.vid]]>" xmlUrl="http://www.progbox.co.uk/wordpress/?feed=podcast" type="rss" text="<![CDATA[progbox.vid]]>" htmlUrl="http://www.progbox.co.uk/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
