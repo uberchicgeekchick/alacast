@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Mystery Podnovels from Podiobooks.com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Colorado Squence]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Silk Road]]>" xmlUrl="http://www.podiobooks.com/title/the-silk-code/feed/" type="rss" text="<![CDATA[The Silk Road - a free audiobook by Paul Levinso]]>" htmlUrl="http://www.podiobooks.com/title/the-silk-code/" description="<![CDATA[Phil D&#039;Amato, New York City forensic detective, is caught in an ongoing struggle that dates all the way back to the dawn of humanity on earth--and one of his best friends is a recent casualty. Unless Phil can unravel the genetic puzzle of the Silk Code, he&#039;ll soon be just as dead.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

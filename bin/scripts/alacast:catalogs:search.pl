@@ -27,13 +27,15 @@ sub search_catalog{
 	
 	foreach my $opml_and_outline ( `$grep_command` ) {
 		$opml_and_outline =~ s/[\r\n]+//g;
+		my $my_output=$output;
+		if( $opml_and_outline=~/type="link"/ && ( "$my_output" eq "xmlUrl" || "$my_output" eq "htmlUrl" ) ){ $my_output = "link" }
 		my $opml_file = $opml_and_outline;
 		$opml_file =~ s/^(.*):[0-9]+:\t.*$/\1/;
 		#$opml_file =~ s/^$opml_files_path\///;
 		$opml_file =~ s/^.*\/\.\.\/\.\.\/(.*)$/\1/;
 
 		my $opml_attribute = $opml_and_outline;
-		$opml_attribute =~ s/.*$output=["']([^"']+)["'].*/\1/;
+		$opml_attribute =~ s/.*$my_output=["']([^"']+)["'].*/\1/;
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
 		printf( "%s @ %s\n", $opml_attribute, $opml_file );
