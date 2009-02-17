@@ -5,8 +5,8 @@ case "gedit":
 	breaksw
 case "vim":
 default:
-	set my_editor = `printf "%s -p %s" "vim" '+tabdo$-2'`
+	set my_editor = `printf "%s -p" "vim-enhance"`
 	breaksw
 endsw
 
-${my_editor} "./bin/scripts/OPML:Find-Unsubscribed.tcsh" "./data/opml/Podcasts/OSS/TheLinuxLink.Net.opml" "./data/opml/Podcasts/Science/Science.opml" "./data/opml/Library/Audio Dramas/Audio Drama Talk.opml" "./data/opml/Library/Audio Dramas/Audio Dramas.opml" "./data/opml/Library/Podnovels/Podcast Novels.opml" "./data/opml/Library/Podnovels/Podiobooks.com.opml"
+${my_editor} "./data/xml/opml/Radiocasts/NPR/index.opml" "./data/xml/opml/Radiocasts/NPR/create_opmls.tcsh"
