@@ -23,24 +23,23 @@ sub print_usage{
 
 sub search_catalog{
 	my $catalog=shift;
-	my $grep_command = sprintf("/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*%s=[\"\'\\\'\'][^\"\'\\\'\']*%s[^\"\'\\\'\']\*[\"\'\\\'\']' '%s/%s'", $attrib, $value, $opml_files_path, $catalog );
+	my $grep_command = sprintf("/usr/bin/grep --binary-files=without-match --with-filename -ri --perl-regex -e '^[\ \t]+<outline.*%s=[\"\'\\\'\'][^\"\'\\\'\']\*%s[^\"\'\\\'\']\*[\"\'\\\'\']' '%s/%s'", $attrib, $value, $opml_files_path, $catalog );
 	
 	foreach my $opml_and_outline ( `$grep_command` ) {
 		$opml_and_outline =~ s/[\r\n]+//g;
-		my $my_output=$output;
-		if( $opml_and_outline=~/type="link"/ && ( "$my_output" eq "xmlUrl" || "$my_output" eq "htmlUrl" ) ){ $my_output = "link" }
+		if( $opml_and_outline !~ /.*$output=["'][^'"]+["'].*/ ){ next; }
 		my $opml_file = $opml_and_outline;
-		$opml_file =~ s/^(.*):[0-9]+:\t.*$/\1/;
+		$opml_file =~ s/^([^:]*):.*$/\1/;
+		$opml_file =~ s/\.\.\///g;
 		#$opml_file =~ s/^$opml_files_path\///;
-		$opml_file =~ s/^.*\/\.\.\/\.\.\/(.*)$/\1/;
-
+		
 		my $opml_attribute = $opml_and_outline;
-		$opml_attribute =~ s/.*$my_output=["']([^"']+)["'].*/\1/;
+		$opml_attribute =~ s/.*$output=["']([^"']+)["'].*/\1/i;
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf( "%s @ %s\n", $opml_attribute, $opml_file );
+		printf( "\n\n%s=%s @ %s", $output, $opml_attribute, $opml_file );
 		
-		if($be_verbose){printf($opml_and_outline);}
+		if($be_verbose==1){printf("\n\t\t%s", $opml_and_outline);}
 	}
 }
 
@@ -56,7 +55,7 @@ sub search_catalogs{
 }
 
 my $i=0;
-if("$ARGV[0]" eq "--verbose"){$i++; $be_verbose=$i;}#$i==1 eq True
+if("$ARGV[0]" eq "--verbose"){$i++; printf("BS\n\n"); $be_verbose=$i;}#$i==1 eq True
 
 for ( ; $i<@ARGV; $i++ ) {
 	$attrib = $ARGV[$i];
@@ -67,9 +66,12 @@ for ( ; $i<@ARGV; $i++ ) {
 	
 	$searching_list = "";;
 	
-	if ( ! ( $attrib eq "title" || $attrib eq "xmlUrl" || $attrib eq "htmlUrl" || $attrib eq "text" || $attrib eq "description" ) ) {
+	if ( ! ( $attrib eq "title" || $attrib eq "xmlUrl" || $attrib eq "htmlUrl" || $attrib eq "text" || $attrib eq "description" || $attrib eq "url" || $attrib eq "type" ) ) {
 		$attrib = "title";
 		$value = $ARGV[$i];
+	}
+	if( $attrib eq "xmlUrl" || $attrib eq "htmlUrl" ){
+		$attrib =~ s/(xml|html)(Url)/\?\(\1\)\2/i;
 	}
 	if ( -e $value ) { $searching_list = $value; }
 	
@@ -79,5 +81,9 @@ for ( ; $i<@ARGV; $i++ ) {
 		$output=~s/\-\-([^=]+)=(.*)/\2/g;
 	} else {$output="xmlUrl";}
 	
+	if( $output eq "xmlUrl" || $output eq "htmlUrl" ){
+		$output =~ s/(xml|html)(Url)/\?\(\1\)\2/i;
+	}
+		
 	search_catalogs();
 }
