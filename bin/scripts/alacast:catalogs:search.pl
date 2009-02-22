@@ -30,11 +30,13 @@ sub search_catalog{
 		if( $opml_and_outline !~ /.*$output=["'][^'"]+["'].*/ ){ next; }
 		my $opml_file = $opml_and_outline;
 		$opml_file =~ s/^([^:]*):.*$/\1/;
-		$opml_file =~ s/\.\.\///g;
+		while($opml_file=~/\.\.\//){
+			$opml_file =~ s/[^\/]+\/\.\.\///g;
+		}
 		#$opml_file =~ s/^$opml_files_path\///;
 		
 		my $opml_attribute = $opml_and_outline;
-		$opml_attribute =~ s/.*$output=["']([^"']+)["'].*/\1/i;
+		$opml_attribute =~ s/.*$output=["']([^"']+)["'].*/\2/i;
 		$opml_attribute =~ s/<!\[CDATA\[(.+)\]\]>/\1/;
 
 		printf( "\n\n%s=%s @ %s", $output, $opml_attribute, $opml_file );
@@ -83,6 +85,8 @@ for ( ; $i<@ARGV; $i++ ) {
 	
 	if( $output eq "xmlUrl" || $output eq "htmlUrl" ){
 		$output =~ s/(xml|html)(Url)/\?\(\1\)\2/i;
+	}else{
+		$output =~ s/(.*)/\1/i;
 	}
 		
 	search_catalogs();
