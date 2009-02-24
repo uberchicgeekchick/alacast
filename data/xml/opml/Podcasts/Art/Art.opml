@@ -5,8 +5,6 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[ill doctrine]]>" xmlUrl="http://feeds.feedburner.com/illdoctrine" type="rss" text="<![CDATA[ill doctrine]]>" htmlUrl="http://illdoctrine.com/" description="<![CDATA[]]>"/>
-	        <outline title="<![CDATA[Artist Alley]]>" xmlUrl="http://feeds.feedburner.com/ArtistalleyPodcast?format=xml" type="rss" text="<![CDATA[Artist Alley: a podcast for amateur artists and commissioners]]>" description="<![CDATA[The first podcast about Geeky Art...anime/manga, comics, illustrative, and commission art are just a few of the topics we cover. Essays, reviews, techniques and tutorials, how-tos for everything from what markers you want to how to get great commissions!]]>"/>
-		<outline title="<![CDATA[:: Le Laboratoire ::]]>" xmlUrl="http://www.lelaboratoire.org/fluxlabo_en_utf.xml" type="rss" text="<![CDATA[:: Le Laboratoire ::]]>" htmlUrl="http://www.lelaboratoire.org/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Ink n Doodles Radio]]>" xmlUrl="http://feeds.feedburner.com/InknDoodlesRadio" type="rss" text="<![CDATA[Ink n Doodles Radio]]>" htmlUrl="http://inkndoodles.com/category/podcasts/" description="<![CDATA[]]>"/>
 	        <outline title="<![CDATA[Art History Podcast]]>" xmlUrl="http://feeds.feedburner.com/ArtHistoryPodcast?format=xml" type="rss" text="<![CDATA[LearnOutLoud.com&#039; Art History Podcast]]>" description="<![CDATA[LearnOutLoud.com presents the Art History Podcast. Each episode provides thoughtful analysis of the enduring artistic masterpieces that have become a hallmark of western culture.]]>"/>
 	</body>
