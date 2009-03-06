@@ -5,10 +5,10 @@
  * 	<uberChick -at- uberChicGeekChick.Com>
  *
  * For more information or to find the latest release, visit our
- * website at: http://uberchicgeekchick.com/?Project=Alacast
+ * website at: http://uberChicGeekChick.Com/?Project=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
-  	http://uberChicks.Net/
+ * 	http://uberChicks.Net/
  *
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
@@ -35,10 +35,7 @@
  * ---------------------------------------------------------------------------
  */
 
-#ifndef ALACAST_COMMENTS_H
-	#define ALACAST_COMMENTS_H
-	char *about_alacast = "Alacast is a social media browser it is designed to make viewing, listening to, and participating in social media fun and easy."
-#endif
-
+#include <prce.h>
+#include <gtk/gtk.h>
 
 

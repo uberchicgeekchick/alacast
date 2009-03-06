@@ -5,10 +5,10 @@
  * 	<uberChick -at- uberChicGeekChick.Com>
  *
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?Project=Alacast
+ * website at: http://uberchicgeekchick.com/?Project=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
- * 	http://uberChicks.Net/
+  	http://uberChicks.Net/
  *
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
@@ -29,15 +29,23 @@
  * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
  * language governing rights and limitations under the RPL.
  *
- * ----------------------------------------------------------------------------
- * |	A copy of the RPL 1.5 may be found with this project or online @:	  |
- * |		http://opensource.org/licenses/rpl1.5.txt              		      |
- * ----------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------
+ * |	A copy of the RPL 1.5 may be found with this project or online @:    |
+ * |		http://opensource.org/licenses/rpl1.5.txt                        |
+ * ---------------------------------------------------------------------------
  */
 
-#include "Alacast.h"
-#include <glib.h>
+#include <pcre.h>
+#include <gtk/gtk.h>
 
-int main(int argv, char **argc){
-		return 0;
-}//main
+#ifndef _ALACAST_ARGUMENTS_H_
+#define _ALACAST_ARGUMENTS_H_
+
+typedef struct _AlacastArgv AlacastArgv;
+struct _AlacastArgv{
+	gchar *profile;
+	gchar *profiles_path;
+};
+
+#endif
+

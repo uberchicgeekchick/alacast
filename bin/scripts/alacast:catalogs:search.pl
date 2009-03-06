@@ -86,7 +86,7 @@ for ( ; $i<@ARGV; $i++ ) {
 	if( $output eq "xmlUrl" || $output eq "htmlUrl" ){
 		$output =~ s/(xml|html)(Url)/\?\(\1\)\2/i;
 	}else{
-		$output =~ s/(.*)/\1/i;
+		$output =~ s/(.*)/\(\1\)/i;
 	}
 		
 	search_catalogs();

@@ -35,9 +35,8 @@
  * ---------------------------------------------------------------------------
  */
 
-#ifndef CONNECTED_COMMENTS_H
-	#define CONNECTED_COMMENTS_H
-	gchar *about_connectED = "connectED is a colaborative and social networking IDE for GTK+/GNOME.";
+#ifndef _ALACAST_ABOUT_H_
+#define _ALACAST_ABOUT_H_
+#define ALACAST_MSG_ABOUT = "Alacast is a social media browser.  Alacast is a fun and easy way to access the best multimedia the internet has to offer.\n\nHow does Alacast provide access to only the best online media?  Simple, by only showing you what you want.\n\nWelcome to the world of social media.";
 #endif
-
 
