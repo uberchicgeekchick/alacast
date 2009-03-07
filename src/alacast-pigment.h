@@ -5,10 +5,10 @@
  * 	<uberChick -at- uberChicGeekChick.Com>
  *
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?Project=Alacast
+ * website at: http://uberchicgeekchick.com/?Project=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
- * 	http://uberChicks.Net/
+  	http://uberChicks.Net/
  *
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
@@ -35,16 +35,7 @@
  * ---------------------------------------------------------------------------
  */
 
-#include <gtk/gtk.h>
-#include <pgm.h>
-
-#include "alacast-arguments.h"
-#include "alacast-profiles.h"
-
-
-int main(int argc, char **argv){
-	pgm_init( &argc, &argv );
-	
-	pgm_deinit();
-}//main
+#ifndef _ALACAST_{FILE}_H_
+#define _ALACAST_{FILE}_H_
+#endif
 

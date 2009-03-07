@@ -35,16 +35,3 @@
  * ---------------------------------------------------------------------------
  */
 
-#include <gtk/gtk.h>
-#include <pgm.h>
-
-#include "alacast-arguments.h"
-#include "alacast-profiles.h"
-
-
-int main(int argc, char **argv){
-	pgm_init( &argc, &argv );
-	
-	pgm_deinit();
-}//main
-
