@@ -75,7 +75,7 @@ for ( ; $i<@ARGV; $i++ ) {
 	if( $attrib eq "xmlUrl" || $attrib eq "htmlUrl" ){
 		$attrib =~ s/(xml|html)(Url)/\?\(\1\)\2/i;
 	}
-	if ( -e $value ) { $searching_list = $value; }
+	if ( -f $value ) { $searching_list = $value; }
 	
 	$output=$ARGV[$i+1];
 	if("$output"eq"--output=title"||"$output"eq"--output=htmlUrl"||"$output"eq"--output=text"||"$output"eq"--output=description"||"$output"eq"--output=xmlUrl"){
