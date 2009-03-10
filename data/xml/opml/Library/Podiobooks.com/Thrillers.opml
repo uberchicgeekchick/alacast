@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Thriller Podnovels from Podiobooks.com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Corporate Warfare]]>" xmlUrl="http://www.podiobooks.com/title/corporate-warfare/feed/" type="rss" text="<![CDATA[Corporate Warfare - a free audiobook by Kris Davis]]>" htmlUrl="http://www.podiobooks.com/title/corporate-warfare/" description="<![CDATA[Romance underlines Corporate Warfare - a fast paced novel that deals with corporations bidding on a US proposal. A scheming foreign conglomerate has other intentions. With their international genetic patents secured, Project Abacus&#039; success now hinges on the exploitation of the proposal to realize a unique human identification system. A genetic social security number. And corporate espionage entangles the love triangles. But with Anthony's hands tied will fate prevail?]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
