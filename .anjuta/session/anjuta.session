@@ -1,0 +1,14 @@
+
+[Anjuta]
+Geometry=1282x729+80+55
+
+[Execution]
+Program arguments=
+Program uri=
+Run in terminal=2
+Working directories=
+Environment variables=
+
+[Build]
+Configuration list=1:Default:%%%1:Debug:Debug%%%1:Profiling:Profiling%%%1:Optimized:Optimized
+Selected Configuration=Default
