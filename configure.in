@@ -6,16 +6,16 @@ dnl | dependencies |
 dnl  --------------
 
 PKG_CHECK_MODULES(Alacast,[
-			glib		>=	2.15.0
-			libprce		>=	7.8
-			gtk+-2.0	>=	2.14.4
-			libxml-2.0	>=	2.7.1
-			gstreamer-0.10	>=	0.10.22
-			clutter		>=	0.8.0
-			clutter-gst	>=	0.8.0
-			pigment-0.3	>=	0.3.13
-			libglade-2.0	>=	0.23
-			sqlite3		>=	3.6.11
+			glib			>=	2.15.0
+			libpcre			>=	7.8
+			gtk+-2.0		>=	2.14.4
+			libxml-2.0		>=	2.7.1
+			gstreamer-0.10		>=	0.10.22
+			clutter-0.8		>=	0.8.0
+			clutter-gst-0.8		>=	0.8.0
+			pigment-0.3		>=	0.3.15
+			libglade-2.0		>=	0.23
+			sqlite3			>=	3.6.11
 		dnl	lirc
 		])
 

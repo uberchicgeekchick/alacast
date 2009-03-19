@@ -55,4 +55,6 @@
 int main( const int argc, const char **argv ){
 	alacst_init(	argc,	argv	);
 	pigment_init(	argc,	argv	);
+
+	pigment_deinit();
 }//main
