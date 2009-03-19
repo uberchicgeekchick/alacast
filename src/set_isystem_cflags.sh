@@ -1,11 +1,6 @@
-AC_INIT([Alacast], [0.0.0.1], [http://uberChicGeekChick.Com/?projects=alacast], [Alacast])
-AC_COPYRIGHT([Copyright (C) 2009 Kaity G. B.])
-
-dnl ----------------
-dnl | dependencies |
-dnl ----------------
+#!/bin/sh -f
 PACKAGES="
-	glib-2.0		>=	2.18.2
+	glib-2.0		>=	2.15.0
 	libpcre			>=	7.8
 	gtk+-2.0		>=	2.14.4
 	libxml-2.0		>=	2.7.1
@@ -17,17 +12,6 @@ PACKAGES="
 	sqlite3			>=	3.6.11
 ";
 
-PKG_CHECK_MODULES(Alacast,[
-			   ${PACKAGES}
-		])
-
-AC_SUBST(Alacast_CFLAGS)
-AC_SUBST(Alacast_LIBS)
-
-dnl -------------------------------------------------------------
-dnl |	sets gcc's -isystem cflags                              |
-dnl |	gcc will ignore errors & warning in dependencies        |
-dnl -------------------------------------------------------------
 packages_dirs=`pkg-config --cflags "${PACKAGES}" | sed 's/^\(.\)/\ \1/g' | sed 's/\ \-[^I][^\ ]\+//g' | sed 's/\ \-I\(\/[^\ ]\+\)/\ \1/g'`
 isystem="";
 for package in ${packages_dirs} 
@@ -42,7 +26,7 @@ done
 if eval `test "$isystem" == ""`; then
 	export ISYSTEM="${isystem}";
 	unset isystem
-	echo "\$ISYSTEM has been set to: ${ISYSTEM}"
+	echo "${ISYSTEM}"
 fi
 
 if [ `test "${include_dir}" != ""` ]; then unset $include_dir; fi
