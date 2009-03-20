@@ -49,8 +49,44 @@
  */
 
 #include	<glib.h>
-#include	</.h>
+#include	<pgm/pgm.h>
 
-#include	"Alacast.h"
-#include	".h"
+#include	"GUI.h"
+
+
+
+static void ui_setup_cli(AlacastUI *ui);//setup_cli
+static void ui_setup_pigment(AlacastUI *ui);//setup_piment
+
+
+
+AlacastUI *ui_init(int *argc, char **argv[]){
+	AlacastUI *ui=malloc( (sizeof(AlacastUI)) );
+	ui->prefs=malloc( (sizeof(UIPrefs)) );
+	ui_setup_cli(ui);
+	if(! (pgm_init_check( argc, argv )) )
+		ui_setup_cli(ui);
+	else
+		ui_setup_pigment(ui);
+	
+	return ui;
+}//ui_init
+
+void ui_setup_cli(AlacastUI *ui){
+	ui->prefs->gui=(gboolean)FALSE;
+	ui->prefs->toolkit=UI_CLI;
+}//setup_cli
+
+void ui_setup_pigment(AlacastUI *ui){
+	ui->prefs->gui=(gboolean)TRUE;
+	ui->prefs->toolkit=UI_PIGMENT;
+}//setup_piment
+
+void ui_deinit(AlacastUI *ui){
+	if(ui->prefs->toolkit == UI_PIGMENT )
+		pgm_deinit();
+	
+	free(ui->prefs);
+	free(ui);
+}//ui_deinit
 

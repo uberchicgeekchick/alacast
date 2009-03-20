@@ -50,14 +50,17 @@
 
 
 #include	<glib.h>
-#include	</.h>
 
 #include	"Alacast.h"
-#include	".h"
 
-#include ""__FILE__".h"
-
-use_ui *alacast_init( const int argv, const char **argv ){
-	return &alacast_ui;
+Alacast *alacast_init(int *argc, char **argv[]){
+	Alacast *alacast=malloc( (sizeof(Alacast)) );
+	alacast->ui=ui_init(argc, argv);
+	return alacast;
 }//alacast_init
+
+void alacast_deinit(Alacast *alacast){
+	ui_deinit(alacast->ui);
+	free(alacast);
+}//alacast_deinit
 

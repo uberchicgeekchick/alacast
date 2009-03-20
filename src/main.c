@@ -49,12 +49,15 @@
  */
 
 #include "Alacast.h"
-#include <pgm/pgm.h>
-#include ""__FILE__".h"
+#include <glib/gprintf.h>
 
-int main( const int argc, const char **argv ){
-	alacst_init(	argc,	argv	);
-	pigment_init(	argc,	argv	);
 
-	pigment_deinit();
+
+int main(int argc, char **argv){
+	Alacast *alacast=alacast_init(&argc, &argv);
+
+	g_printf("Hello World!");
+
+	alacast_deinit(alacast);
+	return 0;
 }//main

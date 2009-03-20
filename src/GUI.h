@@ -48,9 +48,33 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-#include	</.h>
+#ifndef __GUI_H__
+#define __GUI_H__
 
-#include	"Alacast.h"
-#include	".h"
+#include	<glib.h>
+#include	<gtk.h>
+#include	<clutter/clutter.h>
+#include	<pgm/pgm.h>
+
+typedef enum UIToolkit {
+	UI_CLI		=	1700,
+	UI_GTK		=	1702,
+	UI_PIGMENT	=	1703,
+	UI_CLUTTER	=	1704
+} UIToolkit;
+
+typedef struct UIPrefs{
+	gboolean	gui;
+	UIToolkit	toolkit;
+} UIPrefs;
+
+typedef struct AlacastUI{
+	UIPrefs *prefs;
+} AlacastUI;
+
+AlacastUI *ui_init(int *argc, char **argv[]);//ui_init
+
+void ui_deinit(AlacastUI *ui);//ui_deinit
+
+#endif
 

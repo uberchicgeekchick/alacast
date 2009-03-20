@@ -30,23 +30,33 @@ dnl |	gcc will ignore errors & warning in dependencies        |
 dnl -------------------------------------------------------------
 packages_dirs=`pkg-config --cflags "${PACKAGES}" | sed 's/^\(.\)/\ \1/g' | sed 's/\ \-[^I][^\ ]\+//g' | sed 's/\ \-I\(\/[^\ ]\+\)/\ \1/g'`
 isystem="";
-for package in ${packages_dirs} 
+for package_dir in ${packages_dirs} 
 do
-	isystem="${isystem} -isystem ${package}";
-	for include_dir in `find ${package} -type d`
+	isystem="${isystem} -isystem ${package_dir}";
+	for include_dir in `find ${package_dir} -type d`
 	do
 		isystem="${isystem} -isystem ${include_dir}";
 	done
 done
 
-if eval `test "$isystem" == ""`; then
-	export ISYSTEM="${isystem}";
+extra_cflags=`pkg-config --cflags "${PACKAGES}" | sed 's/^\([^\ ]\)/\ \1/g' | sed 's/\ \-I\/[^\ ]\+//g'`
+if `test "${extra_cflags}" != ""`; then
+	if `test "${isystem}" == ""`; then
+		isystem="${extra_cflags}";
+	else
+		isystem="${extra_cflags}${isystem}";
+	fi
+fi
+unset extra_cflags
+
+
+if `test "$isystem" != ""`; then
+	CFLAGS="${CFLAGS}$isystem";
 	unset isystem
-	echo "\$ISYSTEM has been set to: ${ISYSTEM}"
 fi
 
-if [ `test "${include_dir}" != ""` ]; then unset $include_dir; fi
+if `test "$include_dir" != ""`; then unset include_dir; fi
 unset packages
-unset packages_dirs
-unset package
+unset package_dirs
+unset packages_dir
 

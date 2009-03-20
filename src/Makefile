@@ -1,17 +1,30 @@
-CFLAGS=-std=gnu99 -Wall -Wextra -Wfatal-errors --combine --sysroot=/ -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -pthread -L/lib64 -L/usr/lib64 -L/usr/lib -L/lib -I/usr/include
+CFLAGS=-std=gnu99 -Wall -Wextra -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -pthread -L/lib64 -L/usr/lib64 -L/lib -L/usr/lib -I/usr/include
 
 subdir=src
-requirements=glib libpcre gtk+-2.0 libxml-2.0 gstreamer-0.10 clutter-0.8 clutter-gst-0.8 pigment-0.3 libglade-2.0 sqlite3
-#$(pkg-cflags)=pkg-config --cflags $(requirements)
-#pkg-cflags=-I/usr/include/glib-1.2 -I/usr/lib64/glib/include -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/libxml2 -I/usr/include/gstreamer-0.10 -I/usr/include/clutter-0.8 -I/usr/include/clutter-0.8/clutter-gst -I/usr/include/pigment-0.3 -I/usr/include/libglade-2.0
-pkg-cflags=`./set_isystem_cflags.sh`
+#PACKAGES="glib-2.0 libpcre gtk+-2.0 libxml-2.0 gstreamer-0.10 clutter-0.8 clutter-gst-0.8 pigment-0.3 libglade-2.0 sqlite3"
+PACKAGES="glib-2.0 >= 2.15.0 \
+	libpcre >= 7.8 \
+	gtk+-2.0 >= 2.14.4 \
+	libxml-2.0 >= 2.7.1 \
+	gstreamer-0.10 >= 0.10.22 \
+	clutter-0.8 >= 0.8.0 \
+	clutter-gst-0.8 >= 0.8.0 \
+	pigment-0.3 >= 0.3.15 \
+	libglade-2.0 >= 0.23 \
+	sqlite3 >= 3.6.11 \
+"
 
-src=main.c		\
-	Alacast.c
+pkg-includes=`./set_isystem_cflags.tcsh $(PACKAGES)`
+pkg-libs=`pkg-config --libs $(PACKAGES)`
+
+src=			\
+	GUI.c		\
+	Alacast.c	\
+	main.c
 
 
 build-objects:
-	gcc $(CFLAGS) $(pkg-cflags) -o Alacast $(src)
+	gcc $(CFLAGS) $(pkg-includes) $(pkg-libs) -o Alacast $(src)
 
 all:	build-objects
 

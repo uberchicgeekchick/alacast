@@ -52,27 +52,21 @@
 #define __ALACAST_H__
 
 #include	<glib.h>
-#include	<clutter/clutter.h>
 
 #include	"Alacast.h"
+#include	"GUI.h"
+
+typedef struct _Alacast{
+	AlacastUI *ui;
+}Alacast;
 
 #define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
 
-typedef enum {
-	UI_STDIO		void;
-	UI_NCURSES		1.2.4;
-	UI_GTK_2_0		2.14.2;
-	UI_CLUTTER_0_8		0.8;
-}  UI_LAYER;
-
-struct _UIPicker{
-	gboolean	GUI;
-	int		UI;
-}//UIPicker
-
-typedef user_ui _UIPicker
-
-use_ui *alacast_init( int argc, char **argv );
+/*
+ *	Objects & values are now defined.  Now: time for methods.
+ */
+Alacast *alacast_init(int *argc, char **argv[]);
+void alacast_deinit(Alacast *Alacast);
 
 #endif
 
