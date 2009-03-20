@@ -63,7 +63,6 @@ static void ui_setup_pigment(AlacastUI *ui);//setup_piment
 AlacastUI *ui_init(int *argc, char **argv[]){
 	AlacastUI *ui=malloc( (sizeof(AlacastUI)) );
 	ui->prefs=malloc( (sizeof(UIPrefs)) );
-	ui_setup_cli(ui);
 	if(! (pgm_init_check( argc, argv )) )
 		ui_setup_cli(ui);
 	else

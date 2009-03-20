@@ -28,9 +28,12 @@ unset extra_cflags
 
 
 if `test "$isystem" != ""`; then
-	export ISYSTEM="$isystem";
+	if `test "$CFLAGS_ISYSTEM" != ""`; then
+		export CFLAGS_ISYSTEM="$isystem";
+	else
+		export CFLAGS_ISYSTEM="$CFLAGS_ISYSTEM$isystem"
 	unset isystem
-	echo "$ISYSTEM"
+	echo "$CFLAGS_ISYSTEM"
 fi
 
 if `test "$include_dir" != ""`; then unset include_dir; fi
