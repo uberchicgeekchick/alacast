@@ -1,8 +1,11 @@
 CFLAGS=-std=gnu99 -Wall -Wextra -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -pthread -L/lib64 -L/usr/lib64 -L/lib -L/usr/lib -I/usr/include
 
 subdir=src
-#PACKAGES="glib-2.0 libpcre gtk+-2.0 libxml-2.0 gstreamer-0.10 clutter-0.8 clutter-gst-0.8 pigment-0.3 libglade-2.0 sqlite3"
-PACKAGES="glib-2.0 >= 2.15.0 \
+
+Alacast_BIN=Alacast
+PREFIX=/programs/Alacast
+
+PACKAGES=glib-2.0 >= 2.15.0 \
 	libpcre >= 7.8 \
 	gtk+-2.0 >= 2.14.4 \
 	libxml-2.0 >= 2.7.1 \
@@ -12,19 +15,29 @@ PACKAGES="glib-2.0 >= 2.15.0 \
 	pigment-0.3 >= 0.3.15 \
 	libglade-2.0 >= 0.23 \
 	sqlite3 >= 3.6.11 \
-"
 
-pkg-includes=`./set_isystem_cflags.tcsh $(PACKAGES)`
-pkg-libs=`pkg-config --libs $(PACKAGES)`
 
-src=			\
+INCLUDES=`./set_isystem_cflags.tcsh "$(PACKAGES)"`
+LIBS=`pkg-config --libs "$(PACKAGES)"`
+
+SOURCES=	\
 	GUI.c		\
 	Alacast.c	\
 	main.c
 
 
-build-objects:
-	gcc $(CFLAGS) $(pkg-includes) $(pkg-libs) -o Alacast $(src)
 
-all:	build-objects
+Alacast_BIN:
+	gcc $(CFLAGS) $(INCLUDES) $(LIBS) -o $(Alacast_BIN) $(SOURCES)
+
+all:	$(Alacast_BIN)
+
+install:
+	mv ./$(Alacast_BIN) $(PREFIX)/bin/$(Alacast_BIN)
+
+distclean:
+	-rm -f ./$(Alacast_BIN)
+
+clean: distclean
+
 
