@@ -17,7 +17,7 @@ PACKAGES=glib-2.0 >= 2.15.0 \
 	sqlite3 >= 3.6.11 \
 
 
-INCLUDES=`./set_isystem_cflags.tcsh "$(PACKAGES)"`
+INCLUDES=`./cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
 LIBS=`pkg-config --libs "$(PACKAGES)"`
 
 SOURCES=	\
