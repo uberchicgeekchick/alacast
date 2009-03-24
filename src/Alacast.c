@@ -53,14 +53,14 @@
 
 #include	"Alacast.h"
 
-Alacast *alacast_init(int *argc, char **argv[]){
+Alacast *alacast_init(int *argc, char **argv[], char **envp[]){
 	Alacast *alacast=malloc( (sizeof(Alacast)) );
-	alacast->ui=ui_init(argc, argv);
+	alacast->gui=gui_init(argc, argv, envp);
 	return alacast;
 }//alacast_init
 
 void alacast_deinit(Alacast *alacast){
-	ui_deinit(alacast->ui);
+	gui_deinit(alacast->gui);
 	free(alacast);
 }//alacast_deinit
 

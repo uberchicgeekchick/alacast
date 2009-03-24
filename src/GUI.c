@@ -54,38 +54,36 @@
 #include	"GUI.h"
 
 
-
-static void ui_setup_cli(AlacastUI *ui);//setup_cli
-static void ui_setup_pigment(AlacastUI *ui);//setup_piment
-
+static void gui_setup_cli(AlacastGUI *gui);//setup_cli
+static void gui_setup_pigment(AlacastGUI *gui);//setup_piment
 
 
-AlacastUI *ui_init(int *argc, char **argv[]){
-	AlacastUI *ui=malloc( (sizeof(AlacastUI)) );
-	ui->prefs=malloc( (sizeof(UIPrefs)) );
+AlacastGUI *gui_init(int *argc, char **argv[], char **envp[]){
+	AlacastGUI *gui=malloc( (sizeof(AlacastGUI)) );
+	gui->prefs=malloc( (sizeof(GUIPrefs)) );
 	if(! (pgm_init_check( argc, argv )) )
-		ui_setup_cli(ui);
+		gui_setup_cli(gui);
 	else
-		ui_setup_pigment(ui);
+		gui_setup_pigment(gui);
 	
-	return ui;
-}//ui_init
+	return gui;
+}//gui_init
 
-void ui_setup_cli(AlacastUI *ui){
-	ui->prefs->gui=(gboolean)FALSE;
-	ui->prefs->toolkit=UI_CLI;
+void gui_setup_cli(AlacastGUI *gui){
+	gui->prefs->gui=(gboolean)FALSE;
+	gui->prefs->toolkit=GUI_CLI;
 }//setup_cli
 
-void ui_setup_pigment(AlacastUI *ui){
-	ui->prefs->gui=(gboolean)TRUE;
-	ui->prefs->toolkit=UI_PIGMENT;
+void gui_setup_pigment(AlacastGUI *gui){
+	gui->prefs->gui=(gboolean)TRUE;
+	gui->prefs->toolkit=GUI_PIGMENT;
 }//setup_piment
 
-void ui_deinit(AlacastUI *ui){
-	if(ui->prefs->toolkit == UI_PIGMENT )
+void gui_deinit(AlacastGUI *gui){
+	if(gui->prefs->toolkit == GUI_PIGMENT )
 		pgm_deinit();
 	
-	free(ui->prefs);
-	free(ui);
-}//ui_deinit
+	free(gui->prefs);
+	free(gui);
+}//gui_deinit
 

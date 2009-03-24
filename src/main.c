@@ -52,9 +52,8 @@
 #include <glib/gprintf.h>
 
 
-
-int main(int argc, char **argv){
-	Alacast *alacast=alacast_init(&argc, &argv);
+int main(int argc, char **argv, char **envp){
+	Alacast *alacast=alacast_init(&argc, &argv, &envp);
 
 	g_printf("Hello World!");
 

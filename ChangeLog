@@ -1,2 +1,17 @@
+2009-03-20:	Kaity G. B. <uberChick@uberChicGeekChick.Com>
+	
+	* ./src/init.c & ./init.h: created to manage memory & global pointers
+		I have moved vfs, gnome_app_new, & other various
+
+
+2009-03-19:	Kaity G. B. <uberChick@uberChicGeekChick.Com>
+	
+	* ./{file}: methods
+		details.
+
+	* ./ChangeLog: Created for changes, updates, & etc.
+		I'm very verbose in my ChangeLog updates, I often include
+		changes in my life as well as anything that effects my art.
+
 
 

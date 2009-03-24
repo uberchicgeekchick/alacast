@@ -1,4 +1,4 @@
-CFLAGS=-std=gnu99 -Wall -Wextra -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -pthread -L/lib64 -L/usr/lib64 -L/lib -L/usr/lib -I/usr/include
+CFLAGS=-Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3
 
 subdir=src
 
@@ -20,7 +20,7 @@ PACKAGES=glib-2.0 >= 2.15.0 \
 INCLUDES=`./cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
 LIBS=`pkg-config --libs "$(PACKAGES)"`
 
-SOURCES=	\
+SOURCES=		\
 	GUI.c		\
 	Alacast.c	\
 	main.c

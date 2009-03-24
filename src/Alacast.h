@@ -57,7 +57,7 @@
 #include	"GUI.h"
 
 typedef struct _Alacast{
-	AlacastUI *ui;
+	AlacastGUI *gui;
 }Alacast;
 
 #define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
@@ -65,7 +65,7 @@ typedef struct _Alacast{
 /*
  *	Objects & values are now defined.  Now: time for methods.
  */
-Alacast *alacast_init(int *argc, char **argv[]);
+Alacast *alacast_init(int *argc, char **argv[], char **envp[]);
 void alacast_deinit(Alacast *Alacast);
 
 #endif

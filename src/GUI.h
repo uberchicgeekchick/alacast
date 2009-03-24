@@ -56,25 +56,25 @@
 #include	<clutter/clutter.h>
 #include	<pgm/pgm.h>
 
-typedef enum UIToolkit {
-	UI_CLI		=	1700,
-	UI_GTK		=	1702,
-	UI_PIGMENT	=	1703,
-	UI_CLUTTER	=	1704
+typedef enum GUIToolkit {
+	GUI_CLI		=	1700,
+	GUI_GTK		=	1702,
+	GUI_PIGMENT	=	1703,
+	GUI_CLUTTER	=	1704,
 } UIToolkit;
 
-typedef struct UIPrefs{
+typedef struct{
 	gboolean	gui;
 	UIToolkit	toolkit;
-} UIPrefs;
+}GUIPrefs;
 
-typedef struct AlacastUI{
-	UIPrefs *prefs;
-} AlacastUI;
+typedef struct{
+	GUIPrefs *prefs;
+}AlacastGUI;
 
-AlacastUI *ui_init(int *argc, char **argv[]);//ui_init
+AlacastGUI *gui_init(int *argc, char **argv[], char **envp[]);//gui_init
 
-void ui_deinit(AlacastUI *ui);//ui_deinit
+void gui_deinit(AlacastGUI *gui);//gui_deinit
 
 #endif
 
