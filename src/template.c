@@ -48,9 +48,7 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-#include	</.h>
-
-#include	"Alacast.h"
+#include	"alacast.h"
 #include	".h"
+
 

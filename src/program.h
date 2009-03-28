@@ -48,11 +48,16 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-#include	</.h>
+#ifndef __PROGRAM_H__
+#define __PROGRAM_H__
 
-#include	"Alacast.h"
-#include	".h"
+#include "alacast.h"
 
-#include	""__FILE__".h"
+
+GnomeProgram *alacast_program_init(int argc, char **argv);
+void alacast_program_main(Alacast *alacast);
+void alacast_program_main_quit(Alacast *alacast);
+void alacast_program_deinit(Alacast *alacast);
+
+#endif
 

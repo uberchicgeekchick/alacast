@@ -48,11 +48,28 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
+
 #include	<glib.h>
-#include	</.h>
 
-#include	"Alacast.h"
-#include	".h"
+#include	"alacast.h"
 
-#include	""__FILE__".h"
+Alacast *alacast_init(int argc, char **argv, char **envp){
+	Alacast *alacast=g_new0(Alacast, 1);
+	alacast->program=alacast_program_init(argc, argv);
+	alacast->gui=gui_init(&argc, &argv);
+	return alacast;
+}//alacast_init
+
+void alacast_main(Alacast *alacast){
+	gui_main(alacast->gui);
+}//alacast_main
+
+void alacast_main_quit(Alacast *alacast){
+	gui_main_quit(alacast->gui);
+}//alacast_quit
+
+void alacast_deinit(Alacast *alacast){
+	gui_deinit(alacast->gui);
+	g_free(alacast);
+}//alacast_deinit
 

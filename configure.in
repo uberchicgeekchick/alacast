@@ -32,7 +32,6 @@ packages_dirs=`pkg-config --cflags "${PACKAGES}" | sed 's/^\(.\)/\ \1/g' | sed '
 isystem="";
 for package_dir in ${packages_dirs} 
 do
-	isystem="${isystem} -isystem ${package_dir}";
 	for include_dir in `find ${package_dir} -type d`
 	do
 		isystem="${isystem} -isystem ${include_dir}";

@@ -48,12 +48,24 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __TEMPLATE_H__
-#define __TEMPLATE_H__
-
 #include	<glib.h>
-#include	</.h>
-#include	"Alacast.h"
-#include	".h"
 
-#endif
+#include	"alacast.h"
+
+
+int gui_gtk_init(int *argc, char ***argv){
+	return gtk_init_check(argc, argv);
+}//gui_init
+
+void gui_gtk_main(void){
+	gtk_main();
+}//gui_main
+
+void gui_gtk_main_quit(void){
+	gtk_main_quit();
+}//gui_main_quit
+
+void gui_gtk_deinit(void){
+	return;
+}//gui_deinit
+

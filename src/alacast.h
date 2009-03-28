@@ -48,19 +48,36 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
+#ifndef __ALACAST_H__
+#define __ALACAST_H__
 
-#include	<glib.h>
+#include <glib.h>
+#include <glib/gprintf.h>
+#include <gdk/gdkkeysyms.h>
+#include <libgnome/libgnome.h>
 
-#include	"Alacast.h"
+#include "config.h"
 
-Alacast *alacast_init(int *argc, char **argv[], char **envp[]){
-	Alacast *alacast=malloc( (sizeof(Alacast)) );
-	alacast->gui=gui_init(argc, argv, envp);
-	return alacast;
-}//alacast_init
+#include "gui.h"
 
-void alacast_deinit(Alacast *alacast){
-	gui_deinit(alacast->gui);
-	free(alacast);
-}//alacast_deinit
+typedef struct{
+	AlacastGUI *gui;
+	GnomeProgram *program;
+}Alacast;
+
+#include "program.h"
+#include "library.h"
+
+#define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
+
+/*
+ *	Objects & values are now defined.  Now: time for methods.
+ */
+Alacast *alacast_init(int argc, char **argv, char **envp);
+void alacast_main(Alacast *alacast);
+void alacast_main_quit(Alacast *alacast);
+void alacast_deinit(Alacast *Alacast);
+
+#endif
+
 

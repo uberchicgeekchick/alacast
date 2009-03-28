@@ -48,12 +48,10 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __TEMPLATE_H__
-#define __TEMPLATE_H__
+#ifndef __LIBRARY_H__
+#define __LIBRARY_H__
 
-#include	<glib.h>
-#include	</.h>
-#include	"Alacast.h"
-#include	".h"
+#include	<libxml/globals.h>
 
 #endif
+

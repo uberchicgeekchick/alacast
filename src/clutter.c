@@ -49,10 +49,23 @@
  */
 
 #include	<glib.h>
-#include	</.h>
 
-#include	"Alacast.h"
-#include	".h"
+#include	"alacast.h"
 
-#include	""__FILE__".h"
+
+ClutterInitError gui_clutter_init(int *argc, char ***argv){
+	return clutter_init(argc, argv);
+}//gui_init
+
+void gui_clutter_main(void){
+	clutter_main();
+}//gui_main
+
+void gui_clutter_main_quit(void){
+	clutter_main_quit();
+}//gui_main_quit
+
+void gui_clutter_deinit(void){
+	return;
+}//gui_deinit
 

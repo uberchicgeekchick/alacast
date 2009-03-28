@@ -48,12 +48,37 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __TEMPLATE_H__
-#define __TEMPLATE_H__
+#ifndef __GUI_H__
+#define __GUI_H__
 
-#include	<glib.h>
-#include	</.h>
-#include	"Alacast.h"
-#include	".h"
+#include <glib.h>
+
+#include "config.h"
+
+#include "pigment.h"
+#include "clutter.h"
+#include "gtk.h"
+
+typedef enum {
+	GUI_CLI		=	0,
+	GUI_GTK		=	1702,
+	GUI_PIGMENT	=	1703,
+	GUI_CLUTTER	=	1704,
+} GUIToolkit;
+
+typedef struct {
+	GUIToolkit	toolkit;
+} GUIPrefs;
+
+typedef struct{
+	GUIPrefs *prefs;
+	ClutterInitError clutter_init_error;
+}AlacastGUI;
+
+AlacastGUI *gui_init(int *argc, char ***argv);
+void gui_main(AlacastGUI *gui);
+void gui_main_quit(AlacastGUI *gui);
+void gui_deinit(AlacastGUI *gui);
 
 #endif
+

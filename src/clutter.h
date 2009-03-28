@@ -48,11 +48,18 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-#include	</.h>
+#ifndef __CLUTTER_GUI_H__
+#define __CLUTTER_GUI_H__
 
-#include	"Alacast.h"
-#include	".h"
+#include <glib.h>
 
-#include	""__FILE__".h"
+#include "config.h"
+#include <clutter/clutter.h>
+
+ClutterInitError gui_clutter_init(int *argc, char ***argv);
+void gui_clutter_main(void);
+void gui_clutter_main_quit(void);
+void gui_clutter_deinit(void);
+
+#endif
 

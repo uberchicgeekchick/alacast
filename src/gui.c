@@ -48,12 +48,109 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __TEMPLATE_H__
-#define __TEMPLATE_H__
-
 #include	<glib.h>
-#include	</.h>
-#include	"Alacast.h"
-#include	".h"
 
-#endif
+#include	"alacast.h"
+
+
+static void gui_setup_pigment(AlacastGUI *gui);//setup_piment
+static void gui_setup_clutter(AlacastGUI *gui);//setup_piment
+static void gui_setup_gtk(AlacastGUI *gui);//setup_piment
+static void gui_setup_cli(AlacastGUI *gui);//setup_cli
+
+static void gui_bail(void);
+
+AlacastGUI *gui_init(int *argc, char ***argv){
+	AlacastGUI *gui=g_new0(AlacastGUI, 1);
+	gui->prefs=g_new0(GUIPrefs, 1);
+	
+	if( (gui_pigment_init(argc, argv)) )
+		gui_setup_pigment(gui);
+	else if( (gui->clutter_init_error=gui_clutter_init(argc, argv)) )
+		gui_setup_clutter(gui);
+	else if( (gui_gtk_init(argc, argv)) )
+		gui_setup_gtk(gui);
+	else
+		gui_setup_cli(gui);
+
+	if(!(gui->prefs->toolkit)){
+		gui_bail();
+		return NULL;
+	}
+	
+	return gui;
+}//gui_init
+
+static void gui_setup_pigment(AlacastGUI *gui){
+	gui->prefs->toolkit=GUI_PIGMENT;
+}//gui_setup_piment
+
+static void gui_setup_clutter(AlacastGUI *gui){
+	gui->prefs->toolkit=GUI_CLUTTER;
+}//gui_setup_piment
+
+static void gui_setup_gtk(AlacastGUI *gui){
+	gui->prefs->toolkit=GUI_GTK;
+}//gui_setup_piment
+
+static void gui_setup_cli(AlacastGUI *gui){
+	gui->prefs->toolkit=GUI_CLI;
+}//gui_setup_cli
+
+static void gui_bail(void){
+	g_error("*FATAL ERROR*: %s was unable to initalize any graphical interface and cannot continue.\n", PACKAGE);
+}//gui_bail
+
+void gui_main(AlacastGUI *gui){
+	switch(gui->prefs->toolkit){
+		case GUI_PIGMENT:
+			gui_pigment_main();
+			break;
+		case GUI_CLUTTER:
+			gui_clutter_main();
+			break;
+		case GUI_GTK:
+			gui_gtk_main();
+			break;
+		case GUI_CLI: default:
+			gui_bail();
+			break;
+	}//switch
+}//gui_main
+
+void gui_main_quit(AlacastGUI *gui){
+	switch(gui->prefs->toolkit){
+		case GUI_PIGMENT:
+			gui_pigment_main_quit();
+			break;
+		case GUI_CLUTTER:
+			gui_clutter_main_quit();
+			break;
+		case GUI_GTK:
+			gui_gtk_main_quit();
+			break;
+		case GUI_CLI: default:
+			gui_bail();
+			break;
+	}//switch
+}//gui_main_quit
+
+void gui_deinit(AlacastGUI *gui){
+	switch(gui->prefs->toolkit){
+		case GUI_PIGMENT:
+			gui_pigment_deinit();
+			break;
+		case GUI_GTK:
+			gui_gtk_deinit();
+			break;
+		case GUI_CLUTTER:
+			gui_clutter_deinit();
+		case GUI_CLI:
+		default:
+			break;
+	}//switch
+	
+	g_free(gui->prefs);
+	g_free(gui);
+}//gui_deinit
+

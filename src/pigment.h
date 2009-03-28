@@ -48,12 +48,18 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __TEMPLATE_H__
-#define __TEMPLATE_H__
+#ifndef __PIGMENT_GUI_H__
+#define __PIGMENT_GUI_H__
 
-#include	<glib.h>
-#include	</.h>
-#include	"Alacast.h"
-#include	".h"
+#include <glib.h>
+
+#include "config.h"
+#include <pgm/pgm.h>
+
+int gui_pigment_init(int *argc, char ***argv);
+void gui_pigment_main(void);
+void gui_pigment_main_quit(void);
+void gui_pigment_deinit(void);
 
 #endif
+

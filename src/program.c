@@ -1,11 +1,8 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
- *
  * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Greet-Tweet-Know
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +10,8 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -48,42 +44,45 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-#include	<pgm/pgm.h>
 
-#include	"GUI.h"
+#include "alacast.h"
 
-
-static void gui_setup_cli(AlacastGUI *gui);//setup_cli
-static void gui_setup_pigment(AlacastGUI *gui);//setup_piment
-
-
-AlacastGUI *gui_init(int *argc, char **argv[], char **envp[]){
-	AlacastGUI *gui=malloc( (sizeof(AlacastGUI)) );
-	gui->prefs=malloc( (sizeof(GUIPrefs)) );
-	if(! (pgm_init_check( argc, argv )) )
-		gui_setup_cli(gui);
-	else
-		gui_setup_pigment(gui);
+GnomeProgram *alacast_program_init(int argc, char **argv){
+	GOptionContext *option_context=g_option_context_new(PACKAGE);
+	GOptionEntry option_entries[]={
+		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY,
+			&argv,
+			"Special option that collects any remaining arguments for us" },
+		{ NULL }
+	};
 	
-	return gui;
-}//gui_init
-
-void gui_setup_cli(AlacastGUI *gui){
-	gui->prefs->gui=(gboolean)FALSE;
-	gui->prefs->toolkit=GUI_CLI;
-}//setup_cli
-
-void gui_setup_pigment(AlacastGUI *gui){
-	gui->prefs->gui=(gboolean)TRUE;
-	gui->prefs->toolkit=GUI_PIGMENT;
-}//setup_piment
-
-void gui_deinit(AlacastGUI *gui){
-	if(gui->prefs->toolkit == GUI_PIGMENT )
-		pgm_deinit();
+	g_option_context_add_main_entries(option_context, option_entries, NULL);
 	
-	free(gui->prefs);
-	free(gui);
-}//gui_deinit
+	GnomeProgram *alacast_gnome_program=gnome_program_init(
+						PACKAGE, VERSION,
+						LIBGNOME_MODULE,
+						argc, argv,
+						GNOME_PARAM_GOPTION_CONTEXT, option_context,
+						GNOME_PARAM_NONE
+	);
+	
+	return alacast_gnome_program;
+}//alacast_program_init
+
+void alacast_program_main(Alacast *alacast){
+	gui_main(alacast->gui);
+}//alacast_program_main
+
+
+void alacast_program_main_quit(Alacast *alacast){
+	/* methods to clean-up anything that uses gtk/gnome */
+	gui_main_quit(alacast->gui);
+}//alacast_gtk_quit
+
+/* This method is automatically called when the program exits with Alacast using gnome_program_init */
+void alacast_program_deinit(Alacast *alacast){
+	/* methods to clean-up anything that uses gtk/gnome */
+	alacast_program_main_quit(alacast);
+	/* final clean-up */
+}//alacast_program_deinit
 

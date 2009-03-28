@@ -5,24 +5,32 @@ subdir=src
 Alacast_BIN=Alacast
 PREFIX=/programs/Alacast
 
-PACKAGES=glib-2.0 >= 2.15.0 \
+PACKAGES= \
+	gobject-2.0 \
+	libgnome-2.0 \
+	gthread-2.0 \
+	glib-2.0 >= 2.15.0 \
 	libpcre >= 7.8 \
-	gtk+-2.0 >= 2.14.4 \
 	libxml-2.0 >= 2.7.1 \
+	gtk+-2.0 >= 2.14.4 \
+	libglade-2.0 >= 0.23 \
 	gstreamer-0.10 >= 0.10.22 \
+	pigment-0.3 >= 0.3.15 \
 	clutter-0.8 >= 0.8.0 \
 	clutter-gst-0.8 >= 0.8.0 \
-	pigment-0.3 >= 0.3.15 \
-	libglade-2.0 >= 0.23 \
 	sqlite3 >= 3.6.11 \
 
 
 INCLUDES=`./cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
 LIBS=`pkg-config --libs "$(PACKAGES)"`
 
-SOURCES=		\
-	GUI.c		\
-	Alacast.c	\
+SOURCES=			\
+	alacast.c		\
+	program.c		\
+	gui.c			\
+	gtk.c			\
+	clutter.c		\
+	pigment.c		\
 	main.c
 
 
