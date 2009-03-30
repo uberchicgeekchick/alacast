@@ -1,7 +1,0 @@
-
-
-I've made 'src/Makefile' compatible with automake so if I need or choose I can rename it to Makefile.am & use it with auto-config.
-
-I've done a lil work to improve my Alacast's init process.  But other wise I've just been to sick to be able to do any thing more creative.  So instead I worked a lil on two new features for Greet-Tweet-Know and a lot on working on several big changes for connectED.
-
-Committed on: 2009-03-20 @ 09:54:51 PM

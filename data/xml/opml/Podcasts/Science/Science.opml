@@ -7,6 +7,7 @@
 		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[SciencePdcasters.Org]]>" type="link" url="http://docartemis.com/sciencepodcasters/" text="<![CDATA[SciencePdcasters.Org]]>" description="<![CDATA[SciencePdcasters.Org]]>"/>
 		<!--<outline title="<![CDATA[]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="" type="rss" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Science Geek Girl]]>" xmlUrl="http://scienceteachingtips.podomatic.com/rss2.xml" type="rss" text="<![CDATA[Science Geek Girl&#039;s Science Snacks]]>" htmlUrl="http://scienceteachingtips.podomatic.com/" description="<![CDATA[Science Teaching Tips - Science Geek Girl&#039;s Science Snacks for the classroom.]]>"/>
 		<outline title="<![CDATA[Berkeley Groks&#039; Science]]>" xmlUrl="http://www.groks.net/groks.rss" type="rss" text="<![CDATA[Berkeley Groks&#039; Science]]>" htmlUrl="http://www.groks.net/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Books and Ideas]]>" xmlUrl="http://feeds.feedburner.com/booksandideaspodcast?format=xml" type="rss" text="<![CDATA[Books and Ideas]]>" htmlUrl="http://booksandideas.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Brain Science Podcast with Dr. Ginger Campbell]]>" xmlUrl="http://feeds.feedburner.com/brainsciencepodcast?format=xml" type="rss" text="<![CDATA[Brain Science Podcast with Dr. Ginger Campbell]]>" htmlUrl="http://brainsciencepodcast.com/" description="<![CDATA[]]>"/>

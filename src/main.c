@@ -57,7 +57,6 @@ int main(int argc, char **argv, char **envp){
 	Alacast *alacast=alacast_init(argc, argv, envp);
 	
 	alacast_main(alacast);
-	g_printf("main->alacast_main"); exit(-1);
 	
 	alacast_deinit(alacast);
 	
