@@ -16,7 +16,6 @@ PACKAGES=	\
 	libpcre >= 7.8 \
 	libxml-2.0 >= 2.7.1 \
 	gtk+-2.0 >= 2.14.4 \
-	libglade-2.0 >= 0.23 \
 	gstreamer-0.10 >= 0.10.22 \
 	pigment-0.3 >= 0.3.15 \
 	clutter-0.8 >= 0.8.0 \
