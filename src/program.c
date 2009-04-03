@@ -48,7 +48,7 @@
 #include "alacast.h"
 
 GnomeProgram *alacast_program_init(int argc, char **argv){
-	GOptionContext *option_context=g_option_context_new(PACKAGE);
+	GOptionContext *option_context=g_option_context_new(PACKAGE_NAME);
 	GOptionEntry option_entries[]={
 		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY,
 			&argv,
@@ -59,7 +59,7 @@ GnomeProgram *alacast_program_init(int argc, char **argv){
 	g_option_context_add_main_entries(option_context, option_entries, NULL);
 	
 	GnomeProgram *alacast_gnome_program=gnome_program_init(
-						PACKAGE, VERSION,
+						PACKAGE_NAME, PACKAGE_VERSION,
 						LIBGNOME_MODULE,
 						argc, argv,
 						GNOME_PARAM_GOPTION_CONTEXT, option_context,
@@ -71,7 +71,7 @@ GnomeProgram *alacast_program_init(int argc, char **argv){
 
 void alacast_program_main(Alacast *alacast){
 	gui_main(alacast->gui);
-}//alacast_program_main
+}//alacast_program_mainsst
 
 
 void alacast_program_main_quit(Alacast *alacast){

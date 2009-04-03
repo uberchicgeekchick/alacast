@@ -24,7 +24,8 @@ PKG_CHECK_MODULES(Alacast,[
 	glib-2.0 >= 2.15.0
 	libpcre >= 7.8
 	libxml-2.0 >= 2.7.1
-	gtk+-2.0 >= 2.14.4
+	gtk+-2.0 >= 2.16.0
+	libglade-2.0 >= 2.6
 	gstreamer-0.10 >= 0.10.22
 	pigment-0.3 >= 0.3.15
 	clutter-0.8 >= 0.8.0

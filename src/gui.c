@@ -98,7 +98,7 @@ static void gui_setup_cli(AlacastGUI *gui){
 }//gui_setup_cli
 
 static void gui_bail(void){
-	g_error("*FATAL ERROR*: %s was unable to initalize any graphical interface and cannot continue.\n", PACKAGE);
+	g_error("*FATAL ERROR*: %s was unable to initalize any graphical interface and cannot continue.\n", PACKAGE_NAME);
 }//gui_bail
 
 void gui_main(AlacastGUI *gui){

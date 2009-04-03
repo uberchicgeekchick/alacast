@@ -53,7 +53,7 @@
 
 #include	"alacast.h"
 
-Alacast *alacast_init(int argc, char **argv, char **envp){
+Alacast *alacast_init(int argc, char **argv){
 	Alacast *alacast=g_new0(Alacast, 1);
 	alacast->program=alacast_program_init(argc, argv);
 	alacast->gui=gui_init(&argc, &argv);

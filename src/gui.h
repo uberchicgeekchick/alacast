@@ -48,16 +48,16 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __GUI_H__
-#define __GUI_H__
+#ifndef __ALACAST_GUI_H__
+#define __ALACAST_GUI_H__
 
 #include <glib.h>
 
 #include "config.h"
 
-#include "pigment.h"
-#include "clutter.h"
-#include "gtk.h"
+#include "gui/pigment.h"
+#include "gui/clutter.h"
+#include "gui/gtk.h"
 
 typedef enum {
 	GUI_CLI		=	0,

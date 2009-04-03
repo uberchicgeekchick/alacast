@@ -73,7 +73,7 @@ typedef struct{
 /*
  *	Objects & values are now defined.  Now: time for methods.
  */
-Alacast *alacast_init(int argc, char **argv, char **envp);
+Alacast *alacast_init(int argc, char **argv);
 void alacast_main(Alacast *alacast);
 void alacast_main_quit(Alacast *alacast);
 void alacast_deinit(Alacast *Alacast);

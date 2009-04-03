@@ -48,8 +48,8 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __PROGRAM_H__
-#define __PROGRAM_H__
+#ifndef __ALACAST_PROGRAM_H__
+#define __ALACAST_PROGRAM_H__
 
 #include "alacast.h"
 
