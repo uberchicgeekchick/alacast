@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Fantasy Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Silverblade Prophecy]]>" xmlUrl="http://feeds2.feedburner.com/TheSilverbladeProphecy?format=xml" type="rss" text="<![CDATA[The Silverblade Prophecy]]>" htmlUrl="http://pankea.wordpress.com/" description="<![CDATA[<p>Throughout Pankea's history, messiahs have come and gone. Some succeeded but others fell. As an ancient evil reawakens, a new messiah is called to fulfill her long-prophesied birthright, but can she succeed when her ancestor could not?</p><p>A young and innocent Marian Silverblade is determined to face her destiny and finds help in the most unlikely allies. But in order to prevent her life from getting snuffed out before the prophecy can be fulfilled, they must first learn how to work together - a task that may prove too difficult.</p>]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - A free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

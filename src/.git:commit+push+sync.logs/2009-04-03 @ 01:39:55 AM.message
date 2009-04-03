@@ -1,0 +1,9 @@
+Expanded Library, Pigment UI improved, Glade UI converted to GtkBuilder, & Clutter API design began.
+
+I am working on all 3 interfaces versions until I feel 100
+
+I want the knowledge I gain from programming Alacast to be as useful & extensible to my future projects.  Nat that means I'll be creating a GTK interface, which BTW 2.16.0 totally rocks & I've already updated my require version to be at least 2.16.0.  I'm working on adding libXML support to parse OPML files & my OPML Library.  I'm planning on generating my UI directly from these.  Though I'll be using SQLite to store user preferences & subscriptions.  I'm worning on converting my library to SQLite but I'm only going to complete that once Alacast can support importing OPML files & more importantly once it support adding podcasts to the Library.  Adding online media using SQLite's CLI tool is justto much of a pain until I have implemented an interface for this in Alacast.
+
+Tomorrow is all Alacast!
+
+Committed on: 2009-04-03 @ 01:39:55 AM
