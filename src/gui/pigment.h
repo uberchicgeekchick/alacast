@@ -58,8 +58,7 @@
 
 int gui_pigment_init(int *argc, char ***argv);
 void gui_pigment_main(void);
-void gui_pigment_main_quit(void);
-void gui_pigment_deinit(void);
+void gui_pigment_finalize(void);
 
 #endif
 

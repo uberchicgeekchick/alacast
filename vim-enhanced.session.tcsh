@@ -11,4 +11,4 @@ default:
 	breaksw
 endsw
 
-${my_editor} "./src/main.c" "./src/Alacast.h" "./src/Alacast.c" "./src/GUI.h" "./src/GUI.c" "./src/Makefile"
+${my_editor} "./src/Makefile" "./src/main.c" "./src/alacast.h" "./src/alacast.c" "./src/program.h" "./src/program.c" "./src/library.h" "./src/library.c" "./src/gui.h" "./src/gui.c"

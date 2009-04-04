@@ -1,11 +1,11 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
+ * Greet-Tweet-Know is:
+ * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Greet-Tweet-Know
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +13,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -48,37 +48,74 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __ALACAST_H__
-#define __ALACAST_H__
-
-#include <glib.h>
-#include <glib/gprintf.h>
-#include <gdk/gdkkeysyms.h>
-#include <libgnome/libgnome.h>
-
+/********************************************************
+ *        Project headers, eg #include "config.h"       *
+ ********************************************************/
 #include "config.h"
-
 #include "debug.h"
-#include "gui.h"
-
-typedef struct{
-	AlacastDebug *debug;
-	AlacastGUI *gui;
-	AlacastProgram *program;
-}Alacast;
-
-#include "program.h"
-#include "library.h"
-
-#define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
-
-/*
- *	Objects & values are now defined.  Now: time for methods.
- */
-Alacast *alacast_init(int argc, char **argv, const char **envp);
-void alacast_main(Alacast *alacast);
-void alacast_finalize(Alacast *Alacast);
-
-#endif
 
 
+
+/********************************************************
+ *          Variable definitions.                       *
+ ********************************************************/
+
+
+/********************************************************
+ *          Static method & function prototypes         *
+ ********************************************************/
+static gboolean debug_init_check(void);
+
+
+
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
+AlacastDebug *debug_init(***envp){
+	AlacastDebug *debug=g_new(AlacastDebug, 1);
+	
+	for(int i=0; envp && envp[i]; i++)
+		if(!(strcasecmp("ALACAST_DEBUG", debug_envp[i])))
+			debug_inited=debug_init(envp);
+	return debug;
+}//debug_init
+
+static void debug_init_check(const char **envp){
+	debug_envp=g_strsplit_set(envp, ":", 0);
+
+	for(int i=0; debug_envp && debug_envp[i]; )
+		if(!(strcasecmp( "all", debug_envp[i++] ))) {
+			debug_all=TRUE;
+			break;
+		}
+	
+	return TRUE;
+}//debug_init_check
+
+void debug_printf(const gchar *msg, ...){
+	g_return_if_fail(msg != NULL);
+
+	for(int i=0; debug_envp && debug_envp[i]; i++) {
+		if( debug_all || (strcasecmp(__FILE__, debug_envp[i])) ) {
+			g_printf( "%s: ", __FILE__ );
+
+			va_list args;
+			va_start(args, msg);
+			g_vprintf(msg, args);
+			va_end(args);
+			
+			g_print("\n");
+			break;
+		}
+	}
+}
+
+void debug_deinit(void){
+	g_strfreev( debug_envp );
+}//debug_deinit
+
+
+
+/********************************************************
+ *                       eof                            *
+ ********************************************************/

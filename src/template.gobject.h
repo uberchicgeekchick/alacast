@@ -1,11 +1,15 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
+ * Alacast's:
+ * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
+ *
+ * Alacast's an online media brewser for GNOME.
+ * Bringing you the best online media to your desktop
  * with a beautiful, fun, & intuitive interface.
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +17,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -48,37 +52,62 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __ALACAST_H__
-#define __ALACAST_H__
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
 
+
+#ifndef __HEADER_H__
+#define __HEADER_H__
+
+/********************************************************
+ *        System & library headers.                     *
+ ********************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
 #include <glib.h>
-#include <glib/gprintf.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <gdk/gdk.h>
 #include <gdk/gdkkeysyms.h>
 #include <libgnome/libgnome.h>
 
 #include "config.h"
 
-#include "debug.h"
-#include "gui.h"
+G_BEGIN_DECLS
 
-typedef struct{
-	AlacastDebug *debug;
-	AlacastGUI *gui;
-	AlacastProgram *program;
-}Alacast;
+/********************************************************
+ *         typedefs: objects, structures, and etc.      *
+ ********************************************************/
+typedef struct {
+	GtkObject	parent;
+	gchar		*gtkbuilder_ui_file;
+	GtkWindow	*dialog;
+	GtkButton	*yes;
+	GtkButton	*no;
+} ThisObject;
 
-#include "program.h"
-#include "library.h"
+typedef struct {
+	GtkWidgetClass	parent_class;
+} ThisObjectClass;
 
-#define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
+extern ThisObject *this;
 
-/*
- *	Objects & values are now defined.  Now: time for methods.
- */
-Alacast *alacast_init(int argc, char **argv, const char **envp);
-void alacast_main(Alacast *alacast);
-void alacast_finalize(Alacast *Alacast);
+/********************************************************
+ *          Objects and handlers prototypes.            *
+ ********************************************************/
+#define	TYPE_OF_THIS_OBJECT		(this_object_get_type())
+#define	THIS_OBJECT(o)			(G_TYPE_CHECK_INSTANCE_CAST( (o), TYPE_OF_THIS_OBJECT, ThisObject ))
+#define	THIS_OBJECT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST( (k), TYPE_OF_THIS_OBJECT, ThisObjectClass ))
+#define	IS_THIS_OBJECT(o)		(G_TYPE_CHECK_INSTANCE_TYPE( (o), TYPE_OF_THIS_OBJECT) )
+#define	IS_THIS_OBJECT_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE( (k), TYPE_OF_THIS_OBJECT) )
+#define	THIS_OBJECT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS( (o), TYPE_OF_THIS_OBJECT, ThisObjectClass) )
 
+GType this_object_get_type( void ) G_GNUC_CONST;// Macro
+ThisObject *this_object_new( void );
+void this_object_show( GtkWindow *parent );
+
+G_END_DECLS
 #endif
-
 

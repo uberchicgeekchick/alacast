@@ -1,9 +1,9 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Bringing you the best online media to your desktop
- * with a beautiful, fun, & intuitive interface.
+ * Alacast's:
+ * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
  * website at: http://uberChicGeekChick.Com/?projects=Alacast
  *
@@ -13,9 +13,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -48,36 +48,65 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __ALACAST_GUI_H__
-#define __ALACAST_GUI_H__
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
 
-#include <glib.h>
-
+/********************************************************
+ *        Project headers.                              *
+ ********************************************************/
 #include "config.h"
+#include "gobject.h"
 
-#include "gui/pigment.h"
-#include "gui/clutter.h"
-#include "gui/gtk.h"
+/********************************************************
+ *         typedefs: objects, structures, and etc       *
+ ********************************************************/
 
-typedef enum {
-	GUI_CLI		=	0,
-	GUI_GTK		=	1702,
-	GUI_PIGMENT	=	1703,
-	GUI_CLUTTER	=	1704,
-} GUIToolkit;
 
-typedef struct {
-	GUIToolkit	toolkit;
-} GUIPrefs;
+/********************************************************
+ *          Objects and handlers.                       *
+ ********************************************************/
+static ThisObject *this=NULL;
 
-typedef struct{
-	GUIPrefs *prefs;
-	ClutterInitError clutter_init_error;
-}AlacastGUI;
+static void this_object_class_init( ThisObjectClass *klass );
+static void this_object_init( ThisObject *new_object );
+static void this_object_finalize( GObject *object );
 
-AlacastGUI *gui_init(int *argc, char ***argv);
-void gui_main(AlacastGUI *gui);
-void gui_finalize(AlacastGUI *gui);
 
-#endif
+/********************************************************
+ *          Method  & function prototypes               *
+ ********************************************************/
+
+
+ThisObject *this_object_class_new(void){
+	return g_object_new(TYPE_OF_NEW_OBJECT, NULL);
+}//new_object_class_new
+
+
+static void this_object_class_init( ThisObjectClass *klass ){
+	GObjectClass *this=G_OBJECT_CLASS(klass);
+	this->finalize=new_object_finalize;
+}//new_object_class_init
+
+static void this_object_init(ThisObject *this_object){
+	this=this_object;
+	g_signal_connect(this, "size_allocate", G_CALLBACK(this_object_resize), this);
+	g_signal_connect(this, "activated", G_CALLBACK(this_object_clicked), this);
+}//new_object_init
+
+static void this_object_create( GtkWindow *parent ){
+	this=g_new0(ThisObject, 1);
+	this->gtkbuilder_ui_file=g_strdup_printf( "%sthis-object.ui", PREFIX );
+}//void this_object_create
+
+void this_object_show( GtkWindow *parent ){
+	if(!this) this_object_create( parent );
+	
+	gtk_widget_show( this->window );
+}//void this_object_show
+
+static void this_object_finalize( GObject *object ){
+	ThisObjectPrivate *private=GET_PRIV(object);
+	G_OBJECT_CLASS(private_parent_class)->finalize(object);
+}//this_object_finalize
 

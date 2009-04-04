@@ -50,22 +50,25 @@
 
 #include	<glib.h>
 
-#include	"alacast.h"
+#include	"pigment.h"
+
+static void gui_pigment_main_quit(void);
 
 
 int gui_pigment_init(int *argc, char ***argv){
 	return pgm_init_check(argc, argv);
-}//gui_init
+}//gui_pigment_init
 
 void gui_pigment_main(void){
 	pgm_main();
-}//gui_main
+}//gui_pigment_main
 
 void gui_pigment_main_quit(void){
 	pgm_main_quit();
-}//gui_main_quit
+}//gui_pigment_main_quit
 
-void gui_pigment_deinit(void){
+void gui_pigment_finalize(void){
 	pgm_deinit();
-}//gui_deinit
+	gui_pigment_main_quit();
+}//gui_pigment_finalize
 

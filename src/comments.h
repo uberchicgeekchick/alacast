@@ -1,11 +1,11 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
+ * Greet-Tweet-Know is:
+ * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Greet-Tweet-Know
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +13,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -48,37 +48,27 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __ALACAST_H__
-#define __ALACAST_H__
+/**********************************************************************
+ *        System & library headers, eg #include <gdk/gdkkeysyms.h>    *
+ **********************************************************************/
 
-#include <glib.h>
-#include <glib/gprintf.h>
-#include <gdk/gdkkeysyms.h>
-#include <libgnome/libgnome.h>
 
-#include "config.h"
 
-#include "debug.h"
-#include "gui.h"
+/*********************************************************************
+ *        Objects, structures, and etc typedefs                      *
+ *********************************************************************/
 
-typedef struct{
-	AlacastDebug *debug;
-	AlacastGUI *gui;
-	AlacastProgram *program;
-}Alacast;
 
-#include "program.h"
-#include "library.h"
 
-#define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
 
-/*
- *	Objects & values are now defined.  Now: time for methods.
- */
-Alacast *alacast_init(int argc, char **argv, const char **envp);
-void alacast_main(Alacast *alacast);
-void alacast_finalize(Alacast *Alacast);
 
-#endif
+
+/********************************************************
+ *          Global method  & function prototypes        *
+ ********************************************************/
+
 
 

@@ -1,7 +1,46 @@
+
 subdir=src
 
+top_builddir=/projects/gtk/alacast
+top_srcddir=$(top_builddir)/src
+
+prefix=/programs/Alacast
+exec_prefix=/programs/Alacast
+localedir=/usr/share/locale
+
+bindir=${exec_prefix}/bin
+sbindir=${exec_prefix}/sbin
+libexecdir=${exec_prefix}/libexec
+datadir=${prefix}/share
+sysconfdir=${prefix}/etc
+sharedstatedir=${prefix}/com
+localstatedir=${prefix}/var
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+oldincludedir=/usr/include
+infodir=${prefix}/info
+mandir=${prefix}/man
+
+DEFINE_DIRS=					\
+	-DBUILDDIR="${top_builddir}"		\
+	-DSRCDDIR="${top_srcddir}"		\
+	-DPREFIX="${prefix}"			\
+	-DEXEC_PREFIX="${exec_prefix}"		\
+	-DLOCALEDIR="${localedir}"		\
+	-DBINDIR="${bindir}"			\
+	-DSBINDIR="${sbindir}"			\
+	-DLIBEXECDIR="${libexecdir}"		\
+	-DDATADIR="${datadir}"			\
+	-DETCDIR="${sysconfdir}"		\
+	-DSHAREDSTATEDIR="${sharedstatedir}"	\
+	-DLOCALSTATEDIR="${localstatedir}"	\
+	-DLIBDIR="${libdir}"			\
+	-DINCLUDEDIR="${includedir}"		\
+	-DOLDINCLUDEDIR="${oldincludedir}"	\
+	-DINFODIR="${infodir}"			\
+	-DMANDIR="${mandir}"
+
 Alacast_BIN=Alacast
-PREFIX=/programs/Alacast
 
 PACKAGES=	\
 	libnotify \
@@ -20,7 +59,6 @@ PACKAGES=	\
 	clutter-gst-0.8 >= 0.8.0 \
 	sqlite3 >= 3.6.11
 
-
 Alacast_CFLAGS=`../cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
 Alacast_LIBS=`pkg-config --libs "$(PACKAGES)"`
 
@@ -29,25 +67,20 @@ RELELATIVE_INCLUDE_DIRS=-I.. -I.
 C_STANDARD=gnu99
 CXX_STANDARD=gnu++0x
 
-CFLAGS=-Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -std=$(C_STANDARD) $(RELELATIVE_INCLUDE_DIRS)
+CFLAGS=-Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -std=$(C_STANDARD) $(RELELATIVE_INCLUDE_DIRS) $(DEFINE_DIRS)
 
-AM_CFLAGS =						\
-		-I$(top_srcdir)				\
-		-I${top_builddir}			\
-		-DBUILD_DIR=\""${top_builddir}"\"	\
-		-DPREFIX="\"$(prefix)"\"		\
-		-DSYSCONFDIR=\""$(sysconfdir)"\"	\
-		-DDATADIR=\""$(datadir)"\"              \
-		-DLIBDIR=\""$(libdir)"\"		\
-		-DLOCALEDIR=\""$(localedir)"\"
+AM_CFLAGS =				\
+		-I$(top_srcdir)		\
+		-I${top_builddir}
 
-SOURCES=			\
-	alacast.c		\
-	program.c		\
-	gui.c			\
-	gui/gtk.c		\
-	gui/clutter.c		\
-	gui/pigment.c		\
+SOURCES=				\
+	debug.h				\
+	alacast.c			\
+	program.c			\
+	gui.c				\
+	gui/gtk.c			\
+	gui/clutter.c			\
+	gui/pigment.c			\
 	main.c
 
 

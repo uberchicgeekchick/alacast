@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<interface>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="text">Alacast (c) 2009 Kaity G. B.
+
+Alacast is a social media browser.
+	Its is intended to make browsing, viewing, subscribing to, listening to, and watching all forms of social &amp; online media to be as easy as "watching tv".
+</property>
+  </object>
+  <object class="GtkUIManager" id="uimanager1">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup1">
+        <child>
+          <object class="GtkAction" id="menuitem5">
+            <property name="name">menuitem5</property>
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem11">
+            <property name="stock_id" translatable="yes">gtk-new</property>
+            <property name="name">imagemenuitem11</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem12">
+            <property name="stock_id" translatable="yes">gtk-open</property>
+            <property name="name">imagemenuitem12</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem13">
+            <property name="stock_id" translatable="yes">gtk-save</property>
+            <property name="name">imagemenuitem13</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem14">
+            <property name="stock_id" translatable="yes">gtk-save-as</property>
+            <property name="name">imagemenuitem14</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem15">
+            <property name="stock_id" translatable="yes">gtk-quit</property>
+            <property name="name">imagemenuitem15</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem6">
+            <property name="name">menuitem6</property>
+            <property name="label" translatable="yes">_Edit</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem16">
+            <property name="stock_id" translatable="yes">gtk-cut</property>
+            <property name="name">imagemenuitem16</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem17">
+            <property name="stock_id" translatable="yes">gtk-copy</property>
+            <property name="name">imagemenuitem17</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem18">
+            <property name="stock_id" translatable="yes">gtk-paste</property>
+            <property name="name">imagemenuitem18</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem19">
+            <property name="stock_id" translatable="yes">gtk-delete</property>
+            <property name="name">imagemenuitem19</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem7">
+            <property name="name">menuitem7</property>
+            <property name="label" translatable="yes">_View</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menu_help">
+            <property name="name">menu_help</property>
+            <property name="label" translatable="yes">_Help</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem20">
+            <property name="stock_id" translatable="yes">gtk-about</property>
+            <property name="name">imagemenuitem20</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar2">
+        <menu action="menuitem5">
+          <menuitem action="imagemenuitem11"/>
+          <menuitem action="imagemenuitem12"/>
+          <menuitem action="imagemenuitem13"/>
+          <menuitem action="imagemenuitem14"/>
+          <separator/>
+          <menuitem action="imagemenuitem15"/>
+        </menu>
+        <menu action="menuitem6">
+          <menuitem action="imagemenuitem16"/>
+          <menuitem action="imagemenuitem17"/>
+          <menuitem action="imagemenuitem18"/>
+          <menuitem action="imagemenuitem19"/>
+        </menu>
+        <menuitem action="menuitem7"/>
+        <menu action="menu_help">
+          <menuitem action="imagemenuitem20"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <object class="GnomeApp" id="alacast">
+    <property name="title" translatable="yes">Alacast</property>
+    <child internal-child="dock">
+      <object class="BonoboDock" id="alacast_canvas">
+        <child>
+          <object class="BonoboDockItem" id="dockitem1">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkMenuBar" constructor="uimanager1" id="menubar2">
+                <property name="visible">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="behavior">BONOBO_DOCK_ITEM_BEH_EXCLUSIVE | BONOBO_DOCK_ITEM_BEH_NEVER_VERTICAL | BONOBO_DOCK_ITEM_BEH_LOCKED</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+      </packing>
+    </child>
+    <child internal-child="appbar">
+      <object class="GnomeAppBar" id="alacast_status">
+        <property name="visible">True</property>
+        <property name="spacing">4</property>
+        <property name="has_progress">True</property>
+        <property name="has_status">True</property>
+      </object>
+      <packing>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkDialog" id="about">
+    <property name="border_width">5</property>
+    <property name="type">GTK_WINDOW_POPUP</property>
+    <property name="title" translatable="yes">About Alacast</property>
+    <property name="resizable">False</property>
+    <property name="window_position">GTK_WIN_POS_CENTER</property>
+    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <property name="has_separator">False</property>
+    <signal handler="gtk_widget_destroy" name="close"/>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="about_alacast">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkTextView" id="About_Text">
+            <property name="visible">True</property>
+            <property name="events"/>
+            <property name="editable">False</property>
+            <property name="wrap_mode">GTK_WRAP_WORD</property>
+            <property name="cursor_visible">False</property>
+            <property name="buffer">textbuffer1</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <child>
+              <object class="GtkButton" id="ok">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">Ok</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancel">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">Cancel</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="0">ok</action-widget>
+      <action-widget response="0">cancel</action-widget>
+    </action-widgets>
+  </object>
+</interface>

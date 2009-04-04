@@ -1,0 +1,49 @@
+dnl configure.ac for Alacast
+AC_INIT([alacast], [0.0.0a9], [http://uberChicGeekChick.Com/?projects=Alacast], [alacast])
+AC_COPYRIGHT([Copyright (C) 2009 Kaity G. B.])
+
+AC_CONFIG_HEADERS(config.h)
+AM_INIT_AUTOMAKE(AUTOMAKE_PACKAGE, AUTOMAKE_VERSION)
+
+AM_MAINTAINER_MODE
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_LIBTOOL
+AC_PROG_INTLTOOL
+
+AC_DEFAULT_PREFIX(/usr)
+
+dnl  --------------
+dnl | dependencies |
+dnl  --------------
+
+PKG_CHECK_MODULES(Alacast,[
+	libnotify
+	libgtkhtml-2.0
+	libsoup-2.4
+	gobject-2.0
+	libgnome-2.0
+	gthread-2.0
+	glib-2.0 >= 2.20.0
+	libpcre >= 7.8
+	libxml-2.0 >= 2.7.1
+	gtk+-2.0 >= 2.16.0
+	libglade-2.0 >= 2.6
+	gstreamer-0.10 >= 0.10.22
+	pigment-0.3 >= 0.3.15
+	clutter-0.8 >= 0.8.0
+	clutter-gst-0.8 >= 0.8.0
+	sqlite3 >= 3.6.11
+])
+
+AC_SUBST(Alacast_CFLAGS)
+AC_SUBST(Alacast_LIBS)
+
+dnl ---------------------------------------------------------------------------
+AC_OUTPUT([
+Makefile
+data/Makefile
+src/Makefile
+])
+

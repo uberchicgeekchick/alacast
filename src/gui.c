@@ -48,9 +48,7 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
-
-#include	"alacast.h"
+#include	"gui.h"
 
 
 static void gui_setup_pigment(AlacastGUI *gui);//setup_piment
@@ -59,6 +57,7 @@ static void gui_setup_gtk(AlacastGUI *gui);//setup_piment
 static void gui_setup_cli(AlacastGUI *gui);//setup_cli
 
 static void gui_bail(void);
+
 
 AlacastGUI *gui_init(int *argc, char ***argv){
 	AlacastGUI *gui=g_new0(AlacastGUI, 1);
@@ -101,6 +100,8 @@ static void gui_bail(void){
 	g_error("*FATAL ERROR*: %s was unable to initalize any graphical interface and cannot continue.\n", PACKAGE_NAME);
 }//gui_bail
 
+
+
 void gui_main(AlacastGUI *gui){
 	switch(gui->prefs->toolkit){
 		case GUI_PIGMENT:
@@ -118,33 +119,18 @@ void gui_main(AlacastGUI *gui){
 	}//switch
 }//gui_main
 
-void gui_main_quit(AlacastGUI *gui){
-	switch(gui->prefs->toolkit){
-		case GUI_PIGMENT:
-			gui_pigment_main_quit();
-			break;
-		case GUI_CLUTTER:
-			gui_clutter_main_quit();
-			break;
-		case GUI_GTK:
-			gui_gtk_main_quit();
-			break;
-		case GUI_CLI: default:
-			gui_bail();
-			break;
-	}//switch
-}//gui_main_quit
 
-void gui_deinit(AlacastGUI *gui){
+
+void gui_finalize(AlacastGUI *gui){
 	switch(gui->prefs->toolkit){
 		case GUI_PIGMENT:
-			gui_pigment_deinit();
+			gui_pigment_finalize();
 			break;
 		case GUI_GTK:
-			gui_gtk_deinit();
+			gui_gtk_finalize();
 			break;
 		case GUI_CLUTTER:
-			gui_clutter_deinit();
+			gui_clutter_finalize();
 		case GUI_CLI:
 		default:
 			break;
@@ -152,5 +138,5 @@ void gui_deinit(AlacastGUI *gui){
 	
 	g_free(gui->prefs);
 	g_free(gui);
-}//gui_deinit
+}//gui_finalize
 

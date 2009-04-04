@@ -45,9 +45,9 @@
  */
 
 
-#include "alacast.h"
+#include "program.h"
 
-GnomeProgram *alacast_program_init(int argc, char **argv){
+AlacastProgram *alacast_program_init(int argc, char **argv){
 	GOptionContext *option_context=g_option_context_new(PACKAGE_NAME);
 	GOptionEntry option_entries[]={
 		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY,
@@ -58,7 +58,7 @@ GnomeProgram *alacast_program_init(int argc, char **argv){
 	
 	g_option_context_add_main_entries(option_context, option_entries, NULL);
 	
-	GnomeProgram *alacast_gnome_program=gnome_program_init(
+	AlacastProgram *alacast_gnome_program=(AlacastProgram *)gnome_program_init(
 						PACKAGE_NAME, PACKAGE_VERSION,
 						LIBGNOME_MODULE,
 						argc, argv,
@@ -85,4 +85,10 @@ void alacast_program_deinit(Alacast *alacast){
 	alacast_program_main_quit(alacast);
 	/* final clean-up */
 }//alacast_program_deinit
+
+void alacast_program_finalize(Alacast *alacast){
+	/* methods to clean-up anything that uses gtk/gnome */
+	alacast_program_deinit(alacast);
+	/* final clean-up */
+}//alacast_program_finalize
 

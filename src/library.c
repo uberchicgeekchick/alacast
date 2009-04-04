@@ -49,8 +49,6 @@
  */
 
 
-#include	"config.h"
-#include	"alacast.h"
 #include	"library.h"
 
 

@@ -24,7 +24,7 @@ if ( "${?1}" != "0" && "${1}" != "" ) then
 	endsw
 endif
 
-cd `dirname "${0}"`/../../data/xml/opml
+cd `dirname "${0}"`/../data/xml/opml
 source set_catalogs.tcsh
 
 foreach podcast_catalog ( ${catalogs} )

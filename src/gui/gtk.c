@@ -50,22 +50,24 @@
 
 #include	<glib.h>
 
-#include	"alacast.h"
+#include	"gtk.h"
 
+static void gui_gtk_main_quit(void);
 
 int gui_gtk_init(int *argc, char ***argv){
 	return gtk_init_check(argc, argv);
-}//gui_init
+}//gui_gtk_init
 
 void gui_gtk_main(void){
 	gtk_main();
-}//gui_main
+}//gui_gtk_main
 
-void gui_gtk_main_quit(void){
+static void gui_gtk_main_quit(void){
 	gtk_main_quit();
-}//gui_main_quit
+}//gui_gtk_main_quit
 
-void gui_gtk_deinit(void){
+void gui_gtk_finalize(void){
+	gui_gtk_main_quit();
 	return;
-}//gui_deinit
+}//gui_gtk_finalize
 

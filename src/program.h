@@ -51,13 +51,20 @@
 #ifndef __ALACAST_PROGRAM_H__
 #define __ALACAST_PROGRAM_H__
 
-#include "alacast.h"
+#include <glib.h>
+#include <glib/gprintf.h>
+#include <gdk/gdkkeysyms.h>
+#include <libgnome/libgnome.h>
 
+#include "config.h"
 
-GnomeProgram *alacast_program_init(int argc, char **argv);
+typedef GnomeProgram AlacastProgram;
+
+AlacastProgram *alacast_program_init(int argc, char **argv);
 void alacast_program_main(Alacast *alacast);
 void alacast_program_main_quit(Alacast *alacast);
 void alacast_program_deinit(Alacast *alacast);
+void alacast_program_finalize(Alacast *alacast);
 
 #endif
 

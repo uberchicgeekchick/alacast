@@ -53,5 +53,7 @@
 
 #include	<libxml/globals.h>
 
+#include	"config.h"
+
 #endif
 

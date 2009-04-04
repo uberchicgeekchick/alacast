@@ -53,12 +53,12 @@
 #include "alacast.h"
 
 
-int main(int argc, char **argv){
-	Alacast *alacast=alacast_init(argc, argv);
+int main(int argc, char **argv, const char **envp){
+	Alacast *alacast=alacast_init(argc, argv, envp);
 	
 	alacast_main(alacast);
 	
-	alacast_deinit(alacast);
+	alacast_finalize(alacast);
 	
 	return 0;
 }//main

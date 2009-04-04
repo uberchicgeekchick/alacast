@@ -50,22 +50,24 @@
 
 #include	<glib.h>
 
-#include	"alacast.h"
+#include	"clutter.h"
+
+static void gui_clutter_main_quit(void);
 
 
 ClutterInitError gui_clutter_init(int *argc, char ***argv){
 	return clutter_init(argc, argv);
-}//gui_init
+}//gui_clutter_init
 
 void gui_clutter_main(void){
 	clutter_main();
-}//gui_main
+}//gui_clutter_main
 
 void gui_clutter_main_quit(void){
 	clutter_main_quit();
-}//gui_main_quit
+}//gui_clutter_main_quit
 
-void gui_clutter_deinit(void){
-	return;
-}//gui_deinit
+void gui_clutter_finalize(void){
+	gui_clutter_main_quit(void);
+}//gui_clutter_finalize
 
