@@ -68,6 +68,8 @@
  ********************************************************/
 static ThisObject *this=NULL;
 
+G_DEFINE_TYPE(ThisObject, this, G_TYPE_OBJECT);
+
 static void this_object_class_init( ThisObjectClass *klass );
 static void this_object_init( ThisObject *new_object );
 static void this_object_finalize( GObject *object );

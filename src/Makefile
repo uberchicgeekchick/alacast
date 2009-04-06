@@ -1,5 +1,6 @@
 
 subdir=src
+SUBDIRS=
 
 top_builddir=/projects/gtk/alacast
 top_srcddir=$(top_builddir)/src
@@ -54,48 +55,72 @@ PACKAGES=	\
 	libxml-2.0 >= 2.7.1 \
 	gtk+-2.0 >= 2.16.0 \
 	gstreamer-0.10 >= 0.10.22 \
-	pigment-0.3 >= 0.3.15 \
 	clutter-0.8 >= 0.8.0 \
 	clutter-gst-0.8 >= 0.8.0 \
 	sqlite3 >= 3.6.11
 
-Alacast_CFLAGS=`../cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
-Alacast_LIBS=`pkg-config --libs "$(PACKAGES)"`
+PACKAGES_CFLAGS=`../cflags:convert:-I_to_-isystem.tcsh "$(PACKAGES)"`
+PACKAGES_LIBS=`pkg-config --libs "$(PACKAGES)"`
 
 RELELATIVE_INCLUDE_DIRS=-I.. -I.
 
 C_STANDARD=gnu99
 CXX_STANDARD=gnu++0x
 
-CFLAGS=-Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-default -Wswitch-enum -O3 -std=$(C_STANDARD) $(RELELATIVE_INCLUDE_DIRS) $(DEFINE_DIRS)
+Alacast_CFLAGS=-std=${C_STANDARD} -Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-enum -O3 ${RELELATIVE_INCLUDE_DIRS} $(DEFINE_DIRS)
 
-AM_CFLAGS =				\
-		-I$(top_srcdir)		\
+AM_CFLAGS=				\
+		-I${top_srcdir}		\
 		-I${top_builddir}
 
 SOURCES=				\
-	debug.h				\
-	alacast.c			\
+	debug.c				\
 	program.c			\
+	library.c			\
 	gui.c				\
 	gui/gtk.c			\
 	gui/clutter.c			\
-	gui/pigment.c			\
+	alacast.c			\
 	main.c
 
 
 
-Alacast_BIN:
-	gcc $(CFLAGS) $(AM_CFLAGS) $(Alacast_CFLAGS) $(Alacast_LIBS) --std=$(C_STANDARD) -o $(Alacast_BIN) $(SOURCES)
+alacast-all:
+	gcc $(CFLAGS) $(Alacast_CFLAGS) $(AM_CFLAGS) $(PACKAGES_CFLAGS) $(PACKAGES_LIBS) --std=$(C_STANDARD) -o $(Alacast_BIN) $(SOURCES)
 
-all:	$(Alacast_BIN)
-
-install:
+alacast-install:
 	mv ./$(Alacast_BIN) $(PREFIX)/bin/$(Alacast_BIN)
 
-distclean:
+alacast-uninstall:
+	rm $(PREFIX)/bin/$(Alacast_BIN)
+
+alacast-distclean:
 	-rm -f ./$(Alacast_BIN)
 
-clean: distclean
+alacast-clean: alacast-distclean
 
+subdir=src
+SUBDIRS=
+
+all-recursive install-recursive uninstall-recursive distclean-recursive clean-recursive:
+	@failcom='exit 1'; \
+	for f in x $$MAKEFLAGS; do \
+	case $$f in \
+	*=* | --[!k]*);; \
+	*k*) failcom='fail=yes';; \
+	esac; \
+	done; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	echo "Making $$target in $$subdir"; \
+	(cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$target) \
+	|| eval $$failcom; \
+	done; \
+	test -z "$$fail"
+
+all: all-recursive alacast-all
+install: install-recursive alacast-install
+uninstall: uninstall-recursive alacast-uninstall
+clean: clean-recursive alacast-clean
+distclean: distclean-recursive alacast-distclean
 

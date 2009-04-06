@@ -58,7 +58,7 @@
 #include <strings.h>
 #include <glib.h>
 #include <glib/gprintf.h>
-#include <glib.h>
+#include <gtk.h>
 
 
 #include "config.h"
@@ -70,10 +70,10 @@
 G_BEGIN_DECLS
 
 typedef struct {
-	gboolean debug_inited=FALSE;
-	gboolean debug_enabled=FALSE;
-	gboolean debug_all=FALSE;
-	gchar **debug_envp;
+	gboolean	inited;
+	gboolean	enabled;
+	gboolean	all;
+	gchar		**envp;
 } AlacastDebug;
 
 
@@ -85,11 +85,11 @@ typedef struct {
 #elif defined(DISABLE_DEBUG)
 #	define	debug(...)
 #elif defined(G_HAVE_ISO_VARARGS)
-#	define	debug(...)	debug_printf(__VA_ARGS__)
+#	define	debug(d, m, ...)	debug_main(*d, *m, __VA_ARGS__)
 #elif defined(G_HAVE_GNUC_VARARGS)
-#	define	debug(fmt...)	debug_printf(fmt)
+#	define	debug(d, m, fmt...)	debug_main(*d, *m, fmt)
 #else
-#	define	debug	debug_printf
+#	define	debug	debug_main
 #endif
 
 
@@ -97,9 +97,10 @@ typedef struct {
 /********************************************************
  *          Global method  & function prototypes        *
  ********************************************************/
-AlacastDebug *debug_init(const char ***envp);
-void debug_printf( const gchar *msg, ... );
-void debug_deinit(void);
+AlacastDebug *debug_init(const char **envp);
+void debug_main( AlacastDebug *debug, const gchar *msg, ... );
+void debug_deinit( AlacastDebug *debug );
+void debug_main_quit( AlacastDebug *debug );
 
 
 G_END_DECLS

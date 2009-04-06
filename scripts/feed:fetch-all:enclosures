@@ -42,7 +42,7 @@ wget --quiet -O './00-feed.xml' "${1}"
 if( ! ${?quiet} ) printf "Finding feed's title.\n"
 set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
 
-f ( ! -d "${title}" ) mkdir -p "${title}"
+if ( ! -d "${title}" ) mkdir -p "${title}"
 cd "${title}"
 
 set download_log = "./00-"`basename "${0}"`".log"

@@ -58,7 +58,7 @@
 
 ClutterInitError gui_clutter_init(int *argc, char ***argv);
 void gui_clutter_main(void);
-void gui_clutter_finalize(void);
+void gui_clutter_main_quit(void);
 
 #endif
 

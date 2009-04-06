@@ -64,39 +64,40 @@
 /********************************************************
  *          Static method & function prototypes         *
  ********************************************************/
-static gboolean debug_init_check(void);
+static gboolean debug_init_check( AlacastDebug *debug, const char *envp );
 
 
 
 /********************************************************
  *          My art, code, & programming.                *
  ********************************************************/
-AlacastDebug *debug_init(***envp){
+AlacastDebug *debug_init(const char **envp){
 	AlacastDebug *debug=g_new(AlacastDebug, 1);
 	
+	debug->enabled=FALSE;
 	for(int i=0; envp && envp[i]; i++)
-		if(!(strcasecmp("ALACAST_DEBUG", debug_envp[i])))
-			debug_inited=debug_init(envp);
+		if(!(strcasecmp("ALACAST_DEBUG", envp[i])))
+			debug->enabled=debug_init_check( debug, envp[i] );
 	return debug;
 }//debug_init
 
-static void debug_init_check(const char **envp){
-	debug_envp=g_strsplit_set(envp, ":", 0);
+static gboolean debug_init_check( AlacastDebug *debug, const char *envp ){
+	debug->envp=g_strsplit_set(envp, ":", 0);
 
-	for(int i=0; debug_envp && debug_envp[i]; )
-		if(!(strcasecmp( "all", debug_envp[i++] ))) {
-			debug_all=TRUE;
+	for(int i=0; debug->envp[i] && debug->envp[i]; )
+		if(!(strcasecmp( "all", debug->envp[i++] ))) {
+			debug->all=TRUE;
 			break;
 		}
 	
 	return TRUE;
 }//debug_init_check
 
-void debug_printf(const gchar *msg, ...){
+void debug_main( AlacastDebug *debug, const gchar *msg, ...){
 	g_return_if_fail(msg != NULL);
 
-	for(int i=0; debug_envp && debug_envp[i]; i++) {
-		if( debug_all || (strcasecmp(__FILE__, debug_envp[i])) ) {
+	for(int i=0; debug->envp && debug->envp[i]; i++) {
+		if( debug->all || (strcasecmp(__FILE__, debug->envp[i])) ) {
 			g_printf( "%s: ", __FILE__ );
 
 			va_list args;
@@ -110,8 +111,15 @@ void debug_printf(const gchar *msg, ...){
 	}
 }
 
-void debug_deinit(void){
-	g_strfreev( debug_envp );
+void debug_deinit( AlacastDebug *debug ){
+	g_strfreev( debug->envp );
+}//debug_deinit
+
+
+
+void debug_main_quit( AlacastDebug *debug ){
+	debug_deinit( debug );
+	g_free(debug);
 }//debug_deinit
 
 

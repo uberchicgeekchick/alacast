@@ -86,9 +86,3 @@ void alacast_program_deinit(Alacast *alacast){
 	/* final clean-up */
 }//alacast_program_deinit
 
-void alacast_program_finalize(Alacast *alacast){
-	/* methods to clean-up anything that uses gtk/gnome */
-	alacast_program_deinit(alacast);
-	/* final clean-up */
-}//alacast_program_finalize
-

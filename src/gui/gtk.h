@@ -58,7 +58,7 @@
 
 int gui_gtk_init(int *argc, char ***argv);
 void gui_gtk_main(void);
-void gui_gtk_finalize(void);
+void gui_gtk_main_quit(void);
 
 #endif
 

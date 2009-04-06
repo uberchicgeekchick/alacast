@@ -55,7 +55,7 @@
 
 Alacast *alacast_init(int argc, char **argv, const char **envp){
 	Alacast *alacast=g_new0(Alacast, 1);
-	alacast->debug=debug_init(&envp);
+	alacast->debug=debug_init(envp);
 	alacast->program=alacast_program_init(argc, argv);
 	alacast->gui=gui_init(&argc, &argv);
 	return alacast;
@@ -65,9 +65,9 @@ void alacast_main(Alacast *alacast){
 	gui_main(alacast->gui);
 }//alacast_main
 
-void alacast_finalize(Alacast *alacast){
-	debug_finalize(alacast->debug);
-	gui_finalize(alacast->gui);
+void alacast_main_quit(Alacast *alacast){
+	debug_main_quit(alacast->debug);
+	gui_main_quit(alacast->gui);
 	g_free(alacast);
-}//alacast_finalize
+}//alacast_main_quit
 

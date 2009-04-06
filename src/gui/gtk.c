@@ -52,7 +52,6 @@
 
 #include	"gtk.h"
 
-static void gui_gtk_main_quit(void);
 
 int gui_gtk_init(int *argc, char ***argv){
 	return gtk_init_check(argc, argv);
@@ -62,12 +61,7 @@ void gui_gtk_main(void){
 	gtk_main();
 }//gui_gtk_main
 
-static void gui_gtk_main_quit(void){
+void gui_gtk_main_quit(void){
 	gtk_main_quit();
 }//gui_gtk_main_quit
-
-void gui_gtk_finalize(void){
-	gui_gtk_main_quit();
-	return;
-}//gui_gtk_finalize
 

@@ -52,8 +52,6 @@
 
 #include	"clutter.h"
 
-static void gui_clutter_main_quit(void);
-
 
 ClutterInitError gui_clutter_init(int *argc, char ***argv){
 	return clutter_init(argc, argv);
@@ -66,8 +64,4 @@ void gui_clutter_main(void){
 void gui_clutter_main_quit(void){
 	clutter_main_quit();
 }//gui_clutter_main_quit
-
-void gui_clutter_finalize(void){
-	gui_clutter_main_quit(void);
-}//gui_clutter_finalize
 

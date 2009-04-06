@@ -55,15 +55,13 @@
 
 #include "config.h"
 
-#include "gui/pigment.h"
 #include "gui/clutter.h"
 #include "gui/gtk.h"
 
 typedef enum {
 	GUI_CLI		=	0,
 	GUI_GTK		=	1702,
-	GUI_PIGMENT	=	1703,
-	GUI_CLUTTER	=	1704,
+	GUI_CLUTTER	=	1703
 } GUIToolkit;
 
 typedef struct {
@@ -77,7 +75,7 @@ typedef struct{
 
 AlacastGUI *gui_init(int *argc, char ***argv);
 void gui_main(AlacastGUI *gui);
-void gui_finalize(AlacastGUI *gui);
+void gui_main_quit(AlacastGUI *gui);
 
 #endif
 

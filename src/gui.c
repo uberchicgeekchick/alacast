@@ -51,7 +51,6 @@
 #include	"gui.h"
 
 
-static void gui_setup_pigment(AlacastGUI *gui);//setup_piment
 static void gui_setup_clutter(AlacastGUI *gui);//setup_piment
 static void gui_setup_gtk(AlacastGUI *gui);//setup_piment
 static void gui_setup_cli(AlacastGUI *gui);//setup_cli
@@ -63,9 +62,7 @@ AlacastGUI *gui_init(int *argc, char ***argv){
 	AlacastGUI *gui=g_new0(AlacastGUI, 1);
 	gui->prefs=g_new0(GUIPrefs, 1);
 	
-	if( (gui_pigment_init(argc, argv)) )
-		gui_setup_pigment(gui);
-	else if( (gui->clutter_init_error=gui_clutter_init(argc, argv)) )
+	if( (gui->clutter_init_error=gui_clutter_init(argc, argv)) )
 		gui_setup_clutter(gui);
 	else if( (gui_gtk_init(argc, argv)) )
 		gui_setup_gtk(gui);
@@ -79,10 +76,6 @@ AlacastGUI *gui_init(int *argc, char ***argv){
 	
 	return gui;
 }//gui_init
-
-static void gui_setup_pigment(AlacastGUI *gui){
-	gui->prefs->toolkit=GUI_PIGMENT;
-}//gui_setup_piment
 
 static void gui_setup_clutter(AlacastGUI *gui){
 	gui->prefs->toolkit=GUI_CLUTTER;
@@ -104,9 +97,6 @@ static void gui_bail(void){
 
 void gui_main(AlacastGUI *gui){
 	switch(gui->prefs->toolkit){
-		case GUI_PIGMENT:
-			gui_pigment_main();
-			break;
 		case GUI_CLUTTER:
 			gui_clutter_main();
 			break;
@@ -121,16 +111,13 @@ void gui_main(AlacastGUI *gui){
 
 
 
-void gui_finalize(AlacastGUI *gui){
+void gui_main_quit(AlacastGUI *gui){
 	switch(gui->prefs->toolkit){
-		case GUI_PIGMENT:
-			gui_pigment_finalize();
-			break;
 		case GUI_GTK:
-			gui_gtk_finalize();
+			gui_gtk_main_quit();
 			break;
 		case GUI_CLUTTER:
-			gui_clutter_finalize();
+			gui_clutter_main_quit();
 		case GUI_CLI:
 		default:
 			break;

@@ -58,7 +58,7 @@ int main(int argc, char **argv, const char **envp){
 	
 	alacast_main(alacast);
 	
-	alacast_finalize(alacast);
+	alacast_main_quit(alacast);
 	
 	return 0;
 }//main

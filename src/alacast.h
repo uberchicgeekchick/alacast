@@ -60,15 +60,17 @@
 
 #include "debug.h"
 #include "gui.h"
+#include "library.h"
+
+typedef struct GnomeProgram AlacastProgram;
 
 typedef struct{
-	AlacastDebug *debug;
-	AlacastGUI *gui;
-	AlacastProgram *program;
-}Alacast;
+	AlacastDebug	*debug;
+	AlacastGUI	*gui;
+	AlacastProgram	*program;
+} Alacast;
 
 #include "program.h"
-#include "library.h"
 
 #define ABOUT "Alacast is an online media brewser for GNOME.\nAlacast brings the best online media to one's desktop.\nAlacast uses a beautiful, fun, & intuitive interface."
 
@@ -77,7 +79,7 @@ typedef struct{
  */
 Alacast *alacast_init(int argc, char **argv, const char **envp);
 void alacast_main(Alacast *alacast);
-void alacast_finalize(Alacast *Alacast);
+void alacast_main_quit(Alacast *Alacast);
 
 #endif
 
