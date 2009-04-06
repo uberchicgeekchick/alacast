@@ -53,21 +53,27 @@
 
 #include	"alacast.h"
 
+Alacast *alacast;
+
 Alacast *alacast_init(int argc, char **argv, const char **envp){
-	Alacast *alacast=g_new0(Alacast, 1);
+	alacast=g_new0(Alacast, 1);
 	alacast->debug=debug_init(envp);
 	alacast->program=alacast_program_init(argc, argv);
 	alacast->gui=gui_init(&argc, &argv);
 	return alacast;
 }//alacast_init
 
-void alacast_main(Alacast *alacast){
+void alacast_main(void){
 	gui_main(alacast->gui);
 }//alacast_main
 
-void alacast_main_quit(Alacast *alacast){
+void alacast_main_quit(void){
 	debug_main_quit(alacast->debug);
 	gui_main_quit(alacast->gui);
 	g_free(alacast);
 }//alacast_main_quit
+
+void alacast_deinit(void){
+	alacast_main_quit();
+}//alacast_deinit
 

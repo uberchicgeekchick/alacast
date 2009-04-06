@@ -46,6 +46,7 @@
 
 
 #include "program.h"
+#include "alacast.h"
 
 AlacastProgram *alacast_program_init(int argc, char **argv){
 	GOptionContext *option_context=g_option_context_new(PACKAGE_NAME);
@@ -57,32 +58,26 @@ AlacastProgram *alacast_program_init(int argc, char **argv){
 	};
 	
 	g_option_context_add_main_entries(option_context, option_entries, NULL);
+
+	gchar *program_name=NULL;
 	
-	AlacastProgram *alacast_gnome_program=(AlacastProgram *)gnome_program_init(
-						PACKAGE_NAME, PACKAGE_VERSION,
+	AlacastProgram *program=(AlacastProgram *)gnome_program_init(
+						(program_name=g_strdup_printf("%s_program", PACKAGE_NAME)), PACKAGE_VERSION,
 						LIBGNOME_MODULE,
 						argc, argv,
 						GNOME_PARAM_GOPTION_CONTEXT, option_context,
 						GNOME_PARAM_NONE
 	);
 	
-	return alacast_gnome_program;
+	g_free( program_name );
+	
+	return program;
 }//alacast_program_init
 
-void alacast_program_main(Alacast *alacast){
-	gui_main(alacast->gui);
-}//alacast_program_mainsst
-
-
-void alacast_program_main_quit(Alacast *alacast){
-	/* methods to clean-up anything that uses gtk/gnome */
-	gui_main_quit(alacast->gui);
-}//alacast_gtk_quit
-
 /* This method is automatically called when the program exits with Alacast using gnome_program_init */
-void alacast_program_deinit(Alacast *alacast){
+void alacast_program_deinit(void){
 	/* methods to clean-up anything that uses gtk/gnome */
-	alacast_program_main_quit(alacast);
+	alacast_deinit();
 	/* final clean-up */
 }//alacast_program_deinit
 

@@ -58,14 +58,10 @@
 
 #include "config.h"
 
-//typedef struct GnomeProgram AlacastProgram;
-
-#include "alacast.h"
+typedef struct GnomeProgram AlacastProgram;
 
 AlacastProgram *alacast_program_init(int argc, char **argv);
-void alacast_program_main(Alacast *alacast);
-void alacast_program_main_quit(Alacast *alacast);
-void alacast_program_deinit(Alacast *alacast);
+void alacast_program_deinit(void);
 
 #endif
 

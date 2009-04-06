@@ -54,11 +54,11 @@
 
 
 int main(int argc, char **argv, const char **envp){
-	Alacast *alacast=alacast_init(argc, argv, envp);
+	alacast=alacast_init(argc, argv, envp);
 	
-	alacast_main(alacast);
+	alacast_main();
 	
-	alacast_main_quit(alacast);
+	alacast_main_quit();
 	
 	return 0;
 }//main
