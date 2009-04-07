@@ -65,3 +65,6 @@ void gui_clutter_main_quit(void){
 	clutter_main_quit();
 }//gui_clutter_main_quit
 
+void gui_clutter_deinit(void){
+	gui_clutter_main_quit();
+}//gui_clutter_deinit

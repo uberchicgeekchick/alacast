@@ -55,6 +55,7 @@ PACKAGES=	\
 	libxml-2.0 >= 2.7.1 \
 	gtk+-2.0 >= 2.16.0 \
 	gstreamer-0.10 >= 0.10.22 \
+	pigment-0.3 >= 0.3.15 \
 	clutter-0.8 >= 0.8.0 \
 	clutter-gst-0.8 >= 0.8.0 \
 	sqlite3 >= 3.6.11
@@ -78,6 +79,7 @@ SOURCES=				\
 	program.c			\
 	library.c			\
 	gui.c				\
+	gui/pigment.c			\
 	gui/gtk.c			\
 	gui/clutter.c			\
 	alacast.c			\

@@ -50,21 +50,23 @@
 
 #include	<glib.h>
 
-#include	"gtk.h"
+#include	"pigment.h"
 
 
-int gui_gtk_init(int *argc, char ***argv){
-	return gtk_init_check(argc, argv);
-}//gui_gtk_init
+int gui_pigment_init(int *argc, char ***argv){
+	return pgm_init_check(argc, argv);
+}//gui_pigment_init
 
-void gui_gtk_main(void){
-	gtk_main();
-}//gui_gtk_main
+void gui_pigment_main(void){
+	pgm_main();
+}//gui_pigment_main
 
-void gui_gtk_main_quit(void){
-	gtk_main_quit();
-}//gui_gtk_main_quit
+void gui_pigment_main_quit(void){
+	pgm_main_quit();
+}//gui_pigment_main_quit
 
-void gui_gtk_deinit(void){
-	gui_gtk_main_quit();
-}//gui_gtk_deinit
+void gui_pigment_deinit(void){
+	gui_pigment_main_quit();
+	pgm_deinit();
+}//gui_pigment_finalize
+

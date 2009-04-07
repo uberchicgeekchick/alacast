@@ -48,23 +48,18 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
+#ifndef __PIGMENT_GUI_H__
+#define __PIGMENT_GUI_H__
 
-#include	"gtk.h"
+#include <glib.h>
 
+#include "config.h"
+#include <pgm/pgm.h>
 
-int gui_gtk_init(int *argc, char ***argv){
-	return gtk_init_check(argc, argv);
-}//gui_gtk_init
+int gui_pigment_init(int *argc, char ***argv);
+void gui_pigment_main(void);
+void gui_pigment_main_quit(void);
+void gui_pigment_deinit(void);
 
-void gui_gtk_main(void){
-	gtk_main();
-}//gui_gtk_main
+#endif
 
-void gui_gtk_main_quit(void){
-	gtk_main_quit();
-}//gui_gtk_main_quit
-
-void gui_gtk_deinit(void){
-	gui_gtk_main_quit();
-}//gui_gtk_deinit
