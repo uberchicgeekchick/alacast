@@ -1,7 +1,10 @@
-dnl Process this file with autoconf to produce a configure script.
-dnl Created by Anjuta application wizard.
+dnl  --------------------------
+dnl | configure.ac for Alacast |
+dnl  --------------------------
 
-AC_INIT(alacast, 0.0.0a9)
+AC_INIT(alacast, 0.0.0a9, http://uberChicGeekChick.Com/?projects=Alacast, alacast)
+AC_COPYRIGHT([Copyright (C) 2009 Kaity G. B.])
+AC_DEFAULT_PREFIX(/usr)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AC_CONFIG_HEADERS([config.h])
@@ -12,64 +15,48 @@ AC_PROG_CC
 AM_PROG_CC_STDC
 AC_HEADER_STDC
 
-
-
-
-dnl ***************************************************************************
-dnl Internatinalization
-dnl ***************************************************************************
+dnl  ---------------------
+dnl | Internatinalization |
+dnl  ---------------------
 GETTEXT_PACKAGE=alacast
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [GETTEXT package name])
 AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.35.0])
 
-
-
 AM_PROG_LIBTOOL
 
 
+dnl  --------------
+dnl | Dependencies |
+dnl  --------------
 
-PKG_CHECK_MODULES(ALACAST, [gtk+-2.0 >= 2.8 libglade-2.0 >= 2.6.0 clutter-0.8 clutter-gst-0.8 gtk+-2.0 libsoup-2.4])
+PKG_CHECK_MODULES(Alacast,[
+	libnotify
+	libgtkhtml-2.0
+	libsoup-2.4
+	gobject-2.0
+	libgnome-2.0
+	gthread-2.0
+	glib-2.0 >= 2.20.0
+	libpcre >= 7.8
+	libxml-2.0 >= 2.7.1
+	gtk+-2.0 >= 2.16.0
+	libglade-2.0 >= 2.6
+	gstreamer-0.10 >= 0.10.22
+	pigment-0.3 >= 0.3.15
+	clutter-0.8 >= 0.8.0
+	clutter-gst-0.8 >= 0.8.0
+	sqlite3 >= 3.6.11
+])
 
+AC_SUBST(Alacast_CFLAGS)
+AC_SUBST(Alacast_LIBS)
 
-
-##################################################
-# Check for gtk-doc.
-##################################################
-AC_ARG_WITH(html-dir, [  --with-html-dir=PATH path to installed docs ])
-if test "x$with_html_dir" = "x" ; then
-  HTML_DIR='${datadir}/gtk-doc/html'
-else
-  HTML_DIR=$with_html_dir
-fi
-AC_SUBST(HTML_DIR)
-
-gtk_doc_min_version=1.0
-AC_MSG_CHECKING([gtk-doc version >= $gtk_doc_min_version])
-if pkg-config --atleast-version=$gtk_doc_min_version gtk-doc; then
-  AC_MSG_RESULT(yes)
-  GTKDOC=true
-else
-  AC_MSG_RESULT(no)
-  GTKDOC=false
-fi
-dnl Let people disable the gtk-doc stuff.
-AC_ARG_ENABLE(gtk-doc,
-              [  --enable-gtk-doc  Use gtk-doc to build documentation [default=auto]],
-	      enable_gtk_doc="$enableval", enable_gtk_doc=auto)
-if test x$enable_gtk_doc = xauto ; then
-  if test x$GTKDOC = xtrue ; then
-    enable_gtk_doc=yes
-  else
-    enable_gtk_doc=no
-  fi
-fi
-AM_CONDITIONAL(ENABLE_GTK_DOC, test x$enable_gtk_doc = xyes)
-
-
+dnl ---------------------------------------------------------------------------
 AC_OUTPUT([
 Makefile
+data/Makefile
 src/Makefile
-po/Makefile.in
 ])
+

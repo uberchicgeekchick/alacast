@@ -2,7 +2,7 @@
 set my_editor = "`printf "\""${0}"\"" | sed 's/.*\/\([^\.]\+\).*/\1/g'`"
 switch ( "${my_editor}" )
 case "connectED":
-	case "gedit":
+case "gedit":
 	breaksw
 case "vi":
 case "vim":
