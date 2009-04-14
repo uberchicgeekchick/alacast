@@ -1,11 +1,11 @@
 /*
  * Alacast is an online media brewser for GNOME.
- * Bringing you the best online media to your desktop
+ * Alacast brings the best online media to one's desktop
  * with a beautiful, fun, & intuitive interface.
  *
  * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=Alacast
+ * website at: http://uberChicGeekChick.Com/?projects=connectED
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -48,37 +48,20 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#ifndef __ALACAST_GUI_H__
-#define __ALACAST_GUI_H__
+#include	<glib.h>
 
-#include <glib.h>
+#include	"clutter.h"
 
-#include "config.h"
 
-#include "gui/pigment.h"
-#include "gui/clutter.h"
-#include "gui/gtk.h"
+ClutterInitError gui_clutter_init(int *argc, char ***argv){
+	return clutter_init(argc, argv);
+}//gui_clutter_init
 
-typedef enum {
-	GUI_CLI		=	0,
-	GUI_GTK		=	1702,
-	GUI_PIGMENT	=	1703,
-	GUI_CLUTTER	=	1704,
-} GUIToolkit;
+void gui_clutter_main(void){
+	clutter_main();
+}//gui_clutter_main
 
-typedef struct {
-	GUIToolkit	toolkit;
-} GUIPrefs;
-
-typedef struct{
-	GUIPrefs *prefs;
-	ClutterInitError clutter_init_error;
-}AlacastGUI;
-
-AlacastGUI *gui_init(int *argc, char ***argv);
-void gui_main(AlacastGUI *gui);
-void gui_main_quit(AlacastGUI *gui);
-void gui_deinit(AlacastGUI *gui);
-
-#endif
+void gui_clutter_main_quit(void){
+	clutter_main_quit();
+}//gui_clutter_main_quit
 
