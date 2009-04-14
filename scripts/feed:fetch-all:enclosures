@@ -13,12 +13,12 @@ case "newest":
 	set first_episodes = "1";
 	breaksw
 
-case "get-first":
+case "first":
 	shift;
 	set first_episodes = "${value}";
 	breaksw
 
-case "get-last":
+case "last":
 	shift;
 	set last_episodes = "${value}";
 	breaksw

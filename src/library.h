@@ -1,11 +1,11 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
+ * Alacast is:
+ * 	Copyright (c) 2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +13,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -47,15 +47,40 @@
  * select a default license for their data.  All of the Software's data pertaining to each
  * User must be fully accessible, exportable, and deletable to that User.
  */
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
+#ifndef __HEADER_H__
+#define __HEADER_H__
 
-#ifndef __LIBRARY_H__
-#define __LIBRARY_H__
+/********************************************************
+ *        System & library headers.                     *
+ ********************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <glib.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <gdk/gdk.h>
+#include <gdk/gdkkeysyms.h>
 
-#include	<libxml/globals.h>
-#include	<libxml/parser.h>
-#include	<libxml/tree.h>
+/********************************************************
+ *        Objects, structures, and etc typedefs         *
+ ********************************************************/
+typedef struct {
+} NewType;
 
-#include	"config.h"
+/********************************************************
+ *          Global method  & function prototypes        *
+ ********************************************************/
+NewType *newtype_init(int argc, char **argv, const char **envp);
+void newtype_main(NewType *newtype);
+
+NewType *newtype_factory(void);
+void newtype_destroy(void);
+
+void newtype_main_quit(NewType *newtype);
+void newtype_deinit(NewType *newtype);
 
 #endif
-

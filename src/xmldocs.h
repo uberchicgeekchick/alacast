@@ -1,11 +1,11 @@
+/* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
+ * Alacast is:
+ * 	Copyright (c) 2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Released under the terms of the RPL
  *
- * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,9 +13,9 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
  * license, the contents of this file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
@@ -47,19 +47,42 @@
  * select a default license for their data.  All of the Software's data pertaining to each
  * User must be fully accessible, exportable, and deletable to that User.
  */
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
+#ifndef __HEADER_H__
+#define __HEADER_H__
 
-#ifndef __CLUTTER_GUI_H__
-#define __CLUTTER_GUI_H__
-
+/********************************************************
+ *        System & library headers.                     *
+ ********************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
 #include <glib.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <gdk/gdk.h>
+#include <gdk/gdkkeysyms.h>
 
-#include "config.h"
-#include <clutter/clutter.h>
+/********************************************************
+ *        Objects, structures, and etc typedefs         *
+ ********************************************************/
+typedef struct {
+} XmlDocs;
 
-ClutterInitError gui_clutter_init(int *argc, char ***argv);
-void gui_clutter_main(void);
-void gui_clutter_main_quit(void);
-void gui_clutter_deinit(void);
+/********************************************************
+ *          Global method  & function prototypes        *
+ ********************************************************/
+XmlDocs *xmldocs_init(int argc, char **argv, const char **envp);
+void xmldocs_main(XmlDocs *xmldocs);
 
-#endif
+XmlDocs *xmldocs_factory(void);
+void xmldocs_destroy(void);
 
+void xmldocs_main_quit(XmlDocs *xmldocs);
+void xmldocs_deinit(XmlDocs *xmldocs);
+
+void xmldocs_destroy(void);
+
+#endif /* __HEADER_H__ */

@@ -1,7 +1,7 @@
 /* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
  * Alacast is:
- * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
+ * 	Copyright (c) 2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * 	Released under the terms of the RPL
  *
  * For more information or to find the latest release, visit our
@@ -47,65 +47,42 @@
  * select a default license for their data.  All of the Software's data pertaining to each
  * User must be fully accessible, exportable, and deletable to that User.
  */
-
 /********************************************************
  *          My art, code, & programming.                *
  ********************************************************/
-
-
-/********************************************************
- *        Project headers.                              *
- ********************************************************/
-#include "config.h"
-#include "newtype.h"
+#ifndef __HEADER_H__
+#define __HEADER_H__
 
 /********************************************************
- *          Variable definitions.                       *
+ *        System & library headers.                     *
  ********************************************************/
-static NewType *newtype=NULL;
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <glib.h>
+#include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include <gdk/gdk.h>
+#include <gdk/gdkkeysyms.h>
 
 /********************************************************
- *          Static method & function prototypes         *
+ *        Objects, structures, and etc typedefs         *
  ********************************************************/
-static NewType *newtype_new();
-static void newtype_main_quit(NewType *newtype);
-
-
+typedef struct {
+} NewType;
 
 /********************************************************
- *   'Here be Dragons'...art, beauty, fun, & magic.     *
+ *          Global method  & function prototypes        *
  ********************************************************/
+NewType *newtype_init(int argc, char **argv, const char **envp);
+void newtype_main(NewType *newtype);
 
+NewType *newtype_factory(void);
+void newtype_destroy(void);
 
-NewType *newtype_init(int argc, char **argv, const char **envp){
-}//newtype_init
+void newtype_main_quit(NewType *newtype);
+void newtype_deinit(NewType *newtype);
 
+void newtype_destroy(void);
 
-void newtype_main(NewType *newtype){
-}//newtype_main
-
-
-static NewType *newtype_new(){
-	return g_new0(NewType, 1);
-}//newtype_new
-
-
-NewType *newtype_factory(void){
-}//newtype_factory
-
-
-void newtype_destroy(void){
-}//newtype_destroy
-
-
-
-static void newtype_main_quit(NewType *newtype){
-}//newtype_main_quit
-
-
-
-void newtype_deinit(NewType *newtype){
-	newtype_main_quit();
-}//newtype_deinit
-
-
+#endif /* __HEADER_H__ */

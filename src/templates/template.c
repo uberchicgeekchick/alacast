@@ -1,12 +1,8 @@
 /* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast's:
+ * Alacast is:
  * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * 	Released under the terms of the RPL
- *
- * Alacast's an online media brewser for GNOME.
- * Bringing you the best online media to your desktop
- * with a beautiful, fun, & intuitive interface.
  *
  * For more information or to find the latest release, visit our
  * website at: http://uberChicGeekChick.Com/?projects=Alacast
@@ -57,57 +53,58 @@
  ********************************************************/
 
 
-#ifndef __HEADER_H__
-#define __HEADER_H__
-
 /********************************************************
- *        System & library headers.                     *
+ *        Project headers.                              *
  ********************************************************/
-#include <stdio.h>
-#include <stdlib.h>
-#include <strings.h>
-#include <glib.h>
-#include <glib/gi18n.h>
-#include <gtk/gtk.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkkeysyms.h>
-#include <libgnome/libgnome.h>
-
 #include "config.h"
-
-G_BEGIN_DECLS
-
-/********************************************************
- *         typedefs: objects, structures, and etc.      *
- ********************************************************/
-typedef struct {
-	GtkObject	parent;
-	gchar		*gtkbuilder_ui_file;
-	GtkWindow	*dialog;
-	GtkButton	*yes;
-	GtkButton	*no;
-} ThisObject;
-
-typedef struct {
-	GtkWidgetClass	parent_class;
-} ThisObjectClass;
-
-extern ThisObject *this;
+#include "newtype.h"
 
 /********************************************************
- *          Objects and handlers prototypes.            *
+ *          Variable definitions.                       *
  ********************************************************/
-#define	TYPE_OF_THIS_OBJECT		(this_object_get_type())
-#define	THIS_OBJECT(o)			(G_TYPE_CHECK_INSTANCE_CAST( (o), TYPE_OF_THIS_OBJECT, ThisObject ))
-#define	THIS_OBJECT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST( (k), TYPE_OF_THIS_OBJECT, ThisObjectClass ))
-#define	IS_THIS_OBJECT(o)		(G_TYPE_CHECK_INSTANCE_TYPE( (o), TYPE_OF_THIS_OBJECT) )
-#define	IS_THIS_OBJECT_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE( (k), TYPE_OF_THIS_OBJECT) )
-#define	THIS_OBJECT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS( (o), TYPE_OF_THIS_OBJECT, ThisObjectClass) )
+static NewType *newtype=NULL;
 
-GType this_object_get_type( void ) G_GNUC_CONST;// Macro
-ThisObject *this_object_new( void );
-void this_object_show( GtkWindow *parent );
+/********************************************************
+ *          Static method & function prototypes         *
+ ********************************************************/
+static NewType *newtype_new();
+static void newtype_main_quit(NewType *newtype);
 
-G_END_DECLS
-#endif
+
+
+/********************************************************
+ *   'Here be Dragons'...art, beauty, fun, & magic.     *
+ ********************************************************/
+
+
+NewType *newtype_init(int argc, char **argv, const char **envp){
+}//newtype_init
+
+static NewType *newtype_new(){
+	return g_new0(NewType, 1);
+}//newtype_new
+
+
+NewType *newtype_factory(void){
+	return newtype_new();
+}//newtype_factory
+
+
+void newtype_main(NewType *newtype){
+}//newtype_main
+
+
+static void newtype_main_quit(NewType *newtype){
+}//newtype_main_quit
+
+
+
+void newtype_deinit(NewType *newtype){
+	newtype_main_quit();
+}//newtype_deinit
+
+
+void newtype_destroy(void){
+}//newtype_destroy
+
 

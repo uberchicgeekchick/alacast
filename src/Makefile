@@ -23,30 +23,30 @@ infodir=${prefix}/info
 mandir=${prefix}/man
 
 DEFINE_DIRS=					\
-	-DBUILDDIR="${top_builddir}"		\
-	-DSRCDDIR="${top_srcddir}"		\
-	-DPREFIX="${prefix}"			\
-	-DEXEC_PREFIX="${exec_prefix}"		\
-	-DLOCALEDIR="${localedir}"		\
-	-DBINDIR="${bindir}"			\
-	-DSBINDIR="${sbindir}"			\
-	-DLIBEXECDIR="${libexecdir}"		\
-	-DDATADIR="${datadir}"			\
-	-DETCDIR="${sysconfdir}"		\
-	-DSHAREDSTATEDIR="${sharedstatedir}"	\
-	-DLOCALSTATEDIR="${localstatedir}"	\
-	-DLIBDIR="${libdir}"			\
-	-DINCLUDEDIR="${includedir}"		\
-	-DOLDINCLUDEDIR="${oldincludedir}"	\
-	-DINFODIR="${infodir}"			\
-	-DMANDIR="${mandir}"
+	-DBUILDDIR="\""${top_builddir}"\""		\
+	-DSRCDDIR="\""${top_srcddir}"\""		\
+	-DPREFIX="\""${prefix}"\""			\
+	-DEXEC_PREFIX="\""${exec_prefix}"\""		\
+	-DLOCALEDIR="\""${localedir}"\""		\
+	-DBINDIR="\""${bindir}"\""			\
+	-DSBINDIR="\""${sbindir}"\""			\
+	-DLIBEXECDIR="\""${libexecdir}"\""		\
+	-DDATADIR="\""${datadir}"\""			\
+	-DETCDIR="\""${sysconfdir}"\""		\
+	-DSHAREDSTATEDIR="\""${sharedstatedir}"\""	\
+	-DLOCALSTATEDIR="\""${localstatedir}"\""	\
+	-DLIBDIR="\""${libdir}"\""			\
+	-DINCLUDEDIR="\""${includedir}"\""		\
+	-DOLDINCLUDEDIR="\""${oldincludedir}"\""	\
+	-DINFODIR="\""${infodir}"\""			\
+	-DMANDIR="\""${mandir}"\""
 
-Alacast_BIN=Alacast
+Alacast_BIN=alacast
 
 PACKAGES=	\
 	libnotify \
 	libgtkhtml-2.0 \
-	libsoup-2.4 \
+	libsoup-2.4 >= 2.16.0.9 \
 	gobject-2.0 \
 	libgnome-2.0 \
 	gthread-2.0 \
@@ -68,7 +68,7 @@ RELELATIVE_INCLUDE_DIRS=-I.. -I.
 C_STANDARD=gnu99
 CXX_STANDARD=gnu++0x
 
-Alacast_CFLAGS=-std=${C_STANDARD} -Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-enum -O3 ${RELELATIVE_INCLUDE_DIRS} $(DEFINE_DIRS)
+Alacast_CFLAGS=-std=${C_STANDARD} -Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --save-temps --combine -Wformat=2 -Wswitch-enum -O3 ${RELELATIVE_INCLUDE_DIRS} $(DEFINE_DIRS)
 
 AM_CFLAGS=				\
 		-I${top_srcdir}		\
@@ -80,8 +80,8 @@ SOURCES=				\
 	library.c			\
 	gui.c				\
 	gui/pigment.c			\
-	gui/gtk.c			\
 	gui/clutter.c			\
+	gui/gtk.c			\
 	alacast.c			\
 	main.c
 

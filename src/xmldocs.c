@@ -1,11 +1,11 @@
 /* -*- Mode: C; shift-width: 8; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Greet-Tweet-Know is:
+ * Alacast is:
  * 	Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * 	Released under the terms of the RPL
  *
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=Greet-Tweet-Know
+ * website at: http://uberChicGeekChick.Com/?projects=Alacast
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -49,22 +49,62 @@
  */
 
 /********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
+
+
+/********************************************************
  *        Project headers.                              *
  ********************************************************/
 #include "config.h"
-#include "c.h"
+#include "xmldocs.h"
 
 /********************************************************
  *          Variable definitions.                       *
  ********************************************************/
-static NewType *new_type=NULL;
+static XmlDocs *xmldocs=NULL;
 
 /********************************************************
  *          Static method & function prototypes         *
  ********************************************************/
+static XmlDocs *xmldocs_new();
+static void xmldocs_main_quit(XmlDocs *xmldocs);
+
+
 
 /********************************************************
- *          My art, code, & programming.                *
+ *   'Here be Dragons'...art, beauty, fun, & magic.     *
  ********************************************************/
+
+
+XmlDocs *xmldocs_init(int argc, char **argv, const char **envp){
+}//xmldocs_init
+
+static XmlDocs *xmldocs_new(){
+	return g_new0(XmlDocs, 1);
+}//xmldocs_new
+
+
+XmlDocs *xmldocs_factory(void){
+	return xmldocs_new();
+}//xmldocs_factory
+
+
+void xmldocs_main(XmlDocs *xmldocs){
+}//xmldocs_main
+
+
+static void xmldocs_main_quit(XmlDocs *xmldocs){
+}//xmldocs_main_quit
+
+
+
+void xmldocs_deinit(XmlDocs *xmldocs){
+	xmldocs_main_quit();
+}//xmldocs_deinit
+
+
+void xmldocs_destroy(void){
+}//xmldocs_destroy
 
 

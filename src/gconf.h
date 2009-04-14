@@ -1,11 +1,8 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * Alacast is an online media brewser for GNOME.
- * Alacast brings the best online media to one's desktop
- * with a beautiful, fun, & intuitive interface.
- *
  * Copyright (c) 2006-2009 Kaity G. B. <uberChick@uberChicGeekChick.Com>
  * For more information or to find the latest release, visit our
- * website at: http://uberChicGeekChick.Com/?projects=connectED
+ * website at: http://uberChicGeekChick.Com/?projects=Greet-Tweet-Know
  *
  * Writen by an uberChick, other uberChicks please meet me & others @:
  * 	http://uberChicks.Net/
@@ -13,13 +10,12 @@
  * I'm also disabled. I live with a progressive neuro-muscular disease.
  * DYT1+ Early-Onset Generalized Dystonia, a type of Generalized Dystonia.
  * 	http://Dystonia-DREAMS.Org/
- */
-
-/*
+ *
+ *
  * Unless explicitly acquired and licensed from Licensor under another
- * license, the contents of this file are subject to the Reciprocal Public
+ * license, the contents of gconf file are subject to the Reciprocal Public
  * License ("RPL") Version 1.5, or subsequent versions as allowed by the RPL,
- * and You may not copy or use this file in either source code or executable
+ * and You may not copy or use gconf file in either source code or executable
  * form, except in compliance with the terms and conditions of the RPL.
  *
  * All software distributed under the RPL is provided strictly on an "AS
@@ -38,9 +34,9 @@
  * Copyright (C) 2009 Kaity G. B. and released under the terms of the
  * Creative Commons Non-Comercial, Attribution, Share-A-Like version 3.0 US license.
  * 
- * Any & all data stored by this Software created, generated and/or uploaded by any User
+ * Any & all data stored by gconf Software created, generated and/or uploaded by any User
  * and any data gathered by the Software that connects back to the User.  All data stored
- * by this Software is Copyright (C) of the User the data is connected to.
+ * by gconf Software is Copyright (C) of the User the data is connected to.
  * Users may lisences their data under the terms of an OSI approved or Creative Commons
  * license.  Users must be allowed to select their choice of license for each piece of data
  * on an individual bases and cannot be blanketly applied to all of the Users.  The User may
@@ -48,23 +44,59 @@
  * User must be fully accessible, exportable, and deletable to that User.
  */
 
-#include	<glib.h>
+#ifndef __HEADER_H__
+#define __HEADER_H__
 
-#include	"clutter.h"
+/********************************************************
+ *        System & library headers.                     *
+ ********************************************************/
+#include <strings.h>
+#include <glib.h>
+#include <glib/gi18n.h>
+#include <libgnome/libgnome.h>
+
+#include "config.h"
+
+G_BEGIN_DECLS
+
+/********************************************************
+ *         typedefs: objects, structures, and etc.      *
+ ********************************************************/
+typedef struct {
+	GtkObject	parent;
+	gchar		*gtkbuilder_ui_file;
+	GtkWindow	*dialog;
+	GtkButton	*yes;
+	GtkButton	*no;
+} GConf;
+
+typedef struct {
+	GtkWidgetClass	parent_class;
+} GConfClass;
+
+extern GConf *gconf;
+
+/********************************************************
+ *          My art, code, & programming.                *
+ ********************************************************/
+#define	TYPE_OF_GCONF		(gconf_get_type())
+#define	GCONF(o)			(G_TYPE_CHECK_INSTANCE_CAST( (o), TYPE_OF_GCONF, GConf ))
+#define	GCONF_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST( (k), TYPE_OF_GCONF, GConfClass ))
+#define	IS_GCONF(o)		(G_TYPE_CHECK_INSTANCE_TYPE( (o), TYPE_OF_GCONF) )
+#define	IS_GCONF_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE( (k), TYPE_OF_GCONF) )
+#define	GCONF_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS( (o), TYPE_OF_GCONF, GConfClass) )
 
 
-ClutterInitError gui_clutter_init(int *argc, char ***argv){
-	return clutter_init(argc, argv);
-}//gui_clutter_init
 
-void gui_clutter_main(void){
-	clutter_main();
-}//gui_clutter_main
+/********************************************************
+ *          Objects and handlers prototypes.            *
+ ********************************************************/
+GType gconf_get_type( void ) G_GNUC_CONST;// Macro
+GConf *gconf_new( void );
+void gconf_show( GtkWindow *parent );
 
-void gui_clutter_main_quit(void){
-	clutter_main_quit();
-}//gui_clutter_main_quit
+G_END_DECLS
 
-void gui_clutter_deinit(void){
-	gui_clutter_main_quit();
-}//gui_clutter_deinit
+#endif
+
+

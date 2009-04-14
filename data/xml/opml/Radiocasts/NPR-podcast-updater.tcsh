@@ -11,4 +11,4 @@ default:
 	breaksw
 endsw
 
-${my_editor} "./data/xml/opml/Radiocasts/NPR/create_opmls.tcsh" "./data/xml/opml/Radiocasts/NPR/index.opml"
+${my_editor} "./NPR/create_opmls.tcsh" "./Radiocasts/NPR/index.opml"

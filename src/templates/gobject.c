@@ -57,18 +57,35 @@
  *        Project headers.                              *
  ********************************************************/
 #include "config.h"
-#include "newtype.h"
+#include "gobject.h"
 
 /********************************************************
- *          Variable definitions.                       *
+ *         typedefs: objects, structures, and etc       *
  ********************************************************/
-static NewType *newtype=NULL;
+/* to impliment a private gobject:
+ * 	uncomment the next 10-13+ lines
+ *	& my last line in 'this_object_class_init'
+ *
+typedef struct {
+	gchar		*gtkbuilder_ui_file;
+	GtkWindow	*dialog;
+	GtkButton	*yes;
+	GtkButton	*no;
+} ThisObjectPriv;
+
+#define GET_PRIV(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), TYPE_OF_THIS_OBJECT, ThisObjectPriv))
+*/
+static ThisObject *this=NULL;
+
+G_DEFINE_TYPE(ThisObject, this, G_TYPE_OBJECT);
+
 
 /********************************************************
- *          Static method & function prototypes         *
+ *          static method & function prototypes               *
  ********************************************************/
-static NewType *newtype_new();
-static void newtype_main_quit(NewType *newtype);
+static void this_object_class_init( ThisObjectClass *klass );
+static void this_object_init( ThisObject *this_object );
+static void this_object_finalize( ThisObject *this_object );
 
 
 
@@ -76,36 +93,38 @@ static void newtype_main_quit(NewType *newtype);
  *   'Here be Dragons'...art, beauty, fun, & magic.     *
  ********************************************************/
 
-
-NewType *newtype_init(int argc, char **argv, const char **envp){
-}//newtype_init
-
-
-void newtype_main(NewType *newtype){
-}//newtype_main
+ThisObject *this_object_new(void){
+	return g_object_new(TYPE_OF_THIS_OBJECT, NULL);
+}//this_object_class_new
 
 
-static NewType *newtype_new(){
-	return g_new0(NewType, 1);
-}//newtype_new
+static void this_object_class_init( ThisObjectClass *klass ){
+	GObjectClass *this=G_OBJECT_CLASS(klass);
+	this->finalize=this_object_finalize;
+	//g_type_class_add_private(this, sizeof(ThisObjectPriv));
+}//this_object_class_init
 
+static void this_object_init(ThisObject *this_object){
+	this=this_object;
+	g_signal_connect(this, "size_allocate", G_CALLBACK(this_object_resize), this);
+	g_signal_connect(this, "activated", G_CALLBACK(this_object_clicked), this);
+}//this_object_init
 
-NewType *newtype_factory(void){
-}//newtype_factory
+static void this_object_create( GtkWindow *parent ){
+	this=g_new0(ThisObject, 1);
+	this->gtkbuilder_ui_file=g_strdup_printf( "%sthis-object.ui", PREFIX );
+}//this_object_create
 
+void this_object_show( GtkWindow *parent ){
+	if(!this) this_object_create( parent );
+	
+	gtk_widget_show( this->window );
+}//this_object_show
 
-void newtype_destroy(void){
-}//newtype_destroy
-
-
-
-static void newtype_main_quit(NewType *newtype){
-}//newtype_main_quit
-
-
-
-void newtype_deinit(NewType *newtype){
-	newtype_main_quit();
-}//newtype_deinit
-
+static void this_object_finalize( ThisObject *this_object ){
+	//ThisObjectPrivate *private=GET_PRIV(object);
+	//G_OBJECT_CLASS(private_parent_class)->finalize(object);
+	gtk_widget_destroy( GTK_WIDGET( this->window ) );
+	g_object_unref( object );
+}//this_object_finalize
 

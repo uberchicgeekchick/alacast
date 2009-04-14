@@ -56,14 +56,12 @@
 #include "config.h"
 
 #include "gui/pigment.h"
-#include "gui/clutter.h"
 #include "gui/gtk.h"
 
 typedef enum {
 	GUI_CLI		=	0,
 	GUI_GTK		=	1702,
 	GUI_PIGMENT	=	1703,
-	GUI_CLUTTER	=	1704,
 } GUIToolkit;
 
 typedef struct {
