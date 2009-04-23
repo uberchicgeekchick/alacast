@@ -71,6 +71,10 @@
 typedef struct {
 } NewType;
 
+#ifndef G_STR_EMPTY
+#define G_STR_EMPTY(x) ((x) == NULL || (x)[0] == '\0')
+#endif
+
 /********************************************************
  *          Global method  & function prototypes        *
  ********************************************************/

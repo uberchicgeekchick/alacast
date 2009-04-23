@@ -8,7 +8,7 @@ $scripts_path =~ s/[\r\n]+//;
 my $scripts_exec = `basename "$0"`;
 $scripts_exec =~ s/[\r\n]+//;
 my $opml_files_path = "$scripts_path/../data/xml/opml";
-my @catalogs = ( "IP.TV", "Library", "Podcasts", "Vodcasts", "Radiocasts", "Music" );
+my @catalogs = ( "ip.tv", "library", "podcasts", "vodcasts", "radiocasts", "music" );
 
 my $attribute;
 my $value;

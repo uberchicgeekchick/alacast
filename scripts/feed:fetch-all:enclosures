@@ -50,13 +50,16 @@ touch "${download_log}"
 
 if( ! ${?quiet} ) printf "Preparing to download: %s\n" "${title}"
 printf "Preparing to download: %s\n" "${title}" >> "${download_log}"
+if( ! ${?quiet} ) printf "\tURI:\n\t%s\n" "${1}"
+printf "\tURI:\n\t%s\n" "${1}" >> "${download_log}"
+
 if ( -e './00-feed.xml' && -e './00-titles.lst' && -e './00-enclosures.lst' ) goto continue_download
 
 mv '../00-feed.xml' "./00-feed.xml"
 
 # Grabs the titles of the podcast and all episodes.
-if( ! ${?quiet} ) printf "Finding titles . . . this may take a few moments\t\t"
-printf "Finding titles . . . this may take a few moments\t\t" >> "${download_log}"
+if( ! ${?quiet} ) printf "Finding titles...this may take a few moments\t\t"
+printf "Finding titles please be patien this may take several moments\t\t" >> "${download_log}"
 cp './00-feed.xml' './00-titles.lst'
 
 # Concatinates all data into one single string:

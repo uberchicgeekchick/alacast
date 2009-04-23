@@ -68,7 +68,7 @@ RELELATIVE_INCLUDE_DIRS=-I.. -I.
 C_STANDARD=gnu99
 CXX_STANDARD=gnu++0x
 
-Alacast_CFLAGS=-std=${C_STANDARD} -Wall -Wextra -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --save-temps --combine -Wformat=2 -Wswitch-enum -O3 ${RELELATIVE_INCLUDE_DIRS} $(DEFINE_DIRS)
+Alacast_CFLAGS=-std=${C_STANDARD} -Wall -Wextra -Werror -Wno-missing-field-initializers -Wmissing-prototypes -Wfatal-errors --combine -Wformat=2 -Wswitch-enum -O3 ${RELELATIVE_INCLUDE_DIRS} $(DEFINE_DIRS)
 
 AM_CFLAGS=				\
 		-I${top_srcdir}		\

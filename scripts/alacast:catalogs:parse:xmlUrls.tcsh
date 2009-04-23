@@ -24,8 +24,7 @@ if ( "${?1}" != "0" && "${1}" != "" ) then
 	endsw
 endif
 
-cd `dirname "${0}"`/../data/xml/opml
-source set_catalogs.tcsh
+source `dirname "${0}"`/alacast:catalogs:load.tcsh
 
 foreach podcast_catalog ( ${catalogs} )
 	foreach opml ( "`find './${podcast_catalog}' -iname '*.opml'`" )

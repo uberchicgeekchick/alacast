@@ -3,8 +3,7 @@ if ( "${?1}" == "0" || "${1}" == "" ) goto usage
 
 printf "${cwd}"
 
-cd `dirname "${0}"`/../data/xml/opml
-source set_catalogs.tcsh
+source `dirname "${0}"`/alacast:catalogs:load.tcsh
 
 set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
 set value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
