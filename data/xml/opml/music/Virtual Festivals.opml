@@ -4,11 +4,9 @@
 		<title>Virtual &amp; Online music festivals&#039;s sites, news, &amp; podcasts feeds.</title>
 	</head>
 	<body>
+		<outline title="<![CDATA[The Geek Spin]]>" xmlUrl="http://feeds.feedburner.com/TheGeekSpin?format=xml" type="rss" text="<![CDATA[The Geek Spin]]>" htmlUrl="http://www.thegeekspin.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[geek pop 2009]]>" xmlUrl="http://geekpop.co.uk/feed/" type="rss" text="<![CDATA[geek pop 2009]]>" htmlUrl="http://geekpop.co.uk/" description="<![CDATA[The world&#039;s only virtual sci-pop festival. Be there and be square.]]>"/>
 		<outline title="<![CDATA[geek pop 2008]]>" xmlUrl="http://geekpop.podbean.com/category/music/feed/" type="rss" text="<![CDATA[geek pop 2008]]>" htmlUrl="http://geekpop.podbean.com/category/music/" description="<![CDATA[The world&#039;s only virtual sci-pop festival. Be there and be square.]]>"/>
-
-		<outline title="<![CDATA[Beatnik Turtles&#039;: &quot;The Song Of The Day&quot; project]]>" xmlUrl="http://thesongoftheday.com/rss/rss_i.xml" type="rss" text="<![CDATA[Beatnik Turtles&#039;: &quot;The Song Of The Day&quot; project]]>" htmlUrl="http://thesongoftheday.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Live @ Lunch]]>" xmlUrl="http://krfcfm.org/audio/LiveAtLunch_feed_rss.xml" type="rss" text="<![CDATA[Live @ Lunch on krfc 88.9]]>" htmlUrl="http://krfcfm.org/live_at_lunch.php" description="<![CDATA[Live @ Lunch is a daily showcase of live music by KRFC fm in Fort Collins, Colorado.]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

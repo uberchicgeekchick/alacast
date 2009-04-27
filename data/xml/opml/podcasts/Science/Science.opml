@@ -5,8 +5,8 @@
 	</head>
 	<body>
 		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[SciencePdcasters.Org]]>" type="link" url="http://docartemis.com/sciencepodcasters/" text="<![CDATA[SciencePdcasters.Org]]>" description="<![CDATA[SciencePdcasters.Org]]>"/>
 		<!--<outline title="<![CDATA[]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="" type="rss" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[SciencePdcasters.Org]]>" xmlUrl="http://feeds.feedburner.com/sciencepodcasters?format=xml" type="rss" url="http://docartemis.com/sciencepodcasters/" text="<![CDATA[SciencePdcasters.Org]]>" description="<![CDATA[Group blog and Podcast aggregator from SciencePdcasters.Org]]>"/>
 		<outline title="<![CDATA[Science Teaching Tips]]>" xmlUrl="http://feeds2.feedburner.com/RecentTeachersInstitutePodcastsFromTheExploratorium?format=xml" type="rss" text="<![CDATA[Science Geek Girl&#039;s Science Snacks]]>" htmlUrl="http://exploratorium.edu/ti/podcasts/" description="<![CDATA[Science Teaching Tips - Science Geek Girl&#039;s Science Snacks for the classroom.]]>"/>
 		<outline title="<![CDATA[Berkeley Groks&#039; Science]]>" xmlUrl="http://www.groks.net/groks.rss" type="rss" text="<![CDATA[Berkeley Groks&#039; Science]]>" htmlUrl="http://www.groks.net/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Books and Ideas]]>" xmlUrl="http://feeds.feedburner.com/booksandideaspodcast?format=xml" type="rss" text="<![CDATA[Books and Ideas]]>" htmlUrl="http://booksandideas.com/" description="<![CDATA[]]>"/>
@@ -41,5 +41,7 @@
 		<outline title="<![CDATA[The Naked Scientists]]>" xmlUrl="http://www.thenakedscientists.com/naked_scientists_podcast.xml" type="rss" text="<![CDATA[The Naked Scientists]]>" htmlUrl="http://www.thenakedscientists.com/HTML/podcasts/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[This Week in Science]]>" text="<![CDATA[This Week in Science: The Kick-Ass Science Podcast]]>" htmlUrl="http://twis.org/" xmlUrl="http://feeds.twis.org/twis/science?format=xml" type="rss" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Tech Nation &amp; BioTech Nation]]>" xmlUrl="http://rss.conversationsnetwork.org/series/technation.xml" type="rss" text="<![CDATA[Tech Nation &amp; BioTech Nation w/Dr. Moira Gunn]]>" htmlUrl="http://itc.conversationsnetwork.org/series/technation.html" description="<![CDATA[Tech Nation - and its regular segments BioTech Nation - is a weekly public radio program hosted by Dr. Moira Gunn. It focuses on the impact of technology and science on modern life.]]>"/>
+		<outline title="<![CDATA[EUSci]]>" xmlUrl="http://euscipodcast.libsyn.com/rss" type="rss" text="<![CDATA[EUSci: The Edinburgh University Science Podcast]]>" htmlUrl="http://euscipodcast.libsyn.com/" description="<![CDATA[Science commentary from people who know it all (a.k.a. students). Listen to members of the Edinburgh University Science magazine discuss science stories in the news.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

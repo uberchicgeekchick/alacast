@@ -4,6 +4,6 @@
 		<title> podcast novels from podiobooks.com</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free podcast novel by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="http://www.podiobooks.com/title/?/feed/" type="rss" text="<![CDATA[ - a podcast novel by ]]>" htmlUrl="http://www.podiobooks.com/title/?/" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

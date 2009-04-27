@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Science Fiction Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[365 Tomorrows&#039; Voices of Tomorrow]]>" xmlUrl="http://voicesoftomorrow.libsyn.com/rss" type="rss" text="<![CDATA[365 Tomorrows&#039; Voices of Tomorrow]]>" htmlUrl="http://voicesoftomorrow.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Escape Pod]]>" xmlUrl="http://escapepod.org/podcast.xml" type="rss" text="<![CDATA[Escape Pod]]>" htmlUrl="http://escapepod.org/" description="<![CDATA[The Science Fiction Podcast Magazine.]]>"/>
+		<outline title="<![CDATA[Never Was]]>" xmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/feed" type="rss" text="<![CDATA[Never Was]]>" htmlUrl="http://www.mcleanweb.ca/neverwas/index.php/category/podcast/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Sci Phi Journal]]>" xmlUrl="http://sciphijournal.com/feed/" type="rss" text="<![CDATA[Sci Phi Journal]]>" htmlUrl="http://sciphijournal.com/" description="<![CDATA[The Journal of Science Fiction and Philosophy]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
