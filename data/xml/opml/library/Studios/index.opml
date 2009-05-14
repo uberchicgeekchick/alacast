@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Studios &amp; Theatres poducing &amp; publishing audio drama, stories, & fiction</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Texas Radio Theatre Company]]>" xmlUrl="http://texasradio.libsyn.com/rss" type="rss" text="<![CDATA[Texas Radio Theatre Company]]>" htmlUrl="http://texasradio.libsyn.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+
