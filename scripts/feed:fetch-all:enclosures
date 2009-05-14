@@ -164,13 +164,13 @@ download_episodes:
 if( ! ${?quiet} ) printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}"
 printf "\n\tI have found %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}" >! "${download_log}"
 
-@ downloaded_episodes=0;
+@ episodes_downloaded=0;
 @ episode_number=0;
 foreach episode ( $episodes )
 	@ episode_number++;
 	set episode = `echo "${episode}" | sed 's/[\r\n]$//'`
-	set episodes_filename = `basename ${episode}`
-	set extension = `printf '%s' "${episodes_filename}" | sed 's/.*\.\([^.]*\)$/\1/'`
+	set episodes_file = `basename ${episode}`
+	set extension = `printf '%s' "${episodes_file}" | sed 's/.*\.\([^.]*\)$/\1/'`
 
 	set episodes_pubdate = "`cat './00-pubdates.lst' | head -${episode_number} | tail -1 | sed 's/[\r\n]//g' | sed 's/\?//g'`"
 	
@@ -180,7 +180,7 @@ foreach episode ( $episodes )
 	set episodes_filename = "${episodes_title}, released on ${episodes_pubdate}.${extension}";
 	
 	if( ! ${?quiet} ) printf "\n\n\t\tFound episode: %s\n\t\tTitle: %s\n\t\tReleased on: %s\n\t\tURL: %s\n\t\t\t" "${episodes_title}" "${episodes_title}" "${episodes_pubdate}" "${episode}";
-	printf "\n\n\t\tFound episode: %s\n\t\tTitle: %s\n\t\tReleased on: %s\n\t\tURL: %s\n\t\t\t" "${episodes_filename}" "${episodes_title}" "${episodes_pubdate}" "${episode}" >> "${download_log}"
+	printf "\n\n\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tReleased on: %s\n\t\tFilename: %s\n\t\tRemote file: %s\n\t\tURL: %s\n\t\t\t" ${episode_number} "${episodes_title}" "${episodes_pubdate}" "${episode_filename}" "${episode_file}" "${episode}" >> "${download_log}"
 
 	# Skipping existing files.
 	if ( -e "./${episodes_filename}" ) then
@@ -189,7 +189,7 @@ foreach episode ( $episodes )
 		continue
 	endif
 	
-	switch ( "${episodes_filename}" )
+	switch ( "${episodes_file}" )
 	case "theend.mp3":
 	case "caughtup.mp3":
 	case "caught_up_1.mp3":
@@ -199,8 +199,8 @@ foreach episode ( $episodes )
 		breaksw
 	endsw
 
-	set is_commentary = `printf "${episodes_title}==${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
-	if ( "${is_commentary}" != `printf "${episodes_title}==${episodes_filename}"` ) then
+	set is_commentary = `printf "${episodes_file}==${episodes_filename}" | sed 's/.*\([Cc]ommentary\).*/\1/gi'`
+	if ( "${is_commentary}" != `printf "${episodes_file}==${episodes_filename}"` ) then
 		if( ! ${?quiet} ) printf "[skipped commentary track]\n\n"
 		printf "[skipped commentary track]\n\n" >> "${download_log}"
 		continue
@@ -219,7 +219,7 @@ foreach episode ( $episodes )
 		printf "[*pout* :(]\n\n" >> "${download_log}"
 	else
 		if( ! ${?quiet} ) printf "[*w00t\!*, FTW\!]\n\n"
-		@ downloaded_episodes++;
+		@ episodes_downloaded++;
 		printf "[*w00t\!*, FTW\!]\n\n" >> "${download_log}"
 	endif
 end
