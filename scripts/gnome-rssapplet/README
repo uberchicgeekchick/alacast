@@ -1,0 +1,85 @@
+README: GNOME-RSSApplet
+^^^^^^^^^^^^^^^^^^^^^^^
+
+1   About 
+1.1 License
+1.2 Author
+
+2   Installation
+2.1 Requirements
+2.2 Get it work
+
+3   Configuration
+
+4   Development
+
+-----------------------------------------------------------------
+
+1 About
+
+RSS-Applet  is an applet  for gnome-panel  which shows title  and
+description of selected RSS-Feeds which was written in Python.. If you
+click on a message your favourite browser will be used to display the
+message, so you  can read the complete message  
+
+1.1 License see LICENSE
+
+1.2 Author
+
+GNOME-RSSApplet was written by Michael Krauße.
+
+-----------------------------------------------------------------
+2 Installation
+
+2.1 Requirements
+================
+
+You need the following packages:
+* gnome
+* gnome-panel
+* python
+* python gtk-bindings and python gnome-bindings
+* wget (to download a rss-feed from a webpage)
+* mozilla (for other browsers: edit settings.py)
+
+2.2 get it work
+===============
+
+Gnome-panel needs to know that GNOME-RSSApplet exists, thats why Bonobo
+needs a file which describes each applet of GNOME. Take a look at
+GNOME_RSSApplet.server and change location-attribute in tag oaf-server
+to the place where GNOME-RSSApplet can be found. 
+
+Hint: If you untar gnome-rssapplet.tar.bz2 to /tmp/gnome-rssapplet/
+      you do not have to modify GNOME_RSSApplet.server
+
+#> vi GNOME_RSSApplet.server 
+
+Afterwards copy GNOME_RSSApplet.server to
+/usr/lib/bonobo/servers/GNOME_RSSApplet.server. 
+
+Attention: You MUST be root to do this. 
+
+#> cp GNOME_RSSApplet.server /usr/lib/bonobo/servers/GNOME_RSSApplet.server
+
+Restart your gnome-panel:
+#> killall gnome-panel
+
+Add GNOME-RSSApplet to your gnome-panel. Right mouse-click and choose
+GNOME-RSSApplet from the list of available Applications
+
+-------------------------------------------------------------------------------
+3. CONFIGURATION
+
+If you want to add your favourite RSS-Feed to GNOME-RSSApplet edit
+settings.py. Look for Channel and add your channel the way the other
+channels are shown as an example.
+
+You are able to change your favourite browser, the time one message is
+displayed and how often a RSS-feed is updated
+
+4 Development
+If you want to develop or debug GNOME-RSSApplet edit
+gnome-rssapplet.py and change variable d
+
+

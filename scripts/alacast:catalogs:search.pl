@@ -19,7 +19,7 @@ my $searching_list="";
 my $output = "";
 
 sub print_usage{
-	printf( "Usage:\n\t %s [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
+	printf( "Usage:\n\t %s [--(enable|disable)-(verbose|debug)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
 	exit(-1);
 }
 
@@ -38,24 +38,25 @@ sub search_catalog{
 			next;
 		}
 		
-		if($results_found==0){
-			printf("\n\nResults found in catalog/opml: %s\n", $catalog);
+		if(!$results_found){
+			printf("[%s catalog]:\n", $catalog);
 		}
 		$results_found++;
-		
+
+		while($opml_and_outline=~/\.\.\//){
+			$opml_and_outline =~ s/[^\/]+\/\.\.\///g;
+		}
+
 		my $opml_file=$opml_and_outline;
 		$opml_file=~s/^([^:]*):.*$/\1/;
-		while($opml_file=~/\.\.\//){
-			$opml_file =~ s/[^\/]+\/\.\.\///g;
-		}
 		
 		my $opml_attribute=$opml_and_outline;
 		$opml_attribute=~s/.*$output=["']([^"']+)["'].*/\2/i;
 		$opml_attribute=~s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf( "\t%s=%s @ %s\n", $output, $opml_attribute, $opml_file );
+		printf("\t:%s: %s: %s\n", $opml_file, $opml_attribute, $output);
 		
-		if($be_verbose==1||$debug_mode==1){printf("\n\t\t%s\n", $opml_and_outline);}
+		if($be_verbose==1||$debug_mode==1){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
 	}
 }#search_catalog
 
@@ -75,21 +76,22 @@ sub parse_option{
 	my $option=shift;
 	
 	my $action=$option;
-	$action=s/^\-\-(^[\-]*)\-?(.*)/\1/;
-	if("$action"eq""){ $action="enable"; }
-	if("$action"!~/(en|dis)able/){ return 0; }
+	$action=~s/^\-\-([^\-]*)\-?(.*)$/\1/g;
+	
+	if("$action"!~/^(en|dis)able$/g){ return 0; }
+	
 	my $setting=$option;
-	$setting=s/^\-\-([^\-]*)\-?(.*)/\2/;
+	$setting=~s/^\-\-([^\-]*)\-?(.*)$/\2/g;
 	
 	if("$setting"eq"debug"){
-		printf("Debug mode:\t\t[%s]\n", $action);
+		printf("Debug mode\t\t\t\t\t\t[%sd]:\n", $action);
 		if("$action"eq"enable" && $debug_mode==0){ $debug_mode=1; }
 		if("$action"eq"disable" && $debug_mode==1){ $debug_mode=0; }
 		return 1;
 	}
 	
 	if("$setting"eq"verbose"){
-		printf("Verbose search output:\t\t[%s]\n", $action);
+		printf("Verbose search output\t\t\t\t\t\t[%sd]:\n", $action);
 		if("$action"eq"enable" && $be_verbose==0){ $be_verbose=1; }
 		if("$action"eq"disable" && $be_verbose==1){ $be_verbose=0; }
 		return 1;
