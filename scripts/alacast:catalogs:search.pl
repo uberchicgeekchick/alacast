@@ -12,6 +12,11 @@ my @catalogs = ( "ip.tv", "library", "podcasts", "vodcasts", "radiocasts", "musi
 
 my $be_verbose=0;#False
 my $debug_mode=0;#FALSE
+my $opml_uri=0;#FALSE
+
+my @xmlUrls_parsed=();
+my $previous_xmlUrl_parser="";#NULL
+my $xmlUrl_parser="";#NULL
 
 my $attribute;
 my $value;
@@ -19,7 +24,7 @@ my $searching_list="";
 my $output = "";
 
 sub print_usage{
-	printf( "Usage:\n\t %s [--(enable|disable)-(verbose|debug)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
+	printf( "Usage:\n\t %s [--(enable|disable)-(verbose|debug|opml-uri)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
 	exit(-1);
 }
 
@@ -39,7 +44,7 @@ sub search_catalog{
 		}
 		
 		if(!$results_found){
-			printf("[%s catalog]:\n", $catalog);
+			if($be_verbose) { printf("[%s catalog]>\n", $catalog); }
 		}
 		$results_found++;
 
@@ -54,9 +59,23 @@ sub search_catalog{
 		$opml_attribute=~s/.*$output=["']([^"']+)["'].*/\2/i;
 		$opml_attribute=~s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf("\t:%s: %s: %s\n", $opml_file, $opml_attribute, $output);
+		printf("%s>%s>%s%s\n", $opml_attribute, $output, ($opml_uri==1?"file://":""), $opml_file);
+		if("$xmlUrl_parser"ne""){
+			my $xmlUrl_attribute=$opml_and_outline;
+			$xmlUrl_attribute=~s/.*xmlUrl=["']([^"']+)["'].*/\1/i;
+			my $already_parsed=0;
+			for(my $i=0; $i<@xmlUrls_parsed && $already_parsed==0; $i++){
+				if($xmlUrls_parsed[$i]==$xmlUrl_attribute){$already_parsed=1;}
+			}
+			if(!$already_parsed){
+				$xmlUrls_parsed[@xmlUrls_parsed]=$xmlUrl_attribute;
+				my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null \&'";
+				printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
+				exec($xmlUrl_parser_exec);
+			}
+		}
 		
-		if($be_verbose==1||$debug_mode==1){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
+		if($be_verbose||$debug_mode){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
 	}
 }#search_catalog
 
@@ -76,9 +95,9 @@ sub parse_option{
 	my $option=shift;
 	
 	my $action=$option;
-	$action=~s/^\-\-([^\-]*)\-?(.*)$/\1/g;
+	$action=~s/^\-\-([^\-]+)\-?(.*)$/\1/g;
 	
-	if("$action"!~/^(en|dis)able$/g){ return 0; }
+	if("$action"!~/^(en|dis)able$/){ return 0; }
 	
 	my $setting=$option;
 	$setting=~s/^\-\-([^\-]*)\-?(.*)$/\2/g;
@@ -97,6 +116,30 @@ sub parse_option{
 		return 1;
 	}
 	
+	if("$setting"eq"opml-uri"){
+		printf("OPML files formatted as URI instead of paths\t\t\t\t\t\t[%sd]:\n", $action);
+		if("$action"eq"enable" && $opml_uri==0){ $opml_uri=1; }
+		if("$action"eq"disable" && $opml_uri==1){ $opml_uri=0; }
+		return 1;
+	}
+	
+	if($setting=~/^xmlUrl-parser=.+/){
+		if( "$action"eq"enable" ){
+			$xmlUrl_parser=$setting;
+			$xmlUrl_parser=~s/^([^=]*)=(.*)$/\2/g;
+			if("$previous_xmlUrl_parser"ne"" && "$previous_xmlUrl_parser"ne"$xmlUrl_parser"){
+				@xmlUrls_parsed=();
+			}
+			
+			printf("Further xmlUrls will be passed to\t\t\t\t[%s]\n", $xmlUrl_parser);
+		}
+		if( "$action"eq"disable" && $xmlUrl_parser!=""){
+			$xmlUrl_parser="";
+			printf("Further xmlUrls will not be passed to any parser/handler");
+		}
+		return 1;
+	}
+	
 	return 0;
 }#parse_option
 
@@ -112,10 +155,10 @@ sub parse_attribute{
 	
 	if( $debug_mode ) { printf("Search details for this loop:\n\tAttribute: [%s]\n\tValue: [%s]\n", $attribute, $value); }
 	
-	if(!("$attribute"eq"url"||"$attribute"=~/(xml|html)Url/||"$attribute"eq"title"||"$attribute"eq"text"||"$attribute"eq"description"||"$attribute"eq"type")) {
+	if(!($attribute=~/(xml|html)?Url/i||"$attribute"eq"title"||"$attribute"eq"text"||"$attribute"eq"description"||"$attribute"eq"type")) {
 		$attribute="xmlUrl";
 	}
-	if("$attribute"=~/(xml|html)Url/i){
+	if($attribute=~/(xml|html)?Url/i){
 		$attribute=~s/(xml|html)(Url)/\(xml\|html\)\?\2/i;
 	}
 	if ( -f $value ) {$searching_list=$value;}
@@ -125,20 +168,20 @@ sub parse_output{
 	$output=shift;
 	$output=~s/^\-\-output=['"]*([^"']*)['"]*$/\1/g;
 	if( $debug_mode ) { printf("Output details for this loop:\n\tOutput Attribute: [%s]\n", $output); }
-	if(!("$output"eq"url"||"$output"=~"/(xml|html)Url/"||"$output"eq"title"||"$output"eq"text"||"$output"eq"description")){
+	if(!($output=~/(xml|html)?Url/i||"$output"eq"title"||"$output"eq"text"||"$output"eq"description")){
 		$output="\(xml\)Url";
 		return 0;
 	}
 	
-	$output=~s/(.*)/\(\1\)/i;
+	$output=~s/^(.*)$/\($1\)/;
 	return 1;
 }#parse_output
 
 sub main{
 	for ( my $i=0; $i<@ARGV; $i++ ) {
-		if( parse_option($ARGV[$i]) ){ $i++; }
+		while( parse_option($ARGV[$i]) ){ $i++; }
+		while( parse_output($ARGV[$i]) ){ $i++; }
 		parse_attribute($ARGV[$i]);
-		if( (parse_output( $ARGV[$i+1] )) ){ $i++; }
 		search_catalogs();
 	}
 }#main

@@ -1,0 +1,11 @@
+#!/bin/tcsh -f
+wget -O 'feed.xml' "`alacast:catalogs:search.pl --title='${1}'|cut -d'>' -f2|tail -1`";
+
+ex -s -E '+1,$s/[\r\n]\+//g' '+s/<\/\(item\|entry\)\>/<\1>\r/' '+wq' 'feed.xml';
+
+set wget_episode=`cat 'feed.xml' | sed 's/.*<\(item\|entry\).*>.*<title>\([^<]\+\)<\/title>.*<.*enclosure[^=]*\(href\|url\)=["'\'']\([^"'\'']\+\)\.\([^\."'\'']\+\)["'\''].*<\/\(item\|entry\)>/wget\ \-c\ \-O\ '\''Slashdot\/\2\.\5'\'' \4.\5\ \&/g' | head -1`;
+
+set test="`${wget_episode}`";
+
+if( "${status}" == "0" ) rm feed.xml;
+

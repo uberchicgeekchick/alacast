@@ -5,7 +5,6 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[PRI.Org]]>" url="http://www.pri.org/" type="link" text="<![CDATA[Public Radio International]]>" description="<![CDATA[Podcasts from <a href='http://www.pri.org/'>P.R.I.</a>: Public Radio International]]>"/>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ from {$station_id}]]>" htmlUrl="" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ from {$station_id}]]>" description="<![CDATA[]]>"/>
 	</body>
 </opml>

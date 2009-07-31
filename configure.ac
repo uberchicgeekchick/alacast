@@ -2,7 +2,7 @@ dnl  --------------------------
 dnl | configure.ac for Alacast |
 dnl  --------------------------
 
-AC_INIT(alacast, 0.0.0a9, http://uberChicGeekChick.Com/?projects=Alacast, alacast)
+AC_INIT(alacast-php, "#060D0a99", http://uberChicGeekChick.Com/?projects=Alacast-php, alacast-php)
 AC_COPYRIGHT([Copyright (C) 2009 Kaity G. B.])
 AC_DEFAULT_PREFIX(/usr)
 
@@ -18,7 +18,7 @@ AC_HEADER_STDC
 dnl  ---------------------
 dnl | Internatinalization |
 dnl  ---------------------
-GETTEXT_PACKAGE=alacast
+GETTEXT_PACKAGE=alacast-php
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [GETTEXT package name])
 AM_GLIB_GNU_GETTEXT
