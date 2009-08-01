@@ -24,7 +24,10 @@ my $searching_list="";
 my $output = "";
 
 sub print_usage{
-	printf( "Usage:\n\t %s [--(enable|disable)-(verbose|debug|opml-uri)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tBoth of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", $scripts_exec );
+	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_exec);
+	printf( "\t\tverbose|debug\t\tControls how much addition & descriptive information is output.\n");
+	printf( "\t\topml-uri\t\t\n" );
+	printf( "xmlUrl-parser)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tAll of of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", );
 	exit(-1);
 }
 
