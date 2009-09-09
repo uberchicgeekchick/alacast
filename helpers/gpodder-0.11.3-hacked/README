@@ -1,0 +1,107 @@
+                               _
+                              | \      |   |
+                           _  |_/ _   _|  _|  _   _
+                          / \ |  / \ / | / | /_| |
+                          \_/ |  \_/ \_| \_| \_  |
+                         ._/ http://www.gpodder.org/
+
+           - -- == === ================================= === == -- -
+             Copyright  2005-2008 Thomas Perl and the gPodder Team
+
+ ==========================
+ License (see COPYING file)
+ ==========================
+
+ gPodder is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+
+ gPodder is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+ ============
+ Dependencies
+ ============
+
+   * python (>= 2.4)
+   * python-gtk2 (minimum 2.6, but >= 2.12 recommended)
+   * python-glade2
+   * python-feedparser
+ 
+ Additional dependencies for iPod synchronization support:
+
+   * One of the following metadata libraries:
+     - python-pymad (preferred; MAD MP3 decoder Python bindings)
+     - python-eyed3 (alternative to pymad; eyeD3 Python bindings)
+   * python-gpod (libgpod's Python bindings)
+   * mplayer (OPTIONAL; if you want video podcast length detection)
+
+ Additional dependencies for "Update tags after download":
+ 
+   * python-eyed3 (for updating MP3 files)
+   * vorbis-tools (for updating OGG files)
+
+ Additional dependencies for converting OGGs to MP3s on iPod sync:
+ 
+   * oggdec (for decoding OGG files)
+   * lame (for encoding MP3 files)
+
+ Additional dependencies if you want direct BitTorrent download support:
+
+   * gnome-btdownload
+ 
+ Additional dependencies if you want Bluetooth file send support:
+
+   * python-bluez OR hcitool (for detecting nearby devices)
+   * gnome-obex-send OR bluetooth-sendto (for the file send operation)
+
+ Additional dependencies if you want to install from source:
+ 
+   * help2man
+   * python-dev
+   * intltool
+   * imagemagick
+
+ ============
+ Installation
+ ============
+
+ Extract the tar archive somewhere into your home directory and cd into 
+ the directory where you extracted it, for example:
+
+   tar xzvf gpodder-0.11.3.tar.gz
+   cd gpodder-0.11.3/
+   make install
+
+ If you have any problems, please visit the gPodder website or mail the 
+ gPodder mailing list (see below for more information).
+
+ =========================================
+ Feature requests, bug reports and patches
+ =========================================
+
+ Feature requests, bug report and patches should all be filed in our
+ Bugzilla at http://bugs.gpodder.org - for general discussion and questions,
+ please send a message to gpodder-devel (this is a subscriber-only list, so
+ you have to subscribe first before sending mail there).
+
+ For up to date information about gPodder, see the website and Wiki.
+
+   Homepage:       http://www.gpodder.org/
+   Wiki:           http://wiki.gpodder.org/
+   Bugzilla:       http://bugs.gpodder.org/
+
+   FAQs:           http://wiki.gpodder.org/wiki/FAQs
+   Mailing List:   gpodder-devel@berlios.de
+   IRC Channel:    #gpodder on FreeNode (irc.freenode.net)
+
+ Have fun with gPodder!
+ Thomas Perl <thpinfo.com>
+

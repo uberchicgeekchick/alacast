@@ -13,6 +13,7 @@ my @catalogs = ( "ip.tv", "library", "podcasts", "vodcasts", "radiocasts", "musi
 my $be_verbose=0;#False
 my $debug_mode=0;#FALSE
 my $opml_uri=0;#FALSE
+my $edit_opml=0;#FALSE
 
 my @xmlUrls_parsed=();
 my $previous_xmlUrl_parser="";#NULL
@@ -21,7 +22,7 @@ my $xmlUrl_parser="";#NULL
 my $attribute;
 my $value;
 my $searching_list="";
-my $output = "";
+my $output = "\(xml\)Url";
 
 sub print_usage{
 	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_exec);
@@ -62,7 +63,10 @@ sub search_catalog{
 		$opml_attribute=~s/.*$output=["']([^"']+)["'].*/\2/i;
 		$opml_attribute=~s/<!\[CDATA\[(.+)\]\]>/\1/;
 
-		printf("%s>%s>%s%s\n", $opml_attribute, $output, ($opml_uri==1?"file://":""), $opml_file);
+		printf("%s>%s>%s%s\n", $output, $opml_attribute, ($opml_uri==1?"file://":""), $opml_file);
+		if($edit_opml){
+			exec("vi '$opml_file'");
+		}
 		if("$xmlUrl_parser"ne""){
 			my $xmlUrl_attribute=$opml_and_outline;
 			$xmlUrl_attribute=~s/.*xmlUrl=["']([^"']+)["'].*/\1/i;
@@ -72,7 +76,8 @@ sub search_catalog{
 			}
 			if(!$already_parsed){
 				$xmlUrls_parsed[@xmlUrls_parsed]=$xmlUrl_attribute;
-				my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null \&'";
+				#my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null \&'";
+				my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null'";
 				printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
 				exec($xmlUrl_parser_exec);
 			}
@@ -97,6 +102,8 @@ sub search_catalogs{
 sub parse_option{
 	my $option=shift;
 	
+	if("$option"=~/^(\-\-output=.*)$/){ return parse_output($option); }
+	
 	my $action=$option;
 	$action=~s/^\-\-([^\-]+)\-?(.*)$/\1/g;
 	
@@ -104,6 +111,13 @@ sub parse_option{
 	
 	my $setting=$option;
 	$setting=~s/^\-\-([^\-]*)\-?(.*)$/\2/g;
+	
+	if("$setting"eq"editing"){
+		printf("VI editing\t\t\t\t\t\t[%sd]:\n", $action);
+		if("$action"eq"enable"){ $edit_opml=1; }
+		if("$action"eq"disable"){ $edit_opml=0; }
+		return 1;
+	}
 	
 	if("$setting"eq"debug"){
 		printf("Debug mode\t\t\t\t\t\t[%sd]:\n", $action);
@@ -126,15 +140,15 @@ sub parse_option{
 		return 1;
 	}
 	
-	if($setting=~/^xmlUrl-parser=.+/){
+	if($setting=~/^xmlUrl\-parser=.+/){
 		if( "$action"eq"enable" ){
 			$xmlUrl_parser=$setting;
-			$xmlUrl_parser=~s/^([^=]*)=(.*)$/\2/g;
+			$xmlUrl_parser=~s/^xmlUrl\-parser=(.*)/\1/g;
 			if("$previous_xmlUrl_parser"ne"" && "$previous_xmlUrl_parser"ne"$xmlUrl_parser"){
 				@xmlUrls_parsed=();
 			}
 			
-			printf("Further xmlUrls will be passed to\t\t\t\t[%s]\n", $xmlUrl_parser);
+			printf("Further xmlUrls will be passed to\t\t[%s]\n", $xmlUrl_parser);
 		}
 		if( "$action"eq"disable" && $xmlUrl_parser!=""){
 			$xmlUrl_parser="";
@@ -183,7 +197,6 @@ sub parse_output{
 sub main{
 	for ( my $i=0; $i<@ARGV; $i++ ) {
 		while( parse_option($ARGV[$i]) ){ $i++; }
-		while( parse_output($ARGV[$i]) ){ $i++; }
 		parse_attribute($ARGV[$i]);
 		search_catalogs();
 	}

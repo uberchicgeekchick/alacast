@@ -1,0 +1,167 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#
+# gPodder - A media aggregator and podcast client
+# Copyright (c) 2005-2008 Thomas Perl and the gPodder Team
+#
+# gPodder is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# gPodder is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+"""
+gPodder enables you to subscribe to RSS feeds and download
+podcast episodes from these feeds. gPodder can operate in 
+GUI mode and in CLI mode. Downloaded podcasts can either 
+be synchronized to portable MP3 players (including iPods) 
+or played back on the user's desktop.
+"""
+
+# PLEASE DO NOT CHANGE FORMAT OF __version__ LINE (setup.py reads this)
+
+__author__    = "Thomas Perl <thp@perli.net>"
+__version__   = "0.11.3"
+__date__      = "2008-06-01"
+__copyright__ = "Copyright (c) 2005-2008 %s. All rights reserved." % __author__
+__licence__   = "GPL"
+
+import sys
+import os
+import os.path
+
+import locale
+import gettext
+
+from optparse import OptionParser
+
+try:
+    import feedparser
+except:
+    print 'Warning: Module "feedparser" not found. Please install "python-feedparser".'
+    print '         The feedparser module can also be downloaded from www.feedparser.org'
+    sys.exit( -1)
+
+
+def main( argv = sys.argv):
+    prefix = os.path.abspath( os.path.normpath( os.path.join( os.path.dirname( argv[0]), '..')))
+    locale_dir = os.path.join( prefix, 'share', 'locale')
+
+    # Enable i18n support
+    domain = 'gpodder'
+    gettext.bindtextdomain( domain, locale_dir)
+    gettext.textdomain( domain)
+    gettext.install(domain, locale_dir, unicode=True)
+
+    s_usage = 'usage: %%prog [options]\n\n%s' % ( __doc__.strip() )
+    s_version = '%%prog %s' % ( __version__ )
+
+    parser = OptionParser( usage = s_usage, version = s_version)
+
+    parser.add_option("-v", "--verbose",
+                      action="store_true", dest="verbose", default=False,
+                      help=_("Print debugging output to stdout"))
+
+    parser.add_option("-t", "--local",
+                      action="store_true", dest="local", default=False,
+                      help=_("Run local version in current directory"))
+    
+    parser.add_option("-m", "--maemo",
+                      action="store_true", dest="maemo", default=False,
+                      help=_("Start the Maemo user interface of gPodder"))
+    
+    parser.add_option("-l", "--list",
+                      action="store_true", dest="list", default=False,
+                      help=_("List all channel subscriptions"))
+
+    parser.add_option("-r", "--run",
+                      action="store_true", dest="run", default=False,
+                      help=_("Update channel list, download new podcasts"))
+
+    parser.add_option("-u", "--update",
+                      action="store_true", dest="update", default=False,
+                      help=_("Update channel list and exit"))
+    
+    parser.add_option("-s", "--sync",
+                      action="store_true", dest="sync", default=False,
+                      help=_("Synchronize channels to configured device"))
+
+    parser.add_option("-a", "--add", dest="add",
+                      help=_("Subscribe to channel from URL"), metavar="URL")
+    
+    parser.add_option("-d", "--delete", dest="delete",
+                      help=_("Delete channel specified by URL"), metavar="URL")
+
+
+    (options, args) = parser.parse_args(argv)
+
+    if options.local:
+        sys.path = [ os.path.join( prefix, 'src') ] + sys.path
+
+    import gpodder
+    gpodder.user_agent = 'gPodder/%s (+http://gpodder.berlios.de/)' % __version__
+    
+    if options.maemo:
+        gpodder.interface = gpodder.MAEMO
+    elif options.list or options.run or options.update or \
+            options.sync or options.add or options.delete:
+        gpodder.interface = gpodder.CLI
+    else:
+        gpodder.interface = gpodder.GUI
+
+    if options.verbose:
+        from gpodder.liblogger import enable_verbose
+        enable_verbose()
+
+    from gpodder import console
+    if options.list:
+        console.list_channels()
+    elif options.run:
+        console.run()
+    elif options.update:
+        console.update()
+    elif options.sync:
+        console.sync_device()
+    elif options.add:
+        console.add_channel( options.add)
+    elif options.delete:
+        console.del_channel( options.delete)
+    else:
+        #default run gui
+        from gpodder import gui
+        from gpodder.SimpleGladeApp import bindtextdomain
+        import gtk.glade
+
+        # check if we have a X connection
+        from os import environ
+        if not 'DISPLAY' in environ or not environ['DISPLAY']:
+            print 'Your DISPLAY variable is not set correctly. Cannot start GUI.'
+            sys.exit( -1)
+
+        gui.glade_dir = os.path.join( prefix, *gui.glade_dir)
+        gui.icon_dir = os.path.join( prefix, *gui.icon_dir)
+        gui.scalable_dir = os.path.join( prefix, *gui.scalable_dir)
+
+        if options.local:
+            gui.glade_dir = os.path.join( prefix, 'data')
+            gui.icon_dir = os.path.join( prefix, 'data', 'gpodder.png')
+            gui.scalable_dir = os.path.join( prefix, 'data', 'gpodder.svg')
+            locale_dir = os.path.join( prefix, 'data', 'locale')
+
+        bindtextdomain( domain, locale_dir)
+        gui.app_version = __version__
+        gui.main()
+
+
+if __name__ == "__main__":
+    sys.exit( main())
+

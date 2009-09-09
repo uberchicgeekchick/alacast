@@ -1,0 +1,16 @@
+#!/bin/tcsh -f
+set my_editor = "`printf "\""${0}"\"" | sed 's/.*\/\([^\.]\+\).*/\1/g'`"
+switch ( "${my_editor}" )
+case "connectED":
+case "gedit":
+	breaksw
+case "vi":
+case "vim":
+case "vim-enhanced":
+default:
+	set my_editor = `printf "%s -p" "vim-enhanced"`
+	breaksw
+endsw
+
+${my_editor} "./ip.tv/technology/networks/podcast.cnet.com.opml" "./podcasts/online-culture/ChicGeekChicks.opml" "./podcasts/technology/networks/podcast.cnet.com.opml" "./radiocasts/bbc.co.uk/1xtra.opml" "./radiocasts/bbc.co.uk/6music.opml" "./radiocasts/bbc.co.uk/asiannetwork.opml" "./radiocasts/bbc.co.uk/bbc7.opml" "./radiocasts/bbc.co.uk/crossstation.opml" "./radiocasts/bbc.co.uk/fivelive.opml" "./radiocasts/bbc.co.uk/fivelive.opml.xhtml" "./radiocasts/bbc.co.uk/local.opml" "./radiocasts/bbc.co.uk/radio4.opml" "./radiocasts/bbc.co.uk/worldservice.opml" "./radiocasts/community-radio/kepx-90.3-fm.opml" "./vodcasts/technology/networks/podcast.cnet.com.opml"
+

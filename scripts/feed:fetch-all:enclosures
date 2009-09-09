@@ -1,6 +1,6 @@
 #!/usr/bin/tcsh -f
-if (! ${?1} || "${1}" == "" || "${1}" == "--help" ) then
-	printf "Usage: %s [--newest|--get-first=1..10..?|--get-last=1..10..?] RSS_URI\n" `basename ${0}`;
+if(! ${?1} || "${1}" == "" || "${1}" == "--help" ) then
+	printf "Usage: %s [ (--newest|--first)=1..10..? ] [ (--oldest|--last)=1..10..? ] [ --quit ] RSS_URI\n" `basename ${0}`;
 	exit -1;
 endif
 
@@ -35,7 +35,7 @@ case "quiet":
 
 case "regex-match-titles":
 	shift;
-	if ( "${value}" == "" ) breaksw
+	if( "${value}" == "" ) breaksw
 	set regex_match_titles = "${value}";
 	breaksw
 endsw
@@ -48,7 +48,7 @@ wget --quiet -O './00-feed.xml' "${1}"
 if( ! ${?quiet} ) printf "Finding feed's title.\n"
 set title = "`/usr/bin/grep '<title.*>' './00-feed.xml' | sed 's/.*<title[^>]*>\([^<]*\)<\/title>.*/\1/gi' | head -1 | sed 's/[\r\n]//g' | sed 's/\//\ \-\ /g'`"
 
-if ( ! -d "${title}" ) mkdir -p "${title}"
+if( ! -d "${title}" ) mkdir -p "${title}"
 cd "${title}"
 
 set download_log = "./00-"`basename "${0}"`".log"
@@ -59,7 +59,7 @@ printf "Preparing to download: %s\n" "${title}" >> "${download_log}"
 if( ! ${?quiet} ) printf "\tURI:\n\t%s\n" "${1}"
 printf "\tURI:\n\t%s\n" "${1}" >> "${download_log}"
 
-if ( -e './00-feed.xml' && -e './00-titles.lst' && -e './00-enclosures.lst' && -e './00-pubdates.lst' ) goto continue_download
+if( -e './00-feed.xml' && -e './00-titles.lst' && -e './00-enclosures.lst' && -e './00-pubdates.lst' ) goto continue_download
 
 mv '../00-feed.xml' "./00-feed.xml"
 
@@ -138,7 +138,7 @@ ex '+1,$s/^[\ \s\r\n]\+//g' '+1,$s/[\ \s\r\n]\+$//g' '+1,$s/?/\\?/g' '+wq' './00
 
 set enclosure_count_01 = `cat "./00-enclosures-01.lst"`
 set enclosure_count_02 = `cat "./00-enclosures-02.lst"`
-if ( ${#enclosure_count_01} >= ${#enclosure_count_02} ) then
+if( ${#enclosure_count_01} >= ${#enclosure_count_02} ) then
 	mv "./00-enclosures-01.lst" "./00-enclosures.lst"
 	rm "./00-enclosures-02.lst"
 else
@@ -151,13 +151,13 @@ printf "[done]\n" >> "${download_log}"
 if( ! ${?quiet} ) printf "Beginning to download: %s\n" "${title}"
 printf "Beginning to download: %s\n" "${title}" >> "${download_log}"
 set episodes = ();
-if ( ${?first_episodes} ) then
+if( ${?first_episodes} ) then
 	if( ${#first_episodes} > 0 ) then
 		set episodes = "`head -${first_episodes} './00-enclosures.lst'`"
 		head -${first_episodes} './00-titles.lst' >! './00-tmp-titles.lst'
 		mv './00-tmp-titles.lst' './00-titles.lst'
 	endif
-else if ( ${?last_episodes} ) then
+else if( ${?last_episodes} ) then
 	if( ${#last_episodes} > 0 ) then
 		set episodes = "`tail -${last_episodes} './00-enclosures.lst'`"
 		tail -${last_episodes} './00-titles.lst' >! './00-tmp-titles.lst'
@@ -190,7 +190,7 @@ foreach episode ( $episodes )
 	
 	set episodes_title = "`cat './00-titles.lst' | head -${episode_number} | tail -1 | sed 's/[\r\n]//g' | sed 's/\?//g'`"
 	
-	if ( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
+	if( "${episodes_title}" == "" ) set episodes_title = `printf '%s' "${episodes_filename}" | sed 's/\(.*\)\.[^.]*$/\1/'`
 	
 	if( "${episodes_pubdate}" != "" ) then
 		set episodes_filename = "${episodes_title}, released on: ${episodes_pubdate}.${extension}";
@@ -202,7 +202,7 @@ foreach episode ( $episodes )
 	printf "\n\n\t\tDownloading episode: %s\n\t\tTitle: %s\n\t\tReleased on: %s\n\t\tFilename: %s\n\t\tRemote file: %s\n\t\tURL: %s\n\t\t\t" ${episode_number} "${episodes_title}" "${episodes_pubdate}" "${episodes_filename}" "${episodes_file}" "${episode}" >> "${download_log}"
 
 	# Skipping existing files.
-	if ( -e "./${episodes_filename}" ) then
+	if( -e "./${episodes_filename}" ) then
 		if( ! ${?quiet} ) printf "[skipped existing file]\n\n"
 		printf "[skipping existing file]\n\n" >> "${download_log}"
 		continue
@@ -218,15 +218,15 @@ foreach episode ( $episodes )
 		breaksw
 	endsw
 
-	if ( ${?regex_match_titles} ) then
-		if ( "`echo ${episodes_title} | s/.*\(${regex_match_titles}\).*/\1/g'`" )=="${regex_match_titles}" ) then
+	if( ${?regex_match_titles} ) then
+		if( "`echo ${episodes_title} | s/.*\(${regex_match_titles}\).*/\1/g'`" )=="${regex_match_titles}" ) then
 			printf "[skipping regexp matched episode]";
 			continue;
 		endif
 	endif
 
 	wget --quiet -O "./${episodes_filename}" "${episode}"
-	if ( ! -e "./${episodes_filename}" ) then
+	if( ! -e "./${episodes_filename}" ) then
 		if( ! ${?quiet} ) printf "[*epic fail* :(]\n\n"
 		printf "[*pout* :(]\n\n" >> "${download_log}"
 	else
@@ -239,5 +239,5 @@ end
 if( ! ${?quiet} ) printf "*w00t\!*, I'm done; enjoy online media at its best!"
 printf "*w00t\!*, I'm done; enjoy online media at its best!" >> "${download_log}"
 
-if ( ! ( ${?2} && "${2}" == "---enable-debug" ) ) rm './00-titles.lst' './00-enclosures.lst' './00-pubdates.lst' './00-feed.xml'
+if(!( ${?2} && "${2}" == "---enable-debug" )) rm './00-titles.lst' './00-enclosures.lst' './00-pubdates.lst' './00-feed.xml'
 
