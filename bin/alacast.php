@@ -364,16 +364,21 @@
 			$podcastsTitles['total'] = count($podcastsTitles);
 			
 			/* formats podcast & episode titles. */
-			for($i=1; $i<$podcastsTitles['total']; $i++ )
-				if( (preg_match("/^<title>[^<]*<\/title>$/", $podcastsTitles[$i])) )
-					if(!isset($podcastsInfo[0]))
-						$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode( preg_replace("/<title>[\ \t]*([^<]+)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) );
-					else{
-						if( (in_array( "--titles-append-pubdate", $_SERVER['argv'] )) )
-							$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s, released on: %s", ( (in_array( "--titles-prefix-podcast-name", $_SERVER['argv'] )) ?(sprintf("%s: ", $podcastsInfo[0])) :"" ), preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]), preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)] ) ) );
-						else
-							$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s", ( (in_array( "--titles-prefix-podcast-name", $_SERVER['argv'] )) ?(sprintf("%s: ", $podcastsInfo[0])) :"" ), preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) ) );
-					}
+			for($i=1; $i<$podcastsTitles['total']; $i++ ){
+				if(!( preg_match("/^<title>[^<]*<\/title>$/", $podcastsTitles[$i] ) ))
+					continue;
+				
+				if(!isset($podcastsInfo[0])){
+					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode( preg_replace("/<title>[\ \t]*([^<]+)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) );
+					$episode_prefix=$GLOBALS['alacasts_titles']->set_episode_prefix( $podcastsInfo[0], in_array( "--titles-prefix-podcast-name", $_SERVER['argv'] ));
+					continue;
+				}
+				
+				if(!( in_array( "--titles-append-pubdate", $_SERVER['argv'] ) ))
+					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) ) );
+				else
+					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]), preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)] ) ) );
+			}
 			
 			if(getenv("ALACAST_DEBUG")){
 				print("Found podcastTitles:\n");
@@ -410,19 +415,19 @@
 			
 			if(isset($bad_chars)) return $bad_chars;
 
-			if(!($bad_chars=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-strip\-characters=?(.*)$/", "$1"))) $bad_chars="";
-			
-			switch(alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player=?(.*)$/", "$1")){
-				case FALSE: return $bad_chars;
+			if(!($bad_chars=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-strip\-characters=['\"]?([^'\"]*)['\"]?$/", "$1"))) $bad_chars="";
+			switch(alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)$/", "$1")){
 				case "gstreamer":
 					return ($bad_chars=sprintf("%s#", $bad_chars));
 				case "vlc":
 					return ($bad_chars=sprintf("%s:", $bad_chars));
 				case "xine":
-					return ($bad_chars=sprintf("%s;", $bad_chars));
-				default:
+					return ($bad_chars=sprintf("%s;#", $bad_chars));
+				case "": default:
 					return ($bad_chars=sprintf("%s#:;", $bad_chars));
+				case FALSE: return $bad_chars;
 			}
+			exit(-1);
 		}
 		
 		function clean_podcasts_info( &$podcastsInfo ) {
@@ -432,17 +437,15 @@
 			*/
 			for($i=0; $i<$podcastsInfo['total']; $i++)
 				$podcastsInfo[$i]=preg_replace( "/^[~\.]+(.*)[~\.]+$/", "$1",
-							(preg_replace( "/[\/;]/", "-",
-								(preg_replace( "/!/", "",
-									(preg_replace( (sprintf("/[%s]/", get_characters_to_strip_from_titles())), "",
-										(html_entity_decode(
-											$podcastsInfo[$i],
-											ENT_QUOTES,
-											"UTF-8"
+							(preg_replace( "/\//", "-",
+								(preg_replace( (sprintf("/[%s]/", get_characters_to_strip_from_titles())), "",
+									(html_entity_decode(
+										$podcastsInfo[$i],
+										ENT_QUOTES,
+										"UTF-8"
 									))
 								))
 							))
-						))
 				); //for( $i<$podcastInfo['total'] )
 			
 			$podcastsInfo[0]=preg_replace( "/^(the)\s+(.*)$/i", "$2, $1", $podcastsInfo[0] );

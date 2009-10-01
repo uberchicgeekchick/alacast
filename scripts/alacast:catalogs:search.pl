@@ -7,7 +7,7 @@ my $scripts_path = `dirname "$0"`;
 $scripts_path =~ s/[\r\n]+//;
 my $scripts_exec = `basename "$0"`;
 $scripts_exec =~ s/[\r\n]+//;
-my $opml_files_path = "$scripts_path/../data/xml/opml";
+my $catalogs_path = "$scripts_path/../data/xml/opml";
 my @catalogs = ( "ip.tv", "library", "podcasts", "vodcasts", "radiocasts", "music" );
 
 my $be_verbose=0;#False
@@ -35,55 +35,61 @@ sub print_usage{
 sub search_catalog{
 	my $catalog=shift;
 	my $results_found=0;
-	my $grep_command=sprintf("/usr/bin/grep --binary-files=without-match --with-filename -i --perl-regex -e '.*%s=[\"\'\\\'\'][^\"\'\\\'\']\*%s[^\"\'\\\'\']\*[\"\'\\\'\']' -r '%s/%s'", $attribute, $value, $opml_files_path, $catalog );
+	my $find_command=sprintf("/usr/bin/find %s%s/%s%s -iname '*.opml'", '"', $catalogs_path, $catalog, '"' );
+	if( $debug_mode ){ printf("Catalog search command: %s.", $find_command ); }
 	
-	if( $debug_mode ) { printf("Search command: %s\n\n", $grep_command); }
-	foreach my $opml_and_outline ( `$grep_command` ) {
-		$opml_and_outline=~s/[\r\n]+//g;
-		if( $opml_and_outline!~/.*$output=["'][^'"]+["'].*/i ){
-			if( $debug_mode ) {
-				printf("Output: [%s] not found.\n\tSkipping: %s\n", $output, $opml_and_outline);
+	foreach my $opml_file ( `$find_command` ){
+		chomp($opml_file);
+		if( "$opml_file" eq "" ) { next; }
+		$opml_file=~s/'/\'/g;
+		my $grep_command=sprintf("/usr/bin/grep --binary-files=without-match --with-filename -i --perl-regex -e '.*%s=[\"\'\\\'\'][^\"\'\\\'\']\*%s[^\"\'\\\'\']\*[\"\'\\\'\']' %s%s%s", $attribute, $value, '"', $opml_file, '"' );
+		if( $debug_mode==1 ) { printf("Search command: %s\n\n", $grep_command); }
+		foreach my $opml_and_outline ( `$grep_command` ){
+			$opml_and_outline=~s/[\r\n]+//g;
+			if( $opml_and_outline!~/.*$output=["'][^'"]+["'].*/i ){
+				if( $debug_mode ) {
+					printf("Output: [%s] not found.\n\tSkipping: %s\n", $output, $opml_and_outline);
+				}
+				next;
 			}
-			next;
-		}
-		
-		if(!$results_found){
-			if($be_verbose) { printf("[%s catalog]>\n", $catalog); }
-		}
-		$results_found++;
-
-		while($opml_and_outline=~/\.\.\//){
-			$opml_and_outline =~ s/[^\/]+\/\.\.\///g;
-		}
-
-		my $opml_file=$opml_and_outline;
-		$opml_file=~s/^([^:]*):.*$/\1/;
-		
-		my $opml_attribute=$opml_and_outline;
-		$opml_attribute=~s/.*$output=["']([^"']+)["'].*/\2/i;
-		$opml_attribute=~s/<!\[CDATA\[(.+)\]\]>/\1/;
-
-		printf("%s>%s>%s%s\n", $output, $opml_attribute, ($opml_uri==1?"file://":""), $opml_file);
-		if($edit_opml){
-			exec("vi '$opml_file'");
-		}
-		if("$xmlUrl_parser"ne""){
-			my $xmlUrl_attribute=$opml_and_outline;
-			$xmlUrl_attribute=~s/.*xmlUrl=["']([^"']+)["'].*/\1/i;
-			my $already_parsed=0;
-			for(my $i=0; $i<@xmlUrls_parsed && $already_parsed==0; $i++){
-				if($xmlUrls_parsed[$i]==$xmlUrl_attribute){$already_parsed=1;}
+			
+			if(!$results_found){
+				if($be_verbose) { printf("[%s catalog]>\n", $catalog); }
 			}
-			if(!$already_parsed){
-				$xmlUrls_parsed[@xmlUrls_parsed]=$xmlUrl_attribute;
-				#my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null \&'";
-				my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null'";
-				printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
-				exec($xmlUrl_parser_exec);
+			$results_found++;
+			
+			while($opml_and_outline=~/\.\.\//){
+				$opml_and_outline =~ s/[^\/]+\/\.\.\///g;
 			}
-		}
-		
+
+			my $opml_file=$opml_and_outline;
+			$opml_file=~s/^([^:]*):.*$/\1/;
+			
+			my $opml_attribute=$opml_and_outline;
+			$opml_attribute=~s/.*$output=["']([^"']+)["'].*/\2/i;
+			$opml_attribute=~s/<!\[CDATA\[(.+)\]\]>/\1/;
+			
+			printf("%s>%s>%s%s\n", $output, $opml_attribute, ($opml_uri==1?"file://":""), $opml_file);
+			if($edit_opml){
+				exec("vi '$opml_file'");
+			}
+			if("$xmlUrl_parser"ne""){
+				my $xmlUrl_attribute=$opml_and_outline;
+				$xmlUrl_attribute=~s/.*xmlUrl=["']([^"']+)["'].*/\1/i;
+				my $already_parsed=0;
+				for(my $i=0; $i<@xmlUrls_parsed && $already_parsed==0; $i++){
+					if($xmlUrls_parsed[$i]==$xmlUrl_attribute){$already_parsed=1;}
+				}
+				if(!$already_parsed){
+					$xmlUrls_parsed[@xmlUrls_parsed]=$xmlUrl_attribute;
+					my $xmlUrl_parser_exec="tcsh -f -c '($xmlUrl_parser\"$xmlUrl_attribute\" > /dev/tty) >& /dev/null'";
+					printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
+					exec($xmlUrl_parser_exec);
+				}
+			}
+			
 		if($be_verbose||$debug_mode){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
+		}
 	}
 }#search_catalog
 
@@ -105,12 +111,12 @@ sub parse_option{
 	if("$option"=~/^(\-\-output=.*)$/){ return parse_output($option); }
 	
 	my $action=$option;
-	$action=~s/^\-\-([^\-]+)\-?(.*)$/\1/g;
+	$action=~s/^\-\-([^\-=]+)[\-=]?(.*)$/\1/g;
 	
 	if("$action"!~/^(en|dis)able$/){ return 0; }
 	
 	my $setting=$option;
-	$setting=~s/^\-\-([^\-]*)\-?(.*)$/\2/g;
+	$setting=~s/^\-\-([^\-=]*)[\-=]?(.*)$/\2/g;
 	
 	if("$setting"eq"editing"){
 		printf("VI editing\t\t\t\t\t\t[%sd]:\n", $action);

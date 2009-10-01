@@ -1,23 +1,36 @@
 #!/bin/sh --noprofile
 
-alacasts_path=`dirname "${0}"`
-alacasts_exec="${alacasts_path}/alacast.php"
-if ! test -z $ALACAST_OPTIONS; then export ALACAST_OPTIONS="--update=detailed --logging --interactive --titles-append-pubdate --strip-characters='#!'"; fi
+alacasts_path=`dirname "${0}"`;
+cd "${alacasts_path}";
+alacasts_path=`pwd`;
+alacasts_exec="${alacasts_path}/alacast.php";
+if test ! -x "${alacasts_exec}"; then
+	printf "Unable to find alacast.php or its not exectuable.\n\tAttempting to run: %s" "${alacasts_exec}";
+	exit -1;
+fi
+if test -n "$ALACAST_OPTIONS"; then export ALACAST_OPTIONS='--logging --titles-append-pubdate --strip-characters=#;! --update=detailed --interactive'; fi
 
 
-alacasts_resolution="";
-if test -e "${HOME}/.alacast/cli.geometry"; then
-	alacasts_resolution=`cat "${HOME}/.alacast/cli.geometry"`
-elif test -e "${alacasts_path}/../resolutions/cli"; then
-	alacasts_resolution=`cat "${alacasts_path}/../resolutions/cli"`
+alacasts_config="";
+if test -e "${HOME}/.alacast/config.asc"; then
+	alacasts_config="${HOME}/.alacast/config.asc"
+elif test -e "${alacasts_path}/../data/${USER}/default/config.asc"; then
+	alacasts_config="${alacasts_path}/../data/profiles/${USER}/config.asc"
+elif test -e "${alacasts_path}/../data/profiles/default/config.asc"; then
+	alacasts_config="${alacasts_path}/../data/profiles/default/config.asc"
+fi
+if test -e "${alacasts_config}"; then
+	alacasts_resolution=`cat "${alacasts_config}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
+	alacasts_options=`cat "${alacasts_config}" | grep 'options.cli' | sed 's/.*options\.cli="\([^"]\+\)";/\1/'`;
 else
 	alacasts_resolution="114x40"
+	alacasts_options="--with-defaults";
 fi
 
-/usr/bin/gnome-terminal \
-	--geometry="$alacasts_resolution" \
-	--hide-menubar \
-	--title="alacast:cli" \
-	--working-directory="$alacasts_path" \
-	--command="$alacasts_exec $argv" \
-&;
+/usr/bin/gnome-terminal							\
+	--geometry="${alacasts_resolution}"				\
+	--hide-menubar							\
+	--role='Media:Alacast'						\
+	--title="alacast:php"						\
+	--working-directory="${alacasts_path}"				\
+	--command="${alacasts_exec} ${alacasts_options} ${argv}" &

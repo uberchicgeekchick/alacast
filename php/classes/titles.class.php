@@ -62,6 +62,13 @@
 		
 		
 		
+		public function set_episode_prefix( $podcasts_title, $prefix_title ){
+			if(!$prefix_title) return "";
+			return sprintf( "%s' episode: ", $podcasts_title );
+		}/*set_episode_prefix( $podcasts_title );*/
+		
+		
+		
 		public function prefix_episope_titles_with_podcasts_title( &$podcasts_info ) {
 			if( !(alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-prefix\-episodes\-with\-podcast\-title/")) ) return;
 		

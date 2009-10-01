@@ -28,7 +28,7 @@ from libpodcasts import podcastChannel
 
 import time
 
-import popen2
+import subprocess
 import urllib
 
 

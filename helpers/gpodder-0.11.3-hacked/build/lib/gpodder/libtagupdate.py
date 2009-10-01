@@ -26,7 +26,7 @@
 
 
 # for ogg/vorbis (vorbiscomment utility)
-import popen2
+import subprocess
 
 # for logging
 from liblogger import log
@@ -62,7 +62,7 @@ def update_metadata_on_file( filename, **metadata):
 def update_tag_ogg( filename, **metadata):
     data = '\n'.join( [ '%s=%s' % ( i.upper(), metadata[i] ) for i in metadata ] + [''])
 
-    p = popen2.Popen3('vorbiscomment -w "%s"' % filename)
+    p = subprocess.Popen3('vorbiscomment -w "%s"' % filename)
 
     writer = p.tochild
     writer.write(data)
