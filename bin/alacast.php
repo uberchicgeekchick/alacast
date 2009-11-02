@@ -416,18 +416,17 @@
 			if(isset($bad_chars)) return $bad_chars;
 
 			if(!($bad_chars=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-strip\-characters=['\"]?([^'\"]*)['\"]?$/", "$1"))) $bad_chars="";
-			switch(alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)$/", "$1")){
+			if(!(alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)/") )) return $bad_chars;
+			switch(($player=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)/", "$1"))){
 				case "gstreamer":
 					return ($bad_chars=sprintf("%s#", $bad_chars));
 				case "vlc":
 					return ($bad_chars=sprintf("%s:", $bad_chars));
 				case "xine":
 					return ($bad_chars=sprintf("%s;#", $bad_chars));
-				case "": default:
+				case "":
 					return ($bad_chars=sprintf("%s#:;", $bad_chars));
-				case FALSE: return $bad_chars;
 			}
-			exit(-1);
 		}
 		
 		function clean_podcasts_info( &$podcastsInfo ) {
@@ -470,16 +469,14 @@
 			if( !(isset( $untitled_podcast_count )) )
 				$untitled_podcast_count=0;
 			
-			if(!( $podcastsName && $podcastsEpisode)) {
+			if(!$podcastsEpisode) {
 				$podcastsEpisode=sprintf(
-								"%d%s %s",
+								"%d%s - %s",
 									((++$untitled_podcast_count)),
 									($GLOBALS['alacasts_titles']->get_numbers_suffix( $untitled_podcast_count ) ),
-									($podcastsName ?$podcastsName :"untitled podcast" )
+									"untitled podcast(s)"
+									
 				);
-				
-				if(!$podcastsName)
-					$podcastsName="Untitled Podcast(s)";
 			}
 			
 			static $GPODDER_SYNC_DIR_STRLEN;
@@ -495,16 +492,14 @@
 				$max_strlen=175;
 			
 			do {
-				$podcasts_max_strlen=$max_strlen-($GPODDER_SYNC_DIR_STRLEN+strlen($podcastsName)+strlen($podcastsExtra)+strlen($podcastsExtension));
+				$podcasts_max_strlen=$max_strlen-(strlen($podcastsExtra)+strlen($podcastsExtension));
 				if(in_array( "--titles-append-pubdate", $_SERVER['argv'] ) )
 					$podcastsEpisode=preg_replace("/^(.{1,{$podcasts_max_strlen}})(.*)(, released on.*)$/", "$1$3", $podcastsEpisode);
 				else
 					$podcastsEpisode=preg_replace("/(.{1,{$podcasts_max_strlen}}).+/", "$1", $podcastsEpisode);
 				
 				$Podcasts_New_Filename=sprintf(
-					"%s/%s/%s%s.%s",
-					GPODDER_SYNC_DIR,
-					$podcastsName,
+					"%s%s.%s",
 					$podcastsEpisode,
 					$podcastsExtra,
 					$podcastsExtension
@@ -517,7 +512,7 @@
 				);
 				
 				sleep( 1 );
-			} while( (file_exists( $Podcasts_New_Filename )) );
+			} while( (file_exists( sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsName, $Podcasts_New_Filename ) )) );
 
 			return $Podcasts_New_Filename;
 		}//end:function set_podcasts_new_episodes_filename()
@@ -579,7 +574,7 @@
 				$GLOBALS['alacasts_logger']->output(
 					(wordwrap(
 						(
-							"\n\n\t*w00t*! {$podcastsInfo[0]} has "
+							"\n\t*w00t*! {$podcastsInfo[0]} has "
 							.( $podcastsFiles['total']-1 )
 							." new episode"
 							.( ($podcastsFiles['total']>2)
@@ -600,12 +595,10 @@
 			}
 			closedir($gPoddersPodcastDir);
 			
-			$GLOBALS['alacasts_logger']->output(  "\n\n\t"  );
-			
 			if( $totalMovedPodcasts )
-				$GLOBALS['alacasts_logger']->output(  "^_^ *w00t*, you have {$totalMovedPodcasts} new podcasts!"  );
+				$GLOBALS['alacasts_logger']->output(  "\n\n\t^_^ *w00t*, you have {$totalMovedPodcasts} new podcasts!"  );
 			else
-				$GLOBALS['alacasts_logger']->output(  "^_^ There are no new podcasts."  );
+				$GLOBALS['alacasts_logger']->output(  "\n\t^_^ There are no new podcasts."  );
 			
 			$GLOBALS['alacasts_logger']->output(
 				"  Have fun! ^_^\n\n"
@@ -652,6 +645,8 @@
 		function move_podcasts_episodes( &$podcastsGUID, &$podcastsFiles, &$podcastsInfo ) {
 			$movedPodcasts=0;
 			
+			if(!$podcastsInfo[0]) $podcastsInfo[0]="Untitled podcast(s)";
+			
 			for($i=1, $z=($podcastsInfo['total']-1); $i<$podcastsFiles['total']; $i++, $z--) {
 				$podcastsFiles[$i]=preg_replace('/^"(.*)"$/', '$1', $podcastsFiles[$i]);
 				if(!( ($ext = get_filenames_extension( $podcastsFiles[$i] )) ))
@@ -662,15 +657,16 @@
 				if( (in_array("--verbose", $_SERVER['argv'])) )
 					$GLOBALS['alacasts_logger']->output(
 						(sprintf(
-							"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t%s",
-							$Podcasts_New_Filename
+							"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t/%s/%s/%s\n",
+							$podcastsFiles[$i],
+							GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename
 						))
 					);
 				
 				if(
 					(in_array( "--keep-original", $_SERVER['argv'] ))
 					&&
-					( (file_exists( $Podcasts_New_Filename )) )
+					( (file_exists( sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename ) ) ) )
 				)
 					continue;
 
@@ -680,21 +676,21 @@
 				$cmd=sprintf("%s %s %s",
 						(in_array("--keep-original", $_SERVER['argv']) ?"cp" : "mv"),
 						preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]),
-						escapeshellarg($Podcasts_New_Filename)
+						escapeshellarg(sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename ))
 				);
 				
 				$null_output=array();
 				$link_check=-1;
 				exec($cmd, $null_output, $link_check);
 				if($link_check){
-					printf("**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output);
+					$GLOBALS['alacasts_logger']->output( "\n\t\t" . (wordwrap( sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output) )), TRUE);
 					continue;
 				}
 				
 				$movedPodcasts++;
 				
 				//Prints the new episodes name:
-				$GLOBALS['alacasts_logger']->output( "\n\t\t" . (wordwrap( $podcastsInfo[$i], 72, "\n\t\t\t" )) );
+				$GLOBALS['alacasts_logger']->output( "\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t" )) );
 			}
 			return $movedPodcasts;
 	}//end:function move_podcasts_episodes();

@@ -6,8 +6,8 @@ endif
 
 if(! ${?eol} ) setenv eol '$';
 
-set alacasts_catalog_search_attribute="`echo "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/'`";
-set alacasts_catalog_search_phrase="`echo "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/'`";
+set alacasts_catalog_search_attribute="`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/'`";
+set alacasts_catalog_search_phrase="`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/'`";
 shift;
 
 set download_limit=1;
@@ -16,7 +16,7 @@ foreach arg ( ${argv} )
 		case "-l":
 		case "--download-limit":
 			shift;
-			if ( ! ( ${?1} && "${1}" != "" && "${1}" > 1 ) ) then
+			if ( ! ( ${?1} && "${1}" != "" && "${1}" > 0 ) ) then
 				printf "--download-limit must be followed by a number whicch is greater than zero.";
 				continue;
 			endif
@@ -28,7 +28,7 @@ foreach arg ( ${argv} )
 		case "-s":
 		case "--start-with":
 			shift;
-			if ( ! ( ${?1} && "${1}" != "" && "${1}" > 1 ) ) then
+			if ( ! ( ${?1} && "${1}" != "" && "${1}" > 0 ) ) then
 				printf "--start-with must be followed by a number whicch is greater than zero.";
 				continue;
 			endif
@@ -73,18 +73,18 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 	wget -O "${alacasts_catalog_search_results_log_prefix}.xml" "${podcast_xmlUrl}";
 	cp --verbose "${alacasts_catalog_search_results_log_prefix}.xml" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
 	chmod u+x  "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
-	ex -E -n -X '+1,$s/[\n\r]\+//g' '+s/<\!\[CDATA\[//g' '+s/\]\]>//g' '+s/<\(item\|entry\)[^>]*>/\r<\1>/g' '+wq' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
+	ex -E -n -X '+1,$s/[\n\r]\+//g' '+s/<\!\[CDATA\[//g' '+s/\]\]>//g' '+s/<\(item\|entry\)[^>]*>/\r<\1>/g' '+wq' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 	
 	set podcasts_title="`head -1 '${alacasts_catalog_search_results_log_prefix}.wget.tcsh' | sed 's/.*<title>\([^<]\+\)<\/title>.*/\1/' | sed 's/\//-/g' | sed 's/'\''/\\'\''/g'`";
 	
 	if( "${podcasts_title}" != "" ) then
 		printf "\n\nDownloading %s episode(s) of %s.\n\n" "${download_limit}" "${podcasts_title}";
-		#set podcasts_title="`echo "${podcasts_title}" | sed 's/'\''/'\''\\'\'''\''/g'`";
+		#set podcasts_title="`printf "${podcasts_title}" | sed 's/'\''/'\''\\'\'''\''/g'`";
 	else
 		printf "A podcasts title could not be found for the podcast @:\n\t%s\nEpisodes will be saved to: 'Untitled podcast(s)'.\n" "${podcast_xmlurl}";
 		set podcasts_title="Untitled podcast(s)";
 	endif
-	ex -E -n -X '+1d' '+wq!' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
+	ex -E -n -X '+1d' '+wq!' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 	
 	if(! ${?force_fetch} ) then
 		if( ${?debug} ) printf "All episodes will be downloaded.  Partial downloads will be completed.";
@@ -93,7 +93,8 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		if( ${?debug} ) printf "Only episodes which have no existing file will be downloaded.";
 		set episode_download_condition="if\ ( \! \-e "\""${podcasts_title}\/\2\.\6"\"" ) ";
 	endif
-	ex -E -n -X "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" "+1,${eol}s/^<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""'\'']\([^"\""'\'']\+\)\.\([^\."\""'\'']\+\)["\""'\''].*<\/\(item\|entry\)>/${episode_download_condition}wget\ \-c\ \-O\ "\""${podcasts_title}\/\2, released on: \3\.\6"\"" "\""\5\.\6"\"";\r/g" "+wq!";
+	ex -E -n -X "+1,${eol}s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^"\""']\+\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/wget -c -O "\""${podcasts_title}\/\2, released on: \6\.\5"\"" "\""\4\.\5"\""/" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
+	#ex -E -n -X "+1,${eol}s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""'\'']\([^"\""'\'']\+\)\.\([^\."\""'\'']\+\)["\""'\''].*<\/\(item\|entry\)>.*/${episode_download_condition}wget\ \-c\ \-O\ "\""${podcasts_title}\/\2, released on: \3\.\6"\"" "\""\5\.\6"\"";\r/g" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
 	
 	set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh' | head -${download_limit}`";
 	
@@ -105,18 +106,13 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 	
 	@ podcast_count=1;
 	if ( ! -d "${podcasts_title}" ) mkdir -p "${podcasts_title}";
-	# TODO: FIXME: if() conditions are added so only
-	# non-existing files are downloaded.
-	# It needs to be converted to a stat check against episodes 'length'.
-	# I'll do this while writing Alacast 2.
-	#foreach episode ( "`cat '${podcasts_search_title}.xml' | sed 's/.*<\(item\|entry\).*>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure[^=]*\(href\|url\)=["\""'\'']\([^"\""'\'']\+\)\.\([^\."\""'\'']\+\)["\""'\''].*length=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*<\/\(item\|entry\)>/if\ ( \! \-e "\""${podcasts_title}\/\2, released on: \3\.\6"\""\ )\ wget\ \-c\ \-O\ "\""${podcasts_title}\/\2, released on: \3\.\6"\"" "\""\5.\6"\""/g' | head -${download_limit}`" )
 	foreach episode ( "`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh' | head -${download_limit}`" )
 		#if( ${?start_with} && ${podcast_count} < ${start_with} ) continue;
 		if ( ${?force_fetch} ) then
-			set episode="`echo '${episode}' | sed 's/^if[^)]\+)\ \(.*\)/\1/g'`";
-			printf "Forcing download/continue of episode: %s\n" "`echo '${episode}' | sed 's/^[^"\""]\+"\""\([^"\""]\+\)"\""[^"\""]\+"\""\([^"\""]\+\)"\"".*/\1\ from\ \2/g'`";
+			set episode="`printf '${episode}' | sed 's/^if[^)]\+)\ \(.*\)/\1/g'`";
+			printf "Forcing download/continue of episode: %s\n" "`printf '${episode}' | sed 's/^[^"\""]\+"\""\([^"\""]\+\)"\""[^"\""]\+"\""\([^"\""]\+\)"\"".*/\1\ from\ \2/g'`";
 		endif
-		if ( ${?debug} ) echo "Downloading an episode of %s using:\n\t%s" "${podcasts_title}" "${episode}";
+		if ( ${?debug} ) printf "Downloading an episode of %s using:\n\t%s" "${podcasts_title}" "${episode}";
 		set test="`${episode}`";
 		@ podcast_count++;
 		#if( ${?download_limit} && ${podcast_count} >= ${download_limit} ) continue;

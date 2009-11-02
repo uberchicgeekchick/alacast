@@ -71,8 +71,8 @@ touch "${download_log}"
 
 if( ! ${?quiet} ) printf "Preparing to download: %s\n" "${title}"
 printf "Preparing to download: %s\n" "${title}" >> "${download_log}"
-if( ! ${?quiet} ) printf "\tURI:\n\t%s\n" "${feed}"
-printf "\tURI:\n\t%s\n" "${feed}" >> "${download_log}"
+if( ! ${?quiet} ) printf "\tURI:\t[%s]\n" "${feed}"
+printf "\tURI:\t[%s]\n" "${feed}" >> "${download_log}"
 
 if( -e './00-feed.xml' && -e './00-titles.lst' && -e './00-enclosures.lst' && -e './00-pubdates.lst' ) goto continue_download
 
@@ -168,10 +168,8 @@ printf "Beginning to download: %s\n" "${title}" >> "${download_log}"
 set episodes = ();
 if( ${?first_episodes} ) then
 	if( ${#first_episodes} > 0 ) then
-		head -${first_episodes} './00-enclosures.lst' >! './00-enclosures.lst.tmp';
-		mv './00-enclosures.lst.tmp' './00-enclosures.lst';
-		head -${first_episodes} './00-titles.lst' >! './00-titles.lst.tmp'
-		mv './00-titles.lst.tmp' './00-titles.lst'
+		ex -E -n -X --noplugin "+1,${first_episodes}d" '+wq' './00-enclosures.lst'
+		ex -E -n -X --noplugin "+1,${first_episodes}d" '+wq' './00-titles.lst'
 	endif
 endif
 

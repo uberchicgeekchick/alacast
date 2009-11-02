@@ -131,32 +131,32 @@
 				fclose( $this->logs_fp );
 			
 			if(!( ($this->logs_fp = fopen( $this->log_file, "a" )) )) {
-				fwrite( STDERR, (utf8_encode("I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n")) );
+				fprintf( STDERR, "%s\n", (utf8_encode("I was unable to load the log file:\n\t\"{$this->log_file}\"\nLogging will be disabled.\n")) );
 				$this->disable_logging();
 				return FALSE;
 			}
 			return TRUE;
 		}//method: private function rotate_log();
 		
-		public function log_output( &$string, &$error ) {
-			if(!($this->logging_enabled))
-				return;
-			
+		private function log_output( &$string, $error ) {
 			$this->rotate_log();
-			fwrite( $this->logs_fp, (utf8_encode( (($error==TRUE) ? "*ERROR*:" : "" ) . $string )) );
+			fprintf( $this->logs_fp, "%s", (utf8_encode( ( $error==TRUE ?"**ERROR:**" : "" ) . $string )) );
 		}//method: private function log_output();
 		
 		public function output( $string, $error = FALSE ) {
-			$this->log_output( $string, $error );
+			if(!($string && "{$string}" != "" && preg_replace( "/^[\s\r\n\ \t]*(.*)[\s\r\n\ \t]*/", "$1", $string ) != "" )) return;
+			
+			if($this->logging_enabled)
+				$this->log_output( $string, $error );
 		
 			if( $error === TRUE )
-				return fwrite( STDERR, (utf8_encode($string)) );
+				return fprintf( STDERR, "%s", (utf8_encode($string)) );
 			
 			if( $this->silence_output )
 				return FALSE;
 			
-			return fwrite( STDOUT, (utf8_encode($string)) );
-		}//method:public function output( $error = FALSE );
+			return fprintf( STDOUT, "%s", (utf8_encode($string)) );
+		}//method:public function output( "mixed $value string", $error = FALSE );
 		
 		private function close_log() {
 			if( $this->logs_fp )

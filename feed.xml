@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/media/national/ondemand/rss/style/default.xsl" ?>
+<?xml-stylesheet type="text/css" href="/media/national/ondemand/rss/style/default.css" ?>
+
+<!--
+Podcast
+
+A podcast is a multimedia file that is distributed by subscription (paid or unpaid) over the Internet using syndication 
+feeds, for playback on mobile devices and personal computers. Like radio, it can mean both the content and the method 
+of broadcast. The latter may also be termed podcasting. The host or author of a podcast is often called a podcaster.
+
+Though podcasters web sites may also offer direct download or streaming of their content, a podcast is distinguished from 
+other digital audio formats by its ability to be downloaded automatically using software capable of reading feed formats 
+such as RSS or Atom.
+
+http://en.wikipedia.org/wiki/Podcast
+-->
+
+
+<rss xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:station="http://www.publicbroadcasting.net/rss/namespaces/station/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:g-core="http://base.google.com/ns/1.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:program="http://www.publicbroadcasting.net/rss/namespaces/program/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" version="2.0">
+  <channel>
+    <title>PRI: RadioWest</title>
+    <link>http://www.kuer.org</link>
+    <description>Hosted by Doug Fabrizio, KUER's award-winning program features conversations with authors, politicians, artists and others. Listeners can join live at (801) 585-WEST or &lt;a   href=&quot;mailto:radiowest@kuer.org&quot;&gt;radiowest@kuer.org&lt;/a&gt;. The conversation continues on our on-line discussion board at &lt;a href=&quot;http://www.kuer.org/index.html&quot;&gt;www.kuer.org&lt;/a&gt;. RadioWest is broadcast live on KUER 90.1 and on XM Public Radio at 11:00 a.m. Mountain/1:00 p.m. Eastern.</description>
+    <language>en-us</language>
+    <copyright>copyright 2005 - 2009 KUER 90.1 Salt Lake City, UT</copyright>
+    <pubDate>Thu, 08 Oct 2009 04:00:00 GMT</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2009 04:19:07 GMT</lastBuildDate>
+    <generator>Public Podcaster</generator>
+    <ttl>30</ttl>
+    <itunes:owner>
+      <itunes:email>radiowest@kuer.org</itunes:email>
+      <itunes:name>KUER Salt Lake City, UT</itunes:name>
+    </itunes:owner>
+    <itunes:image href="http://media.publicbroadcasting.net/kuer/ondemand/podcast/podcastImage_228.jpg" />
+    <itunes:category text="News &amp; Politics" />
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Spirituality" />
+    </itunes:category>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:keywords>RadioWest, Radio West, KUER, KUER 90.1, KUER FM90, Salt Lake City, UT, SLC, Utah, Doug Fabrizio, PRI, XM Sattelite Radio,</itunes:keywords>
+    <itunes:subtitle>Hosted by Doug Fabrizio, KUER's award-winning local program features conversations with authors, politicians, artists and others.</itunes:subtitle>
+    <itunes:summary>Hosted by Doug Fabrizio, KUER's award-winning program features conversations with authors, politicians, artists and others. Listeners can join live at (801) 585-WEST or &lt;a   href=&quot;mailto:radiowest@kuer.org&quot;&gt;radiowest@kuer.org&lt;/a&gt;. The conversation continues on our on-line discussion board at &lt;a href=&quot;http://www.kuer.org/index.html&quot;&gt;www.kuer.org&lt;/a&gt;. RadioWest is broadcast live on KUER 90.1 and on XM Public Radio at 11:00 a.m. Mountain/1:00 p.m. Eastern.</itunes:summary>
+    <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    <image>
+      <title>PRI: RadioWest</title>
+      <url>http://media.publicbroadcasting.net/kuer/ondemand/podcast/podcastImage_228_small.jpg</url>
+      <link>http://www.kuer.org</link>
+      <description>RadioWest podcast logo</description>
+    </image>
+    <item>
+      <title>10/9/09: Sister Dottie S Dixon</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1563956</link>
+      <description>Friday on RadioWest we&apos;re experiencing The Passion of Sister Dottie S Dixon. Sister Dottie is the long-time alter-ego of Charles Lynn Frost. His creation is a Mormon mom from Spanish Fork with a gay son and a mission to bridge the divide between Mormons and the gay community. The play is being re-staged this month - so we&apos;re talking about the show and its ideas. To be sure this is a parody of religious culture, but there&apos;s more here than comedy. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864815/mp3/news/podcast/228/864815.mp3" length="25012059" type="audio/mpeg" />
+      <pubDate>Thu, 08 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864815/mp3/news/podcast/228/864815.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Friday on RadioWest we&apos;re experiencing The Passion of Sister Dottie S Dixon. Sister Dottie is the long-time alter-ego of Charles Lynn Frost. His creation is a Mormon mom from Spanish Fork with a gay son and a mission to bridge the divide between</itunes:subtitle>
+      <itunes:summary>Friday on RadioWest we&apos;re experiencing The Passion of Sister Dottie S Dixon. Sister Dottie is the long-time alter-ego of Charles Lynn Frost. His creation is a Mormon mom from Spanish Fork with a gay son and a mission to bridge the divide between Mormons and the gay community. The play is being re-staged this month - so we&apos;re talking about the show and its ideas. To be sure this is a parody of religious culture, but there&apos;s more here than comedy. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/8/09: The Dalai Lama</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1563770</link>
+      <description>This year marked the 50th anniversary of the exile of the Dalai Lama from Tibet. Thursday, we&apos;re rebroadcasting our conversation about the world&apos;s most charismatic and popular spiritual leader. Our guest is the journalist Mayank Chhaya who has said he was never in awe of the Dalai Lama, until he interviewed the leader, and spoke with hundreds of people connected to his story. His biography views the Dalai Lama from three distinct standpoints. As a man, a monk and a mystic. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864622/mp3/news/podcast/228/864622.mp3" length="24286482" type="audio/mpeg" />
+      <pubDate>Thu, 08 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864622/mp3/news/podcast/228/864622.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>This year marked the 50th anniversary of the exile of the Dalai Lama from Tibet. Thursday, we&apos;re rebroadcasting our conversation about the world&apos;s most charismatic and popular spiritual leader. Our guest is the journalist Mayank Chhaya who</itunes:subtitle>
+      <itunes:summary>This year marked the 50th anniversary of the exile of the Dalai Lama from Tibet. Thursday, we&apos;re rebroadcasting our conversation about the world&apos;s most charismatic and popular spiritual leader. Our guest is the journalist Mayank Chhaya who has said he was never in awe of the Dalai Lama, until he interviewed the leader, and spoke with hundreds of people connected to his story. His biography views the Dalai Lama from three distinct standpoints. As a man, a monk and a mystic. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/7/09: The Legendary Porch Pounders</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1562987</link>
+      <description>It&apos;s Wednesday - so to help you combat the middle-of-the-work-week blues we&apos;re bringing in another Utah band. This time, it&apos;s Ogden&apos;s own Legendary Porch Pounders. Dan Weldon and Bad Brad Wheeler will be in studio to talk about O-town&apos;s music scene and about the blues. They&apos;ll also be armed with guitar, harmonica and porchboard to get low-down and dirty.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864442/mp3/news/podcast/228/864442.mp3" length="25637616" type="audio/mpeg" />
+      <pubDate>Tue, 06 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864442/mp3/news/podcast/228/864442.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>It&apos;s Wednesday - so to help you combat the middle-of-the-work-week blues we&apos;re bringing in another Utah band. This time, it&apos;s Ogden&apos;s own Legendary Porch Pounders. Dan Weldon and Bad Brad Wheeler will be in studio to talk about</itunes:subtitle>
+      <itunes:summary>It&apos;s Wednesday - so to help you combat the middle-of-the-work-week blues we&apos;re bringing in another Utah band. This time, it&apos;s Ogden&apos;s own Legendary Porch Pounders. Dan Weldon and Bad Brad Wheeler will be in studio to talk about O-town&apos;s music scene and about the blues. They&apos;ll also be armed with guitar, harmonica and porchboard to get low-down and dirty.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/6/09: American Casino</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1562480</link>
+      <description>When Leslie and Andrew Cockburn started making their documentary in January of 2008, they didn&apos;t know the story would become one of the most important of our time. American Casino is about the subprime lending scandal and the wagers that Wall Street was placing on real people. It also follows homeowners who bore the brunt of the collapse - from foreclosure to bankruptcy to homelessness. American Casino is being screened in Utah next week, and Tuesday, the filmmakers join us to talk about it.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864232/mp3/news/podcast/228/864232.mp3" length="25070655" type="audio/mpeg" />
+      <pubDate>Mon, 05 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/864232/mp3/news/podcast/228/864232.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>When Leslie and Andrew Cockburn started making their documentary in January of 2008, they didn&apos;t know the story would become one of the most important of our time. American Casino is about the subprime lending scandal and the wagers that Wall</itunes:subtitle>
+      <itunes:summary>When Leslie and Andrew Cockburn started making their documentary in January of 2008, they didn&apos;t know the story would become one of the most important of our time. American Casino is about the subprime lending scandal and the wagers that Wall Street was placing on real people. It also follows homeowners who bore the brunt of the collapse - from foreclosure to bankruptcy to homelessness. American Casino is being screened in Utah next week, and Tuesday, the filmmakers join us to talk about it.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/5/09: Cheap - The High Cost of Discount Culture</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1562250</link>
+      <description>You&apos;ve probably heard stories of people standing in line for an amazing sale or fights breaking out over a bargain table. Chances are - you may have gone to some great lengths for a rock-bottom price yourself. &quot;Cheap&quot; has become part of the American way, but journalist Ellen Ruppel Shell says it comes at a cost. She joins Doug for a look at discount culture and what it means for our homes and our economy. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863990/mp3/news/podcast/228/863990.mp3" length="24709666" type="audio/mpeg" />
+      <pubDate>Mon, 05 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863990/mp3/news/podcast/228/863990.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>You&apos;ve probably heard stories of people standing in line for an amazing sale or fights breaking out over a bargain table. Chances are - you may have gone to some great lengths for a rock-bottom price yourself. &quot;Cheap&quot; has become</itunes:subtitle>
+      <itunes:summary>You&apos;ve probably heard stories of people standing in line for an amazing sale or fights breaking out over a bargain table. Chances are - you may have gone to some great lengths for a rock-bottom price yourself. &quot;Cheap&quot; has become part of the American way, but journalist Ellen Ruppel Shell says it comes at a cost. She joins Doug for a look at discount culture and what it means for our homes and our economy. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/2/09: Shouting Fire</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1561223</link>
+      <description>Friday, we&apos;re talking about the film &quot;Shouting Fire&quot; from director Liz Garbus. The documentary explores the state of free speech in this country. Among the stories in her film is the case of Ward Churchill, who was fired as a tenured professor at the University of Colorado after he made provocative comments about the attacks on 9/11. Garbus asks questions about the limits of free speech in free society, but she also gets at the nature of fear. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863706/mp3/news/podcast/228/863706.mp3" length="23394348" type="audio/mpeg" />
+      <pubDate>Thu, 01 Oct 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863706/mp3/news/podcast/228/863706.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Friday, we&apos;re talking about the film &quot;Shouting Fire&quot; from director Liz Garbus. The documentary explores the state of free speech in this country. Among the stories in her film is the case of Ward Churchill, who was fired as a</itunes:subtitle>
+      <itunes:summary>Friday, we&apos;re talking about the film &quot;Shouting Fire&quot; from director Liz Garbus. The documentary explores the state of free speech in this country. Among the stories in her film is the case of Ward Churchill, who was fired as a tenured professor at the University of Colorado after he made provocative comments about the attacks on 9/11. Garbus asks questions about the limits of free speech in free society, but she also gets at the nature of fear. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>10/1/09: Extreme Ice Survey</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1560740</link>
+      <description>Environmental photographer James Balog says that people assume geological change is something that happened in the distant past. But the truth is these processes are happening around us every day. Balog heads the Extreme Ice Survey - a project which uses time-lapse photography to capture melting glaciers around the world. He&apos;s in Utah this week and joins Doug to talk about the shocking speed of these changes and what it teaches us about our global climate.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863495/mp3/news/podcast/228/863495.mp3" length="24998058" type="audio/mpeg" />
+      <pubDate>Wed, 30 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863495/mp3/news/podcast/228/863495.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Environmental photographer James Balog says that people assume geological change is something that happened in the distant past. But the truth is these processes are happening around us every day. Balog heads the Extreme Ice Survey - a project which</itunes:subtitle>
+      <itunes:summary>Environmental photographer James Balog says that people assume geological change is something that happened in the distant past. But the truth is these processes are happening around us every day. Balog heads the Extreme Ice Survey - a project which uses time-lapse photography to capture melting glaciers around the world. He&apos;s in Utah this week and joins Doug to talk about the shocking speed of these changes and what it teaches us about our global climate.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/30/09: The Caretaker</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1560177</link>
+      <description>The playwright Harold Pinter was known as much for what he said in a play as for what he didn&apos;t say. His work is famous for what is now known as the &quot;Pinter Pause&quot; - directions for an actor to be silent. The Salt Lake Acting Company is currently in production of &quot;The Caretaker,&quot; Pinter&apos;s 1960 breakout play, and actor Daniel Beecher says that the trick is to embrace Pinter&apos;s careful constraints. Wednesday, we&apos;re talking about Harold Pinter and his dark, absurd world.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863283/mp3/news/podcast/228/863283.mp3" length="25021336" type="audio/mpeg" />
+      <pubDate>Tue, 29 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863283/mp3/news/podcast/228/863283.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>The playwright Harold Pinter was known as much for what he said in a play as for what he didn&apos;t say. His work is famous for what is now known as the &quot;Pinter Pause&quot; - directions for an actor to be silent. The Salt Lake Acting</itunes:subtitle>
+      <itunes:summary>The playwright Harold Pinter was known as much for what he said in a play as for what he didn&apos;t say. His work is famous for what is now known as the &quot;Pinter Pause&quot; - directions for an actor to be silent. The Salt Lake Acting Company is currently in production of &quot;The Caretaker,&quot; Pinter&apos;s 1960 breakout play, and actor Daniel Beecher says that the trick is to embrace Pinter&apos;s careful constraints. Wednesday, we&apos;re talking about Harold Pinter and his dark, absurd world.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/29/09: The Sonosopher</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1559705</link>
+      <description>Orem-based Alex Caldiero is a poet and a performance artist, but he has very different ways of describing himself. He&apos;s called himself a &quot;word shaker&quot; and more recently a &quot;sonosopher.&quot; Caldiero is the focus of a new film. It&apos;s about his life from Italy to New York to Utah, but also about words and sounds as only Caldiero can express them. Tuesday, Alex Caldiero and filmmakers Torben Bernhard and Travis Low join Doug to talk about &quot;The Sonosopher.&quot;</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863122/mp3/news/podcast/228/863122.mp3" length="24980584" type="audio/mpeg" />
+      <pubDate>Mon, 28 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863122/mp3/news/podcast/228/863122.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Orem-based Alex Caldiero is a poet and a performance artist, but he has very different ways of describing himself. He&apos;s called himself a &quot;word shaker&quot; and more recently a &quot;sonosopher.&quot; Caldiero is the focus of</itunes:subtitle>
+      <itunes:summary>Orem-based Alex Caldiero is a poet and a performance artist, but he has very different ways of describing himself. He&apos;s called himself a &quot;word shaker&quot; and more recently a &quot;sonosopher.&quot; Caldiero is the focus of a new film. It&apos;s about his life from Italy to New York to Utah, but also about words and sounds as only Caldiero can express them. Tuesday, Alex Caldiero and filmmakers Torben Bernhard and Travis Low join Doug to talk about &quot;The Sonosopher.&quot;</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/28/09: The Story Behind the Story</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1559216</link>
+      <description>In the world of investigative reporting, the goal is to seek out the truth of a story - to set the record straight. But in the new media landscape where newspapers are folding and journalists are being laid off - who&apos;s willing to do that hard work for free? In the new Atlantic Monthly, correspondent Mark Bowden says it&apos;s increasingly being done by political operatives and ideologues. Bowden joins Doug to talk about their &quot;post-journalistic&quot; approach, and how it&apos;s shaping the national debate.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862895/mp3/news/podcast/228/862895.mp3" length="25101166" type="audio/mpeg" />
+      <pubDate>Sun, 27 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862895/mp3/news/podcast/228/862895.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>In the world of investigative reporting, the goal is to seek out the truth of a story - to set the record straight. But in the new media landscape where newspapers are folding and journalists are being laid off - who&apos;s willing to do that hard</itunes:subtitle>
+      <itunes:summary>In the world of investigative reporting, the goal is to seek out the truth of a story - to set the record straight. But in the new media landscape where newspapers are folding and journalists are being laid off - who&apos;s willing to do that hard work for free? In the new Atlantic Monthly, correspondent Mark Bowden says it&apos;s increasingly being done by political operatives and ideologues. Bowden joins Doug to talk about their &quot;post-journalistic&quot; approach, and how it&apos;s shaping the national debate.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/25/09: The Book of Vice</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1558544</link>
+      <description>You know Peter Sagal as host of Wait, Wait ... Don&apos;t Tell Me, but would you have recognized him in a gambling hall or a strip club? Well, if you&apos;re about to protest that you wouldn&apos;t actually go to strip club - never fear: the Harvard-educated NPR host has written a book to take you there. It&apos;s called &lt;i&gt;The Book of Vice,&lt;/i&gt; and Sagal joins Doug to share what he learned about sinful behavior and the places it&apos;s practiced. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863123/mp3/news/podcast/228/863123.mp3" length="20883041" type="audio/mpeg" />
+      <pubDate>Fri, 25 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/863123/mp3/news/podcast/228/863123.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>You know Peter Sagal as host of Wait, Wait ... Don&apos;t Tell Me, but would you have recognized him in a gambling hall or a strip club? Well, if you&apos;re about to protest that you wouldn&apos;t actually go to strip club - never fear: the</itunes:subtitle>
+      <itunes:summary>You know Peter Sagal as host of Wait, Wait ... Don&apos;t Tell Me, but would you have recognized him in a gambling hall or a strip club? Well, if you&apos;re about to protest that you wouldn&apos;t actually go to strip club - never fear: the Harvard-educated NPR host has written a book to take you there. It&apos;s called &lt;i&gt;The Book of Vice,&lt;/i&gt; and Sagal joins Doug to share what he learned about sinful behavior and the places it&apos;s practiced. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/24/09: Erin McKean - Dictionary Evangelist</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1557984</link>
+      <description>Erin McKean says that she likes that &quot;bad English&quot; exists. That might surprise when you learn she was editor-in-chief of the New Oxford American Dictionary. But McKean believes that misusages, mispronunciations and outright errors are the ingredients of a living language. She&apos;s co-founder of a new on-line dictionary project that&apos;s trying to make sense of the way we use language today. Thursday, she joins Doug to talk about words and the new ways we&apos;re using and understanding them.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862310/mp3/news/podcast/228/862310.mp3" length="13022460" type="audio/mpeg" />
+      <pubDate>Wed, 23 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862310/mp3/news/podcast/228/862310.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Erin McKean says that she likes that &quot;bad English&quot; exists. That might surprise when you learn she was editor-in-chief of the New Oxford American Dictionary. But McKean believes that misusages, mispronunciations and outright errors</itunes:subtitle>
+      <itunes:summary>Erin McKean says that she likes that &quot;bad English&quot; exists. That might surprise when you learn she was editor-in-chief of the New Oxford American Dictionary. But McKean believes that misusages, mispronunciations and outright errors are the ingredients of a living language. She&apos;s co-founder of a new on-line dictionary project that&apos;s trying to make sense of the way we use language today. Thursday, she joins Doug to talk about words and the new ways we&apos;re using and understanding them.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/23/09: Occult America</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1557493</link>
+      <description>It&apos;s been a week since Dan Brown published his latest novel and it&apos;s already sold more than 2 million copies. It&apos;s called The Lost Symbol and it draws heavily on the imagery of Freemasonry. The writer Mitch Horowitz says Americans have been fascinated by the occult since our nation&apos;s inception, and that the 19th century movements of Masonry, Spiritualism and Transcendentalism helped shape the American character. Horowitz joins Doug to talk about it - and about his new book &quot;Occult America.&quot;</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862106/mp3/news/podcast/228/862106.mp3" length="13093508" type="audio/mpeg" />
+      <pubDate>Tue, 22 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/862106/mp3/news/podcast/228/862106.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>It&apos;s been a week since Dan Brown published his latest novel and it&apos;s already sold more than 2 million copies. It&apos;s called The Lost Symbol and it draws heavily on the imagery of Freemasonry. The writer Mitch Horowitz says Americans have</itunes:subtitle>
+      <itunes:summary>It&apos;s been a week since Dan Brown published his latest novel and it&apos;s already sold more than 2 million copies. It&apos;s called The Lost Symbol and it draws heavily on the imagery of Freemasonry. The writer Mitch Horowitz says Americans have been fascinated by the occult since our nation&apos;s inception, and that the 19th century movements of Masonry, Spiritualism and Transcendentalism helped shape the American character. Horowitz joins Doug to talk about it - and about his new book &quot;Occult America.&quot;</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/22/09: Roadfood</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1557095</link>
+      <description>Along the highways and in communities throughout America - independent diners beckon travelers not just with time-tested recipes - but with character. Michael Stern&apos;s mission is to chronicle the most memorable eateries. Stern and his wife Jane are the authors of more than 40 books - including the good-eats guide &quot;Roadfood.&quot; Tuesday on RadioWest, Michael Stern joins us to talk about what makes the best restaurants and to share his own Utah favorites.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861829/mp3/news/podcast/228/861829.mp3" length="21841212" type="audio/mpeg" />
+      <pubDate>Tue, 22 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861829/mp3/news/podcast/228/861829.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Along the highways and in communities throughout America - independent diners beckon travelers not just with time-tested recipes - but with character. Michael Stern&apos;s mission is to chronicle the most memorable eateries. Stern and his wife Jane</itunes:subtitle>
+      <itunes:summary>Along the highways and in communities throughout America - independent diners beckon travelers not just with time-tested recipes - but with character. Michael Stern&apos;s mission is to chronicle the most memorable eateries. Stern and his wife Jane are the authors of more than 40 books - including the good-eats guide &quot;Roadfood.&quot; Tuesday on RadioWest, Michael Stern joins us to talk about what makes the best restaurants and to share his own Utah favorites.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/21/09: Amelia Earhart</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1556284</link>
+      <description>Next month, a new feature film starring Hilary Swank chronicles the life and mysterious death of aviator Amelia Earhart. More than 70 years after her disappearance flying over the Pacific, Earhart still appeals to the imagination - and Monday, we&apos;ll try to get at why. We&apos;ll be joined by historian Susan Ware, who says Earhart&apos;s charm, spirit and individualism made her a role model then and now.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861638/mp3/news/podcast/228/861638.mp3" length="20576549" type="audio/mpeg" />
+      <pubDate>Fri, 18 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861638/mp3/news/podcast/228/861638.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Next month, a new feature film starring Hilary Swank chronicles the life and mysterious death of aviator Amelia Earhart. More than 70 years after her disappearance flying over the Pacific, Earhart still appeals to the imagination - and Monday,</itunes:subtitle>
+      <itunes:summary>Next month, a new feature film starring Hilary Swank chronicles the life and mysterious death of aviator Amelia Earhart. More than 70 years after her disappearance flying over the Pacific, Earhart still appeals to the imagination - and Monday, we&apos;ll try to get at why. We&apos;ll be joined by historian Susan Ware, who says Earhart&apos;s charm, spirit and individualism made her a role model then and now.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/18/09: Sunday</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1555872</link>
+      <description>The Seventh Day. Ever since God rested on it and sanctified it, the Sabbath has held a unique place in Western culture. Think about your Sunday memories. Are they of dressing up for church or dinner with your family? Maybe Sunday conjures up images of the newspaper or football games. Historian Craig Harline has traced Sunday from Babylonia to the Superbowl, and joins Doug to talk about the rituals and habits that set the day apart. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861312/mp3/news/podcast/228/861312.mp3" length="20555988" type="audio/mpeg" />
+      <pubDate>Thu, 17 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861312/mp3/news/podcast/228/861312.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>The Seventh Day. Ever since God rested on it and sanctified it, the Sabbath has held a unique place in Western culture. Think about your Sunday memories. Are they of dressing up for church or dinner with your family? Maybe Sunday conjures up images of</itunes:subtitle>
+      <itunes:summary>The Seventh Day. Ever since God rested on it and sanctified it, the Sabbath has held a unique place in Western culture. Think about your Sunday memories. Are they of dressing up for church or dinner with your family? Maybe Sunday conjures up images of the newspaper or football games. Historian Craig Harline has traced Sunday from Babylonia to the Superbowl, and joins Doug to talk about the rituals and habits that set the day apart. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/17/09: NurtureShock</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1555363</link>
+      <description>Did you know that exposing kids to day-to-day marital conflict may actually be good for them? Or that young children are more aggressive after watching TV shows like Arthur than Power Rangers? Science journalists Po Bronson and Ashley Merryman say that many of our child-rearing strategies are backfiring - and that good intentions aren&apos;t the same as good ideas. Thursday, they join Doug to talk about their new book NurtureSchock - New Thinking About Children.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861156/mp3/news/podcast/228/861156.mp3" length="21574345" type="audio/mpeg" />
+      <pubDate>Wed, 16 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/861156/mp3/news/podcast/228/861156.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Did you know that exposing kids to day-to-day marital conflict may actually be good for them? Or that young children are more aggressive after watching TV shows like Arthur than Power Rangers? Science journalists Po Bronson and Ashley Merryman say</itunes:subtitle>
+      <itunes:summary>Did you know that exposing kids to day-to-day marital conflict may actually be good for them? Or that young children are more aggressive after watching TV shows like Arthur than Power Rangers? Science journalists Po Bronson and Ashley Merryman say that many of our child-rearing strategies are backfiring - and that good intentions aren&apos;t the same as good ideas. Thursday, they join Doug to talk about their new book NurtureSchock - New Thinking About Children.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/16/09: Civility in America</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1554879</link>
+      <description>Tuesday, the House admonished Rep Joe Wilson of South Carolina for his outburst during Obama&apos;s health care address to Congress. Perhaps not surprisingly, the resolution to censure him played out largely along party lines. Incivility seems to be a hallmark of our day - and the scholar Eric Uslaner says that while it&apos;s not the first time Americans have been at such odds - the conditions that helped to heal past divides just don&apos;t exist today. Wednesday, Uslaner joins Doug to explain.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860891/mp3/news/podcast/228/860891.mp3" length="21522727" type="audio/mpeg" />
+      <pubDate>Tue, 15 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860891/mp3/news/podcast/228/860891.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Tuesday, the House admonished Rep Joe Wilson of South Carolina for his outburst during Obama&apos;s health care address to Congress. Perhaps not surprisingly, the resolution to censure him played out largely along party lines. Incivility seems to be a</itunes:subtitle>
+      <itunes:summary>Tuesday, the House admonished Rep Joe Wilson of South Carolina for his outburst during Obama&apos;s health care address to Congress. Perhaps not surprisingly, the resolution to censure him played out largely along party lines. Incivility seems to be a hallmark of our day - and the scholar Eric Uslaner says that while it&apos;s not the first time Americans have been at such odds - the conditions that helped to heal past divides just don&apos;t exist today. Wednesday, Uslaner joins Doug to explain.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/15/09: Keynes - The Return of the Master</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1554621</link>
+      <description>Tuesday on RadioWest we&apos;re reconsidering the ideas of the economist John Maynard Keynes. Our guest is Keynes&apos; preeminent biographer the British scholar Robert Skidelsky. Skidelsky says that Keynes has never been more relevant. He says the current crisis has brought to a head ideas that Keynes thought about all the time: how we explain human behavior and the role of moral judgments in economics. Here&apos;s Keynes in nutshell - inescapable uncertainty about the future.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860618/mp3/news/podcast/228/860618.mp3" length="18756056" type="audio/mpeg" />
+      <pubDate>Tue, 15 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860618/mp3/news/podcast/228/860618.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Tuesday on RadioWest we&apos;re reconsidering the ideas of the economist John Maynard Keynes. Our guest is Keynes&apos; preeminent biographer the British scholar Robert Skidelsky. Skidelsky says that Keynes has never been more relevant. He says the</itunes:subtitle>
+      <itunes:summary>Tuesday on RadioWest we&apos;re reconsidering the ideas of the economist John Maynard Keynes. Our guest is Keynes&apos; preeminent biographer the British scholar Robert Skidelsky. Skidelsky says that Keynes has never been more relevant. He says the current crisis has brought to a head ideas that Keynes thought about all the time: how we explain human behavior and the role of moral judgments in economics. Here&apos;s Keynes in nutshell - inescapable uncertainty about the future.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/14/09: Natural Family Values</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1553462</link>
+      <description>In January 2006, the small, rural community of Kanab, Utah became a center of controversy over marriage. The city council passed a unanimous resolution to define a family as &quot;one man, one woman&quot; and a &quot;full quiver&quot; of children. What they weren&apos;t ready for was the onslaught of media attention and the divisions it created in town. A new documentary called Natural Family Values is screening in Salt Lake City, and Doug talks with the filmmakers about what happens when democracy and theocracy clash.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860457/mp3/news/podcast/228/860457.mp3" length="25088546" type="audio/mpeg" />
+      <pubDate>Fri, 11 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860457/mp3/news/podcast/228/860457.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>In January 2006, the small, rural community of Kanab, Utah became a center of controversy over marriage. The city council passed a unanimous resolution to define a family as &quot;one man, one woman&quot; and a &quot;full quiver&quot;</itunes:subtitle>
+      <itunes:summary>In January 2006, the small, rural community of Kanab, Utah became a center of controversy over marriage. The city council passed a unanimous resolution to define a family as &quot;one man, one woman&quot; and a &quot;full quiver&quot; of children. What they weren&apos;t ready for was the onslaught of media attention and the divisions it created in town. A new documentary called Natural Family Values is screening in Salt Lake City, and Doug talks with the filmmakers about what happens when democracy and theocracy clash.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/11/09: Newton and the Counterfeiter</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1553161</link>
+      <description>When you think of Sir Isaac Newton - you probably imagine the physicist, mathematician and philosopher who changed the way man understood the physical universe. But after years of discovery, Newton moved to London and became the Warden of His Majesty&apos;s Mint. In his book, Thomas Levenson reveals another side of Isaac Newton - the genius that helped bring down a rising star of the 17th century underworld. Levenson joins Doug to talk about &quot;Newton and the Counterfeiter.&quot; (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860134/mp3/news/podcast/228/860134.mp3" length="25008379" type="audio/mpeg" />
+      <pubDate>Thu, 10 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/860134/mp3/news/podcast/228/860134.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>When you think of Sir Isaac Newton - you probably imagine the physicist, mathematician and philosopher who changed the way man understood the physical universe. But after years of discovery, Newton moved to London and became the Warden of His</itunes:subtitle>
+      <itunes:summary>When you think of Sir Isaac Newton - you probably imagine the physicist, mathematician and philosopher who changed the way man understood the physical universe. But after years of discovery, Newton moved to London and became the Warden of His Majesty&apos;s Mint. In his book, Thomas Levenson reveals another side of Isaac Newton - the genius that helped bring down a rising star of the 17th century underworld. Levenson joins Doug to talk about &quot;Newton and the Counterfeiter.&quot; (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/10/09: Wearing Your Emotions</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1552627</link>
+      <description>Have you ever felt guilt or fear or maybe even attraction and worried that it was written all over your face? For the psychologist Paul Ekman - it is. Ekman&apos;s career has been dedicated to studying how emotions are expressed - down to the microexpressions of a simple muscle twitch. Thursday on RadioWest, Paul Ekman joins Doug to talk about his latest book - co-authored with the Dalai Lama - on the nature and quality of our emotional lives.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859897/mp3/news/podcast/228/859897.mp3" length="24824814" type="audio/mpeg" />
+      <pubDate>Wed, 09 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859897/mp3/news/podcast/228/859897.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Have you ever felt guilt or fear or maybe even attraction and worried that it was written all over your face? For the psychologist Paul Ekman - it is. Ekman&apos;s career has been dedicated to studying how emotions are expressed - down to the</itunes:subtitle>
+      <itunes:summary>Have you ever felt guilt or fear or maybe even attraction and worried that it was written all over your face? For the psychologist Paul Ekman - it is. Ekman&apos;s career has been dedicated to studying how emotions are expressed - down to the microexpressions of a simple muscle twitch. Thursday on RadioWest, Paul Ekman joins Doug to talk about his latest book - co-authored with the Dalai Lama - on the nature and quality of our emotional lives.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/9/09: Lost in the Meritocracy</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1552061</link>
+      <description>What does it mean to get an education? As a high school student, the writer and critic Walter Kirn saw it as a way out of rural, run-down America, a path to the big city and bigger ideas. But life at Princeton wasn&apos;t quite what he had expected. Instead of a bastion of higher learning - it was just another set of academic hoops and competing for competition&apos;s sake. Wednesday, Kirn joins Doug to talk about his harrowing journey through American academia.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859632/mp3/news/podcast/228/859632.mp3" length="28457924" type="audio/mpeg" />
+      <pubDate>Tue, 08 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859632/mp3/news/podcast/228/859632.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>What does it mean to get an education? As a high school student, the writer and critic Walter Kirn saw it as a way out of rural, run-down America, a path to the big city and bigger ideas. But life at Princeton wasn&apos;t quite what he had expected.</itunes:subtitle>
+      <itunes:summary>What does it mean to get an education? As a high school student, the writer and critic Walter Kirn saw it as a way out of rural, run-down America, a path to the big city and bigger ideas. But life at Princeton wasn&apos;t quite what he had expected. Instead of a bastion of higher learning - it was just another set of academic hoops and competing for competition&apos;s sake. Wednesday, Kirn joins Doug to talk about his harrowing journey through American academia.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/8/09: Renegade - The Making of a President</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1552055</link>
+      <description>Journalist Richard Wolffe covered Barack Obama&apos;s historic presidential campaign from the announcement to the victory speech. In that time, Wolffe had a dozen intimate interviews with the candidate and it was Obama himself who suggested a book. &quot;Renegade: the Making of a President&quot; came out earlier this year, and in it, Wolffe sets out to answer a simple question: Who is Barack Obama? Richard Wolffe joins Doug to talk about the President and his journey to the White House. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859380/mp3/news/podcast/228/859380.mp3" length="24818962" type="audio/mpeg" />
+      <pubDate>Tue, 08 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859380/mp3/news/podcast/228/859380.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Journalist Richard Wolffe covered Barack Obama&apos;s historic presidential campaign from the announcement to the victory speech. In that time, Wolffe had a dozen intimate interviews with the candidate and it was Obama himself who suggested a book.</itunes:subtitle>
+      <itunes:summary>Journalist Richard Wolffe covered Barack Obama&apos;s historic presidential campaign from the announcement to the victory speech. In that time, Wolffe had a dozen intimate interviews with the candidate and it was Obama himself who suggested a book. &quot;Renegade: the Making of a President&quot; came out earlier this year, and in it, Wolffe sets out to answer a simple question: Who is Barack Obama? Richard Wolffe joins Doug to talk about the President and his journey to the White House. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/7/09: Dead Lucky</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1551267</link>
+      <description>Lincoln Hall likes to say that on May 25, 2006, he died on Mt. Everest. It was the one of the deadliest climbing seasons on the mountain, and when Hall collapsed shortly after summiting, he was pronounced dead and left behind. His story gets really interesting though the next morning, when he was found very much alive. Lincoln joined Doug last year to tell his story. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859631/mp3/news/podcast/228/859631.mp3" length="24992914" type="audio/mpeg" />
+      <pubDate>Sat, 05 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859631/mp3/news/podcast/228/859631.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Lincoln Hall likes to say that on May 25, 2006, he died on Mt. Everest. It was the one of the deadliest climbing seasons on the mountain, and when Hall collapsed shortly after summiting, he was pronounced dead and left behind. His story gets really</itunes:subtitle>
+      <itunes:summary>Lincoln Hall likes to say that on May 25, 2006, he died on Mt. Everest. It was the one of the deadliest climbing seasons on the mountain, and when Hall collapsed shortly after summiting, he was pronounced dead and left behind. His story gets really interesting though the next morning, when he was found very much alive. Lincoln joined Doug last year to tell his story. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/4/09: In Defense of Food</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1550885</link>
+      <description>In his groundbreaking book The Omnivore&apos;s Dilemma, the writer Michael Pollan began an important conversation about food. His latest book continues his critique of the food industry, but this time he also takes on nutritional science, which he says has created nothing but anxiety and confusion about even the most basic question of food and health. Michael Pollan was in Utah last year, and he joined us to explain why Americans need a whole new way to think about eating. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859013/mp3/news/podcast/228/859013.mp3" length="25004327" type="audio/mpeg" />
+      <pubDate>Fri, 04 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/859013/mp3/news/podcast/228/859013.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>In his groundbreaking book The Omnivore&apos;s Dilemma, the writer Michael Pollan began an important conversation about food. His latest book continues his critique of the food industry, but this time he also takes on nutritional science, which he</itunes:subtitle>
+      <itunes:summary>In his groundbreaking book The Omnivore&apos;s Dilemma, the writer Michael Pollan began an important conversation about food. His latest book continues his critique of the food industry, but this time he also takes on nutritional science, which he says has created nothing but anxiety and confusion about even the most basic question of food and health. Michael Pollan was in Utah last year, and he joined us to explain why Americans need a whole new way to think about eating. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/3/09: Until it Hurts</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1550132</link>
+      <description>Sports writer Mark Hyman admits he was once one of them. You&apos;ve probably met over-zealous sports parents who seem more interested in bragging rights at cocktail parties and dreams of college scholarships than in how sports are impacting their kids. Thursday, Hyman joins Doug for a look at how adults have taken over the world of kids sports and what it means for the health - and happiness - of children.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858695/mp3/news/podcast/228/858695.mp3" length="24996804" type="audio/mpeg" />
+      <pubDate>Wed, 02 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858695/mp3/news/podcast/228/858695.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Sports writer Mark Hyman admits he was once one of them. You&apos;ve probably met over-zealous sports parents who seem more interested in bragging rights at cocktail parties and dreams of college scholarships than in how sports are impacting their</itunes:subtitle>
+      <itunes:summary>Sports writer Mark Hyman admits he was once one of them. You&apos;ve probably met over-zealous sports parents who seem more interested in bragging rights at cocktail parties and dreams of college scholarships than in how sports are impacting their kids. Thursday, Hyman joins Doug for a look at how adults have taken over the world of kids sports and what it means for the health - and happiness - of children.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/2/09: The Boundaries of Sex Education</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1549864</link>
+      <description>Today we&apos;re testing the boundaries of sex education. A Utah lawmaker has raised the questions about the subject again. Representative Lynn Hemingway is drafting a bill that would push school districts to beef up the information they pass on to kids about sex. We&apos;re talking about the bill, but also about how much information young people can handle about the dicey subject. We&apos;ll also discuss how school systems in other countries are dealing with it and what kind of results they&apos;re getting.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858442/mp3/news/podcast/228/858442.mp3" length="24984056" type="audio/mpeg" />
+      <pubDate>Wed, 02 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858442/mp3/news/podcast/228/858442.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Today we&apos;re testing the boundaries of sex education. A Utah lawmaker has raised the questions about the subject again. Representative Lynn Hemingway is drafting a bill that would push school districts to beef up the information they pass on to</itunes:subtitle>
+      <itunes:summary>Today we&apos;re testing the boundaries of sex education. A Utah lawmaker has raised the questions about the subject again. Representative Lynn Hemingway is drafting a bill that would push school districts to beef up the information they pass on to kids about sex. We&apos;re talking about the bill, but also about how much information young people can handle about the dicey subject. We&apos;ll also discuss how school systems in other countries are dealing with it and what kind of results they&apos;re getting.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>9/1/09: By His Own Rules</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1549562</link>
+      <description>Tuesday the reporter Bradley Graham will join us to talk about his new profile of the former Defense Secretary Donald Rumsfeld. The book has been called both fair minded and blistering. Graham says Rumsfeld is more complicated than the common image of him as a pugnacious and inflexible villain. The book is a personal drama but also an instructive tale about what happens when a man once considered the best and brightest ends up branded a failure.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858231/mp3/news/podcast/228/858231.mp3" length="25003363" type="audio/mpeg" />
+      <pubDate>Tue, 01 Sep 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/858231/mp3/news/podcast/228/858231.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Tuesday the reporter Bradley Graham will join us to talk about his new profile of the former Defense Secretary Donald Rumsfeld. The book has been called both fair minded and blistering. Graham says Rumsfeld is more complicated than the common image of</itunes:subtitle>
+      <itunes:summary>Tuesday the reporter Bradley Graham will join us to talk about his new profile of the former Defense Secretary Donald Rumsfeld. The book has been called both fair minded and blistering. Graham says Rumsfeld is more complicated than the common image of him as a pugnacious and inflexible villain. The book is a personal drama but also an instructive tale about what happens when a man once considered the best and brightest ends up branded a failure.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/31/09: The Chaos Scenario</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1548368</link>
+      <description>Media critic Bob Garfield says that &quot;the digital revolution&quot; isn&apos;t just an abstract idea. It&apos;s an actual revolution, like fire or the wheel. Those ones and zeros have changed the way we consume news and entertainment, which means the whole system - programming, marketing and commerce - has to respond. Garfield has written a book called The Chaos Scenario, but it&apos;s not just a requiem for traditional media. Monday, he joins Doug to talk about solutions and how the new world could look.</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857939/mp3/news/podcast/228/857939.mp3" length="24996467" type="audio/mpeg" />
+      <pubDate>Fri, 28 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857939/mp3/news/podcast/228/857939.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Media critic Bob Garfield says that &quot;the digital revolution&quot; isn&apos;t just an abstract idea. It&apos;s an actual revolution, like fire or the wheel. Those ones and zeros have changed the way we consume news and entertainment, which</itunes:subtitle>
+      <itunes:summary>Media critic Bob Garfield says that &quot;the digital revolution&quot; isn&apos;t just an abstract idea. It&apos;s an actual revolution, like fire or the wheel. Those ones and zeros have changed the way we consume news and entertainment, which means the whole system - programming, marketing and commerce - has to respond. Garfield has written a book called The Chaos Scenario, but it&apos;s not just a requiem for traditional media. Monday, he joins Doug to talk about solutions and how the new world could look.</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/28/09: The Year of Living Biblically</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1547900</link>
+      <description>Not touching unclean things or wearing clothes with mixed fibers were just two of the some 700 rules that A.J. Jacobs tried to follow as he lived an entire year according to the strict prescriptions of the Bible. The editor at large of &lt;i&gt;Esquire&lt;/i&gt; tried to keep his rules in New York City of all places, and Friday, Jacobs talks to Doug about his funny - and profound - journey. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857490/mp3/news/podcast/228/857490.mp3" length="24198293" type="audio/mpeg" />
+      <pubDate>Thu, 27 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857490/mp3/news/podcast/228/857490.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Not touching unclean things or wearing clothes with mixed fibers were just two of the some 700 rules that A.J. Jacobs tried to follow as he lived an entire year according to the strict prescriptions of the Bible. The editor at large of</itunes:subtitle>
+      <itunes:summary>Not touching unclean things or wearing clothes with mixed fibers were just two of the some 700 rules that A.J. Jacobs tried to follow as he lived an entire year according to the strict prescriptions of the Bible. The editor at large of &lt;i&gt;Esquire&lt;/i&gt; tried to keep his rules in New York City of all places, and Friday, Jacobs talks to Doug about his funny - and profound - journey. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/27/09: The Fallen Sky</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1547318</link>
+      <description>To say that Utah State English professor Christopher Cokinos&apos; new book is about meteorites is to tell only part of the story. His 8-year quest to learn about space rocks and the people who have studied them took Cokinos from Greenland to Kansas to Antarctica. Along the way though, he says he discovered new things about himself and about home. Thursday, Christopher Cokinos is with us to talk about his book. It&apos;s called &quot;The Fallen Sky: An Intimate History of Shooting Stars.&quot;</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857404/mp3/news/podcast/228/857404.mp3" length="25025016" type="audio/mpeg" />
+      <pubDate>Wed, 26 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857404/mp3/news/podcast/228/857404.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>To say that Utah State English professor Christopher Cokinos&apos; new book is about meteorites is to tell only part of the story. His 8-year quest to learn about space rocks and the people who have studied them took Cokinos from Greenland to Kansas</itunes:subtitle>
+      <itunes:summary>To say that Utah State English professor Christopher Cokinos&apos; new book is about meteorites is to tell only part of the story. His 8-year quest to learn about space rocks and the people who have studied them took Cokinos from Greenland to Kansas to Antarctica. Along the way though, he says he discovered new things about himself and about home. Thursday, Christopher Cokinos is with us to talk about his book. It&apos;s called &quot;The Fallen Sky: An Intimate History of Shooting Stars.&quot;</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/26/09: The Healing of America</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1547223</link>
+      <description>Reporter TR Reid says when it comes to health care, the United States - the richest country in the world - is a fourth rate power. Reid&apos;s just written a book about health care around the world. He traveled to five wealthy capitalist countries trying to figure out how they do it. Wednesday on RadioWest, TR Reid will tell us what he found. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857075/mp3/news/podcast/228/857075.mp3" length="23823592" type="audio/mpeg" />
+      <pubDate>Wed, 26 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/857075/mp3/news/podcast/228/857075.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Reporter TR Reid says when it comes to health care, the United States - the richest country in the world - is a fourth rate power. Reid&apos;s just written a book about health care around the world. He traveled to five wealthy capitalist countries</itunes:subtitle>
+      <itunes:summary>Reporter TR Reid says when it comes to health care, the United States - the richest country in the world - is a fourth rate power. Reid&apos;s just written a book about health care around the world. He traveled to five wealthy capitalist countries trying to figure out how they do it. Wednesday on RadioWest, TR Reid will tell us what he found. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/25/09: Soul Rebel</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1546478</link>
+      <description>In 1976, Time Magazine sent photographer David Burnett to cover the reggae scene in Jamaica. Reggae hadn&apos;t really hit the United States yet, and Burnett - an established photojournalist - hadn&apos;t heard of Bob Marley until a week before the trip. It turned out to be a &quot;dream assignment,&quot; and all told, Burnett captured some 200 images of the music legend. Tuesday, Doug talks to Burnett about Bob Marley as seen in his book &quot;Soul Rebel.&quot;</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/856935/mp3/news/podcast/228/856935.mp3" length="25008507" type="audio/mpeg" />
+      <pubDate>Mon, 24 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/856935/mp3/news/podcast/228/856935.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>In 1976, Time Magazine sent photographer David Burnett to cover the reggae scene in Jamaica. Reggae hadn&apos;t really hit the United States yet, and Burnett - an established photojournalist - hadn&apos;t heard of Bob Marley until a week before the</itunes:subtitle>
+      <itunes:summary>In 1976, Time Magazine sent photographer David Burnett to cover the reggae scene in Jamaica. Reggae hadn&apos;t really hit the United States yet, and Burnett - an established photojournalist - hadn&apos;t heard of Bob Marley until a week before the trip. It turned out to be a &quot;dream assignment,&quot; and all told, Burnett captured some 200 images of the music legend. Tuesday, Doug talks to Burnett about Bob Marley as seen in his book &quot;Soul Rebel.&quot;</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/24/09: The Fortune Cookie Chronicles</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1546229</link>
+      <description>When the journalist Jennifer 8. Lee learned that fortune cookies weren&apos;t actually Chinese, she said it was like &quot;learning I was adopted while being told there was no Santa Claus.&quot; Actually, many restaurant favorites like General Tso&apos;s Chicken or broccoli and lo mein have little to do with Chinese cuisine. Lee joins Doug to talk about the roots of Chinese food as we know it - and about just how American it really is. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/856544/mp3/news/podcast/228/856544.mp3" length="24552304" type="audio/mpeg" />
+      <pubDate>Mon, 24 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/856544/mp3/news/podcast/228/856544.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>When the journalist Jennifer 8. Lee learned that fortune cookies weren&apos;t actually Chinese, she said it was like &quot;learning I was adopted while being told there was no Santa Claus.&quot; Actually, many restaurant favorites like General</itunes:subtitle>
+      <itunes:summary>When the journalist Jennifer 8. Lee learned that fortune cookies weren&apos;t actually Chinese, she said it was like &quot;learning I was adopted while being told there was no Santa Claus.&quot; Actually, many restaurant favorites like General Tso&apos;s Chicken or broccoli and lo mein have little to do with Chinese cuisine. Lee joins Doug to talk about the roots of Chinese food as we know it - and about just how American it really is. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/21/09: The Prodigal Tongue</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1542799</link>
+      <description>Journalist and writer Mark Abley predicts that by 2015 half the world&apos;s population will be speaking - or at least learning - English. But as the language sweeps the globe, it&apos;s not just changing those it encounters - it&apos;s changing too. New words are being added at a &quot;break-neck&quot; rate from other languages, from hip-hop lyrics, from the blogosphere. Abley joins Doug to talk about the journey English is taking and what the future of the language sounds like. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/855090/mp3/news/podcast/228/855090.mp3" length="24149392" type="audio/mpeg" />
+      <pubDate>Fri, 21 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/855090/mp3/news/podcast/228/855090.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Journalist and writer Mark Abley predicts that by 2015 half the world&apos;s population will be speaking - or at least learning - English. But as the language sweeps the globe, it&apos;s not just changing those it encounters - it&apos;s changing too.</itunes:subtitle>
+      <itunes:summary>Journalist and writer Mark Abley predicts that by 2015 half the world&apos;s population will be speaking - or at least learning - English. But as the language sweeps the globe, it&apos;s not just changing those it encounters - it&apos;s changing too. New words are being added at a &quot;break-neck&quot; rate from other languages, from hip-hop lyrics, from the blogosphere. Abley joins Doug to talk about the journey English is taking and what the future of the language sounds like. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/20/09: Amy Irvine's Trespass</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1542430</link>
+      <description>Four months after her father had committed suicide, Amy Irvine left Salt Lake City for the high desert town of Monticello. As a wilderness activist and apostate Mormon, she was the ultimate outsider in a community of Mormon ranchers. At its heart her book &quot;Trespass&quot; is an elegy to her father, to the desert and to the connection between body and nature. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/855056/mp3/news/podcast/228/855056.mp3" length="24004987" type="audio/mpeg" />
+      <pubDate>Thu, 20 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/855056/mp3/news/podcast/228/855056.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>Four months after her father had committed suicide, Amy Irvine left Salt Lake City for the high desert town of Monticello. As a wilderness activist and apostate Mormon, she was the ultimate outsider in a community of Mormon ranchers. At its heart her</itunes:subtitle>
+      <itunes:summary>Four months after her father had committed suicide, Amy Irvine left Salt Lake City for the high desert town of Monticello. As a wilderness activist and apostate Mormon, she was the ultimate outsider in a community of Mormon ranchers. At its heart her book &quot;Trespass&quot; is an elegy to her father, to the desert and to the connection between body and nature. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/19/09: The Happiness Hypothesis</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1542426</link>
+      <description>We&apos;ve all heard the nuggets of wisdom that would guide the listener to a happier life: &quot;Do unto others as you would have others do unto you&quot; or &quot;Life is what you make of it.&quot; Psychologist Jonathan Haidt has applied the scrutiny of science to your grandmother&apos;s sayings to see just how true they are. He joins Doug Fabrizio to talk about his book &quot;The Happiness Hypothesis,&quot; where he finds fresh insight on the age-old quest for contentment. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854916/mp3/news/podcast/228/854916.mp3" length="25004954" type="audio/mpeg" />
+      <pubDate>Wed, 19 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854916/mp3/news/podcast/228/854916.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>We&apos;ve all heard the nuggets of wisdom that would guide the listener to a happier life: &quot;Do unto others as you would have others do unto you&quot; or &quot;Life is what you make of it.&quot; Psychologist Jonathan Haidt has</itunes:subtitle>
+      <itunes:summary>We&apos;ve all heard the nuggets of wisdom that would guide the listener to a happier life: &quot;Do unto others as you would have others do unto you&quot; or &quot;Life is what you make of it.&quot; Psychologist Jonathan Haidt has applied the scrutiny of science to your grandmother&apos;s sayings to see just how true they are. He joins Doug Fabrizio to talk about his book &quot;The Happiness Hypothesis,&quot; where he finds fresh insight on the age-old quest for contentment. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/18/09: The Film Club</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1542419</link>
+      <description>When film critic David Gilmour&apos;s son Jesse was 15 years old, he was in trouble and he hated school. David tried helping, but nothing seemed to work. That&apos;s when the two struck upon a deal: Jesse could drop out of school on one condition. He had to sit down with his father and watch three movies a week. David joins Doug to talk about the relationship between father and son - and about the life lessons that can be learned at the movies. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854884/mp3/news/podcast/228/854884.mp3" length="25006835" type="audio/mpeg" />
+      <pubDate>Tue, 18 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854884/mp3/news/podcast/228/854884.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>When film critic David Gilmour&apos;s son Jesse was 15 years old, he was in trouble and he hated school. David tried helping, but nothing seemed to work. That&apos;s when the two struck upon a deal: Jesse could drop out of school on one condition. He</itunes:subtitle>
+      <itunes:summary>When film critic David Gilmour&apos;s son Jesse was 15 years old, he was in trouble and he hated school. David tried helping, but nothing seemed to work. That&apos;s when the two struck upon a deal: Jesse could drop out of school on one condition. He had to sit down with his father and watch three movies a week. David joins Doug to talk about the relationship between father and son - and about the life lessons that can be learned at the movies. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+    <item>
+      <title>8/17/09: Muses, Madmen and Prophets</title>
+      <link>http://www.publicbroadcasting.net/kuer/news.newsmain?action=article&amp;ARTICLE_ID=1542028</link>
+      <description>For much of history, those who heard voices were thought of as having a connection to the supernatural world: Socrates, Moses &amp;amp; Joan of Arc. People still hear voices today, but now it&apos;s explained as a trick of the human psyche or as a disease. After his own father struggled with voices, the journalist Daniel Smith set-out to understand the phenomenon. Smith joined Doug to talk about the history, the science and the meaning of auditory hallucinations. (Rebroadcast)</description>
+      <source url="http://www.kuer.org">kuer</source>
+      <enclosure url="http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854694/mp3/news/podcast/228/854694.mp3" length="24770897" type="audio/mpeg" />
+      <pubDate>Fri, 14 Aug 2009 04:00:00 GMT</pubDate>
+      <author>radiowest@kuer.org</author>
+      <guid isPermaLink="false">http://www.publicbroadcasting.net/kuer/.jukebox/media/kuer/854694/mp3/news/podcast/228/854694.mp3</guid>
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords />
+      <itunes:subtitle>For much of history, those who heard voices were thought of as having a connection to the supernatural world: Socrates, Moses &amp;amp; Joan of Arc. People still hear voices today, but now it&apos;s explained as a trick of the human psyche or as a</itunes:subtitle>
+      <itunes:summary>For much of history, those who heard voices were thought of as having a connection to the supernatural world: Socrates, Moses &amp;amp; Joan of Arc. People still hear voices today, but now it&apos;s explained as a trick of the human psyche or as a disease. After his own father struggled with voices, the journalist Daniel Smith set-out to understand the phenomenon. Smith joined Doug to talk about the history, the science and the meaning of auditory hallucinations. (Rebroadcast)</itunes:summary>
+      <itunes:author>KUER Salt Lake City, UT</itunes:author>
+    </item>
+  </channel>
+</rss>
+
+
