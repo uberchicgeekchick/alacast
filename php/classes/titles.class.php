@@ -23,7 +23,7 @@
 		
 		
 		private function load_renumbering_regexp(){
-			$this->renumbering_regexp=require_once(ALACASTS_INCLUDE_PATH."/php/settings/reordering.inc.php");
+			$this->renumbering_regexp=require_once(ALACASTS_PATH."/php/settings/reordering.inc.php");
 		}//load_renumbering_regular_expressions
 		
 

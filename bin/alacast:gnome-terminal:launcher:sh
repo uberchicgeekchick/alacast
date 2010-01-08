@@ -12,12 +12,14 @@ if test -n "$ALACAST_OPTIONS"; then export ALACAST_OPTIONS='--logging --titles-a
 
 
 alacasts_config="";
-if test -e "${HOME}/.alacast/config.asc"; then
-	alacasts_config="${HOME}/.alacast/config.asc"
-elif test -e "${alacasts_path}/../data/${USER}/default/config.asc"; then
-	alacasts_config="${alacasts_path}/../data/profiles/${USER}/config.asc"
-elif test -e "${alacasts_path}/../data/profiles/default/config.asc"; then
-	alacasts_config="${alacasts_path}/../data/profiles/default/config.asc"
+if test -e "${HOME}/.alacast/alacast.ini"; then
+	alacasts_config="${HOME}/.alacast/alacast.ini";
+elif test -e "${HOME}/.alacast/profiles/${USER}/alacast.ini"; then
+	alacasts_config="${HOME}/.alacast/profiles/${USER}/alacast.ini";
+elif test -e "${alacasts_path}/../data/${USER}/default/alacast.ini"; then
+	alacasts_config="${alacasts_path}/../data/profiles/${USER}/alacast.ini";
+elif test -e "${alacasts_path}/../data/profiles/default/alacast.ini"; then
+	alacasts_config="${alacasts_path}/../data/profiles/default/alacast.ini";
 fi
 if test -e "${alacasts_config}"; then
 	alacasts_resolution=`cat "${alacasts_config}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;

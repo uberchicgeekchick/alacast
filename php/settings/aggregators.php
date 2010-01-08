@@ -5,7 +5,7 @@
 		'total'=>4
 	);
 	
-	$subscribe=require_once(ALACASTS_INCLUDE_PATH."/php/settings/exportFormats.php");
+	$subscribe=require_once(ALACASTS_PATH."/php/settings/exportFormats.php");
 	if( (my_isset($subscribe)) )
 		return $subscribe;
 

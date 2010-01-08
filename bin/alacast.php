@@ -44,15 +44,15 @@
 	ini_set( "default_charset", "utf-8" );
 	ini_set( "date.timezone", "America/Denver" );
 
-	define( "ALACASTS_INCLUDE_PATH", (preg_replace( "/(.*)\/[^\/]+/", "$1", ( (dirname($_SERVER['argv'][0])!=".") ? (dirname( $_SERVER['argv'][0] )) : $_SERVER['PWD'] ) )) );
+	define( "ALACASTS_PATH", (preg_replace( "/(.*)\/[^\/]+/", "$1", ( (dirname($_SERVER['argv'][0])!=".") ? (dirname( $_SERVER['argv'][0] )) : $_SERVER['PWD'] ) )) );
 
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/alacast.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/titles.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/logger.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/helper.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/playlist.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/playlists/m3u.class.php");
-	require_once(ALACASTS_INCLUDE_PATH."/php/classes/podcatcher/program.class.php");
+	require_once(ALACASTS_PATH."/php/classes/alacast.class.php");
+	require_once(ALACASTS_PATH."/php/classes/titles.class.php");
+	require_once(ALACASTS_PATH."/php/classes/logger.class.php");
+	require_once(ALACASTS_PATH."/php/classes/helper.class.php");
+	require_once(ALACASTS_PATH."/php/classes/playlist.class.php");
+	require_once(ALACASTS_PATH."/php/classes/playlists/m3u.class.php");
+	require_once(ALACASTS_PATH."/php/classes/podcatcher/program.class.php");
 
 	//here's where alacast actually starts.
 	if( (in_array("--help", $_SERVER['argv']) ))
@@ -63,17 +63,13 @@
 			."\n\tOptions:"
 			."\n"
 			."\n"
-			."\nUpdate options (i.e., gpodder --run):"
+			."\nUpdate options:"
 			."\n----------------------------------------------"
-			."\n\t--use-gpodder=gpodder_exec"
-			."\n\t						Runs gpodder_exec instead of using /usr/bin/gpodder or gpodder"
-			."\n\t						that's found in your path."
-			."\n"
-			."\n\t--update				runs `gpodder --run` automatically before moving podcasts."
+			."\n\t--update				runs `gpodder-11.3-hacked --local --run` automatically before moving podcasts."
 			."\n"
 			."\n\t--nice[=priority]			Runs gPodder with the specified priority (default: +19)."
 			."\n"
-			."\n\t--update=detailed			Displays the output from: `gpodder --run`."
+			."\n\t--update=detailed			Displays the output from: `gpodder-11.3-hacked --local --run`."
 			."\n\t						This is usually the URIs of your subscribed podcasts"
 			."\n\t						and any new epidodes."
 			."\n"
@@ -106,7 +102,7 @@
 			."\n\t--keep-original		keeps gPodders GUID based named files while making copies of all"
 			."\n\t					podcasts with easier to understand directories &filenames."
 			."\n"
-			."\n\t--player[ = vlc|gstreamer|xine]		different players have issues with different charaters"
+			."\n\t--player[=vlc|gstreamer|xine]		different players have issues with different charaters"
 			."\n\t				in the path's of podcast's files.  known issues are:"
 			."\n\t				- vlc won't play files with colons(:) in their path."
 			."\n\t				- xine won't play files with octothorps(#) in their path."
@@ -136,49 +132,144 @@
 		exit( 0 );
 		
 	}//end:function help();
-
-
-
+	
+	
+	
+	function load_default_options($alacast_config){
+		if($options=(preg_replace( "/.*options.default=\"([^\"]+)\".*/", "$1", $alacast_config )) ){
+			$_SERVER['argv']=array_merge(
+				$_SERVER['argv'],
+				preg_split(
+					"/\ /", $options, -1,
+					PREG_SPLIT_NO_EMPTY
+				)
+			);
+			unset($options);
+		}
+	}/*load_default_options($alacast_config);*/
+	
+	
+	
+	function load_options($alacast_config, $default_options_type){
+		$options=NULL;
+		if( ($options=getenv("ALACAST_OPTIONS")) ){
+			$_SERVER['argv']=array_merge(
+				$_SERVER['argv'],
+				preg_split(
+					"/\ /", $options, -1,
+					PREG_SPLIT_NO_EMPTY
+				)
+			);
+			unset($options);
+		}
+		
+		switch($default_options_type){
+			case "update":
+				if($options=(preg_replace( "/.*options.update=\"([^\"]+)\".*/", "$1", $alacast_config )) ){
+					$_SERVER['argv']=array_merge(
+						$_SERVER['argv'],
+						preg_split(
+							"/\ /", $options, -1,
+							PREG_SPLIT_NO_EMPTY
+						)
+					);
+					unset($options);
+				}
+				break;
+			
+			case "sync":
+				if($options=(preg_replace( "/.*options.sync=\"([^\"]+)\".*/", "$1", $alacast_config )) ){
+					$_SERVER['argv']=array_merge(
+						$_SERVER['argv'],
+						preg_split(
+							"/\ /", $options, -1,
+							PREG_SPLIT_NO_EMPTY
+						)
+					);
+					unset($options);
+				}
+				break;
+			
+			default:
+				load_default_options($alacast_config);
+				break;
+		}
+		
+		if(in_array("--with-defaults", $_SERVER['argv']))
+			load_default_options($alacast_config);
+	}/*load_options($alacast_config, $default_options_type);*/
+	
+	
+	
 	function load_settings() {
+	
 		/*	here's where i setup and check all the directories i need
 			to use, find, &rename/move all of my podcasts and their
 			names and etc.
 		*/
 		static $i;
 		if(!( (isset( $i )) ))
-			$i = 0;
+			$i=0;
 		else if( ($i++) > 10 )
 			exit( "-10: I got stuck in my setup loop." );
 			/* load_settings calls setup which might call
 			   load_settings so just in case something weird goes on.
 			*/
 		
-		if(!( $gPodder_config_fp = fopen( (sprintf("%s/.config/gpodder/gpodder.conf", (getenv( "HOME" )) )), "r" ) ))
-			return gPodder_Config_Error( "gpodder.conf is not readable" );//exit(-1);
+		$alacast_config_filename=sprintf("%s/.alacast/profiles/%s/alacast.ini", (getenv( "HOME" )), (getenv("USER")) );
+		if(!( $alacast_config_fp=fopen( $alacast_config_filename, "r" ) ))
+			return gPodder_Config_Error( sprintf("%s is not readable", $alacast_config_filename) );//exit(-1);
 		
-		$gPodder_config = preg_replace( "/[\r\n]+/m", "\t", fread( $gPodder_config_fp, (filesize( (sprintf("%s/.config/gpodder/gpodder.conf", (getenv( "HOME" )) )) )) ) );
+		$alacast_config=preg_replace( "/[\r\n]+/m", "\t", fread( $alacast_config_fp, (filesize($alacast_config_filename)) ) );
+		fclose($alacast_config_fp);
+		unset($alacast_config_filename);
+		$default_options_type="";
+		if(
+			(count($_SERVER['argv'])==1)
+			||
+			$default_options_type=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-with\-defaults[=]?(.*)/", "$1")
+		)
+			load_options($alacast_config, $default_options_type);
+		unset($default_options_type);
+		
+		$gPodder_config_filename=sprintf("%s/.config/gpodder/gpodder.conf", (getenv( "HOME" )) );
+		if(!( $gPodder_config_fp=fopen( $gPodder_config_filename, "r" ) ))
+			return gPodder_Config_Error(sprintf("%s is not readable", $gPodder_config_filename));//exit(-1);
+		
+		$gPodder_config=preg_replace( "/[\r\n]+/m", "\t", fread( $gPodder_config_fp, (filesize($gPodder_config_filename)) ) );
 		fclose( $gPodder_config_fp );
+		unset($gPodder_config_filename);
+		
+		define("SAVE_TO_PATH", (preg_replace( "/.*save_to_path=\"([^\"]+)\".*/", "$1", $alacast_config )) );
+		
+		define("GPODDER_DL_DIR", (preg_replace( "/.*download_dir = ([^\t]+).*/", "$1", $gPodder_config )) );
 		
 		if(!(
-			(define( "GPODDER_SYNC_DIR", (preg_replace( "/.*mp3_player_folder = ([^\t]*).*/", "$1", $gPodder_config )) ))
+			defined("SAVE_TO_PATH")
 			&&
-			(define( "GPODDER_DL_DIR", (preg_replace( "/.*download_dir = ([^\t]*).*/", "$1", $gPodder_config )) ))
+			is_dir(SAVE_TO_PATH)
 			&&
-			(is_dir( GPODDER_DL_DIR ))
+			defined("GPODDER_DL_DIR")
 			&&
-			( is_dir( GPODDER_SYNC_DIR ) )
-		))
-			return gPodder_Config_Error( "I couldn't load either gPodder's:\n\t\t'download_dir'(".GPODDER_DL_DIR.") or it's 'mp3_player_folder'(".GPODDER_SYNC_DIR.".\n\tPlease check gPodder's settings." );
+			is_dir(GPODDER_DL_DIR)
+		)){
+			gPodder_Config_Error( "I couldn't load either gPodder's:\n\t\t'download_dir'(".GPODDER_DL_DIR.") or alacast's 'save_to_path'(".SAVE_TO_PATH.".\n\tPlease check gPodder's settings." );
+			unset($gPodder_config);
+			unset($alacast_config);
+			return FALSE;
+		}
 		
 		chdir( dirname( GPODDER_DL_DIR ) );
 		
+		unset($gPodder_config);
+		unset($alacast_config);
 		return TRUE;
 		}//end:function load_settings();
 		
 		
 		
-		function gPodder_Config_Error( $details = "" ) {
-			$GLOBALS['alacast_logger']->output(
+		function gPodder_Config_Error( $details="" ) {
+			print(
 				"I couldn't load gPodder's settings from: '"
 				.(getenv( "HOME" ))
 				."/.config/gpodder/gpodder.conf''"
@@ -186,10 +277,9 @@
 					? "\n\tDetails: {$details}"
 					: ""
 				)
-				."\n\tWhich basically means I'm done; please fix this by: `Starting gPodder`->`Selecting Podcasts file menu`->`Preferences` and setting it's `Download Directory` & `MP3 Player`.\n",
-				TRUE
+				."\n\tWhich basically means I'm done; please fix this by: `Starting gPodder`->`Selecting Podcasts file menu`->`Preferences` and setting it's `Download Directory` & `MP3 Player`.\n"
 			);
-			exit( -1 );
+			return FALSE;
 		}//end:function gPodder_Config_Error();
 
 
@@ -204,32 +294,26 @@
 		function run_gpodder_and_download_podcasts() {
 			if(!(
 				(
-					(is_executable( ($gPoddersProgie = alacast_helper::preg_match_array($_SERVER['argv'],  "/^\-\-use\-gpodder=(.*)$/", "$1" )) ))
+					(is_executable( ($gPoddersProgie=ALACASTS_PATH."/helpers/gpodder-0.11.3-hacked/bin/gpodder-0.11.3-hacked" ) ))
 					&&
 					(chdir( (dirname( $gPoddersProgie )) ))
 					&&
 					($gPoddersProgie="./".(basename( $gPoddersProgie ))." --local")
 				)
-				||
-				(is_executable( ($gPoddersProgie = "/usr/bin/gpodder") ))
-				||
-				(is_executable( ($gPoddersProgie = exec( "which gpodder" )) ))
 			))
 				return $GLOBALS['alacasts_logger']->output( "I can't try to download any new podcasts because I can't find gPodder.", TRUE );
 			
 			if( (in_array("--nice", $_SERVER['argv'])) )
-				$gPoddersProgie = "/usr/bin/nice --adjustment=19 {$gPoddersProgie}";
+				$gPoddersProgie="/usr/bin/nice --adjustment=19 {$gPoddersProgie}";
 			
-			$gPoddersProgie = "unset http_proxy; {$gPoddersProgie}";
+			$gPoddersProgie="unset http_proxy; {$gPoddersProgie}";
 			$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts" )) );
-			if( ($gPoddersExec = alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-use\-gpodder=(.*)$/", "$1" )) )
-				$GLOBALS['alacasts_logger']->output( "~*~*~* Using {$gPoddersExec} *~*~*~\n" );
 			
-			$lastLine = "";
+			$lastLine="";
 			switch( TRUE ) {
 				/*case in_array("--logging", $_SERVER['argv']) :
-					$gPodders_Output = array();
-					$lastLine = exec("{$gPoddersProgie} --run 2> /dev/null", $gPodders_Output);
+					$gPodders_Output=array();
+					$lastLine=exec("{$gPoddersProgie} --run 2> /dev/null", $gPodders_Output);
 					
 					if( (in_array("--update=detailed", $_SERVER['argv'])) )
 						$GLOBALS['alacasts_logger']->output( (alacast_helper->array_to_string( $gPodders_Output, "\n" )), "", TRUE );
@@ -239,11 +323,11 @@
 				break;
 				*/
 				case in_array("--update=detailed", $_SERVER['argv']) :
-					$lastLine = system("{$gPoddersProgie} --run > /dev/tty 2> /dev/null");
+					$lastLine=system("{$gPoddersProgie} --run > /dev/tty 2> /dev/null");
 				break;
 				
 				default:
-					$lastLine = exec("{$gPoddersProgie} --run > /dev/null 2> /dev/null");
+					$lastLine=exec("{$gPoddersProgie} --run > /dev/null 2> /dev/null");
 				break;
 			}
 			
@@ -257,7 +341,7 @@
 			 * So I've moved it to 31 seconds just to be okay.
 			 */
 			printf( "\nPlease wait while gPodder finishes downloading your podcasts new episodes" );
-			for($i = 0; $i<33; $i++) {
+			for($i=0; $i<33; $i++) {
 				if(!($i%3))
 					print( "." );
 				
@@ -272,7 +356,7 @@
 
 
 		function leave_symlink_trail( &$podcastsGUID, &$podcastsName ) {
-			$podcastsTrailSymlink = (sprintf( "%s/%s/%s.trail", GPODDER_DL_DIR, $podcastsName, $podcastsGUID ));
+			$podcastsTrailSymlink=(sprintf( "%s/%s/%s.trail", GPODDER_DL_DIR, $podcastsName, $podcastsGUID ));
 			if( 
 				(in_array( "--leave-trails", $_SERVER['argv'] ))
 				&&
@@ -293,21 +377,21 @@
 		
 		
 		
-		function generate_podcasts_info( &$podcastsInfo, $totalPodcasts, $start = 1 ) {
+		function generate_podcasts_info( &$podcastsInfo, $totalPodcasts, $start=1 ) {
 			static $untitled_podcasts;
 			if(!( (isset( $untitled_podcasts )) ))
-				$untitled_podcasts = 1;
+				$untitled_podcasts=1;
 			
 			if(!(
 				(isset( $podcastsInfo[0] ))
 				&&
 				$podcastsInfo[0]
 			)) {
-				$podcastsInfo[0] = "Untitled podcast(s)";
+				$podcastsInfo[0]="Untitled podcast(s)";
 				$untitled_podcasts +=  $start;
 			}
 			
-			for($i = $start; $i<$totalPodcasts; $i++ )
+			for($i=$start; $i<$totalPodcasts; $i++ )
 				if(!(
 					(isset( $podcastsInfo[$i] ))
 					&&
@@ -332,9 +416,9 @@
 			if(!( (filesize($podcastsXML_filename)) ))
 				return FALSE;
 				
-			$podcastsTempInfo = array();
-			$podcastsXML_fp = fopen( $podcastsXML_filename, 'r' );
-			$podcastsTempInfo = preg_replace("/[\r\n]+/m" , " - ",
+			$podcastsTempInfo=array();
+			$podcastsXML_fp=fopen( $podcastsXML_filename, 'r' );
+			$podcastsTempInfo=preg_replace("/[\r\n]+/m" , " - ",
 						(fread(
 							$podcastsXML_fp,
 							(filesize($podcastsXML_filename))
@@ -361,7 +445,7 @@
 			if($podcastsTitles[0] == $podcastsTitles[1])
 				array_shift($podcastsTitles);
 			
-			$podcastsTitles['total'] = count($podcastsTitles);
+			$podcastsTitles['total']=count($podcastsTitles);
 			
 			/* formats podcast & episode titles. */
 			for($i=1; $i<$podcastsTitles['total']; $i++ ){
@@ -369,15 +453,15 @@
 					continue;
 				
 				if(!isset($podcastsInfo[0])){
-					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode( preg_replace("/<title>[\ \t]*([^<]+)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) );
+					$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode( preg_replace("/<title>[\ \t]*([^<]+)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) );
 					$episode_prefix=$GLOBALS['alacasts_titles']->set_episode_prefix( $podcastsInfo[0], in_array( "--titles-prefix-podcast-name", $_SERVER['argv'] ));
 					continue;
 				}
 				
 				if(!( in_array( "--titles-append-pubdate", $_SERVER['argv'] ) ))
-					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) ) );
+					$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]) ) );
 				else
-					$podcastsInfo[ $podcastsInfo['total']++ ] = html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]), preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)] ) ) );
+					$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, preg_replace("/<title>[\ \t]*([^<]*)[\ \t]*<\/title>/", "$1", $podcastsTitles[$i]), preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)] ) ) );
 			}
 			
 			if(getenv("ALACAST_DEBUG")){
@@ -481,7 +565,7 @@
 			
 			static $GPODDER_SYNC_DIR_STRLEN;
 			if(!isset($GPODDER_SYNC_DIR_STRLEN))
-				$GPODDER_SYNC_DIR_STRLEN=strlen(GPODDER_SYNC_DIR);
+				$GPODDER_SYNC_DIR_STRLEN=strlen(SAVE_TO_PATH);
 			
 			$podcastsExtra="";
 			$max_strlen=0;
@@ -512,7 +596,7 @@
 				);
 				
 				sleep( 1 );
-			} while( (file_exists( sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsName, $Podcasts_New_Filename ) )) );
+			} while( (file_exists( sprintf("/%s/%s/%s", SAVE_TO_PATH, $podcastsName, $Podcasts_New_Filename ) )) );
 
 			return $Podcasts_New_Filename;
 		}//end:function set_podcasts_new_episodes_filename()
@@ -522,7 +606,7 @@
 		function do_I_need_to_run_gPodder() {
 			static $do_I_update;
 			if(!( (isset($do_I_update)) ))
-				$do_I_update = alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-update/");
+				$do_I_update=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-update/");
 			
 			
 			if( $do_I_update )
@@ -538,8 +622,8 @@
 			$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "syncronizing podcasts" )) );
 			
 			$totalMovedPodcasts=0;
-			$gPoddersPodcastDir = opendir(GPODDER_DL_DIR);
-			while($podcastsGUID = readdir($gPoddersPodcastDir)) {
+			$gPoddersPodcastDir=opendir(GPODDER_DL_DIR);
+			while($podcastsGUID=readdir($gPoddersPodcastDir)) {
 				if(!(
 					(is_dir( (sprintf( "%s/%s", GPODDER_DL_DIR, $podcastsGUID )) ))
 					&&
@@ -559,13 +643,13 @@
 				if( ( ($podcastsFiles['total']=(count($podcastsFiles)) ) <= 1 ) ) continue;
 				
 				if( (isset( $podcastsInfo )) ) unset( $podcastsInfo );
-				$podcastsInfo = array( 'total'  => 0 );
+				$podcastsInfo=array( 'total'  => 0 );
 				set_podcasts_info( $podcastsXML_filename, $podcastsInfo, $podcastsGUID, $podcastsFiles['total'] );
 				
 				if(!(
-					(is_dir(GPODDER_SYNC_DIR."/".$podcastsInfo[0]))
+					(is_dir(SAVE_TO_PATH."/".$podcastsInfo[0]))
 					||
-					(mkdir(GPODDER_SYNC_DIR."/".$podcastsInfo[0], 0774, TRUE))
+					(mkdir(SAVE_TO_PATH."/".$podcastsInfo[0], 0774, TRUE))
 				)) {
 					$GLOBALS['alacasts_logger']->output( "\n\tI've had to skip {$podcastsInfo[0]} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE );//*wink*, it just kinda felt like a printf moment :P
 					continue;
@@ -592,6 +676,8 @@
 				
 				$totalMovedPodcasts += move_podcasts_episodes( $podcastsGUID, $podcastsFiles, $podcastsInfo );
 				
+				unset($podcastsFiles);
+				unset($podcastsInfo);
 			}
 			closedir($gPoddersPodcastDir);
 			
@@ -611,7 +697,7 @@
 
 
 		function get_filenames_extension( &$podcastsFilename ) {
-			switch( ($ext = preg_replace(
+			switch( ($ext=preg_replace(
 				"/^.*\.([a-zA-Z0-9]{2,7})[\ ]*$/",
 				"$1",
 				(rtrim( $podcastsFilename ))
@@ -649,7 +735,7 @@
 			
 			for($i=1, $z=($podcastsInfo['total']-1); $i<$podcastsFiles['total']; $i++, $z--) {
 				$podcastsFiles[$i]=preg_replace('/^"(.*)"$/', '$1', $podcastsFiles[$i]);
-				if(!( ($ext = get_filenames_extension( $podcastsFiles[$i] )) ))
+				if(!( ($ext=get_filenames_extension( $podcastsFiles[$i] )) ))
 					continue;
 				
 				$Podcasts_New_Filename=set_podcasts_new_episodes_filename( $podcastsInfo[0], $podcastsInfo[$z], $ext );
@@ -659,14 +745,14 @@
 						(sprintf(
 							"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t/%s/%s/%s\n",
 							$podcastsFiles[$i],
-							GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename
+							SAVE_TO_PATH, $podcastsInfo[0], $Podcasts_New_Filename
 						))
 					);
 				
 				if(
 					(in_array( "--keep-original", $_SERVER['argv'] ))
 					&&
-					( (file_exists( sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename ) ) ) )
+					( (file_exists( sprintf("/%s/%s/%s", SAVE_TO_PATH, $podcastsInfo[0], $Podcasts_New_Filename ) ) ) )
 				)
 					continue;
 
@@ -676,7 +762,7 @@
 				$cmd=sprintf("%s %s %s",
 						(in_array("--keep-original", $_SERVER['argv']) ?"cp" : "mv"),
 						preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]),
-						escapeshellarg(sprintf("/%s/%s/%s", GPODDER_SYNC_DIR, $podcastsInfo[0], $Podcasts_New_Filename ))
+						escapeshellarg(sprintf("/%s/%s/%s", SAVE_TO_PATH, $podcastsInfo[0], $Podcasts_New_Filename ))
 				);
 				
 				$null_output=array();
@@ -690,36 +776,20 @@
 				$movedPodcasts++;
 				
 				//Prints the new episodes name:
-				$GLOBALS['alacasts_logger']->output( "\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t" )) );
+				$GLOBALS['alacasts_logger']->output( "\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t" )) ."\n" );
 			}
 			return $movedPodcasts;
 	}//end:function move_podcasts_episodes();
 	
 	/*alacast.php: main(); starts here.*/
-	$envp=NULL;
-	if( ($envp=getenv("ALACAST_OPTIONS")) )
-		if(
-			(count($_SERVER['argv'])==1)
-			||
-			(in_array("--with-defaults", $_SERVER['argv']))
-		)
-			$_SERVER['argv']=array_merge(
-				$_SERVER['argv'],
-				preg_split(
-					"/\ /", $envp, -1,
-					PREG_SPLIT_NO_EMPTY
-				)
-			);
-	unset($envp);
-	
 	if(!( (load_settings()) ))
 		exit( -1 );
 
-	$podcatcher = new alacasts_podcatcher_program();
+	$podcatcher=new alacasts_podcatcher_program();
 	$alacasts_titles=new alacasts_titles();
 
-	$alacasts_logger = new alacasts_logger(
-		GPODDER_SYNC_DIR,
+	$GLOBALS['alacasts_logger']=new alacasts_logger(
+		SAVE_TO_PATH,
 		"alacast",
 		(in_array( "--logging", $_SERVER['argv'] )),
 		(in_array( "--quiet", $_SERVER['argv'] ))

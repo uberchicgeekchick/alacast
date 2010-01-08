@@ -13,12 +13,14 @@ if(!(${?ALACAST_OPTIONS})) setenv ALACAST_OPTIONS '--logging --titles-append-pub
 
 
 set alacasts_resolution = "";
-if ( -e "${HOME}/.alacast/config.asc" ) then
-	set alacasts_config="${HOME}/.alacast/config.asc";
-else if ( -e "${alacasts_path}/../data/${USER}/default/config.asc" ) then
-	set alacasts_config="${alacasts_path}/../data/profiles/${USER}/config.asc";
-else if ( -e "${alacasts_path}/../data/profiles/default/config.asc" ) then
-	set alacasts_config="${alacasts_path}/../data/profiles/default/config.asc";
+if ( -e "${HOME}/.alacast/alacast.ini" ) then
+	set alacasts_config="${HOME}/.alacast/alacast.ini";
+else if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
+	set alacasts_config="${HOME}/.alacast/profiles/${USER}/alacast.ini";
+else if ( -e "${alacasts_path}/../data/${USER}/default/alacast.ini" ) then
+	set alacasts_config="${alacasts_path}/../data/profiles/${USER}/alacast.ini";
+else if ( -e "${alacasts_path}/../data/profiles/default/alacast.ini" ) then
+	set alacasts_config="${alacasts_path}/../data/profiles/default/alacast.ini";
 endif
 
 if( ${?alacasts_config} ) then
