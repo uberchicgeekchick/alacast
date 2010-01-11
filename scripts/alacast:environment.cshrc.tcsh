@@ -16,7 +16,7 @@ setenv PATH "${PATH}:${ALACAST_PATH}/bin:${ALACAST_PATH}/scripts:${ALACAST_PATH}
 setenv ALACAST_OPTIONS '--logging --titles-append-pubdate --strip-characters=#;!';
 
 # when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
-alias "alacast:php:cli:sync" "${ALACAST_PATH}/alacast.php --with-defaults=sync";
+alias "alacast.php:sync" "${ALACAST_PATH}/alacast.php --with-defaults=sync";
 # --with-defaults prepends $ALACAST_OPTIONS
-alias "alacast:php:cli:update" "${ALACAST_PATH}/alacast.php --with-defaults=update";
+alias "alacast.php:update" "${ALACAST_PATH}/alacast.php --with-defaults=update";
 

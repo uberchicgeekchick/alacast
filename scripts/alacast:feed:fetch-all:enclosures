@@ -299,5 +299,7 @@ printf "\n\n*w00t\!*, I'm done; enjoy online media at its best!" >> "${download_
 
 if(!( ${?2} && "${2}" == "---enable-debug" )) rm './00-titles.lst' './00-enclosures.lst' './00-pubdates.lst' './00-feed.xml';
 
-if( ${?starting_dir} ) cd "${starting_dir}";
+if( ${?starting_dir} ) then
+	cd "${starting_dir}";
+endif
 

@@ -78,7 +78,7 @@ end
 
 if(! ${?fetch_all} ) then
 	if(! ${?download_limit} ) set download_limit=1;
-	if(! ${?start_with} ) set start_with=1;
+	if(! ${?start_with} ) set start_with=0;
 else
 	set download_limit=0;
 	set start_with=0;
@@ -99,7 +99,7 @@ alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="${alac
 set podcast_xmlUrl_count="`cat "\""${alacasts_catalog_search_results_log_prefix}.log"\""`";
 if(!( ${#podcast_xmlUrl_count} > 0 )) then
 	printf "Unable to find any podcasts who's %s matched your search phrase: %s\n\n" "${alacasts_catalog_search_attribute}" "${alacasts_catalog_search_phrase}";
-	if(! ${?keep_feed} ) rm "${alacasts_catalog_search_results_log_prefix}."*;
+	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
 	set status=-1;
 	exit ${status};
 endif
@@ -172,15 +172,16 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 	ex -E -n -X "+4,${eol}s/.*<\(item\|entry\).*<\/\(item\|entry\)>.*[\r\n]//g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 	#ex -E -n -X "+4,${eol}s/\//\-/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 	
-	if( ${start_with} >= 1 ) then
+	if( ${start_with} > 1 ) then
 		set last_line=${start_with};
 		if(! ${?force_fetch} ) then
 			set start_with="`echo '${start_with}*4' | bc`";
+			set last_line="`echo '${start_with}-1' | bc`";
 		else
 			set start_with="`echo '${start_with}*2' | bc`";
+			set last_line="`echo '${start_with}+1' | bc`";
 		endif
-		set last_line="`echo '${start_with}+3' | bc`";
-		ex -E -n -X "+4,${last_line}d" "+wq!" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
+		ex -E -n -X "+4,${last_line}d" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 	endif
 	
 	if( ${download_limit} >= 1 ) then
@@ -189,8 +190,7 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		else
 			set download_limit="`echo '${download_limit}*2' | bc`";
 		endif
-		set download_limit="`echo '${download_limit}+3' | bc`";
-		set last_line="`echo '${download_limit}+1' | bc`";
+		set last_line="`echo '${download_limit}+4' | bc`";
 		if(! ${?eol} ) set eol='$';
 		ex -E -n -X "+${last_line},${eol}d" '+wq' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
 		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh' | head -${download_limit}`";
@@ -198,15 +198,15 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh'`";
 	endif
 	
-	if(! ( ${#episodes} > 0 && ${#episodes} >= ${start_with} && ${#episodes} >= ${download_limit}   ) ) then
-		printf "Unable to find any downloadable episodes for: "\""%s"\"".\n\n" "${podcasts_title}";
-		if(! ${?keep_feed} ) rm "${alacasts_catalog_search_results_log_prefix}."*;
-		continue;
-	endif
+	#if(! ( ${#episodes} >= 4 ) ) then
+	#	printf "Unable to find any downloadable episodes for: "\""%s"\"" only found %s.\n\n" "${podcasts_title}" ${#episodes};
+	#	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
+	#	continue;
+	#endif
 	
 	@ podcast_count=1;
 	${alacasts_catalog_search_results_log_prefix}.wget.tcsh;
-	if(! ${?keep_feed} ) rm "${alacasts_catalog_search_results_log_prefix}."*;
+	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
 end
 
 if( ${?starting_dir} ) then
