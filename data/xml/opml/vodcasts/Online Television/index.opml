@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Online Television</title>
+	</head>
+	<body>
+		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[FreeCulture.TV]]>" text="<![CDATA[]]>" htmlUrl="http://www.freeculture.tv/" xmlUrl="http://www.freeculture.tv/fctvfeed.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Yes We&#039;re Open!]]>" text="<![CDATA[]]>" htmlUrl="http://www.freeculture.tv/yeswereopen/" xmlUrl="http:/www.freeculture.tv/yeswereopen/ywofeed.xml" type="rss" description="<![CDATA[]]>"/>
+	</body>
+</opml>

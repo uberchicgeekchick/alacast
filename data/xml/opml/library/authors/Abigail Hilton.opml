@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Abigail Hilton&#039;s Website]]>" url="http://www.fauness.com/" type="link" text="<![CDATA[Abigail Hilton&#039;s Website]]>" description="<![CDATA[Abbie is an ICU nurse and amateur naturalist. She writes fantasy for children, young adults, &amp; all young at heart.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Website for The Prophet of Panamindorah trilogy]]>" xmlUrl="http://feeds.feedburner.com/TheProphetOfPanamindorah?format=xml" htmlUrl="http://www.panamindorah.com/" type="rss" text="<![CDATA[Website of The Prophet of Panamindorah trilogy]]>" description="<![CDATA[A full feed of The Prophet of Panamindorah trilogy.  Including all chapters &amp; the books in pdf format.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The Prophet of Panamindorah, Book I Fauns and Filinians]]>" xmlUrl="http://www.podiobooks.com/title/the-prophet-of-panamindorah-book-1/feed/" type="rss" text="<![CDATA[The Prophet of Panamindorah, Book I Fauns and Filinians]]>" htmlUrl="http://www.podiobooks.com/title/the-prophet-of-panamindorah-book-1/" description="<![CDATA[Corry showed up at the orphanage two years ago, unable to remember how he&#039;d gotten there. He spoke a language no one recognized, and he was afraid of cars and planes and computers. Corry can remember snippets of another life, but no matter how hard he tries to remember, it just keeps slipping away. Then one day, he meets a fauness in an orange grove. She&#039;s from a world called Panamindorah, and he can understand her language. In addition, Corry can read a language that no one in Panamindorah has been able to read for three hundred years; has he really been gone that long? Now he must recover his lost memories and rebuild his life, because the person who tried to kill him once is about to try again.]]>"/>
+		<outline title="<![CDATA[The Prophet of Panamindorah, Book II Wolflings and Wizards]]>" xmlUrl="http://www.podiobooks.com/title/the-prophet-of-panamindorah-book-2/feed/" type="rss" text="<![CDATA[The Prophet of Panamindorah, Book II Wolflings and Wizards]]>" htmlUrl="http://www.podiobooks.com/title/the-prophet-of-panamindorah-book-2/" description="<![CDATA[Things have gone horribly wrong for the fauns at the spring festival of Lupricasia. A princess has been kidnapped, and visiting feline dignitaries have been blamed for the kidnapping. Corry, the young wizard shape shifter who saw the kidnapping, has been sent hurdling over a waterfall at a deadly height. Meanwhile the wolfling bandits who unwittingly hold the clues that would explain the kidnapping are about to be discovered by a bounty hunter and his employer, bent on their destruction.]]>"/>
+	</body>
+</opml>

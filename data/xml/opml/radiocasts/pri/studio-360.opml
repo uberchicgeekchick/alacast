@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Studio 360 &mdash; Radio Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Studio 360]]>" xmlUrl="http://www.studio360.org/index.xml" type="rss" text="<![CDATA[Studio 360 from P.R.I.]]>" htmlUrl="http://www.studio360.org/index.xml" description="<![CDATA[Studio 360 from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
+		<outline title="<![CDATA[Studio 360 - Design for the Real World]]>" xmlUrl="http://www.publicbroadcasting.net/dfrw/.jukebox?action=viewPodcast&podcastId=11403" type="rss" text="<![CDATA[Studio 360 - Design for the Real World from P.R.I.]]>" htmlUrl="http://www.publicbroadcasting.net/dfrw/.jukebox?action=viewPodcast&podcastId=11403" description="<![CDATA[Studio 360 - Design for the Real World from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
+		<outline title="<![CDATA[Studio 360 - Science and Creativity]]>" xmlUrl="http://www.publicbroadcasting.net/dfrw/.jukebox?action=viewPodcast&podcastId=15003" type="rss" text="<![CDATA[Studio 360 - Science and Creativity from P.R.I.]]>" htmlUrl="http://www.publicbroadcasting.net/dfrw/.jukebox?action=viewPodcast&podcastId=15003" description="<![CDATA[Studio 360 - Science and Creativity from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

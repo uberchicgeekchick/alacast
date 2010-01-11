@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts from the Conversations Network</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Conversations Network]]>" url="http://www.conversationsnetwork.org/" type="link" text="<![CDATA[The Conversations Network]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Social Innovation Conversations]]>" xmlUrl="http://feeds.conversationsnetwork.org/channel/siconversations?format=xml" type="rss" text="<![CDATA[Social Innovation Conversations]]>" htmlUrl="http://sic.conversationsnetwork.com/" description="<![CDATA[Social Innovation Conversations brings your the voices of the people at the forefront of creating social change in the world. Hear their experience in social entrepreneurship, environmental sustainability, philanthropy, corporate social responsibility, responsible investing, and more. The channel hosts interviews, panels, and high-level speeches from world-class speakers such as Al Gore, Amory Lovins, Paul Farmer, Jed Emerson, and Alice Tepper Marlin. Social Innovation Conversations is part of the Conversations Network, a 501(c)(3) nonprofit podcast network.]]>"/>
+		<outline title="<![CDATA[IT Conversations]]>" xmlUrl="http://feeds.conversationsnetwork.org/channel/itconversations?format=xml" type="rss" text="<![CDATA[IT Conversations]]>" htmlUrl="http://itc.conversationsnetwork.com/" description="<![CDATA[IT Conversations is the longest-running podcast on the planet, publishing a new audio program nearly every day, from the most important tech conferences to our unique programs. Not just IT, it's everything tech and beyond.]]>"/>
+		<outline title="<![CDATA[Media Conversations]]>" xmlUrl="http://feeds.conversationsnetwork.org/channel/mediaconversations?format=xml" type="rss" text="<![CDATA[Media Conversations]]>" htmlUrl="http://www.conversationsnetwork.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Opening Move with Scott Mace]]>" xmlUrl="http://rss.conversationsnetwork.org/series/openingmove.xml" type="rss" text="<![CDATA[Opening Move with Scott Mace]]>" htmlUrl="http://rss.conversationsnetwork.org/series/openingmove.html" description="<![CDATA[Opening Move with Scott Mace a series from The Conversations Network]]>"/>
+		<outline title="<![CDATA[OSCON Talks]]>" xmlUrl="http://itc.conversationsnetwork.org/series/oscon.html" type="rss" text="<![CDATA[O&#039;Reilly Media Open Source Conference]]>" htmlUrl="http://rss.conversationsnetwork.org/series/oscon.xml" description="<![CDATA[O&#039;Reilly Media Open Source Conference - OSCON Talks from The Conversations Network]]>"/>
+		<outline title="<![CDATA[Tech Nation &amp; BioTech Nation]]>" xmlUrl="http://rss.conversationsnetwork.org/series/technation.xml" type="rss" text="<![CDATA[Tech Nation &amp; BioTech Nation with Dr. Moira Gunn]]>" htmlUrl="http://itc.conversationsnetwork.org/series/technation.html" description="<![CDATA[Tech Nation - and its regular segments BioTech Nation - is a weekly public radio program hosted by Dr. Moira Gunn. It focuses on the impact of technology and science on modern life.]]>"/>
+		<outline title="<![CDATA[Technometria]]>" xmlUrl="http://rss.conversationsnetwork.org/series/technometria.xml" type="rss" text="<![CDATA[Technometria]]>" htmlUrl="http://itc.conversationsnetwork.com/series/technometria.xml" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technometria]]>" xmlUrl="http://rss.conversationsnetwork.org/series/technometria.xml" type="rss" text="<![CDATA[Technometria with Phil Windley]]>" htmlUrl="http://itc.conversationsnetwork.com/series/technometria.xml" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

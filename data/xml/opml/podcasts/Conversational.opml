@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[East Meets West]]>" xmlUrl="http://www.subbrilliant.com/emw/?feed=rss2" type="rss" text="<![CDATA[East Meets West]]>" htmlUrl="http://www.subbrilliant.com/emw/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Kulture Kast]]>" xmlUrl="http://www.kulturekast.libsyn.com/rss" type="rss" text="<![CDATA[Kulture Kast]]>" htmlUrl="http://kulturekast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[ADD Cast]]>" xmlUrl="http://addcast.net/?feed=podcast" type="rss" text="<![CDATA[ADD Cast]]>" htmlUrl="http://addcast.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[No Agenda]]>" xmlUrl="http://www.btpodshow.com/feeds/noagenda.xml" type="rss" text="<![CDATA[No Agenda]]>" htmlUrl="http://noagenda.podshow.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[David Allen: win the game of work &business of life]]>" xmlUrl="http://davidco.com/podcast.php" type="rss" text="<![CDATA[David Allen: win the game of work &business of life]]>" htmlUrl="http://davidco.com/podcast.php" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Intellectual Icebergs]]>" xmlUrl="http://www.intellectualicebergs.org/mainfeed.rss" type="rss" text="<![CDATA[Intellectual Icebergs]]>" htmlUrl="http://www.intellectualicebergs.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[International Detective Dragons From Outer Space]]>" xmlUrl="http://www.anim5.com/IDDFOS/iddfos.rss" type="rss" text="<![CDATA[International Detective Dragons From Outer Space]]>" htmlUrl="http://www.anim5.com/IDDFOS/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Gang]]>" xmlUrl="http://feeds.gillmorgroup.com/TheGangFeed" type="rss" text="<![CDATA[The Gang]]>" htmlUrl="http://www.facebook.com/group.php?gid=6117476303" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

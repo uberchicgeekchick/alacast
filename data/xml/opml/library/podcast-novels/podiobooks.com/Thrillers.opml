@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Thriller podcast novels from Podiobooks.com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Virtual Vice]]>" xmlUrl="http://www.podiobooks.com/title/virtual-vice/feed/" type="rss" text="<![CDATA[Virtual Vice - a free podcast novel by Jason M. Kays]]>" htmlUrl="http://www.podiobooks.com/title/virtual-vice/feed/" description="<![CDATA[Follow disillusioned entertainment attorney Ian McKenzie as his professional life takes a decided turn for the questionable when he is hired by the charismatic and dangerous Scott White to represent Scott's interests in his cutting edge Internet startup, Metropoleis Multimedia. Unfortunately for Ian, Scott has more in common with Scarface's Tony Montana than Apple's Steve Jobs, and things go from questionable to deadly in no time flat. As Scott's confidant and consigliore, Ian soon finds himself caught between the Feds, La Cosa Nostra, and the Cali Cartel in a fatal game of corporate winner-take-all. Kays masterfully weaves the nuts and bolts of legal maneuverings and corporate worst-practices into an engaging and unpredictable thrill ride of a crime novel. Filled with wry humor and twists and turns galore, Virtual Vice keeps you guessing and wanting more while entertaining every step of the way.]]>"/>
+		<outline title="<![CDATA[Corporate Warfare]]>" xmlUrl="http://www.podiobooks.com/title/corporate-warfare/feed/" type="rss" text="<![CDATA[Corporate Warfare - a free podcast novel by Kris Davis]]>" htmlUrl="http://www.podiobooks.com/title/corporate-warfare/" description="<![CDATA[Romance underlines Corporate Warfare - a fast paced novel that deals with corporations bidding on a US proposal. A scheming foreign conglomerate has other intentions. With their international genetic patents secured, Project Abacus&#039; success now hinges on the exploitation of the proposal to realize a unique human identification system. A genetic social security number. And corporate espionage entangles the love triangles. But with Anthony's hands tied will fate prevail?]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free podcast novel by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

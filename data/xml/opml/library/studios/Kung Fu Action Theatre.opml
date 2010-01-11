@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Kung Fu Action Theatre&#039; podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Kung Fu Action Theatre]]>" url="http://www.kungfuactiontheatre.com/" type="link" text="<![CDATA[Kung Fu Action Theatre]]>" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Kung Fu Action Theatre]]>" xmlUrl="http://kfat.libsyn.com/rss" type="rss" text="<![CDATA[Kung Fu Action Theatre]]>" htmlUrl="http://kfat.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Twin Stars]]>" xmlUrl="http://twinstars.kungfuactiontheatre.com/?feed=rss2" type="rss" text="<![CDATA[Twin Stars]]>" htmlUrl="http://twinstars.kungfuactiontheatre.com/" description="<![CDATA[A science fiction audio adventure drama starring Greg Nugent as Imperial Naval Officer Albert Tysen and Melissa D. Johnson as the Space Pirate Zhang Ping-An, two figures on opposite sides in a battle for the destiny of mankind’s first Empire of the Stars. New Episodes the 1st of Every Month!]]>"/>
+	</body>
+</opml>

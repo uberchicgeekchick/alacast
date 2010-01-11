@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--English Language-->
+		<outline title="<![CDATA[BBC All Things Considered]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/atc/rss.xml" type="rss" text="<![CDATA[BBC All Things Considered from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/atc/" description="<![CDATA[Award-winning series exploring religious, spiritual and moral issues. All Things C...]]>"/>
+		<outline title="<![CDATA[NE Wales Update]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/newales/rss.xml" type="rss" text="<![CDATA[NE Wales Update from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/newales/" description="<![CDATA[Join Adam Walton for a round-up of the news, sport, entertainment and stories from...]]>"/>
+		<outline title="<![CDATA[Rhod Gilbert's Best Bits]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/rhod/rss.xml" type="rss" text="<![CDATA[Rhod Gilbert's Best Bits from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/rhod/" description="<![CDATA[Wales's star of the comedy circuit, Rhod Gilbert, is joined by fellow stand-up Chr...]]>"/>
+		<outline title="<![CDATA[Scrum V Rugby]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/7dws/rss.xml" type="rss" text="<![CDATA[Scrum V Rugby from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/7dws/" description="<![CDATA[Radio Wales' Gareth Lewis and the Scrum V team are joined by the games' big names ...]]>"/>
+		
+		<!--Welsh Language-->
+		<outline title="<![CDATA[Ar y Marc: Pêl-droed]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/arymarc/rss.xml" type="rss" text="<![CDATA[Ar y Marc: Pêl-droed from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/arymarc/" description="<![CDATA[Trin a thrafod y byd pêl-droed yn ffordd unigryw criw Ar y Marc – Dylan Jones, Dyl...]]>"/>
+		<outline title="<![CDATA[C2 Uchafbwyntiau’r Wythnos]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/c2/rss.xml" type="rss" text="<![CDATA[C2 Uchafbwyntiau’r Wythnos from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/c2/" description="<![CDATA[Caneuon o sesiynau newydd, newyddion cerddorol, chwaraeon, adolygiadau gigs, ffilm...]]>"/>
+		<outline title="<![CDATA[Iolo Williams: Natur]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/iolo/rss.xml" type="rss" text="<![CDATA[Iolo Williams: Natur from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/iolo/" description="<![CDATA[Iolo Williams yn edrych ar rai o greaduriaid rhyfeddol a phrin y byd ac yn crwydro...]]>"/>
+		<outline title="<![CDATA[Pigion: Highlights for Welsh Learners]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/pigion/rss.xml" type="rss" text="<![CDATA[Pigion: Highlights for Welsh Learners from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/pigion/" description="<![CDATA[Y darnau gorau o raglenni Radio Cymru dros yr wythnos ddiwethaf, gyda chyflwyniada...]]>"/>
+		<outline title="<![CDATA[Vaughan Roderick: Gwleidyddiaeth]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/vaughan/rss.xml" type="rss" text="<![CDATA[Vaughan Roderick: Gwleidyddiaeth from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/vaughan/" description="<![CDATA[Arweiniad hanfodol i'r wythnos wleidyddol sydd i ddod, gyda Vaughan Roderick, Goly...]]>"/>
+	</body>
+</opml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Short Stories podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Black Star Passes]]>" xmlUrl="http://www.podiobooks.com/title/black-star-passes/feed/" type="rss" text="<![CDATA[Black Star Passes]]>" htmlUrl="http://www.podiobooks.com/title/black-star-passes/" description="<![CDATA[Follow along with Arcot, Morey, and Wade as they discover a revolutionary form of propulsion, visit our neighboring planets, and go up against aliens from a rogue solar system that passes close to our own.&nbsp; These three stories (Piracy Preferred, Solarite, and The Black Star Passes) were originally published as a serial in Amazing Stories magazine.Read by Scott D.&nbsp; Farquhar of Prometheus Radio Theatre.]]>"/>
+		<outline title="<![CDATA[Jovian Gate Chronicles]]>" xmlUrl="http://www.podiobooks.com/title/jovian-gate-chronicles/feed/" type="rss" text="<![CDATA[Jovian Gate Chronicles - A free podcast novel by Ron Vital]]>" htmlUrl="http://www.podiobooks.com/title/jovian-gate-chronicles/" description="<![CDATA[What happens when humans, ruled by the Catholic Church and the Confederacy, cross paths with intelligent aliens that claim to be prophets from God? Find out in this short science fiction short story series that consists of four episodes (total length of the collection is 142 minutes) that tell individual stories of the Jovian Gate.&nbsp; Partake on a journey to learn who opened the gate, question whether aliens truly are communicating with God and learn what humanity&#039;s ultimate destiny will be.]]>"/>
+		<outline title="<![CDATA[The Dunesteef Audio Fiction Magazine]]>" xmlUrl="http://feeds.feedburner.com/TheDunesteefAudioFictionMagazine?format=xml" type="rss" text="<![CDATA[The Dunesteef Audio Fiction Magazine]]>" htmlUrl="http://dunesteef.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

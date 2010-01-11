@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&#039;s News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The Science Show]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/science.xml" type="rss" text="<![CDATA[The Science Show]]>" htmlUrl="http://abc.net.au/rn/science/ss/default.htm" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[All in the Mind]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/mind.xml" type="rss" text="<![CDATA[All in the Mind]]>" htmlUrl="http://abc.net.au/rn/science/mind/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Science Mornings w/Dr. Karl]]>" xmlUrl="http://abc.net.au/science/k2/podcast/drk_rss.xml" type="rss" text="<![CDATA[Science Mornings w/Dr. Karl]]>" htmlUrl="http://abc.net.au/science/k2/" description="<![CDATA[Join Dr Karl, Zan Rowe and their scientific guests, with a bunch of curious triplej listeners for a weekly injection of science, myth-bashing and answers! Science on Mornings is published every Thursday.]]>"/>
+		<outline title="<![CDATA[Ockham&#39;s Razor]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/ockham.xml" type="rss" text="<![CDATA[Ockham&#39;s Razor]]>" htmlUrl="http://abc.net.au/rn/science/ockham/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

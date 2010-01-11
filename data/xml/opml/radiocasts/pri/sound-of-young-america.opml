@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title> &mdash; Public Radio Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Sound of Young America]]>" xmlUrl="http://feeds.feedburner.com/tsoya?format=xml" type="rss" htmlUrl="http://maximumfun.org/tags/sound-young-america" text="<![CDATA[PRI: The Sound of Young America]]>" description="<![CDATA[What do you get when you cross NPR&apos;s Fresh Air with NBC&apos;s Late Night with Conan O&apos;Brien? The Sound of Young America features intelligent, in-depth interviews with fun and fascinating guests.&nbsp; Distributed on radio by Public Radio International.]]>"/>
+		<outline title="<![CDATA[The Sound of Young America - Classics]]>" xmlUrl="http://feeds.feedburner.com/tsoyaclassics?format=xml" type="rss" htmlUrl="http://maximumfun.org/tags/tsoya-classic" text="<![CDATA[PRI: TSOYA - Classics]]>" description="<![CDATA[Classic &amp; Favorite past episodes from the archives of &quot;The Sound of Young America&quot;.&nbsp; The Sound of Young America features intelligent, in-depth interviews with fun and fascinating guests.&nbsp; Distributed on radio by Public Radio International.]]>"/>
+	</body>
+</opml>

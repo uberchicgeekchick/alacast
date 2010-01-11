@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>The Discovery Channel&#039;s Podcasts</title>
+	</head>
+	<body>
+		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<outline type="link" title="<![CDATA[Discovery Channel Podcasts]]>" url="http://www.discovery.com/radio/podcasts.html" text="<![CDATA[Discovery Channel Podcasts]]>" description="<![CDATA[Discovery Channel Podcasts]]>"/>
+		<outline type="link" title="<![CDATA[Discovery Channel Vodcasts]]>" url="http://www.discovery.com/radio/videos.html" text="<![CDATA[Discovery Channel Vodcasts]]>" description="<![CDATA[Discovery Channel Vodcasts]]>"/>
+		<outline type="link" title="<![CDATA[Discovery Channel Radio]]>" url="http://www.discovery.com/radio/radio.html" text="<![CDATA[Discovery Channel Radio]]>" description="<![CDATA[Discovery Channel Radio]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Discovery News]]>" text="<![CDATA[Discovery News]]>" htmlUrl="http://www.discovery.com/radio/radio.html#news_main_pcast" xmlUrl="http://www.discovery.com/radio/xml/news.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline type="rss" title="<![CDATA[Discovery News Bulletin]]>" htmlUrl="http://www.discovery.com/radio/podcasts.html" xmlUrl="http://www.discovery.com/radio/xml/bulletin.xml" text="<![CDATA[Discovery News Bulletin]]>" description="<![CDATA[Discovery News Bulletin and stay posted on the top stories of the day in science, tech, space and more.]]>"/>
+		<outline title="<![CDATA[Discovery Channel Audio]]>" text="<![CDATA[]]>" htmlUrl="http://www.discovery.com/radio/podcasts.html" xmlUrl="http://www.discovery.com/radio/xml/dscfeatures.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Science Channel Video]]>" text="<![CDATA[]]>" htmlUrl="http://science.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/sciencevideo.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Discovery Space Podcast]]>" text="<![CDATA[Discovery Space video podcasts take you inside the world of NASA and deep into space.]]>" htmlUrl="http://space.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/DiscoverySpace.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Science Channel Audio]]>" text="<![CDATA[]]>" htmlUrl="http://science.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/sciencechannel.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Discovery Channel Video Podcast]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/discovery_video.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Discovery Channel Video News]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/news_video.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline type="rss" title="<![CDATA[TLC Podcasts]]>" htmlUrl="http://tlc.discovery.com/" xmlUrl="http://tlc.discovery.com/audio_podcasts/tlc_audio_podcast.xml" text="<![CDATA[TLC Podcasts]]>" description="<![CDATA[Catch up on your favorite TLC shows and stars!  Get behind-the-scenes video, extra footage and more.]]>"/>
+		<outline type="rss" title="<![CDATA[Planet Green]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/planetgreen.xml" text="<![CDATA[]]>" description="<![CDATA[PLANET GREEN, the first-ever all-green lifestyle and entertainment network. With programs that cover food, home, health, travel, technology, and transformation, you&#039;ll see how to go green without giving up everything fun in life.]]>"/>
+		<outline title="<![CDATA[Animal Planet Video Podcast]]>" text="<![CDATA[Animal Planet Video Podcast]]>" htmlUrl="http://animal.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/apl_podcasts.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Animal Planet Presents Audio]]>" text="<![CDATA[]]>" htmlUrl="http://animal.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/animalplanet_presents.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Discovery Health]]>" text="<![CDATA[]]>" htmlUrl="http://health.discovery.com/" xmlUrl="http://www.discovery.com/radio/xml/breastcancer.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Discovery Health - Ask the Experts]]>" text="<![CDATA[http://health.discovery.com/]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/discoveryhealth_experts.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline type="rss" title="<![CDATA[Travel Channel Features]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/travelchannel.xml" text="<![CDATA[Travel Channel Features]]>" description="<![CDATA[Take Travel Channel on the road with hit series, behind the scenes interviews, special features and more!]]>"/>
+		<outline title="<![CDATA[SilverDocs]]>" text="<![CDATA[]]>" htmlUrl="http://www.silverdocs.com/" xmlUrl="http://www.discovery.com/radio/xml/silverdocs.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Miami Ink]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/miami-ink.xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Cash Cab Radio]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="http://www.discovery.com/radio/xml/cash_cab.xml" type="rss" description="<![CDATA[]]>"/>
+	</body>
+</opml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Wedonverse News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Tales from the &#0039;Verse]]>" xmlUrl="http://talesfromtheverse.libsyn.com/rss" type="rss" text="<![CDATA[Tales from the &#0039;Verse]]>" htmlUrl="http://www.talesfromtheverse.com/" description="<![CDATA[Fan Fiction in the worlds of Firefly and Serenity.]]>"/>
+		<outline title="<![CDATA[Let&#0039;s Talk Joss]]>" xmlUrl="http://feeds.feedburner.com/LetsTalkJoss?format=xml" type="rss" text="<![CDATA[Let&#0039;s Talk Joss]]>" htmlUrl="http://www.letstalkjoss.com/" description="<![CDATA[...a roundtable discussion podcast on topics from the Whedonverse.]]>"/>
+		<outline title="<![CDATA[Joss&#039;d]]>" type="rss" xmlUrl="http://feeds.feedburner.com/JossdThePodcast?format=xml" text="<![CDATA[Joss&#039;]]>" htmlUrl="http://jossd.com/" description="<![CDATA[a podcast dedicated to all things Joss Whedon and the extended Whedonverse]]>"/>
+		<outline title="<![CDATA[Upside Down and Halfway to Happyland]]>" xmlUrl="http://feeds.feedburner.com/UpsideDownHappyland?format=xml" type="rss" text="<![CDATA[Upside Down and Halfway to Happyland]]>" htmlUrl="http://www.upsidedownhappyland.com/" description="<![CDATA[a podcast where just being a fan means something...]]>"/>
+		<outline title="<![CDATA[The WatchCast]]>" xmlUrl="http://www.watchercast.com/?feed=podcast" type="rss" text="<![CDATA[A podcast review of Buffy The Vampire Slayer]]>" htmlUrl="http://www.watchercast.com/" description="<![CDATA[An episode by episode podcast review of Buffy The Vampire Slayer. Three die hard Buffy fans review each episode and offer thoughts and opinions on characters, events, and impact of the show.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

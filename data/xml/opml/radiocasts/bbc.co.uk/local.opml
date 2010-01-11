@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Faith in England]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/faith/rss.xml" type="rss" text="<![CDATA[Faith in England from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/faith/" description="<![CDATA[Diane Louise Jordan takes a look at the top faith stories. Each week, Diane looks ...]]>"/>
+		<outline title="<![CDATA[Inside Chelsea FC]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/chelsea/rss.xml" type="rss" text="<![CDATA[Inside Chelsea FC from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/chelsea/" description="<![CDATA[The most comprehensive coverage of Chelsea FC. Presented by Gigi Salmon, you can s...]]>"/>
+		<outline title="<![CDATA[Manchester's News on the Run]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/mancnews/rss.xml" type="rss" text="<![CDATA[Manchester's News on the Run from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/mancnews/" description="<![CDATA[Manchester's daily news, sport, money, entertainment, traffic and weather. Updated...]]>"/>
+		<outline title="<![CDATA[Non League Football Show]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/nonleague/rss.xml" type="rss" text="<![CDATA[Non League Football Show from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/nonleague/" description="<![CDATA[For the fans, by the fans; a Non League football show with the best guests and lat...]]>"/>
+		<outline title="<![CDATA[Toby Foster - Bigger at Breakfast]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/toby/rss.xml" type="rss" text="<![CDATA[Toby Foster - Bigger at Breakfast from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/toby/" description="<![CDATA[Start your day the Toby way, every weekday between 0700 and 0900 on BBC Radio Shef...]]>"/>
+		<outline title="<![CDATA[Tony Livesey Experience]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/livesey/rss.xml" type="rss" text="<![CDATA[Tony Livesey Experience from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/livesey/" description="<![CDATA[Putting a smile on your face that'll last all day. Tony Livesey and his amazing in...]]>"/>
+		<outline title="<![CDATA[UK Black]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/ukblack/rss.xml" type="rss" text="<![CDATA[UK Black from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/ukblack/" description="<![CDATA[UK African and Caribbean community news and cultural programming highlights from a...]]>"/>
+		<outline title="<![CDATA[Vanessa Feltz Radio Show]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/vanessa/rss.xml" type="rss" text="<![CDATA[Vanessa Feltz Radio Show from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/vanessa/" description="<![CDATA[London's best radio talk show where Londoners get to discuss the light and shade o...]]>"/>
+		<outline title="<![CDATA[Weekender Introducing...]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/weekender/rss.xml" type="rss" text="<![CDATA[Weekender Introducing... from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/weekender/" description="<![CDATA[The best new music from across Northamptonshire and beyond. Jon and Griff present ...]]>"/>
+	</body>
+</opml>

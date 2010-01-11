@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>ABC.net.au&#039; Vodcasts</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[ABC.net.au&#039; T.V.]]>" url="http://abc.net.au/tv/video/download.htm" text="<![CDATA[ABC.net.au&#039; Videos]]>" description="<![CDATA[ABC.net.au&#039; Vodcasts &amp; Video downloads]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" xmlUrl="" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Can We Help?]]>" text="<![CDATA[Can We Help?]]>" htmlUrl="http://abc.net.au/tv/video/downloads.htm#?vid=canwehelp" xmlUrl="http://abc.net.au/tv/canwehelp/video/vodcast_mp4.xml" type="rss" description="<![CDATA[ABC TV: An audience-driven series with the questions and stories coming from viewers at home.]]>"/>
+		<outline type="rss" title="<![CDATA[hack half hour]]>" xmlUrl="http://abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml" htmlUrl="http://abc.net.au/triplej/hackhalfhour/default.htm" text="<![CDATA[triple jtv&#039;: the hack half hour]]>" description="<![CDATA[The Hack Half Hour, a program about the serious (and not so serious) issues that impact you. Each week we'll be covering a different topic, looking at it through your eyes.]]>"/>
+		<outline type="rss" title="<![CDATA[triple jtv]]>" xmlUrl="http://abc.net.au/triplej/tv/vodcast/vodcastMp4.xml" htmlUrl="http://abc.net.au/triplej/tv/vodcast/default.htm" text="<![CDATA[triple jtv]]>" description="<![CDATA[Switch on, log on or download new music, interviews, current affairs, documentaries and comedy that takes triple j's irreverence, independence, authority and attitude, and brings it to life in a whole new dimension: triple j tv.]]>"/>
+		<outline title="<![CDATA[The New Inventors]]>" xmlUrl="http://abc.net.au/tv/newinventors/video/newinventors_wmv.xml" type="rss" text="<![CDATA[The New Inventors]]>" htmlUrl="http://www.abc.net.au/tv/newinventors/video/video.htm#vidvod" description="<![CDATA[]]>"/>
+	</body>
+</opml>

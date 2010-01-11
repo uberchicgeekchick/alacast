@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Library of Jack and Shannon&#039;s Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The Library of Jack and Shannon]]>" xmlUrl="http://www.libraryofjs.com/?feed=rss2" type="rss" text="<![CDATA[All titles by &#039;Shannon Hilchy&#039; and &#039;Jack Ward&#039;]]>" htmlUrl="http://www.libraryofjs.com/?tag=" description="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy&#039; &#187; From The Library of Jack and Shannon]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="http://www.libraryofjs.com/?feed=rss2" type="rss" text="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy|Jack Ward&#039;]]>" htmlUrl="http://www.libraryofjs.com/?tag=" description="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy|Jack Ward&#039; &#187; From The Library of Jack and Shannon]]>"/>-->
+		<outline title="<![CDATA[Hugo and Alice]]>" xmlUrl="http://www.libraryofjs.com/?tag=hugo-and-alice&feed=rss2" type="rss" text="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy&#039;]]>" htmlUrl="http://www.libraryofjs.com/?tag=hugo-and-alice" description="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy&#039; &#187; From The Library of Jack and Shannon]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy&#039;]]>" htmlUrl="" description="<![CDATA[&quot;&quot; by &#039;Shannon Hilchy&#039; &#187; From The Library of Jack and Shannon]]>"/>-->
+		<outline title="<![CDATA[The Signet]]>" xmlUrl="http://www.libraryofjs.com/?tag=the-signet&feed=rss2" type="rss" text="<![CDATA[&quot;The Signet&quot; by &#039;Jack Ward&#039;]]>" htmlUrl="http://www.libraryofjs.com/?tag=the-signet" description="<![CDATA[ by &#039;Jack Ward&#039; &#187; From The Library of Jack and Shannon]]>"/>
+		<outline title="<![CDATA[Age of Adventures]]>" xmlUrl="http://www.libraryofjs.com/?tag=age-of-adventure&feed=rss2" type="rss" text="<![CDATA[&quot;Age of Adventures&quot; by &#039;Jack Ward&#039;]]>" htmlUrl="http://www.libraryofjs.com/?tag=age-of-adventure" description="<![CDATA[&quot;Age of Adventures&quot; by &#039;Jack Ward&#039; &#187; From The Library of Jack and Shannon]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[&quot;&quot; by &#039;Jack Ward&#039;]]>" htmlUrl="" description="<![CDATA[ by &#039;Jack Ward&#039; &#187; From The Library of Jack and Shannon]]>"/>-->
+	</body>
+</opml>
+

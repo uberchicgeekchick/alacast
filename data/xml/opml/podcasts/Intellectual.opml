@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Intellectual Podcasts</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http://ted.com/" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[voices of wisdom]]>" text="<![CDATA[voices of wisdom]]>" htmlUrl="http://www.learnoutloud.com/Catalog/Religion-and-Spirituality/Spirituality/Voices-of-Wisdom-Podcast/23674" xmlUrl="http://feeds.feedburner.com/VoicesOfWisdom?format=xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Daily Quote Podcast]]>" xmlUrl="http://feeds.feedburner.com/dailyquotepodcast?format=xml" type="rss" text="<![CDATA[The Daily Quote Podcast]]>" htmlUrl="http://www.dailyquotepodcast.com/" description="<![CDATA[An inspirational quote of the day and how its effected &amp; helped the host.]]>"/>
+		<outline title="<![CDATA[Brain Ready&#039;s Brain Casts]]>" type="rss" xmlUrl="http://www.brainready.com/braincasts/index.xml" text="<![CDATA[Brain Ready&#039;s Brain Casts @ BrainReady.com]]>" htmlUrl="http://www.brainready.com/braincasts/" description="<![CDATA[]]>"/>
+		<outline title="The Philosophy Podcast" xmlUrl="http://feeds.feedburner.com/PhilosophyPodcast?format=xml" type="rss" text="The Philosophy Podcast" description="A showcase of classic philosophy from such greats as Socrates, Plato, Aristotle, Descartes, Nietzsche and much more"/>
+	</body>
+</opml>

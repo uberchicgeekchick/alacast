@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Ziff Davis&#039; podcasts</title>
+	</head>
+	<body>
+		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[CrankyGeeks]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/cgmpeg4video?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://crankygeeks.com/" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[dl.tv]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/dltvdivxvideo?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://dl.tv/" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[ExtremeTech.com]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/extremetechpodcast?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://ExtremeTech.Com/" type="rss" description="<![CDATA[News, reviews and technology updates from ExtremeTech.com.]]>"/>
+		<outline title="<![CDATA[PCMag Radio]]>" xmlUrl="http://feeds.feedburner.com/ziffdavis/pcmagradio?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://www.pcmag.com/category2/0,1738,2007098,00.asp" type="rss" description="<![CDATA[]]>"/>
+	</body>
+</opml>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[ATL Introducing...New Irish Music]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/nimusic/rss.xml" type="rss" text="<![CDATA[ATL Introducing...New Irish Music from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/nimusic/" description="<![CDATA[The best new music from Northern Ireland! Alongside a guide to the biggest Norther...]]>"/>
+		<outline title="<![CDATA[Best of Gerry Anderson]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/anderson/rss.xml" type="rss" text="<![CDATA[Best of Gerry Anderson from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/anderson/" description="<![CDATA[A weekly compilation of the very best bits of the Gerry Anderson show. Stories, im...]]>"/>
+		<outline title="<![CDATA[Best of Nolan]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/nolan/rss.xml" type="rss" text="<![CDATA[Best of Nolan from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/nolan/" description="<![CDATA[Stephen Nolan’s no nonsense approach to confronting the biggest issues of the day ...]]>"/>
+		<outline title="<![CDATA[Best of Talk Back]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/talkback/rss.xml" type="rss" text="<![CDATA[Best of Talk Back from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/talkback/" description="<![CDATA[Talk Back was Northern Ireland's first news phone-in programme and has been on air...]]>"/>
+		<outline title="<![CDATA[Blas - Irish Language Magazine]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/irish/rss.xml" type="rss" text="<![CDATA[Blas - Irish Language Magazine from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/irish/" description="<![CDATA[Na míreanna is fearr ó BLAS na seachtaine, ina mbíonn cúrsaí reatha, spórt, ceol t...]]>"/>
+		<outline title="<![CDATA[Everyday Ethics]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/ethics/rss.xml" type="rss" text="<![CDATA[Everyday Ethics from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/ethics/" description="<![CDATA[Provocative weekly debate with William Crawley on moral, religious and ethical iss...]]>"/>
+		<outline title="<![CDATA[Radio Ulster Sportscast]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/rusport/rss.xml" type="rss" text="<![CDATA[Radio Ulster Sportscast from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/rusport/" description="<![CDATA[An unmissable roundup of BBC Radio Ulster’s weekend sports coverage. Hear the esse...]]>"/>
+		<outline title="<![CDATA[Ulster's Funny Stuff]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/ulsterfun/rss.xml" type="rss" text="<![CDATA[Ulster's Funny Stuff from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/ulsterfun/" description="<![CDATA[Joe Lindsay presents a comedy compilation of the weird and wonderful week on BBC R...]]>"/>
+	</body>
+</opml>
