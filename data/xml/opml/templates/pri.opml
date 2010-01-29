@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
-	<head>
-		<title> &mdash; Public Radio International Podcasts</title>
-	</head>
-	<body>
-		<outline title="<![CDATA[PRI.Org]]>" xmlUrl="http://www.pri.org/" type="rss" text="<![CDATA[Public Radio International]]>" htmlUrl="http://www.pri.org/" description="<![CDATA[Podcasts from <a href='http://www.pri.org/'>P.R.I.</a>: Public Radio International]]>"/>
-	</body>
-</opml>

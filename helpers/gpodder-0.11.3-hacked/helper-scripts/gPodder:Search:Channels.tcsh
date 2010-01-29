@@ -3,51 +3,69 @@ if(! ${?1} || "${1}" == "" ) goto usage
 
 while ( ${?1} && "${1}" != "" )
 	while(! ${?value} )
-		set attribute = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`";
-		set attributes_value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`";
+		set option = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\1/g'`";
+		set options_value = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\2/g'`";
+		#echo "Checking ${option}\n";
 		
-		switch ( "${attribute}" )
+		switch ( "${option}" )
 		case "title":
 		case "xmlUrl":
 		case "htmlUrl":
 		case "text":
 		case "description":
-			set value="${attributes_value}";
-			shift;
+			set attribute="${option}";
+			set value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
 			breaksw
 		case "help":
-			shift;
 			goto usage;
 			breaksw
+		case "debug":
+			if(! ${?debug} ) set debug;
+			breaksw
 		case "enable":
-			switch ( "${attributes_value}" )
-			case "verbose":
-				shift;
-				set verbose_output="TRUE";
+			switch ( "${options_value}" )
+			case "debug":
+				if(! ${?debug} ) set debug;
 				breaksw
 			endsw
 			breaksw
 		case "disable":
-			switch( "${attributes_value}" )
+			switch( "${options_value}" )
+			case "debug":
+				if( ${?debug} ) unset debug;
+				breaksw
+			endsw
+			breaksw
+		case "verbose":
+			if(! ${?verbose_output} ) set verbose_output;
+			breaksw
+		case "enable":
+			switch ( "${options_value}" )
 			case "verbose":
-				shift;
-				set verbose_output="FALSE";
+				if(! ${?verbose_output} ) set verbose_output;
+				breaksw
+			endsw
+			breaksw
+		case "disable":
+			switch( "${options_value}" )
+			case "verbose":
+				if( ${?verbose_output} ) unset verbose_output;
 				breaksw
 			endsw
 			breaksw
 		case "output":
-			switch( "${attributes_value}" )
+			switch( "${options_value}" )
 			case "title":
 			case "htmlUrl":
 			case "text":
 			case "description":
 			case "xmlUrl":
-				set output="${attributes_value}";
-				shift;
+				set output="${options_value}";
 				breaksw
 			endsw
 			breaksw
 		endsw
+	shift;
 	end
 	
 	if(!( ${?attribute} && ${?value} )) then
@@ -57,13 +75,15 @@ while ( ${?1} && "${1}" != "" )
 
 	if(!(${?output})) set output="xmlUrl";
 	
+	if( ${?debug} ) then
+		printf "Searching for %s(s) matching: %s.\n\tUsing:\n\t" "${attribute}" "${value}";
+		echo "/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' "\""${HOME}/.config/gpodder/channels.opml"\""";
+	endif
 	foreach outline ( "`/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' '${HOME}/.config/gpodder/channels.opml'`" )
 		echo "${outline}" | sed "s/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/" | sed "s/\&amp;/\&/g";
-		if( ${?verbose_output} ) then
-			if( "${verbose_output}" == "TRUE" ) echo "${outline}";
-		endif
+		if( ${?verbose_output} ) echo "${outline}";
 	end
-	unset outline attribute attributes_value output value;
+	unset outline option options_value output value;
 	if( ${?verbose_output} ) unset verbose_output;
 end
 

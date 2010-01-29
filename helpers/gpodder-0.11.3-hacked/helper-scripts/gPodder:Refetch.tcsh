@@ -61,9 +61,9 @@ foreach podcast_match( "`${search_script} --${search_attribute}="\""${search_val
 		cat "${refetch_script}.tmp" >> "${refetch_script}";
 		chmod +x "${refetch_script}";
 		"${refetch_script}" ${silent};
-		if( ${status} == 0 && ! ${?keep_script} ) rm "${refetch_script}";
+		if(! ${?keep_script} ) rm -fv "${refetch_script}";
 	endif
-	if( ${status} == 0 && ! ${?keep_script} ) rm "${refetch_script}.tmp";
+	if(! ${?keep_script} ) rm -fv "${refetch_script}.tmp";
 end
 
 if( ${?grep_options} ) then

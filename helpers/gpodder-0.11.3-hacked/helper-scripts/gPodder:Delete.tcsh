@@ -2,7 +2,7 @@
 if(!(${?1} && "${1}" != "" && "${1}" != "--help")) goto usage
 
 set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
-set value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
+set value = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
 
 if(!( "${attrib}" != "" && "${value}" != "" )) goto usage
 
@@ -18,7 +18,7 @@ default:
 	breaksw
 endsw
 
-foreach podcast ( "`/usr/bin/grep -i --perl-regex -e '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${HOME}/.config/gpodder/channels.opml' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/' | sed 's/\(&\)amp;/\1/g'`" )
+foreach podcast ( "`/usr/bin/grep --line-number -i --perl-regex -e '${attrib}=["\""].*${value}.*["\""]' '${HOME}/.config/gpodder/channels.opml' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/' | sed 's/\(&\)amp;/\1/g'`" )
 	printf "Deleting: %s\n" "${podcast}"
 	( gpodder --del="${podcast}" > /dev/tty ) >& /dev/null
 end

@@ -107,12 +107,29 @@ sub search_catalogs{
 sub parse_option{
 	my $option=shift;
 	
-	if("$option"=~/^(\-\-output=.*)$/){ return parse_output($option); }
+	if("$option"=~/^(\-\-output=.*)$/){
+		return parse_output($option);
+	}
 	
 	my $action=$option;
 	$action=~s/^\-\-([^\-=]+)[\-=]?(.*)$/\1/g;
 	
-	if("$action"!~/^(en|dis)able$/){ return 0; }
+	if($action=~/(xml|html)?Url/i||"$action"eq"title"||"$action"eq"text"||"$action"eq"description"||"$action"eq"type"){
+		return parse_attribute($option);
+	}
+	
+	if("$action"!~/^(en|dis)able$/){
+		return 0;
+	}
+	
+	parse_setting($option);
+}#parse_option
+	
+sub parse_setting{
+	my $option=shift;
+	
+	my $action=$option;
+	$action=~s/^\-\-([^\-=]+)[\-=]?(.*)$/\1/g;
 	
 	my $setting=$option;
 	$setting=~s/^\-\-([^\-=]*)[\-=]?(.*)$/\2/g;
@@ -161,8 +178,6 @@ sub parse_option{
 		}
 		return 1;
 	}
-	
-	return 0;
 }#parse_option
 
 sub parse_attribute{
@@ -202,11 +217,8 @@ sub parse_output{
 }#parse_output
 
 sub main{
-	for ( my $i=0; $i<@ARGV; $i++ ) {
-		while( parse_option($ARGV[$i]) ){ $i++; }
-		parse_attribute($ARGV[$i]);
-		search_catalogs();
-	}
+	for ( my $i=0; $i<@ARGV; $i++ ){ parse_option($ARGV[$i]); }
+	search_catalogs();
 }#main
 
 main();

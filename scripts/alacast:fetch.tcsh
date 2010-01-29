@@ -7,6 +7,9 @@ endif
 if(! ${?eol} ) setenv eol '$';
 set alacast_feed_downloader_script="alacast:feed:fetch-all:enclosures";
 
+set alacasts_catalog_search_results_log_prefix="./.alacasts:catalog:search:results:@:";
+set alacasts_catalog_search_results_log_timestamp="`date '+%s'`";
+
 while ( "${1}" != "" )
 	set option="`printf "\""${1}"\"" | sed -r 's/[\-]{1,2}([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\1/'`";
 	set value="`printf "\""${1}"\"" | sed -r 's/[\-]{1,2}([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\2/'`";
@@ -59,12 +62,26 @@ while ( "${1}" != "" )
 			endsw
 		breaksw;
 		
+		case "download-from-xmlUrl":
+		case "podcast-xmlUrl":
+			if(!( "${value}" != "" && "`echo '${value}' | sed -r 's/^(http|https|ftp)(:\/\/).*/\1/i'`" == "://" )) then
+				printf "--%s=[url] must specify a valid http, https, or ftp URI" "${option}";
+			else
+				set podcast_xmlUrl="${value}";
+			endif
+		breaksw;
+		
 		case "f":
 		case "force":
 		case "force-fetch":
 			set force_fetch;
 		breaksw;
 		
+		case "xmlUrl":
+		case "htmlUrl":
+		case "title":
+		case "text":
+		case "description":
 		default:
 			if(! ${?eol} ) setenv eol='$';
 			set alacasts_catalog_search_attribute="`printf "\""${option}"\"" | sed 's/\-\-\([^=]\+\)=\(.*\)${eol}/\1/'`";
@@ -92,20 +109,24 @@ if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
 	endif
 endif
 
-
-set alacasts_catalog_search_results_log_prefix="./.alacasts:catalog:search:results:@:`date '+%s'`";
-if( ${?debug} ) echo "Running:\n\t alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="\""${alacasts_catalog_search_phrase}"\"" \| cut -d'>' -f2 \| sort \| uniq \>\! "\""${alacasts_catalog_search_results_log_prefix}.log"\""";
-alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="${alacasts_catalog_search_phrase}" | cut -d'>' -f2 | sort | uniq >! "${alacasts_catalog_search_results_log_prefix}.log";
-set podcast_xmlUrl_count="`cat "\""${alacasts_catalog_search_results_log_prefix}.log"\""`";
-if(!( ${#podcast_xmlUrl_count} > 0 )) then
-	printf "Unable to find any podcasts who's %s matched your search phrase: %s\n\n" "${alacasts_catalog_search_attribute}" "${alacasts_catalog_search_phrase}";
-	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
-	set status=-1;
-	exit ${status};
+if(! ${?podcast_xmlUrl} ) then
+	if( ${?debug} ) echo "Running:\n\t alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="\""${alacasts_catalog_search_phrase}"\"" \| cut -d'>' -f2 \| sort \| uniq \>\! "\""${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.log"\""";
+	alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="${alacasts_catalog_search_phrase}" | cut -d'>' -f2 | sort | uniq >! "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.log";
+	set podcast_xmlUrl_count="`cat "\""${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.log"\""`";
+	if(!( ${#podcast_xmlUrl_count} > 0 )) then
+		printf "Unable to find any podcasts who's %s matched your search phrase: %s\n\n" "${alacasts_catalog_search_attribute}" "${alacasts_catalog_search_phrase}";
+		if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
+		set status=-1;
+		unset podcast_xmlUrl_count;
+		exit ${status};
+	endif
+	unset podcast_xmlUrl_count;
+else
+	printf "%s\n" "${podcast_xmlUrl}" >! "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.log";
 endif
 
 set status=0;
-foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}.log"\""`" )
+foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.log"\""`" )
 	if( ${?fetch_all} && ! ${?list_episodes} ) then
 		if(! ${?alacast_fetch_all_script} ) then
 			set alacast_fetch_all_script="`dirname '$argv[0]'`/${alacast_feed_downloader_script}";
@@ -124,10 +145,11 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 	endif
 	
 	printf "Downloading: <%s>.\n" "${podcast_xmlUrl}";
-	wget -q -O "${alacasts_catalog_search_results_log_prefix}.xml" "${podcast_xmlUrl}";
+	printf "Using:\n\twget -q -O "\""${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml"\"" "\""${podcast_xmlUrl}"\""\n\n";
+	wget -q -O "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml" "${podcast_xmlUrl}";
 	
-	ex -E -n -X '+1,$s/[\n\r]\+//g' '+s/<\!\[CDATA\[//g' '+s/\]\]>//g' '+s/<\(item\|entry\)[^>]*>/\r<\1>/g' '+wq' "${alacasts_catalog_search_results_log_prefix}.xml" >& /dev/null;
-	set podcasts_title="`head -1 '${alacasts_catalog_search_results_log_prefix}.xml' | sed 's/.*<title>\([^<]\+\)<\/title>.*/\1/' | sed 's/\//-/g'`";# | sed 's/'\''/\\'\''/g'`";
+	ex -E -n -X '+1,$s/[\n\r]\+//g' '+s/<\!\[CDATA\[//g' '+s/\]\]>//g' '+s/<\(item\|entry\)[^>]*>/\r<\1>/g' '+wq' "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml" >& /dev/null;
+	set podcasts_title="`head -1 '${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml' | sed 's/.*<title>\([^<]\+\)<\/title>.*/\1/' | sed 's/\//-/g'`"; # | sed 's/'\''/\\'\''/g'`";
 	
 	if( "${podcasts_title}" != "" ) then
 		if( "`printf "\""${podcasts_title}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
@@ -136,18 +158,19 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		printf "A podcasts title could not be found for the podcast @:\n\t%s\nEpisodes will be saved to: 'Untitled podcast(s)'.\n" "${podcast_xmlurl}";
 		set podcasts_title="Untitled podcast(s)";
 	endif
+	
 	if(! ${?fetch_all} ) then
 		printf "\n\nDownloading %s episode(s) of %s.\n\n" "${download_limit}" "${podcasts_title}";
 	else
 		printf "\n\nDownloading all episode(s) of %s.\n\n" "${podcasts_title}";
 	endif
 	
-	printf "#\!/bin/tcsh -f\nif(\! -d "\""${download_dir}/${podcasts_title}"\"" ) mkdir -p "\""${download_dir}/${podcasts_title}"\"";\ncd "\""${download_dir}/${podcasts_title}/"\"";\n" >! "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
-	ex -E -n -X "+1,${eol}s/\(\!\)/\\\1/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.xml" >& /dev/null;
-	ex -E -n -X --noplugin "+3r${alacasts_catalog_search_results_log_prefix}.xml" "+wq!" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
-	chmod u+x  "${alacasts_catalog_search_results_log_prefix}.wget.tcsh";
+	printf "#\!/bin/tcsh -f\nif(\! -d "\""${download_dir}/${podcasts_title}"\"" ) mkdir -p "\""${download_dir}/${podcasts_title}"\"";\ncd "\""${download_dir}/${podcasts_title}/"\"";\n" >! "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh";
+	ex -E -n -X "+1,${eol}s/\(\!\)/\\\1/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml" >& /dev/null;
+	ex -E -n -X --noplugin "+3r${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.xml" "+wq!" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
+	chmod u+x  "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh";
 	
-	ex -E -n -X '+4d' '+wq!' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
+	ex -E -n -X '+4d' '+wq!' "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
 	
 	if(! ${?force_fetch} ) then
 		if( ${?debug} ) printf "Only episodes which have no existing file will be downloaded.\n";
@@ -167,10 +190,10 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		set episode_line_padding="${episode_line_padding}echo ";
 		set episode_end_condition=";${episode_end_condition}";
 	endif
-	ex -E -n -X "+4,${eol}s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^"\""']\+\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2"\"";\r${episode_line_padding}wget -c -O "\""\2, released on: \6\.\5"\"" "\""\4\.\5"\"";${episode_end_condition}/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
-	ex -E -n -X "+4,${eol}s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""'\'']\([^"\""'\'']\+\)\.\([^\."\""'\'']\+\)["\""'\''].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2"\"";\r${episode_line_padding}wget -c -O "\""\2, released on: \3\.\6"\"" "\""\5\.\6"\"";${episode_end_condition}/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
-	ex -E -n -X "+4,${eol}s/.*<\(item\|entry\).*<\/\(item\|entry\)>.*[\r\n]//g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
-	#ex -E -n -X "+4,${eol}s/\//\-/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
+	ex -E -n -X "+4,${eol}s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^"\""']\+\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\twget -c -O "\""\\"\"""\""\2, released on: \6\.\5"\""\\"\"""\"" "\""\\"\"""\""\4\.\5"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}wget -c -O "\""\2, released on: \6\.\5"\"" "\""\4\.\5"\"";${episode_end_condition}/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
+	ex -E -n -X "+4,${eol}s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""'\'']\([^"\""'\'']\+\)\.\([^\."\""'\'']\+\)["\""'\''].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\twget -c -O "\""\\"\"""\""\2, released on: \3\.\6"\""\\"\"""\"" "\""\\"\"""\""\5\.\6"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}wget -c -O "\""\2, released on: \3\.\6"\"" "\""\5\.\6"\"";${episode_end_condition}/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
+	ex -E -n -X "+4,${eol}s/.*<\(item\|entry\).*<\/\(item\|entry\)>.*[\r\n]//g" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
+	#ex -E -n -X "+4,${eol}s/\//\-/g" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
 	
 	if( ${start_with} > 1 ) then
 		set last_line=${start_with};
@@ -181,7 +204,7 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 			set start_with="`echo '${start_with}*2' | bc`";
 			set last_line="`echo '${start_with}+1' | bc`";
 		endif
-		ex -E -n -X "+4,${last_line}d" "+wq" "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
+		ex -E -n -X "+4,${last_line}d" "+wq" "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
 	endif
 	
 	if( ${download_limit} >= 1 ) then
@@ -192,10 +215,10 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 		endif
 		set last_line="`echo '${download_limit}+4' | bc`";
 		if(! ${?eol} ) set eol='$';
-		ex -E -n -X "+${last_line},${eol}d" '+wq' "${alacasts_catalog_search_results_log_prefix}.wget.tcsh" >& /dev/null;
-		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh' | head -${download_limit}`";
+		ex -E -n -X "+${last_line},${eol}d" '+wq' "${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh" >& /dev/null;
+		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh' | head -${download_limit}`";
 	else
-		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.wget.tcsh'`";
+		set episodes="`cat '${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh'`";
 	endif
 	
 	#if(! ( ${#episodes} >= 4 ) ) then
@@ -205,7 +228,7 @@ foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log_prefix}
 	#endif
 	
 	@ podcast_count=1;
-	${alacasts_catalog_search_results_log_prefix}.wget.tcsh;
+	"${alacasts_catalog_search_results_log_prefix}.${alacasts_catalog_search_results_log_timestamp}.wget.tcsh";
 	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
 end
 

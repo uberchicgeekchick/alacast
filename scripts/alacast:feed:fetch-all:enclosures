@@ -4,12 +4,6 @@ if(! ${?1} || "${1}" == "" || "${1}" == "--help" ) then
 	exit -1;
 endif
 
-if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
-	set download_dir="`cat '${HOME}/.alacast/profiles/${USER}/alacast.ini' | /bin/grep --perl-regexp 'save_to_path.*' | /bin/sed -r 's/.*[^=]*=["\""'\'']([^"\""'\'']*)["\""'\''];/\1/'`";
-	if( "${download_dir}" != "${cwd}" ) set starting_dir="${cwd}";
-	cd "${download_dir}";
-endif
-
 while( "${1}" != "" )
 	set attrib="`printf '${1}' | sed 's/\-\-\([^=]*\)=\?\(.*\)/\1/g'`";
 	set value="`printf '${1}' | sed 's/\-\-\([^=]*\)=\?\(.*\)/\2/g'`";
@@ -22,7 +16,7 @@ while( "${1}" != "" )
 		else
 			set download_first="1";
 		endif
-		breaksw
+		breaksw;
 	
 	case "start-with-episode":
 	case "start-with":
@@ -33,7 +27,7 @@ while( "${1}" != "" )
 		else
 			set first_episodes="1";
 		endif
-		breaksw
+		breaksw;
 	
 	case "oldest":
 	case "last":
@@ -47,11 +41,11 @@ while( "${1}" != "" )
 		else
 			set last_episodes="1";
 		endif
-		breaksw
+		breaksw;
 	
 	case "quiet":
 		set quiet;
-		breaksw
+		breaksw;
 		
 	case "f":
 	case "force":
@@ -60,17 +54,49 @@ while( "${1}" != "" )
 		set force_all;
 		breaksw;
 	
+	case "save-to":
+	case "download-to":
+	case "download-dir":
+	case "download-directory":
+		if( "${value}" != "" && -d "${value}" ) then
+			set download_dir="${value}";
+		else if( ${?2} && "${2}" != "" && -d "${2}" ) then
+			set download_dir="${2}";
+			shift;
+		endif
+		breaksw;
+	
 	case "regex-match-titles":
-		if( "${value}" == "" ) breaksw
+		if( "${value}" == "" ) breaksw;
 		set regex_match_titles="${value}";
-		breaksw
+		breaksw;
 	
 	default:
 		set feed="${1}";
-		breaksw
+		breaksw;
 	endsw
 	shift;
 end	
+
+if(! ${?download_dir} ) then
+	if( "`basename '${0}' | sed -r 's/^(alacast).*/\1/ig'`" == "alacast" && -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
+		set download_dir="`cat '${HOME}/.alacast/profiles/${USER}/alacast.ini' | /bin/grep --perl-regexp 'save_to_path.*' | /bin/sed -r 's/.*[^=]*=["\""'\'']([^"\""'\'']*)["\""'\''];/\1/'`";
+		if( "${download_dir}" != "${cwd}" ) then
+			set starting_dir="${cwd}";
+			cd "${download_dir}";
+		endif
+	endif
+endif
+
+if( ${?download_dir} ) then
+	if( "${download_dir}" != "${cwd}" ) then
+		if(! -d "${download_dir}" ) mkdir -p "${download_dir}";
+		set starting_dir="${cwd}";
+		cd "${download_dir}";
+	endif
+	unset download_dir;
+endif
+
 set please_wait_phrase="...please be patient, I may need several moments.\t\t";
 
 if( ! ${?quiet} ) printf "Downloading podcast's feed.\n\t<%s>\n" "${feed}";
@@ -191,12 +217,14 @@ if( ${?download_first} ) then
 		set download_first="`printf '%d+1\n' '${download_first}' | bc`";
 		ex -E -n -X --noplugin "+${download_first},${eol}d" "+wq" './00-enclosures.lst' >& /dev/null;
 		ex -E -n -X --noplugin "+${download_first},${eol}d" "+wq" './00-titles.lst' >& /dev/null;
+		ex -E -n -X --noplugin "+${download_first},${eol}d" "+wq" './00-pubDates.lst' >& /dev/null;
 	endif
 endif
 if( ${?first_episodes} ) then
 	if( ${#first_episodes} > 0 ) then
 		ex -E -n -X --noplugin "+1,${first_episodes}d" '+wq' './00-enclosures.lst' >& /dev/null;
 		ex -E -n -X --noplugin "+1,${first_episodes}d" '+wq' './00-titles.lst' >& /dev/null;
+		ex -E -n -X --noplugin "+1,${first_episodes}d" '+wq' './00-pubDates.lst' >& /dev/null;
 	endif
 endif
 
@@ -258,15 +286,15 @@ foreach episode ( "`cat './00-enclosures.lst'`" )
 			printf "[skipping existing file]" >> "${download_log}";
 			continue;
 		endif
-			
-		switch ( "${episodes_file}" )
+		
+		switch ( "`basename '${episodes_file}'`" )
 			case "theend.mp3":
 			case "caughtup.mp3":
 			case "caught_up_1.mp3":
 				if( ! ${?quiet} ) printf "[skipping podiobook.com notice]";
 				printf "[skipping podiobook.com notice]" >> "${download_log}";
 				continue
-				breaksw
+				breaksw;
 		endsw
 		
 		if( "`echo "\""${episodes_title}"\"" | sed -r 's/.*(commentary).*/\1/ig'`" != "${episodes_title}" ) then
@@ -282,8 +310,9 @@ foreach episode ( "`cat './00-enclosures.lst'`" )
 			endif
 		endif
 	endif
-
+	
 	wget --quiet -O "./${episodes_filename}" "${episode}"
+	
 	if( ! -e "./${episodes_filename}" ) then
 		if( ! ${?quiet} ) printf "[*epic fail* :(]";
 		printf "[*pout* :(]" >> "${download_log}";

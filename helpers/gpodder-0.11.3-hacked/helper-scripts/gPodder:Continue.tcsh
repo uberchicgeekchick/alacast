@@ -2,32 +2,31 @@
 
 main:
 	set total=18;
-	set timeout=46;# How long to wait between sending each interupt signal.
+	set timeout=46; # How long to wait between sending each interupt signal.
 	set gPodderCmd="./gpodder-0.11.3-hacked";
 
 	set status=0;
 
 	goto parse_argv;
 	#parse_argv will either call [usage:], which calls [main_quit:], or returns to/goes to/calls: [kill_progie:].
-
-kill_progie:
-		printf "Sending gPodder's PIDs the interupt signal.\nI'll be sending %s interupts and waiting %s seconds each time:\n" $total $timeout;
-		foreach pid( `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'` )
-			@ killed=0;
-			printf "Interupting %s's PID: %s " $gPodderCmd $pid;
-			while( $killed < $total && `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r "s/^[0-9]+[\\ ]+.*(${pid}).*[\r\n]*/\1/"` == $pid )
-				kill -INT $pid;
-				if( $killed > 0 ) printf ".";
-				sleep $timeout;
-				@ killed++;
-			end
-			printf "[done]\n";
-		end
-	#kill_progie
-	
-	goto main_quit;
 #main
 
+kill_progie:
+	printf "Sending gPodder's PIDs the interupt signal.\nI'll be sending %s interupts and waiting %s seconds each time:\n" $total $timeout;
+	foreach pid( `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'` )
+		@ killed=0;
+		printf "Interupting %s's PID: %s " $gPodderCmd $pid;
+		while( $killed < $total && `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r "s/^[0-9]+[\\ ]+.*(${pid}).*[\r\n]*/\1/"` == $pid )
+			kill -INT $pid;
+			printf ".";
+			sleep $timeout;
+			@ killed++;
+		end
+		printf "[done]\n";
+	end
+	goto main_quit;
+#kill_progie
+	
 main_quit:
 	exit ${status};
 #main_quit
@@ -40,8 +39,8 @@ usage:
 parse_argv:
 	if(! ${?eol} ) setenv eol '$';
 	while( "${1}" != "" )
-		set argument="`echo '${1}' | sed -r 's/\-\-([^=]+)=?(.*)${eol}/\1/'`";
-		set value="`echo '${1}' | sed -r 's/\-\-([^=]+)=?(.*)${eol}/\2/'`";
+		set argument="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)=?(.*)${eol}/\1/'`";
+		set value="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)=?(.*)${eol}/\2/'`";
 		
 		switch( "${argument}" )
 			case "help":
