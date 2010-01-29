@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>podcast fiction &lt;&ndash; side of odd</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[19 Nocturne Boulevard - Nineteen Nocturne Boulevard]]>" xmlUrl="http://nineteennocturne.libsyn.com/rss" type="rss" text="<![CDATA[19 Nocturne Boulevard - Nineteen Nocturne Boulevard]]>" htmlUrl="http://neohoodoo.libsyn.com/" description="<![CDATA[3nclude the actual 19 Nocturne Boulevard award-winning anthology series of audio dramas, in the realm of the strange, speculative, and supernatural.  Some episodes include more mature content, but have warning labels.  This sit also includes Julie's occasional blog entries on audio production.]]>"/>
+		<outline title="<![CDATA[Drabblecast MP3]]>" xmlUrl="http://feeds.feedburner.com/DrabblecastMp3?format=xml" type="rss" text="<![CDATA[DrabbleCast&apos;s MP3 feed. - Strange stories by strange authors for strange listeners]]>" htmlUrl="http://drabblecast.org/" description="<![CDATA[<p>Strange stories by strange authors for strange listeners</p><p>Flash Fiction At the Far Side of Weird</p><p>Narrated and produced by Norm Sherman</p>A Feed of Plain ol’ Mp3&apos;s]]>"/>
+		<outline title="<![CDATA[Drabblecast]]>" xmlUrl="http://feeds.feedburner.com/TheDrabblecast?format=xml" type="rss" text="<![CDATA[DrabbleCast&apos;s M4A feed. - Strange stories by strange authors for strange listeners]]>" htmlUrl="http://drabblecast.org/" description="<![CDATA[<p>Strange stories by strange authors for strange listeners</p><p>Flash Fiction At the Far Side of Weird</p><p>Narrated and produced by Norm Sherman</p>A Feed of Plain ol’ Mp3&apos;]]>"/>
+		<outline title="<![CDATA[Drabblecast B-Sides]]>" xmlUrl="http://feeds.feedburner.com/DrabblecastB-sides?format=xml" type="rss" text="<![CDATA[DrabbleCast&apos; B-Sides]]>" htmlUrl="http://web.me.com/normsherman/Site/Drabblecast_B-Sides/Drabblecast_B-Sides.html" description="<![CDATA[The weirdest of the weird.<br/>The grossest of the gross.<br/><br/>Stories, songs and ramblings from the far side of weird.<br/><br/>Not for everyone.  Content not intended for children or mature audiences.  The rest of you should get a kick out of it though.]]>"/>
+		<outline title="<![CDATA[Well Told Tales]]>" xmlUrl="http://feeds2.feedburner.com/WellToldTales?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://www.WellToldTales.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

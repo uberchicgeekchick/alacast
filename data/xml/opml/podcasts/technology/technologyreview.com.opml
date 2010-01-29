@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Technology Review &raquo; News &amp; Headlines</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Technology Review]]>" xmlUrl="" type="rss" text="<![CDATA[Technology Review]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Top Stories]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_top_stories?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Top Stories]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Computing]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_computing?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Infotech]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Web]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_web?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Infotech]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Communications]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_communications?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Infotech]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Energy]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_energy?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Energy]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Biotech]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_biotech?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Biotech]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology Review AudioDizer Podcast - Biztech]]>" xmlUrl="http://feeds.technologyreview.com/technology_review_audio_biztech?format=xml" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - Biztech]]>" htmlUrl="http://www.technologyreview.com/corp/rss.aspx#podcast" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[Technology Review AudioDizer Podcast - ]]>" xmlUrl="" type="rss" text="<![CDATA[Technology Review AudioDizer Podcast - ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+Top Stories

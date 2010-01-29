@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&#039;s Videos &amp; Vodcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Boing Boing TV]]>" xmlUrl="http://feeds.boingboing.net/boingboing/tv?format=xml" type="rss" text="<![CDATA[Boing Boing TV]]>" htmlUrl="http://tv.boingboing.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Ask A Ninja]]>" xmlUrl="http://feeds.feedburner.com/AskANinja?format=xml" type="rss" text="<![CDATA[Ask A Ninja]]>" htmlUrl="http://AskANinja.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

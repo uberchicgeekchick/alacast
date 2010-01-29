@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Arts and Ideas]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio3/r3arts/rss.xml" type="rss" text="<![CDATA[Arts and Ideas]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/r3arts/" description="<![CDATA[The Arts and Ideas podcast brings you a selection of the best from BBC Radio 3&apos;s daily programme Night Waves. You&apos;ll find in-depth interviews with leading writers, directors, film-makers, and architects; vociferous debates on the key cultural and philosophical questions of our time; and the critics&apos; judgement on the latest releases. Night Waves is on air Monday to Thursday at 9.15 - 10pm.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Web Design &amp; Programming podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[P3::C7Y]]>" xmlUrl="http://c7y.phparch.com/c/tag/podcast?feed=atom" type="rss" text="<![CDATA[P3::C7Y]]>" htmlUrl="http://c7y.phparch.com/" description="<![CDATA[php|architect&#039;s: c<sub>7</sub>y p<sup>3</sup> podcast]]>"/>
+		<outline title="<![CDATA[PHP Podcasts]]>" xmlUrl="http://www.phppodcasts.com/feed/" type="rss" text="<![CDATA[PHP Podcasts]]>" htmlUrl="http://www.phppodcasts.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The ZendCon Sessions]]>" xmlUrl="http://feeds.feedburner.com/ZendDeveloperZone?format=xml" type="rss" text="<![CDATA[The ZendCon Sessions]]>" htmlUrl="http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[php_abstract]]>" xmlUrl="http://feeds.feedburner.com/phpabstract?format=xml" type="rss" text="<![CDATA[php_abstract]]>" htmlUrl="http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[phpBB Podcast]]>" xmlUrl="http://podcast.phpbb.com/feed/" type="rss" text="<![CDATA[phpBB Podcast]]>" htmlUrl="http://podcast.phpbb.com/" description="<![CDATA[]]>"/>
+ 		<outline title="<![CDATA[phpBBweekly]]>" xmlUrl="http://feeds.feedburner.com/phpBBweekly?format=xml" type="rss" text="<![CDATA[phpBBweekly]]>" htmlUrl="http://www.phpbbweekly.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Lullabot&#39;s Drupal Podcast]]>" xmlUrl="http://www.lullabot.com/podcast/feed" type="rss" text="<![CDATA[Lullabot&#39;s Drupal Podcast]]>" htmlUrl="http://www.lullabot.com/podcast/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The WordPress Podcast]]>" xmlUrl="http://wp-community.org/wp/?feed=podcast" type="rss" text="<![CDATA[The WordPress Podcast]]>" htmlUrl="http://wp-community.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Show : The Show for CakePHP]]>" xmlUrl="http://live.cakephp.org/shows/index.rss" type="rss" text="<![CDATA[The Show : The Show for CakePHP]]>" htmlUrl="http://live.cakephp.org/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Python 411 Podcast Series]]>" xmlUrl="http://www.awaretek.com/python/index.xml" type="rss" text="<![CDATA[Python 411 Podcast Series]]>" htmlUrl="http://www.awaretek.com/python/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Perlcast]]>" xmlUrl="http://www.perlcast.com/rss/current.xml" type="rss" text="<![CDATA[Perlcast]]>" htmlUrl="http://www.perlcast.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

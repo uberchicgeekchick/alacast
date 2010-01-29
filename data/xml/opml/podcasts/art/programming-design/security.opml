@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Security Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[PaulDotCom]]>" xmlUrl="http://pauldotcom.com/podcast/psw.xml" type="rss" text="<![CDATA[PaulDotCom]]>" htmlUrl="http://pauldotcom.com/security_weekly/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Network Security Podcasts]]>" xmlUrl="http://mckeay.libsyn.com/rss" type="rss" text="<![CDATA[Network Security Podcasts]]>" htmlUrl="http://netsecpodcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[CyberSpeak]]>" xmlUrl="http://cyberspeak.libsyn.com/rss" type="rss" text="<![CDATA[CyberSpeak]]>" htmlUrl="http://cyberspeak.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[StillSecure, After All These Years]]>" xmlUrl="http://www.clickcaster.com/channels/ss.xml" type="rss" text="<![CDATA[StillSecure, After All These Years]]>" htmlUrl="http://www.clickcaster.com/ss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Security Catalyst]]>" xmlUrl="http://www.securitycatalyst.com/blog/feed/" type="rss" text="<![CDATA[Security Catalyst]]>" htmlUrl="http://www.securitycatalyst.com/blog/tag/podcast/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Reality Check Podcast]]>" xmlUrl="http://www.cigital.com/realitycheck/shows/feed/" type="rss" text="<![CDATA[Reality Check Podcast]]>" htmlUrl="http://www.cigital.com/realitycheck/shows/" description="<![CDATA[<p>The Reality Check Podcast with Gary McGraw focuses directly on software security practitioners and practical software security.   Reality Check’s sister podcast, the Silver Bullet Security Podcast with Gary McGraw, follows a free form interview style tailored highlight the ideas and experience of security gurus.  By contrast, Reality Check is concerned with practical questions centered on running large-scale software security initiatives in the real world.<p/><p>Reality Check targets experienced leaders working to solve software security problems in large organizations every day.  We use a standard script to guide each conversation with questions about history, methodology, best practice, and measurement.  We plan to interview leaders of mature software security programs and leaders of programs just getting started.</p>]]>"/>
+		<outline title="<![CDATA[Silver Bullet Podcast]]>" xmlUrl="http://www.cigital.com/silverbullet/feed/" type="rss" text="<![CDATA[Silver Bullet Podcast]]>" htmlUrl="http://www.cigital.com/silverbullet/" description="<![CDATA[Gary McGraw interviews security experts from academia, enterprises, and start-ups. Conversations are wide-ranging and in-depth. Produced by Cigital (www.cigital.com) and IEEE Security & Privacy magazine (www.computer.org/security), syndicated to InformIT.]]>"/>
+		<outline title="<![CDATA[Rear Guard]]>" xmlUrl="http://www.rearguardsecurity.com/rss.xml" type="rss" text="<![CDATA[The &quot;Rear Guard&quot; Podcast]]>" htmlUrl="http://www.rearguardsecurity.com/" description="<![CDATA[]]>"/>
+	</body>
+</opml>

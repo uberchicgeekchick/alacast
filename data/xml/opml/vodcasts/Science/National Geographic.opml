@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>National Geographic&#0037;s Vodcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[National Geographic&#0037;s Vodcasts]]>" url="http://www.nationalgeographic.com/podcasts/" type="link" text="<![CDATA[National Geographic Podcasts]]>" description="<![CDATA[Download the latest nature and science news, eye-opening photography, audio travel guides, classic video clips, world music coverage, and wild animal adventures with National Geographic's free podcasts.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Wild Chronicles]]>" xmlUrl="http://podcast.nationalgeographic.com/ng-video-shorts/?format=xml" type="rss" text="<![CDATA[Wild Chronicles&#0037; Digital Shorts]]>" htmlUrl="http://www.nationalgeographic.com/podcasts/shorts.html" description="<![CDATA[Watch videos from National Geographic, including Mysteries of Lost Civilizations, the World's Most Unusual Foods, Extreme Healing, the World's Toughest Jobs, Spotlights of countries around the world, and more!]]>"/>
+		<outline title="<![CDATA[Wild Chronicles]]>" xmlUrl="http://podcast.nationalgeographic.com/wild-chronicles/?format=xml" type="rss" text="<![CDATA[Wild Chronicles Digital Shorts]]>" htmlUrl="http://www.nationalgeographic.com/podcasts/shorts.html" description="<![CDATA[Watch videos from National Geographic, including Mysteries of Lost Civilizations, the World's Most Unusual Foods, Extreme Healing, the World's Toughest Jobs, Spotlights of countries around the world, and more!]]>"/>
+		<outline title="<![CDATA[Dog Whisperer]]>" xmlUrl="http://podcast.nationalgeographic.com/dog-whisperer/?format=xml" type="rss" text="<![CDATA[Dog Whisperer]]>" htmlUrl="http://www.nationalgeographic.com/podcasts/dogwhisperer.html" description="<![CDATA[Watch sneak peeks and favorite moments from National Geographic Channel's popular series Dog Whisperer with Cesar Millan.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

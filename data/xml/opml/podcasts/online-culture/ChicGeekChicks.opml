@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Category&#039;s Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Geek is Chic]]>" xmlUrl="http://feeds.feedburner.com/geekischic?format=xml" type="rss" text="<![CDATA[Geek is Chic]]>" htmlUrl="http://www.geekischic.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[ChicGeek Podcast: Almost as good as a closet full of shoes!]]>" xmlUrl="http://www.switchpod.com/users/chicgeekpodcast/feed.xml" type="rss" text="<![CDATA[ChicGeek Podcast]]>" htmlUrl="http://chicgeekpodcast.blogspot.com/" description="<![CDATA[Almost as good as a closet full of shoes!]]>"/>
+		<outline title="<![CDATA[Geek Pantheon]]>" xmlUrl="http://www.geekpantheon.com/?feed=podcast" type="rss" text="<![CDATA[Geek Pantheon and Your Moment of Kim]]>" htmlUrl="http://www.geekpantheon.com/" description="<![CDATA[Broaden your Geek Horizons - don't enter your battle of wits unarmed. Join Kim the Comic Book Goddess and other members of the Geek Pantheon where Geek gods, goddesses and other netizens speak about topics that are a bit farther outside of the usual Geek Comfort zone. So join us for talk about everything from Alignment to Zombies, and all those things that you thought wouldn't fit in between. Also included: Your Moment of Kim from ComicBookGoddess.com, Presented by the SSDWC - the Secret Society for Delayed World Conquest.]]>"/>
+	</body>
+</opml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Web Design &amp; Programming podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Screen Space]]>" text="<![CDATA[Screen Space]]>" htmlUrl="http://screenspace.org/" xmlUrl="http://www.screenspace.org/?feed=podcast" type="rss" description="<![CDATA[Screen Space: A blog &amp; podcast about users, texts, and technology]]>"/>
+		<outline title="<![CDATA[sitepoint]]>" xmlUrl="http://www.sitepoint.com/blogs/?feed=podcast" type="rss" text="<![CDATA[sitepoint podcast]]>" htmlUrl="http://www.sitepoint.com/blogs/category/podcast/" description="<![CDATA[News, opinion, and fresh thinking for web developers and designers. The official podcast of sitepoint.com.]]>"/>
+		<outline title="<![CDATA[audible ajax]]>" xmlUrl="http://media.ajaxian.com/" type="rss" text="<![CDATA[audible ajax]]>" htmlUrl="http://ajaxian.com/podcast/" description="<![CDATA[Ben and Dion of Ajaxian.com discuss issues around the new Web technology called Ajax (a.k.a. dhtml) and interview various Ajax notables.]]>"/>
+		<outline title="<![CDATA[Tech Luminaries]]>" xmlUrl="http://feeds.feedburner.com/TechLuminaries?format=xml" type="rss" text="<![CDATA[Tech Luminaries]]>" htmlUrl="http://techluminaries.com/" description="<![CDATA[Interviewing the luminaries in our industry.]]>"/>
+		<outline title="<![CDATA[WebDev Radio]]>" xmlUrl="http://feeds.feedburner.com/WebdevradioPodcastHome?format=xml" type="rss" text="<![CDATA[WebDev Radio]]>" htmlUrl="http://www.webdevradio.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Perlcast]]>" xmlUrl="http://www.perlcast.com/rss/current.xml" type="rss" text="<![CDATA[Perlcast]]>" htmlUrl="http://www.perlcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Boag World]]>" xmlUrl="http://feeds.feedburner.com/boagworldpodcast" type="rss" text="<![CDATA[Boag World]]>" htmlUrl="http://www.boagworld.com/podcast/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[webStandards w/Imagination]]>" xmlUrl="http://www.dustindiaz.com/feed" type="rss" text="<![CDATA[webStandards w/Imagination]]>" htmlUrl="http://www.dustindiaz.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Web Axe]]>" xmlUrl="http://feeds.feedburner.com/webaxe" type="rss" text="<![CDATA[Web Axe]]>" htmlUrl="http://webaxe.blogspot.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Cloud Computing Podcast]]>" xmlUrl="http://feeds.feedburner.com/CloudComputingPodcast?format=xml" type="rss" text="<![CDATA[Cloud Computing Podcast]]>" htmlUrl="http://cloudcomputingpodcast.libsyn.com/" description="<![CDATA[Hosted by Cloud Computing expert David Linthicum, this podcast is a no-hype look at the world of Cloud Computing, focusing on how to prepare the traditional enterprise to leverage resources outside of their firewalls.  This podcast talks about what&#039;s new, what&#039;s working, and has expert guests who will provide you with the advice you need to be successful in the clouds.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

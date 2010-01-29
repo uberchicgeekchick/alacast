@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>News &amp; Podcasts on the science of Archaeology</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Archaeology Channel]]>" xmlUrl="http://www.archaeologychannel.org/rss/TACfeed.xml" type="rss" text="<![CDATA[Archaeology Channel - Audio News from Archaeologica]]>" htmlUrl="http://www.archaeologychannel.org/AudioNews.asp" description="<![CDATA[The archaeology news of the week in audio, brought to you by The Archaeology Channel, compiled and written by Michelle Hilling of Archaeologica.org and read by Laura Kelley. The Audio News from Archaeologica is compiled from Archaeologica.org's daily news updates.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

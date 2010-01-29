@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Open Source Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[openSuSE.TV]]>" xmlUrl="http://opensuse.blip.tv/rss" type="rss" text="<![CDATA[openSuSE.TV]]>" htmlUrl="http://opensuse.blip.tv/" description="<![CDATA[The openSUSE channel contains videos for and by the openSUSE community. These are educational screencasts, talks and presentations given at events and anything inbetween :-)]]>"/>
+		<outline xmlUrl="http://www.progbox.co.uk/wordpress/?feed=podcast" title="<![CDATA[pr0g80x.vid]]>" htmlUrl="http://www.progbox.co.uk/wordpress/?feed=podcast" text="<![CDATA[pr0g80x.vid]]>" description="<![CDATA[Welcome to pr0g80X.vid, an almost monthly show about technology, Linux, open source and many other topics.]]>" type="rss"/>
+		<outline title="<![CDATA[Linux Journal]]>" text="<![CDATA[Linux Journal]]>" type="rss" htmlUrl="" xmlUrl="http://linuxjournal.blip.tv/rss" description="<![CDATA[Linux Journal, first published in 1994, is the original publication of the global Linux community, covering topics critical to intelligent implementation of the Linux operation system. With its award-winning Linux how-tos, tutorials, reviews, in-depth reporting, tips and tricks, and market analysis, Linux Journal has become well-known as the industry standard. Pick up a copy of Linux Journal on major newsstands and in bookstores worldwide or subscribe by calling 1-888-66-LINUX or visiting http://www.linuxjournal.com/subscribe.]]>"/>
+		<!--<outline xmlUrl="" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>" type="rss"/>-->
+	</body>
+</opml>

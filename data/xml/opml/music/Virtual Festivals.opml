@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Virtual &amp; Online music festivals&#039;s sites, news, &amp; podcasts feeds.</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Geek Spin]]>" xmlUrl="http://feeds.feedburner.com/TheGeekSpin?format=xml" type="rss" text="<![CDATA[The Geek Spin]]>" htmlUrl="http://www.thegeekspin.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[geek pop 2009]]>" xmlUrl="http://geekpop.co.uk/feed/" type="rss" text="<![CDATA[geek pop 2009]]>" htmlUrl="http://geekpop.co.uk/" description="<![CDATA[The world&#039;s only virtual sci-pop festival. Be there and be square.]]>"/>
+		<outline title="<![CDATA[geek pop 2008]]>" xmlUrl="http://geekpop.podbean.com/category/music/feed/" type="rss" text="<![CDATA[geek pop 2008]]>" htmlUrl="http://geekpop.podbean.com/category/music/" description="<![CDATA[The world&#039;s only virtual sci-pop festival. Be there and be square.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

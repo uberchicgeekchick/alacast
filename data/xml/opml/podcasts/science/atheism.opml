@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Atheism podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Atheist Experience]]>" xmlUrl="http://www.atheist-experience.com/podcast.php" type="rss" text="<![CDATA[The Atheist Experience]]>" htmlUrl="http://www.atheist-experience.com/" description="<![CDATA[The Atheist Experience is a weekly cable access television show in Austin Texas geared at a non-atheist audience.  It is produced by the Atheist Community of Austin.  The Atheist Community of Austin is organized as a nonprofit educational corporation to develop and support the atheist community, to provide opportunities for socializing and friendship, to promote secular viewpoints, to encourage positive atheist culture, to defend the first amendment principle of state-church separation, to oppose discrimination against atheists and to work with other organizations in pursuit of common goals.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

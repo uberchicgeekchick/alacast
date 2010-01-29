@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Mythology podcasts</title>
+	</head>
+	<body>
+		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<outline title="<![CDATA[Celtic Myth Podshow]]>" text="<![CDATA[]]>" htmlUrl="http://celticmythpodshow.com/" xmlUrl="http://feeds.feedburner.com/CelticMythPodshow?format=xml" type="rss" description="<![CDATA[]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

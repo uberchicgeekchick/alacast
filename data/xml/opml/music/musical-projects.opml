@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Virtual &amp; Online music festivals&#039;s sites, news, &amp; podcasts feeds.</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[For the Sake of Song]]>" xmlUrl="http://feeds.feedburner.com/For_The_Sake_Of_The_Song?format=xml" type="rss" htmlUrl="http://ducttapeguy.net/" text="<![CDATA[Sean McGaughey- For the Sake of the Song &rarr; podcast]]>" description="<![CDATA[Conversations with Songs and Songwriters.&nbsp; Join Sean McGaughey and guest songwriters as they explore the motivations and process of songwriting.]]>"/>
+		<outline title="<![CDATA[Beatnik Turtles&#039;: &quot;The Song Of The Day&quot; project]]>" xmlUrl="http://thesongoftheday.com/rss/rss_i.xml" type="rss" text="<![CDATA[Beatnik Turtles&#039;: &quot;The Song Of The Day&quot; project]]>" htmlUrl="http://thesongoftheday.com/" description="<![CDATA[One band. One year. 365 Free Songs. <a href='http://thesongoftheday.com/'>TheSongOfTheDay.com</a>]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

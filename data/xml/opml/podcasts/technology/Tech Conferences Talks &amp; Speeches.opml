@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Tech Conferences Talks &amp; Speeches Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Google Tech Talks]]>" xmlUrl="http://video.google.com/videofeed?type=search&q=engEDU&so=1&num=50&output=rss" type="rss" text="<![CDATA[Google Tech Talks]]>" htmlUrl="http://video.google.com/videosearch?q=engEDU&num=50&so=1&start=0" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Tech Conference Show]]>" xmlUrl="http://techconf.thepodcastnetwork.com/feed/" type="rss" text="<![CDATA[Tech Conference Show]]>" htmlUrl="http://techconf.thepodcastnetwork.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[TEDTalks (video)]]>" xmlUrl="http://feeds.feedburner.com/tedtalks_video?format=xml" type="rss" text="<![CDATA[TEDTalks (video)]]>" htmlUrl="http://www.ted.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Google&#039;s: web development]]>" xmlUrl="http://video.google.com/videofeed?type=search&q=%22web%20development%22+is:free&num=50&format=any" type="rss" text="<![CDATA[Google&#039;s: web development]]>" htmlUrl="http://video.google.com/videosearch?type=search&q=%22web%20development%22+is:free&num=50&format=any" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Google&#39;s: Advanced Topics In Programming Languages Series]]>" xmlUrl="http://video.google.com/videofeed?type=search&q=%22Advanced%20Topics%20In%20Programming%20Languages%20Series%22+is:free&num=50&format=any" type="rss" text="<![CDATA[Google&#39;s: Advanced Topics In Programming Languages Series]]>" htmlUrl="http://video.google.com/videosearch?type=search&q=%22Advanced%20Topics%20In%20Programming%20Languages%20Series%22+is:free&num=50&format=any" description="<![CDATA[]]>"/>
+	</body>
+</opml>

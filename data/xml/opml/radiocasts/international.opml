@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>ABC.net.au&#039; Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[hack on triple j]]>" text="<![CDATA[]]>" htmlUrl="" xmlUrl="" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Saturday Morning with Kim Hill]]>" xmlUrl="http://www.radionz.co.nz/podcasts/saturday.rss" type="rss" htmlUrl="http://www.radionz.co.nz/national/programmes/saturday" text="<![CDATA[RNZ SAT: Radio New Zealand: Saturday Morning with Kim Hill]]>" description="<![CDATA[A magazine programme of feature interviews, current affairs, science, literature, food, music and more.]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

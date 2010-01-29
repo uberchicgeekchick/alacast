@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Short Stories &amp; Podnovels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Voices of New Media Fiction]]>" xmlUrl="http://www.podiobooks.com/title/voices-new-media-fiction/feed/" type="rss" text="<![CDATA[Voices of New Media Fiction - A free audiobook edited by Mur Lafferty]]>" htmlUrl="http://www.podiobooks.com/title/voices-new-media-fiction/" description="<![CDATA[New Media Fiction brings together the pioneer short fiction podcasters. Experimenting from putting short-short fiction to novellas over their podcasts, these writers were the first to test the new medium for storytelling. Some wrote specifically for podcasts, some read previously published fiction, and some read entirely new stories. Some listeners asked if they could get just the stories in audio form, and that request brought about this podiobook. Cory Doctorow tells us a story about a post-apocalyptic government run by sysadmins and James Patrick Kelly narrates a story of a strange reconciliation. We've collected 18 stories for you, the first short fiction to go out over podcast, and look forward to bringing you more.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - A free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

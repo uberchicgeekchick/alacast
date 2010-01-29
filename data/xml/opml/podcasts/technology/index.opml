@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[TechPodcasts.Com]]>" url="http://TechPodcasts.Com/" text="<![CDATA[TechPodcasts.Com]]>" description="<![CDATA[TechPodcasts.Com - If its tech its here.]]>"/>
+		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Slashdot&#39;s Festival]]>" xmlUrl="http://feeds.feedburner.com/slashdot/audio?format=xml" type="rss" text="<![CDATA[Slashdot&#39;s Festival]]>" htmlUrl="http://slashdot.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Technology]]>" xmlUrl="http://www.theworld.org/rss/tech.xml" type="rss" text="<![CDATA[PRI&039;s: The World&#039;s:  &quot;Technology&quot;]]>" htmlUrl="http://theworld.org/technology/" description="<![CDATA[The World's weekly Technology Podcast brings you all the latest and greatest news from the fields of global technology and science. Hosted by The World's Clark Boyd.]]>"/>
+		<outline title="<![CDATA[Aussie Geek Podcast]]>" xmlUrl="http://www.aussiegeekpodcast.com/category/podcast/feed" type="rss" text="<![CDATA[Aussie Geek Podcast]]>" htmlUrl="http://www.aussiegeekpodcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[AustechNews]]>" xmlUrl="http://feeds.feedburner.com/AustechNews?format=xml" type="rss" text="<![CDATA[AustechNews]]>" htmlUrl="http://austechnews.blogspot.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[GeekMuse]]>" xmlUrl="http://geekmuse.net/podcast/" type="rss" text="<![CDATA[GeekMuse]]>" htmlUrl="http://geekmuse.dreamhosters.com/wp/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Mind of Root]]>" xmlUrl="http://podcast.acoupleofadmins.com/media/ACOAPRSS.xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://www.mindofroot.com/" description="<![CDATA[]]>" />
+		<outline title="<![CDATA[Tech5]]>" xmlUrl="http://www.podshow.com/feeds/tech5.xml" type="rss" text="<![CDATA[Tech5]]>" htmlUrl="http://tech5.podshow.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[TWiT]]>" xmlUrl="http://leoville.tv/podcasts/twit-ogg.xml" type="rss" text="<![CDATA[TWiT]]>" htmlUrl="http://www.twit.tv/TWiT" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Extreme Tech]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/extremetechpodcast?format=xml" type="rss" text="<![CDATA[Extreme Tech]]>" htmlUrl="http://www.extremetech.com/article2/0,1697,1860164,00.asp" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Maximum PC]]>" xmlUrl="http://feeds.feedburner.com/maximumpc/1337?format=xml" type="rss" text="<![CDATA[Maximum PC&#039;s No BS Podcast]]>" htmlUrl="http://www.maximumpc.com/articles/Podcast" description="<![CDATA[Every week the Maximum PC gang gets together to talk tech, answer your computer questions, and witness Gordon Mah Ung's incomparable Rant of the Week. Tune in!]]>"/>
+		<outline title="<![CDATA[Channel Flip&#39;s: unwired]]>" xmlUrl="http://feeds.feedburner.com/Unwired-AVI?format=xml" type="rss" text="<![CDATA[Channel Flip&#39;s: unwired]]>" htmlUrl="http://www.unwiredshow.tv/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Geekcast]]>" xmlUrl="http://feeds.feedburner.com/Geekcast?format=xml" type="rss" text="<![CDATA[The Geekcast]]>" htmlUrl="http://www.thegeekcast.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Knightcast]]>" xmlUrl="http://feeds.feedburner.com/feedburner/knightcast?format=xml" type="rss" text="<![CDATA[The Knightcast]]>" htmlUrl="http://www.knightwise.com/content/blogcategory/13/45/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[TalkCrunch]]>" xmlUrl="http://feeds.feedburner.com/Talkcrunch?format=xml" type="rss" text="<![CDATA[TalkCrunch]]>" htmlUrl="http://www.talkcrunch.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Force Field]]>" xmlUrl="http://feeds.feedburner.com/theforcefield/NKxm?format=xml" type="rss" text="<![CDATA[The Force Field]]>" htmlUrl="http://www.theforcefield.net/" description="<![CDATA[]]>"/>
+	</body>
+</opml>

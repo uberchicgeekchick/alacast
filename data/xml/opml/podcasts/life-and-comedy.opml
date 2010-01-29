@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>life &amp; comedy podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[the moth]]>" xmlUrl="http://feeds.themoth.org/themothpodcast?format=xml" type="rss" htmlUrl="http://themoth.org/" text="<![CDATA[the moth podcast]]>" description="<![CDATA[The Moth features people telling true, engaging, funny, touching and eye-opening stories from their lives. Hailed as "New York's hottest and hippest literary ticket" by the Wall Street Journal, The Moth has been producing sold-out storytelling shows for over ten years. Stories are told without notes to a live audience by a wide range of people. The best have been captured here. For more information about our programs, live events, and CD&apos;s for sale, go to www.themoth.org. The podcast is updated on Mondays.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

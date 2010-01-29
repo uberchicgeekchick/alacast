@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>abc.net.au podcasts</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[triple j]]>" url="http://triplej.net.au/" text="<![CDATA[]]>" description="<![CDATA[triple j&#039; homepage]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
+		
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Podcasts | triple j</title>
+<meta name="Title" content="Podcasts | triple j">
+<meta name="Description" content="Listen to triple j radio online, live or on-demand. You can download/podcast the latest music interviews, or listen to streams of our radio programs or music documentaries.  We also have some mp3s for download.">
+<meta name="Keywords" content="triple j, jjj, online radio, podcasts, audio, online audio,  audio archive, free, internet radio station, Australian radio, streaming, mp3s, programs on demand, live stream, streaming media, real player, windows media, listen online, broadband, radio">
+<meta name="Date" content="01/01/2009">
+<meta name="Language" content="English">
+<meta name="Publisher" content="Australian Broadcasting Corporation">
+<meta name="Publisher" content="(SCHEME=URL)http://abc.net.au/triplej/listen">
+<meta name="Rights" content="Copyright 2009 Australian Broadcasting Corporation. Other rights may be held as detailed in text. www.abc.net.au/common/copyrigh.htm">
+<meta name="ABC-DateReversed" content="20090101">
+<meta name="ABC-Gateway" content="Youth">
+<meta name="ABC-Site" content="triple j listen">
+<meta name="ABC-ResourceType" content="1">
+
+
+<link href="../css/triplejglobal.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/gNav.css" rel="stylesheet" type="text/css">
+<link href="css/podcast.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/smooth.pack.js"></script>
+<script src="../scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<script src="../scripts/jquery.js" type="text/javascript"></script>
+<script src="../scripts/common.js" type="text/javascript"></script>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function goToPage(){
+chosen = document.navform.shortcuts.options.selectedIndex;
+whichPage = document.navform.shortcuts.options[chosen].value;
+      if(whichPage != ''){
+           window.location.href = whichPage;
+      }
+}
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; 
+  
+  if((p=n.indexOf("?"))>0&&parent.frames.length) 
+  {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);
+	}
+
+  if(!(x=d[n])&&d.all) 
+	x=d.all[n]; 
+	
+	for (i=0;!x&&i<d.forms.length;i++) 
+		x=d.forms[i][n];
+
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) 
+	x=MM_findObj(n,d.layers[i].document);
+
+  if(!x && d.getElementById) 
+	x=d.getElementById(n); 
+  
+  return x;
+}
+
+function MM_jumpMenuGo(selName,targ,restore){ //v3.0
+  var selObj = MM_findObj(selName); 
+  
+  if (selObj) 
+	MM_jumpMenu(targ,selObj,restore);
+}
+//-->
+</script>
+
+<style type="text/css">
+<!--
+input {
+	background-color: #FFFFFF;
+}
+-->
+</style>
+</head>
+<body>
+
+<!-- ABC nav: TripleJ -->
+<!-- ABC nav: TripleJ -->
+<style type="text/css"><!--
+	@import url(http://www.abc.net.au/includes/css/globalNav.css); -->
+</style>
+<div id="gN_Nav">
+	<div id="gN_align">
+		<form action="http://search.abc.net.au/search/search.cgi" method="GET" id="gN_form" target="_top">
+			<input type="hidden" name="form" value="simple">
+			<input type="hidden" name="num_ranks" value="20">
+			<input type="hidden" name="collection" value="abcall">
+			<label for="gN_query"><a href="http://search.abc.net.au/search/search.cgi?collection=abcall&amp;form=simple" target="_top" title="Search the ABC">Search the ABC</a></label>
+				<input type="text" id="gN_query" name="query" value="" size="20" maxlength="30">
+				<input type="submit" id="gN_submit" value="Search the ABC" title="Search the ABC">
+		</form>
+		<p id="gN_text"><a id="gN_home" href="http://www.abc.net.au/" target="_top">ABC&nbsp;Home</a><span> | </span><a id="gN_radio" class="pipe" href="http://www.abc.net.au/radio/" target="_top">Radio</a><span> | </span><a id="gN_tv" class="pipe" href="http://www.abc.net.au/tv/" target="_top">Television</a><span> | </span><a id="gN_news" class="pipe" href="http://www.abc.net.au/news/" target="_top">News</a><span> | </span><a id="gN_local" class="pipe" href="http://www.abc.net.au/local/" target="_top">Your&nbsp;Local&nbsp;ABC</a><span> | </span><a id="gN_more" class="pipe" href="http://www.abc.net.au/subjects.htm" target="_top">More&nbsp;Subjects&#8230;</a><span> | </span><a id="gN_shop" href="http://shop.abc.net.au/" target="_top">Shop</a></p>
+	</div>
+</div>
+<script type="text/javascript" src="http://www.abc.net.au/includes/scripts/global.js"></script>
+<noscript>
+	<img alt="" border="0" name="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsg85fae000004n0vfjpj8oa_9m4q/njs.gif?dcsuri=/nojavascript&amp;WT.js=No">
+</noscript> 
+<!-- end ABC nav -->
+
+<!--//ABC-->
+
+<div id="container">
+<!-- triple j global nav -->
+<div id="globalNav">
+  <div id="triplejlogo"><a href="http://www.abc.net.au/triplej"><img src="http://www.abc.net.au/triplej/img/layout/gnav_logo.gif" title="triple j" alt="triple j logo" /></a></div>
+  <div id="globalNav_top">
+    <!--login bar-->
+    <div id='globalNav_login'>
+      <ul>
+        <li><a href='http://www2b.abc.net.au/communities/asp/login.asp?from=http://abc.net.au/triplej/'>Login</a></li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+	<!--
+	var randomnumber=Math.floor(Math.random()*1000000);
+	var loginCheck = 'http://'+location.hostname+'/cgi-bin/profilecentral/flchecklogin.pl?'+randomnumber;
+	addLoadEvent(makeRequest(loginCheck));
+	//-->
+	</script>
+    <div id="platform_links">
+      <ul>
+        <li id="plat_radio"><a href="http://www.abc.net.au/triplej/programs/">radio</a></li>
+        <li id="plat_tv"><a href="http://www.abc.net.au/triplej/tv/">tv</a></li>
+        <li id="plat_unearthed"><a href="http://www.triplejunearthed.com">unearthed</a></li>
+        <li id="plat_jmag"><a href="http://www.abc.net.au/triplej/jmag/">jmag</a></li>
+      </ul>
+    </div>
+    <div id="media_index_links">
+      <ul>
+        <li id="media_listen"><a href="http://www.abc.net.au/triplej/listen/default.htm" onclick="MM_openBrWindow('http://www.abc.net.au/triplej/listenpop/listen_live.htm','listen','width=350,height=311');return false;">listen</a></li>
+        <li id="media_watch" class="div"><a href="http://www.abc.net.au/triplej/tv/vodbytes/default.htm">watch</a></li>
+        <li id="media_podcast" class="div"><a href="http://www.abc.net.au/triplej/listen/podcast.htm">podcast</a></li>
+        <li id="media_forum" class="div"><a href="http://www2b.abc.net.au/tmb/Client/Board.aspx?b=3">forum</a></li>
+        <li id="media_search">  
+	<form action="http://search.abc.net.au/search/search.cgi" method="get">
+            <input type="hidden" name="form" value="simple" />
+            <input type="hidden" name="scope" value="triplej" />
+            <input type="hidden" name="num_ranks" value="20" />
+            <input type="hidden" name="collection" value="abcall" />
+            <input type="text" name="query" id="query" maxlength="100" class="searchBox" />
+            <input type="submit" value="" class="searchbtn" onmouseover="this.className='searchbtnhov'" onmouseout="this.className='searchbtn'" />
+   </form>
+
+		  
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="site_links">
+    <ul>
+      <li id="site_home"><a href="http://www.abc.net.au/triplej/">home</a></li>
+      <li id="site_guide"><a href="http://www.abc.net.au/triplej/guide/">guide</a></li>
+      <li id="site_programs"> <span id="programsolo"><a href="http://www.abc.net.au/triplej/programs/">programs</a></span>
+        <div class="sub">
+          <ul class="prog_sub_radio">
+            <li class="sub_nav_header">Radio</li>
+            <li><a href="http://www.abc.net.au/triplej/breakfast/">Breakfast with Robbie, Marieke and the Doctor</a></li>
+            <li><a href="http://www.abc.net.au/triplej/zan/">Mornings with Zan</a></li>
+            <li id="lunch"><a href="http://www.abc.net.au/triplej/dools/">Dools</a></li>
+            <li id="hack"><a href="http://www.abc.net.au/triplej/hack/">Hack</a></li>
+            <li id="homeandhosed"><a href="http://www.abc.net.au/triplej/homeandhosed/">Home &amp; Hosed</a></li>
+            <li id="request"><a href="http://www.abc.net.au/triplej/requests/">Super Request</a></li>
+            <li id="kingsmill"><a href="http://www.abc.net.au/triplej/kingsmill/">2009</a></li>
+          </ul>
+          <ul class="prog_sub_tv">
+            <li class="sub_nav_header">tv</li>
+            <li id="triplej_tv_dr"><a href="http://www.abc.net.au/triplej/tv/">triple j tv with The Doctor</a></li>
+			<li id="triplej_tv"><a href="http://www.abc.net.au/triplej/tv/vodbytes/">triple j tv vodbytes</a></li>
+            <li id="triplej_tv_comedy"><a href="http://www.abc.net.au/triplej/tv/concerts">triple j tv concerts</a></li>
+            <li id="triplej_tv_live"><a href="http://www.abc.net.au/triplej/tv/comedy">triple j tv comedy</a></li>
+            <li id="triplej_tv_docs"><a href="http://www.abc.net.au/triplej/tv/docs">triple j tv docs</a></li>
+			<li id="triplej_tv_hack"><a href="http://www.abc.net.au/triplej/hack/tv">the hack half hour</a></li>
+          </ul>
+          <div class="more_link"><a href="http://www.abc.net.au/triplej/programs/">full program list &raquo;</a></div>
+        </div>
+      </li>
+      <li id="site_people"><a href="http://www.abc.net.au/triplej/people/">people</a></li>
+      <li id="site_music"><a href="http://www.abc.net.au/triplej/music/">music</a></li>
+      <li id="site_listen"><a href="http://www.abc.net.au/triplej/listen/">listen</a></li>
+      <li id="site_events"><a href="http://www.abc.net.au/triplej/events">events</a>
+	<div class="smallsub">
+		<ul class="event_sub">
+<li><a href="/triplej/events/">Before Too Long - Paul Kelly Tribute</a></li>
+		 <li><a href="/triplej/events/parklife/09/">Parklife 2009</a></li>
+		 <li><a href="http://www.abc.net.au/triplej/jawards/09/">J Awards</a></li>
+		 <li><a href="http://www.abc.net.au/triplej/hottest100_alltime/">Hottest 100 Of All Time</a></li>
+		 <li><a href="http://www.abc.net.au/triplej/hottest100_08/">Hottest 100 2008</a></li> 
+		</ul>
+	<div class="small_more_link"><a href="http://www.abc.net.au/triplej/events">more events &raquo;</a></div>
+
+	</div>
+	</li>
+      <li id="site_reviews"><a href="http://www.abc.net.au/triplej/review/">reviews</a></li>
+      <li id="site_gallery"><a href="http://www.abc.net.au/triplej/gallery/">gallery</a></li>
+      <li id="site_gigguide"><a href="http://triplej.yourevents.com.au/">gig guide</a></li>
+	  <li id="site_shop"><a href="http://shop.abc.net.au/browse/class.asp?classid=3">shop</a></li>
+    </ul>
+  </div>
+</div>
+<!-- //triple j global nav -->
+
+
+<!-- Page Content -->
+<div class="background">
+<div class="background_header">
+<!-- header -->
+<div class="header">
+<a name="top"><!-- --></a>
+<!-- TRIPLE J BANNER-->
+</div>
+<!-- //header -->
+
+<div class="content_wrapper">
+
+<div class="one_col">
+<div class="podcast_nav">
+<h3><a href="#music_anch">Music Podcasts</a></h3>
+<a href="#new_music_anch">new music</a>
+<a href="#music_news_anch">music news</a>
+<a href="#unearthed_anch">unearthed podcast</a>
+<h3><a href="#program_anch">Program Podcasts</a></h3>
+<a href="#jtv_anch">triple j jtv podcast</a>
+<a href="#breakfast_anch">robbie, marieke  & the doctor</a>
+<a href="#hack_daily_anch">hack daily</a>
+<a href="#hackhalfhour_anch">triple j tv: hack half hour</a>
+<a href="#science_on_mornings_anch">science on mornings </a>
+<!--<a href="#homeandhosed_anch">home and hosed</a>-->
+<a href="#drive_anch">dools</a>
+<a href="#tomandalex_anch">tom and alex</a>
+<a href="#richardkingsmill_anch">2009 with richard kingsmill</a>
+<a href="#mornings_anch">mornings with zan</a>
+<a href="#safran_anch">sunday night safran</a>
+<h3><a href="#jbites_anch">J-Bites</a></h3>
+<a href="#film_anch">film guide</a>
+<a href="#culture_anch">the culture club</a>
+<a href="#raw_comedy">raw comedy</a>
+<h3><a href="#how_to_anch">podcast how to?</a></h3>
+</div>
+
+
+</div>
+
+<div class="two_col">
+<!-- Section: Music Podcast -->
+<a name="music_anch"/>
+<div class="content_section">
+<h3>Music Podcasts</h3>
+
+<!-- Content Pod -->
+<a name="new_music_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/newMusic.jpg" alt="new music" width="150" height="150">
+<h4>NEW MUSIC</h4>
+<h5>updated weekly</h5>
+<p class="copy"> Love the tunes you're hearing on triple j? Get a selection of your favourite tracks home-delivered every week. </p>
+<p class="links"><a href="http://www.abc.net.au/triplej/listen/mp3s.htm">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/listen/free_mp3s.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="new_music" >
+<option value="" selected="selected">Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/listen/free_mp3s.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=262713303">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/listen/free_mp3s.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/listen/free_mp3s.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/listen/free_mp3s.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/listen/free_mp3s.xml">Bloglines</option>
+</select>
+<input value="subscribe" onClick="MM_jumpMenuGo('new_music','parent',0)" class="subscibebutton" type="button">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="music_news_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/music_news.jpg" alt="music news" width="150" height="150">
+<h4>MUSIC NEWS</h4>
+<h5>updated between 2-3 times each week</h5>
+<p class="copy"> In this podcast, triple j brings you all the latest international and local music news.</p>
+<p class="links"><a href="http://abc.net.au/triplej/musicnews/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="music_news">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=98926908">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/musicnews/music_news_podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('music_news','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="unearthed_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/unearthed.jpg" alt="unearthed podcast" width="150" height="150">
+<h4>Unearthed podcast</h4>
+<h5>updated weekly</h5>
+<p class="copy"> Suckle on the latest sounds from triplejunearthed.com. Each week triple j presenters will dish out their favourite tunes from the website for you to listen, download and discover. </p>
+<p class="links"><a href="http://www.abc.net.au/triplej/listen/unearthed_podcast.htm">+ view the archive</a><a href="http://www.triplejunearthed.com/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/podcast/unearthed.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="unearthed">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/podcast/unearthed.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=262705398">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/podcast/unearthed.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/podcast/unearthed.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/podcast/unearthed.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/podcast/unearthed.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('unearthed','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+
+
+</div>
+<!--// Section: Music Podcast -->
+
+<!-- Section: Music Podcast -->
+<a name="program_anch"> </a>
+<div class="content_section">
+<h3>Program Podcasts</h3>
+<a href="#top" class="btt">back to top</a>
+<!-- Content Pod -->
+<a name="jtv_anch"></a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="img/podcasts/triplejtv.jpg" alt="triple j tv" width="150" height="150" />
+        <h4>Triple j tv  Vodcast</h4>
+        <h5>updated weekly</h5>
+<p class="copy"> Watch triple j tv on your computer or portable-media-thingy-of-choice (like a Video iPod, PSP).The triple j tv Vodcast also comes loaded with extras that you don't get on the telly.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/tv/vodcast/">+ help with jtv vodcasts</a><a href="http://www.abc.net.au/triplej/tv/">+ triple j tv website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label>
+    <input name="text2" type="text" value="http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml" />
+  </div>
+  <form name="JumpTo">
+<div class="jumpmenu">
+  <select name="jtv">
+    <option value="" selected>Podcast with...</option>
+    <option value="http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml">RSS</option>
+    <option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=173327002">iTunes</option>
+    <option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml">Add to Google</option>
+    <option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml">My Yahoo</option>
+    <option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml">Newsgator</option>
+    <option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml">Bloglines</option>
+  </select>
+  <input type="button"  value="subscribe" onClick="MM_jumpMenuGo('jtv','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+<!-- Content Pod -->
+<a name="breakfast_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="../breakfast/img/layout/podcast_150.jpg" alt="breakfast" width="150" height="150">
+        <a href="#top" class="btt">back to top</a><h4>ROBBIE, MARIEKE and The Doctor</h4>
+        <h5>updated weekly</h5>
+<p class="copy"> Big night? Late riser? No big deal - get triple j's breakfast team Robbie, Marieke and the Doctor whenever ya want them. Just podcast em, its breakfast radio for PM people.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/breakfast/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label>
+    <input name="text" type="text" value="http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">
+  </div>
+  <form name="JumpTo">
+<div class="jumpmenu">
+<select name="breakfast">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=216016857">iTunes</option>
+<!--<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=216016857">iTunes</option> -->
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/breakfast/rss/podcast.xml">Bloglines</option>
+</select>
+<input name="button" type="button" class="subscibebutton" onclick="MM_jumpMenuGo('breakfast','parent',0)"  value="subscribe" />
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="hack_daily_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/hack.jpg" alt="hack" width="150" height="150">
+<a href="#top" class="btt">back to top</a>
+<h4>Hack (Radio and TV)</h4>
+<h5>updated daily </h5>
+<p class="copy">Interested in current affairs, health issues, music, politics or culture? Get triple j's current affairs half-hour radio program and tv reports sent directly to you each weekday.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/hack/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="hack_daily">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=78995043">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('hack_daily','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+<!-- Content Pod -->
+<a name="hackhalfhour_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="../hackhalfhour/vodcast/img/hackHalfHour_vodcast_150.jpg" alt="hack half hour" width="150" height="150">
+<a href="#top" class="btt">back to top</a>
+<h4>triple j tv: Hack HALF HOUR</h4>
+<h5>updated daily </h5>
+<p>triple j tv presents The Hack Half Hour, a program about the serious (and not   so serious) issues that impact you. Each week we'll be covering a different   topic, looking at it through your eyes.</p>
+<p class="copy">&nbsp;</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/hackhalfhour/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+  <select name="hackhalfhour2">
+    <option value="" selected>Podcast with...</option>
+    <option value="http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml">RSS</option>
+    <option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=290593556">iTunes</option>
+    <option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml">Add to Google</option>
+    <option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml">My Yahoo</option>
+    <option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml">Newsgator</option>
+    <option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/hackhalfhour/vodcast/vodcastMp4.xml">Bloglines</option>
+  </select>
+  <input type="button"  value="subscribe" onClick="MM_jumpMenuGo('hackhalfhour2','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+<!-- Content Pod -->
+<a name="science_on_mornings_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="img/podcasts/drkarl.jpg" alt="science on mornings" width="150" height="150">
+        <a href="#top" class="btt">back to top</a><h4>Science on Mornings</h4>
+<h5>Updated every Thursday arvo</h5>
+<p class="copy"> Join Zan Rowe and Dr Karl, with a bunch of curious triple j listeners for a weekly injection of science, myth-bashing and answers!</p>
+<br/>
+<br/>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/science/k2/podcast/drk_rss.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="drkarl">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/science/k2/podcast/drk_rss.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=73331325">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/science/k2/podcast/drk_rss.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/science/k2/podcast/drk_rss.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/science/k2/podcast/drk_rss.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/science/k2/podcast/drk_rss.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('drkarl','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- 
+Content Pod 
+<a name="homeandhosed_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="img/podcasts/home_and_hosed.jpg" alt="home and hosed" width="150" height="150">
+        <a href="#top" class="btt">back to top</a>
+        <h4>Home and Hosed with Caroline Tran</h4>
+<h5>updated weekly</h5>
+<p class="copy"> Into your Aussie music? Subscribe to Home and Hosed, triple j's Australian music program. Hear the latest interviews with up-coming and well-established homegrown acts.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/homeandhosed/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="home_hosed">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=81287996">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/homeandhosed/podcast/podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('home_hosed','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+
+-->
+
+<!-- Content Pod -->
+<a name="drive_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="/triplej/dools/img/layout/podcast_150.jpg" alt="dools" width="150" height="150">
+        <a href="#top" class="btt">back to top</a>
+        <h4>DOOLS</h4>
+		
+        <h5>updated weekly</h5>
+<p class="copy">Scott Dooley presents the drive show for 2009. Tune in from 3pm weekday afternoons for the most entertaining gardening show on the dial. Whether it's planting roses or installing a water feature, there's nothing Dools can't help you with. And don't forget Tuesday's when Scott's joined by a sex therapist to answer your questions.</p>
+<p class="links"><a href="/triplej/dools/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/dools/rss/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+  <select name="topshelf">
+    <option value="" selected>Podcast with...</option>
+    <option value="http://www.abc.net.au/triplej/dools/rss/podcast.xml">RSS</option>
+    <option value="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=121899322">iTunes</option>
+    <option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/doolsa/rss/podcast.xml">Add to Google</option>
+    <option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/dools/rss/podcast.xml">My Yahoo</option>
+    <option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/dools/rss/podcast.xml">Newsgator</option>
+    <option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/dools/rss/podcast.xml">Bloglines</option>
+  </select>
+  <input type="button"  value="subscribe" onClick="MM_jumpMenuGo('topshelf','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="tomandalex_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+        <img src="/triplej/listen/img/podcasts/ta_150.jpg" alt="Tom and Alex" width="150" height="150">
+        <a href="#top" class="btt">back to top</a>
+        <h4>TOM AND ALEX</h4>
+		
+        <h5>updated weekly</h5>
+<p class="copy">Welcome to the podcast where Tom Ballard and Alex Dyson discuss how the age old tradition of snake charming has given way to a new breed of online conjurers. Another way of putting it is to say that this podcast is a combination of the best bits from their Weekend Breakfast show on triple j.</p>
+<br/>
+<p class="links"><a href="http://www2b.abc.net.au/tmb/Client/MessageList.aspx?b=3&t=17&te=False">+ view the tom and alex forum</a></p>
+<br/>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+  <select name="tomandalex">
+    <option value="" selected>Podcast with...</option>
+    <option value="http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml">RSS</option>
+    <option value="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=308834024">iTunes</option>
+    <option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml">Add to Google</option>
+    <option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml">My Yahoo</option>
+    <option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml">Newsgator</option>
+    <option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/tomandalex/rss/podcast.xml">Bloglines</option>
+  </select>
+  <input type="button"  value="subscribe" onClick="MM_jumpMenuGo('tomandalex','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+<!-- Content Pod KINGSMILL -->
+<a name="richardkingsmill_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/2008.jpg" alt="new music" width="150" height="150">
+<a href="#top" class="btt">back to top</a>
+<h4>2009 with Richard Kingsmill</h4>
+<h5>updated weekly </h5>
+<p class="copy">Richard Kingsmill, triple j's Music Director, presents the latest music releases. '2009', broadcasts on Sundays from 6pm. The podcast is chock full of interviews bands and artists about their latest work.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/kingsmill/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="richard">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=152415125">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/kingsmill/rss/podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('richard','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+
+<!-- Content Pod -->
+<a name="mornings_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/zanrowe_podcast.jpg" alt="mornings" width="150" height="150">
+<a href="#top" class="btt">back to top</a>
+<h4>Mornings with Zan Rowe</h4>
+<h5>updated daily </h5>
+<p class="copy"> Zan Rowe offers up a super-cool selection of music and culture for your mornings. Zan also writes the blog Run With The Hunted.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/zan/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/zan/podcast/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="zan">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/zan/podcast/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=141437914">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/zan/podcast/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/zan/podcast/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/zan/podcast/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/zan/podcast/podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('zan','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="safran_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/safran.jpg" alt="sunday night safran" width="150" height="150">
+<a href="#top" class="btt">back to top</a>
+<h4>Sunday Night Safran</h4>
+<h5>updated every Monday afternoon </h5>
+<p class="copy">  Religion. Politics and Hoochies. John Safran and Father Bob talk-up a storm, so we've taken the program, cut out the music to produce a 60-70min program. </p>
+<p class="links"><a href="http://www.abc.net.au/triplej/safran/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/safran/podcast/safran.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="safran">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/safran/podcast/safran.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=73331191">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/safran/podcast/safran.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/safran/podcast/safran.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/safran/podcast/safran.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/safran/podcast/safran.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('safran','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+
+
+</div>
+<!--// Section: Music Podcast -->
+
+<!-- Section: Music Podcast -->
+<a name="jbites_anch"> </a>
+<div class="content_section">
+<h3>J-Bites</h3>
+<a href="#top" class="btt">back to top</a>
+<!-- Content Pod -->
+<a name="film_anch"></a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/film.jpg" alt="music news" width="150" height="150">
+<h4>Film Guide with Marc Fennell</h4>
+<h5>updated Wednesday afternoons </h5>
+<p class="copy">Blockbusters, Indie flicks, and weirdly obscure arthouse flicks. It&#8217;s all here as triple j&#8217;s Movie Guy Marc Fennell gives you the latest Movie and DVD reviews and triple j tv's Flicked aswell. Have it all sent direct to your desktop.</p>
+<p class="links"><a href="http://www.abc.net.au/triplej/listen/film_podcast.htm">+ view the archive</a><a href="http://www.abc.net.au/triplej/review/film/default.htm">+ film reviews</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/review/film/podcast/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="film">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/review/film/podcast/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=82353901">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/review/film/podcast/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/review/film/podcast/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/review/film/podcast/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/review/film/podcast/podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('film','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="culture_anch"> </a>
+<div class="content_pod">
+	<div class="content_pod_top"><div></div></div>
+		<div class="content_pod_content">
+			<img src="img/podcasts/cultureClub.jpg" alt="music news" width="150" height="150">
+			<h4>The Culture Club with Craig Schuftan</h4>
+			<h5><!--updated weekly--></h5>
+			<p class="copy"> Modern Art, Rock N Roll and other things your parents warned you about. triple j's Craig Shuftan takes you on a guided tour through the history of Culture.</p>
+            <br/>
+            <br/>
+			<!--<p class="links"><a href="#">+ website</a><a href=" #">+ website</a></p>-->
+			<div class="toolbox_pod">
+			<div class="toolbox_pod_top">
+            	<div>
+            	</div>
+            </div>
+            <div class="toolbox_pod_content">
+                <div class="input_label">
+                    <label>url</label> 
+                    <input type="text" value="http://www.abc.net.au/triplej/podcast/culture_club.xml">
+                </div>
+                <form name="JumpTo">
+                    <div class="jumpmenu">
+                        <select name="culture_club">
+                            <option value="" selected>Podcast with...</option>
+                            <option value="http://www.abc.net.au/triplej/podcast/culture_club.xml">RSS</option>
+                            <option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=262705509">iTunes</option>
+                            <option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/podcast/culture_club.xml">Add to Google</option>
+                            <option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/podcast/culture_club.xml">My Yahoo</option>
+                            <option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/podcast/culture_club.xml">Newsgator</option>
+                            <option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/podcast/culture_club.xml">Bloglines</option>
+                        </select>
+                        <input type="button"  value="subscribe" onClick="MM_jumpMenuGo('culture_club','parent',0)" class="subscibebutton">
+                    </div>
+                </form>
+            </div>
+			<div class="toolbox_pod_bottom"><div></div></div>
+		</div>
+	</div>
+    
+	<div class="content_pod_bottom">
+        <div>
+        </div>
+    </div>
+</div>
+<!-- //Content Pod -->
+
+<!-- Content Pod -->
+<a name="raw_comedy_anch"> </a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<img src="img/podcasts/rawcomedy.jpg" alt="music news" width="150" height="150">
+<a href="#top" class="btt">back to top</a><h4>Raw Comedy</h4>
+<h5>updated once a year for a week</h5>
+<p class="copy"> Raw Comedy is Australia's biggest national comedy talent search.</p>
+<p class="links"><a href="http://www.comedyfestival.com.au/raw/">+ website</a></p>
+<div class="toolbox_pod">
+<div class="toolbox_pod_top"><div></div></div>
+<div class="toolbox_pod_content">
+  <div class="input_label"><label>url</label> <input type="text" value="http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml"></div>
+<form name="JumpTo">
+<div class="jumpmenu">
+<select name="raw_comedy">
+
+<option value="" selected>Podcast with...</option>
+<option value="http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml">RSS</option>
+<option value="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=126334258">iTunes</option>
+<option value="http://fusion.google.com/add?feedurl=http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml">Add to Google</option>
+<option value="http://add.my.yahoo.com/rss?url=http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml">My Yahoo</option>
+<option value="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml">Newsgator</option>
+<option value="http://www.bloglines.com/sub/http://www.abc.net.au/triplej/rawcomedy/podcast/podcast.xml">Bloglines</option>
+</select>
+
+<input type="button"  value="subscribe" onClick="MM_jumpMenuGo('raw_comedy','parent',0)" class="subscibebutton">
+</div>
+</form>
+</div>
+   <div class="toolbox_pod_bottom"><div></div></div>
+</div></div>
+
+<div class="content_pod_bottom"><div></div></div>
+</div>
+<!-- //Content Pod -->
+
+
+
+</div>
+<!--// Section: Music Podcast -->
+<a name="how_to_anch"> </a>
+<div class="content_section">
+<h3>Podcasting How To?</h3>
+<a href="#top" class="btt">back to top</a>
+<div class="content_pod">
+   <div class="content_pod_top"><div></div></div>
+      <div class="content_pod_content">
+<div class="how_to">
+<h3>What is podcasting?</h3>
+<p>It's a way that triple j can automatically send you some of our radio programming to your portable device. To do this, you subscribe to the podcast by downloading a small piece of software that manages all of your podcast subscriptions. When connected to the internet, the software searches for the latest edition of the program on our website, and will download it to a folder on your computer, ready for when you next plug in your iPod or other portable device. This means that you don't have to manually search &amp; download for new programs to download on this website. It happens automatically!</p>
+ <h3> How to subscribe:</h3> 
+                        <ol>
+                          <li>Download podcasting software such as
+<ul>
+<li><a href="http://www.apple.com/au/itunes/">iTunes</a></li> <li><a href="http://juicereceiver.sourceforge.net/index.php" target="_blank">Juice</a> or</li>
+<li><a href="http://en.wikipedia.org/wiki/Podcatchers" target="_blank"> alternate podcasting software</a></li>
+</ul>
+Most applications operate on Mac, PC or Linux. All are free.</li>
+                          <br><br>
+                          <li>Once you have set up and acquainted yourself with 
+                            the podcasting software, then copy &amp; paste the 
+                            subscribtion URL listed above into your podcasting program. This will add the selected 
+                            program to your podcasting subscriptions.</li>
+                          <br><br>
+                          <li>If you want to receive these programs regularly, 
+                            make sure the scheduling function on your podcasting 
+                            software is set to search for new podcasts automatically</li>
+                        </ol>
+                        <h3>Feedback &amp; queries:</h3>
+                        <p>If you have a query, or wish to give us some feedback 
+                        on this service, please send us your comments using the 
+                        <a href="http://abc.net.au/triplej/contact/website.htm">triple 
+                        j website comments/feedback form</a></p>
+
+</div>
+</div>
+<div class="content_pod_bottom"><div></div></div>
+</div>
+</div>
+
+</div>
+
+
+<!--//End two_col -->
+<p class="clearer"> </p>
+</div>
+<!-- //content wrapper -->
+</div>
+<!-- //background header -->
+
+</div>
+  <!--// background -->
+
+  <!-- Footer: triple j -->
+	
+
+	
+	<div id="smsTicker">
+		<script type="text/javascript">
+			swfobject.embedSWF("/triplej/includes/swf/sms_ticker.swf", "smsEmbed", 960, 60, "9.0.0", null, {}, {wmode: "transparent"}, {});
+		</script>
+		<div id="smsEmbed"></div>
+	</div>
+
+	<div id="globalFooter">
+	<!-- colomn 1 -->
+		<div class="footercolumn" id="clm1">
+			<ul>
+				<li class="column_title blog">from the blogs</li>
+				<li class="column_body"><a href="http://www.triplej.net.au/breakfast/blog/">Robbie, Marieke and The Doctor</a><br />
+                
+<a style="font-weight: normal !important;" href="http://www.abc.net.au/triplej/breakfast/blog/s2719702.htm">Paradise Lost.</a>
+
+
+                </li>
+				<li class="column_body"><a href="http://www.triplej.net.au/zan/blog/">Zan Rowe</a><br />
+                
+<a style="font-weight: normal !important;" href="http://www.abc.net.au/triplej/zan/blog/s2717855.htm">Wayne Coyne talks long and plentifully about The Flaming Lips...</a>
+
+
+                </li>
+				<li class="column_body"><a href="http://www.triplej.net.au/dools/blog/">Dools</a><br />
+                
+<a style="font-weight: normal !important;" href="http://www.abc.net.au/triplej/dools/blog/s2712399.htm">Don't Make Me Come Up There!</a>
+
+
+                </li>
+                <li class="column_body"><a href="http://www.abc.net.au/triplej/kingsmill/blog/">Richard Kingsmill</a><br />
+                
+<a style="font-weight: normal !important;" href="http://www.abc.net.au/triplej/kingsmill/playlist/s2720564.htm">Some Assembly Required</a>
+
+
+                </li>
+                <li class="column_body"><a href="http://www.abc.net.au/triplej/lunch/blog/">Vijay Khurana</a><br />
+                
+<a style="font-weight: normal !important;" href="http://www.abc.net.au/triplej/lunch/blog/s2721561.htm">This Is Quite Interesting</a>
+
+<br />
+                </li>
+				<!--<li class="column_body"><a href="http://blogs.abc.net.au/triplej/filmguide.htm">Film blog</a></li>-->
+			</ul>
+		</div>
+
+	<!-- colomn 2 -->
+		<div class="footercolumn" id="clm2">
+			<ul>
+				<li class="column_title forum"><a href="http://www2b.abc.net.au/tmb/Client/Board.aspx?b=3">on the forum</a></li>
+				<li class="column_body"><a href="http://www2b.abc.net.au/tmb/Client/Message.aspx?b=3&m=410473">Re: Small Things Amuse Small Minds Dept.</a></li><li class="column_body"><a href="http://www2b.abc.net.au/tmb/Client/Message.aspx?b=3&m=410472">Re: Small Things Amuse Small Minds Dept.</a></li><li class="column_body"><a href="http://www2b.abc.net.au/tmb/Client/Message.aspx?b=3&m=410471">song played thurs around 10am</a></li>
+				<li class="column_subtitle forum_sub">last comment</li>
+				<li class="column_body"><a href="http://www2b.abc.net.au/tmb/Client/Message.aspx?b=3&m=410473">Re: Small Things Amuse Small Minds Dept.</a><br>bobwelldone  have you ever ............................</li>
+			</ul>		
+		</div>
+
+	<!-- colomn 3 -->
+		<div class="footercolumn" id="clm3">
+			<ul>
+				<li class="column_title about">about triple j</li>
+				<li class="column_body">You can find us:
+					<ul class="sub_body">
+						<li>on your radio - <a href="http://www.triplej.net.au/about/faqs.htm">find your frequency</a></li>
+						<li>on your tv - <a href="http://www.triplej.net.au/tv">check ABC1/2</a></li>
+						<li>online - <a href="http://www.triplej.net.au/listen/default.htm" onClick="MM_openBrWindow('http://www.triplej.net.au/listenpop/listen_live.htm','listen','width=350,height=311');return false;">listen live</a></li>
+						<li>in print - <a href="http://www.triplej.net.au/jmag/">subscribe to jmag</a></li>
+						<li>in the <a href="http://shop.abc.net.au/browse/class.asp?classid=3" target="_blank">j shop</a></li>
+						<li>on your <a href="http://www.triplej.net.au/about/faqs.htm#mobile">mobile</a></li></ul>
+				</li>
+				<li class="column_body">site links:
+					<ul class="sub_body">
+						<li><a href="http://www.triplej.net.au/about/">about</a></li>
+						<li><a href="http://www.triplej.net.au/about/faqs.htm">FAQs</a></li>
+						<li><a href="http://www.triplej.net.au/about/contact.htm">contact us</a></li>
+						<li><a href="http://www.triplej.net.au/about/jobs.htm">jobs</a></li>
+					</ul>
+				</li>
+			</ul>	
+		</div>
+	<!-- colomn 4 -->
+  <div class="footercolumn" id="clm4">
+			<ul>
+				<li class="column_title subscribe">subscribe</li>
+				<li class="column_body"><p>
+				Find out what's happening all across triple j with this weekly newsletter</p>
+				
+					<form action="http://203.2.218.98/subscribe/subscribe.tml" method="post">
+						
+						<input type="text" name="email" value="email address">
+						<input type="submit" value="subscribe" class="btn" onmouseover="this.className='btn btnhov'" onmouseout="this.className='btn'">
+						<input type="hidden" name="list" value="j-mail">
+						<input type="hidden" name="confirm" value="one">
+    					<input type="hidden" name="showconfirm" value="F">
+    					<input type="hidden" name="url" value="http://www.abc.net.au/triplej/contact/jmail/thanks.htm">
+					</form>		
+					<p><a href="http://www.abc.net.au/triplej/about/jmail.htm">About JMail</a></p>	
+				</li>
+                <li class="column_body"><a href="http://www.facebook.com/pages/triple-j/24192670159" target="_blank">Become a triple j facebook fan</a></li>
+				<li class="rss"><a href="http://www.triplej.net.au/listen/podcast.htm">Podcast and RSS Feeds</a></li>
+				<!--<li class="column_body"><a href="http://www.triplej.net.au/about/">triple j tv SMS alerts</a></li>-->
+			</ul>	
+		</div>
+<div class="clearer">&nbsp;</div>
+<div id="privacybottom">
+<a href="http://www.abc.net.au/common/copyrigh.htm" target="_blank" title="Copyright">&#169; 2008 ABC</a> | <a href="http://www.abc.net.au/privacy.htm" target="_blank" title="Privacy Policy">Privacy Policy</a>  |  <a href="http://www.abc.net.au/triplej/about/terms.htm">Terms and Conditions</a>
+</div>
+</div>
+
+<!-- //Footer: triple j -->
+</div>
+</body>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

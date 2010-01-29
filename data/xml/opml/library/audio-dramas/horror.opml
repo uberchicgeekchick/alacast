@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Horror podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Mercy Bend]]>" xmlUrl="http://www.mevio.com/feeds/mercybend.xml" type="rss" text="<![CDATA[Mercy Bend]]>" htmlUrl="http://mercybend.mevio.com/" description="<![CDATA[They sit in a dark corner of The Hell Hole Tavern, escaped residents of the Mercy Bend Sanitarium, failed experiments of secret government experiments.  The sit in the tavern and dream of lives that have been lived, lives that are being lived, and lives that will one day occur.  They will tell you these tales if you buy them a beer, but beware, you may not like what you hear.]]>"/>
+		<outline title="<![CDATA[Frequency of Fear]]>" xmlUrl="http://frequencyoffear.com/podcasts-only/rss2.aspx" type="rss" text="<![CDATA[Zombie Astronaut&apos;s Frequency Of Fear]]>" htmlUrl="http://frequencyoffear.com/" description="<![CDATA[Join the Zombie Astronaut and his fellow fiends as they serve up the best in horror and sci-fi OTR, novelty records and sci-fi/monster rock music!]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

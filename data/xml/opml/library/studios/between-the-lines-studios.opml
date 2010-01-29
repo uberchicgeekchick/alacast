@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Works &amp; Podnovels by Between The Lines Studios</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Angel Between the Lines]]>" xmlUrl="http://www.angelbetweenthelines.com/category/episode/feed/" type="rss" htmlUrl="http://www.angelbetweenthelines.com/category/episode/" text="<![CDATA[Angel Between the Lines: A fan audio drama that tells the story of what happened between the seasons.]]>" description="<![CDATA[A fan audio drama that tells the story of what happened between the seasons of the TV show Angel. The first season deals with what happened when Angel was under the sea, trapped there by his son Connor. Drama, comedy and music!]]>"/>
+		<outline title="<![CDATA[Stories from Wolfram &amp; Hart]]>" xmlUrl="http://www.angelbetweenthelines.com/category/extras/stories-from-wolfram-hart/feed/" type="rss" htmlUrl="http://www.angelbetweenthelines.com/category/extras/stories-from-wolfram-hart/" text="<![CDATA[Angel Between The Lines &#187; Stories from Wolfram &amp; Hart]]>" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Strangely Literal]]>" xmlUrl="http://www.strangelyliteral.com/feed/" type="rss" htmlUrl="http://www.strangelyliteral.com/" text="<![CDATA[Strangely Literal]]>" description="<![CDATA[because we can't let go of our favorite Whedon shows.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>abc.net.au podcasts</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[ABC Radio National]]>" url="http://abc.net.au/rn/" text="<![CDATA[ABC Radio National]]>" description="<![CDATA[ABC Radio National&#039; homepage]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Books and Writing]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/bwriting.xml" type="rss" text="<![CDATA[Books and Writing&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/arts/bwriting/" description="<![CDATA[abc.net.au&#0039; Books and Writing podcast]]>"/>
+		<outline title="<![CDATA[Night Air]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/night.xml" type="rss" text="<![CDATA[Night Air&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/arts/nightair/" description="<![CDATA[abc.net.au&#0039; Night Air podcast]]>"/>
+		<outline title="<![CDATA[DIG Internet Radio]]>" xmlUrl="http://abc.net.au/dig/podcast/dig_rss.xml" type="rss" text="<![CDATA[DIG Internet Radio&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/dig/songs.htm" description="<![CDATA[abc.net.au&#0039; DIG Internet Radio podcast]]>"/>
+		<outline title="<![CDATA[Background Briefing]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/bbing.xml" type="rss" text="<![CDATA[Background Briefing&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/talks/bbing/" description="<![CDATA[abc.net.au&#0039; Background Briefing podcast]]>"/>
+		<outline title="<![CDATA[triple j Hack]]>" xmlUrl="http://www.abc.net.au/triplej/hack/podcast/hack_daily.xml" type="rss" text="<![CDATA[triple j&appos; Hack]]>" htmlUrl="http://abc.net.au/triplej/hack/" description="<![CDATA[abc.net.au&#0039; Hack podcast]]>"/>
+		<outline title="<![CDATA[Hack Highlights]]>" xmlUrl="http://abc.net.au/triplej/hack/podcast/podcast.xml" type="rss" text="<![CDATA[Hack&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/triplej/hack/" description="<![CDATA[abc.net.au&#0039; Hack podcast]]>"/>
+		<outline title="<![CDATA[Law Report]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/lawrpt.xml" type="rss" text="<![CDATA[Law Report&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/talks/8.30/lawrpt/" description="<![CDATA[abc.net.au&#0039; Law Report podcast]]>"/>
+		<outline title="<![CDATA[Sunday Profile]]>" xmlUrl="http://abc.net.au/sundayprofile/features/rsssundayprofile.xml" type="rss" text="<![CDATA[Sunday Profile&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/sundayprofile/" description="<![CDATA[abc.net.au&#0039; Sunday Profile podcast]]>"/>
+		<outline title="<![CDATA[Asia Pacific]]>" xmlUrl="http://abc.net.au/ra/podcast/asiapac/asiapac.xml" type="rss" text="<![CDATA[Asia Pacific&#0039;s podcast from abc.net.au]]>" htmlUrl="http://www.radioaustralia.net.au/asiapac/" description="<![CDATA[abc.net.au&#0039; Asia Pacific podcast]]>"/>
+		<outline title="<![CDATA[All in the Mind]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/mind.xml" type="rss" text="<![CDATA[All in the Mind&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/science/mind/" description="<![CDATA[abc.net.au&#0039; All in the Mind podcast]]>"/>
+		<outline title="<![CDATA[Doctor Karl]]>" xmlUrl="http://abc.net.au/science/k2/podcast/drk_rss.xml" type="rss" text="<![CDATA[Doctor Karl&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/science/k2/" description="<![CDATA[abc.net.au&#0039; Doctor Karl podcast]]>"/>
+		<outline title="<![CDATA[Health Report]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/health.xml" type="rss" text="<![CDATA[Health Report&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/talks/8.30/helthrpt/" description="<![CDATA[abc.net.au&#0039; Health Report podcast]]>"/>
+		<outline title="<![CDATA[Ockham&#0039;s Razor]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/ockham.xml" type="rss" text="<![CDATA[Ockham&#0039;s Razor podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/science/ockham/" description="<![CDATA[From NPR: perspectives on digital culture, research news, the tech industry and more.]]>"/>
+		<outline title="<![CDATA[Science Show]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/science.xml" type="rss" text="<![CDATA[Science Show&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/science/ss/" description="<![CDATA[abc.net.au&#0039; Science Show podcast]]>"/>
+		<outline title="<![CDATA[Street Stories]]>" xmlUrl="http://abc.net.au/rn/podcast/feeds/streets.xml" type="rss" text="<![CDATA[Street Stories&#0039;s podcast from abc.net.au]]>" htmlUrl="http://abc.net.au/rn/history/streets/" description="<![CDATA[abc.net.au&#0039; Street Stories podcast]]>"/>
+		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
