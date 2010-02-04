@@ -187,6 +187,7 @@ sub parse_attribute{
 	$value=$arg;
 	$value=~s/^\-\-([^=]+)=["']*([^"']*)["']*$/\2/g;
 	$value=~s/(['"])/\1\\\1\1/g;
+	$value=~s/([\?\[])/\\\1/g;
 	
 	$searching_list="";
 	

@@ -99,7 +99,7 @@
 			."\n"
 			."\nSyncing options:"
 			."\n-------------------"
-			."\n\t--keep-original		keeps alacasts GUID based named files while making copies of all"
+			."\n\t--keep-original		keeps alacast GUID based named files while making copies of all"
 			."\n\t					podcasts with easier to understand directories &filenames."
 			."\n"
 			."\n\t--player[=vlc|gstreamer|xine]		different players have issues with different charaters"
@@ -247,7 +247,7 @@
 	
 	function alacasts_Config_Error( $details="" ) {
 		print(
-			"I couldn't load alacasts's settings from: '"
+			"I couldn't load alacast's settings from: '"
 			.(getenv( "HOME" ))
 			."/.config/gpodder/gpodder.conf''"
 			.( $details
@@ -261,52 +261,63 @@
 	
 	
 	
-	Function log_alacastss_downloads( &$alacastss_Output ) {
+	Function log_alacast_downloads( &$alacast_Output ) {
 		//Logs' the URLs that where downloaded by the recently ran `gpodder --run`
 		//TODO
-	}//end function: log_alacastss_downloads();
+	}//end function: log_alacast_downloads();
 	
 	
 	
-	function run_gpodder_and_download_podcasts() {
+	function get_podcatcher(){
 		if(!(
 			(
-				(is_executable( ($alacastssProgie=ALACASTS_PATH."/helpers/gpodder-0.11.3-hacked/bin/gpodder-0.11.3-hacked" ) ))
+				(is_executable( ($alacastsPodcatcher=ALACASTS_PATH."/helpers/gpodder-0.11.3-hacked/bin/gpodder-0.11.3-hacked" ) ))
 				&&
-				(chdir( (dirname( $alacastssProgie )) ))
+				(chdir( (dirname( $alacastsPodcatcher )) ))
 				&&
-				($alacastssProgie="./".(basename( $alacastssProgie ))." --local")
+				($alacastsPodcatcher="./".(basename( $alacastsPodcatcher ))." --local")
 			)
 		))
 			return $GLOBALS['alacasts_logger']->output( "I can't try to download any new podcasts because I can't find alacast.", TRUE );
 		
-		if( (in_array("--nice", $_SERVER['argv'])) )
-			$alacastssProgie="/usr/bin/nice --adjustment=19 {$alacastssProgie}";
+		if( ($priority=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-nice[=]?([0-9]*)/", "$1")) ){
+			if( $priority > 0 )
+				$alacastsPodcatcher="nice --adjustment={$priority} {$alacastsPodcatcher}";
+			else
+				$alacastsPodcatcher="nice --adjustment=5 {$alacastsPodcatcher}";
+		}
 		
-		$alacastssProgie="unset http_proxy; {$alacastssProgie}";
+		return "unset http_proxy; {$alacastsPodcatcher}";
+	}/*get_podcatcher();*/
+	
+	
+	
+	function exec_podcatcher() {
+		static $alacastsPodcatcher;
+		if(!isset($alacastsPodcatcher))
+			$alacastsPodcatcher=get_podcatcher();
+		
 		$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts" )) );
 		
+		if(!in_array("--debug", $_SERVER['argv']))
+			$error_output="2> /dev/null";
+		else
+			$error_output="2> /dev/stderr";
+		
 		$lastLine="";
-		switch( TRUE ) {
-			/*case in_array("--logging", $_SERVER['argv']) :
-				$alacastss_Output=array();
-				$lastLine=exec("{$alacastssProgie} --run 2> /dev/null", $alacastss_Output);
-				
-				if( (in_array("--update=detailed", $_SERVER['argv'])) )
-					$GLOBALS['alacasts_logger']->output( (alacast_helper->array_to_string( $alacastss_Output, "\n" )), "", TRUE );
-				
-				if( (preg_match("/^D/", (ltrim($lastLine)) )) )
-					log_alacastss_downloadss( $alacastss_Output );
-			break;
-			*/
-			case in_array("--update=detailed", $_SERVER['argv']) :
-				$lastLine=system("{$alacastssProgie} --run > /dev/tty 2> /dev/null");
-			break;
+		/*if( in_array("--logging", $_SERVER['argv']) ){
+			$alacast_Output=array();
+			$lastLine=exec("{$alacastsPodcatcher} --run 2> /dev/{$error_output}", $alacast_Output);
 			
-			default:
-				$lastLine=exec("{$alacastssProgie} --run > /dev/null 2> /dev/null");
-			break;
-		}
+			if( (in_array("--update=detailed", $_SERVER['argv'])) )
+				$GLOBALS['alacasts_logger']->output( (alacast_helper->array_to_string( $alacast_Output, "\n" )), "", TRUE );
+			
+			if( (preg_match("/^D/", (ltrim($lastLine)) )) )
+				log_alacast_downloadss( $alacast_Output );
+		}else*/ if( in_array("--update=detailed", $_SERVER['argv']) )
+			$lastLine=system("{$alacastsPodcatcher} --run > /dev/tty 2> /dev/{$error_output}");
+		else
+			$lastLine=exec("{$alacastsPodcatcher} --run > /dev/null 2> /dev/{$error_output}");
 		
 		$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts", FALSE )) );
 		
@@ -314,10 +325,10 @@
 			return FALSE;
 		
 		/*
-		 * alacasts 0.10.0 need a lot longer than 5 seconds.
+		 * alacast 0.10.0 need a lot longer than 5 seconds.
 		 * So I've moved it to 31 seconds just to be okay.
 		 */
-		$GLOBALS['alacasts_logger']->output( "\nPlease wait while alacasts finishes downloading your podcasts new episodes" );
+		$GLOBALS['alacasts_logger']->output( "\nPlease wait while alacast finishes downloading your podcasts new episodes" );
 		for($i=0; $i<33; $i++) {
 			if(!($i%3))
 				print( "." );
@@ -327,7 +338,7 @@
 		print( "\n" );
 		
 		return TRUE;
-	}//end:function run_gpodder_and_download_podcasts();
+	}//end:function exec_podcatcher();
 	
 	
 	
@@ -615,7 +626,7 @@
 		
 		
 		if( $do_I_update )
-			run_gpodder_and_download_podcasts();
+			exec_podcatcher();
 	}//end:function check_update();
 	
 	
