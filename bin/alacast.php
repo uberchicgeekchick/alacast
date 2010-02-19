@@ -55,10 +55,6 @@
 	require_once(ALACASTS_PATH."/php/classes/podcatcher/program.class.php");
 	require_once(ALACASTS_PATH."/php/classes/options.class.php");
 	
-	//here's where alacast actually starts.
-	if( (alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-help$/") ))
-		help();//displays usage and exits alacast
-	
 	function help() {
 		print( "Usage: alacast.php [options]..."
 			."\n\tOptions:"
@@ -722,6 +718,15 @@
 	}//end:function move_podcasts_episodes();
 	
 	/*alacast.php: main(); starts here.*/
+	
+	//here's where alacast actually starts.
+	if( (alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-help$/") ))
+		help();//displays usage and exits alacast
+	
+	/* load_settings(); creates the
+	 * 	$alacast_options global object
+	 * 	it also define's configuration options.
+	 */
 	if(!( (load_settings()) ))
 		exit( -1 );
 	/*print_r($alacasts_options);
