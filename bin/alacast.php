@@ -53,9 +53,10 @@
 	require_once(ALACASTS_PATH."/php/classes/playlist.class.php");
 	require_once(ALACASTS_PATH."/php/classes/playlists/m3u.class.php");
 	require_once(ALACASTS_PATH."/php/classes/podcatcher/program.class.php");
+	require_once(ALACASTS_PATH."/php/classes/options.class.php");
 	
 	//here's where alacast actually starts.
-	if( (in_array("--help", $_SERVER['argv']) ))
+	if( (alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-help$/") ))
 		help();//displays usage and exits alacast
 	
 	function help() {
@@ -135,51 +136,6 @@
 	
 	
 	
-	function load_alacasts_defaults_options($alacast_config, $which_options="default"){
-		if($options=(preg_replace( "/.*options.$which_options=\"([^\"]+)\".*/", "$1", $alacast_config )) ){
-			$_SERVER['argv']=array_merge(
-				$_SERVER['argv'],
-				preg_split(
-					"/\ /", $options, -1,
-					PREG_SPLIT_NO_EMPTY
-				)
-			);
-			unset($options);
-		}
-	}/*load_alacasts_defaults_options($alacast_config, "default|update|sync");*/
-	
-	
-	
-	function load_options($alacast_config, $default_options_type){
-		$options=NULL;
-		if( ($options=getenv("ALACAST_OPTIONS")) ){
-			$_SERVER['argv']=array_merge(
-				$_SERVER['argv'],
-				preg_split(
-					"/\ /", $options, -1,
-					PREG_SPLIT_NO_EMPTY
-				)
-			);
-			unset($options);
-		}
-		
-		switch($default_options_type){
-			case "update":
-			case "sync":
-				load_alacasts_defaults_options($alacast_config, $default_options_type);
-				break;
-			
-			default:
-				load_alacasts_defaults_options($alacast_config);
-				break;
-		}
-		
-		if(in_array("--with-defaults", $_SERVER['argv']))
-			load_alacasts_defaults_options($alacast_config);
-	}/*load_options($alacast_config, $default_options_type);*/
-	
-	
-	
 	function load_settings() {
 	
 		/*	here's where i setup and check all the directories i need
@@ -191,9 +147,6 @@
 			$i=0;
 		else if( ($i++) > 10 )
 			exit( "-10: I got stuck in my setup loop." );
-			/* load_settings calls setup which might call
-			   load_settings so just in case something weird goes on.
-			*/
 		
 		$alacast_config_filename=sprintf("%s/.alacast/profiles/%s/alacast.ini", (getenv( "HOME" )), (getenv("USER")) );
 		if(!( $alacast_config_fp=fopen( $alacast_config_filename, "r" ) ))
@@ -202,15 +155,9 @@
 		$alacast_config=preg_replace( "/[\r\n]+/m", "\t", fread( $alacast_config_fp, (filesize($alacast_config_filename)) ) );
 		fclose($alacast_config_fp);
 		unset($alacast_config_filename);
-		$default_options_type="";
-		if(
-			(count($_SERVER['argv'])==1)
-			||
-			$default_options_type=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-with\-defaults[=]?(.*)/", "$1")
-		)
-			load_options($alacast_config, $default_options_type);
-		unset($default_options_type);
-
+		
+		$GLOBALS['alacasts_options']=new alacasts_options($alacast_config);
+		
 		$save_to_path=preg_replace("/.*save_to_path=\"([^\"]+)\".*/", "$1", $alacast_config);
 		if(!preg_match("/^\//", $save_to_path))
 			$save_to_path=sprintf("/%s", $save_to_path);
@@ -280,7 +227,7 @@
 		))
 			return $GLOBALS['alacasts_logger']->output( "I can't try to download any new podcasts because I can't find alacast.", TRUE );
 		
-		if( ($priority=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-nice[=]?([0-9]*)/", "$1")) ){
+		if( ($priority=$GLOBALS['alacasts_options']->nice) ){
 			if( $priority > 0 )
 				$alacastsPodcatcher="nice --adjustment={$priority} {$alacastsPodcatcher}";
 			else
@@ -299,22 +246,24 @@
 		
 		$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts" )) );
 		
-		if(!in_array("--debug", $_SERVER['argv']))
-			$error_output="2> /dev/null";
+		if(!$GLOBALS['alacasts_options']->debug)
+			$error_output="null";
 		else
-			$error_output="2> /dev/stderr";
+			$error_output="stderr";
 		
 		$lastLine="";
-		/*if( in_array("--logging", $_SERVER['argv']) ){
+		/*if($GLOBALS['alacasts_options']->update=="detailed"){
 			$alacast_Output=array();
 			$lastLine=exec("{$alacastsPodcatcher} --run 2> /dev/{$error_output}", $alacast_Output);
 			
-			if( (in_array("--update=detailed", $_SERVER['argv'])) )
+			if($GLOBALS['alacasts_options']->update=="detailed")
 				$GLOBALS['alacasts_logger']->output( (alacast_helper->array_to_string( $alacast_Output, "\n" )), "", TRUE );
 			
 			if( (preg_match("/^D/", (ltrim($lastLine)) )) )
 				log_alacast_downloadss( $alacast_Output );
-		}else*/ if( in_array("--update=detailed", $_SERVER['argv']) )
+		}else*/
+		
+		if($GLOBALS['alacasts_options']->update=="detailed")
 			$lastLine=system("{$alacastsPodcatcher} --run > /dev/tty 2> /dev/{$error_output}");
 		else
 			$lastLine=exec("{$alacastsPodcatcher} --run > /dev/null 2> /dev/{$error_output}");
@@ -345,7 +294,7 @@
 	function leave_symlink_trail( &$podcastsGUID, &$podcastsName ) {
 		$podcastsTrailSymlink=(sprintf( "%s/%s/%s.trail", DOWNLOAD_DIR, $podcastsName, $podcastsGUID ));
 		if( 
-			(in_array( "--leave-trails", $_SERVER['argv'] ))
+			($GLOBALS['alacasts_options']->leave_trails)
 			&&
 			(!( (file_exists( $podcastsTrailSymlink )) ))
 		)
@@ -355,7 +304,7 @@
 			);
 		
 		if( 
-			(in_array( "--clean-trails", $_SERVER['argv'] ))
+			($GLOBALS['alacasts_options']->clean_trails)
 			&&
 			(file_exists( $podcastsTrailSymlink ))
 		)
@@ -417,7 +366,7 @@
 					PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
 		);
 		
-		if( (in_array( "--titles-append-pubdate", $_SERVER['argv'] )) )
+		if($GLOBALS['alacasts_options']->titles_append_pubdate)
 			$podcastsPubDates=preg_split(
 						"/(<pubDate>[^<]+<\/pubDate>)/m", $podcastsTempInfo, -1,
 						PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
@@ -441,17 +390,17 @@
 			$episode_title=trim(preg_replace("/<title>[\ \t]*([^<]+)<\/title>/", "$1", $podcastsTitles[$i]));
 			if(!isset($podcastsInfo[0])){
 				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode($episode_title);
-				$episode_prefix=$GLOBALS['alacasts_titles']->set_episode_prefix( $podcastsInfo[0], in_array( "--titles-prefix-podcast-name", $_SERVER['argv'] ));
+				$episode_prefix=$GLOBALS['alacasts_titles']->set_episode_prefix($podcastsInfo[0], $GLOBALS['alacasts_options']->titles_prefix_podcast_name);
 				continue;
 			}
 			
-			if(!( in_array( "--titles-append-pubdate", $_SERVER['argv'] ) ))
+			if(!($GLOBALS['alacasts_options']->titles_append_pubdate))
 				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s", $episode_prefix, $episode_title) );
 			else
 				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, $episode_title, preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)] ) ) );
 		}
 		
-		if( (in_array("--verbose", $_SERVER['argv'])) ){
+		if($GLOBALS['alacasts_options']->verbose){
 			print("Found podcastTitles:\n");
 			print_r($podcastsTitles);
 			if(isset($podcastsPubDates)){
@@ -460,11 +409,7 @@
 			}
 			print("\n\nFound podcastsInfo:\n");
 			print_r($podcastsInfo);
-		}
-		unset($podcastsTitles);
-		unset($podcastsPubDates);
 		
-		if( (in_array( "--verbose", $_SERVER['argv'] )) )
 			$GLOBALS['alacasts_logger']->output(
 				(sprintf(
 					"\n*DEBUG*: I searched for %s'%s titles in %s.\nI've found titles for %d new episodes.",
@@ -478,31 +423,13 @@
 					( $podcastsInfo['total']-1 )
 				))
 			);
+		}
+		unset($podcastsTitles);
+		unset($podcastsPubDates);
 		
 		return TRUE;
 	}//end:function get_episode_titles()
 	
-	
-	function get_characters_to_strip_from_titles(){
-		static $bad_chars;
-		
-		if(isset($bad_chars)) return $bad_chars;
-		
-		if(!($bad_chars=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-strip\-characters=['\"]?([^'\"]*)['\"]?$/", "$1"))) $bad_chars="";
-		if(!(alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)/") )) return (isset($bad_chars) ? $bad_chars : ($bad_chars=""));
-		switch(($player=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-player[=]?(.*)/", "$1"))){
-			case "gstreamer":
-				return ($bad_chars=sprintf("%s#", $bad_chars));
-			case "vlc":
-				return ($bad_chars=sprintf("%s:", $bad_chars));
-			case "xine":
-				return ($bad_chars=sprintf("%s;#", $bad_chars));
-			case "":
-				return ($bad_chars=sprintf("%s#:;", $bad_chars));
-		}
-		return (isset($bad_chars) ?$bad_chars :($bad_chars="") );
-	}
-		
 	function clean_podcasts_info( &$podcastsInfo ) {
 		/* replaces forward slashes with hyphens & strips leading dots('.').
 		 * both for obvious(Linux) reasons. Other characters are stripped as well
@@ -522,8 +449,8 @@
 							))
 						))
 					);
-			if(get_characters_to_strip_from_titles())
-				$podcastsInfo[$i]=preg_replace( (sprintf("/[%s]/", get_characters_to_strip_from_titles())), "", $podcastsInfo[$i] );
+			if($GLOBALS['alacasts_options']->bad_chars)
+				$podcastsInfo[$i]=preg_replace( (sprintf("/[%s]/", $GLOBALS['alacasts_options']->bad_chars)), "", $podcastsInfo[$i] );
 			if( (in_array("--verbose", $_SERVER['argv'])) )
 				$GLOBALS['alacasts_logger']->output(
 					(sprintf("\tAfter cleaning: %s\n", $podcastsInfo[$i]))
@@ -620,12 +547,7 @@
 	
 	
 	function check_update() {
-		static $do_I_update;
-		if(!( (isset($do_I_update)) ))
-			$do_I_update=alacast_helper::preg_match_array($_SERVER['argv'], "/^\-\-update/");
-		
-		
-		if( $do_I_update )
+		if($GLOBALS['alacasts_options']->update)
 			exec_podcatcher();
 	}//end:function check_update();
 	
@@ -802,7 +724,7 @@
 	/*alacast.php: main(); starts here.*/
 	if(!( (load_settings()) ))
 		exit( -1 );
-	/*print_r($_SERVER['argv']);
+	/*print_r($alacasts_options);
 	exit;*/
 	
 	$podcatcher=new alacasts_podcatcher_program();

@@ -8,15 +8,17 @@ if test `echo "${0}" | sed -r 's/^[^\.]*(sh)$/\1/'` != "sh"; then
 	cd "${owd}"
 	unset source owd cwd;
 else
-	export ALACAST_PATH="/projects/cli/alacast";
-	export PATH="${PATH}:${ALACAST_PATH}/bin:${ALACAST_PATH}/scripts:${ALACAST_PATH}/helpers/gpodder-0.11.3-hacked/bin:${ALACAST_PATH}/helpers/gpodder-0.11.3-hacked/helper-scripts";
+	export ALACASTS_CLI_PATH="/projects/cli/alacast";
+	export PATH="${PATH}:${ALACASTS_CLI_PATH}/bin:${ALACASTS_CLI_PATH}/scripts:${ALACASTS_CLI_PATH}/helpers/gpodder-0.11.3-hacked/bin:${ALACASTS_CLI_PATH}/helpers/gpodder-0.11.3-hacked/helper-scripts";
+	export ALACASTS_GTK_PATH="/projects/gtk/alacast";
+	export PATH="${PATH}:${ALACASTS_GTK_PATH}/bin:${ALACASTS_GTK_PATH}/scripts";
 
 
 	# $ALACAST_OPTIONS acts like arguments to alacast.php when no command line arguments are given:
-	export ALACAST_OPTIONS='--logging --titles-append-pubdate --strip-characters=#;!';
+	export ALACASTS_OPTIONS='--logging --titles-append-pubdate --strip-characters=#;!';
 
 	# when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
-	alias "alacast:php:cli:sync"="${ALACAST_PATH}/alacast.php --with-defaults=sync";
+	alias "alacast:php:cli:sync"="${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=sync";
 	# --with-defaults prepends $ALACAST_OPTIONS
-	alias "alacast:php:cli:update"="${ALACAST_PATH}/alacast.php --with-defaults=update";
+	alias "alacast:php:cli:update"="${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=update";
 fi

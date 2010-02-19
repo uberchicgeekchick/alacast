@@ -1,8 +1,8 @@
 #!/bin/tcsh -f
 
 main:
-	set total=18;
-	set timeout=46; # How long to wait between sending each interupt signal.
+	set total=72; # How many times to send the interupt signal.
+	set timeout=24; # How long to wait between sending each interupt signal.
 	set gPodderCmd="./gpodder-0.11.3-hacked";
 
 	set status=0;
