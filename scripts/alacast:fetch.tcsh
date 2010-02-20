@@ -160,7 +160,15 @@ endif
 
 if(! ${?download_dir} ) then
 	if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
-		set download_dir="`cat '${HOME}/.alacast/profiles/${USER}/alacast.ini' | /bin/grep --perl-regexp 'save_to_path.*' | /bin/sed -r 's/.*[^=]*=["\""'\'']([^"\""'\'']*)["\""'\''];/\1/'`";
+		set alacast_ini="${HOME}/.alacast/profiles/${USER}/alacast.ini";
+	else if( -e "`dirname '${0}'`../data/profiles/${USER}/alacast.ini" ) then
+		set alacast_ini="`dirname '${0}'`../data/profiles/${USER}/alacast.ini";
+	else if( -e "`dirname '${0}'`../data/profiles/default/alacast.ini" ) then
+		set alacast_ini="`dirname '${0}'`../data/profiles/default/alacast.ini";
+	endif
+	if( ${?alacast_ini} ) then
+		set download_dir="`cat '${alacast_ini}' | /bin/grep --perl-regexp 'save_to_path.*' | /bin/sed -r 's/.*[^=]*=["\""'\'']([^"\""'\'']*)["\""'\''];/\1/'`";
+		unset alacast_ini;
 	endif
 endif
 
@@ -202,17 +210,17 @@ fetch_podcasts:
 		if( "${podcast_xmlUrl}" == "" ) continue;
 		if( ${?fetch_all} && ! ${?list_episodes} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
 			if( ${start_with} > 1 && ${download_limit} > 1 ) then
-				printf "Running %s --start-with=%d --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${start_with} ${download_limit} "${podcast_xmlUrl}";
-				exec ${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" --download-limit="${download_limit}" "${podcast_xmlUrl}";
+				printf "Running %s --disable=logging --start-with=%d --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${start_with} ${download_limit} "${podcast_xmlUrl}";
+				${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" --download-limit="${download_limit}" "${podcast_xmlUrl}";
 			else if( ${start_with} > 1 ) then
-				printf "Running %s --start-with=%d %s\n" "${alacast_fetch_all_script}" ${start_with} "${podcast_xmlUrl}";
-				exec ${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" "${podcast_xmlUrl}";
+				printf "Running %s --disable=logging --start-with=%d %s\n" "${alacast_fetch_all_script}" ${start_with} "${podcast_xmlUrl}";
+				${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" "${podcast_xmlUrl}";
 			else if( ${download_limit} > 1 ) then
-				printf "Running %s --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${download_limit} "${podcast_xmlUrl}";
-				exec ${alacast_fetch_all_script} --download-limit="${download_limit}" "${podcast_xmlUrl}";
+				printf "Running %s --disable=logging --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${download_limit} "${podcast_xmlUrl}";
+				${alacast_fetch_all_script} --disable=logging --download-limit="${download_limit}" "${podcast_xmlUrl}";
 			else
-				printf "Running %s %s\n" "${alacast_fetch_all_script}" "${podcast_xmlUrl}";
-				exec ${alacast_fetch_all_script} --disable=logging "${podcast_xmlUrl}";
+				printf "Running %s --disable=logging %s\n" "${alacast_fetch_all_script}" "${podcast_xmlUrl}";
+				${alacast_fetch_all_script} --disable=logging "${podcast_xmlUrl}";
 			endif
 			continue;
 		endif
@@ -293,7 +301,7 @@ fetch_podcasts:
 		endif
 
 		@ podcast_count=1;
-		exec "${alacasts_catalog_search_results_log}.curl.tcsh";
+		"${alacasts_catalog_search_results_log}.curl.tcsh";
 	end
 
 exit_script:

@@ -237,32 +237,34 @@
 	
 	function exec_podcatcher() {
 		static $alacastsPodcatcher;
+		static $error_output;
 		if(!isset($alacastsPodcatcher))
 			$alacastsPodcatcher=get_podcatcher();
 		
 		$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts" )) );
-		
-		if(!$GLOBALS['alacasts_options']->debug)
-			$error_output="null";
-		else
-			$error_output="stderr";
+
+		if(!isset($error_output))
+			if(!$GLOBALS['alacasts_options']->debug)
+				$error_output=" 2>> {$GLOBALS['alacasts_logger']->error_log_file}";
+			else
+				$error_output=" 2> /dev/stderr";
 		
 		$lastLine="";
 		/*if($GLOBALS['alacasts_options']->update=="detailed"){
 			$alacast_Output=array();
-			$lastLine=exec("{$alacastsPodcatcher} --run 2> /dev/{$error_output}", $alacast_Output);
+			$lastLine=exec("{$alacastsPodcatcher} --run > /dev/tty{$error_output}", $alacast_Output);
 			
 			if($GLOBALS['alacasts_options']->update=="detailed")
-				$GLOBALS['alacasts_logger']->output( (alacast_helper->array_to_string( $alacast_Output, "\n" )), "", TRUE );
+				$GLOBALS['alacasts_logger']->output( (alacast_helper::array_to_string( $alacast_Output, "\n" )), "", TRUE );
 			
 			if( (preg_match("/^D/", (ltrim($lastLine)) )) )
 				log_alacast_downloadss( $alacast_Output );
 		}else*/
 		
 		if($GLOBALS['alacasts_options']->update=="detailed")
-			$lastLine=system("{$alacastsPodcatcher} --run > /dev/tty 2> /dev/{$error_output}");
+			$lastLine=system("{$alacastsPodcatcher} --run > /dev/tty{$error_output}");
 		else
-			$lastLine=exec("{$alacastsPodcatcher} --run > /dev/null 2> /dev/{$error_output}");
+			$lastLine=exec("{$alacastsPodcatcher} --run > /dev/null{$error_output}");
 		
 		$GLOBALS['alacasts_logger']->output( ($GLOBALS['podcatcher']->set_status( "downloading new podcasts", FALSE )) );
 		

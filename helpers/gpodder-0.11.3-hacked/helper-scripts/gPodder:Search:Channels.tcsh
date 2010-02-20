@@ -27,20 +27,6 @@ while ( ${?1} && "${1}" != "" )
 			case "debug":
 				if(! ${?debug} ) set debug;
 				breaksw
-			endsw
-			breaksw
-		case "disable":
-			switch( "${options_value}" )
-			case "debug":
-				if( ${?debug} ) unset debug;
-				breaksw
-			endsw
-			breaksw
-		case "verbose":
-			if(! ${?verbose_output} ) set verbose_output;
-			breaksw
-		case "enable":
-			switch ( "${options_value}" )
 			case "verbose":
 				if(! ${?verbose_output} ) set verbose_output;
 				breaksw
@@ -48,10 +34,16 @@ while ( ${?1} && "${1}" != "" )
 			breaksw
 		case "disable":
 			switch( "${options_value}" )
+			case "debug":
+				if( ${?debug} ) unset debug;
+				breaksw
 			case "verbose":
 				if( ${?verbose_output} ) unset verbose_output;
 				breaksw
 			endsw
+			breaksw
+		case "verbose":
+			if(! ${?verbose_output} ) set verbose_output;
 			breaksw
 		case "output":
 			switch( "${options_value}" )
