@@ -42,11 +42,16 @@
 		
 		static public function preg_match_array(array $haystack_array, $needle_preg_match, $preg_replace=NULL ) {
 			foreach( $haystack_array as $key=>$haystack )
-				if( (preg_match( $needle_preg_match, $haystack )) )
-					return ($preg_replace
-							? (preg_replace( $needle_preg_match, $preg_replace, $haystack ))
-							: TRUE
-						);
+				if( (preg_match( $needle_preg_match, $haystack )) ){
+					if(!$preg_replace)
+						return TRUE;
+					
+					$preg_match="";
+					if(($preg_match=preg_replace($needle_preg_match, $preg_replace, $haystack))!="")
+						return $preg_match;
+					else
+						return FALSE;
+				}
 			
 			return FALSE;
 		}//method:function preg_match_array( $preg_needle, &$haystack_array, $preg_replace=FALSE );

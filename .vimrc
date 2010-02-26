@@ -10,6 +10,10 @@ set showmatch
 set backspace=indent,eol,start
 set shiftwidth=8
 
+set shell=/bin/tcsh\ -f
+set shellcmdflag=-c
+set shelltype=1
+
 set nofoldenable " disables this annoying feature.
 
 set nobackup		" do not keep a backup file, use versions instead

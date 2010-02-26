@@ -2,14 +2,17 @@
 if( -e "${HOME}/.config/gpodder/gpodder.conf" ) then
 	set download_dir = "`grep 'download_dir' '${HOME}/.config/gpodder/gpodder.conf' | cut -d= -f2 | cut -d' ' -f2`"
 	if( "${download_dir}" != "" && -d "${download_dir}" ) then
-		if( "${download_dir}" != "${cwd}" ) set starting_dir="${cwd}";
-		cd "${download_dir}";
+		if( "${download_dir}" != "${cwd}" ) then
+			set old_owd="${cwd}";
+			cd "${download_dir}";
+		endif
 	endif
 endif
 
 while("${1}" !="")
-	set option="`printf "\""${1}"\"" | sed -r 's/[\-]{1,2}([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\1/'`";
-	set value="`printf "\""${1}"\"" | sed -r 's/[\-]{1,2}([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\2/'`";
+	set dashes="`printf "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\1/'`";
+	set option="`printf "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\2/'`";
+	set value="`printf "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?/\3/'`";
 	switch("${option}")
 		case "output":
 			set pubDate_log="${value}";
@@ -39,8 +42,10 @@ foreach p(*)
 end
 if( -e ./index.swp ) rm ./index.swp;
 
-if( ${?starting_dir} ) then
-	cd "${starting_dir}";
+if( ${?old_owd} ) then
+	cd "${owd}";
+	set owd="${old_owd}";
+	unset old_owd;
 endif
 
 set status=0;

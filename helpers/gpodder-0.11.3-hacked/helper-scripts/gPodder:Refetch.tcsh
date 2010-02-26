@@ -33,6 +33,10 @@ while ( "${1}" != "" )
 		if(! ${?keep_script} ) set keep_script;
 		if(! ${?debug} ) set debug;
 		breaksw;
+	case "f":
+	case "fetch-all":
+		set fetch_all;
+		breaksw;
 	case "debug":
 	case "verbose":
 		if(! ${?debug} ) set debug;
@@ -94,9 +98,9 @@ find_podcasts:
 	
 	set podcasts=();
 	
-	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --${search_attribute}="\""${search_value}"\"" | sed 's/^[^\:]\+:\(.*\)${eol}/\1/g' | sed -r 's/[\ \t\r\n]*${eol}//' | sed 's/\\!//'"
+	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --${search_attribute}="\""${search_value}"\""";
 	foreach podcast_match( "`${search_script} --${search_attribute}="\""${search_value}"\""`" )
-		if( ${?debug} ) echo "${search_value}\n";
+		if( ${?debug} ) prinf "Found --${search_attribute}="\""${search_value}"\""\n";
 		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*${eol}/\1/'`";
 		
 		if( ${?podcast_found} ) unset podcast_found;
@@ -110,9 +114,13 @@ find_podcasts:
 		if( ${?podcast_found} ) continue;
 		
 		set podcasts=( ${podcasts} ${index_xml} );
-		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)${eol}/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*${eol}//'`";
+		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)${eol}/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*${eol}//' | sed -r 's/\// \- /g'`";
+		
+		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
+			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
+		
 		if( ${?debug} ) echo "${podcast_match}\n";
-		set refetch_script="${mp3_player_folder}/gPodder:Refetch:`date '+%s'`.tcsh";
+		set refetch_script="${mp3_player_folder}/.gPodder:Refetch:`date '+%s'`.tcsh";
 		if( ${?debug} ) echo "${refetch_script}\n";
 		
 		if( ${?debug} ) then
@@ -120,25 +128,32 @@ find_podcasts:
 			if( ${?diagnosis} ) continue;
 		endif
 		${search_script} --verbose --${search_attribute}="${search_value}" >! "${refetch_script}.tmp";
+
+		if(! ${?fetch_all} ) then
+			set curl_condition="\rif(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) then";
+			set line_padding="\t";
+			set curl_condition_end="\rendif";
+		else
+			set curl_condition="";
+			set line_padding="";
+			set curl_condition_end="";
+		endif
 		
-		ex '+1,$s/[\r\n]\+//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.]\+\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if( -d "\""${podcast_match}"\"" ) then\relse\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif\rif(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) then\r\tprintf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \4\\n"\"";\r\tcurl${silent} --location --fail --show-error --output "\""${podcast_match}\/\1, released on: \4\.\5"\"" '\2\.\3';\r\tif(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3';\rendif\rif( "\$"{?new_dir} ) rmdir "\""${podcast_match}"\"";\rendif\rif( "\$"{?new_dir} ) unset new_dir;\r/g" '+$d' '+wq!' "${refetch_script}.tmp" > /dev/null;
+		ex '+1,$s/[\r\n]\+//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.]\+\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if(\! -d "\""${podcast_match}"\"" ) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${curl_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \4\.\3\\n"\"";\r${line_padding}curl${silent} --location --fail --show-error --output "\""${podcast_match}\/\1, released on: \4\.\3"\"" '\2\.\3';\r${line_padding}if(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3';${curl_condition_end}\rif( "\$"{?new_dir} ) then\r\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp" > /dev/null;
 		
 		#while ( `/usr/bin/grep --perl-regexp '("[^\/]+)\/(.*)"' "${refetch_script}.tmp"` != "" )
 		#	ex '+1,$s/\("[^\/]\+\)\/\(.*"\)/\1\-\2/g' '+wq!' "${refetch_script}.tmp" >& /dev/null;
 		#end
 		
-		#set podcast_dir=`head -3 "${refetch_script}.tmp" | tail -1 | sed 's/.*mkdir "\([^"]\+\)"/\1/' | sed 's/\([()]\)/\\\1/g' | sed 's/'\''/\\'\''/g'`;
-		set podcast_dir="${podcast_match}";
-		ex '+4,$s/\('"${podcast_dir}"'\)\-/\1\//g' '+wq!' "${refetch_script}.tmp" > /dev/null;
+		#ex '+4,$s/\('"${podcast_match}"'\)\-/\1\//g' '+wq!' "${refetch_script}.tmp" > /dev/null;
 		
 		if( `wc -l "${refetch_script}.tmp" | sed 's/^\([0-9]\+\)\ .*/\1/g'` > 0 ) then
 			printf '#\!/bin/tcsh -f\n' >! "${refetch_script}";
 			cat "${refetch_script}.tmp" >> "${refetch_script}";
 			chmod +x "${refetch_script}";
 			"${refetch_script}";
-			if(! ${?keep_script} ) rm -fv "${refetch_script}";
 		endif
-		if(! ${?keep_script} ) rm -fv "${refetch_script}.tmp";
+		if(! ${?keep_script} ) rm -fv "./.gPodder:Refetch:"*;
 	end
 #find_podcasts
 

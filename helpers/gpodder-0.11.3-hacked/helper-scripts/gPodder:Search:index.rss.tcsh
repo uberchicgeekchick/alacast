@@ -30,7 +30,7 @@ while( "${1}" != "" )
 		case "guid":
 		case "pubDate":
 		case "link":
-			set ouput="${option}";
+			set output="${option}";
 			breaksw;
 		default:
 			printf "%s is not a valid --output option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;

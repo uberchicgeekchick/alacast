@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Thriller podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Heart Of Diamonds - A free audiobook by Dave Donelson » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/heart-of-diamonds/feed/" type="rss" text="<![CDATA[Heart Of Diamonds - a podcast novel by Dave Donelson.  Brought to you by podiobooks.com]]>" htmlUrl="http://www.podiobooks.com/title/heart-of-diamonds/" description="<![CDATA[Corruption at the highest levels of government, greed in the church, and brutality among warring factions make the Congo a very dangerous place for television journalist Valerie Grey.  Amid the bloody violence of that country's endless civil war, Grey uncovers a deadly diamond-smuggling scheme that reaches from the heart of the Congo to the White House by way of a famous American televangelist.  Aided by an altruistic doctor, Grey is pursued by the soldiers of the country's dictator, the mercenaries of the mine's owner, and the rebels seeking control of the country.  HEART OF DIAMONDS is a fast-paced tale of ambition, avarice, betrayal, and love.]]>" />
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" htmlUrl="http://www.podiobooks.com/title/?title=/" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -15,7 +15,7 @@ else
 
 
 	# $ALACAST_OPTIONS acts like arguments to alacast.php when no command line arguments are given:
-	export ALACASTS_OPTIONS='--logging --titles-append-pubdate --strip-characters=#;!';
+	export ALACASTS_OPTIONS='--logging --titles-append-pubdate --playlist=m3u --strip-characters=#;!';
 
 	# when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
 	alias "alacast:php:cli:sync"="${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=sync";

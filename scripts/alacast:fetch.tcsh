@@ -77,6 +77,7 @@ while ( "${1}" != "" )
 		case "download-URL":
 		case "download-url":
 		case "podcast-xmlUrl":
+		case "xmlUrl":
 			if(!( "${value}" != "" && "`echo '${value}' | sed -r 's/^(http|https|ftp)(:\/\/).*/\2/i'`" == "://" )) then
 				printf "--%s=[url] must specify a valid http, https, or ftp URI.\n" "${option}" > /dev/stderr;
 			else
@@ -102,7 +103,6 @@ while ( "${1}" != "" )
 			endif
 			breaksw;
 	
-		case "xmlUrl":
 		case "htmlUrl":
 		case "title":
 		case "text":
@@ -159,7 +159,9 @@ else
 endif
 
 if(! ${?download_dir} ) then
-	if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
+	if( -e "${HOME}/.alacast/alacast.ini" ) then
+		set alacast_ini="${HOME}/.alacast/alacast.ini";
+	else if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
 		set alacast_ini="${HOME}/.alacast/profiles/${USER}/alacast.ini";
 	else if( -e "`dirname '${0}'`../data/profiles/${USER}/alacast.ini" ) then
 		set alacast_ini="`dirname '${0}'`../data/profiles/${USER}/alacast.ini";
@@ -188,19 +190,16 @@ if( ${?podcast_xmlUrl} ) then
 endif
 
 find_podcasts:
-	if( ${?debug} ) echo "Running:\n\t alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="\""${alacasts_catalog_search_phrase}"\"" \| cut -d'>' -f2 \| sort \| uniq \>\! "\""${alacasts_catalog_search_results_log}.log"\""";
-	alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="${alacasts_catalog_search_phrase}" | cut -d'>' -f2 | sort | uniq >! "${alacasts_catalog_search_results_log}.log";
+	if( ${?debug} ) echo "Running:\n\t alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="\""${alacasts_catalog_search_phrase}"\"" \| /bin/grep --perl-regexp 'xmlUrl=' \| sed -r 's/.*xmlUrl=(.*)/\1/' \| sort \| uniq \>\! "\""${alacasts_catalog_search_results_log}.log"\""";
+	alacast:search.pl --output=xmlUrl --${alacasts_catalog_search_attribute}="${alacasts_catalog_search_phrase}" | /bin/grep --perl-regexp 'xmlUrl=' | sed -r 's/.*xmlUrl=(.*)/\1/' | sort | uniq >! "${alacasts_catalog_search_results_log}.log";
 	set podcast_xmlUrl_count="`cat "\""${alacasts_catalog_search_results_log}.log"\""`";
 	if(!( ${#podcast_xmlUrl_count} > 0 )) then
 		printf "Unable to find any podcasts who's %s matched your search phrase: %s\n\n" "${alacasts_catalog_search_attribute}" "${alacasts_catalog_search_phrase}";
-		if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
 		set status=-1;
 		unset podcast_xmlUrl_count;
-		exit ${status};
+		goto exit_script;
 	endif
 	unset podcast_xmlUrl_count;
-else
-endif
 
 fetch_podcasts:
 	alias	ex	"ex -E -n -X --noplugin";
@@ -305,7 +304,7 @@ fetch_podcasts:
 	end
 
 exit_script:
-	if(! ${?keep_feed} ) rm -v "${alacasts_catalog_search_results_log_prefix}"*;
+	if(! ${?keep_feed} ) rm -v "./.${alacasts_catalog_search_results_log_prefix}"*;
 	if( ${?starting_dir} ) then
 		cd "${starting_dir}";
 	endif

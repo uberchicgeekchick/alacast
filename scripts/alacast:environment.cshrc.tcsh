@@ -1,10 +1,10 @@
 #!/bin/tcsh -f
 if( "`echo '${0}' | sed -r 's/^[^\.]*(tcsh)/\1/'`" != "tcsh" ) then
 	cd "`dirname '${0}'`";
-	set source_file="`basename '${0}'`";
-	printf "%s sets up alacast's environmental settings\n%s should be sourced and not run directly.\nUsage:\n\tsource %s" "${source}" "${source_file}" "${cwd}/${source_file}";
+	set scripts_name="`basename '${0}'`";
+	printf "%s sets up alacast's environmental settings\n%s should be sourced and not run directly.\nUsage:\n\tsource %s" "${source}" "${scripts_name}" "${cwd}/${scripts_name}";
 	cd "${owd}"
-	unset source_file;
+	unset scripts_name;
 	exit -1;
 endif
 
@@ -15,7 +15,7 @@ setenv PATH "${PATH}:${ALACASTS_GTK_PATH}/bin:${ALACASTS_GTK_PATH}/scripts";
 
 
 # $ALACAST_OPTIONS acts like arguments to alacast.php when no command line arguments are given:
-setenv ALACASTS_OPTIONS '--logging --titles-append-pubdate --strip-characters=#;!';
+setenv ALACASTS_OPTIONS '--logging --titles-append-pubdate --playlist=m3u --strip-characters=#;!';
 
 # when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
 alias "alacast.php:sync" "${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=sync";

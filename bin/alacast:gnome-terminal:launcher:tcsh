@@ -9,24 +9,26 @@ if(! -x ${alacasts_exec} ) then
 	exit -1;
 endif
 
-if(!(${?ALACAST_OPTIONS})) setenv ALACAST_OPTIONS '--logging --titles-append-pubdate --strip-characters=#;! --update=detailed --interactive';
+if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS '--logging --titles-append-pubdate --strip-characters=#;! --update=detailed --interactive';
 
 
 set alacasts_resolution = "";
 if ( -e "${HOME}/.alacast/alacast.ini" ) then
-	set alacasts_config="${HOME}/.alacast/alacast.ini";
+	set alacasts_ini="${HOME}/.alacast/alacast.ini";
 else if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then
-	set alacasts_config="${HOME}/.alacast/profiles/${USER}/alacast.ini";
+	set alacasts_ini="${HOME}/.alacast/profiles/${USER}/alacast.ini";
 else if ( -e "${alacasts_path}/../data/${USER}/default/alacast.ini" ) then
-	set alacasts_config="${alacasts_path}/../data/profiles/${USER}/alacast.ini";
+	set alacasts_ini="${alacasts_path}/../data/profiles/${USER}/alacast.ini";
 else if ( -e "${alacasts_path}/../data/profiles/default/alacast.ini" ) then
-	set alacasts_config="${alacasts_path}/../data/profiles/default/alacast.ini";
+	set alacasts_ini="${alacasts_path}/../data/profiles/default/alacast.ini";
 endif
 
-if( ${?alacasts_config} ) then
-	set alacasts_resolution=`cat "${alacasts_config}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
-	set alacasts_options=`cat "${alacasts_config}" | grep 'options.cli' | sed 's/.*options\.cli="\([^"]\+\)";/\1/'`;
+if( ${?alacasts_ini} ) then
+	if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS `cat "${alacasts_ini}" | grep 'options.default' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
+	set alacasts_resolution=`cat "${alacasts_ini}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
+	set alacasts_options=`cat "${alacasts_ini}" | grep 'options.cli' | sed 's/.*options\.cli="\([^"]\+\)";/\1/'`;
 else
+	if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS "--with-defaults";
 	set alacasts_resolution="140x40";
 	set alacasts_options="--with-defaults";
 endif
