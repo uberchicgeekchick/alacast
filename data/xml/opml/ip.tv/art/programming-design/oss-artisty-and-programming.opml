@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>open source software artistry &amp; programming podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Chariot TechCast]]>" xmlUrl="http://techcast.chariotsolutions.com/rss?format=xml" type="rss" text="<![CDATA[Chariot TechCast]]>" htmlUrl="http://techcast.chariotsolutions.com/" description="<![CDATA[<p>Chariot Solutions Tech Cast series brings you interviews with project creators, architects and consultants working out in the field, and features major open source projects and initiatives, such as Spring, Flex and RIA technologies, Mule, Groovy/Grails, Cloud Computing (Amazon, Google), and much more.</p><p>The Tech Cast also covers trends and events in the Delaware Valley region, and major conferences such as SpringOne, the Philadelphia Emerging Technologies for the Enterprise conference, and more.</p><p>Your host, Ken Rimple, spends time digging into a particular topic with an expert in the field.</p>]]>"/>
+		<outline title="<![CDATA[openSuSE.TV]]>" xmlUrl="http://opensuse.blip.tv/rss" type="rss" text="<![CDATA[openSuSE.TV]]>" htmlUrl="http://opensuse.blip.tv/" description="<![CDATA[The openSUSE channel contains videos for and by the openSUSE community. These are educational screencasts, talks and presentations given at events and anything inbetween :-)]]>"/>
+		<outline title="<![CDATA[FLOSS Weekly]]>" xmlUrl="http://leoville.tv/podcasts/floss.xml" type="rss" text="<![CDATA[FLOSS Weekly]]>" htmlUrl="http://www.twit.tv/FLOSS" description="<![CDATA[Every Friday(rand()*rand())ish we talk about Free Libre and Open Source Software with the people who are writing it. Part of the TWiT.tv podcast network.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+
