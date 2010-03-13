@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Mystery podcast novels from Podiobooks.com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Colorado Squence]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free podcast novel by ]]>" htmlUrl="" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Silk Road]]>" xmlUrl="http://www.podiobooks.com/title/the-silk-code/feed/" type="rss" text="<![CDATA[The Silk Road - a free podcast novel by Paul Levinson]]>" htmlUrl="http://www.podiobooks.com/title/the-silk-code/" description="<![CDATA[Phil D&#039;Amato, New York City forensic detective, is caught in an ongoing struggle that dates all the way back to the dawn of humanity on earth--and one of his best friends is a recent casualty. Unless Phil can unravel the genetic puzzle of the Silk Code, he&#039;ll soon be just as dead.]]>"/>
+		<outline title="<![CDATA[Nameless]]>" xmlUrl="http://www.podiobooks.com/title/nameless/feed/" type="rss" text="<![CDATA[Nameless - a free podcast novel by D. C. Wood]]>" htmlUrl="http://www.podiobooks.com/title/nameless/" description="<![CDATA[<h3>&quot;Nameless.&quot;</h3><p>So what do you call DEATH?</p><p>Modern society is plagued by crime and despair. And the solution to the problem&hellip;is even worse.</p><p>A mysterious man, clad in grey and virtually unstoppable, is dispensing his own brand of justice to those who mock the law. No matter the age, gender or reason…no criminal is exempt from the sentence of &quot;That grey man&hellip;that grey man&hellip;&quot;</p><p>Enter Harry Roberts, one of the finest detectives who ever lived. He’s been brought out of retirement to stop the vigilante. His unique mind makes him the only one who POSSIBLY can, but Harry’s investigation unearths so many challenges. And very soon, the lives of Harry and his family will come under threat from the paranormal, Harry himself and his mortal enemy, gangster Frank Bryce.</p>]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free podcast novel by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

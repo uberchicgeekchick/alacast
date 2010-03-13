@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Amber Treasure - A free podcast novel by Richard Denning]]>" xmlUrl="http://www.podiobooks.com/title/the-amber-treasure/feed/" type="rss" text="<![CDATA[The Amber Treasure - A free audiobook by Richard Denning]]>" htmlUrl="http://www.podiobooks.com/title/the-amber-treasure/" description="<![CDATA[Cerdic is the nephew of a great warrior who died a hero of the Anglo-Saxon country of Deira.Growing up in a quiet village, he dreams of the glories of battle and of one day writing his name into the sagas. He experiences the true horrors of war, however, when his home is attacked, his sister kidnapped, his family betrayed and his uncle&apos;s legendary sword stolen.Cerdic is thrown into the struggles that will determine the future of 6th century Britain and must show courageous leadership and overcome treachery, to save his kingdom, rescue his sister and return home with his uncle&apos;s sword.The Amber Treasure is Historical Fiction set in Dark Age Northumbria]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -13,61 +13,79 @@
 	 * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
 	 * language governing rights and limitations under the RPL.
 	 */
+	namespace alacast;
 	
-	class alacasts_playlist{
+	class playlist{
 		private $enabled;
 		
 		private $path;
-		private $created_dirs;
 		private $prefix;
 		private $playlist;
 		private $type;
 		
 		private $fp;
+		private $created_dirs;
 		
 		private $total;
 		
-		public function __construct($path=".", $prefix="uberChick's progam", $type="m3u"){
-			$this->enabled=TRUE;
+		public function __construct($path=".", $prefix="alacast", $type="m3u"){
 			$this->path=$path;
 			$this->prefix=$prefix;
 			$this->total=0;
 			$this->created_dirs=array( 'total'=>0 );
 			$this->fp=NULL;
+
+			$this->type=$type;
+			if(!$this->validate())
+				return FALSE;
 			
-			switch($type){
+			return TRUE;
+		}/*__construct();*/
+		
+		
+		private function validate(){
+			switch($this->type){
 				case FALSE;
-					$this->enabled=FALSE;
-					break;
+					$this->type=NULL;
+					$this->extension=NULL;
+					$this->playlist=NULL;
+					return ($this->enabled=FALSE);
+				
 				case "toxine":
 				case "tox":
-					$this->type=$type;
+					$this->type="toxine";
 					$this->extension="tox";
 					break;
 				
 				case "pls":
-					$this->type=$type;
-					$this->extension=$type;
+					$this->type="pls";
+					$this->extension="pls";
 					break;
 				
 				case "m3u":
 				default:
-					if($type!="m3u")
-						printf("%s is an unsupported playlist format.\nA m3u playlist will be used instead.", $type);
+					if($this->type!="m3u")
+						$GLOBALS['alacast']->logger->output(
+							"{$this->type} is an unsupported playlist format.\nA m3u playlist will be used instead.",
+							TRUE
+						);
 					$this->type="m3u";
 					$this->extension="m3u";
 					break;
 			}
-			
-			$this->playlist=sprintf("%s/%s's playlist from: %s.%s", $this->path, $this->prefix, preg_replace("/(.*)\ [\+\-][0]{4}/", "$1", gmdate('r')), $this->extension);
-		}/*__construct();*/
+			$this->playlist=sprintf("%s/%s's %s playlist from: %s.%s", $this->path, $this->prefix, $this->type, date("Y:m:d @ H:i:s"), $this->extension);
+			return ($this->enabled=TRUE);
+		}/*$this->validate();*/
 
 		public function add_file(&$filename){
 			if(!$this->enabled)
 				return FALSE;
 			
 			if(!($filename && file_exists($filename))){
-				fprintf(STDERR, "**error**: adding file to playlist: it does not appear to exist.\n\tfilename: <%s>\n\tplaylist: <%s>\n", $filename, $this->playlist);
+				$GLOBALS['alacast']->logger->output(
+					sprintf("Adding file to playlist failed: the file does not appear to exist.\n\tfilename: <%s>\n\tplaylist: <%s>\n", $filename, $this->playlist),
+					TRUE
+				);
 				return FALSE;
 			}
 			
@@ -76,7 +94,7 @@
 			if(!$this->fp)
 				if(!($this->fp=fopen($this->playlist, "a"))){
 					return ($this->enabled=FALSE);
-				}
+			}
 			
 			switch($this->type){
 				case "toxine":
@@ -131,7 +149,7 @@
 		
 		
 		public function __destruct(){
-			if(!($this->enabled &&$this->total)){
+			if(!( $this->enabled && $this->total )){
 				$this->clean_up_created_path();
 				return;
 			}
@@ -140,6 +158,8 @@
 				case "toxine":
 				case "tox":
 					fprintf($this->fp, "\n#END");
+					fseek($this->fp, 0);
+					fprintf($this->fp, "#toxine playlist\n");
 					break;
 				
 				case "pls":

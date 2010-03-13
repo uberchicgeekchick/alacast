@@ -38,7 +38,9 @@
 	 * 	&& ||
 	 * 	"The Mentor's Last Words: The Hackers Manifesto"
 	 */
-	class alacasts_logger {
+	namespace alacast;
+	
+	class logger {
 		private $programs_name;
 		
 		private $logging_enabled;
@@ -59,7 +61,7 @@
 		public $error_log_file;
 		private $error_logs_fp;
 		
-		public function __construct($logs_path=".", $programs_name="uberChick's progam", $logging_enable=TRUE, $silence_output=FALSE) {
+		public function __construct($logs_path=".", $programs_name="alacast", $logging_enable=TRUE, $silence_output=FALSE) {
 			$this->program_name=$programs_name;
 			
 			if($silence_output)
@@ -67,15 +69,15 @@
 			else
 				$this->silence_output=FALSE;
 			
-			if(! $logging_enable)
-				return $this->disable_logging();
-			
 			$this->output_log_file="";
 			$this->error_log_file="";
 			if(!( (is_dir( $logs_path))))
 				$this->logs_path=".";
 			else
 				$this->logs_path=preg_replace("/\/$/", "", $logs_path);
+			
+			if(! $logging_enable)
+				return $this->disable_logging();
 			
 			$this->logging_enabled=TRUE;
 			$this->setup_logging_data();
@@ -189,7 +191,7 @@
 				fprintf($this->output_logs_fp, "%s", (utf8_encode( $string)));
 			}else{
 				$this->rotate_error_log();
-				fprintf($this->error_logs_fp, "%s", (utf8_encode( "**ERROR:**" . $string)));
+				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
 			}
 			return TRUE;
 		}//method: private function log_output();
@@ -204,7 +206,7 @@
 				return FALSE;
 			
 			if($error === TRUE)
-				return fprintf(STDERR, "%s", (utf8_encode($string)));
+				return fprintf(STDERR, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
 			
 			return fprintf(STDOUT, "%s", (utf8_encode($string)));
 		}//method:public function output("mixed $value string", $error=FALSE);

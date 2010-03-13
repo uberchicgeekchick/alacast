@@ -14,48 +14,64 @@ while ( ${?1} && "${1}" != "" )
 		case "text":
 		case "description":
 			set attribute="${option}";
-			set value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
-			breaksw
+			set value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+			breaksw;
+		
 		case "help":
 			goto usage;
-			breaksw
+			breaksw;
+		
 		case "debug":
 			if(! ${?debug} ) set debug;
-			breaksw
+			breaksw;
+		
 		case "enable":
 			switch ( "${options_value}" )
 			case "debug":
 				if(! ${?debug} ) set debug;
-				breaksw
+				breaksw;
+			
 			case "verbose":
 				if(! ${?verbose_output} ) set verbose_output;
-				breaksw
+				breaksw;
+			
 			endsw
-			breaksw
+			breaksw;
+		
 		case "disable":
 			switch( "${options_value}" )
 			case "debug":
 				if( ${?debug} ) unset debug;
-				breaksw
+				breaksw;
+			
 			case "verbose":
 				if( ${?verbose_output} ) unset verbose_output;
-				breaksw
+				breaksw;
+			
 			endsw
-			breaksw
+			breaksw;
+		
 		case "verbose":
 			if(! ${?verbose_output} ) set verbose_output;
-			breaksw
+			breaksw;
+		
 		case "output":
 			switch( "${options_value}" )
-			case "title":
-			case "htmlUrl":
-			case "text":
-			case "description":
-			case "xmlUrl":
-				set output="${options_value}";
-				breaksw
-			endsw
-			breaksw
+				case "title":
+				case "htmlUrl":
+				case "text":
+				case "description":
+				case "xmlUrl":
+					set value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+					breaksw;
+				
+				default:
+					printf "%s is not a valid output option.\n\tSupportted output options are: title, xmlUrl, text, htmlUrl, or description.\n" > /dev/stderr;
+					breaksw;
+				
+				endsw
+			breaksw;
+		
 		endsw
 	shift;
 	end

@@ -15,31 +15,36 @@ while( "${1}" != "" )
 		case 'link':
 		case "pubDate":
 			set attrib="${param}";
-			if( "${param}" == "" && "${2}" != "" ) then
+			if( "${option}" == "" && "${2}" != "" ) then
 				shift;
 				set value="${1}";
 			else
 				set value="${option}";
 			endif
+			set value="`printf "\""${value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
 		breaksw;
+	
 	case "output":
 		switch ( "${option}" )
-		case "title":
-		case "description":
-		case "url":
-		case "guid":
-		case "pubDate":
-		case "link":
-			set output="${option}";
-			breaksw;
-		default:
-			printf "%s is not a valid --output option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;
-			breaksw;
+			case "title":
+			case "description":
+			case "url":
+			case "guid":
+			case "pubDate":
+			case "link":
+				set output="`printf "\""${option}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+				breaksw;
+			
+			default:
+				printf "%s is not a valid --output option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;
+				breaksw;
 		endsw
 		breaksw;
+	
 	case "verbose":
 		set be_verbose;
 		breaksw;
+	
 	case "refetch":
 		set refetch;
 		if( "${option}" != "silent" ) then
@@ -48,12 +53,15 @@ while( "${1}" != "" )
 			set silent="--silent";
 		endif
 		breaksw;
+	
 	case "help":
 		goto usage;
 		breaksw;
+	
 	default:
 		printf "%s is not a valid option.\nPlease see %s --help\n\n" "${param}" "`basename '${0}'`" > /dev/stderr;
 		breaksw;
+	
 	endsw
 	shift;
 end

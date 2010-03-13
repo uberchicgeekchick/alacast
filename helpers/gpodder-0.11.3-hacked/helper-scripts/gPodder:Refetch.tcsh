@@ -6,7 +6,6 @@ set script_name="`basename '${0}'`";
 set search_script="`dirname '${0}'`/gPodder:Search:index.rss.tcsh";
 if(! ${?1} || "${1}" == "" ) goto usage
 
-set silent="";
 while ( "${1}" != "" )
 	set option = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\1/g'`";
 	set options_value = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\2/g'`";
@@ -26,7 +25,7 @@ while ( "${1}" != "" )
 		breaksw;
 	case "s":
 	case "silent":
-		set silent=" --silent";
+		set silent;
 		breaksw;
 	case "diagnosis":
 		if(! ${?diagnosis} ) set diagnosis;
@@ -35,6 +34,10 @@ while ( "${1}" != "" )
 		breaksw;
 	case "f":
 	case "fetch-all":
+	case "r":
+	case "refetch":
+	case "c":
+	case "continue":
 		set fetch_all;
 		breaksw;
 	case "debug":
@@ -74,10 +77,22 @@ while ( "${1}" != "" )
 	shift;
 end
 
+if(! ${?silent} ) then
+	set silent="";
+else
+	# for curl:
+	# set silent=" --silent";
+	# for wget:
+	set silent=" --quiet";
+endif
+
+#set download_command="curl${silent} --location --fail --show-error --output";
+set download_command="wget${silent} --continue --output-document";
+
 if( ${?search_attribute} && ${?search_value} ) goto find_podcasts;
 
 usage:
-	printf "%s uses %s to find what episodes to redownload.\n\tIt supports all of its options in addition to:\n\t\t-s,--silent\tCause curl's ouptput to be surpressed.\t\n\t\n\tIn addition %s' options are:\n\n" `${script_name}` ${search_script} ${search_script};
+	printf "%s uses %s to find what episodes to re-download.\n\tIt supports all of its options in addition to:\n\t\t-s,--silent\tCauses ouptput to be surpressed.\t\n\t\n\tIn addition %s' options are:\n\n" `${script_name}` ${search_script} ${search_script};
 	${search_script} --help
 	set status=-1;
 	goto exit_script;
@@ -130,16 +145,16 @@ find_podcasts:
 		${search_script} --verbose --${search_attribute}="${search_value}" >! "${refetch_script}.tmp";
 
 		if(! ${?fetch_all} ) then
-			set curl_condition="\rif(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) then";
+			set line_condition="\rif(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) then";
 			set line_padding="\t";
-			set curl_condition_end="\rendif";
+			set line_condition_end="\relse\r\tprintf '\\t\\t"\""${podcast_match}\/\1, released on: \5\.\3"\"" already exists.\\n\\n';\rendif";
 		else
-			set curl_condition="";
+			set line_condition="";
 			set line_padding="";
-			set curl_condition_end="";
+			set line_condition_end="";
 		endif
 		
-		ex '+1,$s/[\r\n]\+//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.]\+\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if(\! -d "\""${podcast_match}"\"" ) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${curl_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \4\.\3\\n"\"";\r${line_padding}curl${silent} --location --fail --show-error --output "\""${podcast_match}\/\1, released on: \4\.\3"\"" '\2\.\3';\r${line_padding}if(\! -e "\""${podcast_match}\/\1, released on: \4\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3';${curl_condition_end}\rif( "\$"{?new_dir} ) then\r\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp" > /dev/null;
+		ex '+1,$s/[\r\n]\+//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.?]\+\)\([\.?]\?[^<]*\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if(\! -d "\""${podcast_match}"\"" ) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${line_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \5\.\3\\n"\"";\r${line_padding}${download_command} "\""${podcast_match}\/\1, released on: \5\.\3"\"" '\2\.\3\4';\r${line_padding}if(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3\4';${line_condition_end}\rif( "\$"{?new_dir} ) then\r\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp" > /dev/null;
 		
 		#while ( `/usr/bin/grep --perl-regexp '("[^\/]+)\/(.*)"' "${refetch_script}.tmp"` != "" )
 		#	ex '+1,$s/\("[^\/]\+\)\/\(.*"\)/\1\-\2/g' '+wq!' "${refetch_script}.tmp" >& /dev/null;

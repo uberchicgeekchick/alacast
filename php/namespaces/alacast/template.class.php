@@ -13,17 +13,17 @@
 	 * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
 	 * language governing rights and limitations under the RPL.
 	 */
-	class alacasts_m3u_playlist extends alacasts_playlist{
-		private $playlist_filename;
-		private $playlist_fp;
-		private $total;
+	namespace alacast;
+	
+	class template{
 		
-		public function __construct(array &$new_podcasts){
-			parent::__construct($new_podcasts);
+		public function __construct(){
+			
 		}//__construct
 		
 		public function __destruct(){
-			parent::__destruct();
+			
 		}//__destruct
+		
 	}
 ?>

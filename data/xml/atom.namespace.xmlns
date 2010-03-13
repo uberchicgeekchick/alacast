@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+
+  <title>Atom Syndication Format namespace</title>
+  <link rel="stylesheet" type="text/css" href=
+  "http://www.w3.org/StyleSheets/TR/base" />
+</head>
+
+<body>
+  <div class="head">
+    <a href="../"><img src="http://www.w3.org/Icons/w3c_home" alt=
+    "W3C" /></a> <a href="http://www.ietf.org/"><img src=
+    "ietf_logo.png" alt="IETF" /></a>
+  </div>
+
+  <h1>Atom Syndication Format namespace</h1>
+
+  <p>The namespace name <tt>http://www.w3.org/2005/Atom</tt> is
+  intended for use as per <cite><a href=
+  "http://tools.ietf.org/html/rfc4287">The Atom Syndication
+  Format</a></cite>, a December 2005 Proposed Standard developed by
+  the <a href=
+  "http://www.ietf.org/html.charters/atompub-charter.html">IETF
+  atompub Working Group</a>.</p>
+
+  <p>According to the <a href=
+  "http://tools.ietf.org/html/rfc2026">The Internet Standards
+  Process -- Revision 3</a>,</p>
+
+  <blockquote>
+    <p>A Proposed Standard specification is generally stable, has
+    resolved known design choices, is believed to be
+    well-understood, has received significant community review, and
+    appears to enjoy enough community interest to be considered
+    valuable. However, further experience might result in a change
+    or even retraction of the specification before it advances.</p>
+  </blockquote>
+
+  <p>See also <cite><a href="http://www.w3.org/1999/10/nsuri">URIs
+  for W3C Namespaces</a></cite>. For more information about
+  <abbr>XML</abbr> namespaces, please refer to <cite><a href=
+  "http://www.w3.org/TR/REC-xml-names">Namespaces in
+  <abbr>XML</abbr></a></cite>.</p>
+  <hr />
+
+  <address>
+    issued 7 Jul 2005 by Dan Connolly, <a href=
+    "http://www.w3.org/2001/11/StdLiaison#IETF">W3C/IETF
+    liaison</a> on behalf of the W3C Director to<br />
+    Tim Bray and Paul Hoffman <a href=
+    "http://www.ietf.org/html.charters/atompub-charter.html">atompub
+    WG</a> chairs<br />
+    <small>$Revision: 1.10 $ of $Date: 2007/10/13 02:19:32 $</small>
+  </address>
+</body>
+</html>

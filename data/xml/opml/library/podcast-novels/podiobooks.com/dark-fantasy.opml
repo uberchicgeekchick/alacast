@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Dark Fantasy podcast novels.  Hosted on PodioBooks.Com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Nephilim Push - A free podcast novel by Brian Holtz]]>" xmlUrl="http://www.podiobooks.com/title/nephilim-push/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/nephilim-push/" text="<![CDATA[Nephilim Push - A free audiobook by Brian Holtz]]>" description="<![CDATA[In this podiobook: In the beginning a dark hatred ruled the heavens. It was a rage that bred floods, giants, and Hell itself. It's power yet lingers between us all, watching and waiting. Three distinct timelines document the origins of good and evil, a sadistic cult leader and a man who unwittingly finds himself in the middle of a war for all existence. As the stories converge discovery gives way to tribulation. Truth unfolds in unspeakable horror. Travel out of body on a nightmare of astral proportions. Welcome to Nephilim Push.]]>"/>
+		<outline title="<![CDATA[Closet Treats - A free podcast novel by Paul Elard Cooley" xmlUrl="http://www.podiobooks.com/title/closet-treats/feed/" rel="self" type="rss" title="<![CDATA[Closet Treats - A free audiobook by Paul Elard Cooley]]>" htmlUrl="http://www.podiobooks.com/title/closet-treats/" description="<![CDATA[Reality is a slippery slope for Trey Leger.  He's managed to carve out a somewhat normal existence in spite of his mental illness.  But when an ice cream truck starts making the rounds of his neighborhood, Trey can no longer tell reality from his delusions.]]>]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="http://www.podiobooks.com/title/?/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?/" text="<![CDATA[ - &apos; podcast novel.]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

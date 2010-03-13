@@ -13,11 +13,13 @@
 	 * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
 	 * language governing rights and limitations under the RPL.
 	 */
-	class alacasts_titles extends alacast {
+	namespace alacast;
+	
+	class titles{
 		public $renumbering_regexp;
 		
 		public function __construct(){
-			$this->load_renumbering_regexp();
+			/*$this->load_renumbering_regexp();*/
 		}//__construct
 		
 		
@@ -28,20 +30,29 @@
 		
 
 		
-		public function reorder_titles( &$podcasts_info ){
+		public function reorder_titles(&$podcasts_info, $reformat_numbers=TRUE){
 			if(!(isset($this->renumbering_regexp))) $this->load_renumbering_regexp();
+			static $limit;
+			if(!isset($limit))
+				if(!$reformat_numbers)
+					$limit=1;
+				else
+					$limit=$this->renumbering_regexp['total'];
+			
 			for($i=0; $i<$podcasts_info['total']; $i++)
-				for( $a=0; $a<$this->renumbering_regexp['total']; $a++ )
+				for( $a=0; $a<$limit; $a++ )
 					for( $n=0; $n<$this->renumbering_regexp[$a]['total']; $n++ )
 						if( (preg_match(
 							$this->renumbering_regexp[$a][$n][0],
 							$podcasts_info[$i]
 						)) ){
+							/*printf("\nRenaming: [%s]\n\tusing using renumbering_regexp[%d][%d]: %s %s\n", $podcasts_info[$i], $a, $n,$this->renumbering_regexp[$a][$n][0],$this->renumbering_regexp[$a][$n][1]);*/
 							$podcasts_info[$i] = preg_replace(
 								$this->renumbering_regexp[$a][$n][0],
 								$this->renumbering_regexp[$a][$n][1],
 								$podcasts_info[$i]
 							);
+							/*printf("\tRenamed to: %s\n", $podcasts_info[$i]);*/
 						}
 		}/*reorder_titles*/
 		
@@ -70,8 +81,6 @@
 		
 		
 		public function prefix_episope_titles_with_podcasts_title( &$podcasts_info ) {
-			if( !(alacast_helper::preg_match_array($_SERVER['argv'], "/\-\-prefix\-episodes\-with\-podcast\-title/")) ) return;
-		
 			for( $i=1; $i<$podcasts_info['total']; $i++ )
 				if( !(preg_match( "/^{$podcasts_info[0]}/", $podcastInfo[$i] )) )
 					$podcasts_info[$i] = "{$podcasts_info[0]} - "
