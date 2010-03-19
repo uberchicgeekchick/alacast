@@ -21,8 +21,17 @@
 #	
 #	Auto-formatting an RSS' channel & info into an opml <outline>:
 #		For podiobooks.com feeds:
-#			3s/\v\<channel\>\n.*title\>(.*)(audiobook)([^\<]+)\<.*\n.*link\>([^\<]*)\<.*\n.*href\="([^"]*)".*\n.*(description)\>In this podiobook: ([^\<]+)\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\1podcast novel\3\]\]\>" xmlUrl="\5\/" type="rss" text="\<\!\[CDATA\[\1\2\3\]\]\>" htmlUrl="\4\/" \6="\<\!\[CDATA\[\7\]\]\>" \/\>/
-#		For all others:
-#		3s/\v\<channel\>\n.*title\>([^\<]*)\<.*\n.*link\>([^\<]*)\<.*\n.*href\="([^"]*)".*\n.*(description)\>([^\<]+)\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\1\]\]\>" xmlUrl="\3\/" type="rss" text="\<\!\[CDATA\[\1\]\]\>" htmlUrl="\2\/" \4="\<\!\[CDATA\[\5\]\]\>" \/\>
+#			3s/\v\<channel\>[\r\n]+.*title\>(.*)(audiobook)([^\<]+)\<.*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*(description)\>In this podiobook: ([^\<]+)\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\1podcast novel\3\]\]\>" xmlUrl="\5\/" type="rss" text="\<\!\[CDATA\[\1\2\3\]\]\>" htmlUrl="\4\/" \6="\<\!\[CDATA\[\7\]\]\>" \/\>/
 #
+#		For all others:
+#			<link> before <atom:link href="{xmlUrl}">:
+#				s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
+#			<atom:link href="{xmlUrl}"> before <link>:
+#				s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\4" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\5" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
+#
+#		NOTE: be sure to add a line for, or move, the xmlUrl to the line after RSS's: <link>{htmlUrl}</link> element.
+#		Usually its:
+#			<atom:link href="{xmlUrl}" rel="self" type="application/rss+xml" />
+#		But could be as simply as adding:
+#			<href="{xmlUrl}">
 #

@@ -72,16 +72,21 @@ init:
 
 main:
 if(! ${?fetch_all} ) then
-	if( ! ${?download_limit} && ! ${?start_with} ) then
+	if( ! ${?download_limit} && ! ${?start_with} )	\
 		set fetch_all;
-	else if(! ${?download_limit} ) then
+	
+	if(! ${?download_limit} )	\
 		set download_limit=0;
-	else if(! ${?start_with} ) then
+	
+	if(! ${?start_with} )	\
 		set start_with=0;
-	endif
 else
-	if(! ${?download_limit} ) set download_limit=0;
-	if(! ${?start_with} ) set start_with=0;
+	if(! ${?download_limit} )	\
+		set download_limit=0;
+	
+	if(! ${?start_with} )	\
+		set start_with=0;
+	
 endif
 
 if(! ${?save_to_dir} ) then
@@ -139,21 +144,10 @@ fetch_podcasts:
 	foreach podcast_xmlUrl ( "`cat "\""${alacasts_catalog_search_results_log}.log"\""`" )
 		ex -s '+1d' '+wq' "${alacasts_catalog_search_results_log}.log";
 		if( "${podcast_xmlUrl}" == "" ) continue;
-		#if( ${?fetch_all} && ! ${?list_episodes} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
-		if( ! ${?list_episodes} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
-			if( ${start_with} > 1 && ${download_limit} > 0 ) then
-				printf "Running %s --disable=logging --start-with=%d --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${start_with} ${download_limit} "${podcast_xmlUrl}";
-				${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" --download-limit="${download_limit}" "${podcast_xmlUrl}";
-			else if( ${start_with} > 1 ) then
-				printf "Running %s --disable=logging --start-with=%d %s\n" "${alacast_fetch_all_script}" ${start_with} "${podcast_xmlUrl}";
-				${alacast_fetch_all_script} --disable=logging --start-with="${start_with}" "${podcast_xmlUrl}";
-			else if( ${download_limit} > 0 ) then
-				printf "Running %s --disable=logging --download-limit=%d %s\n" "${alacast_fetch_all_script}" ${download_limit} "${podcast_xmlUrl}";
-				${alacast_fetch_all_script} --disable=logging --download-limit="${download_limit}" "${podcast_xmlUrl}";
-			else
-				printf "Running %s --disable=logging %s\n" "${alacast_fetch_all_script}" "${podcast_xmlUrl}";
-				${alacast_fetch_all_script} --disable=logging "${podcast_xmlUrl}";
-			endif
+		#if( ${?fetch_all} && ! ${?list_episodes} && ! ${?save_script} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
+		if( ! ${?list_episodes} && ! ${?save_script} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
+			printf "Running %s --disable=logging %s\n" "${alacast_fetch_all_script}" ${start_with} ${download_limit} ${argv};
+			${alacast_fetch_all_script} --disable=logging ${argv};
 			continue;
 		endif
 		
@@ -188,26 +182,29 @@ fetch_podcasts:
 		if(! ${?force_fetch} ) then
 			if( ${?debug} ) printf "Only episodes which have no existing file will be downloaded.\n";
 			set episode_line_padding="\t";
-			set episode_end_condition="\relse\r\tprintf '\\t\\t"\""\2, released on: \3\.\6"\"" already exists.\\n\\n';\rendif";
-			set episode_download_condition1="if(\! \-e "\""\2, released on: \6\.\5"\"" ) then\r";
+			set episode_end_condition1="\relse\r\tprintf '\\t\\t"\""\2, released on: \7\.\5"\"" already exists.\\n\\n';\rendif";
+			set episode_end_condition2="\relse\r\tprintf '\\t\\t"\""\2, released on: \3\.\6"\"" already exists.\\n\\n';\rendif";
+			set episode_download_condition1="if(\! \-e "\""\2, released on: \7\.\5"\"" ) then\r";
 			set episode_download_condition2="if(\! \-e "\""\2, released on: \3\.\6"\"" ) then\r";
 		else
 			if( ${?debug} ) printf "All episodes will be downloaded.  Partial downloads will be completed.\n";
 			set episode_line_padding="";
-			set episode_end_condition="";
+			set episode_end_condition1="";
+			set episode_end_condition2="";
 			set episode_download_condition1="";
 			set episode_download_condition2="";
 		endif
 
 		if( ${?list_episodes} ) then
 			set episode_line_padding="${episode_line_padding}echo ";
-			set episode_end_condition=";${episode_end_condition}";
+			set episode_end_condition1=";";
+			set episode_end_condition2=";";
 			set episode_download_condition1="";
 			set episode_download_condition2="";
 		endif
 		
-		ex "+5,${eol}s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \7\.\5"\""\\"\"""\"" "\""\\"\"""\""\4\.\5\6"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \7\.\5"\"" "\""\4\.\5\6"\"";${episode_end_condition}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
-		ex "+5,${eol}s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \3\.\6"\""\\"\"""\"" "\""\\"\"""\""\5\.\6\7"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \3\.\6"\"" "\""\5\.\6\7"\"";${episode_end_condition}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
+		ex "+5,${eol}s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \7\.\5"\""\\"\"""\"" "\""\\"\"""\""\4\.\5\6"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \7\.\5"\"" "\""\4\.\5\6"\"";${episode_end_condition1}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
+		ex "+5,${eol}s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \3\.\6"\""\\"\"""\"" "\""\\"\"""\""\5\.\6\7"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \3\.\6"\"" "\""\5\.\6\7"\"";${episode_end_condition2}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
 		ex "+5,${eol}s/.*<\(item\|entry\).*<\/\(item\|entry\)>.*[\r\n]//g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
 		
 		if( ${start_with} > 1 ) then
@@ -233,7 +230,12 @@ fetch_podcasts:
 		set episodes="`cat '${alacasts_catalog_search_results_log}.${download_command}.tcsh'`";
 
 		@ podcast_count=1;
-		${alacasts_catalog_search_results_log}.${download_command}.tcsh;
+		if(! ${?save_script} ) then
+			${alacasts_catalog_search_results_log}.${download_command}.tcsh;
+		else
+			printf "Saving %s's %s download script to: %s" "${podcasts_title}" "${download_command}" "${save_script}";
+			mv -vf "${alacasts_catalog_search_results_log}.${download_command}.tcsh" "${save_script}";
+		endif
 	end
 #fetch_podcasts:
 
@@ -317,6 +319,35 @@ parse_argv:
 				set start_with=${value};
 				breaksw;
 			
+			case "o":
+			case "O":
+			case "output":
+			case "output-document":
+			case "script":
+			case "save-script":
+				if( "${value}" != "" && -d "`dirname '${value}'`" ) then
+					set save_script="${value}";
+					printf "Enclosures will not be downloaded but instead the script: <file://%s> will be created.\n" "${save_script}";
+					breaksw;
+				endif
+				
+				@ arg++;
+				if( $arg > $argc ) then
+					@ arg--;
+					printf "%s%s script's target must be within existing directory.  The script cannot be saved.\n" "${dashes}" "${option}" > /dev/stderr;
+					goto exit_script;
+				endif
+				
+				if(!( "$argv[$arg]" != "" && -d "`dirname '$argv[$arg]'`" )) then
+					printf "%s%s script's target must be within existing directory.  The script cannot be saved.\n" "${dashes}" "${option}" > /dev/stderr;
+					goto exit_script;
+				endif
+				
+				set save_script="$argv[$arg]";
+				printf "Downloads will be saved to: <file://%s>\n" "${save_to_dir}";
+				
+				breaksw;
+			
 			case "l":
 			case "list":
 			case "list-episodes":
@@ -356,25 +387,23 @@ parse_argv:
 			case "download-directory":
 				if( "${value}" != "" && -d "${value}" ) then
 					set save_to_dir="${value}";
+					printf "Downloads will be saved to: <file://%s>\n" "${save_to_dir}";
 					breaksw;
 				endif
 				
 				@ arg++;
+				if( $arg > $argc ) then
+					@ arg--;
+					printf "%s%s must specify, or be followed by a valid directory." "${dashes}" "${option}" > /dev/stderr;
+					printf "\n\tDownloads will be saved to: <file://%s>\n" "${cwd}";
+					breaksw;
+				endif
+				
 				if( "$argv[$arg]" != "" && -d "$argv[$arg]" ) then
 					set save_to_dir="$argv[$arg]";
-					continue;
+					printf "Downloads will be saved to: <file://%s>\n" "${save_to_dir}";
 				endif
 				
-				@ arg++;
-				if( $arg > $argc ) then
-					printf "%s%s must specify, or be followed by a valid directory" "${dashes}" "${option}" > /dev/stderr;
-					printf "\n\tDownloads will be saved to: <file://%s>\n" "${cwd}";
-					continue;
-				endif
-				
-				if( ${?2} && "${2}" != "" && -d "${2}" ) then
-					set save_to_dir="${2}";
-				endif
 				breaksw;
 		
 			case "htmlUrl":
