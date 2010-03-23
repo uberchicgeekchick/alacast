@@ -117,6 +117,7 @@ find_podcasts:
 	foreach podcast_match( "`${search_script} --${search_attribute}="\""${search_value}"\""`" )
 		if( ${?debug} ) prinf "Found --${search_attribute}="\""${search_value}"\""\n";
 		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*${eol}/\1/'`";
+		set podcast_xmlUrl="`printf "\""${podcast_match}"\"" | sed -r 's/^.*xmlUrl\="\""([^"\""]+)"\"".*/\1/`";
 		
 		if( ${?podcast_found} ) unset podcast_found;
 		foreach index ( ${podcasts} )
@@ -131,19 +132,19 @@ find_podcasts:
 		set podcasts=( ${podcasts} ${index_xml} );
 		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)${eol}/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*${eol}//' | sed -r 's/\// \- /g'`";
 		
-		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
-			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
-		
 		if( ${?debug} ) echo "${podcast_match}\n";
 		set refetch_script="${mp3_player_folder}/.gPodder:Refetch:`date '+%s'`.tcsh";
 		if( ${?debug} ) echo "${refetch_script}\n";
 		
 		if( ${?debug} ) then
-			echo ${search_script} --verbose --${search_attribute}=\"${search_value}\" \>\! \"${refetch_script}.tmp\""\n";
+			echo ${search_script} --verbose --${search_attribute}=\"${podcast_match}\" \>\! \"${refetch_script}.tmp\""\n";
 			if( ${?diagnosis} ) continue;
 		endif
-		${search_script} --verbose --${search_attribute}="${search_value}" >! "${refetch_script}.tmp";
-
+		${search_script} --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
+		
+		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
+			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
+		
 		if(! ${?fetch_all} ) then
 			set line_condition="\rif(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) then";
 			set line_padding="\t";

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>WNYC&apos;s podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[WNYC's podcast]]>" url="http://www.wnyc.org/podcasting/" type="link" text="<![CDATA[WNYC's podcast]]>" description="<![CDATA[WNYC's podcast]]>" />
+		<outline title="<![CDATA[WNYC's Radiolab]]>" xmlUrl="http://www.wnyc.org/shows/radiolab/index.xml" type="rss" text="<![CDATA[WNYC's Radiolab]]>" htmlUrl="http://pipes.yahoo.com/pipes/pipe.info?_id=d71dbccf7f09a3d9e519fb4c1864ce91" description="<![CDATA[On Radio Lab, science meets culture and information sounds like music. Each episode of Radio Lab. is an investigation -- a patchwork of people, sounds, stories and experiences centered around One Big Idea. Hosted by Jad Abumrad and Robert Krulwich, Radio Lab is produced by WNYC public radio. Support the adventure with a donation by pasting the following URL into your browser: http://www.wnyc.org/epledge/radiolab/]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

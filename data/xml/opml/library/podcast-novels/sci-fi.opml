@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Science Fiction Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[&quot;Endless Night&quot; An Art Lawful Productions]]>" xmlUrl="http://anartlawful.libsyn.com/rss" type="rss" text="<![CDATA[&quot;Endless Night&quot; - An Art Lawful Productions]]>" htmlUrl="http://anartlawful.libsyn.com/" description="<![CDATA[They found him at the bottom of a bottle of Gitterswitch Gin, in a dingy cantina on the edge of the civilized galaxy.  An Art Lawful Productions presents &quot;The Endless Night&quot;, a swashbuckling audio drama about swarthy pirates, damaged spaceships and unbeatable odds.  Thrilling exploits, harrowing adventure, criminal antics and issues of morality - all in this month's audio drama!]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

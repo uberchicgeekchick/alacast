@@ -135,7 +135,7 @@ sub display_outputs{
 			printf "Looking for:\n\t$alacast_catalog_search_outputs[$i]\n";
 		}
 		
-		if("$alacast_catalog_search_outputs[$i]"eq"verbose"){
+		if("$alacast_catalog_search_outputs[$i]"eq"outline"){
 			$results_displayed++;
 			if( $debug_mode==1 ){
 				printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
@@ -361,11 +361,11 @@ sub parse_output{
 		if("$outputs[$i]"eq""){
 			next;
 		}
-		if(!($outputs[$i]=~/(xml|html)?Url/i||"$outputs[$i]"eq"title"||"$outputs[$i]"eq"text"||"$outputs[$i]"eq"description"||"$outputs[$i]"eq"type"||"$outputs[$i]"eq"verbose")) {
+		if(!($outputs[$i]=~/(xml|html)?Url/i||"$outputs[$i]"eq"title"||"$outputs[$i]"eq"text"||"$outputs[$i]"eq"description"||"$outputs[$i]"eq"type"||"$outputs[$i]"eq"outline"||"$outputs[$i]"eq"verbose")) {
 			next;
 		}
-		if("$outputs[$i]"eq"verbose"){
-			$alacast_catalog_search_outputs[++$x]="verbose";
+		if("$outputs[$i]"eq"outline"||"$outputs[$i]"eq"verbose"){
+			$alacast_catalog_search_outputs[++$x]="outline";
 		}elsif($outputs[$i]=~/^(xml|html)?Url$/){
 			$alacast_catalog_search_outputs[++$x]="(xmlUrl)";
 			$alacast_catalog_search_outputs[++$x]="(htmlUrl)";

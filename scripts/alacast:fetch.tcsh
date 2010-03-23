@@ -1,10 +1,10 @@
 #!/bin/tcsh -f
 init:
-	set scripts_name="alacast:fetch.tcsh";
+	set scripts_basename="alacast:fetch.tcsh";
 	
 	if( `printf '%s' "${0}" | sed -r 's/^[^\.]*(csh)$/\1/'` == "csh" ) then
 		set status=-1;
-		printf "%s does not support being sourced and can only be executed.\n" "${scripts_name}";
+		printf "%s does not support being sourced and can only be executed.\n" "${scripts_basename}";
 		goto usage;
 	endif
 	
@@ -15,7 +15,7 @@ init:
 	set owd="${old_owd}";
 	unset old_owd;
 	
-	set script="${scripts_path}/${scripts_name}";
+	set script="${scripts_path}/${scripts_basename}";
 	
 	if( ${#argv} < 1 ) then
 		set status=-1;
@@ -71,24 +71,26 @@ init:
 #init:
 
 main:
-if(! ${?fetch_all} ) then
-	if( ! ${?download_limit} && ! ${?start_with} )	\
-		set fetch_all;
+	set escaped_cwd="`printf '%s' '${cwd}' | sed -r 's/\//\\\//g'`";
 	
-	if(! ${?download_limit} )	\
-		set download_limit=0;
+	if(! ${?fetch_all} ) then
+		if( ! ${?download_limit} && ! ${?start_with} )	\
+			set fetch_all;
+		
+		if(! ${?download_limit} )	\
+			set download_limit=0;
 	
-	if(! ${?start_with} )	\
-		set start_with=0;
-else
-	if(! ${?download_limit} )	\
-		set download_limit=0;
+		if(! ${?start_with} )	\
+			set start_with=0;
+	else
+		if(! ${?download_limit} )	\
+			set download_limit=0;
+		
+		if(! ${?start_with} )	\
+			set start_with=0;
 	
-	if(! ${?start_with} )	\
-		set start_with=0;
+	endif
 	
-endif
-
 if(! ${?save_to_dir} ) then
 	if( -e "${HOME}/.alacast/alacast.ini" ) then
 		set alacast_ini="${HOME}/.alacast/alacast.ini";
@@ -145,11 +147,11 @@ fetch_podcasts:
 		ex -s '+1d' '+wq' "${alacasts_catalog_search_results_log}.log";
 		if( "${podcast_xmlUrl}" == "" ) continue;
 		#if( ${?fetch_all} && ! ${?list_episodes} && ! ${?save_script} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
-		if( ! ${?list_episodes} && ! ${?save_script} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
-			printf "Running %s --disable=logging %s\n" "${alacast_fetch_all_script}" ${start_with} ${download_limit} ${argv};
-			${alacast_fetch_all_script} --disable=logging ${argv};
+		#if( ! ${?list_episodes} && ! ${?save_script} && "${alacast_fetch_all_script}" != "" && -x "${alacast_fetch_all_script}" ) then
+			printf "Running %s --disable=logging $argv --xmlUrl="\""%s"\""\n" "${alacast_fetch_all_script}" "${podcast_xmlUrl}";
+			${alacast_fetch_all_script} --disable=logging ${argv} --xmlUrl="${podcast_xmlUrl}";
 			continue;
-		endif
+		#endif
 		
 		printf "Downloading: <%s>.\n" "${podcast_xmlUrl}";
 		printf "Using:\n\t${download_command_with_options} "\""${alacasts_catalog_search_results_log}.xml"\"" "\""${podcast_xmlUrl}"\""\n\n";
@@ -253,7 +255,7 @@ exit_script:
 
 
 usage:
-	printf "Usage: %s --(title|text|xmlUrl|htmlUrl|description)="\""[podcast's search value]"\""\n" "${scripts_name}";
+	printf "Usage: %s --(title|text|xmlUrl|htmlUrl|description)="\""[podcast's search value]"\""\n" "${scripts_basename}";
 	goto exit_script;
 #usage:
 
@@ -278,21 +280,61 @@ parse_argv:
 	while ( $arg < $argc )
 		@ arg++;
 		
-		set equals="";
-		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?${eol}/\3/'`";
-		if( "${value}" != "" ) then
-			set equals="=";
-		else
-		endif
+		if( ${?debug} || ${?diagnostic_mode} )		\
+			printf "**%s debug:** Checking argv #%d (%s).\n" "${scripts_basename}" "${arg}" "$argv[$arg]";
 		
-		set dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?${eol}/\1/'`";
+		set dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\1/'`";
 		if( "${dashes}" == "$argv[$arg]" ) set dashes="";
 		
-		set option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)=?['\''"\""]?(.*)['\''"\""]?${eol}/\2/'`";
+		set option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\2/'`";
 		if( "${option}" == "$argv[$arg]" ) set option="";
 		
-		if( ${?debug} )		\
-			printf "Checking argv #%d (%s).\n\tParsed option: %s%s%s%s\n" "${arg}" "$argv[$arg]" "${dashes}" "${option}" "${equals}" "${value}";
+		set equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\3/'`";
+		if( "${equals}" == "$argv[$arg]" ) set equals="";
+		
+		set equals="";
+		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\4/'`";
+		if( "${value}" != "" && "${value}" != "$argv[$arg]" ) then
+			set equals="=";
+		else if( "${option}" != "" ) then
+			@ arg++;
+			if( ${arg} > ${argc} ) then
+				@ arg--;
+			else
+				set test_dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\1/'`";
+				set test_option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\2/'`";
+				set test_equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\3/'`";
+				set test_value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?${eol}/\4/'`";
+				
+				if( ${?debug} || ${?diagnostic_mode} )	\
+					printf "\tparsed %sargv[%d] (%s) to test for replacement value.\n\tparsed %stest_dashes: [%s]; %stest_option: [%s]; %stest_equals: [%s]; %stest_value: [%s]\n" \$ "${arg}" "$argv[$arg]" \$ "${test_dashes}" \$ "${test_option}" \$ "${test_equals}" \$ "${test_value}";
+				
+				if(!("${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]")) then
+					@ arg--;
+				else
+					set equals="=";
+					set value="$argv[$arg]";
+				endif
+				unset test_dashes test_option test_equals test_value;
+			endif
+		endif
+		
+		if( "`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
+			set value="`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\""`";
+		endif
+		
+		if( "`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
+			set value="`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_cwd}\2/"\""`";
+		endif
+		
+		@ parsed_argc++;
+		if(! ${?parsed_argv} ) then
+			set parsed_argv=("${dashes}${option}${equals}${value}");
+		else
+			set parsed_argv=($parsed_argv "${dashes}${option}${equals}${value}");
+		endif
+		if( ${?debug} || ${?diagnostic_mode} )	\
+			printf "\tparsed option %sparsed_argv[%d]: %s\n" \$ "$parsed_argc" "$parsed_argv[$parsed_argc]";
 		
 		switch ( "${option}" )
 			case "fetch-all":
@@ -344,11 +386,12 @@ parse_argv:
 				endif
 				
 				set save_script="$argv[$arg]";
-				printf "Downloads will be saved to: <file://%s>\n" "${save_to_dir}";
+				printf "Enclosures will not be downloaded but instead the script: <file://%s> will be created.\n" "${save_script}";
 				
 				breaksw;
 			
 			case "l":
+			case "ls":
 			case "list":
 			case "list-episodes":
 				set list_episodes;
@@ -373,6 +416,7 @@ parse_argv:
 				else
 					set podcast_xmlUrl="${value}";
 				endif
+				set argv[$arg]="";
 				breaksw;
 			
 			case "f":
@@ -405,13 +449,14 @@ parse_argv:
 				endif
 				
 				breaksw;
-		
+			
 			case "htmlUrl":
 			case "title":
 			case "text":
 			case "description":
 				set alacasts_catalog_search_attribute="${option}";
 				set alacasts_catalog_search_phrase="${value}";
+				set argv[$arg]="";
 				breaksw;
 			
 			case "d":
@@ -445,7 +490,7 @@ parse_argv:
 				breaksw;
 			
 			default:
-				printf "--%s is not supported by %s.\n" "${option}" "${scripts_name}" > /dev/stderr;
+				printf "--%s is not supported by %s.\n" "${option}" "${scripts_basename}" > /dev/stderr;
 			breaksw;
 		endsw
 	end
