@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Action/Adventure&apos;s podcast novels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[A Night Comes! -Square of the Moon-]]>" xmlUrl="http://anightcomes.libsyn.org/rss" type="rss" text="<![CDATA[A Night Comes! -Square of the Moon-]]>" htmlUrl="http://www.anightcomes.com/" description="<![CDATA[Can a ragtag group of teenagers really be the city&apos;s first and only defense against the demons that stalk the night?  When a mysterious second moon appears in the sky, everything in the city of Kokura, Japan begins to change. The Astronomical Agency observed this new moon and concluded that it simply doesn&apos;t exist; we see it, yet it isn&apos;t there. What can it be? Following the appearance of this new moon are dangerous monsters that began to appear and affect the city as a whole. The monsters are referred to as &#34;Kasha&#34; by those that know about them, after the demonic forms that they take on.  However, a group of teenagers with special abilites in Kokura High, known as the Astronomy Club, have begun their own search to discover the purpose of this new moon. The Astonomy Club is simply a front for these students, who are both fighting the monsters that are attacking the city as well as scouting the city for people with abilities just like theirs. Their newest target is unsuspecting Ryou Hamura, a third year student whose only obstacle standing between he and graduation is Physics class. But as it turns out, the boy who&apos;s failing Physics and cares only about playing baseball in the States may be Kokura City&apos;s last hope...]]>" />
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

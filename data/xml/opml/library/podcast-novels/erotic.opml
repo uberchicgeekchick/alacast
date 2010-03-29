@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Romantic podnovels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Jujun]]>" xmlUrl="http://www.podiobooks.com/title/jujun/feed/" type="rss" text="<![CDATA[Jujun - a free audiobook by Graydancer]]>" htmlUrl="http://www.podiobooks.com/title/jujun/" description="<![CDATA[In Nawashi, Brian Stanford discovered the world is filled with mages who use sexual magic to achieve their goals - whether freedom or repression. Drawn into the struggle is his wife, Bec, captured by the Mauls, soldiers of the Wrinkled Man. Bec is taken into the dark underworld of New York's sex trade, to be used as a pawn against her husband.But the Wrinkled Man has not accounted for her own strength, and even as she is drawn further into the ordeal path Bec fights her own battles against the repressors. It is a fight for her body, mind, and soul - and in the dark world of sexual magic, survival may not mean victory.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

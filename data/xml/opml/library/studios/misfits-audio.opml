@@ -5,6 +5,8 @@
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[&apos;s hompage]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from 1st Draft Production]]>" description="<![CDATA[Podcast audio dramas from 1st Draft Production]]>" />-->
+		<outline title="<![CDATA[Misfits Audio]]>" xmlUrl="http://misfitsaudio.com/comments/?feed=podcast" type="rss" text="<![CDATA[Misfits Audio]]>" htmlUrl="http://misfitsaudio.com/" description="<![CDATA[MisfitsAudio Productions: Audio Drama &amp; Radio Plays.  Audio Drama for everyone.]]>"/>
+		<outline title="<![CDATA[Pristinely Ungifted]]>" xmlUrl="http://misfitsaudio.com/comments/archives/category/pristinely-ungifted/feed" type="rss" text="<![CDATA[MisfitsAudio Productions &#187; Pristinely Ungifted]]>" htmlUrl="http://misfitsaudio.com/comments/" description="<![CDATA[Jennsen's twin sister, who has been in hiding, finally discovers the family she has never known. After being sent to the safety of Thandor, she realizes the Sisters of Light are not what they appear to be.]]>" />
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
 		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->

@@ -69,9 +69,9 @@ if( "${message}" != "" && "${feed}" != "" ) printf "Attempting to %s:\n\t<%s>\n"
 if( ${?TCSH_RC_DEBUG} ) echo "Running:\n\t./${gPodder_script} --local ${argz}";
 cd "${gPodders_path}";
 if( ! ${?OUTPUT_STDERR} ) then
-	./${gPodder_script} --local "${argz}";
+	nice +5 ./${gPodder_script} --local "${argz}";
 else
-	./${gPodder_script} --local "${argz}" >& /dev/null;
+	nice +5 ./${gPodder_script} --local "${argz}" >& /dev/null;
 endif
 cd "${owd}";
 if(! ${?gpodder_run_once} ) goto next_argv;

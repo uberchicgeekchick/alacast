@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>urban fantasy podcasted audio dramas from: &apos;s &amp; podcast novels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[&apos;s hompage]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from 1st Draft Production]]>" description="<![CDATA[Podcast audio dramas from 1st Draft Production]]>" />-->
+		<outline title="<![CDATA[Guardians - a free podcast novel by Kimi Alexandre]]>" xmlUrl="http://www.guardiansnovel.com/feed/" type="rss" text="<![CDATA[Guardians - a free audiobook by Kimi Alexandre]]>" htmlUrl="http://www.guardiansnovel.com/" description="<![CDATA[<h3>They have always been with us...</h3><h1>Guardians</h1><p>An Urban Fantasy Podcast Novel, Reagan Fischer finds herself mixed up with angels and demons when all she wanted to do was protect her socialite clients.</p>]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Archangel - a free podcast novel by Scott Roche]]>" xmlUrl="http://feeds.feedburner.com/Archangel?format=xml" type="rss" text="<![CDATA[Archangel - a free audiobook by Scott Roche]]>" htmlUrl="http://www.archangelnovel.com/wp" description="<![CDATA[Matthew York took the sniper skills he honed in the deserts to the streets of a city corrupted by supernatural evil.  His decision would have consequences that even he couldn't imagine as chunks of his life are obliterated by the powerful forces he now confronts.  Unexpected allies, from organized crime to the very police force hunting him, come to his aid in the conflict.  Will they have what it takes to combat the demonic beings behind the scenes?  And if so at what cost?]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

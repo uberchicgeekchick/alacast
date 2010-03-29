@@ -66,9 +66,14 @@ while( "${1}" != "" )
 	shift;
 end
 
-if(! ${?attrib} ) set attrib="title";
-if(! ${?value} ) set value="${1}";
-if(! ${?output} ) set output="${attrib}";
+	if(! ${?value} )	\
+		goto usage;
+	
+	if(! ${?attrib} )	\
+		set attrib="title";
+	
+	if(! ${?output} )	\
+		set output="${attrib}";
 
 alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename --line-number --initial-tab --no-messages --perl-regexp";
 alias ex "ex -E -n -X --noplugin";
@@ -108,6 +113,6 @@ end
 exit
 
 usage:
-	printf "Usage| %s [--verbose] [--title(default)|description|link|url|guid|pubData=]'search_term' [attribute to display, defaults to title]\n" `basename "${0}"`
+	printf "Usage| %s [--help] [--verbose] [--output=[title(default)|description|link|url|guid|pubDate]attribute to display, defaults to title] [--title(default)|description|link|url|guid|pubDate=]'search_term'\n" `basename "${0}"`
 	exit
 

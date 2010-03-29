@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[D-Ranger]]>" xmlUrl="http://dranger.kungfuactiontheatre.com/?feed=rss2" type="rss" text="<![CDATA[D-Ranger]]>" htmlUrl="http://dranger.kungfuactiontheatre.com/" description="<![CDATA[Brad Ryans is thrust into a battle that has raged across the multiverse when he recieves a mysterious package meant for his counterpart in another reality. Now, with his new companion Pixelle, Brad must use the powers of the D-Shifter to fight a lonely war against the Blood Reign Syndicate- interdimensional raiders planning to take everything of value from our world and leave it a lifeless husk.]]>" />
+		<outline title="<![CDATA[Team Iron Angel]]>" xmlUrl="http://teamironangel.kungfuactiontheatre.com/?feed=rss2" type="rss" text="<![CDATA[Team Iron Angel]]>" htmlUrl="http://teamironangel.kungfuactiontheatre.com/" description="<![CDATA[Team Iron Angel is a group of 4 women working as superhuman agents for the Arclight Securities corporation dealing with security situations where normal agents are out of their league. The group is named after it&apos;s leader, Lieutenant Casey Stone, a strong and capable woman trapped in a suit of powered armour that she herself helped design. Accompanying her are Karin St. Laurent (a rune sorceress), Miki Kethumbwe (speedster and tracker), and Hyang-Sook Soong (healer and shaman).]]>" />
+		<outline title="<![CDATA[Twin Stars]]>" xmlUrl="http://twinstars.kungfuactiontheatre.com/?feed=rss2" type="rss" text="<![CDATA[Twin Stars]]>" htmlUrl="http://twinstars.kungfuactiontheatre.com/" description="<![CDATA[Twin Stars is an epic space opera adventure audio drama set during the dying days of humanitys first empire of the stars.]]>" />
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

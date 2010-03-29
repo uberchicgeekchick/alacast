@@ -26,10 +26,59 @@ else
 		export ALACAST_INI="${alacast_ini}";
 	fi
 	
+	export PATH="`printf '${PATH}' | sed -r 's/\/projects\/(cli|gtk)\/alacast(\/[^\:]*\:)?//g'`";
+	
 	export ALACASTS_CLI_PATH="/projects/cli/alacast";
-	export PATH="${PATH}:${ALACASTS_CLI_PATH}/bin:${ALACASTS_CLI_PATH}/scripts:${ALACASTS_CLI_PATH}/helpers/gpodder-0.11.3-hacked/bin:${ALACASTS_CLI_PATH}/helpers/gpodder-0.11.3-hacked/scripts";
-	export ALACASTS_GTK_PATH="/projects/gtk/alacast";
-	export PATH="${PATH}:${ALACASTS_GTK_PATH}/bin:${ALACASTS_GTK_PATH}/scripts";
+	set alacast_cli_paths=["bin" "scripts" "helpers/gpodder-0.11.3-hacked/bin" "helpers/gpodder-0.11.3-hacked/scripts"];
+	for alacast_cli_path in ${alacast_cli_paths}; do
+		if test -z ${TCSH_RC_DEBUG}; then
+			printf "Attempting to add: [file://%s] to your PATH:\t\t" "${alacast_cli_path}";
+		fi
+		set alacast_cli_path="${ALACAST_CLI_PATH}/${alacast_cli_path}";
+		set escaped_alacast_cli_path="`printf '${alacast_cli_path}' | sed -r 's/\//\\\//g'`";
+		if test "`printf '${PATH}' | sed -r 's/.*\:(${escaped_alacast_cli_path}).*/\1/g'`" == "${alacast_cli_path}"; then
+			continue;
+		fi
+		
+		if ! test -z ${TCSH_RC_DEBUG}; then
+			printf "[added]\n";
+		fi
+		
+		if ! test ${alacasts_path}; then
+			set alacasts_path="${alacast_cli_path}";
+		else
+			set alacasts_path="${alacasts_path}:${alacast_cli_path}";
+		fi
+	done
+	unset alacast_cli_path alacast_cli_paths;
+	
+	
+	
+	export ALACAST_GTK_PATH="/projects/gtk/alacast";
+	set alacast_gtk_paths=["bin" "scripts"];
+	for alacast_gtk_path in ${alacast_gtk_paths}; do
+		if test -z ${TCSH_RC_DEBUG}; then
+			printf "Attempting to add: [file://%s] to your PATH:\t\t" "${alacast_gtk_path}";
+		fi
+		set alacast_gtk_path="${ALACAST_GTK_PATH}/${alacast_gtk_path}";
+		set escaped_alacast_gtk_path="`printf '${alacast_gtk_path}' | sed -r 's/\//\\\//g'`";
+		if test "`printf '${PATH}' | sed -r 's/.*\:(${escaped_alacast_gtk_path}).*/\1/g'`" == "${alacast_gtk_path}"; then
+			continue;
+		fi
+		
+		if ! test -z ${TCSH_RC_DEBUG}; then
+			printf "[added]\n";
+		fi
+		
+		if ! test ${alacasts_path}; then
+			set alacasts_path="${alacast_gtk_path}";
+		else
+			set alacasts_path="${alacasts_path}:${alacast_gtk_path}";
+		fi
+	done
+	unset alacast_gtk_path alacast_gtk_paths;
+	
+	alias "alacast:feed:fetch-all:enclosures.tcsh"="${ALACASTS_GTK_PATH}alacast:feed:fetch-all:enclosures.tcsh --disable=logging"
 	
 	export ALACASTS_OPTIONS='--logging --titles-reformat-numerical --titles-append-pubdate --playlist=m3u --strip-characters=#;!';
 	

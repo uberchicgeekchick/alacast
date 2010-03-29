@@ -45,7 +45,7 @@ sub search_catalog{
 		chomp($opml_file);
 		if( "$opml_file" eq "" ) { next; }
 		$opml_file=~s/'/\'/g;
-		my $grep_command=sprintf("/usr/bin/grep --binary-files=without-match --with-filename -i --perl-regex '.*%s=[\"][^\"]\*%s[^\"]\*[\"]' %s%s%s", $global_search_attribute, $global_search_attributes_value, '"', $opml_file, '"' );
+		my $grep_command=sprintf("/bin/grep --binary-files=without-match --with-filename --perl-regex -i '.*%s=[\"][^\"]\*%s[^\"]\*[\"]' %s%s%s", $global_search_attribute, $global_search_attributes_value, '"', $opml_file, '"' );
 		foreach my $opml_and_outline ( `$grep_command` ){
 			$opml_and_outline=~s/[\r\n]+//g;
 			if( $opml_and_outline=~/^.*\<!\-\-.*\-\-\>$/ ){ next; }

@@ -42,11 +42,13 @@ update_index_opml:
 	printf '<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n\t<head>\n\t\t<title>NPR'\''s podcasts</title>\n\t</head>\n\t<body>' >! 'index.opml';
 	
 	ex '+6r index.opml.tmp' '+wq!' 'index.opml' > /dev/null;
+	rm "index.opml.tmp";
 #update_index_opml:
 
 find_xmlUrls:
 	if( -e "missing.xmlUrls.log" )	\
 		rm "missing.xmlUrls.log";
+	
 	touch "missing.xmlUrls.log";
 	
 	if( -e "podcast.html" )	\
