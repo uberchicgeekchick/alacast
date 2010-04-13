@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>P. C. Haring&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Cybrosis]]>" xmlUrl="http://feeds.feedburner.com/cybrosis?format=xml" type="rss" htmlUrl="http://www.cybrosisnovel.com/" text="<![CDATA[Cybrosis - A podcast novel by P.C. Haring]]>" description="<![CDATA[Cybrosis is a podcast novel written and narrated by P.C. Haring with the voice talents of some of the biggest names in the podcasting community including Philippa Ballantine, Christiana Ellis, Podcasting’s Rich Sigfrit, Mur Lafferty, Chris Lester, Chuck Tomasi, and Heather Welliver.&nbsp; This full length podcast novel hacks your RSS feeds on 01/01/10]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by P. C. Haring]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

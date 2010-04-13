@@ -80,8 +80,10 @@
 		
 		public function __construct( $alacasts_path, $profiles_path, $update_type, $nice, $debug ) {
 			$this->profiles_path=$profiles_path;
-			$this->starting_dir = exec( "pwd" );
-			$this->working_dir = dirname( $_SERVER['argv'][0] );
+			$this->starting_dir=exec( "pwd" );
+			chdir( dirname( $_SERVER['argv'][0] ) );
+			$this->working_dir=exec( "pwd" );
+			chdir( $this->starting_dir );
 			
 			$this->podcatcher_path=NULL;
 			$this->podcatcher=NULL;
@@ -91,7 +93,7 @@
 			$this->update=new update( $update_type, $nice, $debug );
 			
 			$this->command=$this->set_podcatcher($alacasts_path);
-		}//method:public function __construct( ALACASTS_PATH, 1-20, $profiles_path = "~/.config/gpodder/gpodder.conf" );
+		}//method:public function __construct( ALACASTS_PATH, 1-20, $profiles_path="~/.config/gpodder/gpodder.conf" );
 
 		
 		
@@ -127,9 +129,10 @@
 			$this->set_status( TRUE, TRUE );
 			
 			if(!$this->update->debug)
-				$error_output=" 2> /dev/stderr";
+				$error_output=" 2> /dev/null";
 			else{
 				$GLOBALS['alacast']->logger->output("Running Podcatcher backend in debug mode.", TRUE);
+				$error_output=" 2> /dev/stderr";
 				$error_output=" 2>> \"{$error_log_file}\"";
 			}
 			
@@ -181,9 +184,9 @@
 					$GLOBALS['alacast']->logger->output("Another process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
 				}else{
 					if(!$downloading)
-						$this->status = "syncronizing";
+						$this->status="syncronizing";
 					else
-						$this->status = "downloading";
+						$this->status="downloading";
 					touch("{$this->profiles_path}/.status.{$this->status}");
 				}
 			}
@@ -201,7 +204,7 @@
 			);
 			if(!$starting)
 				$this->status="waiting";
-		}//method:public function set_status( $action = "running", $finished = false );
+		}//method:public function set_status( $action="running", $finished=false );
 		
 		public function destruct() {
 			chdir( $this->starting_dir );

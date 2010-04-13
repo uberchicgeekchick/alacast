@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>Public Radio International&#039;s News &amp; Podcasts</title>
+		<title>Public Radio International&apos;s News &amp; Podcasts</title>
 	</head>
 	<body>
 		<outline title="<![CDATA[PRI.Org]]>" url="http://www.pri.org/" type="link" text="<![CDATA[Public Radio International]]>" description="<![CDATA[Podcasts from <a href='http://www.pri.org/'>P.R.I.</a>: Public Radio International]]>"/>
 		<outline title="<![CDATA[The Changing World]]>" xmlUrl="http://www.publicbroadcasting.net/theworld/podcasts/6503.xml" type="rss" text="<![CDATA[The Changing World from P.R.I.]]>" htmlUrl="http://www.publicbroadcasting.net/theworld/podcasts/6503.xml" description="<![CDATA[The Changing World from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
-		<outline title="<![CDATA[Echoes]]>" xmlUrl="http://echoes.org/podcasts/feed" type="rss" text="<![CDATA[Echoes from P.R.I.]]>" htmlUrl="http://echoes.org/podcasts/feed" description="<![CDATA[Echoes from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
+		<outline title="<![CDATA[Echoes]]>" xmlUrl="http://echoes.org/podcasts/feed" type="rss" text="<![CDATA[Echoes from P.R.I.]]>" htmlUrl="http://echoes.org/podcasts/" description="<![CDATA[Echoes from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
 		<outline title="<![CDATA[To the Best of Our Knowledge]]>" xmlUrl="http://www.npr.org/rss/podcast.php?id=510011&uid=p2qe4e85742c986fdb81d2d38ffa0d5d53" type="rss" text="<![CDATA[PRI: To the Best of Our Knowledge Podcast]]>" htmlUrl="http://wpr.org/book/" description="<![CDATA[Each week, To the Best of Our Knowledge brings you two hours of in-depth interviews with nationally and internationally-known guests whose passion for new ideas will challenge and engage. Hosted by Jim Fleming, this interview magazine is thoughtful and penetrating, and features fascinating topics and guests.]]>"/>
 		<outline title="<![CDATA[BBC World Service Global News]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/globalnews/rss.xml" type="rss" text="<![CDATA[BBC World Service Global News from P.R.I.]]>" htmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/globalnews/rss.xml" description="<![CDATA[BBC World Service Global News from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>
 		<outline title="<![CDATA[BBC World Have Your Say]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/whys/rss.xml" type="rss" text="<![CDATA[BBC World Have Your Say from P.R.I.]]>" htmlUrl="http://downloads.bbc.co.uk/podcasts/worldservice/whys/rss.xml" description="<![CDATA[BBC World Have Your Say from <a href='http://www.pri.org/'>PRI.Org - Public Radio International</a>]]>"/>

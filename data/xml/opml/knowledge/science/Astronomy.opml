@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&apos;s News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Slacker Astronomy]]>" xmlUrl="http://www.slackerastronomy.org/slack-live.xml" type="rss" text="<![CDATA[Slacker Astronomy podcast]]>" htmlUrl="http://www.slackerastronomy.org/" description="<![CDATA[An irreverent astronomical road-less-traveled.]]>"/>
+		<outline title="<![CDATA[365 Days of Astronomy]]>" xmlUrl="http://feeds.feedburner.com/365DaysOfAstronomy?format=xml" type="rss" text="<![CDATA[The 365 Days of Astronomy, the daily podcast of the International Year of Astronomy 2009]]>" htmlUrl="http://365daysofastronomy.org/" description="<![CDATA[The 365 Days of Astronomy Podcast is a project that is publishing one podcast per day, 5 to 10 minutes in duration, for all 365 days of 2009. The podcast episodes are written, recorded and produced by people around the world.]]>"/>
+		<outline title="<![CDATA[Universe Today]]>" type="rss" xmlUrl="http://www.universetoday.com/audio.xml" htmlUrl="http://www.universetoday.com/" text="<![CDATA[Universe Today]]>" description="<![CDATA[Audio edition of Universe Today - space news from around the Internet.]]>"/>
+		<outline title="<![CDATA[Astronomy Cast]]>" xmlUrl="http://www.astronomycast.com/podcast.xml" type="rss" text="<![CDATA[Astronomy Cast]]>" description="<![CDATA[Astronomy Cast offers you a fact based journey through the cosmos. Each week Fraser Cain (Universe Today) and Dr. Pamela Gay (SIUE / Slacker Astronomy) take on topics ranging from the nearby planets to ubiquitous dark matter.]]>"/>
+		<outline title="<![CDATA[Ask an Astronomer]]>" xmlUrl="http://coolcosmos.ipac.caltech.edu/cosmic_classroom/ask_astronomer/video/podcast/askfeed.xml" type="rss" text="<![CDATA[Ask an Astronomer]]>" htmlUrl="http://coolcosmos.ipac.caltech.edu/cosmic_classroom/ask_astronomer/" description="<![CDATA[Ask an Astronomer]]>"/>
+		<outline title="<![CDATA[Astrobiology Magazine]]>" xmlUrl="http://www.astrobio.net/podcast.xml" type="rss" text="<![CDATA[Astrobiology Magazine]]>" htmlUrl="http://www.astrobio.net/" description="<![CDATA[Astrobiology Magazine]]>"/>
+		<outline title="<![CDATA[Hubble&#39;s Universe]]>" xmlUrl="http://hubblesite.org/explore_astronomy/hubbles_universe/quicktime-640.xml" type="rss" text="<![CDATA[Hubble&#39;s Universe]]>" htmlUrl="http://hubblesite.org/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Steve Simons&apos;s podcast novels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[&apos;s audio dramas]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from ]]>" description="<![CDATA[Podcast audio dramas from ]]>" />-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Loner In Space]]>" xmlUrl="http://www.podiobooks.com//title/loner-in-space/feed/" type="rss" text="<![CDATA[Loner In Space - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/loner-in-space/" description="<![CDATA[<h1>Loner In Space by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<outline title="<![CDATA[Regenis 4 Chronicles (Book 1)]]>" xmlUrl="http://www.podiobooks.com//title/regenis-4-chronicles/feed/" type="rss" text="<![CDATA[Regenis 4 Chronicles (Book 1) - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/regenis-4-chronicles/" description="<![CDATA[<h1>Regenis 4 Chronicles (Book 1) by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<outline title="<![CDATA[Regenis 4 Chronicles Book 2 - The Invisible Foe]]>" xmlUrl="http://www.podiobooks.com//title/regenis-4-chronicles-2/feed/" type="rss" text="<![CDATA[Regenis 4 Chronicles Book 2 - The Invisible Foe - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/regenis-4-chronicles-2/" description="<![CDATA[<h1>Regenis 4 Chronicles Book 2 - The Invisible Foe by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<outline title="<![CDATA[The Gateway]]>" xmlUrl="http://www.podiobooks.com//title/the-gateway/feed/" type="rss" text="<![CDATA[The Gateway - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/the-gateway/" description="<![CDATA[<h1>The Gateway by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<outline title="<![CDATA[The Sphere Of Time]]>" xmlUrl="http://www.podiobooks.com//title/the-sphere-of-time/feed/" type="rss" text="<![CDATA[The Sphere Of Time - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/the-sphere-of-time/" description="<![CDATA[<h1>The Sphere Of Time by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<outline title="<![CDATA[The Sphere Of Travel (TSOT2)]]>" xmlUrl="http://www.podiobooks.com//title/the-sphere-of-travel/feed/" type="rss" text="<![CDATA[The Sphere Of Travel (TSOT2) - A free audiobook by Steve Simons]]>" htmlUrl="http://www.podiobooks.com//title/the-sphere-of-travel/" description="<![CDATA[<h1>The Sphere Of Travel (TSOT2) by Steve Simons</h1><p>Steve Simons</p>]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

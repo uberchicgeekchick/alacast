@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>O&#039;Reilly podcasts</title>
+		<title>O&apos;Reilly podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Friends of O&#039;Reilly]]>" xmlUrl="http://www.oreillynet.com/pub/feed/32?format=rss2" type="rss" text="<![CDATA[Friends of O&#039;Reilly]]>" htmlUrl="http://www.oreillynet.com/foocasts/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Friends of O&apos;Reilly]]>" xmlUrl="http://www.oreillynet.com/pub/feed/32?format=rss2" type="rss" text="<![CDATA[Friends of O&apos;Reilly]]>" htmlUrl="http://www.oreillynet.com/foocasts/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Digital Media Insider]]>" xmlUrl="http://www.oreillynet.com/pub/feed/72?format=rss2" type="rss" text="<![CDATA[Digital Media Insider]]>" htmlUrl="http://digitalmedia.oreilly.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

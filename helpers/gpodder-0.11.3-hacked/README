@@ -34,6 +34,12 @@
    * python-gtk2 (minimum 2.6, but >= 2.12 recommended)
    * python-glade2
    * python-feedparser
+   * On OpenSuSE:
+		i | python-gtk                            | package    | 2.16.0-2.3                 | x86_64 | repo-oss                  
+		i | libxml2-python                        | package    | 2.7.3-2.2                  | x86_64 | repo-oss                  
+		i | python-feedparser                     | package    | 4.1-12.1                   | noarch | devel:tools:scm(mercurial)
+		i | python-feedparser                     | package    | 4.1-12.1                   | noarch | devel:languages:python    
+   * (On OpenSuSE: python-feedparser, python-pymad, python-gtk, python-xml, python-urlgrabber, )
  
  Additional dependencies for iPod synchronization support:
 

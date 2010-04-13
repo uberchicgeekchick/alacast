@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>&#039;s Videos &amp; Vodcasts</title>
+		<title>&apos;s Videos &amp; Vodcasts</title>
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="EPIC FU" type="rss" xmlUrl="http://jetset.blip.tv/?skin=rss" text="EPIC FU" htmlUrl="http://epicfu.com/" description="EPIC FU is your guide to what the web is buzzing about. It&#039;s a new kind of web show -- interactive and immersive. We think of ourselves as the owner&#039;s manual for the web.  Created by Zadi Diaz and Steve Woolf, EPIC FU is all about the things that make us geek out -- the coolest art, tech, and music from the online and offline world. The new popular culture is about the influence of web culture on the mainstream. EPIC FU is a new way of thinking about popular culture -- it&#039;s about conversation and interaction. Entertainment is a two-way street now.  EPIC FU is a Webby Award Winner and a two-time nominee with a large and growing audience."/>
+		<outline title="EPIC FU" type="rss" xmlUrl="http://jetset.blip.tv/?skin=rss" text="EPIC FU" htmlUrl="http://epicfu.com/" description="EPIC FU is your guide to what the web is buzzing about. It&apos;s a new kind of web show -- interactive and immersive. We think of ourselves as the owner&apos;s manual for the web.  Created by Zadi Diaz and Steve Woolf, EPIC FU is all about the things that make us geek out -- the coolest art, tech, and music from the online and offline world. The new popular culture is about the influence of web culture on the mainstream. EPIC FU is a new way of thinking about popular culture -- it&apos;s about conversation and interaction. Entertainment is a two-way street now.  EPIC FU is a Webby Award Winner and a two-time nominee with a large and growing audience."/>
 	<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

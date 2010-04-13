@@ -4,7 +4,7 @@
 		<title>Social Media News &amp; Podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Citizen Garden]]>" xmlUrl="http://feeds2.feedburner.com/CitizenGarden?format=xml" type="rss" text="<![CDATA[Citizen Garden]]>" htmlUrl="http://citizengarden.com/" description="<![CDATA[Citizen Garden: Seeding the citizen web.]]>"/>
+		<outline title="<![CDATA[Citizen Garden]]>" xmlUrl="http://feeds.feedburner.com/CitizenGarden?format=xml" type="rss" text="<![CDATA[Citizen Garden]]>" htmlUrl="http://citizengarden.com/" description="<![CDATA[Citizen Garden: Seeding the citizen web.]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

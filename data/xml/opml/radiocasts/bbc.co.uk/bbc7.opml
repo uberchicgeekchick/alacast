@@ -4,8 +4,8 @@
 		<title>Podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[CBeebies Best Bits]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/cbeebies/rss.xml" type="rss" text="<![CDATA[CBeebies Best Bits from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/cbeebies/" description="<![CDATA[CBeebies favourites, fun, songs and stories for those under 6..]]>"/>
-		<outline title="<![CDATA[Doctor Who: The Commentaries]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/doctorwho/rss.xml" type="rss" text="<![CDATA[Doctor Who: The Commentaries from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/doctorwho/" description="<![CDATA[The cast and crew of Doctor Who take you behind the scenes with fascinating facts.]]>"/>
-		<outline title="<![CDATA[World News For Children]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/wnc/rss.xml" type="rss" text="<![CDATA[World News For Children from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/wnc/" description="<![CDATA[4 minute weekday news bulletin for 7-14 year olds. Accompanying scripts available.]]>"/>
+		<outline title="<![CDATA[CBeebies Best Bits]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/cbeebies/rss.xml" type="rss" text="<![CDATA[CBeebies Best Bits from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/cbeebies/" description="<![CDATA[CBeebies favourites, fun, songs and stories for those under 6..]]>"/>
+		<outline title="<![CDATA[Doctor Who: The Commentaries]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/doctorwho/rss.xml" type="rss" text="<![CDATA[Doctor Who: The Commentaries from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/doctorwho/" description="<![CDATA[The cast and crew of Doctor Who take you behind the scenes with fascinating facts.]]>"/>
+		<outline title="<![CDATA[World News For Children]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/wnc/rss.xml" type="rss" text="<![CDATA[World News For Children from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/wnc/" description="<![CDATA[4 minute weekday news bulletin for 7-14 year olds. Accompanying scripts available.]]>"/>
 	</body>
 </opml>

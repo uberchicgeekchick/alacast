@@ -4,7 +4,7 @@
 		<title>abc.net.au podcasts</title>
 	</head>
 	<body>
-		<outline type="link" title="<![CDATA[triple j]]>" url="http://triplej.net.au/" text="<![CDATA[]]>" description="<![CDATA[triple j&#039; homepage]]>"/>
+		<outline type="link" title="<![CDATA[triple j]]>" url="http://triplej.net.au/" text="<![CDATA[]]>" description="<![CDATA[triple j&apos; homepage]]>"/>
 		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" text="<![CDATA[]]>" xmlUrl="" description="<![CDATA[]]>"/>-->
 		
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

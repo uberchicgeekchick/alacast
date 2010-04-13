@@ -33,8 +33,11 @@ usage:
 parse_argv:
 	if(! ${?eol} ) setenv eol '$';
 	while( "${1}" != "" )
-		set argument="`echo '${1}' | sed -r 's/\-\-([^=]+)=?(.*)${eol}/\1/'`";
-		set value="`echo '${1}' | sed -r 's/\-\-([^=]+)=?(.*)${eol}/\2/'`";
+		set argument="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\1/'`";
+		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\2/'`";
+		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\3/'`";
+		if( "${value}" == "" && "${equals}" == "" "${2}" != "" )	\
+			set value="${2}";
 		
 		switch( "${argument}" )
 			case "help":

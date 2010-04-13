@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>&#039;s News &amp; Podcasts</title>
+		<title>&apos;s News &amp; Podcasts</title>
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Hi, Tony!]]>" xmlUrl="http://www.tonykahn.com/Hi_Tony/Stories/rss.xml" type="rss" text="<![CDATA[Hi, Tony!]]>" htmlUrl="http://www.tonykahn.com/" description="<![CDATA[The stories you&#0039;ve told us so far and we&#0039;ve told you.  Tony Kahn, host of the popular WGBH Morning Stories podcast, with more unforgettable stories from people around the world.]]>"/>
+		<outline title="<![CDATA[Hi, Tony!]]>" xmlUrl="http://www.tonykahn.com/Hi_Tony/Stories/rss.xml" type="rss" text="<![CDATA[Hi, Tony!]]>" htmlUrl="http://www.tonykahn.com/" description="<![CDATA[The stories you&apos;ve told us so far and we&apos;ve told you.  Tony Kahn, host of the popular WGBH Morning Stories podcast, with more unforgettable stories from people around the world.]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>

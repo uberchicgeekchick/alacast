@@ -42,7 +42,7 @@
 			for($i=0; $i<$podcasts_info['total']; $i++)
 				for( $a=0; $a<$limit; $a++ )
 					for( $n=0; $n<$this->renumbering_regexp[$a]['total']; $n++ )
-						if( (preg_match(
+						while( (preg_match(
 							$this->renumbering_regexp[$a][$n][0],
 							$podcasts_info[$i]
 						)) ){
@@ -50,7 +50,8 @@
 							$podcasts_info[$i] = preg_replace(
 								$this->renumbering_regexp[$a][$n][0],
 								$this->renumbering_regexp[$a][$n][1],
-								$podcasts_info[$i]
+								$podcasts_info[$i],
+								-1
 							);
 							/*printf("\tRenamed to: %s\n", $podcasts_info[$i]);*/
 						}

@@ -50,7 +50,7 @@ init:
 		endif
 	endif
 	
-	set alacast_search_pl_script="alacast:search.pl";
+	set alacast_search_pl_script="alacast:search:catalogs.pl";
 	set alacast_search_pl="`dirname '${0}'`/${alacast_search_pl_script}";
 	if(! -x "${alacast_search_pl}" ) then
 		foreach alacast_search_pl("`where '${alacast_search_pl_script}'`")
@@ -245,7 +245,7 @@ fetch_podcasts:
 exit_script:
 	if( ${?eol_set} ) unset eol_set eol;
 	if(! ${?keep_feed} ) then
-		rm -v "./.${alacasts_catalog_search_results_log_prefix}"*;
+		rm -v "${alacasts_catalog_search_results_log}".*;
 	endif
 	if( ${?starting_dir} ) then
 		cd "${starting_dir}";

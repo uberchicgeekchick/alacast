@@ -17,7 +17,9 @@
 #
 #	Fixing quotes inside of titles, texts, and descriptions:
 #		1,$s/\(title\|text\|description\)\(="<!\[CDATA\[[^"\]]\+\)"\([^\]]\+\]\]>"\)/\1\2\&quot;\3/g
-#		1,$s/\(title\|text\|description\)\(="<!\[CDATA\[[^'\]]\+\)'\([^\]]\+\]\]>"\)/\1\2\&apos;\3/g
+#
+#	Auto-format podiobooks.com search result <tr> into opml outline(s):
+#		1,$s/\v\<tr class\="(even|odd)row.*.*href\=\"(\/title\/[^"]+)\"\>\<img.*alt\=\"([^"]+)\".*\<span class\="smalltext"\>([^\<]+)\<\/class\>\<\/td\>\<td\>(.*)\<br\/\>.*$/\t\t\<outline title\="\<\!\[CDATA\[\3\]\]\>" xmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/feed\/\"\ type\="rss" text\="\<\!\[CDATA\[\3 \- A free audiobook by \4\]\]\>" htmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/" description\="\<\!\[CDATA\[\<h1\>\3 by \4\<\/h1\>\<p>\4\<\/p\>\]\]\>"\ \/>/
 #	
 #	Auto-formatting an RSS' channel & info into an opml <outline>:
 #		For podiobooks.com feeds:

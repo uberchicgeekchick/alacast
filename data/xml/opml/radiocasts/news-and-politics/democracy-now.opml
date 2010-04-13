@@ -4,7 +4,7 @@
 		<title>Democracy Now&apos;s Podcast &amp; Vodcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Democracy Now Audio]]>" xmlUrl="http://www.democracynow.org/podcast.xml" type="rss" text="<![CDATA[Democracy Now&#0039;s audio podcast]]>" htmlUrl="http://www.democracynow.org/" description="<![CDATA[A daily TV/radio news program, hosted by Amy Goodman and Juan Gonzalez, airing on over 750 stations, pioneering the largest community media collaboration in the U.S.]]>"/>
+		<outline title="<![CDATA[Democracy Now Audio]]>" xmlUrl="http://www.democracynow.org/podcast.xml" type="rss" text="<![CDATA[Democracy Now&apos;s audio podcast]]>" htmlUrl="http://www.democracynow.org/" description="<![CDATA[A daily TV/radio news program, hosted by Amy Goodman and Juan Gonzalez, airing on over 750 stations, pioneering the largest community media collaboration in the U.S.]]>"/>
 	</body>
 </opml>
 

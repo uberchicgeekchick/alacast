@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>Ziff Davis&#039; podcasts</title>
+		<title>Ziff Davis&apos; podcasts</title>
 	</head>
 	<body>
-		<!--<outline type="link" title="<![CDATA[website&#039;s homepage]]>" url="http:///" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
+		<!--<outline type="link" title="<![CDATA[website&apos;s homepage]]>" url="http:///" text="<![CDATA[website&apos;s homepage]]>" description="<![CDATA[website&apos;s homepage]]>"/>-->
 		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[CrankyGeeks]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/cgmpeg4video?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://crankygeeks.com/" type="rss" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[dl.tv]]>" xmlUrl="http://feeds.ziffdavis.com/ziffdavis/dltvdivxvideo?format=xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://dl.tv/" type="rss" description="<![CDATA[]]>"/>

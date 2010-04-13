@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Super Hero podcast novels</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[&apos;s audio dramas]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from ]]>" description="<![CDATA[Podcast audio dramas from ]]>" />-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Lightning Splice]]>" xmlUrl="http://zellie.podbean.com/feed/" type="rss" text="<![CDATA[Dreams made Flesh - homepage of:Lightning Splice - a free audiobook by Zellie Blake]]>" htmlUrl="http://zellie.podbean.com/" description="<![CDATA[Science fiction/Fantasy audio chapters, bonus content, interviews, and writing tips.&nbsp; Meet Nighthawk...a master of blades, once blind now his vision is so perfect it hurts.&nbsp; Jack Frost....too cold to touch.&nbsp; And Rose.... well, she's hot?&nbsp; When sickly Analee welcomes a cure for her gene disorder, a side effect makes her the most powerful weapon in a war between patients like her and the genetics corporation that betrayed them.&nbsp; Head over to the main site at http://www.zellie.info/ for bonus scenes, character sketches, and more.]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

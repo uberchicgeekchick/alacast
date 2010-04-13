@@ -6,9 +6,38 @@ set script_name="`basename '${0}'`";
 set search_script="`dirname '${0}'`/gPodder:Search:index.rss.tcsh";
 if(! ${?1} || "${1}" == "" ) goto usage
 
+
+parse_argv:
+	@ arg=0;
+	@ argc=${#argv};
+	while( $arg < $argc )
+		@ arg++;
+		switch("$argv[$arg]")
+			case "--diagnosis":
+			case "--diagnostic-mode":
+				printf "**%s debug:**, via "\$"argv[%d], diagnostic mode\t[enabled].\n\n" "${script_name}" $arg;
+				set diagnostic_mode;
+				break;
+			
+			case "--debug":
+				printf "**%s debug:**, via "\$"argv[%d], debug mode\t[enabled].\n\n" "${script_name}" $arg;
+				set debug;
+				break;
+			
+			default:
+				continue;
+		endsw
+	end
+#parse_argv:
+
+
+
 while ( "${1}" != "" )
-	set option = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\1/g'`";
-	set options_value = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\2/g'`";
+	set option="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g'`"
+	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
+	set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
+	if( "${option}" != "${1}" && "${equals}" == "" && "${options_value}" == "" && "${2}" != "" )	\
+		set options_value="${2}";
 	#echo "Checking ${option}\n";
 	
 	switch ( "${option}" )
@@ -71,7 +100,8 @@ while ( "${1}" != "" )
 		if(! ${?keep_script} ) set keep_script;
 		breaksw;
 	default:
-		printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "${script_name}" > /dev/stderr;
+		if( ${?debug} )	\
+			printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "${script_name}" > /dev/stderr;
 		breaksw;
 	endsw
 	shift;
@@ -113,13 +143,13 @@ find_podcasts:
 	
 	set podcasts=();
 	
-	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --${search_attribute}="\""${search_value}"\""";
-	foreach podcast_match( "`${search_script} --${search_attribute}="\""${search_value}"\""`" )
-		if( ${?debug} ) prinf "Found --${search_attribute}="\""${search_value}"\""\n";
+	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --match-only --${search_attribute}="\""${search_value}"\""";
+	foreach podcast_match( "`${search_script} --match-only --${search_attribute}="\""${search_value}"\""`" )
+		if( ${?debug} ) printf "Found --${search_attribute}="\""${search_value}"\""\n";
 		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*${eol}/\1/'`";
-		set podcast_xmlUrl="`printf "\""${podcast_match}"\"" | sed -r 's/^.*xmlUrl\="\""([^"\""]+)"\"".*/\1/`";
+		set podcast_xmlUrl="`printf "\""${podcast_match}"\"" | sed -r 's/^.*xmlUrl\="\""([^"\""]+)"\"".*/\1/'`";
 		
-		if( ${?podcast_found} ) unset podcast_found;
+		if( ${?podcast_found} )	unset podcast_found;
 		foreach index ( ${podcasts} )
 			if( ${?debug} ) printf "Comparing <%s> against <%s>\n" "${index}" "${index_xml}";
 			if( "${index}" != "${index_xml}" ) continue;
@@ -137,10 +167,10 @@ find_podcasts:
 		if( ${?debug} ) echo "${refetch_script}\n";
 		
 		if( ${?debug} ) then
-			echo ${search_script} --verbose --${search_attribute}=\"${podcast_match}\" \>\! \"${refetch_script}.tmp\""\n";
+			echo ${search_script} --match-only --verbose --${search_attribute}=\"${podcast_match}\" \>\! \"${refetch_script}.tmp\""\n";
 			if( ${?diagnosis} ) continue;
 		endif
-		${search_script} --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
+		${search_script} --match-only --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
 		
 		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
 			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
@@ -148,7 +178,7 @@ find_podcasts:
 		if(! ${?fetch_all} ) then
 			set line_condition="\rif(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) then";
 			set line_padding="\t";
-			set line_condition_end="\relse\r\tprintf '\\t\\t"\""${podcast_match}\/\1, released on: \5\.\3"\"" already exists.\\n\\n';\rendif";
+			set line_condition_end="\relse\r\tprintf "\""\\t\\t<file:\/\/"\$"{cwd}\/${podcast_match}\/\1, released on: \5\.\3> already exists.\\n\\n"\"";\rendif";
 		else
 			set line_condition="";
 			set line_padding="";
@@ -169,7 +199,8 @@ find_podcasts:
 			chmod +x "${refetch_script}";
 			"${refetch_script}";
 		endif
-		if(! ${?keep_script} ) rm -fv "./.gPodder:Refetch:"*;
+		if(! ${?keep_script} )	\
+			rm -fv "${refetch_script}";
 	end
 #find_podcasts
 

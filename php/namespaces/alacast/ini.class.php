@@ -41,11 +41,18 @@
 				$this->ini=($this->profiles_path="{$this->path}/data/profiles/${USER}")."/alacast.ini";
 			else if(file_exists("{$this->path}/data/profiles/default")."/alacast.ini")
 				$this->ini=($this->profiles_path="{$this->path}/data/profiles/default")."/alacast.ini";
-			unset($HOME);
-			unset($USER);
 			
 			if(!( $this->ini && $alacast_config_fp=fopen( $this->ini, "r")))
 				return $this->error(sprintf("%s is not readable", $this->ini));//exit(-1);
+			
+			if(!file_exists("{$HOME}/.config/gpodder/gpodder.conf")){
+				if(!is_dir("{$HOME}/.config/gpodder"))
+					mkdir("{$HOME}/.config/gpodder", 0644, TRUE);
+				
+				copy($this->ini, "{$HOME}/.config/gpodder/gpodder.conf");
+			}
+			unset($HOME);
+			unset($USER);
 			
 			$alacast_config=NULL;
 			$alacast_config=preg_replace("/[\r\n]+/m", "\t", preg_replace("/^;.*$/m", "", fread( $alacast_config_fp, (filesize($this->ini)))));

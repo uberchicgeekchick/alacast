@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Curious Echoes]]>" xmlUrl="http://www.curiousecho.org/wordpress/feed/" type="rss" text="<![CDATA[Curious Echo Radio Theater]]>" htmlUrl="http://www.curiousecho.org/wordpress/feed/" description="<![CDATA[The official blog for Curious Echo Radio Theater.  We produce quality audio theater for you to enjoy.  Our various productions include Beware the Moon Wraith, Shadows West, and Frank Gadsden: Personal Injury Lawyer of the Future.]]>"/>
+		<outline title="<![CDATA[Curious Echoes]]>" xmlUrl="http://www.curiousecho.org/wordpress/feed/" type="rss" text="<![CDATA[Curious Echo Radio Theater]]>" htmlUrl="http://www.curiousecho.org/wordpress/" description="<![CDATA[The official blog for Curious Echo Radio Theater.  We produce quality audio theater for you to enjoy.  Our various productions include Beware the Moon Wraith, Shadows West, and Frank Gadsden: Personal Injury Lawyer of the Future.]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Moon Wraith]]>" xmlUrl="http://www.curiousecho.org/wordpress/category/moon-wraith/feed" type="rss" text="<![CDATA[Moon Wraith]]>" htmlUrl="http://www.curiousecho.org/wordpress/category/moon-wraith/" description="<![CDATA[]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->

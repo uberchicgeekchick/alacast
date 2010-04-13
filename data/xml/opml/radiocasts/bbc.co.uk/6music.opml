@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>BBC Radio6&#039; Radiocasts</title>
+		<title>BBC Radio6&apos; Radiocasts</title>
 	</head>
 	<body>
 		<outline title="<![CDATA[Jon Holmes]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/jonholmes/rss.xml" type="rss" text="<![CDATA[Jon Holmes on BBB 6music]]>" htmlUrl="http://www.bbc.co.uk/6music/shows/jon_holmes/" description="<![CDATA[Weekly topical comedy chaos from a man whose CV includes the Now Show, Dead Ringers, Listen Against &amp; Armando Iannucci&apos;s Time Trumpet. Highlights from all the daft features on Saturday afternoons between 5 and 7 on BBC 6 Music.]]>" />
-		<outline title="<![CDATA[Adam and Joe]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/adamandjoe/rss.xml" type="rss" text="<![CDATA[Adam and Joe from the BBC&#039; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/adamandjoe/" description="<![CDATA[Adam and Joe from the BBC&#039; Radio6 Music]]>"/>
-		<outline title="<![CDATA[Music Week]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/musicweek/rss.xml" type="rss" text="<![CDATA[Music Week from the BBC&#039; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/musicweek/" description="<![CDATA[Music Week from the BBC&#039; Radio6 Music]]>"/>
-		<outline title="<![CDATA[Tom Robinson Introducing...]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/trintro/rss.xml" type="rss" text="<![CDATA[Tom Robinson Introducing... from the BBC&#039; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/trintro/" description="<![CDATA[BBC Radio6 Music&#039;s new album-length podcast - a dozen new handpicked tunes every week.]]>"/>
+		<outline title="<![CDATA[Adam and Joe]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/adamandjoe/rss.xml" type="rss" text="<![CDATA[Adam and Joe from the BBC&apos; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/adamandjoe/" description="<![CDATA[Adam and Joe from the BBC&apos; Radio6 Music]]>"/>
+		<outline title="<![CDATA[Music Week]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/musicweek/rss.xml" type="rss" text="<![CDATA[Music Week from the BBC&apos; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/musicweek/" description="<![CDATA[Music Week from the BBC&apos; Radio6 Music]]>"/>
+		<outline title="<![CDATA[Tom Robinson Introducing...]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/6music/trintro/rss.xml" type="rss" text="<![CDATA[Tom Robinson Introducing... from the BBC&apos; Radio6 Music]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/trintro/" description="<![CDATA[BBC Radio6 Music&apos;s new album-length podcast - a dozen new handpicked tunes every week.]]>"/>
 	</body>
 </opml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>LibriVox.org Public Domain Mystery podcasts, audio dramas, &amp; podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Adventures of Sherlock  Holmes by Sir Arthur Conan Doyle]]>" xmlUrl="http://librivox.org/bookfeeds/the-adventures-of-sherlock-holmes.xml" type="rss" text="<![CDATA[Librivox: Adventures of Sherlock  Holmes, The by Doyle, Arthur Conan, Sir]]>" htmlUrl="http://librivox.org/the-adventures-of-sherlock-holmes/" description="<![CDATA[<p>The Adventures of Sherlock Holmes is a collection of twelve stories by Arthur Conan Doyle, featuring his famous detective. They were originally published in the Strand Magazine from July 1891 to June 1892. The title character was named after famous American poet Oliver Wendell Holmes, Sr. (Summary from Wikipedia)</p>]]>" />
+		<!--<outline title="<![CDATA[&apos;s audio dramas]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from ]]>" description="<![CDATA[Podcast audio dramas from ]]>" />-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

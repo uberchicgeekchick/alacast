@@ -6,8 +6,11 @@ unsetenv GREP_OPTIONS;
 
 while( ${?1} && "${1}" != "" )
 next_option:
-	set action="`printf "\""${1}"\"" | sed --regexp-extended 's/\-\-([^=]+)=(.*)/\1/g'`";
-	set opml="`printf "\""${1}"\"" | sed --regexp-extended 's/\-\-([^=]+)=(.*)/\2/g'`";
+	set action="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\1/g'`";
+	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\2/g'`";
+	set opml="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\3/g'`";
+	if( "${opml}" == "" && "${equals}" == "" && "${2}" != "" )	\
+		set opml="${2}";
 	shift;
 	switch ( "${action}" )
 	case 'delete':

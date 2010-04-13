@@ -4,7 +4,7 @@
 		<title>Geeky Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[website&#039;s homepage]]>" url="http:///" type="link" text="<![CDATA[website&#039;s homepage]]>" description="<![CDATA[website&#039;s homepage]]>"/>-->
-		<!--<outline title="<![CDATA[podcast&#039;s feed]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[website&apos;s homepage]]>" url="http:///" type="link" text="<![CDATA[website&apos;s homepage]]>" description="<![CDATA[website&apos;s homepage]]>"/>-->
+		<!--<outline title="<![CDATA[podcast&apos;s feed]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

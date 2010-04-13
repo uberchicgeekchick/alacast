@@ -4,8 +4,8 @@
 		<title>Podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Adil Ray]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/adilray/rss.xml" type="rss" text="<![CDATA[Adil Ray from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/adilray/" description="<![CDATA[Comedy, skits and fun from the Adil Ray show. An irreverent depiction of British A...]]>"/>
-		<outline title="<![CDATA[Love Bollywood]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/lovebolly/rss.xml" type="rss" text="<![CDATA[Love Bollywood from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/lovebolly/" description="<![CDATA[Interviews with the big stars and celebrities from the world of Bollywood, plus th...]]>"/>
-		<outline title="<![CDATA[Silver Street: daily urban soap]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/silverst/rss.xml" type="rss" text="<![CDATA[Silver Street: daily urban soap from the BBC&#039; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/silverst/" description="<![CDATA[Gritty daily radio soap set in a vibrant urban community. Want something that real...]]>"/>
+		<outline title="<![CDATA[Adil Ray]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/adilray/rss.xml" type="rss" text="<![CDATA[Adil Ray from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/adilray/" description="<![CDATA[Comedy, skits and fun from the Adil Ray show. An irreverent depiction of British A...]]>"/>
+		<outline title="<![CDATA[Love Bollywood]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/lovebolly/rss.xml" type="rss" text="<![CDATA[Love Bollywood from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/lovebolly/" description="<![CDATA[Interviews with the big stars and celebrities from the world of Bollywood, plus th...]]>"/>
+		<outline title="<![CDATA[Silver Street: daily urban soap]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/silverst/rss.xml" type="rss" text="<![CDATA[Silver Street: daily urban soap from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/silverst/" description="<![CDATA[Gritty daily radio soap set in a vibrant urban community. Want something that real...]]>"/>
 	</body>
 </opml>
