@@ -36,7 +36,7 @@ parse_argv:
 		set argument="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\1/'`";
 		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\2/'`";
 		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\3/'`";
-		if( "${value}" == "" && "${equals}" == "" "${2}" != "" )	\
+		if( "${value}" == "" && "${equals}" == "" && "${2}" != "" )	\
 			set value="${2}";
 		
 		switch( "${argument}" )

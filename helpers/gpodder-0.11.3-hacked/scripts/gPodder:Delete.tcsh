@@ -1,9 +1,12 @@
 #!/bin/tcsh -f
 if(!(${?1} && "${1}" != "" && "${1}" != "--help")) goto usage
 
-set attrib="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=?\)\(.*\)/\1/g'`"
-set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=?\)\(.*\)/\2/g'`"
-set value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=?\)\(.*\)/\3/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
+if(! ${?eol} )	\
+	set eol='$';
+
+set attrib="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\1/'`"
+set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\2/g'`"
+set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\3/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
 if( "${equals}" == "" && "${value}" == "" && "${2}" != "" )	\
 	set value="`printf "\""%s"\"" "\""${2}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
 
@@ -17,6 +20,7 @@ case "text":
 case "description":
 	breaksw
 default:
+	echo "${attrib}":
 	goto usage
 	breaksw
 endsw

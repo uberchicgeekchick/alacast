@@ -29,7 +29,7 @@ while ( ${?1} && "${1}" != "" )
 	set attrib="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\1/'`";
 	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\2/'`";
 	set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\3/'`";
-	if( "${value}" == "" && "${equals}" == "" "${2}" != "" ) then
+	if( "${value}" == "" && "${equals}" == "" && "${2}" != "" ) then
 		set value="${2}";
 		shift;
 	endif

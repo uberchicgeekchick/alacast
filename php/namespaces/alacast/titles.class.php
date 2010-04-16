@@ -16,40 +16,44 @@
 	namespace alacast;
 	
 	class titles{
-		public $renumbering_regexp;
+		public $regular_expression;
 		
 		public function __construct(){
+			$this->regular_expression=NULL;
 			/*$this->load_renumbering_regexp();*/
 		}//__construct
 		
 		
 		
 		private function load_renumbering_regexp(){
-			$this->renumbering_regexp=require_once(ALACASTS_PATH."/php/settings/reordering.inc.php");
+			if(!$this->regular_expression)
+				$this->regular_expression=require_once(ALACASTS_PATH."/php/settings/reordering.inc.php");
 		}//load_renumbering_regular_expressions
 		
 
 		
 		public function reorder_titles(&$podcasts_info, $reformat_numbers=TRUE){
-			if(!(isset($this->renumbering_regexp))) $this->load_renumbering_regexp();
+			if(!$this->regular_expression)
+				$this->load_renumbering_regexp();
+			
 			static $limit;
 			if(!isset($limit))
 				if(!$reformat_numbers)
 					$limit=1;
 				else
-					$limit=$this->renumbering_regexp['total'];
+					$limit=$this->regular_expression['total'];
 			
 			for($i=0; $i<$podcasts_info['total']; $i++)
 				for( $a=0; $a<$limit; $a++ )
-					for( $n=0; $n<$this->renumbering_regexp[$a]['total']; $n++ )
+					for( $n=0; $n<$this->regular_expression[$a]['total']; $n++ )
 						while( (preg_match(
-							$this->renumbering_regexp[$a][$n][0],
+							$this->regular_expression[$a][$n][0],
 							$podcasts_info[$i]
 						)) ){
-							/*printf("\nRenaming: [%s]\n\tusing using renumbering_regexp[%d][%d]: %s %s\n", $podcasts_info[$i], $a, $n,$this->renumbering_regexp[$a][$n][0],$this->renumbering_regexp[$a][$n][1]);*/
+							/*printf("\nRenaming: [%s]\n\tusing using regular_expression[%d][%d]: %s %s\n", $podcasts_info[$i], $a, $n,$this->regular_expression[$a][$n][0],$this->regular_expression[$a][$n][1]);*/
 							$podcasts_info[$i] = preg_replace(
-								$this->renumbering_regexp[$a][$n][0],
-								$this->renumbering_regexp[$a][$n][1],
+								$this->regular_expression[$a][$n][0],
+								$this->regular_expression[$a][$n][1],
 								$podcasts_info[$i],
 								-1
 							);
@@ -93,7 +97,8 @@
 		}//prefix_episopes_titles( $podcasts_info );
 		
 		function __deconstruct(){
-			if(isset($this->renumbering_regexp)) unset($this->renumbering_regexp);
+			if($this->regular_expression)
+				unset($this->regular_expression);
 		}/*deconstruct*/
 		
 	}//alacast::titles

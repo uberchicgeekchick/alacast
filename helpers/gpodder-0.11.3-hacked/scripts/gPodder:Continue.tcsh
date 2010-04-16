@@ -42,7 +42,7 @@ parse_argv:
 		set argument="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\1/'`";
 		set equals="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\2/'`";
 		set value="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\3/'`";
-		if( "${value}" == "" && "${equals}" == "" "${2}" != "" )	\
+		if( "${value}" == "" && "${equals}" == "" && "${2}" != "" )	\
 			set value="${2}";
 		
 		switch( "${argument}" )
