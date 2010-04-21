@@ -138,7 +138,6 @@ find_podcasts:
 		unsetenv GREP_OPTIONS;
 	endif
 	
-	if(! ${?eol} ) set eol='$';
 	alias ex "ex -E -n -X --noplugin";
 	
 	set podcasts=();
@@ -146,7 +145,7 @@ find_podcasts:
 	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --match-only --${search_attribute}="\""${search_value}"\""";
 	foreach podcast_match( "`${search_script} --match-only --${search_attribute}="\""${search_value}"\""`" )
 		if( ${?debug} ) printf "Found --${search_attribute}="\""${search_value}"\""\n";
-		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*${eol}/\1/'`";
+		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*"\$"/\1/'`";
 		set podcast_xmlUrl="`printf "\""${podcast_match}"\"" | sed -r 's/^.*xmlUrl\="\""([^"\""]+)"\"".*/\1/'`";
 		
 		if( ${?podcast_found} )	unset podcast_found;
@@ -160,7 +159,7 @@ find_podcasts:
 		if( ${?podcast_found} ) continue;
 		
 		set podcasts=( ${podcasts} ${index_xml} );
-		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)${eol}/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*${eol}//' | sed -r 's/\// \- /g'`";
+		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)"\$"/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*"\$"//' | sed -r 's/\// \- /g'`";
 		
 		if( ${?debug} ) echo "${podcast_match}\n";
 		set refetch_script="${mp3_player_folder}/.gPodder:Refetch:`date '+%s'`.tcsh";

@@ -31,11 +31,10 @@ usage:
 #usage
 
 parse_argv:
-	if(! ${?eol} ) setenv eol '$';
 	while( "${1}" != "" )
-		set argument="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\1/'`";
-		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\2/'`";
-		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)${eol}/\3/'`";
+		set argument="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)"\$"/\1/'`";
+		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)"\$"/\2/'`";
+		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)"\$"/\3/'`";
 		if( "${value}" == "" && "${equals}" == "" && "${2}" != "" )	\
 			set value="${2}";
 		

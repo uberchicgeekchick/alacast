@@ -13,14 +13,12 @@ if( "`alias cwdcmd`" != "" ) then
 	unalias cwdcmd;
 endif
 
-if(! ${?eol} ) setenv eol '$';
-
 set argz="";
 next_argv:
 while( "${1}" != "" )
 	set message="";
-	set action="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)${eol}/\1/'`";
-	set feed="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)${eol}/\2/'`";
+	set action="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)"\$"/\1/'`";
+	set feed="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)"\$"/\2/'`";
 	switch( "${action}" )
 	case "debug":
 		set tcshrc_debug_set;

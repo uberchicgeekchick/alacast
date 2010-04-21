@@ -37,11 +37,10 @@ usage:
 #usage
 
 parse_argv:
-	if(! ${?eol} ) setenv eol '$';
 	while( "${1}" != "" )
-		set argument="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\1/'`";
-		set equals="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\2/'`";
-		set value="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)${eol}/\3/'`";
+		set argument="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)"\$"/\1/'`";
+		set equals="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)"\$"/\2/'`";
+		set value="`echo '${1}' | sed -r 's/[\-]{1,2}([^=]+)(=?)(.*)"\$"/\3/'`";
 		if( "${value}" == "" && "${equals}" == "" && "${2}" != "" )	\
 			set value="${2}";
 		
