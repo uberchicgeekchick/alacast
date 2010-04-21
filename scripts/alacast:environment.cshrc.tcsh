@@ -17,6 +17,13 @@ clean_alacasts_path:
 		unset alacasts_path;
 #clean_alacasts_path:
 
+set_perl_modules:
+	#the PERLLIB environment variable
+	#export PERLLIB=/path/to/my/dir
+	
+	#the PERL5LIB environment variable
+	#export PERL5LIB=/path/to/my/dir
+#set_perl_modules:
 
 set_gtk_path:
 	setenv ALACAST_GTK_PATH "/projects/gtk/alacast";

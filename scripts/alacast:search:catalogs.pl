@@ -1,14 +1,18 @@
 #!/usr/bin/perl
 use strict;
+#use lib "`basename \"${0}\"`/scripts";
 
 if ( @ARGV < 0 || "$ARGV[0]" eq "-h"  || "$ARGV[0]" eq "--help" ) { usage(); }
 
-my $scripts_path = `dirname "$0"`;
-$scripts_path =~ s/[\r\n]+//;
-my $scripts_exec = `basename "$0"`;
-$scripts_exec =~ s/[\r\n]+//;
-my $catalogs_path = "$scripts_path/../data/xml/opml";
-my @catalogs =("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "knowledge");
+my $scripts_path=`dirname "$0"`;
+$scripts_path=~s/[\r\n]+//;
+my $scripts_exec=`basename "$0"`;
+$scripts_exec=~s/[\r\n]+//;
+my $catalogs_path="$scripts_path/../data/xml/opml";
+my @catalogs=("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "knowledge", "unfiled.opml");
+if( -e "../../profiles/$ENV{USER}/opml/subscriptions.opml" ){
+	$catalogs[@catalogs]="../../profiles/$ENV{USER}/opml/subscriptions.opml";
+}
 
 my $be_verbose=0;#False
 my $debug_mode=0;#FALSE
@@ -23,7 +27,7 @@ my $xmlUrl_parser="";#NULL
 my $global_search_attribute;
 my $global_search_attributes_value;
 my $searching_list="";
-my @alacast_catalog_search_outputs=();
+my @alacast_catalog_search_outputs=("(title)", "(htmlUrl)", "(xmlUrl)");
 
 sub usage{
 	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_exec);
@@ -36,8 +40,12 @@ sub usage{
 sub search_catalog{
 	my $catalog=shift;
 	my $results_found=0;
-	my $find_command=sprintf("/usr/bin/find %s%s/%s%s -iname '*.opml'", '"', $catalogs_path, $catalog, '"' );
-	if($be_verbose==1 && $debug_mode==1){ printf("Catalog search command: %s.", $find_command ); }
+	if(! -e "$catalogs_path/$catalog" ){
+		printf("I cannot search for podcasts in: <%s/%s>. Its either not a directory or doesn't exist.\n", "$catalogs_path", "$catalog");
+		return 0;
+	}
+	my $find_command=sprintf("/usr/bin/find \"%s/%s\" -iname '*.opml'", $catalogs_path, $catalog);
+	if($be_verbose && $debug_mode){ printf("Catalog search command: %s.", $find_command ); }
 	
 	my @opml_files_to_edit=();
 	
@@ -51,48 +59,48 @@ sub search_catalog{
 			if( $opml_and_outline=~/^.*\<!\-\-.*\-\-\>$/ ){ next; }
 			
 			if(!$results_found){
-				if($be_verbose==1) { printf("[%s catalog]>\n", $catalog); }
+				if($be_verbose) { printf("[%s catalog]>\n", $catalog); }
 			}
 			$results_found++;
 			
 			while($opml_and_outline=~/\.\.\//){
-				$opml_and_outline =~ s/[^\/]+\/\.\.\///g;
+				$opml_and_outline=~s/[^\/]+\/\.\.\///g;
 			}
 			
 			my $opml_file=$opml_and_outline;
-			$opml_file=~s/^([^:]*):.*$/\1/;
+			$opml_file=~s/^([^:]*):.*$/$1/;
 			
 			my $opml_outline=$opml_and_outline;
-			$opml_outline=~s/^([^:]*):(.*)$/\2/;
+			$opml_outline=~s/^([^:]*):(.*)$/$2/;
 			
 			my $results_displayed=0;
-			printf("<%s%s>:", ($opml_uri==1 ?"file://" :""), $opml_file);
+			printf("<%s%s>:", ($opml_uri ?"file://" :""), $opml_file);
 			if(!( $results_displayed=display_outputs($opml_outline, $grep_command) )) { next; }
-			if( $be_verbose==1 ){
+			if( $be_verbose ){
 				printf("\n\tOPML Outline:\n\t%s\n", "$opml_outline");
 			}
 			
 			if($results_displayed>0){ printf("\n"); }
 			
-			if($be_verbose==1 && $debug_mode==1){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
+			if($be_verbose && $debug_mode){printf("\t\tegrep's output:%s\n", $opml_and_outline);}
 			
-			if($global_edit_opml==1){
+			if($global_edit_opml){
 				my $already_editing_opml=0;#false
-				for(my $i=0; $i<@opml_files_to_edit && $already_editing_opml==0; $i++){
+				for(my $i=0; $i<@opml_files_to_edit && !$already_editing_opml; $i++){
 					if("$opml_files_to_edit[$i]"ne"\"$opml_file\""){ next; }
 					$already_editing_opml=1;#true
 				}
-				if($already_editing_opml==0) { $opml_files_to_edit[@opml_files_to_edit]="\"$opml_file\""; }
+				if(!$already_editing_opml) { $opml_files_to_edit[@opml_files_to_edit]="\"$opml_file\""; }
 			}
 			
 			if("$xmlUrl_parser"ne""){
 				my $xmlUrl_attribute=$opml_outline;
-				$xmlUrl_attribute=~s/.*xmlUrl=["]([^"]+)["].*/\1/i;
+				$xmlUrl_attribute=~s/.*xmlUrl=["]([^"]+)["].*/$1/i;
 				my $already_parsed=0;
-				for(my $i=0; $i<@xmlUrls_found && $already_parsed==0; $i++){
+				for(my $i=0; $i<@xmlUrls_found && !$already_parsed; $i++){
 					if("$xmlUrls_found[$i]"eq"$xmlUrl_attribute"){$already_parsed=1;}
 				}
-				if($already_parsed==0){
+				if(!$already_parsed){
 					$xmlUrls_found[@xmlUrls_found]="$xmlUrl_attribute";
 				}
 			}
@@ -109,14 +117,24 @@ sub search_catalog{
 			}
 			$xmlUrl_parser_exec.="'";
 			printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
-			exec($xmlUrl_parser_exec);
+			system($xmlUrl_parser_exec);
 		}
 	}
 	
-	if( @opml_files_to_edit > 0){
-		my $editor_exec="tcsh -f -c 'vim-enhanced -p @opml_files_to_edit'";
-		printf("Running:\n\t%s\n", $editor_exec); 
-		exec("$editor_exec");
+	my @opml_files_editing=();
+	if( @opml_files_to_edit > 0 ){
+		for(my $x=0; $x<@opml_files_to_edit; ){
+			for(my $i=0; $i<10 && $x < @opml_files_to_edit; $i++, $x++){
+				$opml_files_editing[$i]=$opml_files_to_edit[$x];
+			}
+			print(@opml_files_editing);
+			if(@opml_files_editing > 0){
+				my $editor_exec="tcsh -f -c 'vim-enhanced -p @opml_files_editing'";
+				printf("Running:\n\t%s\n", $editor_exec); 
+				system($editor_exec);
+			}
+			@opml_files_editing=();
+		}
 	}
 }#search_catalog
 
@@ -131,13 +149,13 @@ sub display_outputs{
 			next;
 		}
 		
-		if( $debug_mode==1 ) {
+		if( $debug_mode ) {
 			printf "Looking for:\n\t$alacast_catalog_search_outputs[$i]\n";
 		}
 		
 		if("$alacast_catalog_search_outputs[$i]"eq"outline"){
 			$results_displayed++;
-			if( $debug_mode==1 ){
+			if( $debug_mode ){
 				printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
 			}
 			printf("\n\t%s\n", "$opml_outline");
@@ -150,18 +168,18 @@ sub display_outputs{
 		
 		my $opml_attribute=$opml_outline;
 		if("$alacast_catalog_search_outputs[$i]"eq"$global_search_attribute"){
-			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]*$global_search_attributes_value[^"]*)["].*/\2/i;
+			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]*$global_search_attributes_value[^"]*)["].*/$2/i;
 		}else{
-			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]+)["].*/\2/i;
+			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]+)["].*/$2/i;
 		}
-		$opml_attribute=~s/<!\[CDATA\[(.*)\]\]>/\1/;
+		$opml_attribute=~s/\<\!\[CDATA\[(.*)\]\]\>/$1/;
 		
 		if("$opml_attribute"eq""){
 			next;
 		}
 		
 		$results_displayed++;
-		if( $debug_mode==1 ){
+		if( $debug_mode ){
 			printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
 		}
 		printf("\n\t%s=\"%s\"", $alacast_catalog_search_outputs[$i], $opml_attribute);
@@ -171,9 +189,10 @@ sub display_outputs{
 
 sub search_catalogs{
 	foreach my $catalog ( @catalogs ) {
+		if( $debug_mode ){ printf("Searching: %s\n", $catalog); }
 		if ("$searching_list"eq""){ search_catalog( $catalog ); }
 		else {
-			if($be_verbose==1 &&  $debug_mode==1) { printf( "\nSearching catalogs listed in:\n\t%s\n", $searching_list); }
+			if($be_verbose &&  $debug_mode) { printf( "\nSearching catalogs listed in:\n\t%s\n", $searching_list); }
 			foreach my $global_search_attributes_value ( `cat '$searching_list'` ) {
 				search_catalog( $global_search_attributes_value );
 			}
@@ -187,29 +206,29 @@ sub parse_option{
 	my $option=$argv;
 	my $equals=$argv;
 	my $value=$argv;
-	$dashes=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/\1/g;
-	$option=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/\2/g;
-	$equals=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/\3/g;
-	$value=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/\4/g;
+	$dashes=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$1/g;
+	$option=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$2/g;
+	$equals=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$3/g;
+	$value=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$4/g;
 	if("$equals" eq "" && "$value" eq ""){ $value=shift; }
 	
-	if($debug_mode==1){printf("Parsing option: [%s]%s\n", "$option", ("$value"eq"" ?"" :"=<$value>")); }
+	if($debug_mode){printf("Parsing option: [%s]%s\n", "$option", ("$value"eq"" ?"" :"=<$value>")); }
 	if("$option"eq"output" && "$value" ne ""){
-		if($debug_mode==1){ printf( "\tHandling output argument: [%s].\n", $value ); }
+		if($debug_mode){ printf( "\tHandling output argument: [%s].\n", $value ); }
 		return parse_output($value);
 	}
 	
 	if("$option"=~/^(en|dis)able.*$/){
-		if($debug_mode==1){ printf( "\t%sabling %s switch: [%s].\n", $option, $value ); }
+		if($debug_mode){ printf( "\t%sabling %s switch: [%s].\n", $option, $value ); }
 		return parse_setting($option, $value);
 	}
 	
 	if($option=~/^(xml|html)?Url$/i||"$option"eq"title"||"$option"eq"text"||"$option"eq"description"||"$option"eq"type"|| -f "$option"){
-		if($debug_mode==1){ printf( "\tHandling opml search attribute: [%s].\n", $value ); }
+		if($debug_mode){ printf( "\tHandling opml search attribute: [%s].\n", $value ); }
 		return parse_attribute($option, $value);
 	}
 	
-	if($debug_mode==1){ printf( "\tHandling other argument: [%s%s%s].\n", $option, ("$value"eq"" ?"" :"="), $value ); }
+	if($debug_mode){ printf( "\tHandling other argument: [%s%s%s].\n", $option, ("$value"eq"" ?"" :"="), $value ); }
 	return parse_options_action($option, $value);
 }#parse_option
 
@@ -238,7 +257,7 @@ sub parse_options_action{
 	
 	if($option=~/^xmlUrl\-parser=.+/){
 		$xmlUrl_parser=$option;
-		$xmlUrl_parser=~s/^xmlUrl\-parser=(.*)/\1/g;
+		$xmlUrl_parser=~s/^xmlUrl\-parser=(.*)/$1/g;
 		if("$previous_xmlUrl_parser"ne"" && "$previous_xmlUrl_parser"ne"$xmlUrl_parser"){
 			@xmlUrls_found=();
 		}
@@ -262,11 +281,11 @@ sub parse_setting{
 	my $parameter=$value;
 	
 	if($value=~/^.*=.*$/){
-		$value=~s/^([^=]+)=(.*)$/\1/;
+		$value=~s/^([^=]+)=(.*)$/$1/;
 	}
-	$parameter=~s/^([^=]+)=(.*)$/\2/;
+	$parameter=~s/^([^=]+)=(.*)$/$2/;
 	
-	if($debug_mode==1){printf("Attempting to %sable: %s=[%s]\n", ("$action"eq"disable" ?"dis" :"en"), $parameter, $value);}
+	if($debug_mode){printf("Attempting to %sable: %s=[%s]\n", ("$action"eq"disable" ?"dis" :"en"), $parameter, $value);}
 
 	
 	if("$value"eq"editing"||"$value"eq"edit-opml"){
@@ -278,22 +297,22 @@ sub parse_setting{
 	
 	if("$value"eq"debug"){
 		printf("Debug mode\t\t\t\t\t\t[%sd]:\n", $action);
-		if("$action"eq"enable" && $debug_mode==0){ $debug_mode=1; }
-		if("$action"eq"disable" && $debug_mode==1){ $debug_mode=0; }
+		if("$action"eq"enable" && !$debug_mode){ $debug_mode=1; }
+		if("$action"eq"disable" && $debug_mode){ $debug_mode=0; }
 		return 1;
 	}
 	
 	if("$value"eq"verbose"){
 		printf("Verbose search output\t\t\t\t\t\t[%sd]:\n", $action);
-		if("$action"eq"enable" && $be_verbose==0){ $be_verbose=1; }
-		if("$action"eq"disable" && $be_verbose==1){ $be_verbose=0; }
+		if("$action"eq"enable" && !$be_verbose){ $be_verbose=1; }
+		if("$action"eq"disable" && $be_verbose){ $be_verbose=0; }
 		return 1;
 	}
 	
 	if("$value"eq"opml-uri"){
 		printf("OPML files formatted as URI instead of paths\t\t\t\t\t\t[%sd]:\n", $action);
-		if("$action"eq"enable" && $opml_uri==0){ $opml_uri=1; }
-		if("$action"eq"disable" && $opml_uri==1){ $opml_uri=0; }
+		if("$action"eq"enable" && !$opml_uri){ $opml_uri=1; }
+		if("$action"eq"disable" && $opml_uri){ $opml_uri=0; }
 		return 1;
 	}
 	
@@ -331,8 +350,8 @@ sub set_xmlUrl_parser{
 sub parse_attribute{
 	$global_search_attribute=shift;
 	$global_search_attributes_value=shift;
-	$global_search_attributes_value=~s/(['"])/\1\\\1\1/g;
-	$global_search_attributes_value=~s/([\?\[])/\\\1/g;
+	$global_search_attributes_value=~s/(['"])/$1\\$1$1/g;
+	$global_search_attributes_value=~s/([\?\[])/\\$1/g;
 	
 	$searching_list="";
 	
@@ -345,7 +364,7 @@ sub parse_attribute{
 		return 0;
 	}
 	if($global_search_attribute=~/(xml|html)?Url/i){
-		$global_search_attribute=~s/(xml|html)?(Url)/\(xml\|html\)\?\2/i;
+		$global_search_attribute=~s/(xml|html)?(Url)/\(xml\|html\)\?$2/i;
 	}elsif("$global_search_attribute"eq"title"){
 		$global_search_attribute="\(title\|text\)";
 	}
@@ -360,7 +379,7 @@ sub parse_output{
 	chomp(@outputs);
 	my $x=@alacast_catalog_search_outputs;
 	for(my $i=0; $i<@outputs; $i++){
-		if( $debug_mode==1 ){ printf("Validating Output Attribute: [%s]\n", $outputs[$i]); }
+		if( $debug_mode ){ printf("Validating Output Attribute: [%s]\n", $outputs[$i]); }
 		if("$outputs[$i]"eq""){
 			next;
 		}
@@ -368,35 +387,25 @@ sub parse_output{
 			next;
 		}
 		if("$outputs[$i]"eq"outline"||"$outputs[$i]"eq"verbose"){
-			$alacast_catalog_search_outputs[++$x]="outline";
-		}else{
-			$alacast_catalog_search_outputs[++$x]="(title)";
+			@alacast_catalog_search_outputs=("outline");
+		}elsif("$outputs[$i]"ne"title"||"$outputs[$i]"ne"htmlUrl"||"$outputs[$i]"ne"xmlUrl"){
 			$alacast_catalog_search_outputs[++$x]="($outputs[$i])";
 		}
 		#$alacast_catalog_search_outputs[++$x]="($outputs[$i])";
 	}
 	chomp(@alacast_catalog_search_outputs);
-	if( $debug_mode==1 ){ printf("Output details for this loop:\n\tOutput Attributes:"); }
+	if( $debug_mode ){ printf("Output details for this loop:\n\tOutput Attributes:"); }
 	
-	if(@alacast_catalog_search_outputs == 0){
-		@alacast_catalog_search_outputs=("(title)", "(htmlUrl)", "(xmlUrl)");
-		if( $debug_mode==1 ){ printf("[@alacast_catalog_search_outputs]\n"); }
-		return 0;
-	}
-	if( $debug_mode==1 ){ printf("[@alacast_catalog_search_outputs]\n"); }
+	if(@alacast_catalog_search_outputs == 0){ return 0; }
+	if( $debug_mode ){ printf("[@alacast_catalog_search_outputs]\n"); }
 	return 1;
 }#parse_output
 
 sub main{
-	@alacast_catalog_search_outputs=();
 	for ( my $i=0; $i<@ARGV; $i++ ){ parse_option($ARGV[$i], ($i<@ARGV ?$ARGV[$i+1] :"")); }
 	if("$global_search_attributes_value"eq""){
 		printf("\n\t**fatal error:** at least one valid search attribute must be specified.\n\n");
 		usage();
-	}
-	if(@alacast_catalog_search_outputs == 0){
-		@alacast_catalog_search_outputs=("(title)", "(htmlUrl)", "(xmlUrl)");
-		#@alacast_catalog_search_outputs=("(xml|html)Url");
 	}
 	search_catalogs();
 }#main

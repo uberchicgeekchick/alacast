@@ -1,9 +1,9 @@
 #!/bin/tcsh -f
 init:
-	#for once update.tcsh gets moved to 'data/xml/opml/update-scripts':
-	#set npr_dir="`dirname ${0}`/../radiocasts/npr";
-	set npr_dir="`dirname ${0}`";
-	cd "${npr_dir}";
+	if(! ${?0} ) then
+		printf "This script cannot be sourced.\n" > /dev/stderr;
+	
+	cd "`dirname '${0}'`/../../data/xml/opml/radiocasts/npr";
 	
 	alias	"wget"	"wget --no-check-certificate --quiet --continue";
 	alias	"ex"	"ex -E -n -X --noplugin";

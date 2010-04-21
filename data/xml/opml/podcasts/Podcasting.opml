@@ -5,8 +5,8 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[this week in media]]>" xmlUrl="http://thisweekinmedia.libsyn.com/rss" type="rss" text="<![CDATA[this week in media]]>" htmlUrl="http://pixelcorps.tv/this_week_in_media" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Podcast Tools]]>" xmlUrl="http://feeds.feedburner.com/ThePodcasttoolscomPodcast?format=xml" type="rss" text="<![CDATA[Podcast Tools]]>" htmlUrl="http://www.podcasttools.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Podcast 411]]>" xmlUrl="http://feeds.feedburner.com/podcast411a?format=xml" type="rss" text="<![CDATA[Podcast 411]]>" htmlUrl="http://www.podcast411.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Podcast Tools]]>" xmlUrl="http://feeds.feedburner.com/ThePodcasttoolscomPodcast" type="rss" text="<![CDATA[Podcast Tools]]>" htmlUrl="http://www.podcasttools.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Podcast 411]]>" xmlUrl="http://feeds.feedburner.com/podcast411a" type="rss" text="<![CDATA[Podcast 411]]>" htmlUrl="http://www.podcast411.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[On The Pod]]>" xmlUrl="http://www.onthepod.com/podcast/On_The_Pod/rss.xml" type="rss" text="<![CDATA[On The Pod]]>" htmlUrl="http://www.onthepod.com/podcast.html" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[OnThePod.Net]]>" xmlUrl="http://pseudojoe.podomatic.com/rss2.xml" type="rss" text="<![CDATA[OnThePod.Net]]>" htmlUrl="http://onthepod.net/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The Clip Show]]>" xmlUrl="http://feeds.feedburner.com/clipshow" type="rss" text="<![CDATA[The Clip Show]]>" htmlUrl="http://theclipshow.com/" description="<![CDATA[]]>"/>

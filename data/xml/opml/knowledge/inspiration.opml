@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[The Daily Quote Podcast]]>" xmlUrl="http://feeds.feedburner.com/dailyquotepodcast?format=xml" type="rss" text="<![CDATA[The Daily Quote Podcast]]>" htmlUrl="http://www.dailyquotepodcast.com/" description="<![CDATA[An inspirational quote of the day and how its effected &amp; helped the host.]]>"/>
+		<outline title="<![CDATA[The Daily Quote Podcast]]>" xmlUrl="http://feeds.feedburner.com/dailyquotepodcast" type="rss" text="<![CDATA[The Daily Quote Podcast]]>" htmlUrl="http://www.dailyquotepodcast.com/" description="<![CDATA[An inspirational quote of the day and how its effected &amp; helped the host.]]>"/>
 		<outline title="<![CDATA[Brain Ready&apos;s Brain Casts]]>" type="rss" xmlUrl="http://www.brainready.com/braincasts/index.xml" text="<![CDATA[Brain Ready&apos;s Brain Casts @ BrainReady.com]]>" htmlUrl="http://www.brainready.com/braincasts/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

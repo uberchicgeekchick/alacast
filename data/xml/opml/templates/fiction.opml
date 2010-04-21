@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>&apos;s Works &amp; Podnovels</title>
+		<title>
+			The Works of: .&nbsp; 
+			Podcasts, fiction, novels, &amp; audio dramas.&nbsp; 
+			Brought to you by: .
+		</title>
 	</head>
 	<body>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>
+

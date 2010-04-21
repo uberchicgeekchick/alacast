@@ -11,7 +11,7 @@
 		<outline title="<![CDATA[Buzz Report]]>" xmlUrl="http://feeds.feedburner.com/cnet/buzzreport" type="rss" text="<![CDATA[Buzz Report]]>" htmlUrl="http://reviews.cnet.com/4520-12578_7-6527356-1.html" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[TWiL]]>" xmlUrl="http://leoville.tv/podcasts/twil.xml" type="rss" text="<![CDATA[TWiL]]>" htmlUrl="http://www.twit.tv/twil" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Geek Fu Morning Show]]>" xmlUrl="http://geekfuactiongrip.com/podcast.xml" type="rss" text="<![CDATA[Geek Fu Morning Show]]>" htmlUrl="http://geekfuactiongrip.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Secret Life Of Girl Gamers]]>" xmlUrl="http://feeds.feedburner.com/SecretLifeOfGirlGamers?format=xml" type="rss" text="<![CDATA[Secret Life Of Girl Gamers]]>" htmlUrl="http://secretlifeofgirlgamers.blogspot.com/" description="<![CDATA[We are a new podcast giving the perspective of female gamers for roleplaying, board and video games. How gaming affects us, and how our lives affect our gaming.]]>"/>
+		<outline title="<![CDATA[Secret Life Of Girl Gamers]]>" xmlUrl="http://feeds.feedburner.com/SecretLifeOfGirlGamers" type="rss" text="<![CDATA[Secret Life Of Girl Gamers]]>" htmlUrl="http://secretlifeofgirlgamers.blogspot.com/" description="<![CDATA[We are a new podcast giving the perspective of female gamers for roleplaying, board and video games. How gaming affects us, and how our lives affect our gaming.]]>"/>
 		<outline title="<![CDATA[Better l8 than never]]>" xmlUrl="http://betterl8thannevr.libsyn.com/rss" type="rss" text="<![CDATA[Better l8 than never]]>" htmlUrl="http://betterl8thannevr.libsyn.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

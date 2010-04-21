@@ -22,7 +22,14 @@ else
 		unset alacasts_path;
 	fi
 	
+	#the PERLLIB environment variable
+	#export PERLLIB=/path/to/my/dir
+	
+	#the PERL5LIB environment variable
+	#export PERL5LIB=/path/to/my/dir
+	
 	export ALACAST_GTK_PATH="/projects/gtk/alacast";
+	
 	alacast_gtk_paths="bin scripts";
 	for alacast_gtk_path in ${alacast_gtk_paths}; do
 		if test -z ${TCSH_RC_DEBUG}; then

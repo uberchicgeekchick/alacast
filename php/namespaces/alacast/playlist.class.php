@@ -103,7 +103,7 @@
 						fprintf($this->fp, "# toxine playlist\n");
 					fprintf($this->fp, "\nentry {\n\tidentifier = %s;\n\tmrl = %s;\n};", basename($filename), $filename);
 					break;
-
+				
 				case "pls":
 					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, basename($filename));
 					break;

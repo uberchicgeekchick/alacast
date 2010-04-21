@@ -147,7 +147,7 @@ alias ex "ex -E -n -X --noplugin";
 
 foreach index ( ${dl_dir}/*/index.xml )
 	if( "`egrep '<[^\/][^>]+>[^<]+${eol}' '${index}'`" != "" )	\
-		ex '+2,$s/\v[\r\n]+//' '+wq!' "${index}" > /dev/null;
+		ex -E -n -X --noplugin '+2,$s/\v[\r\n]+//' '+wq!' "${index}" > /dev/null;
 	set found="`egrep '<${attrib}>.*${attrib_value}.*<\/${attrib}>' '${index}' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g'`";
 	
 	if( "${found}" == "" ) continue;

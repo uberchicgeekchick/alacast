@@ -5,9 +5,9 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[Escape Artists]]>" url="http://escapeartists.info/" type="link" text="<![CDATA[Escape Artists&apos; &rarr; blog &amp; forum]]>" description="<![CDATA[Connect with Escape Artists&apos; community.]]>"/>
-		<outline title="<![CDATA[Pseudopod]]>" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml" type="rss" text="<![CDATA[Pseudopod]]>" description="<![CDATA[The Sound of Horror]]>"/>
+		<outline title="<![CDATA[Pseudopod]]>" xmlUrl="http://feeds.pseudopod.org/Pseudopod" type="rss" text="<![CDATA[Pseudopod]]>" description="<![CDATA[The Sound of Horror]]>"/>
 		<outline title="<![CDATA[Escape Pod]]>" xmlUrl="http://escapepod.org/podcast.xml" type="rss" text="<![CDATA[Escape Pod]]>" htmlUrl="http://escapepod.org/" description="<![CDATA[The Science Fiction Podcast Magazine.]]>"/>
-		<outline title="<![CDATA[PodCastle]]>" xmlUrl="http://feeds.escapeartists.net/PodCastle_Main?format=xml" type="rss" text="<![CDATA[Podcastle]]>" description="<![CDATA[The Fantasy Podcast Magazine]]>"/>
+		<outline title="<![CDATA[PodCastle]]>" xmlUrl="http://feeds.escapeartists.net/PodCastle_Main" type="rss" text="<![CDATA[Podcastle]]>" description="<![CDATA[The Fantasy Podcast Magazine]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

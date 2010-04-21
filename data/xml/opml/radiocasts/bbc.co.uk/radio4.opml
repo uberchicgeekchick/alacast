@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>Podcasts</title>
+		<title>BBC&apos;s Radio4 Podcasts</title>
 	</head>
 	<body>
 
@@ -37,7 +37,7 @@
 		<outline title="<![CDATA[Saturday Live]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/satlive/rss.xml" type="rss" text="<![CDATA[Saturday Live from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/satlive/" description="<![CDATA[Real life but not as you know it. Radio 4's Saturday morning show is full of the s...]]>"/>
 		<outline title="<![CDATA[Start the Week with Andrew Marr]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/stw/rss.xml" type="rss" text="<![CDATA[Start the Week with Andrew Marr from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/stw/" description="<![CDATA[Start The Week sets the cultural agenda for the week ahead, with  high-profile gue...]]>"/>
 		<outline title="<![CDATA[Sunday: Religious News]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/sunday/rss.xml" type="rss" text="<![CDATA[Sunday: Religious News from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/sunday/" description="<![CDATA[Roger Bolton presents religious news and analysis into the top stories from the UK...]]>"/>
-		<outline title="<![CDATA[The Archers]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/archers/rss.xml" type="rss" text="<![CDATA[The Archers from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/archers/" description="<![CDATA[Contemporary drama in a rural setting from the world's longest running radio soap ...]]>"/>
+		<outline title="<![CDATA[The Archers]]>" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio4/archers/rss.xml" type="rss" text="<![CDATA[The Archers]]>" htmlUrl="http://www.bbc.co.uk/radio4/archers/" description="<![CDATA[<h1>The Archers</h1><p>Contemporary drama in a rural setting from the world's longest running radio soap opera. Follow the lives of the residents of the fictional farming community of Ambridge. Original programmes broadcast 1900 hrs Sunday - Friday.  Episodes added daily (except Saturdays).</p>]]>" />
 		<outline title="<![CDATA[The Bottom Line with Evan Davis]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/bottomline/rss.xml" type="rss" text="<![CDATA[The Bottom Line with Evan Davis from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/bottomline/" description="<![CDATA[Insights into business from the people at the top; Evan Davis meets 3 or 4 powerfu...]]>"/>
 		<outline title="<![CDATA[The Film Programme]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/film/rss.xml" type="rss" text="<![CDATA[The Film Programme from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/film/" description="<![CDATA[Interviews and analysis from the world of cinema. Francine Stock talks to director...]]>"/>
 		<outline title="<![CDATA[Thinking Allowed]]>" xmlUrl="http://downloads.bbc.co.uk/radio4/podcasts/ta/rss.xml" type="rss" text="<![CDATA[Thinking Allowed from the BBC&apos; Radio4]]>" htmlUrl="http://www.bbc.co.uk/radio/podcasts/ta/" description="<![CDATA[Laurie Taylor explores the latest research into how society works and discusses cu...]]>"/>

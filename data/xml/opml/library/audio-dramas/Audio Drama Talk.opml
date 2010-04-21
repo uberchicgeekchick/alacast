@@ -9,7 +9,7 @@
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[The Sonic Society]]>" xmlUrl="http://sonic.libsyn.com/rss" type="rss" text="<![CDATA[The Sonic Society]]>" htmlUrl="http://sonicsociety.org/" description="<![CDATA[Highlighting modern audio drama around the world.]]>"/>
 		<outline title="<![CDATA[Circus-13 Productions]]>" xmlUrl="http://circus13.mypodcast.com/rss.xml" type="rss" text="<![CDATA[Circus-13 Productions]]>" htmlUrl="http://www.circus13productions.com/" description="<![CDATA[Original and adapted radio plays.]]>"/>
-		<outline title="<![CDATA[Astral Audio Productions]]>" xmlUrl="http://feeds.feedburner.com/astralaudio?format=xml" type="rss" text="<![CDATA[Astral Audio Productions]]>" htmlUrl="http://www.astralaudio.net/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[FinalRune Productions]]>" xmlUrl="http://feeds.feedburner.com/FinalRune?format=xml" type="rss" text="<![CDATA[FinalRune Productions]]>" htmlUrl="http://www.finalrune.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Astral Audio Productions]]>" xmlUrl="http://feeds.feedburner.com/astralaudio" type="rss" text="<![CDATA[Astral Audio Productions]]>" htmlUrl="http://www.astralaudio.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[FinalRune Productions]]>" xmlUrl="http://feeds.feedburner.com/FinalRune" type="rss" text="<![CDATA[FinalRune Productions]]>" htmlUrl="http://www.finalrune.com/" description="<![CDATA[]]>"/>
 	</body>
 </opml>

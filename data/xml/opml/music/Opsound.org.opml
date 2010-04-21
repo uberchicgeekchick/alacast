@@ -6,7 +6,7 @@
 	<body>
 		<outline type="link" title="<![CDATA[opsound&apos;s homepage]]>" url="http://opsound.org/" text="<![CDATA[opsound: free love* free music]]>" description="<![CDATA[opsound&apos;s genres]]>"/>
 		<!--<outline type="rss" title="<![CDATA[]]>" htmlUrl="" xmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[opsound: newest music]]>" text="<![CDATA[opsound: free love, free music]]>" htmlUrl="http://opsound.org/" xmlUrl="http://feeds.feedburner.com/OpsoundNewSongs?format=xml" type="rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[opsound: newest music]]>" text="<![CDATA[opsound: free love, free music]]>" htmlUrl="http://opsound.org/" xmlUrl="http://feeds.feedburner.com/OpsoundNewSongs" type="rss" description="<![CDATA[]]>"/>
 		<!--<outline type="rss" title="<![CDATA[opsound: ${?_} genre]]>" htmlUrl="http://opsound.org/genre/${?_}" xmlUrl="http://opsound.org/feed/genre/${?_}" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[opsound: none genre]]>" text="<![CDATA[]]>" htmlUrl="http://opsound.org/genre/none" xmlUrl="http://opsound.org/feed/genre/none" type="rss" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[opsound: abstract genre]]>" text="<![CDATA[]]>" htmlUrl="http://opsound.org/genre/abstract" xmlUrl="http://opsound.org/feed/genre/abstract" type="rss" description="<![CDATA[all of opsound&apos; abstract music genre]]>"/>

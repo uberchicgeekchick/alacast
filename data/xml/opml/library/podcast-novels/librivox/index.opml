@@ -7,7 +7,7 @@
 		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Librivox]]>" url="http://librivox.org/" type="link" text="<![CDATA[Librivox]]>" description="<![CDATA[]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Librivox New Releases Podcast]]>" xmlUrl="http://feeds.feedburner.com/LibrivoxNewReleasesPodcast?format=xml" text="<![CDATA[Librivox New Releases Podcast]]>" htmlUrl="http://librivox.org/" description="<![CDATA[A biweekly listing of recent new releases from librivox.org]]>"/>
+		<outline title="<![CDATA[Librivox New Releases Podcast]]>" xmlUrl="http://feeds.feedburner.com/LibrivoxNewReleasesPodcast" text="<![CDATA[Librivox New Releases Podcast]]>" htmlUrl="http://librivox.org/" description="<![CDATA[A biweekly listing of recent new releases from librivox.org]]>"/>
 		<outline title="<![CDATA[Librivox Audiobooks Podcast]]>" xmlUrl="http://librivox.org/podcast.xml" text="<![CDATA[Librivox Books Podcast]]>" htmlUrl="http://librivox.org/" description="<![CDATA[Free, public domain audio books, recorded by volunteers]]>"/>
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
