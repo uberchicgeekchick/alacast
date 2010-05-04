@@ -22,15 +22,19 @@
 		private $prefix;
 		private $playlist;
 		private $type;
+		private $append_pubdate;
 		
 		private $fp;
 		private $created_dirs;
 		
 		private $total;
 		
-		public function __construct($path=".", $prefix="alacast", $type="m3u"){
-			$this->path=$path;
+		public function __construct($path=".", $prefix="alacast", $type="m3u", $append_pubdate=FALSE){
 			$this->prefix=$prefix;
+			$this->path=$path;
+			
+			$this->append_pubdate=$append_pubdate;
+			
 			$this->total=0;
 			$this->created_dirs=array( 'total'=>0 );
 			$this->fp=NULL;
@@ -100,16 +104,18 @@
 				case "toxine":
 				case "tox":
 					if(!$this->total)
-						fprintf($this->fp, "# toxine playlist\n");
-					fprintf($this->fp, "\nentry {\n\tidentifier = %s;\n\tmrl = %s;\n};", basename($filename), $filename);
+						fprintf($this->fp, "#toxine playlist\n\n");
+					fprintf($this->fp, "entry {\n\tidentifier = %s;\n\tmrl = %s;\n\tav_offset = 3600;\n};\n\n", preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)/", "$2", $filename), $filename);
 					break;
 				
 				case "pls":
-					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, basename($filename));
+					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)$/", "$2", $filename));
 					break;
 				
 				case "m3u":
-					fprintf($this->fp, "%s\n", $filename);
+					if(!$this->total)
+						fprintf($this->fp, "#EXTM3U");
+					fprintf($this->fp, "\n#EXTINF:,%s\n%s", preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)$/", "$2", $filename), $filename);
 					break;
 			}
 			$this->total++;
@@ -157,9 +163,7 @@
 			switch($this->type){
 				case "toxine":
 				case "tox":
-					fprintf($this->fp, "\n#END");
-					fseek($this->fp, 0);
-					fprintf($this->fp, "#toxine playlist\n");
+					fprintf($this->fp, "#END");
 					break;
 				
 				case "pls":

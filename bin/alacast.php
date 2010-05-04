@@ -72,11 +72,11 @@
 			$untitled_podcasts=1;
 		
 		if(!(
-			(isset( $podcastsInfo[0]))
+			(isset( $podcastsInfo[0]['title']))
 			&&
-			$podcastsInfo[0]
+			$podcastsInfo[0]['title']
 		)) {
-			$podcastsInfo[0]="Untitled podcast(s)";
+			$podcastsInfo[0]['title']="Untitled podcast(s)";
 			$untitled_podcasts +=  $start;
 		}
 		
@@ -88,9 +88,9 @@
 			))
 				$podcastsInfo[$i]=sprintf(
 					"%s'%s episode %d from %s",
-					$podcastsInfo[0],
+					$podcastsInfo[0]['title'],
 					(
-						(preg_match( "/s$/", $podcastsInfo[0]))
+						(preg_match( "/s$/", $podcastsInfo[0]['title']))
 						? ""
 						: "s"
 					),
@@ -104,7 +104,7 @@
 	function get_episode_titles(&$podcastsInfo, $podcastsXML_filename) {
 		if(!( (filesize($podcastsXML_filename))))
 			return FALSE;
-			
+		
 		$podcastsTempInfo=array();
 		$podcastsXML_fp=fopen($podcastsXML_filename, 'r');
 		$podcastsTempInfo=preg_replace("/[\r\n]+/m" , " - ",
@@ -120,16 +120,29 @@
 					PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
 		);
 		
+		$podcastsPubDates;
 		if($GLOBALS['alacast']->options->titles_append_pubdate)
 			$podcastsPubDates=preg_split(
 						"/(<pubDate>[^<]+<\/pubDate>)/m", $podcastsTempInfo, -1,
 						PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
 			);
 		
+		$podcastURIs=array();
+		$podcastsURIs=preg_split(
+					"/(<url>[^<]+<\/url>)/m", $podcastsTempInfo, -1,
+					PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
+		);
+		
 		unset($podcastsTempInfo);
 		
-		if(!( (isset( $podcastsTitles[0]))))
+		if(!( (isset( $podcastsTitles[0])))){
+			unset($podcastsTitles);
+			unset($podcastsURIs);
+		
+			if(isset($podcastsPubDates))
+				unset($podcastsPubDates);
 			return FALSE;
+		}
 		
 		if($podcastsTitles[0] == $podcastsTitles[1])
 			array_shift($podcastsTitles);
@@ -142,16 +155,19 @@
 				continue;
 			
 			$episode_title=trim(preg_replace("/<title>[\ \t]*([^<]+)<\/title>/", "$1", $podcastsTitles[$i]));
-			if(!isset($podcastsInfo[0])){
-				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode($episode_title);
-				$episode_prefix=$GLOBALS['alacast']->titles->set_episode_prefix($podcastsInfo[0], $GLOBALS['alacast']->options->titles_prefix_podcast_name);
+			if(!isset($podcastsInfo[0]['title'])){
+				$podcastsInfo[ $podcastsInfo['total']++ ]['title']=html_entity_decode($episode_title);
+				$episode_prefix=$GLOBALS['alacast']->titles->set_episode_prefix($podcastsInfo[0]['title'], $GLOBALS['alacast']->options->titles_prefix_podcast_name);
 				continue;
 			}
 			
+			$podcastsInfo[ $podcastsInfo['total'] ]=array();
 			if(!($GLOBALS['alacast']->options->titles_append_pubdate))
-				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s", $episode_prefix, $episode_title));
+				$podcastsInfo[ $podcastsInfo['total'] ]['title']=html_entity_decode(sprintf("%s%s", $episode_prefix, $episode_title));
 			else
-				$podcastsInfo[ $podcastsInfo['total']++ ]=html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, $episode_title, preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)])));
+				$podcastsInfo[ $podcastsInfo['total'] ]['title']=html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, $episode_title, preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)])));
+			$podcastsInfo[ $podcastsInfo['total'] ]['url']=preg_replace("/<url>([^<]+)<\/url>/", "$1", $podcastsURIs[($i-2)]);
+			$podcastsInfo['total']++;
 		}
 		
 		if($GLOBALS['alacast']->options->verbose){
@@ -167,9 +183,9 @@
 			$GLOBALS['alacast']->logger->output(
 				(sprintf(
 					"\n*DEBUG*: I searched for %s'%s titles in %s.\nI've found titles for %d new episodes.",
-					$podcastsInfo[0],
+					$podcastsInfo[0]['title'],
 					(
-						(preg_match( "/s$/", $podcastsInfo[0]))
+						(preg_match( "/s$/", $podcastsInfo[0]['title']))
 							?"s"
 							:""
 					),
@@ -178,11 +194,15 @@
 				))
 			);
 		}
+		
 		unset($podcastsTitles);
-		unset($podcastsPubDates);
+		unset($podcastsURIs);
+		
+		if(isset($podcastsPubDates))
+			unset($podcastsPubDates);
 		
 		return TRUE;
-	}//end:function get_episode_titles()
+	}/*$this->get_episode_titles($podcasts_info, $podcastsXML_filename);*/
 	
 	function clean_podcasts_info(&$podcastsInfo) {
 		/* replaces forward slashes with hyphens & strips leading dots('.').
@@ -194,26 +214,25 @@
 				$GLOBALS['alacast']->logger->output(
 					(sprintf("Cleaning podcastInfo %d.\n\tBefore cleaning: %s\n", $i, $podcastsInfo[$i]))
 				);
-			$podcastsInfo[$i]=preg_replace( "/^[~\.]*(.*)[~\.]*$/", "$1",
+			$podcastsInfo[$i]['title']=preg_replace( "/^[~\.]*(.*)[~\.]*$/", "$1",
 						(preg_replace( "/\//", "-",
 							(html_entity_decode(
-								$podcastsInfo[$i],
+								$podcastsInfo[$i]['title'],
 								ENT_QUOTES,
 								"UTF-8"
 							))
 						))
 					);
 			if($GLOBALS['alacast']->options->bad_chars)
-				$podcastsInfo[$i]=preg_replace((sprintf("/[%s]/", $GLOBALS['alacast']->options->bad_chars)), "", $podcastsInfo[$i]);
+				$podcastsInfo[$i]['title']=preg_replace((sprintf("/[%s]/", $GLOBALS['alacast']->options->bad_chars)), "", $podcastsInfo[$i]['title']);
 			if($GLOBALS['alacast']->options->verbose)
 				$GLOBALS['alacast']->logger->output(
-					(sprintf("\tAfter cleaning: %s\n", $podcastsInfo[$i]))
+					(sprintf("\tAfter cleaning: %s\n", $podcastsInfo[$i]['title']))
 				);
 		}//for($i<$podcastInfo['total'])
 		
-		$podcastsInfo[0]=preg_replace("/^(the)\s+(.*)$/i", "$2, $1", $podcastsInfo[0]);
+		$podcastsInfo[0]['title']=preg_replace("/^(the)\s+(.*)$/i", "$2, $1", $podcastsInfo[0]['title']);
 	}//end:function clean_podcasts_info();
-	
 	
 	
 	function set_podcasts_info(&$podcastsXML_filename, &$podcasts_info, &$podcastsGUID, &$totalPodcasts) {
@@ -305,11 +324,7 @@
 		
 		$GLOBALS['alacast']->podcatcher->set_status( FALSE, TRUE );
 		
-		$GLOBALS['alacast']->playlist=new \alacast\playlist(
-			$GLOBALS['alacast']->ini->playlist_dir,
-			"alacast",
-			$GLOBALS['alacast']->options->playlist
-		);
+		$GLOBALS['alacast']->playlist_open();
 		
 		$totalMovedPodcasts=0;
 		$alacastsPodcastDir=opendir($GLOBALS['alacast']->ini->download_dir);
@@ -337,18 +352,18 @@
 			set_podcasts_info($podcastsXML_filename, $podcastsInfo, $podcastsGUID, $podcastsFiles['total']);
 			
 			if(!(
-				(is_dir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]))
+				(is_dir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title']))
 				||
-				(mkdir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0], 0774, TRUE))
+				(mkdir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title'], 0774, TRUE))
 			)) {
-				$GLOBALS['alacast']->logger->output("\n\tI've had to skip {$podcastsInfo[0]} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
+				$GLOBALS['alacast']->logger->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
 				continue;
 			}
 			
 			$GLOBALS['alacast']->logger->output(
 				(wordwrap(
 					(
-						"\n\t*w00t*! {$podcastsInfo[0]} has "
+						"\n\t*w00t*! {$podcastsInfo[0]['title']} has "
 						.($podcastsFiles['total']-1)
 						." new episode"
 						.( ($podcastsFiles['total']>2)
@@ -362,12 +377,13 @@
 				))
 			);
 			
-			leave_symlink_trail($podcastsGUID, $podcastsInfo[0]);
+			leave_symlink_trail($podcastsGUID, $podcastsInfo[0]['title']);
 			
-			$totalMovedPodcasts+=move_podcasts_episodes($podcastsGUID, $podcastsFiles, $podcastsInfo);
+			$totalMovedPodcasts+=move_podcasts_episodes($podcastsXML_filename, $podcastsGUID, $podcastsFiles, $podcastsInfo);
 			
 			unset($podcastsFiles);
 			unset($podcastsInfo);
+			unset($podcastsXML_filename);
 		}
 		closedir($alacastsPodcastDir);
 		
@@ -379,7 +395,7 @@
 		$GLOBALS['alacast']->logger->output("  Have fun! ^_^\n\n");
 		$GLOBALS['alacast']->podcatcher->set_status( FALSE, FALSE );
 		
-		unset($GLOBALS['alacast']->playlist);
+		$GLOBALS['alacast']->playlist_close();
 		
 		return TRUE;
 	}/*move_podcasts();*/
@@ -418,31 +434,32 @@
 	
 	
 	
-	function move_podcasts_episodes(&$podcastsGUID, &$podcastsFiles, &$podcastsInfo) {
+	function move_podcasts_episodes(&$podcastsXML_filename, &$podcastsGUID, &$podcastsFiles, &$podcastsInfo) {
 		$movedPodcasts=0;
 		
-		if(!$podcastsInfo[0]) $podcastsInfo[0]="Untitled podcast(s)";
+		if(!$podcastsInfo[0])
+			$podcastsInfo[0]['title']="Untitled podcast(s)";
 		
 		for($i=1, $z=($podcastsInfo['total']-1); $i<$podcastsFiles['total']; $i++, $z--) {
 			$podcastsFiles[$i]=preg_replace('/^"(.*)"$/', '$1', $podcastsFiles[$i]);
 			if(!( ($ext=get_filenames_extension( $podcastsFiles[$i]))))
 				continue;
 			
-			$Podcasts_New_Filename=set_podcasts_new_episodes_filename($podcastsInfo[0], $podcastsInfo[$z], $ext);
+			$Podcasts_New_Filename=set_podcasts_new_episodes_filename($podcastsInfo[0]['title'], $podcastsInfo[$z]['title'], $ext);
 			
 			if($GLOBALS['alacast']->options->verbose)
 				$GLOBALS['alacast']->logger->output(
 					(sprintf(
 						"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t%s/%s/%s\n",
 						$podcastsFiles[$i],
-						$GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0], $Podcasts_New_Filename
+						$GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename
 					))
 				);
 			
 			if(
 				($GLOBALS['alacast']->options->keep_original)
 				&&
-				(file_exists( sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0], $Podcasts_New_Filename)))
+				(file_exists( sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename)))
 			)
 				continue;
 			
@@ -453,7 +470,7 @@
 			$cmd=sprintf("%s %s %s",
 					(($GLOBALS['alacast']->options->keep_original) ?"cp" : "mv"),
 					preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]),
-					escapeshellarg( ($podcasts_new_file=sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0], $Podcasts_New_Filename)) )
+					escapeshellarg( ($podcasts_new_file=sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename)) )
 			);
 			
 			if(!$GLOBALS['alacast']->options->debug){
@@ -472,7 +489,7 @@
 			$movedPodcasts++;
 			
 			//Prints the new episodes name:
-			$GLOBALS['alacast']->logger->output("\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t")) ."\n");
+			$GLOBALS['alacast']->logger->output("\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t")) ."\n\t\tURI: ".$podcastsInfo[$z]['url']."\n");
 		}
 		return $movedPodcasts;
 	}//end:function move_podcasts_episodes();
@@ -493,7 +510,7 @@
 	if(!($alacast=new alacast()))
 		exit(-1);
 	
-	if($alacast->options->diagnostic_mode){
+	if($alacast->options->diagnosis){
 		fprintf(STDOUT, "\$alacast:\n");
 		print_r($alacast);
 		fprintf(STDOUT, "\n\n\$_SERVER['argv']:\n");

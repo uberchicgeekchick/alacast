@@ -48,15 +48,32 @@ parse_argv:
 			case "help":
 				goto usage;
 				breaksw;
-	
+			
+			case "repeat":
+			case "interupt":
 			case "send-interupt":
-				if( $value > 0 ) set total=$value;
+				if( $value > 0 ) \
+					set total=$value;
 				breaksw;
+			
+			case "delay":
 			case "timeout":
-				if( $value > 4 ) set timeout=$value;
+				if( $value > 0 ) \
+					set timeout=$value;
 				breaksw;
+			
+			case "debug":
+				if(! ${?debug} ) \
+					set debug;
+				breaksw;
+			
 			case "enable":
-				if( "$value" == "debug" ) set debug;
+				switch("$value")
+					case "debug":
+						if(! ${?debug} ) \
+							set debug;
+					breaksw;
+				endsw
 				breaksw;
 		endsw
 		shift;

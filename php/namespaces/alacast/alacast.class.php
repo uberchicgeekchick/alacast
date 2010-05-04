@@ -44,21 +44,34 @@
 			$this->podcatcher=new \alacast\podcatcher( $this->path, $this->ini->profiles_path, $this->options->update, $this->options->nice, $this->options->debug, "" );
 			$this->titles=new \alacast\titles();
 
-			if(!$this->options->diagnostic_mode)
+			if(!$this->options->diagnosis)
 				$this->playlist=NULL;
-			else{
-				$this->playlist=new \alacast\playlist(
-					$this->ini->playlist_dir,
-					"alacast",
-					$this->options->playlist
-				);
-			}
-			
+			else
+				$this->playlist_open(TRUE);
 		}//__construct
 		
+		public function playlist_open($force=FALSE){
+			if( !$this->options->playlist && !$force )
+				return;
+			
+			$this->playlist=new \alacast\playlist(
+				$this->ini->playlist_dir,
+				"alacast",
+				$this->options->playlist,
+				$this->options->titles_append_pubdate
+			);
+		}/*\alacast\playlist_open();*/
+		
+		public function playlist_close(){
+			if(!isset($this->playlist))
+				return;
+			
+			unset($this->playlist);
+			$this->playlist=NULL;
+		}/*\alacast\playlist_close();*/
+		
 		public function __destruct(){
-			if(isset($this->playlist))
-				unset($this->playlist);
+			$this->playlist_close();
 		}//__destruct
 		
 	}

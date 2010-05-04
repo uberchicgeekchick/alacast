@@ -5,9 +5,9 @@ use strict;
 if ( @ARGV < 0 || "$ARGV[0]" eq "-h"  || "$ARGV[0]" eq "--help" ) { usage(); }
 
 my $scripts_path=`dirname "$0"`;
-$scripts_path=~s/[\r\n]+//;
+$scripts_path=~s/\n//;
 my $scripts_exec=`basename "$0"`;
-$scripts_exec=~s/[\r\n]+//;
+$scripts_exec=~s/\n//;
 my $catalogs_path="$scripts_path/../data/xml/opml";
 my @catalogs=("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "knowledge", "unfiled.opml");
 if( -e "../../profiles/$ENV{USER}/opml/subscriptions.opml" ){
@@ -55,7 +55,7 @@ sub search_catalog{
 		$opml_file=~s/'/\'/g;
 		my $grep_command=sprintf("/bin/grep --binary-files=without-match --with-filename --perl-regex -i '.*%s=[\"][^\"]\*%s[^\"]\*[\"]' %s%s%s", $global_search_attribute, $global_search_attributes_value, '"', $opml_file, '"' );
 		foreach my $opml_and_outline ( `$grep_command` ){
-			$opml_and_outline=~s/[\r\n]+//g;
+			$opml_and_outline=~s/\n//g;
 			if( $opml_and_outline=~/^.*\<!\-\-.*\-\-\>$/ ){ next; }
 			
 			if(!$results_found){
@@ -119,6 +119,7 @@ sub search_catalog{
 			printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
 			system($xmlUrl_parser_exec);
 		}
+		@xmlUrls_found=();
 	}
 	
 	my @opml_files_editing=();

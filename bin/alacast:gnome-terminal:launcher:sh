@@ -11,7 +11,7 @@ fi
 
 
 alacasts_ini="";
-if test -e "${HOME}/.alacast/alacast.ini"; then
+if [ -e "${HOME}/.alacast/alacast.ini" ]; then
 	alacasts_ini="${HOME}/.alacast/alacast.ini";
 elif test -e "${HOME}/.alacast/profiles/${USER}/alacast.ini"; then
 	alacasts_ini="${HOME}/.alacast/profiles/${USER}/alacast.ini";
@@ -20,24 +20,26 @@ elif test -e "${alacasts_path}/../data/${USER}/default/alacast.ini"; then
 elif test -e "${alacasts_path}/../data/profiles/default/alacast.ini"; then
 	alacasts_ini="${alacasts_path}/../data/profiles/default/alacast.ini";
 fi
-if test -e "${alacasts_ini}"; then
-	if test -n "$ALACASTS_OPTIONS"; then
-		export ALACASTS_OPTIONS=`cat "${alacasts_ini}" | grep 'options.default' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
+if [ -e "${alacasts_ini}" ]; then
+	if [ ! -z $GREP_OPTIONS ]; then
+		grep_options="$GREP_OPTIONS";
+		unset GREP_OPTIONS;
 	fi
-	alacasts_resolution=`cat "${alacasts_ini}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
-	alacasts_options=`cat "${alacasts_ini}" | grep 'options.cli' | sed 's/.*options\.cli="\([^"]\+\)";/\1/'`;
+	alacasts_resolution=`grep 'resolutions.terminal' "$alacasts_ini" | sed -r 's/.*resolutions\.terminal="([^"]+)";/\1/'`;
+	if [ ! -z $grep_options ]; then
+		export GREP_OPTIONS="$grep_options";
+		unset grep_options;
+	fi
 else
-	if test -n "$ALACASTS_OPTIONS"; then
-		export ALACASTS_OPTIONS='--with-defaults';
-	fi
 	alacasts_resolution="114x40"
-	alacasts_options="--with-defaults";
 fi
 
 /usr/bin/gnome-terminal							\
-	--geometry="${alacasts_resolution}"				\
+	--geometry="$alacasts_resolution"				\
 	--hide-menubar							\
 	--role='Media:Alacast'						\
 	--title="alacast:php"						\
-	--working-directory="${alacasts_path}"				\
-	--command="${alacasts_exec} ${alacasts_options} ${argv}" &
+	--working-directory="$alacasts_path"				\
+	--command="$alacasts_exec --mode=update $argv"			\
+	&
+

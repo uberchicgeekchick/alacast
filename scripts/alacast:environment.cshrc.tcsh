@@ -45,6 +45,8 @@ set_gtk_path:
 		else
 			set alacasts_path="${alacasts_path}:${alacast_gtk_path}";
 		endif
+		
+		unset escaped_alacast_gtk_path;
 	end
 	unset alacast_gtk_path alacast_gtk_paths;
 #set_gtk_path:
@@ -72,6 +74,8 @@ set_cli_path:
 		else
 			set alacasts_path="${alacasts_path}:${alacast_cli_path}";
 		endif
+		
+		unset escaped_alacast_cli_path;
 	end
 	unset alacast_cli_path alacast_cli_paths;
 #set_cli_path:

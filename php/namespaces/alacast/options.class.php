@@ -16,27 +16,28 @@
 	namespace alacast;
 	
 	class options{
-		public	$nice;
-		public	$debug;
-		public	$diagnostic_mode;
-		public	$quiet;
-		public	$logging;
-		public	$update;
-		public	$leave_trails;
-		public	$clean_trails;
-		public	$interactive;
-		public	$update_delay;
-		public	$verbose;
-		public	$keep_original;
+		public $mode;
+		public $nice;
+		public $debug;
+		public $diagnosis;
+		public $quiet;
+		public $logging;
+		public $update;
+		public $leave_trails;
+		public $clean_trails;
+		public $interactive;
+		public $update_delay;
+		public $verbose;
+		public $keep_original;
 		
-		public	$titles_append_pubdate;
-		public	$titles_prefix_podcast_name;
-		public	$titles_reformat_numerical;
+		public $titles_append_pubdate;
+		public $titles_prefix_podcast_name;
+		public $titles_reformat_numerical;
 		
-		public	$playlist;
+		public $playlist;
 		
-		private	$player;
-		public	$bad_chars;
+		private $player;
+		public $bad_chars;
 		
 		public function __construct(){
 			$this->init();
@@ -59,13 +60,15 @@
 		
 		
 		private function init(){
+			$this->mode=NULL;
+			
 			$this->update_delay=0;
 			$this->interactive=FALSE;
 			$this->verbose=FALSE;
 			
 			$this->nice=0;
 			$this->debug=FALSE;
-			$this->diagnostic_mode=FALSE;
+			$this->diagnosis=FALSE;
 			$this->quiet=FALSE;
 			$this->logging=FALSE;
 			$this->update=FALSE;
@@ -89,6 +92,10 @@
 				$option=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$1", $argv_value);
 				$value=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$2", $argv_value);
 				switch($option){
+					case "mode":
+						$this->mode=$value;
+						break;
+					
 					case "verbose":
 						if(!$this->verbose)
 							$this->verbose=TRUE;
@@ -101,8 +108,8 @@
 					
 					case "diagnosis":
 					case "diagnostic":
-						if(!$this->diagnostic_mode)
-							$this->diagnostic_mode=TRUE;
+						if(!$this->diagnosis)
+							$this->diagnosis=TRUE;
 						break;
 					
 					case "interactive":
@@ -163,7 +170,7 @@
 						break;
 					
 					case "nice":
-						if(!($value && preg_match("/^[0-9]+$/", $value))){
+						if(!($value && preg_match("/^[0-9]+$/", $value) && $value < 20 && $value > -21)){
 							$this->nice=5;
 							break;
 						}

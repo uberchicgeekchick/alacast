@@ -52,6 +52,8 @@ else
 		else
 			alacasts_path="${alacasts_path}:${alacast_gtk_path}";
 		fi
+		
+		unset escaped_alacast_gtk_path;
 	done
 	unset alacast_gtk_path alacast_gtk_paths;
 	
@@ -82,6 +84,8 @@ else
 		else
 			alacasts_path="${alacasts_path}:${alacast_cli_path}";
 		fi
+		
+		unset escaped_alacast_cli_path;
 	done
 	unset alacast_cli_path alacast_cli_paths;
 	

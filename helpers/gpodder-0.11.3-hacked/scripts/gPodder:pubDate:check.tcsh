@@ -41,7 +41,7 @@ set escaped_cwd="`echo '${cwd}' | sed -r 's/([\/\.])/\\\1/g'`";
 foreach p(*)
 	if(!( -d "${p}" && -e "${p}/index.xml" )) continue;
 	cp "${p}/index.xml" ./index.swp;
-	ex -E -n -X --noplugin '+1,$s/[\r\n]\+//' '+wq' index.swp >> /dev/null;
+	ex -E -n -X --noplugin '+1,$s/\v\r\n?\_$//' '+1,$s/\n//g' '+wq' index.swp >> /dev/null;
 	cat index.swp | sed -r "s/.*<title>([^<]+)<\/title>.*<title>([^<]+)<\/title>.*<pubDate>([^<]+)<\/pubDate>.*/released on \3: <\1>'s episode: <\2> -- ${escaped_cwd}\/${p}/g" >> "${pubDate_log}";
 end
 if( -e ./index.swp ) rm ./index.swp;

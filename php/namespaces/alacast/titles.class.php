@@ -48,16 +48,16 @@
 					for( $n=0; $n<$this->regular_expression[$a]['total']; $n++ )
 						while( (preg_match(
 							$this->regular_expression[$a][$n][0],
-							$podcasts_info[$i]
+							$podcasts_info[$i]['title']
 						)) ){
-							/*printf("\nRenaming: [%s]\n\tusing using regular_expression[%d][%d]: %s %s\n", $podcasts_info[$i], $a, $n,$this->regular_expression[$a][$n][0],$this->regular_expression[$a][$n][1]);*/
-							$podcasts_info[$i] = preg_replace(
+							/*printf("\nRenaming: [%s]\n\tusing using regular_expression[%d][%d]: %s %s\n", $podcasts_info[$i]['title'], $a, $n,$this->regular_expression[$a][$n][0],$this->regular_expression[$a][$n][1]);*/
+							$podcasts_info[$i]['title'] = preg_replace(
 								$this->regular_expression[$a][$n][0],
 								$this->regular_expression[$a][$n][1],
-								$podcasts_info[$i],
+								$podcasts_info[$i]['title'],
 								-1
 							);
-							/*printf("\tRenamed to: %s\n", $podcasts_info[$i]);*/
+							/*printf("\tRenamed to: %s\n", $podcasts_info[$i]['title']);*/
 						}
 		}/*reorder_titles*/
 		

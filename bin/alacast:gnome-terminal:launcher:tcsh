@@ -24,19 +24,26 @@ else if ( -e "${alacasts_path}/../data/profiles/default/alacast.ini" ) then
 endif
 
 if( ${?alacasts_ini} ) then
-	if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS `cat "${alacasts_ini}" | grep 'options.default' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
-	set alacasts_resolution=`cat "${alacasts_ini}" | grep 'resolutions.gnome-terminal' | sed 's/.*resolutions\.gnome\-terminal="\([^"]\+\)";/\1/'`;
-	set alacasts_options=`cat "${alacasts_ini}" | grep 'options.cli' | sed 's/.*options\.cli="\([^"]\+\)";/\1/'`;
+	if( ${?GREP_OPTIONS} ) then
+		set grep_options="${GREP_OPTIONS}";
+		unsetenv GREP_OPTIONS;
+	endif
+	set alacasts_resolution="`/bin/grep 'resolutions.terminal' "\""${alacasts_ini}"\"" | sed -r 's/.*resolutions\.terminal\="\""([^"\""]+)"\"";/\1/'`";
+	if( ${?grep_options} ) then
+		setenv GREP_OPTIONS "${grep_options}";
+		unset grep_options;
+	endif
 else
-	if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS "--with-defaults";
 	set alacasts_resolution="140x40";
-	set alacasts_options="--with-defaults";
 endif
+
+if(! ${?noglob} ) \
+	set noglob;
 
 /usr/bin/gnome-terminal							\
 	--geometry="${alacasts_resolution}"				\
 	--hide-menubar							\
 	--role='Media:Alacast'						\
-	--title="alacast:php"						\
+	--title="[`alacast:php`] #>"					\
 	--working-directory="${alacasts_path}"				\
-	--command="${alacasts_exec} ${alacasts_options} ${argv}" &;
+	--command="${alacasts_exec} --mode=update ${argv}" &;

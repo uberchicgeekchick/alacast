@@ -131,7 +131,8 @@
 			if(!($this->check_log()))
 				return FALSE;
 			
-			if($this->output_logs_fp) fclose($this->output_logs_fp);
+			if($this->output_logs_fp)
+				fclose($this->output_logs_fp);
 			
 			$this->setup_logging_data();
 			
@@ -149,7 +150,8 @@
 			if(!($this->check_error_log()))
 				return FALSE;
 			
-			if($this->error_logs_fp) fclose($this->error_logs_fp);
+			if($this->error_logs_fp)
+				fclose($this->error_logs_fp);
 			
 			$this->setup_logging_data();
 			
