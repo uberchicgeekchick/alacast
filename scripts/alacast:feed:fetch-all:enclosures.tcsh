@@ -44,9 +44,7 @@ init:
 	set status=0;
 	set logging;
 	
-	set alacasts_download_log_prefix="alacast:feeds:list:@:";
-	set alacasts_download_log_timestamp="`date '+%s'`";
-	set alacasts_download_log="./.${alacasts_download_log_prefix}.${alacasts_download_log_timestamp}.log";
+	set alacasts_download_log="`mktemp --tmpdir alacast:feeds:list.XXXXXX`";
 	
 	set downloading;
 	
@@ -83,7 +81,7 @@ main:
 			if(! -d "${save_to_dir}" ) \
 				mkdir -p "${save_to_dir}";
 			set starting_old_owd="${owd}";
-			/bin/mv "${alacasts_download_log}" "${save_to_dir}/.${alacasts_download_log_prefix}.${alacasts_download_log_timestamp}.log";
+			/bin/mv "${alacasts_download_log}" "${save_to_dir}/`basename '${alacasts_download_log}'`";
 			cd "${save_to_dir}";
 		endif
 		unset save_to_dir;
@@ -114,13 +112,9 @@ main:
 
 
 fetch_podcasts:
-	foreach feed ("`cat '${alacasts_download_log}'`")
+	foreach feed ("`cat "\""${alacasts_download_log}"\""`")
 		ex -s '+1d' '+wq!' "${alacasts_download_log}";
-		set my_feed_xml="./.my.feed.`date '+%s'.xml`";
-		while( -e "${my_feed_xml}" )
-			sleep 2;
-			set my_feed_xml="./.my.feed.`date '+%s'.xml`";
-		end
+		set my_feed_xml="`mktemp --tmpdir alacasts.feed.xml.XXXXXX`";
 		if(! ${?silent} ) \
 			printf "Downloading podcast's feed.\n\t<%s>\n" "${feed}";
 		if( ${?logging} ) \
@@ -155,7 +149,7 @@ fetch_podcast:
 		dos2unix --convmode Mac "${my_feed_xml}" >& ${output};
 	endif
 	
-	ex -s '+set ff=unix' "+0r ${my_feed_xml}" '+1,$s/\v\<\!\-\-.*\-\-\>//' '+1,$s/\v\>[\ \t]*\</\>\r\</g' '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' "+w! ${my_feed_xml}" '+q!';
+	ex -s '+set ff=unix' "+0r ${my_feed_xml}" '+1,$s/\v\<\!\-\-.*\-\-\>//' '+1,$s/\v\<\!\[CDATA\[//g' '+1,$s/\v\]\]\>//g' '+1,$s/\v\>[\ \t]*\</\>\r\</g' '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' "+w! ${my_feed_xml}" '+q';
 	
 	set title="`cat "\""${my_feed_xml}"\"" | sed -r 's/(\<item\>)/\1\n/g' | head -1 | /bin/grep --no-messages --perl-regexp '\<title[^\>]*\>' | sed -r 's/.*<title[^>]*>([^<]+)<\/title>.*/\1/g' | sed 's/\//\ \-\ /g' | sed -r 's/[\ \t]*\&[^;]+;[\ \t]*/\ /ig' | sed -r 's/^[\ \t]*//g' | sed -r 's/[\ \t]*"\$"//g'`";
 	
@@ -196,8 +190,8 @@ fetch_podcast:
 		goto continue_download;
 	
 	# This to make sure we're working with UNIX file types & don't have to repeat newline replacement.
-	/bin/cp "../${my_feed_xml}" "./00-feed.xml";
-	/bin/rm "../${my_feed_xml}";
+	/bin/cp "${my_feed_xml}" "./00-feed.xml";
+	/bin/rm -f "${my_feed_xml}";
 	
 	# Grabs the titles of the podcast and all episodes.
 	if(! ${?silent} ) \
@@ -213,7 +207,7 @@ fetch_podcast:
 	
 	ex -s '+1,$s/.*<\(item\|entry\)[^>]*>.*<title[^>]*>\(.*\)<\/title>.*\(enclosure\).*<\/\(item\|entry\)>$/\2/ig' '+1,$s/.*<\(item\|entry\)[^>]*>.*\(enclosure\).*<title[^>]*>\(.*\)<\/title>.*<\/\(item\|entry\)>$/\3/ig' '+1,$s/.*<\(item\|entry\)[^>]*>.*<title[^>]*>\([^<]*\)<\/title>.*<\/\(item\|entry\)>[\n\r]*//ig' '+wq!' './00-titles.lst';
 	
-	ex -s '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*/\ /ig' '+1,$s/<\!\[CDATA\[\(.*\)\]\]>/\1/g' '+1,$s/#//g' '+1,$s/\//\ \-\ /g' '+wq!' './00-titles.lst';
+	ex -s '+1,$s/&\(#038\|amp\)\;/\&/ig' '+1,$s/&\(#8243\|#8217\|#8220\|#8221\|\#039\|rsquo\|lsquo\)\;/'\''/ig' '+1,$s/&[^;]\+\;[\ \t]*/\ /ig' '+1,$s/#//g' '+1,$s/\//\ \-\ /g' '+wq!' './00-titles.lst';
 	if(! ${?silent} ) \
 		printf "[done]\n";
 	if( ${?logging} ) \
@@ -293,10 +287,10 @@ fetch_podcast:
 	set enclosure_count_02=`cat "./00-enclosures-02.lst"`;
 	if( ${#enclosure_count_01} >= ${#enclosure_count_02} ) then
 		/bin/mv "./00-enclosures-01.lst" "./00-enclosures.lst";
-		/bin/rm "./00-enclosures-02.lst";
+		/bin/rm -f "./00-enclosures-02.lst";
 	else
 		/bin/mv "./00-enclosures-02.lst" "./00-enclosures.lst";
-		/bin/rm "./00-enclosures-01.lst";
+		/bin/rm -f "./00-enclosures-01.lst";
 	endif
 	if(! ${?silent} ) \
 		printf "[done]\n";
@@ -336,8 +330,8 @@ fetch_podcast:
 #fetch_podcast:
 
 continue_download:
-	if( -e "../${my_feed_xml}" ) \
-		/bin/rm  "../${my_feed_xml}";
+	if( -e "${my_feed_xml}" ) \
+		/bin/rm -f "${my_feed_xml}";
 	set episodes="`cat './00-enclosures.lst'`";
 	if(! ${?silent} ) \
 		printf "\n\tFinishing downloading %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${title}";
@@ -492,13 +486,13 @@ fetch_episodes:
 	
 	if(! ${?diagnostic_mode} ) then
 		if( -e './00-titles.lst' ) \
-			/bin/rm './00-titles.lst';
+			/bin/rm -f './00-titles.lst';
 		if( -e './00-enclosures.lst' ) \
-			/bin/rm './00-enclosures.lst';
+			/bin/rm -f './00-enclosures.lst';
 		if( -e './00-pubDates.lst' ) \
-			/bin/rm './00-pubDates.lst';
+			/bin/rm -f './00-pubDates.lst';
 		if( -e './00-feed.xml' ) \
-			/bin/rm './00-feed.xml';
+			/bin/rm -f './00-feed.xml';
 	endif
 	
 	if(! ${?silent} ) \
@@ -531,7 +525,7 @@ fetch_episodes:
 
 exit_script:
 	if( -e "${alacasts_download_log}" ) \
-		/bin/rm "${alacasts_download_log}";
+		/bin/rm -f "${alacasts_download_log}";
 	
 	if( ${?starting_old_owd} ) then
 		cd "${owd}";

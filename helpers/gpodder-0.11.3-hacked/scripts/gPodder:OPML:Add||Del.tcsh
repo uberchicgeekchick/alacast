@@ -1,11 +1,16 @@
 #!/bin/tcsh -f
+if(! ${?0} ) then
+	printf "**error:** This script cannot be sourced." > /dev/stderr;
+	exit -1;
+endif
+
 if(!( ${?1} && "${1}" != "" && "${1}" != "--help")) then
 	goto usage
 endif
 unsetenv GREP_OPTIONS;
 
-while( ${?1} && "${1}" != "" )
 next_option:
+while( ${?1} && "${1}" != "" )
 	set action="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\1/g'`";
 	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\2/g'`";
 	set opml="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/\-\-([^=]+)(=?)(.*)/\3/g'`";

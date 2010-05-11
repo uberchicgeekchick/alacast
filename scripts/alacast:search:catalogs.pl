@@ -128,7 +128,6 @@ sub search_catalog{
 			for(my $i=0; $i<10 && $x < @opml_files_to_edit; $i++, $x++){
 				$opml_files_editing[$i]=$opml_files_to_edit[$x];
 			}
-			print(@opml_files_editing);
 			if(@opml_files_editing > 0){
 				my $editor_exec="tcsh -f -c 'vim-enhanced -p @opml_files_editing'";
 				printf("Running:\n\t%s\n", $editor_exec); 

@@ -4,8 +4,7 @@
 		<title>Short Story anthologies &amp; podcast novels</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - A free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Stories of Dan Absalonson]]>" xmlUrl="http://feeds.feedburner.com/StoriesOfDanDanTheArtMan" type="rss" text="<![CDATA[Stories of Dan Absalonson]]>" htmlUrl="http://storiesofdan.blogspot.com/" description="<![CDATA[<h1>Stories of Dan Absalonson</h1><p><h3>A place to enter the mind of the storyteller Dan Absalonson.</h3>Genre Fiction short stories released monthly leading up to a weekly release of a full novel. Stories read by the author including character voices, sound effects, and in some cases background music.</p>]]>" />
 	</body>
 </opml>
 

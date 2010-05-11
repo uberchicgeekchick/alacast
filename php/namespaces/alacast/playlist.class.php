@@ -100,24 +100,27 @@
 					return ($this->enabled=FALSE);
 			}
 			
+			$title=preg_replace("/^([^:]*):?.*$/", "$1", preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(, released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename));
+			
 			switch($this->type){
 				case "toxine":
 				case "tox":
 					if(!$this->total)
 						fprintf($this->fp, "#toxine playlist\n\n");
-					fprintf($this->fp, "entry {\n\tidentifier = %s;\n\tmrl = %s;\n\tav_offset = 3600;\n};\n\n", preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)/", "$2", $filename), $filename);
+					fprintf($this->fp, "entry {\n\tidentifier = %s;\n\tmrl = %s;\n\tav_offset = 3600;\n};\n\n", $title, $filename);
 					break;
 				
 				case "pls":
-					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)$/", "$2", $filename));
+					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, $title);
 					break;
 				
 				case "m3u":
 					if(!$this->total)
 						fprintf($this->fp, "#EXTM3U");
-					fprintf($this->fp, "\n#EXTINF:,%s\n%s", preg_replace("/^(.*)\/([^\/]+)".($this->append_pubdate ?"(, released on[^\.]+)" :"")."\.([^\.]+)$/", "$2", $filename), $filename);
+					fprintf($this->fp, "\n#EXTINF:,%s\n%s", $title, $filename);
 					break;
 			}
+			unset($title);
 			$this->total++;
 			return TRUE;
 		}/*add_file($podcasts_new_file);*/

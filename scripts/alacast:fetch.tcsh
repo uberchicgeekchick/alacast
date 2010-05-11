@@ -58,9 +58,7 @@ init:
 		endif
 	endif
 	
-	set alacasts_catalog_search_results_log_prefix="alacasts:catalog:search:results@";
-	set alacasts_catalog_search_results_log_timestamp="`date '+%s'`";
-	set alacasts_catalog_search_results_log="./.${alacasts_catalog_search_results_log_prefix}${alacasts_catalog_search_results_log_timestamp}";
+	set alacasts_catalog_search_results_log="`mktemp --tmpdir alacasts:catalog:search:results.XXXXXX`";
 	
 	goto  parse_argv; #returns to main or, possibly exits via 'usage:'.
 #init:
@@ -126,8 +124,8 @@ endif
 find_podcasts:
 	if( ${?debug} ) echo "Running:\n\t alacast:search.pl --output=outline --${alacasts_catalog_search_attribute}="\""${alacasts_catalog_search_phrase}"\"" | /bin/grep --perl-regexp 'xmlUrl=' | sed -r 's/.*xmlUrl=["\""'\\'']([^"\""'\\'']+)["\""'\\''].*/\1/' | sort | uniq \>\! "\""${alacasts_catalog_search_results_log}.log"\""";
 	${alacast_search_pl} --output=outline --${alacasts_catalog_search_attribute}="${alacasts_catalog_search_phrase}" | /bin/grep --perl-regexp 'xmlUrl=' | sed -r 's/.*xmlUrl=["'\'']([^"'\'']+)["'\''].*/\1/' | sort | uniq >! "${alacasts_catalog_search_results_log}.log";
-	set podcast_xmlUrl_count="`cat "\""${alacasts_catalog_search_results_log}.log"\""`";
-	if(!( ${#podcast_xmlUrl_count} > 0 )) then
+	set podcast_xmlUrl_count="`wc -l "\""${alacasts_catalog_search_results_log}.log"\"" | sed -r 's/^([0-9]+).*"\$"/\1/'`";
+	if(!( ${podcast_xmlUrl_count} > 0 )) then
 		printf "Unable to find any podcasts who's %s matched your search phrase: %s\n\n" "${alacasts_catalog_search_attribute}" "${alacasts_catalog_search_phrase}";
 		set status=-1;
 		unset podcast_xmlUrl_count;
@@ -231,7 +229,7 @@ fetch_podcasts:
 			${alacasts_catalog_search_results_log}.${download_command}.tcsh;
 		else
 			printf "Saving %s's %s download script to: %s" "${podcasts_title}" "${download_command}" "${save_script}";
-			mv -vf "${alacasts_catalog_search_results_log}.${download_command}.tcsh" "${save_script}";
+			mv -vfi "${alacasts_catalog_search_results_log}.${download_command}.tcsh" "${save_script}";
 		endif
 	end
 #fetch_podcasts:
