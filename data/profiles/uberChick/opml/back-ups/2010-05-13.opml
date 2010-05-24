@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Mon May 17 22:27:06 2010
+            Thu May 13 09:48:26 2010
         </dateCreated>
     </head>
     <body>
@@ -29,6 +29,7 @@
         <outline text="Streaming media for archaeology and indigenous cultures" title="Archaeology Channel - Audio News from Archaeologica" type="rss" xmlUrl="http://www.archaeologychannel.org/rss/TACfeed.xml"/>
         <outline text="Supernatural Thriller by Scott Roche" title="Archangel" type="rss" xmlUrl="http://feeds.feedburner.com/Archangel"/>
         <outline text="http://podcast.seti.org/index.xml" title="Are We Alone - where science isn't alien." type="rss" xmlUrl="http://podcast.seti.org/index.xml"/>
+        <outline text="LearnOutLoud.com presents the Art History Podcast. Each episode provides thoughtful analysis of the enduring artistic masterpieces that have become hallmarks of western culture." title="Art History Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/ArtHistoryPodcast"/>
         <outline text="LearnOutLoud.com presents the Art History Podcast. Each episode provides thoughtful analysis of the enduring artistic masterpieces that have become hallmarks of western culture." title="Art History Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/ArtHistoryPodcast"/>
         <outline text="The best of Night Waves, Radio 3's flagship arts and ideas programme, featuring in-depth interviews; vociferous debates on key cultural and philosophical questions; and critics' judgement on the latest releases. Night Waves is broadcast on BBC Radio 3 Mon - Thurs at 9.15pm." title="Arts and Ideas" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio3/r3arts/rss.xml"/>
         <outline text="Science with a Sense of Humour - The Naked Scientists Radio Show" title="Ask the Naked Scientists PODCAST" type="rss" xmlUrl="http://www.thenakedscientists.com/rss/ask_the_naked_scientists.xml"/>
@@ -66,7 +67,6 @@
         <outline text="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss" title="CNET UK Podcast" type="rss" xmlUrl="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss"/>
         <outline text="CBC Radio knows that if a joke's worth telling, it's worth repeating. The Comedy Factory collects our favourite skits, commentaries and funny bits that appeared on CBC Radio over the past week. It's an assembly line of humour, safety-tested and priced to move!" title="Comedy Factory from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/cf.xml"/>
         <outline text="commandN is a weekly tech news video show with hosts/producers Amber MacArthur, Brian McKechnie and Jeff MacArthur." title="commandN XviD" type="rss" xmlUrl="http://feeds.feedburner.com/command-n/xvid"/>
-        <outline text="A free audiobook by Maya Lassiter" title="Conjuring Raine" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/509/book.xml"/>
         <outline text="Short-stories in progress by an award-winning science fiction writer, read aloud in small regular chunks" title="Cory Doctorow's craphound.com » Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/doctorow_podcast"/>
         <outline text="Chew the fat with us as we muse over the wonders of the universe." title="Cosmic Tea Party" type="rss" xmlUrl="http://www.cosmicteaparty.org/Episodes/feed.xml"/>
         <outline text="Science Fiction and Fantasy fiction podcast from Cossmass Productions" title="Cossmass Infinities" type="rss" xmlUrl="http://feeds.feedburner.com/cossmass/infinities"/>
@@ -137,7 +137,6 @@
         <outline text="a collection of podcast novels" title="Free Podcast Novel" type="rss" xmlUrl="http://mickaloha.com/fpn/?feed=rss2"/>
         <outline text="Free as in Node" title="free-as-in-node" type="rss" xmlUrl="http://podcast.freenode.net/feed"/>
         <outline text="Follow the adventures of a zombie, two mad scientists and a particularly disgusting pirate as they battle government do-gooders (and do-badders), Martian girlfriends, Moon men, vomiting dolls, monsters and evil so evil we dare not speak its evil name…" title="Frequency Lite" type="rss" xmlUrl="http://frequencylite.com/?feed=rss2"/>
-        <outline text="A free audiobook by Basil Sands and The Authors of The Killzone Blog" title="Fresh Kills" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/502/book.xml"/>
         <outline text="A free audiobook by Basil Sands and The Authors of The Killzone Blog" title="Fresh Kills - A free audiobook by Basil Sands and The Authors of The Killzone Blog" type="rss" xmlUrl="http://www.podiobooks.com/title/fresh-kills/feed/"/>
         <outline text="Smart guests.  Eclectic topics.  Really, anything is fair game." title="Friday Night Party Line Podcast" type="rss" xmlUrl="http://thaed.libsyn.com/rss?post_category=podcasts"/>
         <outline text="Insight, wit and analysis as the BBC's foreign correspondents take a closer look at the stories behind the headlines. Presented by Kate Adie. Broadcast on BBC Radio 4 in the UK on Thursdays at 1100 (local time) and Saturdays at 1130 (local time) for about 25 weeks of the year. BBC World Service broadcasts on Saturdays and Sundays all year round, presented by Alan Johnston. For more information, a full list of programme broadcast times and the podcast Terms of Use go to www.bbc.co.uk/fromourowncorrespondent" title="From Our Own Correspondent" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio4/fooc/rss.xml"/>
@@ -362,6 +361,7 @@
         <outline text="http://www.pendantaudio.com/defiant_podcast.xml" title="Pendant Productions - Star Trek: Defiant" type="rss" xmlUrl="http://www.pendantaudio.com/defiant_podcast.xml"/>
         <outline text="http://www.pendantaudio.com/supergirl-podcast.xml" title="Pendant Productions - Supergirl: Lost Daughter of Krypton, presented by SupermanHomepage.com" type="rss" xmlUrl="http://www.pendantaudio.com/supergirl-podcast.xml"/>
         <outline text="An original, OTR-style aerial sci-fi adventure serial" title="Pendant Productions - The Dixie Stenberg and Brassy Battalion Adventure Theater" type="rss" xmlUrl="http://www.pendantaudio.com/dixie-podcast.xml"/>
+        <outline text="http://www.pendantaudio.com/line-podcast.xml" title="Pendant Productions - The Line" type="rss" xmlUrl="http://www.pendantaudio.com/line-podcast.xml"/>
         <outline text="http://www.pendantaudio.com/shakespeare-podcast.xml" title="Pendant Productions - The Pendant Shakespeare aka the Wild Bill Variety Show" type="rss" xmlUrl="http://www.pendantaudio.com/shakespeare-podcast.xml"/>
         <outline text="http://www.pendantaudio.com/ww_podcast.xml" title="Pendant Productions - Wonder Woman: Champion of Themyscira, presented by AmazonArchives.com" type="rss" xmlUrl="http://www.pendantaudio.com/ww_podcast.xml"/>
         <outline text="Introducing PLANET GREEN, the first-ever all-green lifestyle and entertainment network. With programs that cover food, home, health, travel, technology, and transformation, you'll see how to go green without giving up everything fun in life. Channel surfing wastes energy. So download Planet Green video podcasts now!" title="Planet Green Podcast" type="rss" xmlUrl="http://www.discovery.com/radio/xml/planetgreen.xml"/>
@@ -423,7 +423,7 @@
         <outline text="Information for Software Developers and Architects" title="Software Engineering Radio - the podcast for professional software developers" type="rss" xmlUrl="http://se-radio.net/rss"/>
         <outline text="Bi-Weekly Discussion of Legal Issues in the Free, Libre, and Open Source Software (FLOSS) World" title="Software Freedom Law Center" type="rss" xmlUrl="http://www.softwarefreedom.org/feeds/podcast-ogg/"/>
         <outline text="A podcast story of ancient advanced civilisations, clan wars and conspiracy in an alternative modern Scotland." title="Some Other Scotland" type="rss" xmlUrl="http://someotherscotland.com/?feed=podcast"/>
-        <outline text="A free audiobook by Mick Bordet" title="Some Other Scotland" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/415/book.xml"/>
+        <outline text="Something Kinda Techy" title="Something kinda techy" type="rss" xmlUrl="http://feeds.feedburner.com/SomethingKindaTechy"/>
         <outline text="Podcasts of Terror" title="Something Wicked Presents... » Audio Reading" type="rss" xmlUrl="http://somethingwicked.co.za/podcasts/category/audio-reading/feed"/>
         <outline text="Something Wicked This Way Strums. A horror anthology by Michele Roger" title="Something Wicked This Way Strums - Free Podiocast Short Stories from the dark mind of Michele Roger" type="rss" xmlUrl="http://www.micheleroger.com/MicheleRoger.xml"/>
         <outline text="Sourcetunk will try to demystify the beautiful beast that is Open Source and show the listeners the more practical examples of Open Source and Free Software. It will discuss software for Linux, BSD, MacOSX and Microsoft Windows systems" title="SourceTrunk" type="rss" xmlUrl="http://feeds.feedburner.com/sourcetrunk_ogg"/>
@@ -434,6 +434,7 @@
         <outline text="Star Trek Audio Theater Podcast" title="Star Trek: Lost Frontier" type="rss" xmlUrl="http://feeds.feedburner.com/Star-Trek-Lost-Frontier"/>
         <outline text="Star Trek Audio Theater Podcast" title="Star Trek: Pioneers" type="rss" xmlUrl="http://feeds.feedburner.com/startrekpioneers"/>
         <outline text="Star Trek Audio Theater Podcast" title="Star Trek: The Section 31 Files" type="rss" xmlUrl="http://feeds.feedburner.com/TheSection31Files"/>
+        <outline text="Star Trek: Starbase Phoenix Captain's Log" title="Starbase Phoenix" type="rss" xmlUrl="http://starbasephoenix.podbean.com/feed/"/>
         <outline text="The Science Fiction Audio Magazine" title="StarShipSofa" type="rss" xmlUrl="http://www.starshipsofa.com/feed"/>
         <outline text="Genre Podcast Fiction" title="Stories of Dan Absalonson" type="rss" xmlUrl="http://feeds.feedburner.com/StoriesOfDanDanTheArtMan"/>
         <outline text="because we can't let go of our favorite Whedon shows..." title="Strangely Literal" type="rss" xmlUrl="http://www.strangelyliteral.com/feed/"/>
@@ -496,7 +497,6 @@
         <outline text="http://www.cigital.com/realitycheck/category/shows/feed/" title="The Reality Check Security Podcast » Shows" type="rss" xmlUrl="http://www.cigital.com/realitycheck/category/shows/feed/"/>
         <outline text="Fun short films and the stories behind them. Hosted by John Romeo." title="The Romeo Theater - Short Films" type="rss" xmlUrl="http://romeo.libsyn.com/rss"/>
         <outline text="RN's science flagship: your essential source of what's making news in the complex world of scientific research, scandal and discovery. The Science Show with Robyn Williams is one of the longest running programs on Australian radio." title="The Science Show - full program" type="rss" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/science.xml"/>
-        <outline text="A free audiobook by Mercedes Lackey" title="The Secret World Chronicle, Book Three: World Well Lost" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/478/book.xml"/>
         <outline text="A Podcast of Dark Stories" title="The ShadowCast Audio Anthology" type="rss" xmlUrl="http://feeds.feedburner.com/TheShadowcastAudioAnthology"/>
         <outline text="http://www.publicbroadcasting.net/wypr/arts.artsmain?action=podcast&amp;section=14&amp;displayNational=false&amp;section=14&amp;displayNational=false" title="The Signal" type="rss" xmlUrl="http://www.publicbroadcasting.net/wypr/arts.artsmain?action=podcast&amp;section=14&amp;displayNational=false&amp;section=14&amp;displayNational=false"/>
         <outline text="Book I of The Messiahs War trilogy" title="The Silverblade Prophecy" type="rss" xmlUrl="http://feeds.feedburner.com/TheSilverbladeProphecy"/>

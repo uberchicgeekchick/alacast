@@ -32,7 +32,7 @@ init:
 	
 	alias	${download_command}	"${download_command_with_options}";
 	
-	set alacast_feed_downloader_script="alacast:feed:fetch-all:enclosures.tcsh";
+	set alacast_feed_downloader_script="alacast:feed:fetch:all:enclosures.tcsh";
 	set alacast_fetch_all_script="`dirname '${0}'`/${alacast_feed_downloader_script}";
 	if(! -x "${alacast_fetch_all_script}" ) then
 		foreach alacast_fetch_all_script("`where '${alacast_feed_downloader_script}'`")
@@ -45,7 +45,7 @@ init:
 		endif
 	endif
 	
-	set alacast_search_pl_script="alacast:search:catalogs.pl";
+	set alacast_search_pl_script="alacast:catalogs:search.pl";
 	set alacast_search_pl="`dirname '${0}'`/${alacast_search_pl_script}";
 	if(! -x "${alacast_search_pl}" ) then
 		foreach alacast_search_pl("`where '${alacast_search_pl_script}'`")

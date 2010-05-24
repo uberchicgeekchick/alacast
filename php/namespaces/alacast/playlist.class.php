@@ -95,28 +95,36 @@
 			
 			$this->create_path();
 			
-			if(!$this->fp)
+			if(!$this->fp){
 				if(!($this->fp=fopen($this->playlist, "a"))){
+					$this->clean_up_created_path();
 					return ($this->enabled=FALSE);
+				}
 			}
 			
-			$title=preg_replace("/^([^:]*):?.*$/", "$1", preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(, released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename));
+			$title=preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(, released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename);
 			
 			switch($this->type){
 				case "toxine":
 				case "tox":
 					if(!$this->total)
 						fprintf($this->fp, "#toxine playlist\n\n");
+					while(preg_match("/;/", $title))
+						$title=preg_replace("/;/", "", $title);
 					fprintf($this->fp, "entry {\n\tidentifier = %s;\n\tmrl = %s;\n\tav_offset = 3600;\n};\n\n", $title, $filename);
 					break;
 				
 				case "pls":
+					while(preg_match("/=/", $title))
+						$title=preg_replace("/=/", "", $title);
 					fprintf($this->fp, "File%d=%s\nTitle%d=%s\n", $this->total, $filename, $this->total, $title);
 					break;
 				
 				case "m3u":
 					if(!$this->total)
 						fprintf($this->fp, "#EXTM3U");
+					while(preg_match("/:/", $title))
+						$title=preg_replace("/:/", "", $title);
 					fprintf($this->fp, "\n#EXTINF:,%s\n%s", $title, $filename);
 					break;
 			}

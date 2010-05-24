@@ -1,13 +1,13 @@
 #!/bin/tcsh -f
 
 init:
-	set scripts_basename="alacast:feed:fetch-all:enclosures.tcsh";
-	
 	if(! ${?0} ) then
 		set status=-1;
-		printf "%s does not support being sourced and can only be executed.\n" "${scripts_basename}";
+		printf "This script cannot be sourced; only executed.\n" > /dev/stdout;
 		goto usage;
 	endif
+	
+	set scripts_basename="`basename '${0}'`";
 	
 	set argc=${#argv};
 	if( ${argc} < 1 ) then
@@ -24,12 +24,13 @@ init:
 	cd "`dirname '${0}'`";
 	set scripts_path="${cwd}";
 	cd "${owd}";
-	set escaped_cwd="`printf "\""%s"\"" "\""${cwd}"\"" | sed -r 's/\//\\\//g' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/([*])/\\\1/g' | sed -r 's/(['\!'])/\\\1/g'`";
-	set escaped_home_dir="`printf "\""%s"\"" "\""${HOME}"\"" | sed -r 's/\//\\\//g' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/([*])/\\\1/g' | sed -r 's/(['\!'])/\\\1/g'`";
 	set owd="${old_owd}";
 	unset old_owd;
 	
 	set script="${scripts_path}/${scripts_basename}";
+	
+	set escaped_cwd="`printf "\""%s"\"" "\""${cwd}"\"" | sed -r 's/\//\\\//g' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/([*])/\\\1/g' | sed -r 's/(['\!'])/\\\1/g'`";
+	set escaped_home_dir="`printf "\""%s"\"" "\""${HOME}"\"" | sed -r 's/\//\\\//g' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/([*])/\\\1/g' | sed -r 's/(['\!'])/\\\1/g'`";
 	
 	alias ex "ex -E -n -X --noplugin";
 	
@@ -81,7 +82,6 @@ main:
 			if(! -d "${save_to_dir}" ) \
 				mkdir -p "${save_to_dir}";
 			set starting_old_owd="${owd}";
-			/bin/mv "${alacasts_download_log}" "${save_to_dir}/`basename '${alacasts_download_log}'`";
 			cd "${save_to_dir}";
 		endif
 		unset save_to_dir;
@@ -167,24 +167,24 @@ fetch_podcast:
 		set title="`printf "\""${title}"\"" | sed -r 's/^(The)\ (.*)"\$"/\2,\ \1/g'`";
 	
 	if(! -d "${title}" ) \
-		mkdir -p "${title}";
+		mkdir -p "./${title}";
 	set old_owd="${owd}";
 	if( "`alias cwdcmd`" != "" ) \
 		unalias cwdcmd;
-	cd "${title}";
+	cd "./${title}";
 	
 	if( ${?playlist} && ${?playlist_ext} ) then
 		set playlist="${title}.${playlist_ext}";
 	endif
 	
 	if(! ${?silent} ) \
-		printf "Preparing to download: %s\n" "${title}";
+		printf "Preparing to download: %s\n\tTo:\t%s\n" "${title}" "${cwd}";
 	if( ${?logging} ) \
-		printf "Preparing to download: %s\n" "${title}" >> "${download_log}";
+		printf "Preparing to download: %s\n\tTo:\t%s\n" "${title}" "${cwd}" >> "${download_log}";
 	if(! ${?silent} ) \
-		printf "\tURI:\t[%s]\n" "${feed}";
+		printf "\txmlUrl=\t<%s>\n" "${feed}";
 	if( ${?logging} ) \
-		printf "\tURI:\t[%s]\n" "${feed}" >> "${download_log}";
+		printf "\txmlUrl=\t<%s>\n" "${feed}" >> "${download_log}";
 	
 	if( -e './00-feed.xml' && -e './00-titles.lst' && -e './00-enclosures.lst' && -e './00-pubDates.lst' ) \
 		goto continue_download;
@@ -923,8 +923,6 @@ parse_arg:
 					else
 						printf "A valid http, https, or ftp feeds URI must be specified.\n";
 					endif
-				else if(! -e "${alacasts_download_log}" ) then
-					printf "%s\n" "${value}" > "${alacasts_download_log}";
 				else
 					printf "%s\n" "${value}" >> "${alacasts_download_log}";
 				endif

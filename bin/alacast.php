@@ -469,7 +469,7 @@
 			$podcasts_new_file="";
 			$cmd=sprintf("%s %s %s",
 					(($GLOBALS['alacast']->options->keep_original) ?"cp" : "mv"),
-					preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]),
+					escapeshellarg( preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]) ),
 					escapeshellarg( ($podcasts_new_file=sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename)) )
 			);
 			

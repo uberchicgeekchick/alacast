@@ -90,7 +90,7 @@ else
 	unset alacast_cli_path alacast_cli_paths;
 	
 	
-	alias "alacast:feed:fetch-all:enclosures.tcsh"="${ALACASTS_GTK_PATH}alacast:feed:fetch-all:enclosures.tcsh --disable=logging"
+	alias "alacast:feed:fetch:all:enclosures.tcsh"="${ALACASTS_GTK_PATH}alacast:feed:fetch:all:enclosures.tcsh --disable=logging"
 	
 	export ALACASTS_OPTIONS='--logging --titles-reformat-numerical --titles-append-pubdate --playlist=m3u --strip-characters=#;!';
 	

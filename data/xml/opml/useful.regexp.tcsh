@@ -19,11 +19,11 @@
 #		1,$s/\(title\|text\|description\)\(="<!\[CDATA\[[^"\]]\+\)"\([^\]]\+\]\]>"\)/\1\2\&quot;\3/g
 #
 #	Auto-format podiobooks.com search result <tr> into opml outline(s):
-#		1,$s/\v\<tr class\="(even|odd)row.*.*href\=\"(\/title\/[^"]+)\"\>\<img.*alt\=\"([^"]+)\".*\<span class\="smalltext"\>([^\<]+)\<\/class\>\<\/td\>\<td\>(.*)\<br\/\>.*$/\t\t\<outline title\="\<\!\[CDATA\[\3\]\]\>" xmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/feed\/\"\ type\="rss" text\="\<\!\[CDATA\[\3 \- A free audiobook by \4\]\]\>" htmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/" description\="\<\!\[CDATA\[\<h1\>\3 by \4\<\/h1\>\<p>\4\<\/p\>\]\]\>"\ \/>/
+#		1,$s/\v\<tr class\="(even|odd)row.*.*href\=\"(\/title\/[^"]+)\"\>\<img.*alt\=\"([^"]+)\".*\<span class\="smalltext"\>([^\<]+)\<\/class\>\<\/td\>\<td\>(.*)\<br\/\>.*\<\/tr\>\t*\n*/\t\t\<outline title\="\<\!\[CDATA\[\3\]\]\>" xmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/feed\/\"\ type\="rss" text\="\<\!\[CDATA\[\3 \- A free audiobook by \4\]\]\>" htmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/" description\="\<\!\[CDATA\[\<h1\>\3 by \4\<\/h1\>\<p>\5\<\/p\>\]\]\>"\ \/>\r/
 #	
 #	Auto-formatting an RSS' channel & info into an opml <outline>:
 #		For podiobooks.com feeds:
-#			3s/\v\<channel\>[\r\n]+.*title\>(.*)(audiobook)([^\<]+)\<.*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*(description)\>In this podiobook: ([^\<]+)\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\1podcast novel\3\]\]\>" xmlUrl="\5\/" type="rss" text="\<\!\[CDATA\[\1\2\3\]\]\>" htmlUrl="\4\/" \6="\<\!\[CDATA\[\7\]\]\>" \/\>/
+#			3s/\v\<channel\>\r*\n*.*title\>(.+)(\ \-\ .*)(by\ [^\<]+)\<.*\r*\n*.*link\>([^\<]*)\<.*\r*\n*.*href\="([^"]*)".*\r*\n*.*(description)\>([^:]*:[ ]*)?(.*)\<\/description\>.*/\r\t\t\<outline title\=\"\<\!\[CDATA\[\1\]\]\>\"\ xmlUrl\=\"\5\/\"\ type=\"rss\"\ text\=\"\<\!\[CDATA\[\1\2\3\]\]\]\>\"\ htmlUrl\=\"\4\/\"\ \6=\"\<\!\[CDATA\[\<h1\>\1\<\/h1\>\<h3\>\3\<\/h3\>\<p\>\8\<\/p\>\]\]\>\"\ \/\>/ig
 #
 #		For all others:
 #			<link> before <atom:link href="{xmlUrl}">:

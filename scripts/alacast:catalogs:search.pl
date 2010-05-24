@@ -1,28 +1,37 @@
 #!/usr/bin/perl
 use strict;
 #use lib "`basename \"${0}\"`/scripts";
-
-if ( @ARGV < 0 || "$ARGV[0]" eq "-h"  || "$ARGV[0]" eq "--help" ) { usage(); }
+my $TRUE=1;
+my $FALSE=0;
 
 my $scripts_path=`dirname "$0"`;
 $scripts_path=~s/\n//;
-my $scripts_exec=`basename "$0"`;
-$scripts_exec=~s/\n//;
+my $scripts_basename=`basename "$0"`;
+$scripts_basename=~s/\n//;
+
+if( @ARGV < 0 && ( "$ARGV[0]"eq"-h" || "$ARGV[0]"eq"--help" )) { usage(); }
+
 my $catalogs_path="$scripts_path/../data/xml/opml";
 my @catalogs=("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "knowledge", "unfiled.opml");
-if( -e "../../profiles/$ENV{USER}/opml/subscriptions.opml" ){
+if( -e "$catalogs_path/../../profiles/$ENV{USER}/opml/subscriptions.opml" ){
 	$catalogs[@catalogs]="../../profiles/$ENV{USER}/opml/subscriptions.opml";
 }
 
 my $be_verbose=0;#False
 my $debug_mode=0;#FALSE
 my $opml_uri=0;#FALSE
-my $global_edit_opml=0;#FALSE
 my @global_opml_lists=();
 
-my @xmlUrls_found=();
+my $global_edit_opml=0;#FALSE
+my @opml_files_to_edit=();
+
+my @xmlUrls_to_parse=();
 my $previous_xmlUrl_parser="";#NULL
 my $xmlUrl_parser="";#NULL
+
+my $www_browser="";#NULL
+my $previous_www_browser="";#NULL
+my @websites_to_visit=();
 
 my $global_search_attribute;
 my $global_search_attributes_value;
@@ -30,7 +39,7 @@ my $searching_list="";
 my @alacast_catalog_search_outputs=("(title)", "(htmlUrl)", "(xmlUrl)");
 
 sub usage{
-	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_exec);
+	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_basename);
 	printf( "\t\tverbose|debug\t\tControls how much addition & descriptive information is output.\n");
 	printf( "\t\topml-uri\t\t\n" );
 	printf( "xmlUrl-parser)] [--title|(default)xmlUrl|htmlUrl|text|description]=]search_term or path to file containing search terms(one per line.) [--output=attribute-to-display. default: xmlUrl]\n\t\tAll of of these options may be repeated multiple times together or only multiple uses of the first argument.  Lastly multiple terms, or files using terms \n", );
@@ -47,13 +56,11 @@ sub search_catalog{
 	my $find_command=sprintf("/usr/bin/find \"%s/%s\" -iname '*.opml'", $catalogs_path, $catalog);
 	if($be_verbose && $debug_mode){ printf("Catalog search command: %s.", $find_command ); }
 	
-	my @opml_files_to_edit=();
-	
 	foreach my $opml_file ( `$find_command` ){
 		chomp($opml_file);
-		if( "$opml_file" eq "" ) { next; }
+		if( "$opml_file"eq"" ) { next; }
 		$opml_file=~s/'/\'/g;
-		my $grep_command=sprintf("/bin/grep --binary-files=without-match --with-filename --perl-regex -i '.*%s=[\"][^\"]\*%s[^\"]\*[\"]' %s%s%s", $global_search_attribute, $global_search_attributes_value, '"', $opml_file, '"' );
+		my $grep_command=sprintf("grep --binary-files=without-match --with-filename --line-number --perl-regex -i '.*%s=[\"][^\"]\*%s[^\"]\*[\"]' %s%s%s", $global_search_attribute, $global_search_attributes_value, '"', $opml_file, '"' );
 		foreach my $opml_and_outline ( `$grep_command` ){
 			$opml_and_outline=~s/\n//g;
 			if( $opml_and_outline=~/^.*\<!\-\-.*\-\-\>$/ ){ next; }
@@ -68,10 +75,10 @@ sub search_catalog{
 			}
 			
 			my $opml_file=$opml_and_outline;
-			$opml_file=~s/^([^:]*):.*$/$1/;
+			$opml_file=~s/^(.*):([0-9]+):(.*)$/$1/;
 			
 			my $opml_outline=$opml_and_outline;
-			$opml_outline=~s/^([^:]*):(.*)$/$2/;
+			$opml_file=~s/^(.*):([0-9]+):(.*)$/$3/;
 			
 			my $results_displayed=0;
 			printf("<%s%s>:", ($opml_uri ?"file://" :""), $opml_file);
@@ -94,46 +101,32 @@ sub search_catalog{
 			}
 			
 			if("$xmlUrl_parser"ne""){
-				my $xmlUrl_attribute=$opml_outline;
-				$xmlUrl_attribute=~s/.*xmlUrl=["]([^"]+)["].*/$1/i;
-				my $already_parsed=0;
-				for(my $i=0; $i<@xmlUrls_found && !$already_parsed; $i++){
-					if("$xmlUrls_found[$i]"eq"$xmlUrl_attribute"){$already_parsed=1;}
+				if($opml_outline=~/.*htmlUrl="([^"]+)".*$/){
+					my $xmlUrl_attribute=$opml_outline;
+					$xmlUrl_attribute=~s/.*xmlUrl="([^"]+)".*/$1/i;
+					my $already_parsed=0;
+					for(my $i=0; $i<@xmlUrls_to_parse && !$already_parsed; $i++){
+						if("$xmlUrls_to_parse[$i]"eq"$xmlUrl_attribute"){$already_parsed=1;}
+					}
+					if(!$already_parsed){
+						$xmlUrls_to_parse[@xmlUrls_to_parse]="$xmlUrl_attribute";
+					}
 				}
-				if(!$already_parsed){
-					$xmlUrls_found[@xmlUrls_found]="$xmlUrl_attribute";
+			}
+			
+			if("$www_browser"ne""){
+				if($opml_outline=~/.*htmlUrl="([^"]+)".*$/){
+					my $htmlUrl_attribute=$opml_outline;
+					$htmlUrl_attribute=~s/.*htmlUrl="([^"]+)".*/$1/i;
+					my $already_visited=0;
+					for(my $i=0; $i<@websites_to_visit && !$already_visited; $i++){
+						if("$websites_to_visit[$i]"eq"$htmlUrl_attribute"){$already_visited=1;}
+					}
+					if(!$already_visited){
+						$websites_to_visit[@websites_to_visit]="$htmlUrl_attribute";
+					}
 				}
 			}
-		}
-	}
-	
-	if( @xmlUrls_found > 0 ){
-		for(my $i=0; $i<@xmlUrls_found; $i++){
-			my $xmlUrl_parser_exec="tcsh -f -c '";
-			if($xmlUrl_parser!~/.*\$xmlUrl.*/){
-				$xmlUrl_parser_exec.="$xmlUrl_parser\"$xmlUrls_found[$i]\";";
-			}else{
-				$xmlUrl_parser_exec.="set xmlUrl=\"$xmlUrls_found[$i]\"; $xmlUrl_parser; unset xmlUrl;";
-			}
-			$xmlUrl_parser_exec.="'";
-			printf("Running:\n\t%s\n", $xmlUrl_parser_exec); 
-			system($xmlUrl_parser_exec);
-		}
-		@xmlUrls_found=();
-	}
-	
-	my @opml_files_editing=();
-	if( @opml_files_to_edit > 0 ){
-		for(my $x=0; $x<@opml_files_to_edit; ){
-			for(my $i=0; $i<10 && $x < @opml_files_to_edit; $i++, $x++){
-				$opml_files_editing[$i]=$opml_files_to_edit[$x];
-			}
-			if(@opml_files_editing > 0){
-				my $editor_exec="tcsh -f -c 'vim-enhanced -p @opml_files_editing'";
-				printf("Running:\n\t%s\n", $editor_exec); 
-				system($editor_exec);
-			}
-			@opml_files_editing=();
 		}
 	}
 }#search_catalog
@@ -200,6 +193,63 @@ sub search_catalogs{
 	}
 }#search_catalogs
 
+sub visit_websites{
+	if( @websites_to_visit <= 0 ){ return; }
+	for(my $i=0; $i<@websites_to_visit; $i++){
+		my $www_browser_exec="tcsh -f -c '$www_browser \"$websites_to_visit[$i]\";'";
+		printf("Running:\n\t%s\n", $www_browser_exec); 
+		system($www_browser_exec);
+	}
+	@websites_to_visit=();
+}#visit_websites();
+
+sub parse_xmlUrls{
+	if( @xmlUrls_to_parse <= 0 ){ return; }
+	for(my $i=0; $i<@xmlUrls_to_parse; $i++){
+		my $xmlUrl_parser_exec_prefix="tcsh -f -c '";
+		my $xmlUrl_parser_exec_suffix="";
+		if( $xmlUrl_parser=~/.*\$xmlUrl.*/ || $xmlUrl_parser=~/.*\$\{xmlUrl\}.*/ ){
+			$xmlUrl_parser_exec_prefix.="set xmlUrl=\"$xmlUrls_to_parse[$i]\"; ";
+			$xmlUrl_parser_exec_suffix.=" unset xmlUrl;";
+		}else{
+			$xmlUrl_parser_exec_suffix.="\"$xmlUrls_to_parse[$i]\";";
+		}
+		if( $xmlUrl_parser=~/.*\$index.*/ || $xmlUrl_parser=~/.*\$\{index\}.*/ ){
+			$xmlUrl_parser_exec_prefix.="@ index=$i; ";
+			$xmlUrl_parser_exec_suffix.=" unset index;";
+		}
+		if( $xmlUrl_parser=~/.*\$feed_index.*/ || $xmlUrl_parser=~/.*\$\{feed_index\}.*/ ){
+			$xmlUrl_parser_exec_prefix.="@ feed_index=$i; ";
+			$xmlUrl_parser_exec_suffix.=" unset feed_index;";
+		}
+		if( $xmlUrl_parser=~/.*\$i.*/ || $xmlUrl_parser=~/.*\$\{i\}.*/ ){
+			$xmlUrl_parser_exec_prefix.="@ i=$i; ";
+			$xmlUrl_parser_exec_suffix.=" unset i;";
+		}
+		$xmlUrl_parser_exec_suffix.="';";
+		printf("Running:\n\t%s%s%s%s\n", $xmlUrl_parser_exec_prefix, $xmlUrl_parser, $xmlUrl_parser_exec_suffix); 
+		system($xmlUrl_parser_exec_prefix.$xmlUrl_parser.$xmlUrl_parser_exec_suffix); 
+	}
+	@xmlUrls_to_parse=();
+}#process_xmlUrls();
+
+sub edit_opml_files{
+	if( @opml_files_to_edit <= 0 ){ return; }
+	my @opml_files_editing=();
+	for(my $x=0; $x<@opml_files_to_edit; ){
+		for(my $i=0; $i<10 && $x < @opml_files_to_edit; $i++, $x++){
+			$opml_files_editing[$i]=$opml_files_to_edit[$x];
+		}
+		if(@opml_files_editing > 0){
+			my $editor_exec="tcsh -f -c 'vim-enhanced -p @opml_files_editing'";
+			printf("Running:\n\t%s\n", $editor_exec); 
+			system($editor_exec);
+		}
+		@opml_files_editing=();
+	}
+	@opml_files_to_edit=();
+}#edit_opml_files();
+
 sub parse_option{
 	my $argv=shift;
 	my $dashes=$argv;
@@ -210,10 +260,10 @@ sub parse_option{
 	$option=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$2/g;
 	$equals=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$3/g;
 	$value=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$4/g;
-	if("$equals" eq "" && "$value" eq ""){ $value=shift; }
+	if("$equals"eq"" && "$value"eq""){ $value=shift; }
 	
 	if($debug_mode){printf("Parsing option: [%s]%s\n", "$option", ("$value"eq"" ?"" :"=<$value>")); }
-	if("$option"eq"output" && "$value" ne ""){
+	if("$option"eq"output" && "$value"ne""){
 		if($debug_mode){ printf( "\tHandling output argument: [%s].\n", $value ); }
 		return parse_output($value);
 	}
@@ -236,8 +286,12 @@ sub parse_options_action{
 	my $option=shift;
 	my $value=shift;
 	
-	if("$option"eq"xmlUrl-parser"){
-		return set_xmlUrl_parser("enable", $value);
+	if("$option"eq"xmlUrl-parser" && "$value"ne"" ){
+		return xmlUrl_parser_set("enable", $value);
+	}
+	
+	if($option=~/^browse(r=)?.*/){
+		return www_browser_set("enable", $value);
 	}
 	
 	if("$option"eq"edit-opml"){
@@ -255,17 +309,6 @@ sub parse_options_action{
 		return 1;
 	}
 	
-	if($option=~/^xmlUrl\-parser=.+/){
-		$xmlUrl_parser=$option;
-		$xmlUrl_parser=~s/^xmlUrl\-parser=(.*)/$1/g;
-		if("$previous_xmlUrl_parser"ne"" && "$previous_xmlUrl_parser"ne"$xmlUrl_parser"){
-			@xmlUrls_found=();
-		}
-		
-		printf("Further xmlUrls will be passed to\t\t[%s]\n", $xmlUrl_parser);
-		return 1;
-	}
-	
 	#if("$option"eq""){
 	#	if($_!=1){ $_=1; }
 	#}
@@ -278,12 +321,13 @@ sub parse_options_action{
 sub parse_setting{
 	my $action=shift;
 	my $value=shift;
-	my $parameter=$value;
+	my $parameter="";
 	
 	if($value=~/^.*=.*$/){
+		$parameter=$value;
 		$value=~s/^([^=]+)=(.*)$/$1/;
+		$parameter=~s/^([^=]+)=(.*)$/$2/;
 	}
-	$parameter=~s/^([^=]+)=(.*)$/$2/;
 	
 	if($debug_mode){printf("Attempting to %sable: %s=[%s]\n", ("$action"eq"disable" ?"dis" :"en"), $parameter, $value);}
 
@@ -316,36 +360,99 @@ sub parse_setting{
 		return 1;
 	}
 	
-	if("$value"eq"xmlUrl-parser"){
-		return set_xmlUrl_parser($action, $parameter);
+	if("$value"eq"www-browser"){
+		return www_browser_set($action, $parameter);
 	}
+	
+	if("$value"eq"xmlUrl-parser" && "$parameter"ne"" ){
+		return xmlUrl_parser_set($action, $parameter);
+	}
+	
 	return 0;
 }#parse_setting();
 
-sub set_xmlUrl_parser{
+
+sub www_browser_set{
 	my $action=shift;
-	my $parser=shift;
+	my $browser=shift;
+	
+	if(!("$action"eq"enable"||"$action"eq"disable")){ return 0; }
 	
 	if("$action"eq"disable"){
-		if("$xmlUrl_parser"ne""){
-			$previous_xmlUrl_parser=$xmlUrl_parser;
-			$xmlUrl_parser="";
+		if("$www_browser"ne""){
+			$previous_www_browser="$www_browser";
+			$www_browser="";
 		}
-		printf("Further xmlUrls will not be passed to any parser/handler");
+		printf("Further websites will not be passed to any web browser.\n");
 		return 1;
 	}
 	
-	if(!("$action"eq"enable" && "$parser"ne"")){ return 0; }
+	my @browsers=("browser", "links", "firefox", "lynx");
+	my $www_browser_found=$FALSE;
+	for(my $i=0; $i<@browsers && !$www_browser_found; $i++){
+		if("$browsers[$i]"eq"$browser"){
+			$www_browser_found=$TRUE;
+		}
+	}
+	if(!$www_browser_found){
+		$browsers[@browsers]="$browser";
+	}else{
+		$www_browser_found=$FALSE;
+	}
+	my $browser_list=`mktemp --tmpdir -u alacast.browsers.XXXXXX`;
+	chomp($browser_list);
+	if($debug_mode){ printf("Searching for a valid browser among:: [%s]\n", "@browsers"); }
+	for(my $i=0; $i<@browsers && !$www_browser_found; $i++){
+		my $command="tcsh -f -c '(where \"$browsers[$i]\" >! $browser_list) >& /dev/null';";
+		if($debug_mode){ printf("Searching for [%s] using:\n\t%s", $browsers[$i], $command); }
+		system($command);
+		my @browsers_found=`cat \"$browser_list\";`;
+		for(my $x=0; $x<@browsers_found && !$www_browser_found; $x++){
+			$browser=$browsers_found[$x];
+			chomp($browser);
+			if( -x "$browser" ){
+				$www_browser="$browser";
+				$www_browser_found=$TRUE;
+			}
+		}
+	}
+	system("rm \"$browser_list\";");
+	if(!$www_browser_found){ return 1; }
+	
+	if("$previous_www_browser"ne"" && "$previous_www_browser"ne"$www_browser"){
+		@websites_to_visit=();
+	}
+	
+	printf("Further websites will be passed to\t\t[%s]\n", $www_browser);
+	return 1;
+}#www_browser_set();
+
+
+sub xmlUrl_parser_set{
+	my $action=shift;
+	my $parser=shift;
+	
+	if(!(("$action"eq"enable"||"$action"eq"disable") && "$parser"ne"")){ return 0; }
+	
+	if("$action"eq"disable"){
+		if("$xmlUrl_parser"ne""){
+			$previous_xmlUrl_parser="$xmlUrl_parser";
+			$xmlUrl_parser="";
+	}
+		printf("Further xmlUrls will not be passed to any parser/handler.\n");
+		return 1;
+	}
 	
 	$xmlUrl_parser=$parser;
 	if("$previous_xmlUrl_parser"eq"" || "$previous_xmlUrl_parser"ne"$xmlUrl_parser"){
-		@xmlUrls_found=();
+		@xmlUrls_to_parse=();
 	}
 	
 	printf("Further xmlUrls will be passed to\t\t[%s]\n", $xmlUrl_parser);
 	
 	return 1;
-}#set_xmlUrl_parser("(enable|disable)", "$parameter);
+}#xmlUrl_parser_set("(enable|disable)", "$parameter");
+
 
 sub parse_attribute{
 	$global_search_attribute=shift;
@@ -408,6 +515,10 @@ sub main{
 		usage();
 	}
 	search_catalogs();
+	
+	if( @websites_to_visit > 0 ){ visit_websites(); }
+	if( @xmlUrls_to_parse > 0 ){ parse_xmlUrls(); }
+	if( @opml_files_to_edit > 0 ){ edit_opml_files(); }
 }#main
 
 main();

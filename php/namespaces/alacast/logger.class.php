@@ -136,7 +136,7 @@
 			
 			$this->setup_logging_data();
 			
-			$this->output_log_file=sprintf("%s/%s's log for %s-%s-%s from %s%s:00 through %s%s:59.output.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
+			$this->output_log_file=sprintf("%s/%s's stdout log for %s-%s-%s from %s%s:00 through %s%s:59.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
 			if(!( ($this->output_logs_fp=fopen( $this->output_log_file, "a" )) )){
 				fprintf(STDERR, "I was unable to open the output log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", $this->output_log_file);
 				$this->disable_logging();
@@ -155,7 +155,7 @@
 			
 			$this->setup_logging_data();
 			
-			$this->error_log_file=sprintf("%s/%s's error log for %s-%s-%s from %s%s:00 through %s%s:59.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
+			$this->error_log_file=sprintf("%s/%s's stderr log for %s-%s-%s from %s%s:00 through %s%s:59.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
 			
 			if(!($this->error_logs_fp=fopen( $this->error_log_file, "a"))){
 				fprintf(STDERR, "I was unable to open the error log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", $this->error_log_file);

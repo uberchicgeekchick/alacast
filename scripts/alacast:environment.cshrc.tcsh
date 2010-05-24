@@ -89,7 +89,7 @@ set_alacast_environment:
 		unset alacasts_path;
 	endif
 	
-	alias "alacast:feed:fetch-all:enclosures.tcsh" "${ALACAST_GTK_PATH}/scripts/alacast:feed:fetch-all:enclosures.tcsh --disable=logging"
+	alias "alacast:feed:fetch:all:enclosures.tcsh" "${ALACAST_GTK_PATH}/scripts/alacast:feed:fetch:all:enclosures.tcsh --disable=logging"
 	
 	# when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
 	alias "alacast.php:sync" "${ALACAST_CLI_PATH}/bin/alacast.php --with-defaults=sync";

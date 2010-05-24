@@ -20,7 +20,7 @@ init:
 	
 	set dl_dir = "`grep 'download_dir' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
 	set mp3_dir = "`grep 'mp3_player_folder' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
-	set outputs=("title" "link" "url" "guid");
+	set outputs=("title" "link" "url" "description" "guid");
 #init:
 
 
@@ -51,12 +51,44 @@ parse_argv:
 
 
 while( "${1}" != "" )
-	set option="`printf "\""%s"\"" "\""${1}"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	set value="`printf "\""%s"\"" "\""${1}"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	if( "${equals}" == "" && "${value}" == "" && "${2}" != "" )	\
-		set value="${2}";
+	@ arg=0;
+	@ argc=${#argv};
+	while( $arg < $argc )
+		@ arg++;
+	set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+	set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+	set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+	if( "${equals}" == "" && "${value}" == "" ) then
+		@ arg++;
+		if( $arg < $argc ) then
+			set value="$argv[$arg]";
+		endif
+		@ arg--;
+	endif
 	switch ( "${option}" )
+		case "browse":
+		case "visit-site":
+		case "visit-sites":
+			if(!( "${value}" != "" && -x "`which "\""${value}"\""`" )) then
+				set browser="browser";
+			else
+				set browser="${value}";
+			endif
+			
+			switch("${browser}")
+				case "browser":
+				case "firefox":
+				case "links":
+				case "lynx":
+					breaksw;
+				
+				default:
+					printf "**error:** %s is an unsupported web browser.\n\tBrowsing web sites has been disabled.\n" "${value}" > /dev/stderr;
+					unset browser;
+					breaksw;
+			endsw
+			breaksw;
+		
 		case "title":
 		case "description":
 		case "link":
@@ -66,7 +98,6 @@ while( "${1}" != "" )
 		case "pubDate":
 			set attrib="${option}";
 			set attrib_value="${value}";
-			#set attrib_value="`printf '${value}' | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
 		breaksw;
 	
 	case "output":
@@ -77,8 +108,8 @@ while( "${1}" != "" )
 			case "guid":
 			case "pubDate":
 			case "link":
-				if(! ${?output )	\
-					set output="${value}";#"`printf "\""${value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+				if(! ${?output} ) \
+					set output="${value}";
 				foreach item(${outputs})
 					if("${value}" == "${item}" )	\
 						break;
@@ -88,7 +119,7 @@ while( "${1}" != "" )
 					unset item;
 					breaksw;
 				endif
-				set outputs[${#outputs}]="${value}";#"`printf "\""${value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+				set outputs[${#outputs}]="${value}";
 				breaksw;
 			
 			default:
@@ -132,7 +163,6 @@ while( "${1}" != "" )
 		breaksw;
 	
 	endsw
-	shift;
 end
 
 	if(! ${?attrib_value} )	\
@@ -152,7 +182,8 @@ foreach index ( ${dl_dir}/*/index.xml )
 		ex -s '+2,$s/\v\r\n?\_$//g' '+2,$s/\n//g' '+wq!' "${index}";
 	set found="`egrep '<${attrib}>.*${attrib_value}.*<\/${attrib}>' '${index}' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g'`";
 	
-	if( "${found}" == "" ) continue;
+	if( "${found}" == "" ) \
+		continue;
 	
 	@ items=0;
 	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1\r/g"\""`")
@@ -163,13 +194,11 @@ foreach index ( ${dl_dir}/*/index.xml )
 	end
 	
 	if(! ${?match_only} ) then
-		@ attrib=0;
 		foreach output_attrib(${outputs})
-			@ attrib++;
-			#if( "${output_attrib}" == "${output}" ) continue;
-			#if( ${attrib} == 1 && "${output_attrib}" == "title" )	\
-			#	continue;
 			foreach item("`egrep "\""<${output_attrib}>[^<]+<\/${output_attrib}>"\"" "\""${index}"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/.*<${output_attrib}>(.*)<\/${output_attrib}>.*/\1/g"\""`")
+				if( ${?browser} && "${output_attrib}" == "link" ) then
+					${browser} "${item}";
+				endif
 				printf "\t<%s="\""%s"\"">\n" "${output_attrib}" "${item}";
 			end
 		end
