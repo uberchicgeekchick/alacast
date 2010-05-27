@@ -180,7 +180,7 @@
 			print("\n\nFound podcastsInfo:\n");
 			print_r($podcastsInfo);
 		
-			$GLOBALS['alacast']->logger->output(
+			$GLOBALS['alacast']->output(
 				(sprintf(
 					"\n*DEBUG*: I searched for %s'%s titles in %s.\nI've found titles for %d new episodes.",
 					$podcastsInfo[0]['title'],
@@ -211,7 +211,7 @@
 		*/
 		for($i=0; $i<$podcastsInfo['total']; $i++){
 			if($GLOBALS['alacast']->options->verbose)
-				$GLOBALS['alacast']->logger->output(
+				$GLOBALS['alacast']->output(
 					(sprintf("Cleaning podcastInfo %d.\n\tBefore cleaning: %s\n", $i, $podcastsInfo[$i]))
 				);
 			$podcastsInfo[$i]['title']=preg_replace( "/^[~\.]*(.*)[~\.]*$/", "$1",
@@ -226,7 +226,7 @@
 			if($GLOBALS['alacast']->options->bad_chars)
 				$podcastsInfo[$i]['title']=preg_replace((sprintf("/[%s]/", $GLOBALS['alacast']->options->bad_chars)), "", $podcastsInfo[$i]['title']);
 			if($GLOBALS['alacast']->options->verbose)
-				$GLOBALS['alacast']->logger->output(
+				$GLOBALS['alacast']->output(
 					(sprintf("\tAfter cleaning: %s\n", $podcastsInfo[$i]['title']))
 				);
 		}//for($i<$podcastInfo['total'])
@@ -277,7 +277,7 @@
 		do {
 			$podcasts_max_strlen=$max_strlen-(strlen($podcastsExtra)+strlen($podcastsExtension));
 			if($GLOBALS['alacast']->options->verbose)
-				$GLOBALS['alacast']->logger->output(
+				$GLOBALS['alacast']->output(
 					(sprintf(
 						"\n\tSetting podcasts episode title.\n\t\$podcasts_max_strlen: %d\n\tOriginal \$podcastEpisode:%s\n",
 						$podcasts_max_strlen,
@@ -291,7 +291,7 @@
 				$podcastsEpisode=preg_replace("/^(.{1,{$podcasts_max_strlen}})(.*)(, released on.*)$/", "$1$3", $podcastsEpisode);
 			
 			if($GLOBALS['alacast']->options->verbose)
-				$GLOBALS['alacast']->logger->output(
+				$GLOBALS['alacast']->output(
 					(sprintf(
 						"\tFormatted \$podcastEpisode:%s\n",
 						$podcastsEpisode
@@ -356,11 +356,11 @@
 				||
 				(mkdir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title'], 0774, TRUE))
 			)) {
-				$GLOBALS['alacast']->logger->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
+				$GLOBALS['alacast']->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
 				continue;
 			}
 			
-			$GLOBALS['alacast']->logger->output(
+			$GLOBALS['alacast']->output(
 				(wordwrap(
 					(
 						"\n\t*w00t*! {$podcastsInfo[0]['title']} has "
@@ -388,11 +388,11 @@
 		closedir($alacastsPodcastDir);
 		
 		if($totalMovedPodcasts)
-			$GLOBALS['alacast']->logger->output("\n\n\t^_^ *w00t*, you have {$totalMovedPodcasts} new podcasts!");
+			$GLOBALS['alacast']->output("\n\n\t^_^ *w00t*, you have {$totalMovedPodcasts} new podcasts!");
 		else
-			$GLOBALS['alacast']->logger->output("\n\t^_^ There are no new podcasts.");
+			$GLOBALS['alacast']->output("\n\t^_^ There are no new podcasts.");
 		
-		$GLOBALS['alacast']->logger->output("  Have fun! ^_^\n\n");
+		$GLOBALS['alacast']->output("  Have fun! ^_^\n\n");
 		$GLOBALS['alacast']->podcatcher->set_status( FALSE, FALSE );
 		
 		$GLOBALS['alacast']->playlist_close();
@@ -448,7 +448,7 @@
 			$Podcasts_New_Filename=set_podcasts_new_episodes_filename($podcastsInfo[0]['title'], $podcastsInfo[$z]['title'], $ext);
 			
 			if($GLOBALS['alacast']->options->verbose)
-				$GLOBALS['alacast']->logger->output(
+				$GLOBALS['alacast']->output(
 					(sprintf(
 						"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t%s/%s/%s\n",
 						$podcastsFiles[$i],
@@ -478,7 +478,7 @@
 				$link_check=-1;
 				exec($cmd, $null_output, $link_check);
 				if($link_check){
-					$GLOBALS['alacast']->logger->output("\n\t\t" . (wordwrap( sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output))), TRUE);
+					$GLOBALS['alacast']->output("\n\t\t" . (wordwrap( sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output))), TRUE);
 					continue;
 				}
 			}
@@ -489,7 +489,8 @@
 			$movedPodcasts++;
 			
 			//Prints the new episodes name:
-			$GLOBALS['alacast']->logger->output("\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t")) ."\n\t\tURI: ".$podcastsInfo[$z]['url']."\n");
+			$GLOBALS['alacast']->output("\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t")) ."\n\t\tURI: ".$podcastsInfo[$z]['url']."\n");
+			$GLOBALS['alacast']->output("\n\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
 		}
 		return $movedPodcasts;
 	}//end:function move_podcasts_episodes();

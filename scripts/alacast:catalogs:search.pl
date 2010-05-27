@@ -101,7 +101,7 @@ sub search_catalog{
 			}
 			
 			if("$xmlUrl_parser"ne""){
-				if($opml_outline=~/.*htmlUrl="([^"]+)".*$/){
+				if($opml_outline=~/.*xmlUrl="([^"]+)".*$/){
 					my $xmlUrl_attribute=$opml_outline;
 					$xmlUrl_attribute=~s/.*xmlUrl="([^"]+)".*/$1/i;
 					my $already_parsed=0;
@@ -183,11 +183,11 @@ sub display_outputs{
 sub search_catalogs{
 	foreach my $catalog ( @catalogs ) {
 		if( $debug_mode ){ printf("Searching: %s\n", $catalog); }
-		if ("$searching_list"eq""){ search_catalog( $catalog ); }
+		if ("$searching_list"eq""){ search_catalog($catalog); }
 		else {
 			if($be_verbose &&  $debug_mode) { printf( "\nSearching catalogs listed in:\n\t%s\n", $searching_list); }
-			foreach my $global_search_attributes_value ( `cat '$searching_list'` ) {
-				search_catalog( $global_search_attributes_value );
+			foreach my $global_search_attributes_value( `cat '$searching_list'`) {
+				search_catalog($catalog, $global_search_attributes_value);
 			}
 		}
 	}
@@ -458,7 +458,7 @@ sub parse_attribute{
 	$global_search_attribute=shift;
 	$global_search_attributes_value=shift;
 	$global_search_attributes_value=~s/(['"])/$1\\$1$1/g;
-	$global_search_attributes_value=~s/([\?\[])/\\$1/g;
+	$global_search_attributes_value=~s/([\?\[\)\(\)\-])/\\$1/g;
 	
 	$searching_list="";
 	

@@ -211,6 +211,9 @@ foreach index ( ${dl_dir}/*/index.xml )
 	endif
 	
 	if( ${?refetch} ) then
+		while( `/bin/grep -P -c '.*\<title\>[^\<]*\/[^\<]*\<\/title\>' "${index}" | sed -r 's/^([0-9]+).*$/\1/'` != 0 )
+			ex -s '+1,$s/\v(.*\<title\>[^\<]*)\/([^\<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${index}";
+		end
 		printf "#\!/bin/tcsh -f\ncd "\""%s"\"";\n" "${mp3_dir}" >! "${index}".tcsh;
 		cat "${index}" >> "${index}".tcsh;
 		ex -s '+3d' '+3,$s/\v\r\n?\_$//g' '+3,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+3,$s/\(<title>\)/\r\1/g' '+3d' '+$d' '+3,$s/[\#\!]//g' '+wq!' "${index}".tcsh;

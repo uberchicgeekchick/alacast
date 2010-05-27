@@ -43,8 +43,8 @@
 	class logger {
 		private $programs_name;
 		
-		private $logging_enabled;
-		private $silence_output;
+		private $enabled;
+		private $silent;
 		private $logs_path;
 		
 		private $year;
@@ -61,13 +61,13 @@
 		public $error_log_file;
 		private $error_logs_fp;
 		
-		public function __construct($logs_path=".", $programs_name="alacast", $logging_enable=TRUE, $silence_output=FALSE) {
+		public function __construct($logs_path=".", $programs_name="alacast", $enable=TRUE, $silent=FALSE) {
 			$this->program_name=$programs_name;
 			
-			if($silence_output)
-				$this->silence_output=TRUE;
+			if(!$silent)
+				$this->silent=FALSE;
 			else
-				$this->silence_output=FALSE;
+				$this->silent=TRUE;
 			
 			$this->output_log_file="";
 			$this->error_log_file="";
@@ -76,15 +76,15 @@
 			else
 				$this->logs_path=preg_replace("/\/$/", "", $logs_path);
 			
-			if(! $logging_enable)
-				return $this->disable_logging();
+			if(!$enable)
+				return $this->disable();
 			
-			$this->logging_enabled=TRUE;
-			$this->setup_logging_data();
+			$this->enabled=TRUE;
+			$this->init();
 		}//method: public function __construct();
 		
-		private function disable_logging() {
-			$this->logging_enabled=FALSE;
+		private function disable() {
+			$this->enabled=FALSE;
 			
 			$this->year=null;
 			$this->month=null;
@@ -94,9 +94,9 @@
 			$this->starting_hour=null;
 			
 			$this->output_logs_fp=null;
-		}//method: private function disable_logging();
+		}//method: private function disable();
 		
-		private function setup_logging_data() {
+		private function init() {
 			$this->year=date("Y");
 			$this->month=date("m");
 			$this->day=date("d");
@@ -105,74 +105,25 @@
 			
 			$this->starting_hour=$this->current_hour - ($this->current_hour % 6);
 			$this->ending_hour=$this->starting_hour + 5;
-			
-		}//method: private function setup_logging_data();
+		}//method: private function init();
 		
-		private function check_log() {
-			if( ! (
-				(
-					$this->output_log_file
-					&&
-					file_exists($this->output_log_file)
-					&&
-					$this->output_logs_fp
-				)
-				&&
-				($this->current_hour=date( "H")) <= $this->ending_hour
-				&&
-				$this->current_hour > $this->starting_hour
-			) )
-				return TRUE;
-			
-			return FALSE;
-		}//method:private function check_log();
-		
-		private function rotate_log(){
-			if(!($this->check_log()))
-				return FALSE;
-			
-			if($this->output_logs_fp)
-				fclose($this->output_logs_fp);
-			
-			$this->setup_logging_data();
-			
-			$this->output_log_file=sprintf("%s/%s's stdout log for %s-%s-%s from %s%s:00 through %s%s:59.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
-			if(!( ($this->output_logs_fp=fopen( $this->output_log_file, "a" )) )){
-				fprintf(STDERR, "I was unable to open the output log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", $this->output_log_file);
-				$this->disable_logging();
-				return FALSE;
+		private function check($error=FALSE){
+			$logs_fp=NULL;
+			$log_file=NULL;
+			if(!$error){
+				$logs_fp=$this->output_logs_fp;
+				$log_file=$this->output_log_file;
+			}else{
+				$logs_fp=$this->error_logs_fp;
+				$log_file=$this->error_log_file;
 			}
-			
-			return TRUE;
-		}/*rotate_log();*/
-		
-		private function rotate_error_log(){
-			if(!($this->check_error_log()))
-				return FALSE;
-			
-			if($this->error_logs_fp)
-				fclose($this->error_logs_fp);
-			
-			$this->setup_logging_data();
-			
-			$this->error_log_file=sprintf("%s/%s's stderr log for %s-%s-%s from %s%s:00 through %s%s:59.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour);
-			
-			if(!($this->error_logs_fp=fopen( $this->error_log_file, "a"))){
-				fprintf(STDERR, "I was unable to open the error log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", $this->error_log_file);
-				$this->disable_logging();
-				return FALSE;
-			}
-			return TRUE;
-		}/*rotate_error_log();*/
-		
-		private function check_error_log(){
 			if(!(
 				(
-					$this->error_log_file
+					$log_file
 					&&
-					file_exists($this->error_log_file)
+					file_exists($log_file)
 					&&
-					$this->error_logs_fp
+					$logs_fp
 				)
 				&&
 				($this->current_hour=date( "H")) <= $this->ending_hour
@@ -182,29 +133,64 @@
 				return TRUE;
 			
 			return FALSE;
-		}/*check_error_log();*/
+		}//method:private function check();
 		
-		private function log_output(&$string, $error=FALSE){
-			if(!$this->logging_enabled)
+		private function rotate($error=FALSE){
+			if(!($this->check($error)))
 				return FALSE;
 			
-			if(!$error){
-				$this->rotate_log();
-				fprintf($this->output_logs_fp, "%s", (utf8_encode( $string)));
-			}else{
-				$this->rotate_error_log();
-				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
+			$logs_fp=NULL;
+			if(!$error)
+				$logs_fp=$this->output_logs_fp;
+			else
+				$logs_fp=$this->error_logs_fp;
+			
+			if($logs_fp){
+				fclose($logs_fp);
+				$logs_fp=NULL;
 			}
+			
+			$this->init();
+			
+			$log_file=sprintf("%s/%s's log for %s-%s-%s from %s%s:00 through %s%s:59.%s.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour, ($error ?"error" :"output"));
+			if(!($logs_fp=fopen( $log_file, "a" ))){
+				fprintf(STDERR, "I was unable to open the %s log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", ($error ?"error" :"output"), $log_file);
+				$this->disable();
+				return FALSE;
+			}
+			
+			if(!$error){
+				$this->output_logs_fp=$logs_fp;
+				$this->output_log_file=$log_file;
+			}else{
+				$this->error_logs_fp=$logs_fp;
+				$this->error_log_file=$log_file;
+			}
+			
+			return TRUE;
+		}/*$this->rotate();*/
+		
+		private function log_output(&$string, $error=FALSE){
+			if(!$this->enabled)
+				return FALSE;
+			
+			$this->rotate($error);
+			
+			if(!$error)
+				fprintf($this->output_logs_fp, "%s", (utf8_encode( $string)));
+			else
+				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
+			
 			return TRUE;
 		}//method: private function log_output();
 		
-		public function output($string, $error=FALSE) {
+		public function output($string, $error=FALSE, $silent=FALSE) {
 			if(!($string && "{$string}" != "" && preg_replace( "/^[\s\r\n\ \t]*(.*)[\s\r\n\ \t]*/", "$1", $string) != "")) return;
 			
-			if($this->logging_enabled)
+			if($this->enabled)
 				$this->log_output($string, $error);
-		
-			if($this->silence_output)
+			
+			if( $silent || $this->silent)
 				return FALSE;
 			
 			if($error === TRUE)

@@ -18,6 +18,8 @@ kill_progie:
 		printf "Interupting %s's PID: %s " $gPodderCmd $pid;
 		while( $killed < $total && `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r "s/^[0-9]+[\\ ]+.*(${pid}).*[\r\n]*/\1/"` == $pid )
 			kill -INT $pid;
+			if( $total == 1 ) \
+				break;
 			printf ".";
 			sleep $timeout;
 			@ killed++;
@@ -52,12 +54,14 @@ parse_argv:
 			case "repeat":
 			case "interupt":
 			case "send-interupt":
+				set value=`printf "${value}" | sed -r 's/^([0-9]+).*$/\1/'`;
 				if( $value > 0 ) \
 					set total=$value;
 				breaksw;
 			
 			case "delay":
 			case "timeout":
+				set value=`printf "${value}" | sed -r 's/^([0-9]+).*$/\1/'`;
 				if( $value > 0 ) \
 					set timeout=$value;
 				breaksw;

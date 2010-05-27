@@ -49,6 +49,12 @@
 			else
 				$this->playlist_open(TRUE);
 		}//__construct
+
+		
+		public function output($string, $error=FALSE, $silent=FALSE){
+			return $this->logger->output($string, $error, $silent);
+		}/*$this->output();*/
+		
 		
 		public function playlist_open($force=FALSE){
 			if( !$this->options->playlist && !$force )
