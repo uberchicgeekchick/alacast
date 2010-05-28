@@ -610,7 +610,8 @@ callback_handler:
 diagnostic_mode:
 	set current_label="diagnostic_mode";
 	
-	if( -e "/tmp/${scripts_basename}-debug.log" ) rm -v "/tmp/${scripts_basename}-debug.log";
+	if( -e "/tmp/${scripts_basename}-debug.log" ) \
+		rm "/tmp/${scripts_basename}-debug.log";
 	touch "/tmp/${scripts_basename}-debug.log";
 	printf "----------------%s debug.log-----------------\n" "${scripts_basename}" >> "/tmp/${scripts_basename}-debug.log";
 	printf \$"argv:\n\t%s\n\n" "$argv" >> "/tmp/${scripts_basename}-debug.log";

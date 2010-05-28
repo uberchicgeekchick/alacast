@@ -199,9 +199,9 @@ find_podcasts:
 			"${refetch_script}";
 		endif
 		#if( ! ${?keep_script} || ! ${?debug} )	\
-			rm -fv "${refetch_script}.tmp";
+			rm -f "${refetch_script}.tmp";
 		if( ! ${?keep_script} || ! ${?debug} )	\
-			rm -fv "${refetch_script}";
+			rm -f "${refetch_script}";
 	end
 #find_podcasts
 

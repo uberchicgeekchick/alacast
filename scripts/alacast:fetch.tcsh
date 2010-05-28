@@ -237,7 +237,7 @@ fetch_podcasts:
 
 exit_script:
 	if(! ${?keep_feed} ) then
-		rm -v "${alacasts_catalog_search_results_log}".*;
+		rm "${alacasts_catalog_search_results_log}".*;
 	endif
 	if( ${?starting_dir} ) then
 		cd "${starting_dir}";
