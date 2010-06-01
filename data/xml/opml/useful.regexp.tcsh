@@ -14,8 +14,8 @@
 #-----------------------------------------------------------------------------------
 #	Transforms an rss or atom xml doc into a wget script:
 #		ex -s '+set ff=unix' '+1,$s/\v\r\_$//' '+1,$s/\v^\ +//' '+1,$s/\v^\t+//' '+1,$s/\v\n//' '+1s/\v\>\</\>\r\</g' '+1,$s/\v\<(title|pubDate|enclosure)@'\!'.*\>.*\>\n//' '+1,$s/\v^\<[^>]+\>\n//' '+wq!' "feed.xml";
-#		1,$s/\v\<title\>([^<]+)\<\/title\>\n\<pubDate\>([^<]*)\<.*\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*/wget -O "\1; released on: \2\5" "\4\5";
-#		1,$s/\v\<title\>([^<]+)\<\/title\>\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*\n\<pubDate\>([^<]*)\<.*/wget -O "\1; released on: \5\4" "\3\4";
+#		1,$s/\v\<title\>([^<]+)\<\/title\>\n\<pubDate\>([^<]*)\<.*\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*/wget -O "\1, released on: \2\5" "\4\5";
+#		1,$s/\v\<title\>([^<]+)\<\/title\>\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*\n\<pubDate\>([^<]*)\<.*/wget -O "\1, released on: \5\4" "\3\4";
 #	
 #	Or for a podcast novel, autio drama, or podiobook:
 #	
@@ -23,7 +23,7 @@
 #		'+1,$s/\v\<title\>([^0-9]+ )([0-9]+)\<\/title\>\n.*\n.*\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*/wget -O "\1\- Episode \2\5" "\4\5";'
 #	
 #	w/pubDates:
-#		'+1,$s/\v\<title\>([^0-9]+ )([0-9]+)\<\/title\>\n(\<pubDate\>)?([^<]*)\<.*\n(\<pubDate\>)?([^<]*)\<.*\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*/wget -O "\1\- Episode \2; released on: \3\5\8" "\7\8";'
+#		'+1,$s/\v\<title\>([^0-9]+ )([0-9]+)\<\/title\>\n(\<pubDate\>)?([^<]*)\<.*\n(\<pubDate\>)?([^<]*)\<.*\n\<enclosure (url|href)\="(.*)(\.[^."]+)".*/wget -O "\1\- Episode \2, released on: \3\5\8" "\7\8";'
 #
 #-----------------------------------------------------------------------------------
 #	Removing empty lines:
