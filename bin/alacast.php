@@ -165,7 +165,7 @@
 			if(!($GLOBALS['alacast']->options->titles_append_pubdate))
 				$podcastsInfo[ $podcastsInfo['total'] ]['title']=html_entity_decode(sprintf("%s%s", $episode_prefix, $episode_title));
 			else
-				$podcastsInfo[ $podcastsInfo['total'] ]['title']=html_entity_decode(sprintf("%s%s, released on: %s", $episode_prefix, $episode_title, preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)])));
+				$podcastsInfo[ $podcastsInfo['total'] ]['title']=html_entity_decode(sprintf("%s%s; released on: %s", $episode_prefix, $episode_title, preg_replace("/<pubDate>[\ \t]*([^<]+)[\ \t]*<\/pubDate>/", "$1", $podcastsPubDates[($i-2)])));
 			$podcastsInfo[ $podcastsInfo['total'] ]['url']=preg_replace("/<url>([^<]+)<\/url>/", "$1", $podcastsURIs[($i-2)]);
 			$podcastsInfo['total']++;
 		}
@@ -288,7 +288,7 @@
 			if(!$GLOBALS['alacast']->options->titles_append_pubdate)
 				$podcastsEpisode=preg_replace("/(.{1,{$podcasts_max_strlen}}).*/", "$1", $podcastsEpisode);
 			else
-				$podcastsEpisode=preg_replace("/^(.{1,{$podcasts_max_strlen}})(.*)(, released on.*)$/", "$1$3", $podcastsEpisode);
+				$podcastsEpisode=preg_replace("/^(.{1,{$podcasts_max_strlen}})(.*)(; released on.*)$/", "$1$3", $podcastsEpisode);
 			
 			if($GLOBALS['alacast']->options->verbose)
 				$GLOBALS['alacast']->output(

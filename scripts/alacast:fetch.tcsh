@@ -177,10 +177,10 @@ fetch_podcasts:
 		if(! ${?force_fetch} ) then
 			if( ${?debug} ) printf "Only episodes which have no existing file will be downloaded.\n";
 			set episode_line_padding="\t";
-			set episode_end_condition1="\relse\r\tprintf '\\t\\t"\""\2, released on: \7\.\5"\"" already exists.\\n\\n';\rendif";
-			set episode_end_condition2="\relse\r\tprintf '\\t\\t"\""\2, released on: \3\.\6"\"" already exists.\\n\\n';\rendif";
-			set episode_download_condition1="if(\! \-e "\""\2, released on: \7\.\5"\"" ) then\r";
-			set episode_download_condition2="if(\! \-e "\""\2, released on: \3\.\6"\"" ) then\r";
+			set episode_end_condition1="\relse\r\tprintf '\\t\\t"\""\2; released on: \7\.\5"\"" already exists.\\n\\n';\rendif";
+			set episode_end_condition2="\relse\r\tprintf '\\t\\t"\""\2; released on: \3\.\6"\"" already exists.\\n\\n';\rendif";
+			set episode_download_condition1="if(\! \-e "\""\2; released on: \7\.\5"\"" ) then\r";
+			set episode_download_condition2="if(\! \-e "\""\2; released on: \3\.\6"\"" ) then\r";
 		else
 			if( ${?debug} ) printf "All episodes will be downloaded.  Partial downloads will be completed.\n";
 			set episode_line_padding="";
@@ -198,8 +198,8 @@ fetch_podcasts:
 			set episode_download_condition2="";
 		endif
 		
-		ex "+5,"\$"s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \7\.\5"\""\\"\"""\"" "\""\\"\"""\""\4\.\5\6"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \7\.\5"\"" "\""\4\.\5\6"\"";${episode_end_condition1}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
-		ex "+5,"\$"s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2, released on: \3\.\6"\""\\"\"""\"" "\""\\"\"""\""\5\.\6\7"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2, released on: \3\.\6"\"" "\""\5\.\6\7"\"";${episode_end_condition2}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
+		ex "+5,"\$"s/^<\(item\|entry\)[^>]*>.*<title>\([^<]*\)<\/title>.*<enclosure.*\(url\|href\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<pubDate>\([^<]\+\)<\/pubDate>.*<\/\(item\|entry\)>.*/${episode_download_condition1}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2; released on: \7\.\5"\""\\"\"""\"" "\""\\"\"""\""\4\.\5\6"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2; released on: \7\.\5"\"" "\""\4\.\5\6"\"";${episode_end_condition1}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
+		ex "+5,"\$"s/.*<\(item\|entry\)>.*<title>\([^<]\+\)<\/title>.*<pubDate>\([^<]\+\)<\/pubDate>.*<.*enclosure.*\(href\|url\)=["\""']\([^"\""']\+\)\.\([^\."\""'?]\+\)\([\.?]\?[^"\""']*\)["\""'].*<\/\(item\|entry\)>.*/${episode_download_condition2}${episode_line_padding}printf "\""Downloading ${podcasts_title}'s episode: \2\\nUsing:\\n\\t${download_command_with_options} "\""\\"\"""\""\2; released on: \3\.\6"\""\\"\"""\"" "\""\\"\"""\""\5\.\6\7"\""\\"\"""\""\\n\\n"\"";\r${episode_line_padding}${download_command} "\""\2; released on: \3\.\6"\"" "\""\5\.\6\7"\"";${episode_end_condition2}/g" "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
 		ex '+5,$s/\v.*\<(item|entry).*\<\/(item|entry)\>.*\r\n?\_$//g' '+5,$s/\v.*\<(item|entry).*\<\/(item|entry)\>.*\n\_$//g' "+wq!" "${alacasts_catalog_search_results_log}.${download_command}.tcsh" >& /dev/null;
 		
 		if( ${start_with} > 1 ) then

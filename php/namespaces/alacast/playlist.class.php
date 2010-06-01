@@ -102,7 +102,7 @@
 				}
 			}
 			
-			$title=preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(, released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename);
+			$title=preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(; released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename);
 			
 			switch($this->type){
 				case "toxine":
