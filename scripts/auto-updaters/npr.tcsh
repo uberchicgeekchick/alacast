@@ -5,8 +5,8 @@ init:
 	
 	cd "`dirname "\""${0}"\""`/../../data/xml/opml/radiocasts/npr";
 	
-	alias	"wget"	"wget --no-check-certificate --quiet --continue";
-	alias	"ex"	"ex -E -n -X --noplugin";
+	alias "wget" "wget --no-check-certificate --quiet --continue";
+	alias "ex" "ex -E -n -X --noplugin";
 #init:
 
 

@@ -22,7 +22,7 @@ init:
 		goto usage;
 	endif
 	
-	alias	ex	"ex -E -n -X --noplugin";
+	alias ex "ex -E -n -X --noplugin";
 	
 	#set download_command="curl";
 	#set download_command_with_options="${download_command} --location --fail --show-error --silent --output";
@@ -30,7 +30,7 @@ init:
 	set download_command="wget";
 	set download_command_with_options="${download_command} --no-check-certificate --quiet --continue --output-document";
 	
-	alias	${download_command}	"${download_command_with_options}";
+	alias ${download_command} "${download_command_with_options}";
 	
 	set alacast_feed_downloader_script="alacast:feed:fetch:all:enclosures.tcsh";
 	set alacast_fetch_all_script="`dirname '${0}'`/${alacast_feed_downloader_script}";

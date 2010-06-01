@@ -7,8 +7,8 @@ setenv:
 	
 	onintr exit_script;
 	
-	alias	"wget"	"wget --no-check-certificate --continue --quiet";
-	alias	"ex"	"ex -E -n -X --noplugin";
+	alias "wget" "wget --no-check-certificate --continue --quiet";
+	alias "ex" "ex -E -n -X --noplugin";
 #setenv
 
 parse_argv:
@@ -281,7 +281,7 @@ open_opml:
 
 save_opml:
 	if(! ${?validate} ) then
-		alias	"ex"	"ex -E -n -X --noplugin -s";
+		alias "ex" "ex -E -n -X --noplugin -s";
 		set validate="wq!";
 	else
 		set validate="visual";

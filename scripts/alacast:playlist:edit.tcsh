@@ -156,7 +156,7 @@ main:
 		goto exception_handler;
 	endif
 	
-	alias	ex	"ex -E -n -X --noplugin";
+	alias ex "ex -E -n -X --noplugin";
 	
 	if(! ${?playlist_dir} ) then
 		if( -e "${HOME}/.alacast/alacast.ini" ) then
