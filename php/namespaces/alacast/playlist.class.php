@@ -86,20 +86,27 @@
 				return FALSE;
 			
 			if(!($filename && file_exists($filename))){
-				$GLOBALS['alacast']->logger->output(
-					sprintf("Adding file to playlist failed: the file does not appear to exist.\n\tfilename: <%s>\n\tplaylist: <%s>\n", $filename, $this->playlist),
-					TRUE
-				);
+				$GLOBALS['alacast']->logger->output("**error:** adding: <file://{$filename}> to playlist: <file://{$this->playlist}>\t[failed]\n\n\t<file://{$filename}> does not exists.\n", TRUE);
 				return FALSE;
 			}
 			
 			$this->create_path();
 			
-			if(!$this->fp){
+			if(!($this->playlist && file_exists($this->playlist) && $this->fp)){
+				if(!$this->playlist){
+					if(!$this->validate()){
+						$this->clean_up_created_path();
+						return ($this->enabled=FALSE);
+					}
+				}
+				
 				if(!($this->fp=fopen($this->playlist, "a"))){
 					$this->clean_up_created_path();
 					return ($this->enabled=FALSE);
 				}
+				
+				if($this->total)
+					$this->total=0;
 			}
 			
 			$title=preg_replace("/^(.*\/)(.*)".($this->append_pubdate ?"(, released on[^.]+)" :"")."(\.[^.]+)$/", "$2", $filename);
