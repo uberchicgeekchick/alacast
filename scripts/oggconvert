@@ -5,7 +5,7 @@ setenv:
 	set scripts_basename="oggconvert";
 	set scripts_tmpdir="`mktemp --tmpdir -d tmpdir.for.${scripts_basename}.XXXXXXXXXX`";
 	
-	set scripts_supported_extensions="ogg|mp3|m4a|wav";
+	set scripts_supported_extensions="ogg|mp3|m4a|wma|wav";
 	set escaped_home_dir=`printf ${HOME} | sed -r 's/([\!\$\"])/"\\\1"/g' | sed -r 's/([\[\/])/\\\1/g'`;
 	set escaped_starting_cwd=`printf ${cwd} | sed -r 's/([\!\$\"])/"\\\1"/g' | sed -r 's/([\[\/])/\\\1/g'`;
 	set supports_being_sourced;
@@ -90,23 +90,23 @@ debug_check:
 	@ argc=${#argv};
 	while( $arg < $argc )
 		@ arg++;
-		if( -e "$argv[$arg]" ) \
+		if( -e "$argv[${arg}]" ) \
 			continue;
 		
-		if( "$argv[$arg]" == "--" ) then
-			if(! ${?process_each_filename} ) \
-				set process_each_filename;
+		switch( "$argv[${arg}]" )
+			case "--":
+				if(! ${?process_each_filename} ) \
+					set process_each_filename;
 			continue;
-		endif
-		
-		if( "$argv[$arg]" == "--!" ) then
-			if( ${?process_each_filename} ) \
-				unset process_each_filename;
+			
+			case "--!":
+				if( ${?process_each_filename} ) \
+					unset process_each_filename;
 			continue;
-		endif
+		endsw
 		
-		set argument_file="${scripts_tmpdir}/.escaped.argument.$scripts_basename.argv[$arg].`date '+%s'`.arg";
-		printf "%s" "$argv[$arg]" >! "${argument_file}";
+		set argument_file="${scripts_tmpdir}/.escaped.argument.${scripts_basename}.argv[${arg}].`date '+%s'`.arg";
+		printf "%s" "$argv[${arg}]" >! "${argument_file}";
 		ex -X -n --noplugin -s '+s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${argument_file}";
 		set argument="`cat "\""${argument_file}"\""`";
 		rm -f "${argument_file}";
@@ -133,7 +133,7 @@ debug_check:
 				if( ${?diagnostic_mode} ) \
 					breaksw;
 				
-				printf "**${scripts_basename} debug:**, via "\$"argv[$arg], diagnostic mode:\t[enabled].\n\n";
+				printf "**${scripts_basename} debug:**, via "\$"argv[%d], diagnostic mode:\t[enabled].\n\n" ${arg};
 				set diagnostic_mode;
 				if(! ${?debug} ) \
 					set debug;
@@ -145,7 +145,7 @@ debug_check:
 						if( ${?debug_length} ) \
 							breaksw;
 						
-						printf "**${scripts_basename} notice:**, via "\$"argv[${arg}], length debugging:\t[enabled]\n\n";
+						printf "**%s notice:**, via "\$"argv[%d], length debugging:\t[enabled]\n\n" "${scripts_basename}" ${arg};
 						set debug_length;
 						breaksw;
 					
@@ -350,8 +350,17 @@ convert_filename_list:
 	if(! ${?filename_list} ) \
 		goto usage;
 	
-	if( ${?length} ) \
+	if( ${?length} && ! ${?length_set} ) then
 		unset length;
+	else if( ${?length_set} && ${?rtrim} ) then
+		printf "\t**Error:** both --length and --rtrim cannot be specified at the same time.\n\n" > /dev/stderr;
+		@ errno=-610;
+		if(! ${?process_each_filename} ) then
+			goto scripts_main_quit;
+		else
+			goto parse_arg;
+		endif
+	endif
 	
 	onintr cancel_convert;
 	
@@ -360,11 +369,12 @@ convert_filename_list:
 	
 	set file_count="`wc -l "\""${filename_list}"\"" | sed -r 's/^([0-9]+)(.*)"\$"/\1/'`";
 	if(!( ${file_count} > 0 )) then
-		printf "\t**Skipping:** ${dashes}${option}${equals}${value} no convertable files were found.\n\n" > /dev/stderr;
 		@ errno=-610;
 		if(! ${?process_each_filename} ) then
+			printf "\tNo convertable files were found.\n\n" > /dev/stderr;
 			goto scripts_main_quit;
 		else
+			printf "\t**Skipping:** ${dashes}${option}${equals}${value} no convertable files were found.\n\n" > /dev/stderr;
 			goto parse_arg;
 		endif
 	endif
@@ -431,7 +441,7 @@ convert_filenames:
 				continue;
 			endif
 			
-			if( "${original_extension}" == "ogg" && ! ${?force} && ! ${?ltrim} && ! ${?rtrim} ) then
+			if( "${original_extension}" == "ogg" && ! ${?force} && ! ${?ltrim} && ! ${?rtrim} && ! ${?length} ) then
 				printf "\t**Skipping:** <file://%s.%s> " "${filename}" "${extension}";
 				if( "${original_extension}" != "ogg" ) \
 					printf ", <file://%s.ogg> already exists, " "${filename}";
@@ -443,7 +453,7 @@ convert_filenames:
 				goto confirm_overwrite;
 		endif
 		
-		if( "${extension}" != "ogg" || ${?ltrim} ) \
+		if( "${extension}" != "ogg" || ${?ltrim} || ${?length} ) \
 			goto oggconvert;
 		
 		if( ${?rtrim} ) \
@@ -501,7 +511,7 @@ confirm_overwrite:
 			if(! ${?force} ) \
 				set force;
 		case "y":
-			if( ${?ltrim} || "${original_extension}" != "ogg" ) \
+			if( ${?ltrim} || ${?length} || "${original_extension}" != "ogg" ) \
 				goto oggconvert;
 			if( ${?rtrim} ) \
 				goto find_length;
@@ -533,9 +543,17 @@ oggconvert:
 		set ffmpeg_input_file_options="";
 		set ffmpeg_output_file_options="";
 		
-		if( ${?length} ) then
-			printf "\n\t\tRemoving: [%s] from the end of:\n\t\t<%s.%s>\n" "${rtrim}" "${save_to_filename}" "${original_extension}";
+		if( ${?length} && ( ${?rtrim} || ! ${?ltrim} ) ) then
+			if( ${?rtrim} ) then
+				printf "\n\t\tRemoving: [%s] from the end of:\n\t\t<%s.%s>\n" "${rtrim}" "${save_to_filename}" "${original_extension}";
+			else
+				printf "\n\t\tLimiting: [%s] as the maximum length of:\n\t\t<%s.%s>\n" "${length}" "${save_to_filename}" "${original_extension}";
+			endif
 			set ffmpeg_input_file_options=" -t ${length}";
+		else if( ${?ltrim} && ${?length} ) then
+			printf "\n\t\tTrimming: [%s] from the begining of:\n\t\t<%s.%s>\n" "${ltrim}" "${save_to_filename}" "${original_extension}";
+			printf "\n\t\t\tand limiting its maximum length to: [%s].\n" "${length}";
+			set ffmpeg_input_file_options=" -t ${length} -ss ${ltrim}";
 		else if( ${?ltrim} ) then
 			printf "\n\t\tTrimming: [%s] from the begining of:\n\t\t<%s.%s>\n" "${ltrim}" "${save_to_filename}" "${original_extension}";
 			set ffmpeg_input_file_options=" -ss ${ltrim}";
@@ -660,7 +678,7 @@ find_length:
 		set reverse_modifier="-";
 	endif
 	
-	set ogginfo_file="${scripts_tmpdir}/.escaped.ogginfo.$scripts_basename.`date '+%s'`";
+	set ogginfo_file="${scripts_tmpdir}/.escaped.ogginfo.${scripts_basename}.`date '+%s'`";
 	printf "%s" "${filename}" >! "${ogginfo_file}";
 	ex -s '+s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${ogginfo_file}";
 	set escaped_filename="`cat "\""${ogginfo_file}"\""`";
@@ -783,6 +801,9 @@ init_combine:
 	if(! ${?combine} ) \
 		goto scripts_main_quit;
 	
+	if( ${?length} ) \
+		unset length;
+	
 	@ files_combined=1;
 	set extension="";
 	set output="/dev/stdout";
@@ -867,22 +888,22 @@ parse_arg:
 			unset value_used;
 		
 		if( ${?debug} || ${?debug_arguments} ) \
-			printf "**%s debug:** Checking argv #%d (%s).\n" "${scripts_basename}" ${arg} "$argv[$arg]";
+			printf "**%s debug:** Checking argv #%d (%s).\n" "${scripts_basename}" ${arg} "$argv[${arg}]";
 		
-		if( "$argv[$arg]" == "--" ) then
-			if(! ${?process_each_filename} ) \
-				set process_each_filename;
+		switch( "$argv[${arg}]" )
+			case "--":
+				if(! ${?process_each_filename} ) \
+					set process_each_filename;
 			continue;
-		endif
-		
-		if( "$argv[$arg]" == "--!" ) then
-			if( ${?process_each_filename} ) \
-				unset process_each_filename;
+			
+			case "--!":
+				if( ${?process_each_filename} ) \
+					unset process_each_filename;
 			continue;
-		endif
+		endsw
 		
-		set argument_file="${scripts_tmpdir}/.escaped.argument.$scripts_basename.argv[$arg].`date '+%s'`.arg";
-		printf "%s" "$argv[$arg]" >! "${argument_file}";
+		set argument_file="${scripts_tmpdir}/.escaped.argument.${scripts_basename}.argv[${arg}].`date '+%s'`.arg";
+		printf "%s" "$argv[${arg}]" >! "${argument_file}";
 		ex -X -n --noplugin -s '+s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${argument_file}";
 		set argument="`cat "\""${argument_file}"\""`";
 		rm -f "${argument_file}";
@@ -904,7 +925,7 @@ parse_arg:
 		
 		
 		if( ${?debug} || ${?debug_arguments} ) \
-			printf "\tparsed "\$"argument: [${argument}]; "\$"argv[${arg}] ($argv[$arg])\n\t"\$"dashes: [${dashes}];\n\t"\$"option: [${option}];\n\t"\$"equals: [${equals}];\n\t"\$"value: [${value}]\n\n";
+			printf "\tparsed "\$"argument: [%s]; "\$"argv[%d] (%s)\n\t"\$"dashes: [%s];\n\t"\$"option: [%s];\n\t"\$"equals: [%s];\n\t"\$"value: [%s]\n\n" "${argument}" "${arg}" "$argv[${arg}]" "${dashes}" "${option}" "${equals}" "${value}";
 		
 		if( "${option}" != "" && "${equals}" == "" && ( "${value}" == "" || "${value}" == "${argument}" ) ) then
 			@ arg++;
@@ -912,10 +933,10 @@ parse_arg:
 				@ arg--;
 			else
 				if( ${?debug} || ${?debug_arguments} ) \
-					printf "**%s debug:** Looking for replacement value.  Checking argv #%d (%s).\n" "${scripts_basename}" ${arg} "$argv[$arg]";
+					printf "**%s debug:** Looking for replacement value.  Checking argv #%d (%s).\n" "${scripts_basename}" ${arg} "$argv[${arg}]";
 				
-				set argument_file="${scripts_tmpdir}/.escaped.argument.$scripts_basename.argv[$arg].`date '+%s'`.arg";
-				printf "%s" "$argv[$arg]" >! "${argument_file}";
+				set argument_file="${scripts_tmpdir}/.escaped.argument.${scripts_basename}.argv[${arg}].`date '+%s'`.arg";
+				printf "%s" "$argv[${arg}]" >! "${argument_file}";
 				ex -X -n --noplugin -s '+s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${argument_file}";
 				set test_argument="`cat "\""${argument_file}"\""`";
 				rm -f "${argument_file}";
@@ -939,7 +960,7 @@ parse_arg:
 					@ arg--;
 				else
 					if( ${?debug} || ${?debug_arguments} ) \
-						printf "\tparsed "\$"argument: [%s]; "\$"argv[%d] (%s)\n\t"\$"dashes: [%s];\n\t"\$"option: [%s];\n\t"\$"equals: [%s];\n\t"\$"value: [%s]\n\n" "${test_argument}" "${arg}" "$argv[$arg]" "${test_dashes}" "${test_option}" "${test_equals}" "${test_value}";
+						printf "\tparsed "\$"test_argument: [%s]; "\$"argv[%d] (%s)\n\t"\$"dashes: [%s];\n\t"\$"option: [%s];\n\t"\$"equals: [%s];\n\t"\$"value: [%s]\n\n" "${test_argument}" "${arg}" "$argv[${arg}]" "${test_dashes}" "${test_option}" "${test_equals}" "${test_value}";
 					set equals="=";
 					set value="${test_value}";
 					set arg_shifted;
@@ -962,32 +983,19 @@ parse_arg:
 			printf "\tparsed option "\$"parsed_argv[%d]: %s\n\n" ${parsed_argc} "${parsed_arg}";
 		
 		switch("${option}")
-			case "no-rtrim":
-				if( ${?rtrim} ) \
-					unset rtrim;
-				breaksw;
-				
 			case "no-ltrim":
 				if( ${?ltrim} ) \
 					unset ltrim;
 				breaksw;
-				
-			case "rtrim":
-				if( "${value}" == "" ) then
-					if( ${?rtrim} ) \
-						unset rtrim;
-					breaksw;
-				endif
-				
-				if( "`printf "\""${value}"\"" | sed -r 's/^[0-9]{2}:[0-9]{2}:[0-9]{2}"\$"//'`" != "" ) then
-					printf "Invalid ${dashes}${option}: ${value} specified, lenth must be formatted as: hh:mm:ss\n" > /dev/stderr;
-					@ errno=-601;
-					goto scripts_main_quit;
-					breaksw;
-				endif
-				
-				set rtrim="${value}";
-				set value_used;
+			
+			case "no-lenth":
+				if( ${?lenth} ) \
+					unset lenth;
+				breaksw;
+			
+			case "no-rtrim":
+				if( ${?rtrim} ) \
+					unset rtrim;
 				breaksw;
 			
 			case "ltrim":
@@ -1005,6 +1013,45 @@ parse_arg:
 				endif
 				
 				set ltrim="${value}";
+				set value_used;
+				breaksw;
+			
+			case "length":
+				if( "${value}" == "" ) then
+					if( ${?length} ) \
+						unset length;
+					if( ${?lengt_set} ) \
+						unset length_set;
+					breaksw;
+				endif
+				
+				if( "`printf "\""${value}"\"" | sed -r 's/^[0-9]{2}:[0-9]{2}:[0-9]{2}"\$"//'`" != "" ) then
+					printf "Invalid ${dashes}${option}: ${value} specified, lenth must be formatted as: hh:mm:ss\n" > /dev/stderr;
+					@ errno=-602;
+					goto scripts_main_quit;
+					breaksw;
+				endif
+				
+				set length="${value}";
+				set length_set;
+				set value_used;
+				breaksw;
+			
+			case "rtrim":
+				if( "${value}" == "" ) then
+					if( ${?rtrim} ) \
+						unset rtrim;
+					breaksw;
+				endif
+				
+				if( "`printf "\""${value}"\"" | sed -r 's/^[0-9]{2}:[0-9]{2}:[0-9]{2}"\$"//'`" != "" ) then
+					printf "Invalid ${dashes}${option}: ${value} specified, lenth must be formatted as: hh:mm:ss\n" > /dev/stderr;
+					@ errno=-601;
+					goto scripts_main_quit;
+					breaksw;
+				endif
+				
+				set rtrim="${value}";
 				set value_used;
 				breaksw;
 			
@@ -1148,7 +1195,7 @@ parse_arg:
 						breaksw;
 					
 					default:
-						printf "`printf ${option} | sed -r 's/^(.*)e$/\1ing/'` ${value} is not supported.  See "\`"${scripts_basename} --help"\`"\n";
+						printf "`printf "\""%s"\"" "\""${option}"\"" | sed -r 's/^(.*)e$/\1ing/'` ${value} is not supported.  See "\`"${scripts_basename} --help"\`"\n";
 						@ errno=-607;
 						goto scripts_main_quit;
 						breaksw;
@@ -1181,7 +1228,7 @@ parse_arg:
 						breaksw;
 					
 					default:
-						printf "`printf ${option} | sed -r 's/^(.*)e$/\1ing/'` ${value} is not supported.  See "\`"${scripts_basename} --help"\`"\n";
+						printf "`printf "\""%s"\"" "\""${option}"\"" | sed -r 's/^(.*)e$/\1ing/'` ${value} is not supported.  See "\`"${scripts_basename} --help"\`"\n";
 						@ errno=-608;
 						goto scripts_main_quit;
 						breaksw;
@@ -1243,10 +1290,10 @@ filename_list_append_value:
 	if(! -e "${filename_list}" ) \
 		touch "${filename_list}";
 	
-	if( "${scripts_supported_extensions}" == "ogg|mp3|m4a|wav" && ! ${?ltrim} && ! ${?rtrim} ) then
-		set scripts_supported_extensions="mp3|m4a|wav";
-	else if( "${scripts_supported_extensions}" == "mp3|m4a|wav" && ( ${?ltrim} || ${?rtrim} ) ) then
-		set scripts_supported_extensions="ogg|mp3|m4a|wav";
+	if( "${scripts_supported_extensions}" == "ogg|mp3|m4a|wma|wav" && ! ${?ltrim} && ! ${?rtrim} && ! ${?length} ) then
+		set scripts_supported_extensions="mp3|m4a|wma|wav";
+	else if( "${scripts_supported_extensions}" == "mp3|m4a|wma|wav" && ( ${?ltrim} || ${?rtrim} || ${?length} ) ) then
+		set scripts_supported_extensions="ogg|mp3|m4a|wma|wav";
 	endif
 	
 	if(! ${?scripts_supported_extensions} ) then

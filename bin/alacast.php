@@ -445,32 +445,32 @@
 			if(!( ($ext=get_filenames_extension( $podcastsFiles[$i]))))
 				continue;
 			
+			if(!(file_exists($podcastsFiles[$i])))
+				continue;
+			
 			$Podcasts_New_Filename=set_podcasts_new_episodes_filename($podcastsInfo[0]['title'], $podcastsInfo[$z]['title'], $ext);
+			$podcasts_new_file="{$GLOBALS['alacast']->ini->save_to_dir}/{$podcastsInfo[0]['title']}/{$Podcasts_New_Filename}";	
 			
 			if($GLOBALS['alacast']->options->verbose)
 				$GLOBALS['alacast']->output(
 					(sprintf(
 						"\n\t*DEBUG*: I'm moving:\n\t%s\n\t\t-to\n\t%s/%s/%s\n",
 						$podcastsFiles[$i],
-						$GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename
+						$podcasts_new_file
 					))
 				);
 			
 			if(
 				($GLOBALS['alacast']->options->keep_original)
 				&&
-				(file_exists( sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename)))
+				(file_exists($podcasts_new_file))
 			)
 				continue;
 			
-			if(!(file_exists($podcastsFiles[$i])))
-				continue;
-
-			$podcasts_new_file="";
 			$cmd=sprintf("%s %s %s",
 					(($GLOBALS['alacast']->options->keep_original) ?"cp" : "mv"),
 					escapeshellarg( preg_replace('/([\ \r\n])/', '\\\$1', $podcastsFiles[$i]) ),
-					escapeshellarg( ($podcasts_new_file=sprintf("%s/%s/%s", $GLOBALS['alacast']->ini->save_to_dir, $podcastsInfo[0]['title'], $Podcasts_New_Filename)) )
+					escapeshellarg($podcasts_new_file)
 			);
 			
 			if(!$GLOBALS['alacast']->options->debug){
@@ -489,8 +489,12 @@
 			$movedPodcasts++;
 			
 			//Prints the new episodes name:
-			$GLOBALS['alacast']->output("\n\t\t" . (wordwrap( $Podcasts_New_Filename, 72, "\n\t\t\t")) ."\n\t\tURI: ".$podcastsInfo[$z]['url']."\n");
+			$GLOBALS['alacast']->output("\n\t\t{$Podcasts_New_Filename}\n\t\tURI: {$podcastsInfo[$z]['url']}\n");
 			$GLOBALS['alacast']->output("\n\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
+			
+			unset($Podcasts_New_Filename);
+			unset($podcasts_new_file);
+			unset($cmd);
 		}
 		return $movedPodcasts;
 	}//end:function move_podcasts_episodes();
