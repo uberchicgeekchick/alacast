@@ -122,6 +122,10 @@ while( "${1}" != "" )
 				set outputs[${#outputs}]="${value}";
 				breaksw;
 			
+			case "outline":
+				set be_verbose;
+				breaksw;
+			
 			default:
 				if( ${?debug} )	\
 					printf "%s is not a valid --output value.\nPlease see %s --help\n\n" "${value}" "`basename '${0}'`" > /dev/stderr;
@@ -135,6 +139,10 @@ while( "${1}" != "" )
 	
 	case "match-only":
 		set match_only;
+		breaksw;
+	
+	case "episodes-only":
+		@ limit=2;
 		breaksw;
 	
 	case "refetch":
@@ -174,6 +182,12 @@ end
 	if(! ${?output} )	\
 		set output="${attrib}";
 	
+	if(! ${?limit} ) \
+		@ limit=1;
+	
+	if( ${limit} < 1 ) \
+		@ limit=1;
+	
 alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename --line-number --initial-tab --no-messages --perl-regexp";
 alias ex "ex -E -n -X --noplugin";
 
@@ -188,7 +202,7 @@ foreach index ( ${dl_dir}/*/index.xml )
 	@ items=0;
 	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1\r/g"\""`")
 		@ items++;
-		if( ${items} == 1 )	\
+		if( ${items} <= ${limit} )	\
 			continue;
 		printf "<file://%s>:%s\n" "${index}" "${item}";
 	end

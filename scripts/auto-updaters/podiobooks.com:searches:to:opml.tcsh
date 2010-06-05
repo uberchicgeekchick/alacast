@@ -194,7 +194,7 @@ main:
 	set website="http://www.podiobooks.com/podiobooks/search.php";
 	if( "`printf "\""${author_or_category}"\"" | sed -r 's/^[0-9]+"\$"//'`" != "" ) then
 		set opml="`dirname "\""${0}"\""`/../../data/xml/opml/library/authors/`printf "\""${author_or_category}"\"" | sed -r 's/([^ ]+)/\L\1/g' | sed -r 's/\ /\-/g'`.opml";
-		set website="${website}?keyword=`printf "\""${author_or_category}"\"" | sed -r 's/\ /\+/g'`";
+		set website="${website}?keyword=`printf "\""${author_or_category}"\"" | sed -r 's/\ /\+/g'`&includeAdult=1";
 		
 		if(! -d "`dirname "\""${opml}"\""`" ) then
 			set new_dir="`dirname "\""${opml}"\""`";

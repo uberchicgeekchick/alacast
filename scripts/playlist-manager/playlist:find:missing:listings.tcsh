@@ -26,7 +26,7 @@ check_dependencies:
 	foreach dependency(${dependencies})
 		@ dependencies_index++;
 		if( ${?debug} || ${?debug_dependencies} ) \
-			printf "\n**${scripts_basename} debug:** looking for dependency: ${dependency}.\n\n"; 
+			printf "\n**%s debug:** looking for dependency: %s.\n\n" "${scripts_basename}" "${dependency}"; 
 			
 		foreach program("`where '${dependency}'`")
 			if( -x "${program}" ) \
@@ -36,7 +36,7 @@ check_dependencies:
 		
 		if(! ${?program} ) then
 			@ errno=-501;
-			printf "One or more required dependencies couldn't be found.\n\t[${dependency}] couldn't be found.\n\t${scripts_basename} requires: ${dependencies}\n";
+			printf "One or more required dependencies couldn't be found.\n\t[%s] couldn't be found.\n\t%s requires: %s\n" "${dependency}" "${scripts_basename}" "${dependencies}";
 			goto exception_handler;
 		endif
 		
@@ -59,7 +59,7 @@ check_dependencies:
 					breaksw;
 			endsw
 			
-			printf "**${scripts_basename} debug:** found ${dependencies_index}${suffix} dependency: ${dependency}.\n";
+			printf "**%s debug:** found %s%s dependency: %s.\n" "${scripts_basename}" "${dependencies_index}" "${suffix}" "${dependency}";
 			unset suffix;
 		endif
 		
@@ -164,8 +164,8 @@ find_missing_media:
 		#printf "-->%s\n" "${podcast}";
 		#continue;
 		if( ${?skip_subdirs} ) then
-			foreach skip_subdir ( "`printf "\""${skip_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
-				if( "`printf "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\/(${skip_subdir})\/.*/\1/"\""`" == "${skip_subdir}" ) \
+			foreach skip_subdir ( "`printf "\""%s"\"" "\""${skip_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
+				if( "`printf "\""%s"\"" "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\/(${skip_subdir})\/.*/\1/"\""`" == "${skip_subdir}" ) \
 					break;
 				unset skip_subdir;
 			end
@@ -191,7 +191,7 @@ find_missing_media:
 		endif
 		
 		if( ${?append} ) then
-			set this_podcast="`printf "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+			set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 			if(! ${?new_file_count} ) then
 				printf "**%s notice:** The following fills will be added to\n\t<file://%s>\n" "${scripts_basename}" "${playlist}";
 				@ new_file_count=1;
@@ -200,15 +200,20 @@ find_missing_media:
 			endif
 			printf "%s\n" "${this_podcast}";
 			printf "%s\n" "${this_podcast}" >> "${playlist}.new";
+			
+			if( ${?create_script} ) then
+				printf "%s\n" "${this_podcast}" >> "${create_script}";
+			endif
+			
 			continue;
 		endif
 		
 		if(! ${?remove} ) then
-			set this_podcast="`printf "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+			set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 			if(! -e "${this_podcast}" ) \
 				continue;
 			
-			printf "${this_podcast}\n";
+			printf "%s" "${this_podcast}";
 			
 			if( ${?create_script} ) then
 				printf "%s\n" "${this_podcast}" >> "${create_script}";
@@ -217,13 +222,13 @@ find_missing_media:
 			if(! ${?duplicates_subdirs} ) \
 				continue;
 			
-			foreach duplicates_subdir ( "`printf "\""${duplicates_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
-				set duplicate_podcast="`printf "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+			foreach duplicates_subdir ( "`printf "\""%s"\"" "\""${duplicates_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
+				set duplicate_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 				
 				if(! -e "${duplicate_podcast}" ) \
 					continue;
 				
-				printf "${duplicate_podcast}\n";
+				printf "%s\n" "${duplicate_podcast}";
 				if( ${?create_script} ) then
 					printf "%s\n" "${duplicate_podcast}\n" >> "${create_script}";
 				endif
@@ -232,8 +237,8 @@ find_missing_media:
 			continue;
 		endif
 		
-		set this_podcast="`printf "\""${podcast}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
-		if(! -e "`printf "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`" ) \
+		set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+		if(! -e "`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`" ) \
 			continue;
 		
 		if( ${?message} && ! ${?message_displayed} ) then
@@ -242,15 +247,6 @@ find_missing_media:
 		endif
 		
 		set status=0;
-		set rm_confirmation="`rm -vf${remove} "\""${this_podcast}"\""`";
-		if(!( ${status} == 0 && "${rm_confirmation}" != "" )) \
-			continue;
-		printf "%s\n" "${rm_confirmation}";
-		
-		@ removed_podcasts++;
-		if( ${?create_script} ) then
-			printf "rm -vf${remove} "\""${this_podcast}"\"";\n" >> "${create_script}";
-		endif
 		
 		set podcast_dir="`dirname "\""${this_podcast}"\""`";
 		
@@ -261,6 +257,16 @@ find_missing_media:
 			printf "\n";
 		endif
 		
+		set rm_confirmation="`rm -vf${remove} "\""${this_podcast}"\""`";
+		if(!( ${status} == 0 && "${rm_confirmation}" != "" )) \
+			continue;
+		printf "%s\n" "${rm_confirmation}";
+		
+		@ removed_podcasts++;
+		if( ${?create_script} ) then
+			printf "rm -vf%s "\""%s"\"";\n" "${remove}" "${this_podcast}" >> "${create_script}";
+		endif
+		
 		set podcast_dir_for_ls="`dirname "\""${this_podcast}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
 		while( "${podcast_dir}" != "/" )
 			if( "`/bin/ls -A "\""${podcast_dir_for_ls}"\""`" != "" ) \
@@ -268,10 +274,10 @@ find_missing_media:
 			
 			rm -rv "${podcast_dir}";
 			if( ${?create_script} ) then
-				printf "rm -rv "\""${podcast_dir_for_ls}"\"";\n" >> "${create_script}";
+				printf "rm -rv "\""%s"\"";\n" "${podcast_dir_for_ls}" >> "${create_script}";
 			endif
 			
-			set podcast_cwd="`printf "\""${podcast_dir_for_ls}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
+			set podcast_cwd="`printf "\""%s"\"" "\""${podcast_dir_for_ls}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
 			set podcast_dir="`dirname "\""${podcast_cwd}"\""`";
 			set podcast_dir_for_ls="`dirname "\""${podcast_cwd}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
 		end
@@ -283,12 +289,12 @@ find_missing_media:
 			continue;
 		endif
 		
-		foreach duplicates_subdir ( "`printf "\""${duplicates_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
-			set duplicate_podcast="`printf "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+		foreach duplicates_subdir ( "`printf "\""%s"\"" "\""${duplicates_subdirs}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
+			set duplicate_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 			if(! -e "${duplicate_podcast}" ) \
 				continue;
 			
-			set duplicate_podcast="`printf "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
+			set duplicate_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r "\""s/^${escaped_cwd}\//${escaped_cwd}\/${duplicates_subdir}\//"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 			
 			set status=0;
 			set rm_confirmation="`rm -vf${remove} "\""${duplicate_podcast}"\""`";
@@ -298,7 +304,7 @@ find_missing_media:
 			
 			@ removed_podcasts++;
 			if( ${?create_script} ) then
-				printf "rm -vf${remove} "\""${duplicate_podcast}"\"";\n" >> "${create_script}";
+				printf "rm -vf%s "\""%s"\"";\n" "${remove}" "${duplicate_podcast}";\n" >> "${create_script}";
 			endif
 			
 			set podcast_dir="`dirname "\""${duplicate_podcast}"\""`";
@@ -309,10 +315,10 @@ find_missing_media:
 				
 				rm -rv "${podcast_dir}";
 				if( ${?create_script} ) then
-					printf "rm -rv "\""${podcast_dir_for_ls}"\"";\n" >> "${create_script}";
+					printf "rm -rv "\""%s"\"";\n" "${podcast_dir_for_ls}" >> "${create_script}";
 				endif
 				
-				set podcast_cwd="`printf "\""${podcast_dir_for_ls}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
+				set podcast_cwd="`printf "\""%s"\"" "\""${podcast_dir_for_ls}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
 				set podcast_dir="`dirname "\""${podcast_cwd}"\""`";
 				set podcast_dir_for_ls="`dirname "\""${podcast_cwd}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
 			end
@@ -499,62 +505,62 @@ parse_arg:
 		if( ${?debug} ) \
 			printf "Checking argv #%d (%s).\n" "${arg}" "$argv[$arg]";
 		
-		set argument="`printf "\""$argv[$arg]"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
-		set dashes="`printf "\""${argument}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=?)(.*)/\1/'`";
+		set argument="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g'`";
+		set dashes="`printf "\""%s"\"" "\""${argument}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=?)(.*)/\1/'`";
 		if( "${dashes}" == "${argument}" ) \
 			set dashes="";
 		
-		set option="`printf "\""${argument}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=?)(.*)/\2/'`";
+		set option="`printf "\""%s"\"" "\""${argument}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=?)(.*)/\2/'`";
 		if( "${option}" == "${argument}" ) \
 			set option="";
 		
-		set equals="`printf "\""${argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\3/'`";
+		set equals="`printf "\""%s"\"" "\""${argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\3/'`";
 		if( "${equals}" == "${argument}" ) \
 			set equals="";
 		
-		set value="`printf "\""${argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\4/'`";
+		set value="`printf "\""%s"\"" "\""${argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\4/'`";
 		
 		if( "${dashes}" != "" && "${option}" != "" && "${equals}" == "" && ( "${value}" == "" || "${value}" == "${argument}" ) ) then
 			@ arg++;
 			if( ${arg} > ${argc} ) then
 				@ arg--;
 			else
-				set test_argument="`printf "\""$argv[$arg]"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g'`";
-				set test_dashes="`printf "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\1/'`";
+				set test_argument="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g'`";
+				set test_dashes="`printf "\""%s"\"" "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\1/'`";
 				if( "${test_dashes}" == "${test_argument}" ) \
 					set test_dashes="";
 				
-				set test_option="`printf "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\2/'`";
+				set test_option="`printf "\""%s"\"" "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\2/'`";
 				if( "${test_option}" == "${test_argument}" ) \
 					set test_option="";
 				
-				set test_equals="`printf "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\3/'`";
+				set test_equals="`printf "\""%s"\"" "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\3/'`";
 				if( "${test_equals}" == "${test_argument}" ) \
 					set test_equals="";
 				
-				set test_value="`printf "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\4/'`";
+				set test_value="`printf "\""%s"\"" "\""${test_argument}"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)(.*)"\$"/\4/'`";
 				
 				if( "${test_dashes}" != "" && "${test_option}" != "" && ( "${test_value}" == "" || "${test_value}" == "${test_argument}" ) ) then
 					@ arg--;
 				else
 					set arg_shifted;
-					set equals="=";
+					set equals=" ";
 					set value="${test_value}";
 				endif
 				unset test_argument test_dashes test_option test_equals test_value;
 			endif
 		endif
 		
-		#if( "`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
-		#	set value="`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\"" | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/^\ //' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/(\[)/\\\1/g' | sed -r 's/([*])/\\\1/g'`";
+		#if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
+		#	set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\"" | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/^\ //' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/(\[)/\\\1/g' | sed -r 's/([*])/\\\1/g'`";
 		#endif
 		
-		#if( "`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
-		#	set value="`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_starting_cwd}\2/"\"" | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/^\ //' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/(\[)/\\\1/g' | sed -r 's/([*])/\\\1/g'`";
+		#if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
+		#	set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_starting_cwd}\2/"\"" | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/^\ //' | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/(\[)/\\\1/g' | sed -r 's/([*])/\\\1/g'`";
 		#endif
 		
-		#if( "`printf "\""${value}"\"" | sed -r "\""s/^.*(\*)/\1/"\""`" == "*" ) then
-		#	set dir="`printf "\""${value}"\"" | sed -r "\""s/^(.*)\*"\$"/\1/"\""`";
+		#if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^.*(\*)/\1/"\""`" == "*" ) then
+		#	set dir="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(.*)\*"\$"/\1/"\""`";
 		#	set value="`/bin/ls --width=1 "\""${dir}"\""*`";
 		#endif
 		

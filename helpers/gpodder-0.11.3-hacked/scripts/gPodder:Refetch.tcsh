@@ -142,36 +142,45 @@ find_podcasts:
 	
 	set podcasts=();
 	
-	if( ${?debug} ) echo "Search for podcasts who <${search_attribute}> matches: ${search_value}\n\tUsing:\n\t${search_script} --match-only --${search_attribute}="\""${search_value}"\""";
-	foreach podcast_match( "`${search_script} --match-only --${search_attribute}="\""${search_value}"\""`" )
-		if( ${?debug} ) printf "Found --${search_attribute}="\""${search_value}"\""\n";
-		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^([^\:]+):.*"\$"/\1/'`";
-		set podcast_xmlUrl="`printf "\""${podcast_match}"\"" | sed -r 's/^.*xmlUrl\="\""([^"\""]+)"\"".*/\1/'`";
+	if( ${?debug} ) \
+		printf "Search for podcasts who <%s> matches: %s\n\tUsing:\n\t%s --match-only --%s="\""%s"\""" "${search_attribute}" "${search_value}" "${search_script}" "${search_attribute}" "${search_value}";
+	foreach podcast_match( "`${search_script} --match-only --edisodes-only --${search_attribute}="\""${search_value}"\""`" )
+		if( ${?debug} ) \
+			printf "%s found: --%s="\""%s"\""\n" "${search_script}" "${search_attribute}" "${podcast_match}";
+		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^<file:\/\/([^>]+)>:(.*)"\$"/\1/'`";
 		
-		if( ${?podcast_found} )	unset podcast_found;
+		if( ${?podcast_found} )	\
+			unset podcast_found;
 		foreach index ( ${podcasts} )
-			if( ${?debug} ) printf "Comparing <%s> against <%s>\n" "${index}" "${index_xml}";
-			if( "${index}" != "${index_xml}" ) continue;
+			if( ${?debug} ) \
+				printf "Comparing <%s> against <%s>\n" "${index}" "${index_xml}";
+			if( "${index}" != "${index_xml}" ) \
+				continue;
 			set podcast_found;
 			break;
 		end
 		
-		if( ${?podcast_found} ) continue;
+		if( ${?podcast_found} ) \
+			continue;
 		
 		set podcasts=( ${podcasts} ${index_xml} );
-		set podcast_match="`printf "\""${podcast_match}"\"" | sed 's/^[^\:]\+:\(.*\)"\$"/\1/g' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[\ \t]*"\$"//' | sed -r 's/\// \- /g'`";
 		
-		if( ${?debug} ) echo "${podcast_match}\n";
-		set refetch_script="${mp3_player_folder}/.gPodder:Refetch:`date '+%s'`.tcsh";
-		if( ${?debug} ) echo "${refetch_script}\n";
+		set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/^<file:\/\/([^>]+)>:(.*)"\$"/\2/' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[ \t]*"\$"//' | sed -r 's/\// \- /g'`";
+		
+		if( ${?debug} ) \
+			printf "%s\n" "${podcast_match}";
+		set refetch_script="`dirname "\""${index_xml}"\""`/.gPodder:Refetch:`date '+%s'`.tcsh";
+		if( ${?debug} ) \
+			printf "%s\n" "${refetch_script}";
 		
 		if( ${?debug} ) then
-			echo ${search_script} --match-only --verbose --${search_attribute}=\"${podcast_match}\" \>\! \"${refetch_script}.tmp\""\n";
-			if( ${?diagnosis} ) continue;
+			printf "cp -f "\""%s"\"" "\""%s.tmp"\" "${index_xml}" "${refetch_script}";
+			if( ${?diagnosis} ) \
+				continue;
 		endif
-		${search_script} --match-only --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
-		if( ${?debug} ) \
-			vim-enhanced "${refetch_script}.tmp";
+		
+		cp -f "${index_xml}" "${refetch_script}.tmp";
+		#${search_script} --match-only --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
 		
 		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
 			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
@@ -190,12 +199,15 @@ find_podcasts:
 			ex -s '+1,$s/\v(.*\<title\>[^\<]*)\/([^\<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${refetch_script}.tmp";
 		end
 		
-		ex -s '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.?]\+\)\([\.?]\?[^<]*\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if(\! -d "\""${podcast_match}"\"" ) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${line_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \5\.\3\\n"\"";\r${line_padding}${download_command} "\""${podcast_match}\/\1, released on: \5\.\3"\"" '\2\.\3\4';\r${line_padding}if(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3\4';${line_condition_end}\rif( "\$"{?new_dir} ) then\r\tif( \`ls "\""${podcast_match}"\"" == ""\`) rmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp";
+		ex -s '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/.*<item>.*<title>\([^<]\+\)<\/title>.*<url>\(.*\)\.\([^<\.?]\+\)\([\.?]\?[^<]*\)<\/url>.*<pubDate>\([^<]\+\)<\/pubDate>.*<\/item>/if(\! -d "\""${podcast_match}"\"" ) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${line_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \5\.\3\\n"\"";\r${line_padding}${download_command} "\""${podcast_match}\/\1, released on: \5\.\3"\"" '\2\.\3\4';\r${line_padding}if(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" ) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3\4';${line_condition_end}\rif( "\$"{?new_dir} ) then\r\tif( "\"\`"ls "\""\\"\"""\""${podcast_match}"\""\\"\"""\"""\`\"" == "\"""\"" ) \\\r\t\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp";
 		
 		if( `wc -l "${refetch_script}.tmp" | sed 's/^\([0-9]\+\)\ .*/\1/g'` > 0 ) then
-			printf '#\!/bin/tcsh -f\n' >! "${refetch_script}";
+			printf "#\!/bin/tcsh -f\ncd "\""%s"\"";\n" "${mp3_player_folder}" >! "${refetch_script}";
 			cat "${refetch_script}.tmp" >> "${refetch_script}";
 			chmod +x "${refetch_script}";
+			
+			if( ${?debug} ) \
+				vim-enhanced "${refetch_script}";
 			"${refetch_script}";
 		endif
 		#if( ! ${?keep_script} || ! ${?debug} )	\

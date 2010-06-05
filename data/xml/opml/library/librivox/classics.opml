@@ -4,10 +4,6 @@
 		<title>LibriVox.org Public Domain Classic podcasts, audio dramas, &amp; podcast novels</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Jane Eyre by Charlotte Brontë]]>" xmlUrl="http://librivox.org/bookfeeds/jane-eyre-by-charlotte-bront.xml" type="rss" text="<![CDATA[Librivox: Jane Eyre by Brontë, Charlotte]]>" htmlUrl="http://librivox.org/jane-eyre-by-charlotte-bront/" description="<![CDATA[<p>Jane Eyre is not your typical romance.&nbsp; It is a story of a woman who struggles with a world in which she doesn&apos;t quite fit.&nbsp; Once finished with her schooling, and with no family that really cares of her she strikes out on her own as a governess.&nbsp; Jane Eyre searches for love, someone to care for her, and someone to care for, and finds it in unexpected places.&nbsp; (summary by Kri)</p>]]>" />
-		<!--<outline title="<![CDATA[&apos;s audio dramas]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from ]]>" description="<![CDATA[Podcast audio dramas from ]]>" />-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
-		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+		<outline title="<![CDATA[Jane Eyre by Charlotte Brontë]]>" xmlUrl="http://librivox.org/bookfeeds/jane-eyre-by-charlotte-bront.xml" type="rss" text="<![CDATA[Librivox: Jane Eyre by Charlotte] Brontë]>" htmlUrl="http://librivox.org/jane-eyre-by-charlotte-bront/" description="<![CDATA[<p>Jane Eyre is not your typical romance.&nbsp; It is a story of a woman who struggles with a world in which she doesn&apos;t quite fit.&nbsp; Once finished with her schooling, and with no family that really cares of her she strikes out on her own as a governess.&nbsp; Jane Eyre searches for love, someone to care for her, and someone to care for, and finds it in unexpected places.&nbsp; (summary by Kri)</p>]]>" />
 	</body>
 </opml>

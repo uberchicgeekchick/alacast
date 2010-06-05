@@ -209,8 +209,8 @@ fetch_podcast:
 		goto fetch_podcasts;
 	endif
 	
-	if( "`printf "\""${title}"\"" | sed -r 's/^(The)(.*)"\$"/\1/g'`" == "The" ) \
-		set title="`printf "\""${title}"\"" | sed -r 's/^(The)\ (.*)"\$"/\2,\ \1/g'`";
+	if( "`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(The)(.*)"\$"/\1/g'`" == "The" ) \
+		set title="`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(The)\ (.*)"\$"/\2,\ \1/g'`";
 	
 	if(! -d "${title}" ) \
 		mkdir -p "./${title}";
@@ -242,9 +242,9 @@ fetch_podcast:
 	
 	# Grabs the titles of the podcast and all episodes.
 	if(! ${?silent} ) \
-		printf "Finding titles${please_wait_phrase}\t";
+		printf "Finding titles%s\t" "${please_wait_phrase}";
 	if( ${?logging} ) \
-		printf "Finding titles${please_wait_phrase}\t" >> "${download_log}";
+		printf "Finding titles%s\t" >> "${download_log}" "${please_wait_phrase}";
 	
 	# Puts each item, or entry, on its own line:
 	ex -s '+1,$s/[\n][\ \t]*//' '+wq!' './00-feed.xml';
@@ -263,9 +263,9 @@ fetch_podcast:
 	# This will be my last update to any part of Alacast v1
 	# This fixes episode & chapter titles so that they will sort correctly
 	if(! ${?silent} ) \
-		printf "Formating titles${please_wait_phrase}";
+		printf "Formating titles%s" "${please_wait_phrase}";
 	if( ${?logging} ) \
-		printf "Formating titles${please_wait_phrase}" >> "${download_log}";
+		printf "Formating titles%s" >> "${download_log}" "${please_wait_phrase}";
 	ex -s '+1,$s/^\(Zero\)/0/gi' '+1,$s/^\(One\)/1/gi' '+1,$s/^\(Two\)/2/gi' '+1,$s/^\(Three\)/3/gi' '+1,$s/^\(Four\)/4/gi' '+1,$s/^\(Five\)/5/gi' '+wq!' './00-titles.lst';
 	ex -s '+1,$s/^\(Six\)/6/gi' '+1,$s/^\(Seven\)/7/gi' '+1,$s/^\(Eight\)/8/gi' '+1,$s/^\(Nine\)/9/gi' '+1,$s/^\(Ten\)/10/gi' '+wq!' './00-titles.lst';
 	
@@ -299,7 +299,7 @@ fetch_podcast:
 	if(! ${?silent} ) \
 		printf "Finding release dates...please be patient, I may need several moments\t\t";
 	if( ${?logging} ) \
-		printf "Finding release dates${please_wait_phrase}\t\t" >> "${download_log}";
+		printf "Finding release dates%s\t\t" >> "${download_log}" "${please_wait_phrase}";
 	/bin/cp './00-feed.xml' './00-pubDates.lst';
 	
 	# Concatinates all data into one single string:
@@ -349,7 +349,7 @@ fetch_podcast:
 	if( ${?logging} ) \
 		printf "Beginning to download: %s\n" "${title}" >> "${download_log}";
 	set episodes=();
-	set total_episodes="`cat './00-enclosures.lst'`";
+	set total_episodes="`wc -l './00-enclosures.lst' | sed -r 's/^([0-9]+).*"\$"/\1/'`";
 	if( ${?start_with} ) then
 		if( ${start_with} > 1 ) then
 			set start_with="`printf '%s-1\n' '${start_with}'`";
@@ -369,9 +369,9 @@ fetch_podcast:
 	
 	set episodes="`cat './00-enclosures.lst'`";
 	if(! ${?silent} ) \
-		printf "\n\tDownloading %s out of %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${#total_episodes}" "${title}";
+		printf "\n\tDownloading %s out of %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${total_episodes}" "${title}";
 	if( ${?logging} ) \
-		printf "\n\tDownloading %s out of %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${#total_episodes}" "${title}" >> "${download_log}";
+		printf "\n\tDownloading %s out of %s episodes of:\n\t\t'%s'\n\n" "${#episodes}" "${total_episodes}" "${title}" >> "${download_log}";
 	
 	@ episodes_downloaded=0;
 	@ episodes_number=0;
@@ -437,9 +437,9 @@ fetch_episode:
 	endif
 	
 	if(! ${?silent} ) \
-		printf "\n\n\t\tDownloading episode: %s(episodes_number)\n\t\tTitle: %s (episodes_title)\n\t\tReleased on: %s (episodes_pubDate)\n\t\tFilename: %s (episodes_filename)\n\t\tRemote file: %s (episodes_file)\n\t\tURI: %s (episode)\n" ${episodes_number} "${episodes_title}" "${episodes_pubdate}" "${episodes_filename}" "${episodes_file}" "${episode}";
+		printf "\n\n\t\tDownloading episode: %s(episodes_number) out of %s\n\t\tTitle: %s (episodes_title)\n\t\tReleased on: %s (episodes_pubDate)\n\t\tFilename: %s (episodes_filename)\n\t\tRemote file: %s (episodes_file)\n\t\tURI: %s (episode)\n" ${episodes_number} "${total_episodes}" "${episodes_title}" "${episodes_pubdate}" "${episodes_filename}" "${episodes_file}" "${episode}";
 	if( ${?logging} ) \
-		printf "\n\n\t\tDownloading episode: %s(episodes_number)\n\t\tTitle: %s (episodes_title)\n\t\tReleased on: %s (episodes_pubDate)\n\t\tFilename: %s (episodes_filename)\n\t\tRemote file: %s (episodes_file)\n\t\tURI: %s (episode)\n" ${episodes_number} "${episodes_title}" "${episodes_pubdate}" "${episodes_filename}" "${episodes_file}" "${episode}" >> "${download_log}";
+		printf "\n\n\t\tDownloading episode: %s(episodes_number) out of %s\n\t\tTitle: %s (episodes_title)\n\t\tReleased on: %s (episodes_pubDate)\n\t\tFilename: %s (episodes_filename)\n\t\tRemote file: %s (episodes_file)\n\t\tURI: %s (episode)\n" ${episodes_number} "${total_episodes}" "${episodes_title}" "${episodes_pubdate}" "${episodes_filename}" "${episodes_file}" "${episode}" >> "${download_log}";
 	
 	# Skipping existing files.
 	if( ${?fetch_all} ) then
@@ -449,10 +449,11 @@ fetch_episode:
 	endif
 	
 	if( -e "./${episodes_filename}" ) then
+		${download_command_with_options} "./${episodes_filename}" "${episode}";
 		if(! ${?silent} ) \
-			printf "\t\t\t[skipped existing file]";
+			printf "\t\t\t[finished download of existing file]";
 		if( ${?logging} ) \
-			printf "\t\t\t[skipping existing file]" >> "${download_log}";
+			printf "\t\t\t[sfinished download of existing file]" >> "${download_log}";
 		unset episodes_filename;
 		goto fetch_episodes;
 	endif
@@ -681,12 +682,12 @@ parse_arg:
 			endif
 		endif
 		
-		if( "`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
-			set value="`printf "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\""`";
+		if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
+			set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\""`";
 		endif
 		
-		if( "`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
-			set value="`printf "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_cwd}\2/"\""`";
+		if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
+			set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_cwd}\2/"\""`";
 		endif
 		
 		@ parsed_argc++;
