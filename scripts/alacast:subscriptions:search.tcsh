@@ -7,13 +7,23 @@ endif
 if(! ${?1} || "${1}" == "" )	\
 	goto usage
 
-while( "${1}" != "" )
-	set option = "`printf "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\1/g'`";
-	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
-	set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
-	if( "${equals}" == "" && "${options_value}" == "" && "${2}" != "" )	\
-		set options_value="${2}";
-	#echo "Checking ${option}\n";
+set outputs=("title" "xmlUrl");
+
+@ arg=0;
+@ argc=${#argv};
+while( $arg < $argc )
+	@ arg++;
+	set option = "`printf "\""%s"\"" "\""${argv[$arg]}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)/\1/g'`";
+	set equals="`printf "\""%s"\"" "\""${argv[$arg]}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
+	set value="`printf "\""%s"\"" "\""${argv[$arg]}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
+	if( "${equals}" == "" && "${value}" == "" ) then
+		@ arg++;
+		if( $arg <= $argc ) then
+			set value="${argv[$arg]}";
+		else
+			@ arg--;
+		endif
+	endif
 	
 	switch ( "${option}" )
 		case "title":
@@ -22,8 +32,8 @@ while( "${1}" != "" )
 		case "text":
 		case "description":
 			set attribute="${option}";
-			if(! ${?value} )	\
-				set value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
+			if(! ${?attribute_value} )	\
+				set attribute_value="`echo "\""${value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
 			breaksw;
 		
 		case "help":
@@ -41,7 +51,7 @@ while( "${1}" != "" )
 			breaksw;
 		
 		case "enable":
-			switch ( "${options_value}" )
+			switch ( "${value}" )
 				case "debug":
 					if(! ${?debug} )	\
 						set debug;
@@ -55,7 +65,7 @@ while( "${1}" != "" )
 			breaksw;
 		
 		case "disable":
-			switch( "${options_value}" )
+			switch( "${value}" )
 				case "debug":
 					if( ${?debug} )	\
 						unset debug;
@@ -70,19 +80,28 @@ while( "${1}" != "" )
 			breaksw;
 			
 		case "output":
-			switch( "${options_value}" )
+			switch( "${value}" )
 				case "title":
 				case "htmlUrl":
 				case "text":
 				case "description":
 				case "xmlUrl":
-					set output="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\"" | sed -r 's/([\?])/\\\1/g'`";
-					if(! ${?outputs} ) then
-						set outputs=( "${output}" );
+				case "url":
+				case "type":
+					foreach output( ${outputs} )
+						if( "${value}" == "${output}" ) \
+							continue;
+						unset output;
+					end
+					if(! ${?output} ) then
+						if(! ${?outputs} ) then
+							set outputs=("${value}");
+						else
+							set outputs=( ${outputs} "${value}" );
+						endif
 					else
-						set outputs=( ${outputs} "${output}" );
+						unset output;
 					endif
-					unset output;
 					breaksw;
 				
 				case "outline":
@@ -96,29 +115,22 @@ while( "${1}" != "" )
 			breaksw;
 		
 		default:
-			if( "${2}" != "" )	\
-				continue;
-			
 			if(! ${?attribute} )	\
 				set attribute="title";
 			
-			if(! ${?value} ) then
-				set value="${1}";
+			if(! ${?attribute_value} ) then
+				set attribute_value="${value}";
 				break;
 			endif
 			
-			if( "${value}" == "" )	\
-				set value="${1}";
+			if( "${attribute_value}" == "" ) \
+				set attribute_value="${value}";
 			breaksw;
 	endsw
-	shift;
 end
 
 
 main:
-	if(! ${?outputs} )	\
-		set outputs=("title" "xmlUrl" "link" "guid" "description");
-	
 	if( "`basename '${0}' | sed -r 's/^(alacast).*/\1/ig'`" == "alacast" ) then
 		set subscriptions_opml="subscriptions.opml";
 		if( -e "${HOME}/.alacast/opml/${subscriptions_opml}" ) then
@@ -142,44 +154,56 @@ main:
 	endif
 	
 	if( ${?debug} ) then
-		printf "Searching for %s(s) matching: %s.\n\tUsing:\n\t" "${attribute}" "${value}";
-		echo "/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' "\""${subscriptions_opml}"\""";
+		printf "Searching for %s(s) matching: %s.\n\tUsing:\n\t" "${attribute}" "${attribute_value}";
+		echo "/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${attribute_value}.*["\""]' "\""${subscriptions_opml}"\""";
 	endif
 #main:
 
 
 find_outlines:
 	@ lines_output=0;
-	foreach outline("`/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' '${subscriptions_opml}'`")
+	foreach outline_escaped("`/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${attribute_value}.*["\""]' "\""${subscriptions_opml}"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
 		@ lines_output++;
 		
+		set outline="`printf "\""%s"\"" "\""${outline_escaped}"\""`";
 		if( ${?output_outlines} ) then
 			printf "%s\n" "${outline}";
 			continue;
 		endif
 		
 		foreach output( ${outputs} )
-			printf "%s: " "${output}";
-			printf "%s" "${outline}" | sed "s/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/" | sed "s/\&amp;/\&/g";
-			printf "\n";
+			set attribute_found="`printf "\""%s"\"" "\""${outline_escaped}"\"" | sed 's/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/' | sed 's/\&amp;/\&/g'`";
+			if( "${attribute_found}" != "${outline}" ) \
+				printf "%s: %s\n" "${output}" "${attribute_found}";
+			unset attribute_found;
 		end
 		printf "\n";
 	end
 #find_outlines:
 
 exit_script:
-	if( ${?outline} )	\
+	if( ${?outline} ) \
 		unset outline;
-	if( ${?option} )	\
+	if( ${?option} ) \
 		unset option;
-	if( ${?options_value} )	\
-		unset options_value;
-	if( ${?output} )	\
+	if( ${?value} ) \
+		unset value;
+	if( ${?output} ) \
 		unset output;
-	if( ${?value} )	\
-		unset value;;
+	if( ${?attribute_found} ) \
+		unset attribute_found;
+	if( ${?attribute} ) \
+		unset attribute;
+	if( ${?attribute_value} ) \
+		unset attribute_value;
 	
-	if( ${?output_outlines} )	\
+	if( ${?outputs} ) \
+		unset outputs;
+	if( ${?output} ) \
+		unset output;
+	if( ${?output_escaped} ) \
+		unset output_escaped;
+	if( ${?output_outlines} ) \
 		unset output_outlines;
 	
 	exit;
