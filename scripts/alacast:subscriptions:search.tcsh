@@ -35,9 +35,9 @@ while( "${1}" != "" )
 				set debug;
 			breaksw;
 		
-		case "verbose":
-			if(! ${?verbose_output} )	\
-				set verbose_output;
+		case "outline":
+			if(! ${?output_outlines} )	\
+				set output_outlines;
 			breaksw;
 		
 		case "enable":
@@ -47,9 +47,9 @@ while( "${1}" != "" )
 						set debug;
 					breaksw;
 				
-				case "verbose":
-					if(! ${?verbose_output} )	\
-						set verbose_output;
+				case "outline":
+					if(! ${?output_outlines} )	\
+						set output_outlines;
 					breaksw;
 			endsw
 			breaksw;
@@ -61,9 +61,9 @@ while( "${1}" != "" )
 						unset debug;
 					breaksw;
 			
-				case "verbose":
-					if( ${?verbose_output} )	\
-						unset verbose_output;
+				case "outline":
+					if( ${?output_outlines} )	\
+						unset output_outlines;
 					breaksw;
 				
 			endsw
@@ -84,6 +84,9 @@ while( "${1}" != "" )
 					endif
 					unset output;
 					breaksw;
+				
+				case "outline":
+					set output_outlines;
 				
 				default:
 					printf "%s is not a valid output option.\n\tSupportted output options are: title, xmlUrl, text, htmlUrl, or description.\n" > /dev/stderr;
@@ -114,25 +117,27 @@ end
 
 main:
 	if(! ${?outputs} )	\
-		set outputs=("title" "xmlUrl");
+		set outputs=("title" "xmlUrl" "link" "guid" "description");
 	
 	if( "`basename '${0}' | sed -r 's/^(alacast).*/\1/ig'`" == "alacast" ) then
-		if( -e "${HOME}/.alacast/opml/subscriptions.opml" ) then
-			set subscriptions_opml="${HOME}/.alacast/opml/subscriptions.opml";
-		else if( -e "${HOME}/.alacast/profiles/${USER}/opml/subscriptions.opml" ) then
-			set subscriptions_opml="${HOME}/.alacast/profiles/${USER}/opml/subscriptions.opml";
-		else if( -e "`dirname '${0}'`../data/profiles/${USER}/subscriptions.opml" ) then
-			set subscriptions_opml="`dirname '${0}'`../data/profiles/${USER}/opml/subscriptions.opml";
-		else if( -e "`dirname '${0}'`../data/profiles/default/opml/subscriptions.opml" ) then
-			set subscriptions_opml="`dirname '${0}'`../data/profiles/default/opml/subscriptions.opml";
+		set subscriptions_opml="subscriptions.opml";
+		if( -e "${HOME}/.alacast/opml/${subscriptions_opml}" ) then
+			set subscriptions_opml="${HOME}/.alacast/opml/${subscriptions_opml}";
+		else if( -e "${HOME}/.alacast/profiles/${USER}/opml/${subscriptions_opml}" ) then
+			set subscriptions_opml="${HOME}/.alacast/profiles/${USER}/opml/${subscriptions_opml}";
+		else if( -e "`dirname "\""${0}"\""`../data/profiles/${USER}/${subscriptions_opml}" ) then
+			set subscriptions_opml="`dirname '${0}'`../data/profiles/${USER}/opml/${subscriptions_opml}";
+		else if( -e "`dirname "\""${0}"\""`../data/profiles/default/opml/${subscriptions_opml}" ) then
+			set subscriptions_opml="`dirname '${0}'`../data/profiles/default/opml/${subscriptions_opml}";
 		endif
 	else
-		if( -e "${HOME}/.config/gpodder/channels.opml" )	\
-			set subscriptions_opml="${HOME}/.config/gpodder/channels.opml";
+		set subscriptions_opml="channels.opml";
+		if( -e "${HOME}/.config/gpodder/${subscriptions_opml}" ) \
+			set subscriptions_opml="${HOME}/.config/gpodder/${subscriptions_opml}";
 	endif
 	
-	if(! ${?subscriptions_opml} ) then
-		printf "Unable to find [%s]'s needed subscription.opml/channels.opml.\n" "`basename '${0}'`";
+	if(! -e "${subscriptions_opml}" ) then
+		printf "Unable to find [%s]'s needed [%s].\n" "`basename '${0}'`" "${subscriptions_opml}";
 		goto exit_script;
 	endif
 	
@@ -145,11 +150,14 @@ main:
 
 find_outlines:
 	@ lines_output=0;
-	foreach outline ( "`/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' '${subscriptions_opml}'`" )
-		if( ${?verbose_output} )	\
-			echo "${outline}";
-		
+	foreach outline("`/usr/bin/grep --line-number -i --perl-regex -e '${attribute}=["\""].*${value}.*["\""]' '${subscriptions_opml}'`")
 		@ lines_output++;
+		
+		if( ${?output_outlines} ) then
+			printf "%s\n" "${outline}";
+			continue;
+		endif
+		
 		foreach output( ${outputs} )
 			printf "%s: " "${output}";
 			printf "%s" "${outline}" | sed "s/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/" | sed "s/\&amp;/\&/g";
@@ -171,8 +179,8 @@ exit_script:
 	if( ${?value} )	\
 		unset value;;
 	
-	if( ${?verbose_output} )	\
-		unset verbose_output;
+	if( ${?output_outlines} )	\
+		unset output_outlines;
 	
 	exit;
 #exit_script:

@@ -12,7 +12,7 @@ $scripts_basename=~s/\n//;
 if( @ARGV < 0 && ( "$ARGV[0]"eq"-h" || "$ARGV[0]"eq"--help" )) { usage(); }
 
 my $catalogs_path="$scripts_path/../data/xml/opml";
-my @catalogs=("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "knowledge", "unfiled.opml");
+my @catalogs=("podcasts", "library", "radiocasts",  "ip.tv", "vodcasts", "music", "unfiled.opml");
 if( -e "$catalogs_path/../../profiles/$ENV{USER}/opml/subscriptions.opml" ){
 	$catalogs[@catalogs]="../../profiles/$ENV{USER}/opml/subscriptions.opml";
 }

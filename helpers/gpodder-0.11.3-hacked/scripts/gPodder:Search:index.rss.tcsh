@@ -24,7 +24,7 @@ init:
 #init:
 
 
-parse_argv:
+debug_check:
 	@ arg=0;
 	@ argc=${#argv};
 	while( $arg < $argc )
@@ -47,10 +47,10 @@ parse_argv:
 				continue;
 		endsw
 	end
-#parse_argv:
+#goto debug_check;
 
 
-while( "${1}" != "" )
+parse_argv:
 	@ arg=0;
 	@ argc=${#argv};
 	while( $arg < $argc )
@@ -188,7 +188,7 @@ end
 	if( ${limit} < 1 ) \
 		@ limit=1;
 	
-alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename --line-number --initial-tab --no-messages --perl-regexp";
+alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename --line-number --initial-tab --no-messages --perl-regexp -i";
 alias ex "ex -E -n -X --noplugin";
 
 foreach index ( ${dl_dir}/*/index.xml )
