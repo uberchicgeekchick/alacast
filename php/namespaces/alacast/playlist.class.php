@@ -181,11 +181,11 @@
 			switch($this->type){
 				case "toxine":
 				case "tox":
-					fprintf($this->fp, "#END");
+					fprintf($this->fp, "#END\n");
 					break;
 				
 				case "pls":
-					fprintf($this->fp, "Version=2");
+					fprintf($this->fp, "Version=2\n");
 					fseek($this->fp, 0);
 					if($this->total)
 						fprintf($this->fp, "[playlist]\nnumberofentries=%d\n", $this->total);
