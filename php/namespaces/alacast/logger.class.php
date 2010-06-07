@@ -177,15 +177,17 @@
 			$this->rotate($error);
 			
 			if(!$error)
-				fprintf($this->output_logs_fp, "%s", (utf8_encode( $string)));
+				fprintf($this->output_logs_fp, "%s", $string);
 			else
-				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
+				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, $string);
 			
 			return TRUE;
 		}//method: private function log_output();
 		
 		public function output($string, $error=FALSE, $silent=FALSE) {
 			if(!($string && "{$string}" != "" && preg_replace( "/^[\s\r\n\ \t]*(.*)[\s\r\n\ \t]*/", "$1", $string) != "")) return;
+			
+			/*$string=utf8_encode($string);*/
 			
 			if($this->enabled)
 				$this->log_output($string, $error);
@@ -194,9 +196,9 @@
 				return FALSE;
 			
 			if($error === TRUE)
-				return fprintf(STDERR, "**%s error:** %s", $this->program_name, (utf8_encode($string)));
+				return fprintf(STDERR, "**%s error:** %s", $this->program_name, $string);
 			
-			return fprintf(STDOUT, "%s", (utf8_encode($string)));
+			return fprintf(STDOUT, "%s", $string);
 		}//method:public function output("mixed $value string", $error=FALSE);
 		
 		private function close_log() {
