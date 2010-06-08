@@ -196,8 +196,8 @@ foreach index( ${dl_dir}/*/index.xml )
 	if( "`egrep '<[^\/][^>]+>[^<]+"\$"' '${index}'`" != "" )	\
 		ex -s '+2,$s/\v\r\n?\_$//g' '+2,$s/\n//g' '+wq!' "${index}.tmp";
 	
-	if( `wc -l "${index}" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
-		ex -s '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
+	#if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
+	#	ex -s '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
 	set found="`egrep '<${attrib}>.*${attrib_value}.*<\/${attrib}>' '${index}.tmp' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g'`";
 	
@@ -218,7 +218,7 @@ foreach index( ${dl_dir}/*/index.xml )
 		
 		foreach output_attrib(${outputs})
 			foreach item_found("`egrep "\""<${output}>${item}<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//'`")
-				set this_item="`printf "\""%s"\"" "\""${item_found}"\"" | sed -r "\""s/.*<${output_attrib}>(.*)<\/${output_attrib}>.*/\1/g"\""`";
+				set this_item="`printf "\""%s"\"" "\""${item_found}"\"" | sed -r "\""s/.*<${output_attrib}>([^<]*)<\/${output_attrib}>.*/\1/g"\""`";
 				if( "${this_item}" == "`printf "\""%s"\"" "\""${item_found}"\""`" ) \
 					continue;
 				
