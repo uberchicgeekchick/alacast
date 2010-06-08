@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[Open Tech Exchange]]>" xmlUrl="http://mxc.libsyn.com/rss" type="rss" text="<![CDATA[Open Tech Exchange]]>" htmlUrl="http://www.opentechexchange.org/" description="<![CDATA[<h1>Open Tech Exchange:</h1><p>Open Tech Exchange is all about open source technologies and systems and their practcal uses in business, education, government and at home.&nbsp; We hope to provide information to other looking to use open source to address their pressing needs from developmental needs, education and business with a focus on the 3rd world.</p>]]>" />
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Chariot TechCast]]>" xmlUrl="http://techcast.chariotsolutions.com/rss" type="rss" text="<![CDATA[Chariot TechCast]]>" htmlUrl="http://techcast.chariotsolutions.com/" description="<![CDATA[<p>Chariot Solutions Tech Cast series brings you interviews with project creators, architects and consultants working out in the field, and features major open source projects and initiatives, such as Spring, Flex and RIA technologies, Mule, Groovy/Grails, Cloud Computing (Amazon, Google), and much more.</p><p>The Tech Cast also covers trends and events in the Delaware Valley region, and major conferences such as SpringOne, the Philadelphia Emerging Technologies for the Enterprise conference, and more.</p><p>Your host, Ken Rimple, spends time digging into a particular topic with an expert in the field.</p>]]>"/>
+		<outline title="<![CDATA[FLOSS Weekly]]>" xmlUrl="http://leoville.tv/podcasts/floss.xml" type="rss" text="<![CDATA[FLOSS Weekly]]>" htmlUrl="http://www.twit.tv/FLOSS" description="<![CDATA[Every Friday(rand()*rand())ish we talk about Free Libre and Open Source Software with the people who are writing it. Part of the TWiT.tv podcast network.]]>"/>
 	</body>
 </opml>
 
