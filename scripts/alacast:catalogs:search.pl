@@ -36,7 +36,7 @@ my @websites_to_visit=();
 my $global_search_attribute;
 my $global_search_attributes_value;
 my $searching_list="";
-my @alacast_catalog_search_outputs=("(title)", "(htmlUrl)", "(xmlUrl)");
+my @alacast_catalog_search_outputs=("title", "htmlUrl", "xmlUrl");
 
 sub usage{
 	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_basename);
@@ -81,7 +81,7 @@ sub search_catalog{
 			$opml_file=~s/^(.*):([0-9]+):(.*)$/$3/;
 			
 			my $results_displayed=0;
-			printf("<%s%s>:", ($opml_uri ?"file://" :""), $opml_file);
+			printf("<%s%s>:\n", ($opml_uri ?"file://" :""), $opml_file);
 			if(!( $results_displayed=display_outputs($opml_outline, $grep_command) )) { next; }
 			if( $be_verbose ){
 				printf("\n\tOPML Outline:\n\t%s\n", "$opml_outline");
@@ -104,6 +104,7 @@ sub search_catalog{
 				if($opml_outline=~/.*xmlUrl="([^"]+)".*$/){
 					my $xmlUrl_attribute=$opml_outline;
 					$xmlUrl_attribute=~s/.*xmlUrl="([^"]+)".*/$1/i;
+					$xmlUrl_attribute=~s/\&amp;/\&/ig;
 					my $already_parsed=0;
 					for(my $i=0; $i<@xmlUrls_to_parse && !$already_parsed; $i++){
 						if("$xmlUrls_to_parse[$i]"eq"$xmlUrl_attribute"){$already_parsed=1;}
@@ -118,6 +119,7 @@ sub search_catalog{
 				if($opml_outline=~/.*htmlUrl="([^"]+)".*$/){
 					my $htmlUrl_attribute=$opml_outline;
 					$htmlUrl_attribute=~s/.*htmlUrl="([^"]+)".*/$1/i;
+					$htmlUrl_attribute=~s/\&amp;/\&/ig;
 					my $already_visited=0;
 					for(my $i=0; $i<@websites_to_visit && !$already_visited; $i++){
 						if("$websites_to_visit[$i]"eq"$htmlUrl_attribute"){$already_visited=1;}
@@ -161,22 +163,26 @@ sub display_outputs{
 		
 		my $opml_attribute=$opml_outline;
 		if("$alacast_catalog_search_outputs[$i]"eq"$global_search_attribute"){
-			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]*$global_search_attributes_value[^"]*)["].*/$2/i;
+			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]*$global_search_attributes_value[^"]*)["].*/$1/i;
 		}else{
-			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]+)["].*/$2/i;
+			$opml_attribute=~s/.*$alacast_catalog_search_outputs[$i]=["]([^"]+)["].*/$1/i;
 		}
-		$opml_attribute=~s/\<\!\[CDATA\[(.*)\]\]\>/$1/;
+		$opml_attribute=~s/\<\!\[CDATA\[(.*)\]\]\>/$1/g;
 		
 		if("$opml_attribute"eq""){
 			next;
 		}
 		
-		$results_displayed++;
+		$opml_attribute=~s/\&amp;/\&/g;
+		
 		if( $debug_mode ){
 			printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
 		}
-		printf("\n\t%s=\"%s\"", $alacast_catalog_search_outputs[$i], $opml_attribute);
+		$results_displayed++;
+		if( $results_displayed == 1 ) { printf("\t<outline"); }
+		printf(" %s=\"%s\"", $alacast_catalog_search_outputs[$i], $opml_attribute);
 	}
+	if( $results_displayed > 0 ) { printf(" />\n"); }
 	return $results_displayed;
 }#display_outputs
 
@@ -496,7 +502,7 @@ sub parse_output{
 		if("$outputs[$i]"eq"outline"||"$outputs[$i]"eq"verbose"){
 			@alacast_catalog_search_outputs=("outline");
 		}elsif("$outputs[$i]"ne"title"||"$outputs[$i]"ne"htmlUrl"||"$outputs[$i]"ne"xmlUrl"){
-			$alacast_catalog_search_outputs[++$x]="($outputs[$i])";
+			$alacast_catalog_search_outputs[++$x]="$outputs[$i]";
 		}
 		#$alacast_catalog_search_outputs[++$x]="($outputs[$i])";
 	}

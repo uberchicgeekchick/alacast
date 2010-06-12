@@ -489,8 +489,8 @@
 			$movedPodcasts++;
 			
 			//Prints the new episodes name:
-			$GLOBALS['alacast']->output("\n\t\t{$Podcasts_New_Filename}\n\t\tURI: {$podcastsInfo[$z]['url']}\n");
-			$GLOBALS['alacast']->output("\n\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
+			$GLOBALS['alacast']->output("\n\t\tTitle: {$Podcasts_New_Filename}\n\t\tURI: {$podcastsInfo[$z]['url']}\n");
+			$GLOBALS['alacast']->output("\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
 			
 			unset($Podcasts_New_Filename);
 			unset($podcasts_new_file);

@@ -5,7 +5,7 @@ if(! ${?0} ) then
 	exit ${status};
 endif
 
-if(!( ${?1} && "${1}" != "" && "${1}" != "--help" ))	\
+if(!( ${?1} && "${1}" != "" && "${1}" != "--help" )) \
 	goto usage;
 	
 find_config:
@@ -58,10 +58,17 @@ parse_argv:
 	set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
 	set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
 	set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+	
+	if( ${?debug} ) \
+		printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
+	
 	if( "${equals}" == "" && "${value}" == "" ) then
 		@ arg++;
-		if( $arg < $argc ) then
+		if( $arg <= $argc ) then
+			set equals=" ";
 			set value="$argv[$arg]";
+			if( ${?debug} ) \
+				printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
 		endif
 		@ arg--;
 	endif
@@ -111,7 +118,7 @@ parse_argv:
 				if(! ${?output} ) \
 					set output="${value}";
 				foreach item(${outputs})
-					if("${value}" == "${item}" )	\
+					if("${value}" == "${item}" ) \
 						break;
 					unset item;
 				end
@@ -127,7 +134,7 @@ parse_argv:
 				breaksw;
 			
 			default:
-				if( ${?debug} )	\
+				if( ${?debug} ) \
 					printf "%s is not a valid --output value.\nPlease see %s --help\n\n" "${value}" "`basename '${0}'`" > /dev/stderr;
 				breaksw;
 		endsw
@@ -166,20 +173,22 @@ parse_argv:
 		breaksw;
 	
 	default:
-		if( ${?debug} )	\
+		if( ${?debug} ) \
 			printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;
 		breaksw;
 	
 	endsw
 end
-
-	if(! ${?attrib_value} )	\
+	if(! ${?attrib_value} ) \
 		goto usage;
 	
-	if(! ${?attrib} )	\
+	if(!( ${?attrib_value} != "" )) \
+		goto usage;
+	
+	if(! ${?attrib} ) \
 		set attrib="title";
 	
-	if(! ${?output} )	\
+	if(! ${?output} ) \
 		set output="${attrib}";
 	
 	if(! ${?limit} ) \
@@ -193,7 +202,7 @@ alias ex "ex -E -n -X --noplugin";
 
 foreach index( ${dl_dir}/*/index.xml )
 	cp "${index}" "${index}.tmp";
-	if( "`egrep '<[^\/][^>]+>[^<]+"\$"' '${index}'`" != "" )	\
+	if( "`egrep '<[^\/][^>]+>[^<]+"\$"' '${index}'`" != "" ) \
 		ex -s '+2,$s/\v\r\n?\_$//g' '+2,$s/\n//g' '+wq!' "${index}.tmp";
 	
 	#if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
@@ -207,7 +216,7 @@ foreach index( ${dl_dir}/*/index.xml )
 	endif
 	
 	@ items=0;
-	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1/g"\""`")
+	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1/g"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
 		@ items++;
 		if( ${items} <= ${limit} ) \
 			continue;
@@ -217,7 +226,7 @@ foreach index( ${dl_dir}/*/index.xml )
 			continue;
 		
 		foreach output_attrib(${outputs})
-			foreach item_found("`egrep "\""<${output}>${item}<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//'`")
+			foreach item_found("`egrep "\""<${output}>${item}<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
 				set this_item="`printf "\""%s"\"" "\""${item_found}"\"" | sed -r "\""s/.*<${output_attrib}>([^<]*)<\/${output_attrib}>.*/\1/g"\""`";
 				if( "${this_item}" == "`printf "\""%s"\"" "\""${item_found}"\""`" ) \
 					continue;
@@ -248,7 +257,7 @@ foreach index( ${dl_dir}/*/index.xml )
 	end
 	printf "#\!/bin/tcsh -f\ncd "\""%s"\"";\n" "${mp3_dir}" >! "${index}".tcsh;
 	cat "${index}.tmp" >> "${index}".tcsh;
-	ex -s '+3d' '+3,$s/\v\r\n?\_$//g' '+3,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+3,$s/\(<title>\)/\r\1/g' '+3d' '+$d' '+3,$s/[\#\!]//g' '+wq!' "${index}".tcsh;
+	ex -s '+3d' '+3,$s/\v\r\n?\_$//g' '+3,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+3,$s/\(<title>\)/\r\1/g' '+3d' '+$d' '+3,$s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${index}".tcsh;
 	ex -s '+3s/\v.*\<title\>([^<]+)\<\/title\>.*/\1/' '+3s/"/"\\""/' '+wq!' "${index}".tcsh;
 	ex -s '+3s/\v(.*)/set podcasts_title="\1";\rif\( "\`printf "\\""${podcasts_title}"\\"" \| sed -r '\''s\/\(The\)\(\.*\)\/\\1\/g'\''\`" == "The" \)\ \\\r\tset podcasts_title="\`printf "\\""${podcasts_title}"\\"" \| sed -r '\''s\/\(The\)\ \(\.*\)\/\\2,\ \\1\/g'\''\`";\rif(\! -d "${podcasts_title}" ) then\r\tset new_dir;\r\tmkdir -p "${podcasts_title}";\rendif\r/' '+11,$s/\v\<title\>([^\<]+)\<\/title\>.*\<url\>(.*)\.([^\.\<]+)\<\/url\>.*\<pubDate\>([^\<]+)\<\/pubDate\>.*/if(! -e "${podcasts_title}\/\1, released on: \4\.\3" ) then\r\tprintf "Downloading ${podcasts_title} episode: \1\\n";\r\tcurl '${silent}'--location --fail --show-error --output "${podcasts_title}\/\1, released on: \4\.\3" "\2.\3";\r\tif( -e "${podcasts_title}\/\1, released on: \4\.\3" ) then\r\t\tif(\! ${?podcast_downloaded} ) set podcast_downloaded;\r\telse\r\t\tprintf "\\n**error:** <%s> could not be downloaded.\\n\\n" "${podcasts_title}\/\1, released on: \4\.\3";\r\tendif\rendif\r/' '+wq!' "${index}".tcsh;
 	printf 'if( ${?new_dir} && ! ${?podcast_downloaded} ) then\n\trmdir "${podcasts_title}";\n\tif( ${?new_dir} ) \\\n\t\tunset new_dir;\nendif\n' >> "${index}".tcsh;

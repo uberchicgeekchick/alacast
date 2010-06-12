@@ -172,9 +172,9 @@ find_outlines:
 		endif
 		
 		foreach output( ${outputs} )
-			set attribute_found="`printf "\""%s"\"" "\""${outline_escaped}"\"" | sed 's/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/' | sed 's/\&amp;/\&/g'`";
+			set attribute_found="`printf "\""%s"\"" "\""${outline_escaped}"\"" | sed 's/.*${output}=["\""]\([^"\""]\+\)["\""].*/\1/' | sed 's/\&amp;/\&/ig'`";
 			if( "${attribute_found}" != "${outline}" ) \
-				printf "%s: %s\n" "${output}" "${attribute_found}";
+				printf "<%s>%s</%s>\n" "${output}" "${attribute_found}" "${output}";
 			unset attribute_found;
 		end
 		printf "\n";

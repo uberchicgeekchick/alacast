@@ -4,9 +4,7 @@
 		<title>Science Fiction Works &amp; Podnovels</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[&quot;Endless Night&quot; An Art Lawful Productions]]>" xmlUrl="http://anartlawful.libsyn.com/rss" type="rss" text="<![CDATA[&quot;Endless Night&quot; - An Art Lawful Productions]]>" htmlUrl="http://anartlawful.libsyn.com/" description="<![CDATA[They found him at the bottom of a bottle of Gitterswitch Gin, in a dingy cantina on the edge of the civilized galaxy.  An Art Lawful Productions presents &quot;The Endless Night&quot;, a swashbuckling audio drama about swarthy pirates, damaged spaceships and unbeatable odds.  Thrilling exploits, harrowing adventure, criminal antics and issues of morality - all in this month's audio drama!]]>" />
-		<outline title="<![CDATA[Incident at Station 23]]>" xmlUrl="http://feeds.feedburner.com/ChrisFiction/Story/" type="rss" text="<![CDATA[Incident at Station 23 - Story Feed]]]>" htmlUrl="http://fiction.chrismoody.net/" description="<![CDATA[<h1>Incident at Station 23</h1><h3>Story Feed</h3><p></p>]]>" />
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Incident at Station 23]]>" xmlUrl="http://feeds.feedburner.com/ChrisFiction/Story" type="rss" text="<![CDATA[Incident at Station 23 - Story Feed]]]>" htmlUrl="http://fiction.chrismoody.net/" description="<![CDATA[<h1>Incident at Station 23</h1><h3>Story Feed</h3><p></p>]]>" />
 	</body>
 </opml>
