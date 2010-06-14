@@ -1,2 +1,0 @@
-xlsLink ="revn";
-pdfLink ="revn";
