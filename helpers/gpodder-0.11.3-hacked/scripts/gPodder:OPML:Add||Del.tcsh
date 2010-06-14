@@ -27,6 +27,7 @@ while( ${?1} && "${1}" != "" )
 			goto usage;
 			breaksw;
 		
+		case "del":
 		case "delete":
 		case "unsubscribe":
 			set message="Delet";
