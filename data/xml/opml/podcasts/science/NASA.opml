@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>NASA.Gov&apos;s Podcasts</title>
+	</head>
+	<body>
+		<!--<outline type="link" title="<![CDATA[website&apos;s homepage]]>" url="http:///" text="<![CDATA[website&apos;s homepage]]>" description="<![CDATA[website&apos;s homepage]]>"/>-->
+		<!--<outline title="<![CDATA[podcast&apos;s feed]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		
+		<!-- NASA"s Podcasts -->
+		<outline title="<![CDATA[NASACast Podcast]]>" xmlUrl="http://www.nasa.gov/rss/NASAcast_podcast.rss" type="rss" text="<![CDATA[NASACast Podcast]]>" htmlUrl="" description="<![CDATA[Our omnibus NASACast. Includes the latest mission news, features and the This Week @NASA report.]]>"/>
+		<outline title="<![CDATA[This Week @NASA Podcast]]>" xmlUrl="http://www.nasa.gov/rss/TWAN_podcast.rss" type="rss" text="<![CDATA[This Week @NASA]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/twan_index.html" description="<![CDATA[The This Week @NASA report.]]>"/>
+		<outline title="<![CDATA[NASA Moments Podcast]]>" xmlUrl="http://www.nasa.gov/rss/moments_podcast.rss" type="rss" text="<![CDATA[NASA Moments Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/moments_index.html" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Shuttle &amp; Station Podcast]]>" xmlUrl="http://www.nasa.gov/rss/shuttle_station_podcast.rss" type="rss" text="<![CDATA[Shuttle &amp; Station Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/shuttle_station_index.html" description="<![CDATA[Shuttle &amp; Station Podcast]]>"/>
+		<outline title="<![CDATA[Solar System Podcast]]>" xmlUrl="http://www.nasa.gov/rss/solar_system_podcast.rss" type="rss" text="<![CDATA[Solar System Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/solar_system_index.html" description="<![CDATA[Solar System Podcast]]>"/>
+		<outline title="<![CDATA[Universe Podcast]]>" xmlUrl="http://www.nasa.gov/rss/universe_podcast.rss" type="rss" text="<![CDATA[Universe]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/universe_index.html" description="<![CDATA[Universe]]>"/>
+		<outline title="<![CDATA[Earth]]>" xmlUrl="http://www.nasa.gov/rss/earth_podcast.rss" type="rss" text="<![CDATA[Earth Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/earth_index.html" description="<![CDATA[Earth Podcast]]>"/>
+		<!--<outline title="<![CDATA[Student Opportunities Podcast]]>" xmlUrl="http://www.nasa.gov/rss/ED_NSO_podcast.rss" type="rss" htmlUrl="http://www.nasa.gov/multimedia/podcasting/education/ED_NSO.html" text="<![CDATA[Student Opportunities Podcast]]>" description="<![CDATA[Student Opportunities Podcast]]>"/>-->
+		
+		<!-- NASA"s Vodcasts -->
+		<outline title="<![CDATA[NASACast Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/NASAcast_vodcast.rss" type="rss" text="<![CDATA[NASACast Vodcast]]>" htmlUrl="" description="<![CDATA[Our omnibus NASACast. Includes the latest mission news, features and the This Week @NASA report.]]>"/>
+		<outline title="<![CDATA[This Week @NASA Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/TWAN_vodcast.rss" type="rss" htmlUrl="http://www.nasa.gov/multimedia/podcasting/twan_index.html" text="<![CDATA[This Week @NASA]]>" description="<![CDATA[The This Week @NASA report.]]>"/>		
+		<outline title="<![CDATA[NASA Moments Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/moments_vodcast.rss" type="rss" text="<![CDATA[NASA Moments Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/moments_index.html" description="<![CDATA[NASA Moments Vodcast]]>"/>
+		<outline title="<![CDATA[NASA Edge]]>" xmlUrl="http://www.nasa.gov/rss/NASAEdge_vodcast.rss" type="rss" text="<![CDATA[NASA Edge]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/nasaedge/index.html" description="<![CDATA[NASA Edge]]>"/>
+		<outline title="<![CDATA[Shuttle &amp; Station Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/shuttle_station_vodcast.rss" type="rss" text="<![CDATA[Shuttle &amp; Station Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/shuttle_station_index.html" description="<![CDATA[Shuttle &amp; Station Vodcast]]>"/>
+		<outline title="<![CDATA[To the Moon Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/exploration_vodcast.rss" type="rss" text="<![CDATA[To the Moon Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/exploration_index.html" description="<![CDATA[To the Moon Vodcast]]>"/>
+		<outline title="<![CDATA[Solar System Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/solar_system_vodcast.rss" type="rss" text="<![CDATA[Solar System Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/solar_system_index.html" description="<![CDATA[Solar System Vodcast]]>"/>
+		<outline title="<![CDATA[Universe Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/universe_vodcast.rss" type="rss" text="<![CDATA[Universe Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/universe_index.html" description="<![CDATA[Universe Vodcast]]>"/>
+		<outline title="<![CDATA[Earth Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/Earth_vodcast.rss" type="rss" text="<![CDATA[Earth Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/earth_index.html" description="<![CDATA[Earth Vodcast]]>"/>
+		<outline title="<![CDATA[What&apos;s Up? Vodcast]]>" xmlUrl="http://www.nasa.gov/rss/whatsup_vodcast.rss" type="rss" text="<![CDATA[What&apos;s Up? Vodcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/whatsup_index.html" description="<![CDATA[What&apos;s Up? Vodcast]]>"/>
+		
+		<!-- Other misc. NASA"s Podcasts & Vodcasts -->
+		<outline title="<![CDATA[Ask an Astronomer]]>" xmlUrl="http://coolcosmos.ipac.caltech.edu/cosmic_classroom/ask_astronomer/video/podcast/askfeed.xml" type="rss" text="<![CDATA[Ask an Astronomer]]>" htmlUrl="" description="<![CDATA[Ask an Astronomer]]>"/>
+		<outline title="<![CDATA[Astrobiology Magazine]]>" xmlUrl="http://www.astrobio.net/podcast.xml" type="rss" text="<![CDATA[Astrobiology Magazine]]>" htmlUrl="" description="<![CDATA[Astrobiology Magazine]]>"/>
+		<outline title="<![CDATA[Brain Bites -- Ask NASA]]>" xmlUrl="http://brainbites.nasa.gov/" type="rss" text="<![CDATA[Brain Bites -- Ask NASA]]>" htmlUrl="" description="<![CDATA[Brain Bites -- Ask NASA]]>"/>
+		<outline title="<![CDATA[Chandra X-Ray Observatory]]>" xmlUrl="http://chandra.harvard.edu/resources/podcasts/podcasts.xml" type="rss" text="<![CDATA[Chandra X-Ray Observatory]]>" htmlUrl="" description="<![CDATA[Chandra X-Ray Observatory]]>"/>
+		<outline title="<![CDATA[Digital Learning Network]]>" xmlUrl="http://nasadln.nmsu.edu/dln/content/podcast/dlnpodcast.xml" type="rss" text="<![CDATA[Digital Learning Network]]>" htmlUrl="" description="<![CDATA[Digital Learning Network]]>"/>
+		<outline title="<![CDATA[Hubble Watch]]>" xmlUrl="http://hubblesite.org/skywatch.xml" type="rss" text="<![CDATA[Hubble Watch]]>" htmlUrl="" description="<![CDATA[Hubble Watch]]>"/>
+		<outline title="<![CDATA[JPL (Center Podcast)]]>" xmlUrl="http://www.nasa.gov/multimedia/podcast/podfeed.xml" type="rss" text="<![CDATA[JPL (Center Podcast)]]>" htmlUrl="http://www.jpl.nasa.gov/" description="<![CDATA[JPL (Center Podcast)]]>"/>
+		<!--<outline title="<![CDATA[PlanetQuest]]>" xmlUrl="http://planetquest.jpl.nasa.gov/podcast.xml" type="rss" htmlUrl="" text="<![CDATA[PlanetQuest]]>" description="<![CDATA[PlanetQuest]]>"/>-->
+		<outline title="<![CDATA[Science @ NASA]]>" xmlUrl="http://science.nasa.gov/podcast.xml" type="rss" text="<![CDATA[Science @ NASA Feature Stories Podcast]]>" htmlUrl="" description="<![CDATA[<h1>Science @ NASA Feature Stories Podcast</h1><p>The Science and Technology Directorate at NASA's Marshall Space Flight Center sponsors the Science@NASA web sites. The mission of Science@NASA is to help the public understand how exciting NASA research is and to help NASA scientists fulfill their outreach responsibilities.</p>]]>"/>
+		<outline title="<![CDATA[Spitzer Audio]]>" xmlUrl="http://www.spitzer.caltech.edu/features/podcasts/podfeed.xml" type="rss" text="<![CDATA[Spitzer Audio]]>" htmlUrl="" description="<![CDATA[Spitzer Audio]]>"/>
+		<outline title="<![CDATA[Spitzer Video]]>" xmlUrl="http://www.spitzer.caltech.edu/features/hiddenuniverse/hufeed.xml" type="rss" text="<![CDATA[Spitzer Video]]>" htmlUrl="" description="<![CDATA[Spitzer Video]]>"/>
+		<outline title="<![CDATA[Sun-Earth Connection]]>" xmlUrl="http://sunearth.gsfc.nasa.gov/podcasts/podrss.xml" type="rss" text="<![CDATA[Sun-Earth Connection]]>" htmlUrl="" description="<![CDATA[Sun-Earth Connection]]>"/>
+	</body>
+</opml>

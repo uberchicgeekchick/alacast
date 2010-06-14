@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Futureist podcasts - Podcasts about our furutre &amp; Science, Technology, Society, and all corner-sections of our lives...now &amp; in the future.</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Future Tense from the A.B.C.]]>" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/fte.xml" type="rss" text="<![CDATA[]]>" htmlUrl="http://www.abc.net.au/rn/futuretense/" description="<![CDATA[Antony Funnell presents this weekly half-hour program and podcast on ABC Radio National that takes a critical look at new technologies, new approaches and new ways of thinking. From politics to media to environmental sustainability, nothing is outside its brief.]]>"/>
+		<outline title="<![CDATA[APM: Future Tense]]>" xmlUrl="http://www.publicradio.org/columns/futuretense/podcast.xml" type="rss" text="<![CDATA[APM: Future Tense - produced by American Public Media]]>" htmlUrl="http://www.futuretenseweb.org/" description="<![CDATA[Future Tense is a daily program that chronicles the social impact of computers, the Internet, and technology in general.  Future Tense is produced by American Public Media]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

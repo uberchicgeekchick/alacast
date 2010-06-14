@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[WFMU]]>" xmlUrl="" type="rss" text="<![CDATA[WFMU]]>" htmlUrl="http://www.wfmu.org/podcast" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Dave Emory: Anti-fascist researcher]]>" xmlUrl="http://www.wfmu.org/podcast/DX.xml" type="rss" text="<![CDATA[Dave Emory: Anti-fascist researcher]]>" htmlUrl="http://www.wfmu.org/playlists/DX" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Do or DIY with People Like Us]]>" xmlUrl="http://www.wfmu.org/podcast/PL.xml" type="rss" text="<![CDATA[Do or DIY with People Like Us]]>" htmlUrl="http://www.wfmu.org/playlists/PL" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Speakeasy with Dorian]]>" xmlUrl="http://www.wfmu.org/podcast/SE.xml" type="rss" text="<![CDATA[The Speakeasy with Dorian]]>" htmlUrl="http://www.wfmu.org/playlists/SE" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

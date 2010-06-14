@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Dragons Landing]]>" xmlUrl="http://feeds.feedburner.com/DragonsLandingPodcast" type="rss" text="<![CDATA[Dragons Landing]]>" htmlUrl="http://www.dragonslanding.com/dli/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[All Games Considered]]>" xmlUrl="http://feeds.feedburner.com/AllGamesConsidered" type="rss" text="<![CDATA[All Games Considered]]>" htmlUrl="http://allgamesconsidered.blogspot.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Rolemonkeys]]>" xmlUrl="http://feeds.feedburner.com/RoleMonkeys" type="rss" text="<![CDATA[The Rolemonkeys]]>" htmlUrl="http://RoleMonkeys.Info/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[rpgmp3&#39;s EPICS Podcast]]>" xmlUrl="http://www.rpgmp3.com/downloads/data/wld/rss.xml" type="rss" text="<![CDATA[rpgmp3&#39;s EPICS Podcast]]>" htmlUrl="http://rpgmp3.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[rpgmp3&#39;s Community Podcast]]>" xmlUrl="http://www.rpgmp3.com/downloads/data/bw/bwpodcast.xml" type="rss" text="<![CDATA[rpgmp3&#39;s Community Podcast]]>" htmlUrl="http://rpgmp3.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

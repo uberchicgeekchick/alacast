@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Browncoat Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[After Serenity]]>" xmlUrl="http://afterserenity.libsyn.com/rss" type="rss" text="<![CDATA[After Serenity]]>" htmlUrl="http://www.afterserenity.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Signal]]>" xmlUrl="http://signal.serenityfirefly.com/podcast.xml" type="rss" text="<![CDATA[The Signal]]>" htmlUrl="http://signal.serenityfirefly.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Firefly Talk]]>" xmlUrl="http://fireflytalk.libsyn.com/rss" type="rss" text="<![CDATA[Firefly Talk]]>" htmlUrl="http://fireflytalk.libsyn.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Sending A Wave - The Firefly / Serenity Podcast]]>" xmlUrl="http://www.futilityradio.com/sawlist.xml" type="rss" text="<![CDATA[Sending A Wave - The Firefly / Serenity Podcast]]>" htmlUrl="http://sendingawave.blogspot.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Matt Wallace&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Failed Cities Monologues]]>" xmlUrl="http://www.podiobooks.com/title/the-failed-cities-monologues/feed" type="rss" htmlUrl="http://www.podiobooks.com/title/the-failed-cities-monologues" text="<![CDATA[The Failed Cities Monologues - a podcast novel by.Matt Wallace]]>" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by Matt Wallace.]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

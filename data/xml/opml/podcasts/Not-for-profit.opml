@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Hey Josh]]>" xmlUrl="http://feeds.feedburner.com/joshshipp" type="rss" text="<![CDATA[Hey Josh]]>" htmlUrl="http://heyjosh.tv/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[NetSquared]]>" xmlUrl="http://feeds.feedburner.com/libsyn/NetSquared" type="rss" text="<![CDATA[NetSquared]]>" htmlUrl="http://www.NetSquared.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[501c3cast]]>" xmlUrl="http://feeds.feedburner.com/501c3cast" type="rss" text="<![CDATA[501c3cast]]>" htmlUrl="http://501c3cast.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

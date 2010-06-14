@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Archive.org]]>" xmlUrl="" type="rss" text="<![CDATA[Archive.org]]>" htmlUrl="http://archive.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[The Digital Tipping Point]]>" xmlUrl="http://www.archive.org/services/collection-rss.php?collection=digitaltippingpoint" type="rss" text="<![CDATA[The Digital Tipping Point]]>" htmlUrl="http://www.digitaltippingpoint.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

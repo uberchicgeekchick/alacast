@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Fun &amp; Relaxed Science podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Beer Drinking Scientists]]>" xmlUrl="http://www.beerdrinkingscientists.com/feed/" type="rss" htmlUrl="http://www.beerdrinkingscientists.com/" text="<![CDATA[The Beer Drinking Scientists: Science tackled over a beer]]>" description="<![CDATA[<p>Join Darren Osborne and Marc West for a quiet beer and a chat about the science around us.</p><p>In each episode, the lads express their opinions on the scientific topic of the day, and then chat to the locals to see what they think. Both Marc and Darren spent far too long at university studying science and science communication, and now work in scientific fields.</p>]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
