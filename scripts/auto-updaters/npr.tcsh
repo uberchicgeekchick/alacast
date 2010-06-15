@@ -2,47 +2,53 @@
 init:
 	if(! ${?0} ) then
 		printf "This script cannot be sourced.\n" > /dev/stderr;
+		exit -1;
+	endif
 	
-	cd "`dirname "\""${0}"\""`/../../data/xml/opml/radiocasts/npr";
+	set scripts_dir="`dirname "\""${0}"\""`/../../data/xml/opml/radiocasts/`basename "\""${0}"\"" | sed -r 's/^(.*)\.tcsh"\$"/\1/`";
+	if(! -d "${scripts_dir}" ) \
+		mkdir -vp "${scripts_dir}";
+	cd "${scripts_dir}";
 	
-	alias "wget" "wget --no-check-certificate --quiet --continue";
+	alias "wget" "wget --no-check-certificate --quiet";
 	alias "ex" "ex -E -n -X --noplugin";
 #init:
 
 
-goto find_xmlUrls;
+#goto find_xmlUrls;
 
 
 update_index_opml:
-	if( -e "index.opml.tmp" )	\
+	if( -e "index.opml.tmp" ) \
 		rm "index.opml.tmp";
 	
-	printf "Downloading NPR's latest podcasts.\n";
+	printf "Downloading NPR's latest podcasts";
 	wget -O 'index.opml.tmp' 'http://www.npr.org/rss/podcast/podcast_directory.php?type=topic';
-
+	printf "\t[done]\n";
+	
+	
+	
 	# these regex's will make sure that each catagory is placed on one line for each catagory.
-	printf "Converting  NPR's latest podcasts xhtml into opml.\n\tPlease be patient this will take several moments";
+	printf "\nConverting NPR's latest podcasts xhtml into opml";
 	ex '+1,$s/\v[\n\r]+[\ \t]*//g' '+wq!' 'index.opml.tmp' > /dev/null;
 	ex '+s/\v.*\<div\ class\=\"topicForm\"\>(.*)/\1/g' '+wq!' 'index.opml.tmp' > /dev/null;
 	ex '+s/\v(\<span\ class\=\"mainTopicLnk\"\>)/\r\r\r\1/g' '+1,3d' '+1,$s/\v\<div\ class\=\"spacer\"\>.*$//g' '+wq!' 'index.opml.tmp' > /dev/null;
 	ex '+1,$s/\v(\<td class\=\"colTitle)(\ top)?(\"\>)/\r\t\t\1\2\3/g' '+wq!' 'index.opml.tmp' > /dev/null;
-	
 	ex '+1,$s/\v\<td class\=\"colTitle( top)?\"\>\<a\ href\=\"(\/[^\"]+)\"\>\<span\ class\=\"titleLnk\"\>([^\<]+)\<\/span\>.*\<td\ class\=\"colProducer(\ top)?\"\>(\<a\ href\=\"[^\"]+\")[^\>]*(\>[^\<]+\<\/a\>).*/\<outline title\=\"\<\!\[CDATA\[\3\]\]\>\" xmlUrl\=\"\" type\=\"rss\" text\=\"\<\!\[CDATA\[\5\6'\''s:\ \3\]\]\>\" htmlUrl\="http:\/\/www\.npr\.org\2\" description\=\"\<\!\[CDATA\[\3\ produced by\ \5\6\]\]\>\" \/\>/g' '+wq!' 'index.opml.tmp' > /dev/null;
 	ex '+1,$s/\v\<td class\=\"colTitle( top)?\"\>\<a\ href\=\"(\/[^\"]+)\"\>\<span\ class\=\"titleLnk\"\>([^\<]+)\<\/span\>.*\<td\ class\=\"colProducer(\ top)?\"\>([^\ \t]+)[\ \t]*.*/\<outline title\=\"\<\!\[CDATA\[\3\]\]\>\" xmlUrl\=\"\" type\=\"rss\" text\=\"\<\!\[CDATA\[\5'\''s:\ \3\]\]\>\" htmlUrl\="http:\/\/www\.npr\.org\2\" description\=\"\<\!\[CDATA\[\3\ produced by\ \5\]\]\>\" \/\>/g' '+wq!' 'index.opml.tmp' > /dev/null;
-	
 	ex '+1,$s/\v^(\<.*)$/\t\t\<\!\-\-\ \1\ \-\-\>/g' '+wq!' 'index.opml.tmp' > /dev/null;
-	
-	printf '\n\t<!--<outline title="<\![CDATA[]]>" xmlUrl="" type="rss" text="<\![CDATA[]]>" htmlUrl="" description="<\![CDATA[]]>"/>-->\n\t</body>\n</opml>\n' >> 'index.opml.tmp';
-	
 	printf "\t[conversion complete]\n";
 	
+	
+	
+	printf "\nFinalizing NPR's OPML <file://%s/index.opml>" "${cwd}";
 	if( -e "index.opml" )	\
 		rm "index.opml";
-	
 	printf '<?xml version="1.0" encoding="UTF-8"?>\n<opml version="2.0">\n\t<head>\n\t\t<title>NPR'\''s podcasts</title>\n\t</head>\n\t<body>' >! 'index.opml';
-	
 	ex '+6r index.opml.tmp' '+wq!' 'index.opml' > /dev/null;
+	printf '\n\t</body>\n</opml>\n' >> 'index.opml';
 	rm "index.opml.tmp";
+	printf "\t[finished]\n";
 #update_index_opml:
 
 find_xmlUrls:

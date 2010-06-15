@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Jun 12 19:50:22 2010
+            Mon Jun 14 19:31:12 2010
         </dateCreated>
     </head>
     <body>
@@ -18,6 +18,7 @@
         <outline text="A free audiobook by Jeff Offringa" title="A Dance With Demons" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/466/book.xml"/>
         <outline text="http://anightcomes.libsyn.org/rss" title="A Night Comes! -Square of the Moon-" type="rss" xmlUrl="http://anightcomes.libsyn.org/rss"/>
         <outline text="Aesop's Fables Podcast collects the timeless moral fables of the Greek storyteller Aesop. A perenial choice for the early education of children, these brief tales of virtuous living can be enjoyed by the young and old alike." title="Aesop's Fables Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/AesopsFablesPodcast"/>
+        <outline text="Against the Grain is a radio and web media project whose aim is to provide in-depth analysis and commentary on a variety of matters -- political, economic, social and cultural -- important to progressive and radical thinking and activism.For more information, visit our home page againstthegrain.org" title="Against the Grain [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=61"/>
         <outline text="A plague has ravaged the Earth and changed the world as we know it. Millions upon millions have been transformed into flesh-eating zombies that roam the Earth with an unquenchable thirst for the living." title="Age of the Zombies" type="rss" xmlUrl="http://picklemonkey.net/flipper/convert.php?feed=http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=307399785"/>
         <outline text="Subscribe to receive all press releases issued by the American Academy of Neurology, including all of the latest newsworthy research as soon as it is published in Neurology®, the medical journal of the American Academy of Neurology.  Neurology is the world's most widely read and highly cited peer-reviewed neurology journal.  This feed also includes press releases about new Guidelines issued by the Academy as well as newsworthy research presented at the Academy's Annual Meeting, which is the world's largest gathering of neurologists and neuroscience professionals." title="All AAN Press Releases" type="rss" xmlUrl="http://www.aan.com/rss/?event=feed&amp;channel=20"/>
         <outline text="All In The Mind is Radio National's weekly foray into the mental universe, the mind, brain and behaviour - everything from addiction to artificial intelligence." title="All in the Mind" type="rss" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/mind.xml"/>
@@ -72,6 +73,9 @@
         <outline text="Chew the fat with us as we muse over the wonders of the universe." title="Cosmic Tea Party" type="rss" xmlUrl="http://www.cosmicteaparty.org/Episodes/feed.xml"/>
         <outline text="Science Fiction and Fantasy fiction podcast from Cossmass Productions" title="Cossmass Infinities" type="rss" xmlUrl="http://feeds.feedburner.com/cossmass/infinities"/>
         <outline text="The Universe exists - for now" title="Cossmass Productions - Estalvins Legacy" type="rss" xmlUrl="http://feeds.feedburner.com/cossmass/estalvinslegacy"/>
+        <outline text="On the Air Fridays at 3:00pm" title="Cover to Cover Open Book [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=336"/>
+        <outline text="Booktalk, readings, unique spins on the zeiitgeist, and interviews with authors, poets, and others about all manner of things covering the written word." title="Cover to Cover with Denny Smithson [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=27"/>
+        <outline text="Reviews and discussions with authors on literature, poetry, and passion." title="Cover to Cover with Jennifer Stone [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=333"/>
         <outline text="The Crime Stories Podcast" title="CrimeWAV - the crime stories podcast" type="rss" xmlUrl="http://feeds.feedburner.com/crimewav"/>
         <outline text="Investigation, Exploration, and the Pursuit of Truth" title="Curiosity Aroused" type="rss" xmlUrl="http://www.curiosityaroused.com/rss"/>
         <outline text="Curious Echo Radio Theater" title="Curious Echoes" type="rss" xmlUrl="http://www.curiousecho.org/wordpress/feed"/>
@@ -394,6 +398,7 @@
         <outline text="http://prometheus.libsyn.com/rss" title="Prometheus Radio Theatre" type="rss" xmlUrl="http://prometheus.libsyn.com/rss"/>
         <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml"/>
         <outline text="Disability RadioNow Airing 1st, 3rd, and 5th Fridays at 2:30 pm      * Leave a message for Pushing Limits at: (510) 848-6767 ext. 636     * Email: pushinglimits[a]kpfa.org" title="Pushing Limits [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://www.kpfa.org/podcast/pod.php?show=pushinglimits"/>
+        <outline text="Deranged &quot;edits&quot; segue into a cascade of echoing glossolaliac madness, the voicing of lyric ruminations from the free-falling brains of disintegrating personalities." title="Puzzling Evidence [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=334"/>
         <outline text="Audio Theater in a Darker Shade set in the Quantum Leap universe" title="Quantum Retribution" type="rss" xmlUrl="http://feeds.feedburner.com/Quantum-Retribution"/>
         <outline text="CBC Radio's Quirks &amp; Quarks covers the quirks of the expanding universe to the quarks within a single atom… and everything in between." title="Quirks &amp; Quarks Complete Show from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/quirksaio.xml"/>
         <outline text="What are you putting in your ears?" title="Raise a Racket" type="rss" xmlUrl="http://feeds.feedburner.com/RaiseARacket"/>
@@ -422,6 +427,7 @@
         <outline text="The podcast that predicts the present: host Jesse Brown and guests explore the Internet's impact on politics and culture." title="Search Engine" type="rss" xmlUrl="http://feeds.tvo.org/tvo/searchengine?format=xml"/>
         <outline text="Second Shift: Third-string delivery, First-string chaos!" title="Second Shift: An original fantasy Podplay (high-quality audio version)" type="rss" xmlUrl="http://secondshiftpodcast.com/xml/2shifthq.xml"/>
         <outline text="Young Junius and JACK PALMS CRIME" title="Seth Harwood Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/sethharwood"/>
+        <outline text="Jesse and Scott discuss audio." title="SFFaudio » Podcasts" type="rss" xmlUrl="http://www.sffaudio.com/?cat=52&amp;feed=rss2"/>
         <outline text="Chronicles of Libidacoria" title="Shades of K--: Chronicles of Libidacoria" type="rss" xmlUrl="http://shadesofk.podbean.com/feed/"/>
         <outline text="The sci-fi, fantasy, and horror of Shawn Lewis." title="Shawn Lewis Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/shawn-lewis"/>
         <outline text="Reality Never Sounded So Good" title="Skepchick Podcast" type="rss" xmlUrl="http://skepchick.libsyn.com/rss"/>
@@ -534,6 +540,7 @@
         <outline text="http://twinstars.kungfuactiontheatre.com/?feed=rss2" title="Twin Stars" type="rss" xmlUrl="http://twinstars.kungfuactiontheatre.com/?feed=rss2"/>
         <outline text="The most fun you can ever have without taking your pants of at a church." title="Two Smokin' Hot Freethinkers Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/TwoSmokinHotFreethinkersPodcast"/>
         <outline text="LearnOutLoud.com presents the U.S. Presidents Podcast. Each episode will provide a brief biographical portrait of each president, explore the eras in which they led the country, and access the historical significance they hold for us today. This is a podc" title="U.S. Presidents Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/USPresidentsPodcast"/>
+        <outline text="Uprising is a digest of independent news analysis, investigation, education, artistic expression, activism in the public interest. Hosted by Sonali Kolhatkar." title="Uprising Radio [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=25723"/>
         <outline text="Welcome to Variant Frequencies. Month to month our podcast brings you fiction stories from a different channel - sci-fi, fantasy, horror, and some odd bands in-between." title="Variant Frequencies » Podcasts" type="rss" xmlUrl="http://www.variantfrequencies.com/feed/"/>
         <outline text="Fbi 94.5" title="Virtual Vices on FBi" type="rss" xmlUrl="http://www.cpod.org.au/feed.php?id=29"/>
         <outline text="Music, funny commercials and a serialized short story (Just add milk)" title="Wander Radio" type="rss" xmlUrl="http://feeds.feedburner.com/wanderradio"/>
@@ -547,5 +554,6 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
+        <outline text="The Women's Magazine is an hour long radio program that airs on KPFA radio that presents and discusses women's lives and issues globally and locally from a radical, multiracial, feminist, mujerist, womanist perspective." title="Women's Magazine [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=1771"/>
     </body>
 </opml>

@@ -4,10 +4,7 @@
 		<title>Sci-Fi podcasts, audio dramas, &amp; podcast novels</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[SFFaudio]]>" xmlUrl="http://www.sffaudio.com/?feed=rss2" type="rss" text="<![CDATA[SFFaudio]]>" htmlUrl="http://www.sffaudio.com/" description="<![CDATA[<p>News, Reviews, and Commentary on all forms of science fiction, fantasy, and horror audio.&nbsp; Audiobooks, audio drama, podcasts; we discuss all of it here.&nbsp; Mystery, crime, and noir audio are also fair game.</p>]]>" />
-		<!--<outline title="<![CDATA[&apos;s audio dramas]]>" url="" type="link" text="<![CDATA[Podcast audio dramas from ]]>" description="<![CDATA[Podcast audio dramas from ]]>" />-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a podcast audio drama from ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
-		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>" />-->
+		<outline title="<![CDATA[SFFaudio » Podcasts]]>" xmlUrl="http://www.sffaudio.com/?cat=52&feed=rss2" type="rss" text="<![CDATA[SFFaudio &#187; Podcasts]]>" htmlUrl="http://www.sffaudio.com/?cat=52" description="<![CDATA[<h1>SFFaudio &#187; Podcasts</h1><p>Jesse and Scott discuss the latest News, Reviews, and Commentary on all forms of science fiction, fantasy, and horror audio.&nbsp; Audiobooks, audio drama, podcasts; we discuss all of it here.&nbsp; Mystery, crime, and noir audio are also fair game.</p>]]>" />
+		<!-- <outline title="<![CDATA[SFFaudio]]>" xmlUrl="http://feeds.feedburner.com/sffaudiopodcast" type="rss" text="<![CDATA[SFFaudio]]>" htmlUrl="http://www.sffaudio.com/" description="<![CDATA[<h1>SFFaudio</h1><p>Jesse and Scott discuss the latest News, Reviews, and Commentary on all forms of science fiction, fantasy, and horror audio.&nbsp; Audiobooks, audio drama, podcasts; we discuss all of it here.&nbsp; Mystery, crime, and noir audio are also fair game.</p>]]>" /> -->
 	</body>
 </opml>
