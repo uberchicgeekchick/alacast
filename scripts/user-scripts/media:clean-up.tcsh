@@ -210,8 +210,6 @@ move_lifestyle_podcasts:
 move_podiobooks:
 	set podiobooks=( \
 	"\n" \
-"/media/podcasts/StarShipSofa/Aural Delights No 141 David Barr Kirtley  plus Jeff Carlson, released on: Wed, 16 Jun 2010 10:49:13 GMT.mp3" \
-	"\n" \
 	);
 	
 	if( ${?podiobooks} ) then
@@ -291,12 +289,12 @@ move_slashdot:
 
 
 delete:
-	set to_be_deleted=( \
+	set to_delete=( \
 	"\n" \
 	);
 	
-	if( ${?to_be_deleted} ) then
-		foreach podcast( "`printf "\""${to_be_deleted}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
+	if( ${?to_delete} ) then
+		foreach podcast( "`printf "\""${to_delete}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
 			if( "${podcast}" != "" && "${podcast}" != "/" && -e "${podcast}" ) then
 				if(! ${?action_preformed} ) then
 					set action_preformed;
@@ -316,7 +314,7 @@ delete:
 			endif
 			unset podcast;
 		end
-		unset to_be_deleted;
+		unset to_delete;
 	endif
 	
 	goto parse_argv;

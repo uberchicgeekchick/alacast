@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Tue Jun 15 00:44:34 2010
+            Fri Jun 18 17:56:22 2010
         </dateCreated>
     </head>
     <body>
@@ -80,6 +80,7 @@
         <outline text="Curious Echo Radio Theater" title="Curious Echoes" type="rss" xmlUrl="http://www.curiousecho.org/wordpress/feed"/>
         <outline text="This is a test just to see if iTunes is reading this instead of the feedburner settings." title="Cybrosis - A podcast novel by P.C. Haring" type="rss" xmlUrl="http://feeds.feedburner.com/cybrosis"/>
         <outline text="http://dranger.kungfuactiontheatre.com/?feed=rss2" title="D-Ranger" type="rss" xmlUrl="http://dranger.kungfuactiontheatre.com/?feed=rss2"/>
+        <outline text="Fan-made Doctor Who audio and video series featuring David Nagel and Matthew Chambers as The Doctor" title="DAM Productions' Doctor Who The Audio Adventure Series" type="rss" xmlUrl="http://picklemonkey.net/flipper/convert.php?feed=http://itunes.apple.com/us/podcast/dam-productions-doctor-who/id345296222&amp;return=100"/>
         <outline text="Dark Matter: In a freak accident that leads to her untimely death Louella, a plain Jane from the suburbs finds herself transformed into one of the walking undead. Michael, the Archangel, offers her a chance to win her life and family back.  Louella learns that even in the afterlife nothing is free. She must pit her meager supernatural abilities against the mounting forces of darkness. Confronting problematic demons and monsters from Otherworld and beyond who agressively continue to tip the scales in the war of good and and evil in the favor of the Dark One.  With the help of Steven, the altruistic vampire and De Vok, a dead librarian from the ancient Alexandria, Luella walks the world between the living and the dead.  In her quest to regain her life she learns that even the forces for good have their own agendas and cannot always be trusted.  This book is a macabre stew of horror, fantasy, science fiction and humor." title="Dark Matter - A free audiobook by Michele Roger" type="rss" xmlUrl="http://www.micheleroger.com/DarkMatter.xml"/>
         <outline text="Post-apocalyptic Zombie Audio Theater Podcast" title="Darker Projects: Alive Inside" type="rss" xmlUrl="http://www.darkerprojects.com/feeds/AliveInside.xml"/>
         <outline text="Audio Theater Podcast adaptation of David Moody's novel, Autumn" title="Darker Projects: Autumn" type="rss" xmlUrl="http://www.darkerprojects.com/feeds/Autumn.xml"/>
@@ -134,6 +135,7 @@
         <outline text="Explorations" title="Explorations - WBAI-FM, New York" type="rss" xmlUrl="http://archive.wbai.org/files/xml/explora.xml"/>
         <outline text="With Chloe Lake" title="FBi 94.5's Virtual Vices" type="rss" xmlUrl="http://fbi945virtualvices.libsyn.com/rss"/>
         <outline text="The Foundation for the Ethical Treatment of the Innocently Damned, Undead and Supernatural" title="FETIDUS - The Foundation for the Ethical Treatment of the Innocently Damned, Undead and Supernatural" type="rss" xmlUrl="http://feeds.fetidus.org/fetidus"/>
+        <outline text="Contemporary short fiction audio stories" title="FinalRune Productions" type="rss" xmlUrl="http://feeds.feedburner.com/FinalRune"/>
         <outline text="Podcasts from O'Reilly and Friends" title="FOO Casts: Podcasts from O'Reilly and Friends" type="rss" xmlUrl="http://www.oreillynet.com/pub/feed/32?format=rss2"/>
         <outline text="For Good Reason is the interview program hosted by D.J. Grothe, promoting critical thinking and skepticism about the central beliefs of society. Interviews often focus on the paranormal, pseudoscience and the supernatural. Each episode of For Good Reason also features an audio essay by Jamy Ian Swiss, The Honest Liar.  The show is produced in association with the James Randi Educational Foundation." title="For Good Reason" type="rss" xmlUrl="http://feed.forgoodreason.org/"/>
         <outline text="Theater of the Mind" title="Forward Momentum Productions" type="rss" xmlUrl="http://forwardmomentum.libsyn.com/rss"/>
@@ -142,7 +144,6 @@
         <outline text="a collection of podcast novels" title="Free Podcast Novel" type="rss" xmlUrl="http://mickaloha.com/fpn/?feed=rss2"/>
         <outline text="Free as in Node" title="free-as-in-node" type="rss" xmlUrl="http://podcast.freenode.net/feed"/>
         <outline text="Follow the adventures of a zombie, two mad scientists and a particularly disgusting pirate as they battle government do-gooders (and do-badders), Martian girlfriends, Moon men, vomiting dolls, monsters and evil so evil we dare not speak its evil name…" title="Frequency Lite" type="rss" xmlUrl="http://frequencylite.com/?feed=rss2"/>
-        <outline text="A free audiobook by Basil Sands and The Authors of The Killzone Blog" title="Fresh Kills" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/502/book.xml"/>
         <outline text="Smart guests.  Eclectic topics.  Really, anything is fair game." title="Friday Night Party Line Podcast" type="rss" xmlUrl="http://thaed.libsyn.com/rss?post_category=podcasts"/>
         <outline text="Insight, wit and analysis as the BBC's foreign correspondents take a closer look at the stories behind the headlines. Presented by Kate Adie. Broadcast on BBC Radio 4 in the UK on Thursdays at 1100 (local time) and Saturdays at 1130 (local time) for about 25 weeks of the year. BBC World Service broadcasts on Saturdays and Sundays all year round, presented by Alan Johnston. For more information, a full list of programme broadcast times and the podcast Terms of Use go to www.bbc.co.uk/fromourowncorrespondent" title="From Our Own Correspondent" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio4/fooc/rss.xml"/>
         <outline text="Public Radio's guide to the modern world." title="Future Tense" type="rss" xmlUrl="http://www.publicradio.org/columns/futuretense/podcast.xml"/>
@@ -395,6 +396,8 @@
         <outline text="The Changing World is a weekly series of documentaries that takes the time to explore multiple aspects of a single global issue" title="PRI: The Changing World" type="rss" xmlUrl="http://www.publicbroadcasting.net/theworld/podcasts/6503.xml"/>
         <outline text="In-depth interviews with nationally and internationally-known guests whose passion for new ideas challenge and engage." title="PRI: To the Best of Our Knowledge Podcast" type="rss" xmlUrl="http://www.npr.org/rss/podcast.php?id=510011"/>
         <outline text="http://prometheus.libsyn.com/rss" title="Prometheus Radio Theatre" type="rss" xmlUrl="http://prometheus.libsyn.com/rss"/>
+        <outline text="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw"/>
+        <outline text="A free audiobook by Brenda Wamsley" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/520/book.xml"/>
         <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml"/>
         <outline text="Disability RadioNow Airing 1st, 3rd, and 5th Fridays at 2:30 pm      * Leave a message for Pushing Limits at: (510) 848-6767 ext. 636     * Email: pushinglimits[a]kpfa.org" title="Pushing Limits [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://www.kpfa.org/podcast/pod.php?show=pushinglimits"/>
         <outline text="Deranged &quot;edits&quot; segue into a cascade of echoing glossolaliac madness, the voicing of lyric ruminations from the free-falling brains of disintegrating personalities." title="Puzzling Evidence [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=334"/>
@@ -530,7 +533,6 @@
         <outline text="http://feeds.twis.org/twis/science?format=xml" title="This Week in Science - The Kickass Science Podcast" type="rss" xmlUrl="http://feeds.twis.org/twis/science?format=xml"/>
         <outline text="A netcast about viruses - the kind that make you sick" title="This Week in Virology - MP3 Edition" type="rss" xmlUrl="http://feeds.feedburner.com/twivmp3"/>
         <outline text="Three Edged Sword" title="Three Edged Sword » Three Edged Sword" type="rss" xmlUrl="http://www.voicesofbabylon.com/category/tes/feed/"/>
-        <outline text="A free audiobook by Wyken Seagrave" title="Time Crystal 2" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/484/book.xml"/>
         <outline text="Catch up on your favorite TLC shows and stars!  Get behind-the-scenes video, extra footage and more." title="TLC Podcasts" type="rss" xmlUrl="http://tlc.discovery.com/audio_podcasts/tlc_audio_podcast.xml"/>
         <outline text="Token Skeptic" title="Token Skeptic - Making Sense From Superstition" type="rss" xmlUrl="http://tokenskeptic.libsyn.com/rss"/>
         <outline text="The life of Tom Crean Audio Drama." title="Tom Crean: Sailor On Ice" type="rss" xmlUrl="http://imaginationlane.net/tomcrean/?feed=podcast"/>

@@ -4,9 +4,8 @@
 		<title>Dr. Who Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[The Doctor Who Audio Dramas]]>" xmlUrl="http://www.dwad.net/podcast.xml" type="rss" text="<![CDATA[The Doctor Who Audio Dramas]]>" htmlUrl="http://www.dwad.net" description="<![CDATA[<h1>The Doctor Who Audio Dramas</h1><p>The world&apos;s longest running fan production of Doctor Who - Since 1982.  The Doctor Who Audio Dramas is the world&apos;s longest running fan production of Doctor Who.&nbsp; Started in 1982, this series spans five Doctors, a host of companions, and over 170 stories.&nbsp; Over 20,000 episodes are downloaded every month.&nbsp; New episodes appear on iTunes four weeks after they premier on the main website.&nbsp; www.&nbsp; dwad.&nbsp; net  Discussion group at www.&nbsp; dwad.&nbsp; net/phpBB3</p>]]>" />
 		<outline title="<![CDATA[Doctor Who Fan Audio]]>" xmlUrl="http://feeds.feedburner.com/dredoctorwho" type="rss" text="<![CDATA[DRE Presents: Doctor Who Fan Audio]]>" htmlUrl="http://www.dregold.net/DOCTOR%20WHO.htm" description="<![CDATA[Are you a fan of the BBC&apos;s Doctor Who? If you are, you won&apos;t want to miss DRE&apos;s take on the classic series! Join the Doctor and his companions for thrilling original full-length adventures not available anywhere else!]]>"/>
+		<outline title="<![CDATA[DAM Productions' Doctor Who The Audio Adventure Series]]>" xmlUrl="http://picklemonkey.net/flipper/convert.php?feed=http://itunes.apple.com/us/podcast/dam-productions-doctor-who/id345296222&return=100" type="rss" text="<![CDATA[DAM Productions&#39; Doctor Who The Audio Adventure Series]]>" htmlUrl="http://www.doctorwho.damproductions.org//" description="<![CDATA[<h1>DAM Productions&#39; Doctor Who The Audio Adventure Series</h1><p>Fan-made Doctor Who audio and video series featuring David Nagel and Matthew Chambers as The Doctor</p>]]>" />
 	</body>
 </opml>

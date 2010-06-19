@@ -30,7 +30,7 @@ else
 	
 	export ALACAST_GTK_PATH="/projects/gtk/alacast";
 	
-	alacast_gtk_paths="bin scripts auto-updaters playlist-manager validators";
+	alacast_gtk_paths="bin scripts scripts/auto-updaters scripts/playlist-manager scripts/validators scripts/user-scripts";
 	for alacast_gtk_path in ${alacast_gtk_paths}; do
 		if test -z ${TCSH_RC_DEBUG}; then
 			printf "Attempting to add: [file://%s] to your PATH:\t\t" "${alacast_gtk_path}";
