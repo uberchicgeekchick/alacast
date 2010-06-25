@@ -182,8 +182,8 @@ find_podcasts:
 		cp -f "${index_xml}" "${refetch_script}.tmp";
 		#${search_script} --match-only --verbose --${search_attribute}="${podcast_match}" >! "${refetch_script}.tmp";
 		
-		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
-			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g'`";
+		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(the) (.*)/\L\1/ig'`" == "the" ) \
+			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(the) (.*)/\2, \1/ig'`";
 		
 		if(! ${?fetch_all} ) then
 			set line_condition="\rif\(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) then";

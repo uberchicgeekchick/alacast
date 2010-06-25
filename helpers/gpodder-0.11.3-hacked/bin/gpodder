@@ -1,76 +1,129 @@
 #!/bin/tcsh -f
-if( "`echo '${0}' | sed -r 's/^[^\.]*(tcsh)/\1/'`" == "tcsh" ) exit;
 
-set gPodders_path="`dirname ${0}`";
-set gPodder_script="gpodder-0.11.3-hacked";
-if ( ! -x "${gPodders_path}/${gPodder_script}" ) then
-	printf "Unable to find and run `%s/%s`" "${gPodders_path}" "${gPodder_script}";
+if(! ${?0} ) then
+	printf "This script cannot be sourced.\n" > /dev/stderr;
 	exit -1;
 endif
+	
+setup:
+	set gPodders_path="`dirname ${0}`";
+	set gPodder_script="gpodder-0.11.3-hacked";
+	
+	if ( ! -x "${gPodders_path}/${gPodder_script}" ) then
+		printf "Unable to find and run `%s/%s`" "${gPodders_path}" "${gPodder_script}";
+		exit -1;
+	endif
+	
+	if(! -e "${HOME}/.config/gpodder/gpodder.conf" ) then
+		printf "gpodder doesn't appear to have been setup.\nUnable to read %s/.config/gpodder/gpodder.conf\n" "${HOME}" > /dev/stderr;
+		exit -1;
+	endif
+	set download_dir="`grep 'download_dir' "\""${HOME}/.config/gpodder/gpodder.conf"\"" | cut -d= -f2 | cut -d' ' -f2`";
+	
+	if( "`alias cwdcmd`" != "" ) then
+		set oldcwdcmd="`alias cwdcmd`";
+		unalias cwdcmd;
+	endif
+	
+	set argz="";
+#goto setup;
 
-if( "`alias cwdcmd`" != "" ) then
-	set oldcwdcmd="`alias cwdcmd`";
-	unalias cwdcmd;
-endif
 
-set argz="";
 next_argv:
-while( "${1}" != "" )
-	set message="";
-	set action="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)"\$"/\1/'`";
-	set feed="`printf '%s' "\""${1}"\"" | sed 's/\-\-\([^=]\+\)=\?\(.*\)"\$"/\2/'`";
-	switch( "${action}" )
-	case "debug":
-		set tcshrc_debug_set;
-		set TCSH_RC_DEBUG;
+	while( "${1}" != "" )
+		set message="";
+		set action="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^=]+)(=)?(.*)"\$"/\2/'`";
+		set feed="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^=]+)(=)?(.*)"\$"/\4/'`";
+		switch( "${action}" )
+		case "debug":
+			set debug;
+			shift;
+			continue;
+			breaksw;
+		
+		case "add":
+			if( "${message}" == "" ) \
+				set message="add";
+			set argz=--${action}="${feed}";
+			breaksw;
+		
+		case "del":
+			if( "${message}" == "" ) \
+				set message="delete";
+			set argz=--${action}="${feed}";
+			set clean_up_dir="${download_dir}/`printf "\""%s"\"" "\""${feed}"\"" | md5sum | sed -r 's/^([^ \t]+).*"\$"/\1/'`";
+			printf "Attempting to clean-up <file://%s>\t" "${clean_up_dir}";
+			if( -d "${clean_up_dir}" ) then
+				rm -rf "${clean_up_dir}";
+				printf "[removed]\n";
+			else
+				printf "[failed]\n";
+			endif
+			unset clean_up_dir;
+			breaksw;
+		
+		default:
+			set argz="${argz} ${1}";
+			breaksw;
+		
+		endsw
 		shift;
-		continue;
-		breaksw;
-	case "add":
-		if( "${message}" == "" ) set message="add";
-	case "del":
-		if( "${message}" == "" ) set message="delete";
-		set argz=--${action}="${feed}";
-		breaksw;
-	default:
-		set argz="${argz} ${1}";
-		breaksw;
-	endsw
-	shift;
-	goto run_progie;
-end
+		goto run_progie;
+	end
+#goto next_argv;
 
-if(! ${?gpodder_ran} ) then
-	set gpodder_run_once message feed argz;
-	goto run_progie;
-endif
 
-if( ${?gpodder_run_once} ) unset gpodder_run_once;
-if( ${?tcshrc_debug_set} ) then
-	unset tcshrc_debug_set;
-	unsetenv TCSH_RC_DEBUG;
-endif
+exit_script:
+	if(! ${?gpodder_ran} ) then
+		set gpodder_run_once message feed argz;
+		goto run_progie;
+	endif
+	
+	if( ${?gpodder_run_once} ) \
+		unset gpodder_run_once;
+	if( ${?debug} ) then
+		unset tcshrc_debug_set;
+		unsetenv TCSH_RC_DEBUG;
+	endif
+	
+	cd "${owd}";
+	
+	if( ${?oldcwdcmd} ) then
+		alias cwdcmd "${oldcwdcmd}";
+		unset oldcwdcmd;
+	endif
+	unset gPodders_path gPodder_script gpodder_ran message feed argz;
+	
+	exit;
+#goto exit_script;
 
-cd "${owd}";
-
-if( ${?oldcwdcmd} ) then
-	alias cwdcmd "${oldcwdcmd}";
-	unset oldcwdcmd;
-endif
-unset gPodders_path gPodder_script gpodder_ran message feed argz;
-
-exit;
 
 run_progie:
-if(! ${?gpodder_ran} ) set gpodder_ran;
-if( "${message}" != "" && "${feed}" != "" ) printf "Attempting to %s:\n\t<%s>\n" "${message}" "${feed}";
-if( ${?TCSH_RC_DEBUG} ) echo "Running:\n\t./${gPodder_script} --local ${argz}";
-cd "${gPodders_path}";
-if( ! ${?OUTPUT_STDERR} ) then
-	nice +5 ./${gPodder_script} --local "${argz}";
-else
-	nice +5 ./${gPodder_script} --local "${argz}" >& /dev/null;
-endif
-cd "${owd}";
-if(! ${?gpodder_run_once} ) goto next_argv;
+	if(! ${?gpodder_ran} ) \
+		set gpodder_ran;
+	if( "${message}" != "" && "${feed}" != "" ) \
+		printf "Attempting to %s:\n\t<%s>\n" "${message}" "${feed}";
+	if( ${?TCSH_RC_DEBUG} ) \
+		echo "Running:\n\t./${gPodder_script} --local ${argz}";
+	cd "${gPodders_path}";
+	#renice +5 `/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python .*gpodder ${argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
+	if( ! ${?OUTPUT_STDERR} ) then
+		nice +5 ./${gPodder_script} --local "${argz}";
+	else
+		nice +5 ./${gPodder_script} --local "${argz}" >& /dev/null;
+	endif
+	if( ${?action} ) then
+		switch("${action}")
+			case "del":
+			case "add":
+				sleep 4;
+				kill -INT `/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`
+				breaksw;
+		endsw
+	endif
+	cd "${owd}";
+	if(! ${?gpodder_run_once} ) \
+		goto next_argv;
+#goto run_progie;
+
 

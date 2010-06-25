@@ -16,6 +16,9 @@
 	namespace alacast;
 	
 	class options{
+		public $alacast;
+		
+		
 		public $mode;
 		public $nice;
 		public $debug;
@@ -39,22 +42,19 @@
 		private $player;
 		public $bad_chars;
 		
-		public function __construct(){
+		public function __construct(&$alacast){
+			$this->alacast=&$alacast;
+			
+			
 			$this->init();
 			
-			$this->parse_argv();
+			$this->parse();
 			
 			if($this->player)
 				$this->set_characters_to_strip_from_titles();
 			
 			if($this->playlist)
 				$this->set_playlist();
-			
-			/*if(helper::preg_match_array($_SERVER['argv'], "/\-\-$/"))
-				$this->=TRUE;
-			else
-				$this->=FALSE;*/
-			
 		}//__construct
 		
 		
@@ -87,13 +87,13 @@
 		}/*$this->init();*/
 		
 		
-		private function parse_argv(){
+		private function parse(){
 			foreach($_SERVER['argv'] as $index=>$argv_value){
 				$option=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$1", $argv_value);
 				$value=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$2", $argv_value);
 				switch($option){
 					case "mode":
-						$this->mode=$value;
+						$this->validate_mode($value);
 						break;
 					
 					case "verbose":
@@ -203,8 +203,36 @@
 					*/
 				}
 			}
-		}/*parse_argv();*/
+		}/*\alacast\options\parse();*/
 		
+		
+		private function validate_mode($mode=NULL){
+			switch($mode){
+				case "diagnosis":
+				case "diagnostic":
+					$this->mode="update";
+					if(!$this->diagnosis)
+						$this->diagnosis=TRUE;
+					break;
+				
+				case "sync":
+				case "update":
+				case "default":
+					$this->mode="${mode}";
+					break;
+				
+				case "":
+				case FALSE:
+					$this->mode=NULL;
+					break;
+				
+				default:
+					if($mode)
+						$this->alacast->output("%s is an unsupported mode.  Valid modes are: 'default', 'update', and 'sync'.\n", "{$mode}", TRUE);
+					$this->mode=NULL;
+					break;
+			}
+		}/*$this->validate_mode($mode);*/
 		
 		
 		private function set_characters_to_strip_from_titles(){

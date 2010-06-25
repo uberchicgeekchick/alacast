@@ -13,13 +13,6 @@
 	 * PURPOSE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. See the RPL for specific
 	 * language governing rights and limitations under the RPL.
 	 */
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/ini.class.php");
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/titles.class.php");
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/logger.class.php");
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/playlist.class.php");
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/podcatcher.class.php");
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/options.class.php");
-	
 	class alacast{
 		/* variables */
 		public	$path;
@@ -33,17 +26,8 @@
 		
 		public function __construct(){
 			$this->path=preg_replace("/(.*)\/[^\/]+/", "$1", ( (dirname($_SERVER['argv'][0])!=".") ? (dirname( $_SERVER['argv'][0])) : $_SERVER['PWD']));
-			$this->ini=new \alacast\ini($this->path);
-			$this->options=new \alacast\options();
-			$this->logger=new \alacast\logger(
-						$this->ini->save_to_dir,
-						"alacast",
-						$this->options->logging,
-						$this->options->quiet
-			);
-			$this->podcatcher=new \alacast\podcatcher( $this->path, $this->ini->profiles_path, $this->options->update, $this->options->nice, $this->options->debug, "" );
-			$this->titles=new \alacast\titles();
-
+			$this->load_classes();
+			
 			if(!$this->options->diagnosis)
 				$this->playlist=NULL;
 			else
@@ -51,16 +35,48 @@
 		}//__construct
 
 		
+		private function load_classes(){
+			require("{$this->path}/php/namespaces/alacast/ini.class.php");
+			$this->ini=new \alacast\ini($this, $this->path);
+			
+			require("{$this->path}/php/namespaces/alacast/options.class.php");
+			$this->options=new \alacast\options($this);
+			
+			require("{$this->path}/php/namespaces/alacast/logger.class.php");
+			$this->logger=new \alacast\logger(
+						$this,
+						$this->ini->save_to_dir,
+						"alacast",
+						$this->options->logging,
+						$this->options->quiet
+			);
+			
+			require("{$this->path}/php/namespaces/alacast/podcatcher.class.php");
+			$this->podcatcher=new \alacast\podcatcher(
+						$this,
+						$this->path,
+						$this->ini->profiles_path,
+						$this->options->update,
+						$this->options->nice,
+						$this->options->debug
+			);
+			
+			require("{$this->path}/php/namespaces/alacast/titles.class.php");
+			$this->titles=new \alacast\titles($this);
+		}/*\alacast\load_classes();*/
+		
 		public function output($string, $error=FALSE, $silent=FALSE){
 			return $this->logger->output($string, $error, $silent);
 		}/*$this->output();*/
 		
 		
 		public function playlist_open($force=FALSE){
+			require_once("{$this->path}/php/namespaces/alacast/playlist.class.php");
 			if( !$this->options->playlist && !$force )
 				return;
 			
 			$this->playlist=new \alacast\playlist(
+				$this,
 				$this->ini->playlist_dir,
 				"alacast",
 				$this->options->playlist,

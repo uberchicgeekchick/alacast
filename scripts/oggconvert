@@ -81,6 +81,68 @@ scripts_main_quit:
 		unset scripts_tmpdir;
 	endif
 	
+	if( ${?add_length} ) \
+		unset add_length;
+	if( ${?all_filenames} ) \
+		unset all_filenames;
+	if( ${?argc} ) \
+		unset argc;
+	if( ${?combine} ) \
+		unset combine;
+	if( ${?confirmation} ) \
+		unset confirmation;
+	if( ${?debug_arguments} ) \
+		unset debug_arguments;
+	if( ${?debug_dependencies} ) \
+		unset debug_dependencies;
+	if( ${?debug_encoding} ) \
+		unset debug_encoding;
+	if( ${?debug_filelist} ) \
+		unset debug_filelist;
+	if( ${?debug_length} ) \
+		unset debug_length;
+	if( ${?debug_logging} ) \
+		unset debug_logging;
+	if( ${?diagnostic_mode} ) \
+		unset diagnostic_mode;
+	if( ${?escaped_filename} ) \
+		unset escaped_filename;
+	if( ${?escaped_home_dir} ) \
+		unset escaped_home_dir;
+	if( ${?escaped_starting_cwd} ) \
+		unset escaped_starting_cwd;
+	if( ${?file_count} ) \
+		unset file_count;
+	if( ${?function} ) \
+		unset function;
+	if( ${?itsoffset} ) \
+		unset itsoffset;
+	if( ${?modifier} ) \
+		unset modifier;
+	if( ${?oggenc} ) \
+		unset oggenc;
+	if( ${?oggenc_output_file_options} ) \
+		unset oggenc_output_file_options;
+	if( ${?output} ) \
+		unset output;
+	if( ${?parsed_arg} ) \
+		unset parsed_arg;
+	if( ${?parsed_argc} ) \
+		unset parsed_argc;
+	if( ${?parsed_argv} ) \
+		unset parsed_argv;
+	if( ${?playlists_new_files} ) \
+		unset playlists_new_files;
+	if( ${?reverse_modifier} ) \
+		unset reverse_modifier;
+	if( ${?scripts_basename} ) \
+		unset scripts_basename;
+	if( ${?scripts_path} ) \
+		unset scripts_path;
+	if( ${?supports_being_sourced} ) \
+		unset supports_being_sourced;
+	if( ${?usage_displayed} ) \
+		unset usage_displayed;
 	if( ${?nodeps} ) \
 		unset nodeps;
 	if(! ${?errno} ) \
@@ -263,16 +325,16 @@ check_dependencies:
 		
 		switch("${dependency}")
 			case "${scripts_basename}":
-				if( ${?scripts_dirname} ) \
+				if( ${?script} ) \
 					breaksw;
 				
 				set old_owd="${cwd}";
 				cd "`dirname "\""${program}"\""`";
-				set scripts_dirname="${cwd}";
+				set scripts_path="${cwd}";
 				cd "${owd}";
 				set owd="${old_owd}";
 				unset old_owd;
-				set script="${scripts_dirname}/${scripts_basename}";
+				set script="${scripts_path}/${scripts_basename}";
 				breaksw;
 			
 			case "ffmpeg":
@@ -302,12 +364,20 @@ if_sourced:
 	if( ${?0} ) \
 		goto main;
 	
+	# START: special handler for when this file is sourced.
+	if(! ${?TCSH_RC_SESSION_PATH} ) \
+		setenv TCSH_RC_SESSION_PATH "${scripts_path}/../tcshrc";
+	source "${TCSH_RC_SESSION_PATH}/argv:check" "${scripts_basename}" ${argv};
+	
 	if( ${?debug} ) \
 		printf "Setting up aliases for: oggconvert, oggcombine, and oggtranscode.\n";
 	
 	alias oggconvert "${script}";
 	alias oggtranscode "${script} --transcode";
 	alias oggcombine "${script} --combine";
+	
+	source "${TCSH_RC_SESSION_PATH}/argv:clean-up" "${scripts_basename}";
+	# FINISH: special handler for when this file is sourced.
 	
 	goto scripts_main_quit;
 #goto if_sourced;
@@ -324,6 +394,8 @@ main:
 	
 	@ files_processed=0;
 	@ files_coverted=0;
+	
+	@ volume=1024
 	
 	goto parse_argv;
 #goto main;
@@ -351,6 +423,14 @@ cancel_convert:
 	
 	if( "${original_extension}" != "ogg" && -e "${save_to_filename}.ogg" ) \
 		rm "${save_to_filename}.ogg";
+	
+	if( -e "${save_to_filename}.${original_extension}.bck" ) then
+		if( "${original_extension}" == "ogg" || "${original_extension}" == "wav" ) then
+			mv -f "${save_to_filename}.${original_extension}.bck" "${save_to_filename}.${original_extension}";
+		else
+			rm "${save_to_filename}.${original_extension}.bck";
+		endif
+	endif
 	
 	unset save_to_filename original_extension;
 	
@@ -578,30 +658,38 @@ oggconvert:
 	printf "\n\tConverting";
 	if( ${file_count} > 1 ) \
 		printf " (file %s of %s)" "${files_processed}" "${file_count}";
-	printf ":\n\t\t[%s.%s]\n" "${save_to_filename}" "${original_extension}";
+	printf ":";
 	
 	if(! -e "${save_to_filename}.${original_extension}.bck" ) \
 		cp -f "${save_to_filename}.${original_extension}" "${save_to_filename}.${original_extension}.bck";
 	
-	if( "${extension}" != "wav" ) then
+	#if( "${extension}" != "wav" || ${?ltrim} || ${?rtrim} || ${?length} || ${?volume} ) then
+	if( "${extension}" == "wav" && ! ${?ltrim} && ! ${?rtrim} && ! ${?length} && ! ${?volume} ) then
+		printf "\n\t\t<%s.%s>\n" "${save_to_filename}" "${original_extension}";
+	else
 		set ffmpeg_input_file_options="";
-		set ffmpeg_output_file_options=" -vol 512";
+		set ffmpeg_output_file_options="";
+		
+		if( ${?volume} ) then
+			set ffmpeg_output_file_options=" -vol ${volume}";
+		endif
 		
 		if( ${?length} && ( ${?rtrim} || ! ${?ltrim} ) ) then
 			if( ${?rtrim} ) then
-				printf "\n\t\tRemoving: [%s] from the end of:\n\t\t<%s.%s>\n" "${rtrim}" "${save_to_filename}" "${original_extension}";
+				printf "\n\t\tRemoving: [%s] from the end of:" "${rtrim}";
 			else
-				printf "\n\t\tLimiting: [%s] as the maximum length of:\n\t\t<%s.%s>\n" "${length}" "${save_to_filename}" "${original_extension}";
+				printf "\n\t\tLimiting: [%s] as the maximum length of:" "${length}";
 			endif
 			set ffmpeg_input_file_options=" -t ${length}";
 		else if( ${?ltrim} && ${?length} ) then
-			printf "\n\t\tTrimming: [%s] from the begining of:\n\t\t<%s.%s>\n" "${ltrim}" "${save_to_filename}" "${original_extension}";
-			printf "\n\t\t\tand limiting its maximum length to: [%s].\n" "${length}";
+			printf "\n\t\tTrimming: [%s] from the begining, and limiting the maximum length to: [%s] of:" "${ltrim}" "${length}";
 			set ffmpeg_input_file_options=" -t ${length} -ss ${ltrim}";
 		else if( ${?ltrim} ) then
-			printf "\n\t\tTrimming: [%s] from the begining of:\n\t\t<%s.%s>\n" "${ltrim}" "${save_to_filename}" "${original_extension}";
+			printf "\n\t\tTrimming: [%s] from the begining of:" "${ltrim}";
 			set ffmpeg_input_file_options=" -ss ${ltrim}";
 		endif
+		
+		printf "\n\t\t<%s.%s>\n" "${save_to_filename}" "${original_extension}";
 		
 		if( "${extension}" == "" && ${?combine} ) then
 			set ffmpeg_output_file_options=" -ac 1";#" -ar 44100 -ab 64000";
@@ -1059,6 +1147,44 @@ parse_arg:
 				if( ${?scripts_supported_extensions} ) \
 					unset scripts_supported_extensions;
 				breaksw;
+			
+			case "normalize";
+				if( ${?volume} ) \
+					unset volume;
+				breaksw;
+			
+			case "volume":
+				switch("${value}")
+					case "loudest":
+						@ volume=1280;
+						breaksw;
+					
+					case "louder":
+						@ volume=1024;
+						breaksw;
+					
+					case "double":
+					case "loud":
+						@ volume=512;
+						breaksw;
+					
+					case "normal":
+						if( ${?volume} ) \
+							unset volume;
+						breaksw;
+					
+					case "quieter":
+						@ volume=128;
+						breaksw;
+					
+					default:
+						if(!( "${value}" != "" && `printf "%s" "${value}" | sed -r 's/^[0-9]{3,}$//'` == "" )) then
+							printf "%s is an unsupported %s.  Valid values are: double, normal, quieter, or any number equal to or greater than 100.  E.G.: %s%s=1024.\n" "${value}" "${option}" "${dashes}" "${option}" > /dev/stderr;
+						else
+							@ volume=${value};
+						endif
+						breaksw;
+				endsw
 			
 			case "default-files":
 				if( ${?scripts_supported_extensions} ) \

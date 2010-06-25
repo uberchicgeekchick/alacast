@@ -34,6 +34,8 @@
 	 * |		http://opensource.org/licenses/rpl1.5.txt                    |
 	 * ---------------------------------------------------------------------------
 	 */
+	namespace alacast;
+	
 	class rss_gateway {
 		private $url;
 		private $preg_attribute_rule;
@@ -41,8 +43,8 @@
 		private $xml;
 
 		public function __construct( $url, $preg_attribute_rule ) {
-			$this->url = $url;
-			$this->preg_attribute_rule = $preg_attribute_rule;
+			$this->url=$url;
+			$this->preg_attribute_rule=$preg_attribute_rule;
 		}//__construct
 
 		private function parse(){

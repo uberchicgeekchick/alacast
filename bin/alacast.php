@@ -490,7 +490,7 @@
 			
 			//Prints the new episodes name:
 			$GLOBALS['alacast']->output("\n\t\tTitle: {$Podcasts_New_Filename}\n\t\tURI: {$podcastsInfo[$z]['url']}\n");
-			$GLOBALS['alacast']->output("\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
+			$GLOBALS['alacast']->output("\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
 			
 			unset($Podcasts_New_Filename);
 			unset($podcasts_new_file);
@@ -501,17 +501,19 @@
 	
 	/*alacast.php: main(); starts here.*/
 	define("ALACASTS_PATH", (preg_replace("/(.*)\/[^\/]+/", "$1", ( (dirname($_SERVER['argv'][0])!=".") ? (dirname( $_SERVER['argv'][0])) : $_SERVER['PWD']))));
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/helper.class.php");
+	require(ALACASTS_PATH."/php/namespaces/alacast/helper.class.php");
 	
 	//here's where alacast actually starts.
-	if((\alacast\helper::preg_match_array($_SERVER['argv'], "/\-\-help$/")))
+	if((\alacast\helper::preg_match_array($_SERVER['argv'], "/\-\-help$/"))){
+		require(ALACASTS_PATH."/php/namespaces/alacast/help.class.php");
 		\alacast\help();//displays usage and exits alacast
+	}
 	
 	/* Creates the
 	 * 	$alacast_options global object
 	 * 	it also define's configuration options.
 	 */
-	require_once(ALACASTS_PATH."/php/namespaces/alacast/alacast.class.php");
+	require(ALACASTS_PATH."/php/namespaces/alacast/alacast.class.php");
 	if(!($alacast=new alacast()))
 		exit(-1);
 	

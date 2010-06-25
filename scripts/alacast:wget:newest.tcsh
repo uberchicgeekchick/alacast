@@ -22,9 +22,9 @@ default:
 	breaksw
 endsw
 
-foreach catalog ( ${catalogs} )
-	foreach podcasts_xmlUrl ( "`/usr/bin/grep --binary-files=without-match -ri --perl-regex -e '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/'`" )
-		goto get_newest
+foreach catalog( ${catalogs} )
+	foreach podcasts_xmlUrl( "`/usr/bin/grep --binary-files=without-match -ri --perl-regex -e '${attrib}=["\""'\''].*${value}.*["\""'\'']' '${catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/'`" )
+		goto get_newest;
 		find_next_newest:
 	end
 end
@@ -32,8 +32,8 @@ end
 exit
 
 usage:
-	printf "Usage| %s --[title|xmlUrl|htmlUrl|text|description]='[search_term]'\n" `basename "${0}"`
-	exit
+	printf "Usage| %s --[title|xmlUrl|htmlUrl|text|description]='[search_term]'\n" "`basename "\""${0}"\""`";
+	exit;
 
 wget_newest:
 	if ( -e .newest.feed.xml ) rm -f .newest.feed.xml

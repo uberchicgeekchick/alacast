@@ -65,16 +65,16 @@ check_dependencies:
 		
 		switch("${dependency}")
 			case "${scripts_basename}":
-				if( ${?scripts_dirname} ) \
+				if( ${?script} ) \
 					breaksw;
 				
 				set old_owd="${cwd}";
 				cd "`dirname '${program}'`";
-				set scripts_dirname="${cwd}";
+				set scripts_path="${cwd}";
 				cd "${owd}";
 				set owd="${old_owd}";
 				unset old_owd;
-				set script="${scripts_dirname}/${scripts_basename}";
+				set script="${scripts_path}/${scripts_basename}";
 				breaksw;
 			
 			default:
@@ -91,12 +91,12 @@ check_dependencies:
 
 
 main:
-	if(! ${?playlist} ) then
+	if(! ${?playlists} ) then
 		@ errno=-4;
 		goto exception_handler;
 	endif
 	
-	if(! -e "${playlist}" ) then
+	if(! -e "$playlists[1]" ) then
 		@ errno=-4;
 		goto exception_handler;
 	endif
@@ -132,21 +132,29 @@ main:
 	if(! ${?regextype} ) \
 		set regextype="posix-extended";
 	
-	if( ${?edit_playlist} ) \
-		${EDITOR} "${playlist}";
+	if( ${?edit_playlist} ) then
+		foreach playlist(${playlists})
+			${EDITOR} "${playlist}";
+		end
+		unset playlist;
+	endif
 #main:
 
 
 setup_playlist_new:
-	if( ${?append} ) \
-		playlist:new:create.tcsh "${playlist}";
+	if( ${?append} ) then
+		foreach playlist( $playlists )
+			playlist:new:create.tcsh "$playlist";
+			unset playlist;
+		end
+	endif
 #setup_playlist_new:
 
 
 create_clean_up_script:
 	if( ${?create_script} ) then
 		if( "${create_script}" == "" ) \
-			set create_script="script-to:remove:missing:listings:from:`printf "\""%s"\"" "\""${playlist}"\"" | sed -r 's/\//\-/g'`.tcsh";
+			set create_script="script-to:remove:missing:listings:from:`printf "\""%s"\"" "\""${target_directory}"\"" | sed -r 's/\//\-/g'`.tcsh";
 		if(! -e "${create_script}" ) then
 			printf "#\!/bin/tcsh -f\n" > "${create_script}";
 			chmod u+x "${create_script}";
@@ -195,37 +203,71 @@ find_missing_media:
 		endif
 		
 		set status=0;
-		set grep_test="`/bin/grep "\""${podcast}"\"" "\""${playlist}"\""`";
-		#if( ${status} != 0 ) then
-			#printf "**error:** searching for: %s\n" "/bin/grep ${podcast} "\""${playlist}"\""";
-		#	continue;
-		#endif
-		if( "${grep_test}" != "" ) then
-			if( ${status} != 0 ) \
-				printf "**error: %s** searching for: %s\n" "${grep_test}" ${podcast};
+		foreach playlist(${playlists})
+			set grep_test="`/bin/grep "\""${podcast}"\"" "\""${playlist}"\""`";
+			#if( ${status} != 0 ) then
+				#printf "**error:** searching for: %s\n" "/bin/grep ${podcast} "\""${playlist}"\""";
+			#		continue;
+			#endif
+			if( "${grep_test}" != "" ) then
+				if( ${status} != 0 ) \
+					printf "**error: %s** searching for: %s\n" "${grep_test}" ${podcast};
+				break;
+			endif
+			unset playlist;
+		end
+		if( ${?playlist} ) \
 			continue;
-		endif
-		
-		if( ${?debug} || ${?debug_grep} ) then
-			printf "Searching for podcast using:\n\t/bin/grep "\""${podcast}"\"" "\""${playlist}"\""\n\n";
-			printf "grep's output:\n\t%s\n\n" "${grep_test}";
-		endif
 		
 		if(! ${?remove} ) then
 			set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/(\\\\)/\\/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 			if(! -e "${this_podcast}" ) \
 				continue;
 			
-			printf "%s\n" "${this_podcast}";
 			if( ${?append} ) then
-				if(! ${?new_file_count} ) then
-					printf "**%s notice:** The following fills will be added to\n\t<file://%s>\n" "${scripts_basename}" "${playlist}";
-					@ new_file_count=1;
+				if( ${#playlists} == 1 ) then
+					if(! ${?new_file_count} ) then
+						printf "\n\t**%s notice:** The following fills will be added to\n\t\t<file://%s>\n\n" "${scripts_basename}" "$playlists[1]";
+						@ new_file_count=1;
+					else
+						@ new_file_count++;
+					endif
+					printf "%s\n" "${this_podcast}" >> "$playlists[1].new";
 				else
-					@ new_file_count++;
+					set prompt_for_playlist;
+					while( ${?prompt_for_playlist} )
+						printf "\n\tWhich playlist would you like <file://%s> added to:\n" "${this_podcast}";
+						@ playlist_index=0;
+						while( $playlist_index < ${#playlists} )
+							@ playlist_index++;
+							printf "\t\t%d] %s\n" $playlist_index "$playlists[$playlist_index]";
+						end
+						printf "\tPlease select which playlist to append to [1-%d] or (c) to cancel: " $playlist_index;
+						set which_playlist="$<";
+						printf "\n";
+						if( `printf "%s" "${which_playlist}" | sed -r 's/^(c)$/\l\1/i'` == "c" ) then
+							printf "\n\t<file://%s> will not be appended to any playlist.\n" "${this_podcast}";
+							unset prompt_for_playlist;
+						else if( `printf "%s" "${which_playlist}" | sed -r 's/^[0-9]+$//'` != "" ) then
+							printf "\n\t%s is an invalid playlist selection.  Please select again?\n" "${which_playlist}";
+						else if( $which_playlist < 1 || $which_playlist > $playlist_index ) then
+							printf "\n\t%s is an invalid playlist selection.  Please select again?\n" "${which_playlist}";
+						else
+							if(! ${?new_file_count} ) then
+								@ new_file_count=1;
+							else
+								@ new_file_count++;
+							endif
+							printf "\n\tAdding <file//%s> to <file://%s>\n" "${this_podcast}" "$playlists[$which_playlist]";
+							printf "%s\n" "${this_podcast}" >> "$playlists[$which_playlist].new";
+							unset prompt_for_playlist;
+						endif
+						unset which_playlist;
+					end
 				endif
-				printf "%s\n" "${this_podcast}" >> "${playlist}.new";
+				unset playlist_index;
 			endif
+			printf "%s\n" "${this_podcast}";
 			
 			if( ${?create_script} ) then
 				printf "%s\n" "${this_podcast}" >> "${create_script}";
@@ -242,16 +284,10 @@ find_missing_media:
 				if(! -e "${duplicate_podcast}" ) \
 					continue;
 				
-				printf "%s\n" "${duplicate_podcast}";
 				if( ${?append} ) then
-					if(! ${?new_file_count} ) then
-						printf "**%s notice:** The following fills will be added to\n\t<file://%s>\n" "${scripts_basename}" "${playlist}";
-						@ new_file_count=1;
-					else
-						@ new_file_count++;
-					endif
-					printf "%s\n" "${this_podcast}" >> "${playlist}.new";
+					printf "%s\n" "${duplicate_podcast}" >> "$playlists[1].new";
 				endif
+				printf "%s\n" "${duplicate_podcast}";
 				
 				if( ${?create_script} ) then
 					printf "%s\n" "${duplicate_podcast}\n" >> "${create_script}";
@@ -268,7 +304,7 @@ find_missing_media:
 		
 		set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/(\\\\)/\\/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
 		if( ${?message} && ! ${?message_displayed} ) then
-			printf "\t**Files found under [%s] which are not in [%s] will be\n\t\t%s.**\n" "${cwd}" "${playlist}" "${message}";
+			printf "\t**Files found under [%s] which are not in [%s] will be %s removed.**\n\n" "${cwd}" "${playlists}" "`printf "\""%s"\"" "\""${message}"\"" | sed -r 's/^(.*), ([^,]*)"\$"/\1 and \2/'`";
 			set message_displayed;
 		endif
 		
@@ -288,7 +324,7 @@ find_missing_media:
 			unset rm_confirmation podcast_dir;
 			continue;
 		endif
-		if( ${?verbose_removal} ) \
+		if( ${?removal_verbose} ) \
 			printf "%s\n" "${rm_confirmation}";
 		
 		@ removed_podcasts++;
@@ -331,7 +367,7 @@ find_missing_media:
 			set rm_confirmation="`rm -v${remove} "\""${duplicate_podcast}"\""`";
 			if(!( ${status} == 0 && "${rm_confirmation}" != "" )) \
 				continue;
-			if( ${?verbose_removal} ) \
+			if( ${?removal_verbose} ) \
 				printf "%s\n" "${rm_confirmation}";
 			
 			@ removed_podcasts++;
@@ -363,7 +399,12 @@ find_missing_media:
 	
 	if( ${?append} ) then
 		if( ${?new_file_count} ) then
-			playlist:new:save.tcsh --force "${playlist}";
+			if( ${?append} ) then
+				foreach playlist( $playlists )
+					playlist:new:save.tcsh "$playlist";
+					unset playlist;
+				end
+			endif
 			unset new_file_count;
 		endif
 		unset append;
@@ -399,17 +440,20 @@ scripts_main_quit:
 		unset podcast_dir;
 	if( ${?podcast} ) \
 		unset podcast;
-	if( ${?playlist} ) then
+	if( ${?playlists} ) then
 		if( ${?append} ) then
+			foreach playlist( $playlists )
+				if( -e "${playlist}.new" ) \
+					rm "${playlist}.new";
+				if( -e "${playlist}.swp" ) \
+					rm "${playlist}.swp";
+				unset playlist;
+			end
 			if( ${?new_file_count} ) \
 				unset new_file_count;
-			if( -e "${playlist}.new" ) \
-				rm "${playlist}.new";
-			if( -e "${playlist}.swp" ) \
-				rm "${playlist}.swp";
 			unset append;
 		endif
-		unset playlist;
+		unset playlists;
 	endif
 	if( ${?scripts_tmpdir} ) then
 		if( -d "${scripts_tmpdir}" ) \
@@ -426,6 +470,12 @@ scripts_main_quit:
 
 
 exit_script:
+	if( ${?scripts_basname} ) \
+		unset scripts_basname;
+	if( ${?scripts_path} ) \
+		unset scripts_path;
+	if( ${?script} ) \
+		unset script;
 	if( ! ${?0} && ${?supports_being_sourced} ) then
 		@ errno=-501;
 		goto exception_handler;
@@ -708,30 +758,47 @@ parse_arg:
 			case "remove":
 			case "clean-up":
 				if(! ${?message} ) \
-					set message="";
+					set message;
 				
 				if(! ${?remove} ) \
 					set remove;
 				
-				if( "${message}" != "" ) \
-					set message="${message} and ";
-				
 				switch("${value}")
 					case "verbose":
-						set verbose_removal;
-						set message="${message}have they deletion reported";
-					breaksw;
+						if( ${?removal_verbose} ) \
+							breaksw;
+						
+						if( "${message}" != "" ) \
+							set message="${message}, ";
+						
+						set removal_verbose;
+						set message="${message}verbosely";
+						breaksw;
 					
 					case "force":
+						if( ${?removal_forced} ) \
+							breaksw;
+						
+						if( "${message}" != "" ) \
+							set message="${message}, ";
+						
+						set removal_forced;
 						set remove="${remove}f";
-						set message="${message}be removed";
-					breaksw;
+						set message="${message}forcefully";
+						breaksw;
 					
 					case "interactive":
 					default:
+						if( ${?removal_interactive} ) \
+							breaksw;
+						
+						if( "${message}" != "" ) \
+							set message=", ${message}";
+						
+						set removal_interactive;
 						set remove="${remove}i";
-						set message="${message}be prompted for removal";
-					breaksw;
+						set message="interactively${message}";
+						breaksw;
 				endsw
 			breaksw;
 			
@@ -791,12 +858,27 @@ parse_arg:
 				breaksw;
 			
 			case "playlist":
-				if(! -e "${value}" ) \
+				if(! -f "${value}" ) \
 					breaksw;
 				
-				if(! ${?playlist} ) \
-					set playlist="${value}";
-				
+				printf "\nadding: %s\n" "$value";
+				if(! ${?playlists} ) then
+					set playlists=("${value}");
+				else
+					set playlists=( ${playlists} "$value" );
+				endif
+				while( $arg < $argc )
+					@ arg++;
+					if( $arg >= $argc ) then
+						@ arg--;
+						break;
+					endif
+					if(! -f "$argv[$arg]" ) then
+						@ arg--;
+						break;
+					endif
+					set playlists=( ${playlists} "$argv[$arg]" );
+				end
 				breaksw;
 			
 			case "nodeps":
@@ -811,11 +893,25 @@ parse_arg:
 					endif
 				endif
 				
-				if( -e "${value}" ) then
-					if(! ${?playlist} ) then
-						set playlist="${value}";
-						breaksw;
+				if( -f "${value}" ) then
+					if(! ${?playlists} ) then
+						set playlists=("${value}");
+					else
+						set playlists=( ${playlists} "$value" );
 					endif
+					while( $arg < $argc )
+						@ arg++;
+						if( $arg >= $argc ) then
+							@ arg--;
+							breaksw;
+						endif
+						if(! -f "$argv[$arg]" ) then
+							@ arg--;
+							breaksw;
+						endif
+						set playlists=( ${playlists} "$argv[$arg]" );
+					end
+					breaksw;
 				endif
 				
 				@ errno=-504;

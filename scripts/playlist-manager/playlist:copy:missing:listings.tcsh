@@ -193,16 +193,16 @@ check_dependencies:
 		
 		switch("${dependency}")
 			case "${scripts_basename}":
-				if( ${?scripts_dirname} ) \
+				if( ${?script} ) \
 					breaksw;
 				
 				set old_owd="${cwd}";
 				cd "`dirname '${program}'`";
-				set scripts_dirname="${cwd}";
+				set scripts_path="${cwd}";
 				cd "${owd}";
 				set owd="${old_owd}";
 				unset old_owd;
-				set script="${scripts_dirname}/${scripts_basename}";
+				set script="${scripts_path}/${scripts_basename}";
 				breaksw;
 			
 				if(! ${?execs} ) \
@@ -262,7 +262,7 @@ scripts_sourcing_main:
 	
 	# BEGIN: source scripts_basename support.
 	if(! ${?TCSH_RC_SESSION_PATH} ) \
-		setenv TCSH_RC_SESSION_PATH "${scripts_dirname}/../tcshrc";
+		setenv TCSH_RC_SESSION_PATH "${scripts_path}/../tcshrc";
 	source "${TCSH_RC_SESSION_PATH}/argv:check" "${scripts_basename}" ${argv};
 	
 	# START: special handler for when this file is sourced.
@@ -335,7 +335,7 @@ scripts_exec:
 	/bin/rm "${playlist}.new";
 	
 	ex -s '+3,$s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${tcsh_copy_script}";
-	ex -s '+3,$s/\v^(\/[^/]+\/[^/]+\/)(.*)(\.[^.]+)$/if\(\! -e "\1\2\3" \) then\r\tif\(\! -e "\1nfs\/\2\3" \) then\r\t\tprintf "**error coping:** remote file\\n\\t\<\1nfs\/\2\3\> doesn'\''t exists.\\n" \> \/dev\/stderr;\r\telse\r\t\tset current_podcast="`dirname "\\""\1\2\3"\\""`";\r\t\tif\(\! -d "${current_podcast}" \) \\\r\t\t\tmkdir -p "${current_podcast}";\r\t\t\r\t\tif\( "${old_podcast}" \!\= "`basename "\\""${current_podcast}"\\""`" \) then\r\t\t\tset old_podcast\="`basename "\\""${current_podcast}"\\""`";\r\t\t\tprintf "\\nCopying: ${old_podcast}'\''s content(s):";\r\t\tendif\r\t\tprintf "\\n\\tCopying: \1\2\3";\r\t\tcp "\1nfs\/\2\3" "\1\2\3";\r\t\tprintf "\\t\\t[done]\\n";\r\tendif\rendif\r/' '+wq!' "${tcsh_copy_script}";
+	ex -s '+3,$s/\v^(\/[^/]+\/[^/]+\/)(.*)(\.[^.]+)$/if\(\! -e "\1\2\3" \) then\r\tif\(\! -e "\1nfs\/\2\3" \) then\r\t\tprintf "**error coping:** remote file\\n\\t\<\1nfs\/\2\3\> doesn'\''t exists.\\n" \> \/dev\/stderr;\r\telse\r\t\tset current_podcast="`dirname "\\""\1\2\3"\\""`";\r\t\tif\(\! -d "${current_podcast}" \) \\\r\t\t\tmkdir -p "${current_podcast}";\r\t\t\r\t\tif\( "${old_podcast}" \!\= "`basename "\\""${current_podcast}"\\""`" \) then\r\t\t\tset old_podcast\="`basename "\\""${current_podcast}"\\""`";\r\t\t\tprintf "\\nCopying: ${old_podcast}'\''s content(s):";\r\t\tendif\r\t\tprintf "\\n\\tCopying: `basename "\\""\1\2\3"\\""`";\r\t\tcp "\1nfs\/\2\3" "\1\2\3";\r\t\tprintf "\\t\\t[done]\\n";\r\tendif\rendif\r/' '+wq!' "${tcsh_copy_script}";
 	
 	printf "\t\t[done]\n\nChecking for any missing files and copying them from the nfs share to local fs.\n";
 	"${tcsh_copy_script}";
@@ -490,8 +490,8 @@ scripts_main_quit:
 		unset scripts_alias;
 	if( ${?scripts_basename} ) \
 		unset scripts_basename;
-	if( ${?scripts_dirname} ) \
-		unset scripts_dirname;
+	if( ${?scripts_path} ) \
+		unset scripts_path;
 	if( ${?scripts_tmpdir} ) then
 		if( -d "${scripts_tmpdir}" ) \
 			rm -rf "${scripts_tmpdir}";

@@ -2,10 +2,14 @@
 	namespace alacast;
 	
 	class ini{
+		public $alacast;
+		
+		
 		public $path;
 		public $profiles_path;
 		
 		private $ini;
+		private $mode;
 		private $helper_config;
 
 		public $media_dir;
@@ -17,7 +21,12 @@
 		public $playlist_dir;
 		
 		
-		public function __construct($path){
+		public function __construct(&$alacast, $path){
+			$this->alacast=&$alacast;
+			
+			
+			$this->mode=helper::preg_match_array($_SERVER['argv'], "/^\-\-(with\-defaults|mode)[=]?(.*)/", "$2");
+			
 			$this->init();
 			$this->path=$path;
 			$this->load();
@@ -69,20 +78,17 @@
 			$alacast_config=preg_replace("/[\r\n]+/m", "\t", preg_replace("/^;.*$/m", "", fread( $alacast_config_fp, (filesize($this->ini)))));
 			fclose($alacast_config_fp);
 			
-			$mode="";
 			if(
 				(count($_SERVER['argv'])<2)
 				||
-				$mode=helper::preg_match_array($_SERVER['argv'], "/^\-\-(with\-defaults|mode)[=]?(.*)/", "$2")
+				$this->mode
 			){
-				if(!$this->load_options($alacast_config, $mode)){
-					$this->error("I couldn't load either alacast's ".($mode ? $mode :"default")." settings.\n");
-					unset($mode);
+				if(!$this->load_options($alacast_config)){
+					$this->error("I couldn't load either alacast's ".($this->mode ? $this->mode :"default")." settings.\n");
 					unset($alacast_config);
 					return FALSE;
 				}
 			}
-			unset($mode);
 			
 			if(!$this->find_paths($alacast_config)){
 				$this->error("I couldn't load either alacast's:\n\t\t'download_dir': <".$this->download_dir.">, 'save_to_dir': <".$this->save_to_dir.">, or 'playlist_dir: <".$this->playlist_dir.">.\n");
@@ -205,18 +211,22 @@
 		
 		
 		
-		private function load_options(&$alacast_config, $mode="default"){
-			switch($mode){
+		private function load_options(&$alacast_config){
+			switch($this->mode){
+				case "diagnosis":
+				case "diagnostic":
+					$this->mode="update";
+				
 				case "update":
 				case "sync":
-					if(!$this->load_mode_parameters($alacast_config, $mode))
+					if(!$this->load_mode_parameters($alacast_config, $this->mode))
 						return FALSE;
 					if(!(helper::preg_match_array($_SERVER['argv'], "/^\-\-with\-defaults$/")))
 						return TRUE;
 				break;
 			}
 			return $this->load_mode_parameters($alacast_config);
-		}/*load_options($alacast_config, $mode);*/
+		}/*load_options($alacast_config);*/
 		
 		
 		

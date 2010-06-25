@@ -16,14 +16,21 @@
 	namespace alacast;
 	
 	class template{
+		private $alacast;
 		
-		public function __construct(){
+		
+		public function __construct(&$alacast){
+			$this->alacast=&$alacast;
+			
 			
 		}//__construct
 		
 		public function __destruct(){
+			if( isset($this->alacast) && $this->alacast ){
+				unset($this->alacast);
+				$this->alacast=NULL;
+			}
 			
-		}//__destruct
-		
-	}
+		}/*__destruct*/
+	}/*\alacast\template*/
 ?>

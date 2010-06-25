@@ -138,6 +138,39 @@ clean_up:
 #goto clean_up;
 
 
+move:
+	set callback="move";
+	if(! ${?goto_index} ) then
+		@ goto_index=0;
+	else
+		@ goto_index++;
+		if( ${?action_preformed} ) then
+			printf "\n\n";
+			unset action_preformed;
+		endif
+	endif
+	
+	switch( $goto_index )
+		case 1:
+			goto move_lifestyle_podcasts;
+			breaksw;
+		
+		case 2:
+			goto move_podiobooks;
+			breaksw;
+		
+		case 3:
+			goto move_slashdot;
+			breaksw;
+		
+		default:
+			unset goto_index callback;
+			breaksw;
+	endsw
+	goto parse_argv;
+#goto move;
+
+
 playlists:
 	set callback="playlists";
 	if(! ${?goto_index} ) then
@@ -165,6 +198,39 @@ playlists:
 	endsw
 	goto parse_argv;
 #goto playlists;
+
+
+delete:
+	set to_delete=( \
+	"\n" \
+	);
+	
+	if( ${?to_delete} ) then
+		foreach podcast( "`printf "\""${to_delete}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
+			if( "${podcast}" != "" && "${podcast}" != "/" && -e "${podcast}" ) then
+				if(! ${?action_preformed} ) then
+					set action_preformed;
+				endif
+				
+				if( -d "${podcast}" ) then
+					rm -rv "${podcast}";
+					continue;
+				endif
+				
+				rm -v "${podcast}";
+				
+				set podcast_dir="`dirname "\""${podcast}"\""`";
+				if( `/bin/ls -A "${podcast_dir}"` == "" ) \
+					rmdir -v "${podcast_dir}";
+				unset podcast_dir;
+			endif
+			unset podcast;
+		end
+		unset to_delete;
+	endif
+	
+	goto parse_argv;
+#goto delete;
 
 
 move_lifestyle_podcasts:
@@ -288,39 +354,6 @@ move_slashdot:
 #goto move_slashdot;
 
 
-delete:
-	set to_delete=( \
-	"\n" \
-	);
-	
-	if( ${?to_delete} ) then
-		foreach podcast( "`printf "\""${to_delete}"\"" | sed -r 's/^\ //' | sed -r 's/\ "\$"//'`" )
-			if( "${podcast}" != "" && "${podcast}" != "/" && -e "${podcast}" ) then
-				if(! ${?action_preformed} ) then
-					set action_preformed;
-				endif
-				
-				if( -d "${podcast}" ) then
-					rm -rv "${podcast}";
-					continue;
-				endif
-				
-				rm -v "${podcast}";
-				
-				set podcast_dir="`dirname "\""${podcast}"\""`";
-				if( `/bin/ls -A "${podcast_dir}"` == "" ) \
-					rmdir -v "${podcast_dir}";
-				unset podcast_dir;
-			endif
-			unset podcast;
-		end
-		unset to_delete;
-	endif
-	
-	goto parse_argv;
-#goto delete;
-
-
 back_up:
 	set slashdot=( \
 	"\n" \
@@ -352,11 +385,8 @@ back_up:
 
 
 alacasts_playlists:
-	set return_to="alacasts_playlists";
-	if(! ${?confirmation} ) \
-		goto prompt_for_playlist_validation;
-	
 	set playlist_dir="/media/podcasts/playlists/m3u";
+	printf "Cleaning up %s...\n" "${playlist_dir}";
 	foreach playlist("`/bin/ls --width=1 -t "\""${playlist_dir}"\""`")
 		set playlist_escaped="`printf "\""%s"\"" "\""${playlist}"\"" | sed -r 's/([\/.])/\\\1/g'`";
 		if(! ${?playlist_count} ) then
@@ -374,6 +404,9 @@ alacasts_playlists:
 				if(! ${?action_preformed} ) then
 					set action_preformed;
 				endif
+			else if(! ${?confirmation} ) then
+				set return_to="alacasts_playlists";
+				goto prompt_for_playlist_validation;
 			else if( ${?validate_playlists} ) then
 				printf "\tWould you like to make sure that all files in <file://%s/%s> still exist? [Yes/No(default)]" "${playlist_dir}" "${playlist}" > /dev/stdout;
 				set confirmation="$<";
@@ -438,13 +471,16 @@ validate_playlists:
 	if(! ${?confirmation} ) \
 		goto prompt_for_playlist_validation;
 	
-	if(! ${?playlists_validated} ) \
+	if(! ${?playlists_validated} ) then
 		set playlists_validated;
+	else
+		goto parse_arge;
+	endif
 	
 	if(! ${?validate_playlists} ) \
 		goto parse_argv;
 	
-	set playlist_data=( "/media/library/playlists/m3u/local.podcasts.m3u" "/media/podcasts" "/media/library/playlists/m3u/local.podiobooks.m3u" "/media/podiobooks/Latest" "/media/library/playlists/m3u/lifestyle.podcasts.m3u" "/media/podcasts/lifestyle" "/media/library/playlists/m3u/eee.podcasts.m3u" "/media/podcasts" );
+	set playlist_data=( "/media/library/playlists/m3u/artistic.podcasts.m3u" "/media/podcasts" "/media/library/playlists/m3u/local.podiobooks.m3u" "/media/podiobooks/Latest" "/media/library/playlists/m3u/lifestyle.podcasts.m3u" "/media/podcasts/lifestyle" "/media/library/playlists/m3u/science.podcasts.m3u" "/media/podcasts/science" "/media/library/playlists/m3u/culture.podcasts.m3u" "/media/podcasts/culture" );
 	
 	if(! ${?confirmations} ) \
 		set confirmations=( "" "" "" );
@@ -458,8 +494,6 @@ validate_playlists:
 		@ playlist_check=0;
 		while( $playlist_check < 3 )
 			@ playlist_check++;
-			if( "${playlist}" == "/media/library/playlists/m3u/eee.podcasts.m3u" ) \
-				@ playlist_check=3;
 			if( "$confirmations[$playlist_check]" != "" ) then
 				set confirmation="$confirmations[$playlist_check]";
 			else
@@ -564,7 +598,7 @@ validate_playlists:
 
 
 prompt_for_playlist_validation:
-	printf "\n\tWould you like to validate existing playlists? [Yes/yes to All/No(default)]" > /dev/stdout;
+	printf "\n\tWould you like to validate existing playlists? [Yes/Always/No(default)]" > /dev/stdout;
 	set confirmation="$<";
 	#set rconfirmation=$<:q;
 	
@@ -574,10 +608,9 @@ prompt_for_playlist_validation:
 		case "y":
 			set validate_playlists;
 			breaksw;
-		
 		case "n":
 		default:
-		breaksw;
+			breaksw;
 	endsw
 	
 	goto $return_to;

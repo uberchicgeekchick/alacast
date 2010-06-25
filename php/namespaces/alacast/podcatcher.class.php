@@ -61,10 +61,13 @@
 				$this->detailed=FALSE;
 			else
 				$this->detailed=TRUE;
-		}/*new \alacast\podcatcher\update();*/
-	}/*\alacasts\podcatcher\update*/
+		}/*new \alacast\update();*/
+	}/*\alacasts\update*/
 	
 	class podcatcher {
+		private $alacast;
+		
+		
 		private $starting_dir;
 		private $working_dir;
 		
@@ -78,7 +81,10 @@
 		
 		public $status;
 		
-		public function __construct( $alacasts_path, $profiles_path, $update_type, $nice, $debug ) {
+		public function __construct(&$alacast, $alacasts_path, $profiles_path, $update_type, $nice, $debug){
+			$this->alacast=&$alacast;
+			
+			
 			$this->profiles_path=$profiles_path;
 			$this->starting_dir=exec( "pwd" );
 			chdir( dirname( $_SERVER['argv'][0] ) );
@@ -90,7 +96,7 @@
 			
 			$this->status="waiting";
 			
-			$this->update=new update( $update_type, $nice, $debug );
+			$this->update=new update($update_type, $nice, $debug);
 			
 			$this->command=$this->set_podcatcher($alacasts_path);
 		}//method:public function __construct( ALACASTS_PATH, 1-20, $profiles_path="~/.config/gpodder/gpodder.conf" );

@@ -76,6 +76,11 @@
 #		ex -s "+8r `printf "\""${opml}.swp"\"" | sed -r 's/(["\"\$\!"'\''\[\]\(\)\ \<\>])/\\\1/g'`" "+${validate}" "${opml}";
 #
 #-----------------------------------------------------------------------------------
+#	Auto-formatting an Atom feed's info into an opml <outline>:
+#		For podiobooks.com feeds:
+#			7s/\v.*title[^>]*\>(\<\!\[CDATA\[)?([^\<]+)(\]\]\>)?\<.*[\r\n]*.*\<link[^>]*rel\="alternate"[^>]*href\="([^"]*)".*[\r\n]*.*\<link[^>]*rel\="self"[^>]*href\="([^"]*)".*[\r\n]*.*\<subtitle[^>]*\>(\<\!\[CDATA\[)?(.*)(\]\]\>)?\<\/subtitle\>.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4\/" description="\<\!\[CDATA\[\<h1\>\2\<\/h1\>\<p\>\7\<\/p\>\]\]\>" \/\>/ig
+#
+#-----------------------------------------------------------------------------------
 #	Auto-formatting an RSS' channel & info into an opml <outline>:
 #		For podiobooks.com feeds:
 #			3s/\v\<channel\>\r*\n*.*title\>(.+)(\ \-\ .*)(by\ [^\<]+)\<.*\r*\n*.*link\>([^\<]*)\<.*\r*\n*.*href\="([^"]*)".*\r*\n*.*(description)\>([^:]*:[ ]*)?(.*)\<\/description\>.*/\r\t\t\<outline title\=\"\<\!\[CDATA\[\1\]\]\>\"\ xmlUrl\=\"\5\/\"\ type=\"rss\"\ text\=\"\<\!\[CDATA\[\1\2\3\]\]\]\>\"\ htmlUrl\=\"\4\/\"\ \6=\"\<\!\[CDATA\[\<h1\>\1\<\/h1\>\<h3\>\3\<\/h3\>\<p\>\8\<\/p\>\]\]\>\"\ \/\>/ig

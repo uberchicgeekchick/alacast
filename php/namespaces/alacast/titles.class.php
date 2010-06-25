@@ -16,9 +16,15 @@
 	namespace alacast;
 	
 	class titles{
+		private $alacast;
+		
+		
 		public $regular_expression;
 		
-		public function __construct(){
+		public function __construct(&$alacast){
+			$this->alacast=&$alacast;
+			
+			
 			$this->regular_expression=NULL;
 			/*$this->load_renumbering_regexp();*/
 		}//__construct
@@ -63,7 +69,7 @@
 		
 		
 		
-		public function get_numbers_suffix( $number ){
+		public function get_numbers_suffix($number){
 			switch( $number ){
 				case preg_match("/^[0-9]*1$/", $number):
 					return "st";
@@ -78,14 +84,14 @@
 		
 		
 		
-		public function set_episode_prefix( $podcasts_title, $prefix_title ){
+		public function set_episode_prefix($podcasts_title, $prefix_title){
 			if(!$prefix_title) return "";
 			return sprintf( "%s' episode: ", $podcasts_title );
 		}/*set_episode_prefix( $podcasts_title );*/
 		
 		
 		
-		public function prefix_episope_titles_with_podcasts_title( &$podcasts_info ) {
+		public function prefix_episope_titles_with_podcasts_title(&$podcasts_info){
 			for( $i=1; $i<$podcasts_info['total']; $i++ )
 				if( !(preg_match( "/^{$podcasts_info[0]}/", $podcastInfo[$i] )) )
 					$podcasts_info[$i] = "{$podcasts_info[0]} - "
@@ -94,13 +100,20 @@
 						"",
 						$podcasts_info[$i]
 					));
-		}//prefix_episopes_titles( $podcasts_info );
+		}//prefix_episopes_titles($podcasts_info);
 		
 		function __deconstruct(){
-			if($this->regular_expression)
+			if( isset($this->alacast) && $this->alacast ){
+				unset($this->alacast);
+				$this->alacast=NULL;
+			}
+			
+			if( isset($this->regular_expression) && $this->regular_expression ){
 				unset($this->regular_expression);
-		}/*deconstruct*/
+				$this->regular_expression=NULL;
+			}
+		}/*__deconstruct*/
 		
-	}//alacast::titles
+	}/*\alacast\titles*/
 ?>
 

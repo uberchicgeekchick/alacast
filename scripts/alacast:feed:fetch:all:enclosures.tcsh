@@ -209,8 +209,8 @@ fetch_podcast:
 		goto fetch_podcasts;
 	endif
 	
-	if( "`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(The)(.*)"\$"/\1/g'`" == "The" ) \
-		set title="`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(The)\ (.*)"\$"/\2,\ \1/g'`";
+	if( "`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(the)(.*)"\$"/\L\1/ig'`" == "the" ) \
+		set title="`printf "\""%s"\"" "\""${title}"\"" | sed -r 's/^(the) (.*)"\$"/\2, \1/ig'`";
 	
 	if(! -d "${title}" ) \
 		mkdir -p "./${title}";
@@ -507,18 +507,19 @@ fetch_episode:
 	endif
 	
 	if( ${?save_script} ) then
-		printf 'Saving %s; episode: <%s> download to: <file://%s>\n' "${title}" "${episodes_title}" "${save_script}";
+		printf "Saving %s; episode: <%s> download command to:\n\t<file://%s>\n" "${title}" "${episodes_title}" "${save_script}";
 		printf '%s %s %s\n' "${download_command_with_options}" "./${episodes_filename}" "${episode}" >> "${save_script}";
 		unset episodes_filename;
 		goto fetch_episodes;
 	endif
 	
 	if( ${?downloading} ) then
+		printf "\t\tSaving %s; episode: <%s> to:\n\t\t\t<file://%s/%s>\n" "${title}" "${episodes_title}" "${cwd}" "${episodes_filename}";
 		${download_command_with_options} "./${episodes_filename}" "${episode}";
 		
 		if(! -e "./${episodes_filename}" ) then
 			if(! ${?silent} ) \
-				printf "\t\t\t[*epic fail* :(]";
+				printf "\t\t\t[*pout* :(]";
 			if( ${?logging} ) \
 				printf "\t\t\t[*pout* :(]" >> "${download_log}";
 		else
@@ -603,11 +604,10 @@ usage:
 
 
 parse_argv:
-	set argc=${#argv};
-	
-	if( ${argc} == 0 ) \
+	if( ${#argv} == 0 ) \
 		goto usage;
 	
+	@ argc=${#argv};
 	@ arg=0;
 	while( $arg < $argc )
 		@ arg++;
@@ -616,23 +616,19 @@ parse_argv:
 			case "--diagnostic-mode":
 				printf "**%s debug:**, via "\$"argv[%d], diagnostic mode\t[enabled].\n\n" "${scripts_basename}" $arg;
 				set diagnostic_mode;
-				break;
+				breaksw;
 			
 			case "--debug":
 				printf "**%s debug:**, via "\$"argv[%d], debug mode\t[enabled].\n\n" "${scripts_basename}" $arg;
 				set debug;
-				break;
-			
-			default:
-				continue;
+				breaksw;
 		endsw
 	end
 	
 	@ arg=0;
-	@ parsed_argc=0;
 	
 	if( ${?debug} ) \
-		printf "Checking %s's argv options.  %d total.\n" "${scripts_basename}" "${argc}";
+		printf "**debug:** parsing "\$"argv's %d options.\n" "${scripts_basename}" "${argc}";
 #parse_argv:
 
 parse_arg:
@@ -641,41 +637,33 @@ parse_arg:
 			@ arg++;
 		
 		if( ${?debug} || ${?diagnostic_mode} ) \
-			printf "**%s debug:** Checking argv #%d (%s).\n" "${scripts_basename}" "${arg}" "$argv[$arg]";
+			printf "\t**debug:** parsing "\$"argv[%d] (%s).\n" $arg "$argv[$arg]";
 		
-		set dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\1/'`";
+		set dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\1/'`";
 		if( "${dashes}" == "$argv[$arg]" ) \
 			set dashes="";
 		
-		set option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\2/'`";
+		set option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\2/'`";
 		if( "${option}" == "$argv[$arg]" ) \
 			set option="";
 		
-		set equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\3/'`";
-		if( "${equals}" == "$argv[$arg]" || "${equals}" == "" ) \
+		set equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\3/'`";
+		if( "${equals}" == "$argv[$arg]" ) \
 			set equals="";
 		
-		set equals="";
-		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\4/'`";
-		if( "${value}" != "" && "${value}" != "$argv[$arg]" ) then
-			set equals="=";
-		else if( "${option}" != "" ) then
+		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\4/'`";
+		if(!( "${dashes}" != "" && "${option}" != "" && "${equals}" != "" && "${value}" != "" )) then
 			@ arg++;
 			if( ${arg} > ${argc} ) then
 				@ arg--;
 			else
-				set test_dashes="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\1/'`";
-				set test_option="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\2/'`";
-				set test_equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\3/'`";
-				set test_value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\4/'`";
+				set test_dashes="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\1/'`";
+				set test_option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\2/'`";
+				set test_equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\3/'`";
+				set test_value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^=]+)(=)?(.*)"\$"/\4/'`";
 				
-				if( ${?debug} || ${?diagnostic_mode} ) \
-					printf "\tparsed %sargv[%d] (%s) to test for replacement value.\n\tparsed %stest_dashes: [%s]; %stest_option: [%s]; %stest_equals: [%s]; %stest_value: [%s]\n" \$ "${arg}" "$argv[$arg]" \$ "${test_dashes}" \$ "${test_option}" \$ "${test_equals}" \$ "${test_value}";
-				
-				if(!("${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]")) then
-					@ arg--;
-				else
-					set equals="=";
+				if( "${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]") then
+					set equals=" ";
 					set value="$argv[$arg]";
 					set arg_shifted;
 				endif
@@ -683,22 +671,8 @@ parse_arg:
 			endif
 		endif
 		
-		if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/\1/"\""`" == "~" ) then
-			set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(~)(.*)/${escaped_home_dir}\2/"\""`";
-		endif
-		
-		if( "`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/\1/"\""`" == "." ) then
-			set value="`printf "\""%s"\"" "\""${value}"\"" | sed -r "\""s/^(\.)(.*)/${escaped_cwd}\2/"\""`";
-		endif
-		
-		@ parsed_argc++;
-		if(! ${?parsed_argv} ) then
-			set parsed_argv="${dashes}${option}${equals}${value}";
-		else
-			set parsed_argv="${parsed_argv} ${dashes}${option}${equals}${value}";
-		endif
 		if( ${?debug} || ${?diagnostic_mode} ) \
-			printf "\tparsed option %sparsed_argv[%d]: %s\n" \$ "$parsed_argc" "${dashes}${option}${equals}${value}";
+			printf "\t**debug:** parsed "\$"argv[%d]: %s%s%s%s\n" $arg "${dashes}" "${option}" "${equals}" "${value}";
 		
 		switch ( "${option}" )
 			case "h":

@@ -4,11 +4,9 @@
 		<title>Environmental Sciences&apos; News &amp; Podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[Bioneers]]>" xmlUrl="http://www.cyberears.com/podcasts/podcast_5566.xml" type="rss" htmlUrl="http://www.bioneers.org/radio/bioneers-podcast" text="<![CDATA[Bioneers: Revolution from the Heart of Nature.]]>" description="<![CDATA[Bioneers brings bold innovators with breakthrough solutions to the airwaves with our ninth annual radio series. Bioneers: Revolution from the Heart of Nature airs in more than 250 cities in the U.S., Canada, Australia and Ireland and is free to all stations, distributed by WFMT Radio Network.]]>"/>
-		<outline title="<![CDATA[EarthSky Clear Voices for Science]]>" xmlUrl="http://feedproxy.google.com/earthsky/clearvoices" type="rss" text="<![CDATA[EarthSky Clear Voices for Science podcast]]>" htmlUrl="http://earthandsky.com/clear-voices/" description="<![CDATA[World renowned scientists share their insights with EarthSky reporters in these extended interviews.]]>"/>
-		<outline title="<![CDATA[Earth &amp; Sky]]>" xmlUrl="http://feedproxy.google.com/earthsky" type="rss" text="<![CDATA[Earth &amp; Sky Radio]]>" htmlUrl="http://www.earthsky.org/radioshows/" description="<![CDATA[Science. Nature. People.]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Bioneers]]>" xmlUrl="http://www.cyberears.com/podcasts/podcast_5566.xml" type="rss" text="<![CDATA[Bioneers]]>" htmlUrl="http://www.cyberears.com/index.php/Show/audio/5566/" description="<![CDATA[<h1>Bioneers</h1><p>Bioneers brings bold innovators with breakthrough solutions to the airwaves with our eighth annual radio series. Bioneers: Revolution from the Heart of Nature airs in more than 250 cities in the U.S., Canada, Australia and Ireland and is free to all stations, distributed by WFMT Radio Network.</p>]]>" />
+		<outline title="<![CDATA[EarthSky Clear Voices for Science]]>" xmlUrl="http://feeds.feedburner.com/earthsky/clearvoices" type="rss" text="<![CDATA[EarthSky Clear Voices for Science 8-minute podcast]]>" htmlUrl="http://www.earthsky.org/" description="<![CDATA[<h1>EarthSky Clear Voices for Science 8-minute podcast</h1><p>World renowned scientists share their insights with EarthSky reporters in these extended interviews.</p>]]>" />
+		<outline title="<![CDATA[EarthSky 90 Second podcast]]>" xmlUrl="http://feeds.feedburner.com/earthsky" type="rss" text="<![CDATA[EarthSky 90 Second podcast]]>" htmlUrl="http://www.earthsky.org/" description="<![CDATA[<h1>EarthSky 90 Second podcast</h1><p>Join 15 million listeners worldwide every day for 90 seconds of science, nature and people.</p>]]>" />
 	</body>
 </opml>
 

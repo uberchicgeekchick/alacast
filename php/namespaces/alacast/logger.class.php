@@ -41,6 +41,9 @@
 	namespace alacast;
 	
 	class logger {
+		public $alacast;
+		
+		
 		private $programs_name;
 		
 		private $enabled;
@@ -61,7 +64,10 @@
 		public $error_log_file;
 		private $error_logs_fp;
 		
-		public function __construct($logs_path=".", $programs_name="alacast", $enable=TRUE, $silent=FALSE) {
+		public function __construct(&$alacast, $logs_path=".", $programs_name="alacast", $enable=TRUE, $silent=FALSE) {
+			$this->alacast=&$alacast;
+			
+			
 			$this->program_name=$programs_name;
 			
 			if(!$silent)

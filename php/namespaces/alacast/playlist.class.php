@@ -16,6 +16,9 @@
 	namespace alacast;
 	
 	class playlist{
+		private $alacast;
+		
+		
 		private $enabled;
 		
 		private $path;
@@ -29,7 +32,10 @@
 		
 		private $total;
 		
-		public function __construct($path=".", $prefix="alacast", $type="m3u", $append_pubdate=FALSE){
+		public function __construct(&$alacast, $path=".", $prefix="alacast", $type="m3u", $append_pubdate=FALSE){
+			$this->alacast=&$alacast;
+			
+			
 			$this->prefix=$prefix;
 			$this->path=$path;
 			
@@ -69,7 +75,7 @@
 				case "m3u":
 				default:
 					if($this->type!="m3u")
-						$GLOBALS['alacast']->logger->output(
+						$this->alacast->output(
 							"{$this->type} is an unsupported playlist format.\nA m3u playlist will be used instead.",
 							TRUE
 						);

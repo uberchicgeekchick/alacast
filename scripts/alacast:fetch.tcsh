@@ -154,8 +154,9 @@ fetch_podcasts:
 		set podcasts_title="`head -1 '${alacasts_catalog_search_results_log}.xml' | sed 's/.*<title>\([^<]\+\)<\/title>.*/\1/' | sed 's/\//-/g'`"; # | sed 's/'\''/\\'\''/g'`";
 
 		if( "${podcasts_title}" != "" ) then
-			if( "`printf "\""${podcasts_title}"\"" | sed -r 's/(The)(.*)/\1/g'`" == "The" ) \
-				set podcasts_title="`printf "\""${podcasts_title}"\"" | sed -r 's/(The)\ (.*)/\2,\ \1/g' | sed 's/&[^;]\+;/ /'`";
+			set podcasts_title="`printf "\""${podcasts_title}"\"" | sed -r 's/\&[^;]+;/ /'`";
+			if( "`printf "\""${podcasts_title}"\"" | sed -r 's/^(the) (.*)/\L\1/ig'`" == "the" ) \
+				set podcasts_title="`printf "\""${podcasts_title}"\"" | sed -r 's/^(the) (.*)/\2, \1/ig'`";
 		else
 			printf "A podcasts title could not be found for the podcast @:\n\t%s\nEpisodes will be saved to: 'Untitled podcast(s)'.\n" "${podcast_xmlurl}";
 			set podcasts_title="Untitled podcast(s)";
