@@ -69,26 +69,12 @@ playlist_init:
 	if(! -e "${playlist}.new" ) \
 		touch "${playlist}.new";
 	set files_new=`wc -l "${playlist}.new" | sed -r 's/^([0-9]+)(.*)$/\1/'`;
-	if(! ${files_new} > 0 ) then
+	if(!( ${files_new} > 0 )) then
 		unset files_new;
-		rm "${playlist}.new";
-		
-		if(! -e "${playlist}.swp" ) then
-			set files=`wc -l "${playlist}" | sed -r 's/^([0-9]+)(.*)$/\1/'`;
-			if(! ${files} > 0 ) then
-				rm "${playlist}";
-				unset files;
-			endif
-			goto scripts_main_quit;
-		endif
-		
-		set files=`wc -l "${playlist}.swp" | sed -r 's/^([0-9]+)(.*)$/\1/'`;
-		if(! ${files} > 0 ) then
-			rm "${playlist}.swp";
-			unset files;
-			goto scripts_main_quit;
-		endif
-		unset files;
+		rm -f "${playlist}.new";
+		if( -e "${playlist}.swp" ) \
+			rm -f "${playlist}.swp";
+		goto scripts_main_quit;
 	endif
 	unset files_new;
 #playlist_init:
@@ -100,7 +86,7 @@ playlist_setup:
 	
 	set new_playlist_to_read="`printf "\""%s"\"" "\""${playlist}.swp"\"" | sed -r 's/([\(\)\ ])/\\\1/g'`";
 	ex -s "+0r ${new_playlist_to_read}" '+wq!' "${playlist}.new";
-	rm "${playlist}.swp";
+	rm -f "${playlist}.swp";
 	unset new_playlist_to_read;
 #playlist_setup:
 
@@ -175,6 +161,7 @@ playlist_save:
 	goto scripts_main_quit;
 #playlist_save:
 
+
 scripts_main_quit:
 	if( ${?new_playlist} ) \
 		unset new_playlist;
@@ -185,19 +172,20 @@ scripts_main_quit:
 	if( ${?playlist} ) then
 		if( ${?playlist_temp} ) then
 			if( -e "${playlist_temp}" ) \
-				rm "${playlist_temp}";
+				rm -f "${playlist_temp}";
 			unset playlist_temp;
 		endif
 		
 		if( ${?playlist_swap} ) then
 			if( -e "${playlist_swap}" ) \
-				rm "${playlist_swap}";
+				rm -f "${playlist_swap}";
 			unset playlist_swap;
 		endif
+		
 		if( -e "${playlist}.new" ) \
-			rm "${playlist}.new";
+			rm -f "${playlist}.new";
 		if( -e "${playlist}.swp" ) \
-			rm "${playlist}.swp";
+			rm -f "${playlist}.swp";
 		
 		unset playlist;
 		

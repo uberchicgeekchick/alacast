@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Jun 26 22:23:08 2010
+            Fri Jun 25 13:45:31 2010
         </dateCreated>
     </head>
     <body>
@@ -314,6 +314,7 @@
         <outline text="A free audiobook by Brenda Wamsley" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/520/book.xml"/>
         <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml"/>
         <outline text="Disability RadioNow Airing 1st, 3rd, and 5th Fridays at 2:30 pm      * Leave a message for Pushing Limits at: (510) 848-6767 ext. 636     * Email: pushinglimits[a]kpfa.org" title="Pushing Limits [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://www.kpfa.org/podcast/pod.php?show=pushinglimits"/>
+        <outline text="Deranged &quot;edits&quot; segue into a cascade of echoing glossolaliac madness, the voicing of lyric ruminations from the free-falling brains of disintegrating personalities." title="Puzzling Evidence [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://kpfa.org/podcast/pod.php?show_id=334"/>
         <outline text="CBC Radio's Quirks &amp; Quarks covers the quirks of the expanding universe to the quarks within a single atom… and everything in between." title="Quirks &amp; Quarks Complete Show from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/quirksaio.xml"/>
         <outline text="What are you putting in your ears?" title="Raise a Racket" type="rss" xmlUrl="http://feeds.feedburner.com/RaiseARacket"/>
         <outline text="Where thinking people feed their brain" title="Rational Alchemy Podcasts" type="rss" xmlUrl="http://feeds.feedburner.com/RationalAlchemyPodcasts"/>

@@ -117,7 +117,13 @@ run_progie:
 			case "del":
 			case "add":
 				sleep 4;
-				kill -INT `/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`
+				set escaped_argz="`printf "\""%s"\"" "\""${argz}"\"" | sed -r 's/\//\\\//g'`";
+				set gPodder_PID=`/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${escaped_argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
+				while( "${gPodder_PID}" != "" )
+					printf "Attempting to interupt: %s\n" $gPodder_PID;
+					kill -INT $gPodder_PID;
+					set gPodder_PID=`/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${escaped_argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
+				end
 				breaksw;
 		endsw
 	endif

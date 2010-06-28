@@ -300,7 +300,13 @@ sub parse_option{
 	}
 	
 	if($debug_mode){ printf( "\tHandling other argument: [%s%s%s].\n", $option, ("$value"eq"" ?"" :"="), $value ); }
-	if( parse_options_action($option, $value) ){ return $args_parsed; }
+	if( parse_options_action($option, $value) ){
+		if( ( "$option"eq"xmlUrl-parser" && "$value"ne"" ) || $option=~/^browser=.+/ ){
+			return $args_parsed;
+		}else{
+			return 1;
+		}
+	}
 	
 	return $FALSE;
 }#parse_option
