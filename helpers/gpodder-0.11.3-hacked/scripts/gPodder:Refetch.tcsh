@@ -1,13 +1,30 @@
 #!/bin/tcsh -f
 # This is TRUE if this script is called via `source`
-if( "`printf '%s' '${0}' | sed -r 's/^[^\.]*(csh)/\1/'`" == "csh" ) exit;
+if(! ${?0} ) then
+	printf "This script cannot be sourced.\n";
+	exit -1;
+endif
 
-set script_name="`basename '${0}'`";
-set search_script="`dirname '${0}'`/gPodder:Search:index.rss.tcsh";
-if(! ${?1} || "${1}" == "" ) goto usage
+
+init:
+	set script_name="`basename '${0}'`";
+	set search_script="`dirname '${0}'`/gPodder:Search:index.rss.tcsh";
+	if(! ${?1} || "${1}" == "" ) goto usage
+	
+	set mp3_player_folder="`grep 'mp3_player_folder' '${HOME}/.config/gpodder/gpodder.conf' | cut -d= -f2 | cut -d' ' -f2`";
+	cd "${mp3_player_folder}";
+	
+	if( ${?GREP_OPTIONS} ) then
+		set grep_options="${GREP_OPTIONS}";
+		unsetenv GREP_OPTIONS;
+	endif
+	
+	alias ex "ex -E -n -X --noplugin";
+	set podcasts=();
+#goto init;
 
 
-parse_argv:
+debug_check:
 	@ arg=0;
 	@ argc=${#argv};
 	while( $arg < $argc )
@@ -16,6 +33,12 @@ parse_argv:
 			case "--diagnosis":
 			case "--diagnostic-mode":
 				printf "**%s debug:**, via "\$"argv[%d], diagnostic mode\t[enabled].\n\n" "${script_name}" $arg;
+				if(! ${?diagnosis} ) \
+					set diagnosis;
+				if(! ${?keep_script} ) \
+					set keep_script;
+				if(! ${?debug} ) \
+					set debug;
 				set diagnostic_mode;
 				break;
 			
@@ -28,98 +51,117 @@ parse_argv:
 				continue;
 		endsw
 	end
-#parse_argv:
+#goto debug_check;
 
 
-
-while ( "${1}" != "" )
-	set option="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g'`"
-	set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
-	set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
-	if( "${option}" != "${1}" && "${equals}" == "" && "${options_value}" == "" && "${2}" != "" )	\
-		set options_value="${2}";
-	#echo "Checking ${option}\n";
-	
-	switch ( "${option}" )
-	case "title":
-	case "xmlUrl":
-	case "htmlUrl":
-	case "text":
-	case "description":
-		set search_attribute="${option}";
-		set search_value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
-		breaksw;
-	case "help":
-		goto usage;
-		breaksw;
-	case "s":
-	case "silent":
-		set silent;
-		breaksw;
-	case "diagnosis":
-		if(! ${?diagnosis} ) set diagnosis;
-		if(! ${?keep_script} ) set keep_script;
-		if(! ${?debug} ) set debug;
-		breaksw;
-	case "f":
-	case "fetch-all":
-	case "r":
-	case "refetch":
-	case "c":
-	case "continue":
-		set fetch_all;
-		breaksw;
-	case "debug":
-	case "verbose":
-		if(! ${?debug} ) set debug;
-		breaksw;
-	case "enable":
-		switch ( "${options_value}" )
-		case "diagnosis":
-			if(! ${?diagnosis} ) set diagnosis;
-			if(! ${?keep_script} ) set keep_script;
-		case "debug":
-		case "verbose":
-			if(! ${?debug} ) set debug;
-			breaksw;
+parse_argv:
+	while ( "${1}" != "" )
+		set option="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g'`"
+		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
+		set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
+		if( "${option}" != "${1}" && "${equals}" == "" && "${options_value}" == "" && "${2}" != "" )	\
+			set options_value="${2}";
+		#echo "Checking ${option}\n";
+		
+		switch ( "${option}" )
+			case "title":
+			case "xmlUrl":
+			case "htmlUrl":
+			case "text":
+			case "description":
+				set search_attribute="${option}";
+				set search_value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
+				breaksw;
+			case "help":
+				goto usage;
+				breaksw;
+			case "s":
+			case "silent":
+				set silent;
+				breaksw;
+			case "diagnosis":
+				if(! ${?diagnosis} ) \
+					set diagnosis;
+				if(! ${?keep_script} ) \
+					set keep_script;
+				if(! ${?debug} ) \
+					set debug;
+				breaksw;
+			case "f":
+			case "fetch-all":
+			case "r":
+			case "refetch":
+			case "c":
+			case "continue":
+				set fetch_all;
+				breaksw;
+			case "debug":
+				if(! ${?debug} ) \
+					set debug;
+				breaksw;
+			
+			case "verbose":
+				if( ${?silent} ) \
+					unset silent;
+				breaksw;
+			
+			case "enable":
+				switch ( "${options_value}" )
+					case "diagnosis":
+						if(! ${?diagnosis} ) \
+							set diagnosis;
+						if(! ${?keep_script} ) \
+							set keep_script;
+					case "debug":
+						if(! ${?debug} ) \
+							set debug;
+						breaksw;
+					case "verbose":
+						if( ${?silent} ) \
+							unset silent;
+						breaksw;
+					default:
+						printf "%s cannot be %sd" "${options_value}" "${option}";
+						breaksw;
+				endsw
+				breaksw;
+			case "disable":
+				switch( "${options_value}" )
+					case "diagnosis":
+						if( ${?diagnosis} ) \
+							set diagnosis;
+						if( ${?keep_script} ) \
+							set keep_script;
+					case "debug":
+						if( ${?debug} ) \
+							unset debug;
+						breaksw;
+					case "verbose":
+						if( ${?silent} ) \
+							unset silent;
+						breaksw;
+					default:
+						printf "%s cannot be %sd" "${options_value}" "${option}";
+						breaksw;
+				endsw
+				breaksw;
+			case "k":
+			case "keep-script":
+				if(! ${?keep_script} ) \
+					set keep_script;
+				breaksw;
+			default:
+				printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "${script_name}" > /dev/stderr;
+				breaksw;
 		endsw
-		breaksw;
-	case "disable":
-		switch( "${options_value}" )
-		case "diagnosis":
-			if( ${?diagnosis} ) set diagnosis;
-			if( ${?keep_script} ) set keep_script;
-		case "debug":
-		case "verbose":
-			if( ${?debug} ) unset debug;
-			breaksw;
-		endsw
-		breaksw;
-	case "k":
-	case "keep-script":
-		if(! ${?keep_script} ) set keep_script;
-		breaksw;
-	default:
-		if( ${?debug} )	\
-			printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "${script_name}" > /dev/stderr;
-		breaksw;
-	endsw
-	shift;
-end
+		shift;
+		
+		if( ${?search_attribute} && ${?search_value} ) \
+			goto find_podcasts;
+	end
+	goto exit_script;
+#goto parse_argv;
 
-if(! ${?silent} ) then
-	set silent="";
-else
-	# for curl:
-	# set silent=" --silent";
-	# for wget:
-	set silent=" --quiet";
-endif
-
-#set download_command="curl${silent} --location --fail --show-error --output";
-set download_command="wget${silent} --continue --output-document";
-
-if( ${?search_attribute} && ${?search_value} ) goto find_podcasts;
 
 usage:
 	printf "%s uses %s to find what episodes to re-download.\n\tIt supports all of its options in addition to:\n\t\t-s,--silent\tCauses ouptput to be surpressed.\t\n\t\n\tIn addition %s' options are:\n\n" `${script_name}` ${search_script} ${search_script};
@@ -129,18 +171,18 @@ usage:
 #usage
 
 find_podcasts:
-	set status=0;
-	set mp3_player_folder="`grep 'mp3_player_folder' '${HOME}/.config/gpodder/gpodder.conf' | cut -d= -f2 | cut -d' ' -f2`";
-	cd "${mp3_player_folder}";
-	
-	if( ${?GREP_OPTIONS} ) then
-		set grep_options="${GREP_OPTIONS}";
-		unsetenv GREP_OPTIONS;
+	if(! ${?silent} ) then
+		set silent;
+	else
+		# for curl:
+		# set silent=" --silent";
+		# for wget:
+		set silent=" --quiet";
 	endif
 	
-	alias ex "ex -E -n -X --noplugin";
-	
-	set podcasts=();
+	#set download_command="curl${silent} --location --fail --show-error --output";
+	set download_command="wget${silent} --continue --output-document";
+	set status=0;
 	
 	if( ${?debug} ) \
 		printf "Search for podcasts who <%s> matches: %s\n\tUsing:\n\t%s --match-only --%s="\""%s"\""" "${search_attribute}" "${search_value}" "${search_script}" "${search_attribute}" "${search_value}";
@@ -154,14 +196,18 @@ find_podcasts:
 		foreach index ( ${podcasts} )
 			if( ${?debug} ) \
 				printf "Comparing <%s> against <%s>\n" "${index}" "${index_xml}";
-			if( "${index}" != "${index_xml}" ) \
+			if( "${index}" != "${index_xml}" ) then
+				unset index;
 				continue;
-			set podcast_found;
+			endif
+			set index podcast_found;
 			break;
 		end
 		
-		if( ${?podcast_found} ) \
+		if( ${?podcast_found} ) then
+			unset podcast_found podcast_match;
 			continue;
+		endif
 		
 		set podcasts=( ${podcasts} ${index_xml} );
 		
@@ -190,9 +236,9 @@ find_podcasts:
 			set line_padding="\t";
 			set line_condition_end="\relse\r\tprintf "\""\\t\\t\<file:\/\/"\$"{cwd}\/${podcast_match}\/\1, released on: \5\.\3\> already exists.\\n\\n"\"";\rendif";
 		else
-			set line_condition="";
-			set line_padding="";
-			set line_condition_end="";
+			set line_condition;
+			set line_padding;
+			set line_condition_end;
 		endif
 		
 		while( `/bin/grep -P -c '.*\<title\>[^\<]*\/[^\<]*\<\/title\>' "${refetch_script}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` != 0 )
@@ -214,7 +260,11 @@ find_podcasts:
 			rm -f "${refetch_script}.tmp";
 		if( ! ${?keep_script} || ! ${?debug} )	\
 			rm -f "${refetch_script}";
+		
+		unset line_condition line_padding line_condition_end podcast_match refetch_script;
 	end
+	unset download_command silent search_attribute search_value;
+	goto parse_argv;
 #find_podcasts
 
 exit_script:
