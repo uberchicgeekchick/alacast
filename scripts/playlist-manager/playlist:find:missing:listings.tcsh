@@ -110,7 +110,6 @@ main:
 	
 	if(! ${?remove} ) then
 		set removal_verbose;
-		set removal_interactive;
 		set remove;
 	endif
 	
@@ -130,7 +129,6 @@ main:
 	@ removed_podcasts=0;
 	@ missing_podcasts=0;
 	@ new_file_count=0;
-	
 #goto main;
 
 
@@ -332,7 +330,7 @@ check_duplicate_dirs:
 		#printf "Looking for: <file://%s>" "${duplicate_podcast}";
 		if(!( "${duplicate_podcast}" != "${this_podcast}" && -e "${duplicate_podcast}" )) then
 			unset base_dir escaped_base_dir duplicate_podcast escaped_duplicate_dir this_podcast;
-			goto check_diplicate_dirs;
+			goto check_duplicate_dirs;
 		endif
 		
 		set this_podcast="`printf "\""%s"\"" "\""${podcast}"\"" | sed -r "\""s/^${escaped_base_dir}\//${escaped_duplicate_dir}\//"\"" | sed -r 's/(["\""])/"\""\\"\"""\""/g' | sed -r 's/["\$"]/"\""\\"\$""\""/g' | sed -r 's/(['\!'])/\\\1/g' | sed -r 's/["\`"]/"\""\\"\`""\""/g' | sed -r 's/(\\\\)/\\/g' | sed -r 's/\\\[/\[/g' | sed -r 's/\\([*])/\1/g'`";
@@ -343,7 +341,7 @@ check_duplicate_dirs:
 	end
 	unset previous_duplicate_dir duplicate_dir this_podcast podcast;
 	goto process_missing_media;
-#goto check_diplicate_dirs;
+#goto check_duplicate_dirs;
 
 
 handle_missing_media:
@@ -377,10 +375,8 @@ handle_missing_media:
 		endif
 		printf ", D/r, I/s, A/c]: ";
 		set response="$<";
-		set playlist=`printf "%s" "${response}" | sed -r 's/^[^0-9]*([0-9]+)[^0-9]*$/\1/'`;
-		set response=`printf "%s" "${response}" | sed -r 's/^(.).*$/\l\1/'`;
 		printf "\n";
-		switch( "${response}" )
+		switch( `printf "%s" "${response}" | sed -r 's/^(.).*$/\l\1/'` )
 			case "s":
 			case "i":
 				printf "\n\t<file://%s> will not be processed.\n" "${this_podcast}";
@@ -390,30 +386,32 @@ handle_missing_media:
 			case "d":
 			case "r":
 				printf "\n\t<file://%s> will be removed.\n" "${this_podcast}";
-				unset prompt_for_playlist response playlist playlist_index;
+				unset prompt_for_playlist response playlist_index;
 				goto remove_missing_media;
 				breaksw;
 			
 			case "a":
 			case "c":
 				printf "\n\t<%s> has been cancelled; and will now exit.\n" "${scripts_basename}";
-				unset prompt_for_playlist response playlist playlist_index;
+				unset prompt_for_playlist response playlist_index;
 				goto exit_script;
 				breaksw;
 			
 			default:
-				if(!( $playlist > 0 && $playlist <= $playlist_index )) \
+				if( `printf "%s" "${response}" | sed -r 's/^[0-9]+$//'` != "" ) \
+					breaksw;
+				
+				if(!( $response > 0 && $response <= $playlist_index )) \
 					breaksw;
 				
 				@ new_file_count++;
-				printf "\n\tAdding: <file//%s> to: <file://%s>\n" "${this_podcast}" "$playlists[$playlist]";
-				printf "%s\n" "${this_podcast}" >> "$playlists[$playlist].new";
+				printf "\n\tAdding: <file//%s> to: <file://%s>\n" "${this_podcast}" "$playlists[$response]";
+				printf "%s\n" "${this_podcast}" >> "$playlists[$response].new";
 				unset prompt_for_playlist;
 				breaksw;
 		endsw
 	end
-	unset playlist response;
-	unset playlist_index;
+	unset response playlist_index;
 	
 	if( ${?duplicates_dirs} ) \
 		goto check_duplicate_dirs;
@@ -855,11 +853,6 @@ parse_arg:
 				
 				#set value=`printf "%s" ${value}" | sed -r 's/^(.).*$/\1/'`;
 				switch("${value}")
-					case "verbose":
-						if(! ${?removal_verbose} ) \
-							set removal_verbose;
-						breaksw;
-					
 					case "force":
 					case "forced":
 						if(! ${?removal_forced} ) \
@@ -868,6 +861,11 @@ parse_arg:
 							set removal_verbose;
 						if( `printf "%s" "${remove}" | sed -r 's/^.*(f).*$/\1/'` != "f" ) \
 							set remove="${remove}f";
+						breaksw;
+					
+					case "verbose":
+						if(! ${?removal_verbose} ) \
+							set removal_verbose;
 						breaksw;
 					
 					case "interactive":
