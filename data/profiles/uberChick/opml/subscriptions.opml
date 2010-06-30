@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Jun 26 22:23:08 2010
+            Wed Jun 30 07:27:20 2010
         </dateCreated>
     </head>
     <body>
@@ -443,5 +443,6 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
+        <outline text="A free audiobook by Emmy Z. Madrigal" title="True Love - A free audiobook by Emmy Z. Madrigal" type="rss" xmlUrl="http://www.podiobooks.com/title/true-love/feed/"/>
     </body>
 </opml>
