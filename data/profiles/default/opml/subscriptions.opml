@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Wed Jun 30 07:27:20 2010
+            Thu Jul  1 22:39:38 2010
         </dateCreated>
     </head>
     <body>
@@ -428,6 +428,7 @@
         <outline text="Catch up on your favorite TLC shows and stars!  Get behind-the-scenes video, extra footage and more." title="TLC Podcasts" type="rss" xmlUrl="http://tlc.discovery.com/audio_podcasts/tlc_audio_podcast.xml"/>
         <outline text="Token Skeptic" title="Token Skeptic - Making Sense From Superstition" type="rss" xmlUrl="http://tokenskeptic.libsyn.com/rss"/>
         <outline text="http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml" title="triple j tv" type="rss" xmlUrl="http://www.abc.net.au/triplej/tv/vodcast/vodcastMp4.xml"/>
+        <outline text="A free audiobook by Emmy Z. Madrigal" title="True Love - A free audiobook by Emmy Z. Madrigal" type="rss" xmlUrl="http://www.podiobooks.com/title/true-love/feed/"/>
         <outline text="Just another Brokensea.com weblog" title="Twilight Theatre" type="rss" xmlUrl="http://brokensea.com/twilighttheatre/feed/"/>
         <outline text="http://twinstars.kungfuactiontheatre.com/?feed=rss2" title="Twin Stars" type="rss" xmlUrl="http://twinstars.kungfuactiontheatre.com/?feed=rss2"/>
         <outline text="Welcome to Variant Frequencies. Month to month our podcast brings you fiction stories from a different channel - sci-fi, fantasy, horror, and some odd bands in-between." title="Variant Frequencies » Podcasts" type="rss" xmlUrl="http://www.variantfrequencies.com/feed/"/>
@@ -443,6 +444,6 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="A free audiobook by Emmy Z. Madrigal" title="True Love - A free audiobook by Emmy Z. Madrigal" type="rss" xmlUrl="http://www.podiobooks.com/title/true-love/feed/"/>
+        <outline text="Reviews of your new favorite Audio Cinemas" title="Audio Cinema Review" type="rss" xmlUrl="http://feeds.feedburner.com/AudioCinemaReview"/>
     </body>
 </opml>
