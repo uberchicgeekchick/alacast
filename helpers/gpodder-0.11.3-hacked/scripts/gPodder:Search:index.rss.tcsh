@@ -275,7 +275,7 @@ foreach index( ${dl_dir}/*/index.xml )
 	
 	if(! ${?refetch} ) then
 		rm -f "${index}.tmp";
-		unset index output;
+		unset index;
 		continue;
 	endif
 	
@@ -297,6 +297,7 @@ foreach index( ${dl_dir}/*/index.xml )
 	endif
 	rm -f "${index}.tmp";
 	rm "${index}.tcsh";
+	unset index;
 end
 
 exit;

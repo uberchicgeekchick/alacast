@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[CNET UK Podcast]]>" xmlUrl="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss" type="rss" text="<![CDATA[CNET UK Podcast]]>" htmlUrl="http://crave.cnet.co.uk/podcast//" description="<![CDATA[<h1>CNET UK Podcast</h1><p>Stay up to date with the latest gadgets and technology news as Ian Morris and his wayward team discuss everything from mobile phones to the future of television.</p>]]>" />
+	</body>
+</opml>

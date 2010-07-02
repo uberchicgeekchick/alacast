@@ -5,7 +5,6 @@
 	</head>
 	<body>
 		<outline type="link" title="<![CDATA[TechPodcasts.Com]]>" url="http://TechPodcasts.Com/" text="<![CDATA[TechPodcasts.Com]]>" description="<![CDATA[TechPodcasts.Com - If its tech its here.]]>"/>
-		<!--<outline type="link" title="<![CDATA[]]>" url="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Slashdot&#39;s Festival]]>" xmlUrl="http://feeds.feedburner.com/slashdot/audio" type="rss" text="<![CDATA[Slashdot&#39;s Festival]]>" htmlUrl="http://slashdot.org/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Technology]]>" xmlUrl="http://www.theworld.org/rss/tech.xml" type="rss" text="<![CDATA[PRI&039;s: The World&apos;s:  &quot;Technology&quot;]]>" htmlUrl="http://theworld.org/technology/" description="<![CDATA[The World's weekly Technology Podcast brings you all the latest and greatest news from the fields of global technology and science. Hosted by The World's Clark Boyd.]]>"/>
 		<outline title="<![CDATA[Aussie Geek Podcast]]>" xmlUrl="http://www.aussiegeekpodcast.com/category/podcast/feed" type="rss" text="<![CDATA[Aussie Geek Podcast]]>" htmlUrl="http://www.aussiegeekpodcast.com/" description="<![CDATA[]]>"/>
