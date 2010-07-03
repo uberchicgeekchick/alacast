@@ -214,7 +214,7 @@ sub parse_xmlUrls{
 	if( @xmlUrls_to_parse <= 0 ){ return; }
 	for(my $i=0; $i<@xmlUrls_to_parse; $i++){
 		my $xmlUrl_parser_exec_prefix="tcsh -f -c '";
-		my $xmlUrl_parser_exec_suffix="";
+		my $xmlUrl_parser_exec_suffix=";";
 		if( $xmlUrl_parser=~/.*\$xmlUrl.*/ || $xmlUrl_parser=~/.*\$\{xmlUrl\}.*/ ){
 			$xmlUrl_parser_exec_prefix.="set xmlUrl=\"$xmlUrls_to_parse[$i]\"; ";
 			$xmlUrl_parser_exec_suffix.=" unset xmlUrl;";
@@ -233,7 +233,6 @@ sub parse_xmlUrls{
 			$xmlUrl_parser_exec_prefix.="@ i=$i; ";
 			$xmlUrl_parser_exec_suffix.=" unset i;";
 		}
-		$xmlUrl_parser_exec_suffix.="';";
 		printf("Running:\n\t%s%s%s%s\n", $xmlUrl_parser_exec_prefix, $xmlUrl_parser, $xmlUrl_parser_exec_suffix); 
 		system($xmlUrl_parser_exec_prefix.$xmlUrl_parser.$xmlUrl_parser_exec_suffix); 
 	}
