@@ -233,6 +233,7 @@ sub parse_xmlUrls{
 			$xmlUrl_parser_exec_prefix.="@ i=$i; ";
 			$xmlUrl_parser_exec_suffix.=" unset i;";
 		}
+		$xmlUrl_parser_exec_suffix.=";'";
 		printf("Running:\n\t%s%s%s%s\n", $xmlUrl_parser_exec_prefix, $xmlUrl_parser, $xmlUrl_parser_exec_suffix); 
 		system($xmlUrl_parser_exec_prefix.$xmlUrl_parser.$xmlUrl_parser_exec_suffix); 
 	}

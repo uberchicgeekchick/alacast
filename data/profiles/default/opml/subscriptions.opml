@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Thu Jul  1 22:39:38 2010
+            Sat Jul  3 02:42:11 2010
         </dateCreated>
     </head>
     <body>
@@ -35,6 +35,7 @@
         <outline text="Science with a Sense of Humour - The Naked Scientists Radio Show" title="Ask the Naked Scientists PODCAST" type="rss" xmlUrl="http://www.thenakedscientists.com/rss/ask_the_naked_scientists.xml"/>
         <outline text="Astronomy Cast offers you a fact based journey through the cosmos. Each week Fraser Cain (Universe Today) and Dr. Pamela Gay (SIUE / Slacker Astronomy) take on topics ranging from the nearby planets to ubiquitous dark matter." title="Astronomy Cast" type="rss" xmlUrl="http://www.astronomycast.com/podcast.xml"/>
         <outline text="Irreverent current events talk for the Atheiskeptihumanist" title="Atheist News" type="rss" xmlUrl="http://www.atheistnews.org/podcast/"/>
+        <outline text="Reviews of your new favorite Audio Cinemas" title="Audio Cinema Review" type="rss" xmlUrl="http://feeds.feedburner.com/AudioCinemaReview"/>
         <outline text="Audio Theater Podcast" title="Batman: No Man's Land" type="rss" xmlUrl="http://feeds.feedburner.com/BatmanNoMansLand"/>
         <outline text="Comedy, satire, oddness, songs, and just plain wackiness." title="Bell's in the Batfry" type="rss" xmlUrl="http://orangehed.com/bellsinthebatfry/"/>
         <outline text="CBC Radio's Between The Covers is a weekly podcast serializing the best in Canadian literature, from comedy to tragedy.  Stories are narrated by some of our finest actors, with with multiple installments every week." title="Between the Covers from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/betweenthecovers.xml"/>
@@ -148,6 +149,8 @@
         <outline text="LearnOutLouds Biography Podcast will explore the lives of notable people throughout history. Whether it be World Leaders, Political activists, spiritual luminaries, great artists or every day people, this podcast will be a showcase for their story." title="LearnOutLoud's Biography Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LearnOutLoudsBiographyPodcast"/>
         <outline text="Page Not Found                         The page you tried to access does not exist on this server. This  page may not exist due to the following reasons:  You are the owner of this web site and you have not  uploaded (or incorrectly uploaded) your web site. For information  on uploading your web site using FTP client software or web design  software, click  here for FTP Upload Information.     The URL that you have entered in your browser is  incorrect. Please re-enter the URL and try again.    The Link that you clicked on incorrectly points to  this page. Please contact the owner of this web site to inform  them of this situation." title="Legon Awakening" type="rss" xmlUrl="http://legonbook.com/blog/?feed=podcast"/>
         <outline text="Free, public domain audio books, recorded by volunteers" title="LibriVox Audiobooks" type="rss" xmlUrl="http://librivox.org/podcast.xml"/>
+        <outline text="A weekly podcast for the Librivox Community. Librivox.org encourages volunteers to record audio from public domain texts which can then be made available in the public domain." title="LibriVox » Librivox Community Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxCommunityPodcast"/>
+        <outline text="A biweekly listing of recent new releases from librivox.org" title="LibriVox » New Releases Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxNewReleasesPodcast"/>
         <outline text="Personal broadcast by tanja631, This is a place where I will be posting my original or adapted radio productions. Also, chek out www.lightningbolttheaterofthemind.mypodcast.com for the cast lists in writing and to download the same shows featured here. This GCast site can also be found at www.lightningbolttheaterofthemind.com I do lots of sound engeneering on my own, and enjoy writing. I write scripts and adapt stories for radio dramas which I produce. Of course, I record volunteers for my radio dramas. I am still very new at this, so please bear with me, and if anyone wishes to submit a script or story for adapting, please feel free to email me, and I will work with you on that. I hope you enjoy this podcast, and please please email me at: tanja631@gmail.com with your feedback. Thank you powered by GCast" title="LightningBolt Theater of the Mind" type="rss" xmlUrl="http://www.gcast.com/u/tanja631/main.xml"/>
         <outline text="http://lightningbolttheaterofthemind.mypodcast.com/rss.xml" title="LightningBolt Theater of the Mind" type="rss" xmlUrl="http://lightningbolttheaterofthemind.mypodcast.com/rss.xml"/>
         <outline text="A vampire podiobook written and read by Dan Shaurette" title="Lilith's Love - A Podcast Novel" type="rss" xmlUrl="http://feeds.feedburner.com/LilithsLove"/>
@@ -444,6 +447,6 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="Reviews of your new favorite Audio Cinemas" title="Audio Cinema Review" type="rss" xmlUrl="http://feeds.feedburner.com/AudioCinemaReview"/>
+        <outline text="free public domain audiobooks" title="LibriVox" type="rss" xmlUrl="http://librivox.org/feed/"/>
     </body>
 </opml>

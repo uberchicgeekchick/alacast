@@ -175,7 +175,7 @@ main:
 			set subscriptions_opml="`dirname '${0}'`../data/profiles/default/opml/${subscriptions_opml}";
 		endif
 		
-		set alacast_ini="`dirname "\""${subscriptions_opml}"\""`/alacast.ini";
+		set alacast_ini="`dirname "\""${subscriptions_opml}"\""`/../alacast.ini";
 		set download_dir="`/bin/grep -P '^download_dir' "\""${alacast_ini}"\"" | sed -r 's/^([^=]+)="\""([^"\""]+)"\"";"\$"/\2/'`";
 		if( "`printf "\""%s"\"" "\""${download_dir}"\"" | sed -r 's/.*(\{media_dir\}).*/\1/'`" == "{media_dir}" ) then
 			set escaped_media_dir="`/bin/grep -P '^media_dir' "\""${alacast_ini}"\"" | sed -r 's/^([^=]+)="\""([^"\""]+)"\"";"\$"/\2/' | sed -r 's/\//\\\//g'`";
