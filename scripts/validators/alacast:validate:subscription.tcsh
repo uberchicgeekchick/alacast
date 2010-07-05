@@ -37,7 +37,7 @@ find_titles:
 			set equals="";
 		
 		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=?)['\''"\""]?(.*)['\''"\""]?"\$"/\4/'`";
-		if(!( "${dashes}" != "" && "${option}" != "" && "${equals}" != "" && "${value}" != "" )) then
+		if( "${dashes}" != "" && "${option}" != "" && "${equals}" == "" && "${value}" == "" ) then
 			@ arg++;
 			if( ${arg} > ${argc} ) then
 				@ arg--;
@@ -47,10 +47,10 @@ find_titles:
 				set test_equals="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=)?(.*)"\$"/\3/'`";
 				set test_value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(=)?(.*)"\$"/\4/'`";
 				
-				if(!("${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]")) then
+				if(!( "${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]" )) then
 					@ arg--;
 				else
-					set equals="=";
+					set equals=" ";
 					set value="$argv[$arg]";
 					set arg_shifted;
 				endif

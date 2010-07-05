@@ -287,9 +287,7 @@ parse_argv:
 		
 		set equals="";
 		set value="`printf "\""$argv[$arg]"\"" | sed -r 's/^([\-]{1,2})([^\=]+)(\=?)['\''"\""]?(.*)['\''"\""]?"\$"/\4/'`";
-		if( "${value}" != "" && "${value}" != "$argv[$arg]" ) then
-			set equals="=";
-		else if( "${option}" != "" ) then
+		if( "${value}" != "$argv[$arg]" && !( "${dashes}" != "" && "${option}" != "" && "${equals}" != "" && "${value}" != "" )) then
 			@ arg++;
 			if( ${arg} > ${argc} ) then
 				@ arg--;
@@ -305,7 +303,7 @@ parse_argv:
 				if(!("${test_dashes}" == "$argv[$arg]" && "${test_option}" == "$argv[$arg]" && "${test_equals}" == "$argv[$arg]" && "${test_value}" == "$argv[$arg]")) then
 					@ arg--;
 				else
-					set equals="=";
+					set equals=" ";
 					set value="$argv[$arg]";
 				endif
 				unset test_dashes test_option test_equals test_value;
@@ -332,6 +330,12 @@ parse_argv:
 		switch ( "${option}" )
 			case "fetch-all":
 				set fetch_all;
+				breaksw;
+			
+			case "prompt":
+			case "interactive":
+				if( ${?interactive} ) \
+					breaksw;
 				breaksw;
 			
 			case "l":
