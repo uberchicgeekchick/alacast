@@ -223,7 +223,7 @@ main:
 		set title="${title}s";
 	endif
 
-	printf "\t[done]\n";
+	printf "\t[finished]\n";
 	goto opml_format_swap;
 #goto main;
 
@@ -235,7 +235,7 @@ opml_format_swap:
 	ex -s "+`/bin/grep --line-number '<\/table>' "\""${opml}.swp"\"" | sed -r 's/^([0-9]+).*"\$"/\1/'`,"\$"d" '+wq!' "${opml}.swp";
 	
 	ex -s '+1,$s/\v\r\_$//g' '+1,$s/\v\n//g' '+1,$s/\v\t*(\<tr)/\r\1/g' '+1,$s/\v(\<\/tr\>)\t*/\1\r/g' '+1,2d' '+1,$s/"/'\''/g' '+1,$s/\v\<tr class\='\''(even|odd)row.*.*href\='\''\/(title\/[^'\'']+)'\''\>([^<]+)\<\/a\>.*\<span class\='\''smalltext'\''\>([^\<]+)\<\/class\>\<\/td\>\<td\>(.*)\<br\/\>.*\<\/tr\>\t*\n*/\t\t\<outline title\="\<\!\[CDATA\[\3\]\]\>" xmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/feed\/\"\ type\="rss" text\="\<\!\[CDATA\[\3 \- A free audiobook by \4\]\]\>" htmlUrl\="http:\/\/www\.podiobooks\.com\/\2\/" description\="\<\!\[CDATA\[\<h1\>\3 by \4\<\/h1\>\<p>\5\<\/p\>\]\]\>"\ \/>\r/' '+$d' '+wq!' "${opml}.swp";
-	printf "\t[done]\n";
+	printf "\t[finished]\n";
 
 	if(! -e "${opml}" ) \
 		goto new_opml;
@@ -290,12 +290,12 @@ save_opml:
 	ex "${opml_is_new}" "+${line}r `printf "\""${opml}.swp"\"" | sed -r 's/(["\"\$\!"'\''\[\]\(\)\ \<\>])/\\\1/g'`" "+${validate}" "${opml}";
 	
 	rm -f "${opml}.swp";
-	printf "\t[done]\n";
+	printf "\t[finished]\n";
 	
 	if(! -e "${opml}" ) then
 		printf "\tAbonded: <file://%s>\t[canceled]\n" "${opml}";
 	else
-		printf "\tSaving: <file://%s>\t[done]\n" "${opml}";
+		printf "\tSaving: <file://%s>\t[finished]\n" "${opml}";
 	endif
 	goto exit_script;
 #goto save_opml;

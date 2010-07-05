@@ -24,7 +24,7 @@ kill_progie:
 			sleep $timeout;
 			@ killed++;
 		end
-		printf "[done]\n";
+		printf "[finished]\n";
 	end
 	goto main_quit;
 #kill_progie

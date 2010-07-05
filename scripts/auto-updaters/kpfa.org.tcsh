@@ -21,7 +21,7 @@ update_index_opml:
 	
 	printf "\nDownloading KPFA's latest podcasts";
 	wget -O 'index.opml.tmp' 'http://kpfa.org/podcasts/';
-	printf "\t[done]\n";
+	printf "\t[finished]\n";
 	
 	
 	# these regex's will make sure that each catagory is placed on one line for each catagory.

@@ -24,7 +24,7 @@ update_index_opml:
 	
 	printf "Downloading NPR's latest podcasts";
 	wget -O 'index.opml.tmp' 'http://www.npr.org/rss/podcast/podcast_directory.php?type=topic';
-	printf "\t[done]\n";
+	printf "\t[finished]\n";
 	
 	
 	

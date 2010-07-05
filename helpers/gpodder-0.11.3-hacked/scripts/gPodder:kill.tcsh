@@ -19,7 +19,7 @@ kill_progie:
 			if( $killed > 0 ) sleep $timeout;
 			@ killed++;
 		end
-		printf "[done]\n";
+		printf "[finished]\n";
 	end
 
 end_script:
