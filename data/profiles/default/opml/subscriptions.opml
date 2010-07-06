@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Jul  3 02:42:11 2010
+            Tue Jul  6 13:58:06 2010
         </dateCreated>
     </head>
     <body>
@@ -148,6 +148,7 @@
         <outline text="CBC Radio's Laugh out Loud is Canada's new home for comedy. Every week host Ali Rizvi Badshah features the best and funniest comics in the business. Recorded at festivals and comedy clubs across the country, LOL is the show to hear to stay on top of the Canadian comedy scene. From the famous to the found, LOL will bring you the funny every week." title="Laugh Out Loud from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/laughoutloud.xml"/>
         <outline text="LearnOutLouds Biography Podcast will explore the lives of notable people throughout history. Whether it be World Leaders, Political activists, spiritual luminaries, great artists or every day people, this podcast will be a showcase for their story." title="LearnOutLoud's Biography Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LearnOutLoudsBiographyPodcast"/>
         <outline text="Page Not Found                         The page you tried to access does not exist on this server. This  page may not exist due to the following reasons:  You are the owner of this web site and you have not  uploaded (or incorrectly uploaded) your web site. For information  on uploading your web site using FTP client software or web design  software, click  here for FTP Upload Information.     The URL that you have entered in your browser is  incorrect. Please re-enter the URL and try again.    The Link that you clicked on incorrectly points to  this page. Please contact the owner of this web site to inform  them of this situation." title="Legon Awakening" type="rss" xmlUrl="http://legonbook.com/blog/?feed=podcast"/>
+        <outline text="free public domain audiobooks" title="LibriVox" type="rss" xmlUrl="http://librivox.org/feed/"/>
         <outline text="Free, public domain audio books, recorded by volunteers" title="LibriVox Audiobooks" type="rss" xmlUrl="http://librivox.org/podcast.xml"/>
         <outline text="A weekly podcast for the Librivox Community. Librivox.org encourages volunteers to record audio from public domain texts which can then be made available in the public domain." title="LibriVox » Librivox Community Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxCommunityPodcast"/>
         <outline text="A biweekly listing of recent new releases from librivox.org" title="LibriVox » New Releases Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxNewReleasesPodcast"/>
@@ -396,7 +397,7 @@
         <outline text="http://gigcast.nightgig.com/?feed=podcast" title="The Gigcast" type="rss" xmlUrl="http://gigcast.nightgig.com/?feed=podcast"/>
         <outline text="A podcast audio novel" title="The HeavenField" type="rss" xmlUrl="http://feeds.theheavenfield.com/heavenfield?format=xml"/>
         <outline text="The best in new audio comedy, suspense and horror from the Icebox of the Nation, International Falls, Minnesota" title="The Icebox Radio Podcast" type="rss" xmlUrl="http://iceboxradio.libsyn.com/rss"/>
-        <outline text="Available podcasts from The Leviathan Chronicles" title="The Leviathan Chronicles Podcasts" type="rss" xmlUrl="http://www.leviathanchronicles.com/rss/podcasts.xml"/>
+        <outline text="The Leviathan Chronicles is a sci-fi podcast that tracks Macallan Orsel, a young genetic scientist in present-day New York City who discovers that immortality is not a fool's fantasy, but rather a reality for a several factions of powerful immortals livin" title="The Leviathan Chronicles" type="rss" xmlUrl="http://feeds.feedburner.com/TheLeviathanChroniclesPodcasts"/>
         <outline text="The official site of the Merseyside Skeptics Society" title="The Merseyside Skeptics Society » Podcast" type="rss" xmlUrl="http://www.merseysideskeptics.org.uk/category/podcast/feed/"/>
         <outline text="A sci-fi/fantasy podcast series created by Chris Lester" title="The Metamor City Podcast" type="rss" xmlUrl="http://www.metamorcity.com/feed/"/>
         <outline text="The Moth features people telling true, engaging, funny, touching and eye-opening stories from their lives. Hailed as &quot;New York's hottest and hippest literary ticket&quot; by the Wall Street Journal, The Moth has been producing sold-out storytelling shows for o" title="The Moth Podcast" type="rss" xmlUrl="http://feeds.themoth.org/themothpodcast?format=xml"/>
@@ -447,6 +448,5 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="free public domain audiobooks" title="LibriVox" type="rss" xmlUrl="http://librivox.org/feed/"/>
     </body>
 </opml>
