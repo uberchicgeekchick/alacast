@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Hacking &amp; Modding vodcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[stage6.com: videos]]>" xmlUrl="http://www.stage6.com/rss/videos/order:date" type="rss" text="<![CDATA[stage6.com: videos]]>" htmlUrl="http://www.stage6.com/videos/order:date" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

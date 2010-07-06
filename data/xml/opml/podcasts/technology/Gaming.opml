@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[GAMERadio]]>" xmlUrl="http://www.hwhq.com/rssOGG.xml" type="rss" text="<![CDATA[GAMERadio]]>" htmlUrl="http://www.hwhq.com/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[GamerWok]]>" xmlUrl="http://www.ikeagamer.com/feed/podcast/" type="rss" text="<![CDATA[The GamerWok Hour]]>" htmlUrl="http://www.ikeagamer.com/" description="<![CDATA[All Things Technology, Nothing The Wok Can't Handle!]]>"/>
+	</body>
+</opml>

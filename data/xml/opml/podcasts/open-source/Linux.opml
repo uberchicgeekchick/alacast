@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Linux podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Linux.com]]>" text="<![CDATA[Linux.Com Videos: News &amp; Interviews]]>" type="rss" htmlUrl="" xmlUrl="http://linuxcom.blip.tv/rss" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Linux Outlaws]]>" xmlUrl="http://feeds.feedburner.com/linuxoutlaws-ogg" type="rss" text="<![CDATA[Linux Outlaws - Open source talk with a serious attitude]]>" htmlUrl="http://www.linuxoutlaws.com" description="<![CDATA[Linux Outlaws is a podcast for the greenhorn and veteran Linux user alike. We aim to cover everything in the Linux and F/OSS world while having fun in the process. We talk politics with a serious Free Software attitude and try to help you along with handy tricks and nifty programs at all skill levels. Since nobody goes out of their way for us anyway, we better stick together and help each other out. It iss all about freedom of choice.]]>"/>
+		<outline title="<![CDATA[The Bad Apples Linux Cast]]>" xmlUrl="http://thebadapples.info/ogg.xml" type="rss" text="<![CDATA[the Bad Apples Linux Cast]]>" description="<![CDATA[A show for the extreme computer users - the ones using Linux.  *WARNING - Could be hazardous to non-geeks*]]>"/>
+		<outline title="<![CDATA[The Linux Cranks (ogg)]]>" text="<![CDATA[The Linux Cranks (ogg)]]>" htmlUrl="http://linuxcranks.info/" xmlUrl="http://linuxcranks.info/ogg.xml" type="rss" description="<![CDATA[The Linux Cranks Podcast is a live show that airs almost every Saturday night at 11pm CST. Comments, contacts, feeds, and show notes can be found on the blog and forum. Warning: This show contains foul language, nudity, and heavy drinking. If your easily offended or have no sense of humor, please do not listen. Hosts: threethirty, monsterb, Peter64, klaatu, chad_w, jlindsay, Azimuth, xoke, and many others get cranky.]]>"/>
+		<outline title="<![CDATA[Linux Resonance]]>" xmlUrl="http://www.linuxresonance.com/?feed=podcast" type="rss" text="<![CDATA[Linux Resonance]]>" htmlUrl="http://www.linuxresonance.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

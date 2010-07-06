@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Online music sites, news, &amp; podcasts feeds.</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Live @ Lunch]]>" xmlUrl="http://krfcfm.org/audio/LiveAtLunch_feed_rss.xml" type="rss" text="<![CDATA[Live @ Lunch on krfc 88.9]]>" htmlUrl="http://krfcfm.org/live_at_lunch.php" description="<![CDATA[Live @ Lunch is a daily showcase of live music by KRFC fm in Fort Collins, Colorado.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

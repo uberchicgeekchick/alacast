@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Short Story anthologies</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>" />-->
+		<outline title="<![CDATA[CrimeWAV]]>" xmlUrl="http://crimewav.com/?q=feeds/all_podcasts.xml/8" type="rss" text="<![CDATA[CrimeWAV - the crime stories podcast]]>" htmlUrl="http://crimewav.com/" description="<![CDATA[<h1>CrimeWAV - the crime stories podcast</h1><p>This is the home for the premier series of crime short stories on the internet. This is the only podcast devoted to crime. THIS IS CRIMEWAV.</p>]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - A free audiobook by ]]>" htmlUrl="" description="<![CDATA[]]>" />-->
+	</body>
+</opml>
+

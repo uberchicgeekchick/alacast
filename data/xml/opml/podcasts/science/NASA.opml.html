@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "xmlns:xsl='http://www.w3.org/1999/XSL/Transform'">
+<html xmlns:java_code="xalan://gov.nasa.build.Utils2"><head><!--Get Meta Data starts--><!--Get Meta Data Ends--><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--Meta Data starts--><!--SYSTEM DEFINED METADATA--><meta content="IE=7" http-equiv="X-UA-Compatible"><meta name="CMS Document Id" content="108516"><meta name="dc.title" content="NASA - NASA Podcasting"><meta name="dc.format" content="text/html"><meta name="dc.date.modified" content="2009-06-25"><meta name="dc.language" content="en"><meta name="dc.publisher" content="Brian Dunbar"><meta name="dc.publisher.tool" content="eTouch Digital Asset Management(CMS)"><meta name="dc.description" content="podcast vodcast itunes"><meta name="dc.identifier" content="http://www.nasa.gov/multimedia/podcasting/index.html"><!--USER DEFINED METADATA--><meta name="dc.subject" content="podcasting, podcast, iPod, RSS, vodcast, NASACast,index page for podcasting."><meta name="dc.audience" content="General Public"><meta name="description" content="NASA.gov brings you images, videos and interactive features from the unique perspective of America’s space agency.  Get the latest updates on NASA missions, subscribe to blogs, RSS feeds and podcasts, watch NASA TV live, or simply read about our mission to pioneer the future in space exploration, scientific discovery and aeronautics research."><!--Meta Data ends--><title>NASA - 
+NASA Podcasting
+</title><!--Standard Includes--><script src="NASA.opml_files/196918main_browser_message.js" type="text/javascript" language="javascript"></script>
+
+
+<script type="text/javascript">
+	/**
+	 *  Browser Detect Class
+	 */
+	function detectBrowserClass(modern){
+		var nBrowser = navigator.appName;
+		var nVersion = navigator.appVersion;
+		var nAgent = navigator.userAgent;
+		this.version;
+		this.browser;
+		this.os;
+		this.modern = (typeof modern == 'object') == true ? modern:0;
+		if(nVersion.indexOf('Windows') !=-1){
+		     this.os = 'win';
+		}else{
+		    this.os = (nVersion.indexOf('Macintosh') !=-1) == true ? 'mac':'other';
+		}
+		if (nAgent.indexOf('Opera') !=-1){
+		    var strIndex = nAgent.indexOf('Opera');
+		    this.version = nAgent.substring((strIndex + 6), (strIndex + 9));
+		    this.browser = 'opera';
+		}
+		else if (nAgent.indexOf('Firefox') !=-1){
+		    var strIndex = nAgent.indexOf('Firefox');
+		    this.version = nAgent.substring((strIndex + 8), (strIndex + 11));
+		    this.browser = 'firefox';
+		}
+		else if(nAgent.indexOf('MSIE') !=-1){
+		    var strIndex = nAgent.indexOf('MSIE');
+		    this.version = nAgent.substring((strIndex + 5), (strIndex + 8));
+		    this.browser = 'ie';
+		}
+		else if (nAgent.indexOf('Safari') !=-1){
+		     if (nAgent.indexOf('Version') !=-1){
+		          var strIndex = nAgent.indexOf('Version')
+		          this.version = nAgent.substring((strIndex + 8), (strIndex + 11))
+		     }else{
+		          this.version = 2;
+		     }
+		this.browser = 'safari';
+		}
+		else if (nAgent.indexOf('Netscape') !=-1){
+		     var strIndex = nAgent.indexOf('Netscape');
+		     this.version = nAgent.substring((strIndex + 9), (strIndex + 12));
+		     this.browser = 'netscape';
+		}else{
+		     this.browser = nBrowser.toLowerCase();
+		     this.version = null;
+		}
+		this.whichBrowser = function (){ return this.browser; }
+		this.whichVersion = function (){ return this.version; }
+		this.whichOS = function (){	return this.os; }
+		this.getInfo = function (){
+		     var info = "Browser name: " + nBrowser + "<br />" +
+		     "Browser version: "+ nVersion + "<br />" +
+		     "User Agent: " + nAgent;
+		      return info;
+		}
+		this.modernBrowser = function (){
+		     var isModern = false;
+		     if(typeof(this.modern[this.browser])=='number' || this.version === null){
+		     isModern = ( this.modern[this.browser] <= this.version || this.version === null ) == true ? true :0;
+		}
+		return isModern;
+		}
+		}
+		// Instantiate browser detect
+		var detectBrowser = new detectBrowserClass({
+		      'opera': 9,
+		      'safari': 2,
+		      'firefox': 1.5,
+		      'ie': 6
+		});			
+                                /* Support legacy browsers*/
+		if(detectBrowser.modernBrowser() == true){
+                                     var css = '<link href="/css/207071main_allpages.css" rel="stylesheet" type="text/css" />';
+                                 if(detectBrowser.whichBrowser()=='firefox'){
+			 css= css + '<link href="/css/207947main_etouch_firefox.css" rel="stylesheet" type="text/css" />';
+			 }
+
+
+		document.write(css);
+		}else{
+		document.write(legacyMsg);
+		}
+
+</script><link href="NASA.opml_files/207071main_allpages.css" rel="stylesheet" type="text/css"><link href="NASA.opml_files/207947main_etouch_firefox.css" rel="stylesheet" type="text/css">
+
+
+<link type="text/css" rel="stylesheet" href="NASA.opml_files/207072main_allmodules.css"><script language="javascript" type="text/javascript" src="NASA.opml_files/conditionalBrowser.js"></script> <!--[if lte IE 6]><link rel="stylesheet" href="/templateimages/redesign/browser/css/lessthanequalsie6.css" type="text/css" /><![endif]--><!--[if gte IE 7]><link rel="stylesheet" href="/templateimages/redesign/browser/css/greaterthanequalsie7.css" type="text/css" /><![endif]--><script src="NASA.opml_files/191731main_prototype.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191696main_builder.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191704main_effects.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191701main_dragdrop.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191738main_slider.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191739main_sound.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191698main_controls.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/194940main_RoundedMorph.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191745main_transitions.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191713main_global.js" type="text/javascript" language="javascript"></script><script type="text/javascript" src="NASA.opml_files/addthis_widget.js"></script><link media="all" href="NASA.opml_files/widget26.css" type="text/css" rel="stylesheet"> <script src="NASA.opml_files/191734main_ScrollRegion.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191730main_PrettyCounter.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191737main_SkinnedSelect.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/257141main_SkinnedSelectsearch.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191695main_Blinds.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/194933main_FloatingInfoClass.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191742main_Tabs.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/191702main_DropDownMenu.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/207087main_club1.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/194938main_may-common_rd.js" type="text/javascript" language="javascript"></script><script language="JavaScript1.5">_ujv='1.5';</script><script src="NASA.opml_files/4564main_index.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/196917main_flash_rd.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/207088main_club2.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/tvsked.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/swfobject.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/2605main_triggerParams.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/2606main_stdLauncher.js" type="text/javascript" language="javascript"></script><script type="text/javascript">Poll();</script><script src="NASA.opml_files/196887main_externalsource_header.js" type="text/javascript" language="javascript"></script><script src="NASA.opml_files/common.js"></script><script src="NASA.opml_files/policy"></script><script src="NASA.opml_files/handler2.js"></script></head><body><!--No Script Include starts here-->
+<!--googleoff: snippet-->
+<noscript> <center> <div class="site_errors"> <div
+class="floatType_site_error_top"></div> <div
+class="floatType_site_error"> <table summary="layout table"> <tr> <td
+bgcolor="#000000"> <font color="#ffffff"> <h2><img
+src="/templateimages/redesign/modules/overlay/site_error.gif"
+title="Site Error" alt="Site Error"/>There's a problem with your
+browser or settings. </h2> </font> <font color="#ffffff"> <p>Your
+browser or your browser's settings are not supported. To get the best
+experience possible, please download a compatible browser. If you know
+your browser is up to date, you should check to ensure that javascript
+is enabled. </p> </font> <p><a target="_blank"
+href="/home/How_to_enable_Javascript.html">&rsaquo; Learn How</a></p>
+</td> </tr> </table> </div> <div
+class="floatType_site_error_bottom"></div> </div> </center>
+</noscript>
+<!--googleon: snippet-->
+<!--No Script Include ends here--><!--Content Body Starts Here--><div class="content_body"><!--Top Starts Here --><div class="top"><script src="NASA.opml_files/194928main_ShowRSS.js" type="text/javascript" language="javascript"></script><input value="none" id="curr_rssurl" type="hidden"><!-- Skip navigation link --><div class="skiplink"><a href="#maincontent">Follow this link to skip to the main content</a></div><div id="top_header" class="top_header"><div class="header"><h1><a class="nasa_logo" href="http://www.nasa.gov/home/index.html"><span class="hide">NASA - National Aeronautics and Space Administration</span></a></h1><div id="header_form"><div id="login_form_nodrop"><span id="login_links"><span>›&nbsp;<div class="skiplinklogin"><a href="http://mynasa.nasa.gov/portal/site/mynasa/template.NASA_LOGIN_PROCESS">Follow this link to Login to MyNASA</a></div><a href="#" class="myOverlayLogin null bottom null observe_click" id="loginnasa">Log In To MyNASA</a></span>|<span>›&nbsp;<a href="http://mynasa.nasa.gov/portal/site/mynasa/template.REGISTER">Sign Up</a></span></span></div><form action="javascript:searchformsubmit();" method="get" id="search"><div id="search_form_nodrop"><span id="inputfield"><input autocomplete="off" class="searchbox" name="nasaInclude" id="nasaInclude" title="searchfield" type="text"></span><script charset="UTF-8" type="text/javascript" src="NASA.opml_files/bsn.js"></script><div id="searchselector"></div><span id="searchbutton"><input value="" class="searchbtn" title="searchbutton" type="submit"></span></div></form></div><script language="javascript" type="text/javascript">
+		var search_list = [   ];
+                             </script><script>createLoginForm();</script><script>createSearchForm();</script></div><div class="dropper 74" id="main-nav"><script type="text/javascript">
+             addMenuSupport();
+     </script><div id="dropper_wrapper"><h2 class="nav-home" id="nav-home"><a href="http://www.nasa.gov/home/index.html"><span>Home</span></a></h2><div style="z-index: 800;" class="dropper 129"><ul></ul></div><h2 id="nav-news"><a href="http://www.nasa.gov/news/index.html"><span>News</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/news/index.html">News &amp; Features</a></li><li><a href="http://www.nasa.gov/recovery/index.html">Recovery Information</a></li><li><a href="http://www.nasa.gov/topics/shuttle_station/index.html">Shuttle &amp; Station</a></li><li><a href="http://www.nasa.gov/topics/moonmars/index.html">Moon &amp; Mars</a></li><li><a href="http://www.nasa.gov/topics/solarsystem/index.html">Solar System</a></li><li><a href="http://www.nasa.gov/topics/universe/index.html">Universe</a></li><li><a href="http://www.nasa.gov/topics/aeronautics/index.html">Aeronautics</a></li><li><a href="http://www.nasa.gov/topics/earth/index.html">Earth</a></li><li><a href="http://www.nasa.gov/topics/technology/index.html">Technology</a></li><li><a href="http://www.nasa.gov/topics/nasalife/index.html">NASA in Your Life</a></li><li><a href="http://www.nasa.gov/topics/people/index.html">NASA People</a></li><li><a href="http://www.nasa.gov/topics/history/index.html">NASA History</a></li></ul></div><h2 id="nav-missions"><a href="http://www.nasa.gov/missions/index.html"><span>Missions</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/missions/index.html">Missions</a></li><li><a href="http://www.nasa.gov/missions/calendar/index.html">Mission Calendar</a></li><li><a href="http://www.nasa.gov/missions/highlights/schedule.html">Launch Schedule</a></li></ul></div><h2 id="nav-multimedia"><a href="http://www.nasa.gov/multimedia/index.html"><span>Multimedia</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/multimedia/index.html">Multimedia</a></li><li><a href="http://www.nasa.gov/multimedia/imagegallery/index.html">Images</a></li><li><a href="http://www.nasa.gov/multimedia/videogallery/index.html">Video</a></li><li><a href="http://www.nasa.gov/multimedia/podcasting/index.html">Podcasts</a></li><li><a href="http://www.nasa.gov/multimedia/nasatv/index.html">NASA TV</a></li><li><a href="http://www.nasa.gov/multimedia/mmgallery/index.html">Interactive Features</a></li><li><a href="http://www.nasa.gov/multimedia/3d_resources/index.html">3D  Resources</a></li><li><a href="http://www.nasa.gov/rss/index.html">RSS Feeds</a></li><li><a href="http://www.nasa.gov/multimedia/blogs/index.html">Blogs</a></li><li><a href="http://www.nasa.gov/worldbook/index.html">Worldbook@NASA</a></li></ul></div><h2 id="nav-aboutnasa"><a href="http://www.nasa.gov/about/index.html"><span>About NASA</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/about/index.html">About NASA</a></li><li><a href="http://www.nasa.gov/about/highlights/what_does_nasa_do.html">What NASA Does</a></li><li><a href="http://www.nasa.gov/recovery/index.html">Recovery Information</a></li><li><a href="http://www.nasa.gov/about/admin.html">NASA Leadership</a></li><li><a href="http://www.nasa.gov/about/career/index.html">Careers@NASA</a></li><li><a href="http://www.nasa.gov/about/sites/index.html">NASA Locations</a></li><li><a href="http://www.nasa.gov/about/events/index.html">NASA Calendar</a></li><li><a href="http://www.nasa.gov/news/budget/index.html">Budget and Performance</a></li><li><a href="http://www.nasa.gov/news/reports/index.html">Reports</a></li><li><a href="http://www.nasa.gov/about/research/index.html">Research Opportunities</a></li><li><a href="http://www.nasa.gov/about/speakers/index.html">Request a NASA Speaker</a></li><li><a href="http://www.nasa.gov/about/exhibits/index.html">Request a NASA Exhibit</a></li></ul></div><h2 id="nav-connect" style="width: 125px;"><a style="width: 125px; background-image: url(/templateimages/redesign/navigation/TopNav/navtitle-connect.gif);" href="http://www.nasa.gov/connect/index.html"><span style="display: none;">Connect</span></a></h2><div style="z-index: 800;" class="dropper 125"><ul><li style="line-height: 18px; height: 20px;"><a href="http://blogs.nasa.gov/"><img style="border: medium none ; margin-right: 5px;" alt="Blogs Icon" title="Blogs Icon" src="NASA.opml_files/Blogs_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://blogs.nasa.gov/">Blogs</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.nasa.gov/rss"><img style="border: medium none ; margin-right: 5px;" src="NASA.opml_files/Feeds_20x20.gif" title="RSS Feeds Icon" alt="RSS Feeds Icon" border="0" height="20" width="20" align="left"></a><a href="http://www.nasa.gov/rss">RSS</a></li><li style="line-height: 18px; height: 20px;"><a href="http://twitter.com/nasa"><img style="border: medium none ; margin-right: 5px;" alt="Twitter Icon" title="Twitter Icon" src="NASA.opml_files/Twitter_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://twitter.com/nasa">Twitter</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.facebook.com/nasa.gov"><img style="border: medium none ; margin-right: 5px;" alt="Facebook Icon" title="Facebook Icon" src="NASA.opml_files/Facebook_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.facebook.com/nasa.gov">Facebook</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.youtube.com/NASATelevision"><img style="border: medium none ; margin-right: 5px;" alt="YouTube Icon" title="YouTube Icon" src="NASA.opml_files/Youtube_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.youtube.com/NASATelevision">YouTube</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.flickr.com/photos/nasahqphoto/"><img style="border: medium none ; margin-right: 5px;" alt="Flickr Icon" title="Flickr Icon" src="NASA.opml_files/Flickr1_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.flickr.com/photos/nasahqphoto/">Flickr</a></li><li style="line-height: 18px; height: 20px;"><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661703"><img style="border: medium none ; margin-right: 5px;" src="NASA.opml_files/iTunes_20x20.gif" title="iTunes Icon" alt="iTunes Icon" border="0" height="20" width="20" align="left"></a><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661703">iTunes</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.nasa.gov/connect/index.html">More Social Media ...</a></li></ul></div></div></div></div><div class="top_audience"><ul class="audiences_nav"><!----><a name="top" id="bctop"></a><li><a href="http://www.nasa.gov/home/index.html">NASA Home</a></li><!----><li><span class="light_grey">&nbsp;&nbsp;&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="http://www.nasa.gov/multimedia/index.html">Multimedia</a></li><!----><li><span class="light_grey">&nbsp;&nbsp;&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;&nbsp;&nbsp;</span>NASA Podcasts</li><li id="right_menu"><ul id="utilities_nav"><li><span class="hide"><form method="post" target="myNewWin" name="emailForm" action="http://mynasa.nasa.gov/portal/util/email/nasa_emailform_2007.jsp"><input value="http://www.nasa.gov/multimedia/podcasting/index.html" id="url" name="url" type="hidden"><input value="NASA Podcasting" id="titleUrl" name="titleUrl" type="hidden"><input value="NASA Podcasting" id="promoTitle" name="promoTitle" type="hidden"><input value="" id="promoDate" name="promoDate" type="hidden"><input value="asan" id="flag" name="flag" type="hidden"><input value="" id="leaderSentence" name="leaderSentence" type="hidden"><input value="108516" id="documentId" name="documentId" type="hidden"></form></span><a class="icons_black icon_send" href="javascript:submitPopUpEmail();">Send</a></li><li><span class="skiplinklogin"><a href="javascript:openUserPref(%22http://www.addthis.com/bookmark.php%22)">Follow this link to Share This Page</a></span><a class="myOverlayBookmark bookmark bottom null icons_black icon_share" href="#">Share</a></li></ul></li></ul></div><!--Top ends Here --></div><!--Left Starts Here --><input name="menu_item_id" id="menu_item_id" value="multimedia_podcasting" type="hidden"><div id="left" class="left_232"><script type="text/javascript">	
+		var itemIdAndJSFileURL= 'multimedia_podcasting$/templateimages/redesign/leftnav-htmls/multimedia_.js';
+		var splitResult = itemIdAndJSFileURL.split("$");
+		  $('menu_item_id').value = splitResult[0];		
+		
+		var url = splitResult[1];
+		var defPage = '/templateimages/redesign/leftnav-htmls/home_.js';
+		if(url == '.js') url = defPage;
+
+                                                         
+ document.write('<script src=' + url + ' type="text/javascript" language="javascript" >' + '</scr' + 'ipt>');
+</script><script src="NASA.opml_files/multimedia_.js" type="text/javascript" language="javascript"></script><div class="section_nav_cap"><div class="top_cap"></div><div class="section_nav"><h2 class="h2_grey"><a id="multimedia_" href="http://www.nasa.gov/multimedia/highlights/index.html">Multimedia</a></h2><div class="blinds 89 auto section_nav_blinds click closeable"><h3 class="inactive_header">Images</h3><div style="height: 0px;" blindstatus="closed" blindsindex="0" class="content inactive_content"><ul class="first_ul"><ul><li><a id="multimedia_imagegallery_home" href="http://www.nasa.gov/multimedia/imagegallery/index.html">Featured Images</a></li><li><a id="multimedia_imagegallery_imageofday" href="http://www.nasa.gov/multimedia/imagegallery/iotd.html">Image of the Day Gallery</a></li><li><a id="multimedia_imagegallery_imageusageguidelines" href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html">Image Usage Guidelines</a></li></ul></ul></div><div class="footer inactive_footer above_inactive"></div><h3 class="inactive_header">Videos</h3><div style="height: 0px;" blindstatus="closed" blindsindex="1" class="content inactive_content"><ul class="first_ul"><ul><li><a id="multimedia_videogallery_featuredvideo" href="http://www.nasa.gov/multimedia/videogallery/index.html">Featured Videos</a></li><li><a id="multimedia_videogallery_hdvideo" href="http://www.nasa.gov/multimedia/hd/index.html">HD Videos</a></li><li><a id="multimedia_videogallery_browplayplugins" href="http://www.nasa.gov/help/multimedia/downloads.html"><p>Browsers, Players &amp; Plugins</p></a></li></ul></ul></div><div class="footer inactive_footer above_inactive"></div><h3 class="no_content_section"><a style="color: rgb(153, 204, 255);" class="current_item" id="multimedia_podcasting" href="http://www.nasa.gov/multimedia/podcasting/index.html">Podcasts</a></h3><h3 class="inactive_header last_header">NASA TV</h3><div style="height: 0px;" blindstatus="closed" blindsindex="2" class="content inactive_content last_content"><ul class="first_ul"><ul><li><a id="multimedia_nasatv_watchnasatv" href="http://www.nasa.gov/multimedia/nasatv/index.html">Watch NASA TV</a></li><li><a id="multimedia_nasatv_schedule" href="http://www.nasa.gov/multimedia/nasatv/schedule.html">NASA TV Schedule</a></li><li><a id="multimedia_nasatv_nasaonyourtv" href="http://www.nasa.gov/multimedia/nasatv/nasa_on_tv_schedule.html">NASA on Your TV</a></li><li><a id="multimedia_nasatv_audiofile" href="http://www.nasa.gov/news/media/audiofile/index.html">NASA Audio File</a></li></ul></ul></div><div class="footer inactive_footer last_footer"></div><h3 class="no_content_section"><a id="multimedia_mmgallery" href="http://www.nasa.gov/multimedia/mmgallery/index.html">Interactive Features</a></h3><h3 class="no_content_section"><a id="multimedia_3d_resources" href="http://www.nasa.gov/multimedia/3d_resources/index.html">3D Resources</a></h3><h3 class="no_content_section"><a id="multimedia_rss" href="http://www.nasa.gov/rss/index.html">RSS Feeds</a></h3><h3 class="no_content_section"><a id="multimedia_blogs" href="http://www.nasa.gov/multimedia/blogs/index.html">Blogs</a></h3><h3 class="no_content_section"><a id="multimedia_worldbook" href="http://www.nasa.gov/worldbook/index.html">Worldbook@NASA</a></h3><div class="footer footer_bottom"></div></div></div><div class="bottom_cap"></div></div><!--Left Ends Here --></div><a name="maincontent"></a><!--Wide_Right Starts Here --><div class="wide_right"><!-- Center Banner starts Here--><!-- Center Banner ends Here--><!--Wide_Right Ends Here --></div><!--Middle starts here --><div class="middle"><!--Top Starts Here --><!--Top Ends Here --><!--Middle Holder Starts Here--><div class="middle_holder"><!--Middle Left starts here --><div class="middle_left"><!--Left collection Starts Here --><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>NASACast</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags"><img alt="NASACast" title="NASACast" src="NASA.opml_files/201542main_nasacast_226.jpg" border="0" height="123" width="216" align="Top"><br> Subscribe to our omnibus NASACast feeds for the latest mission news, features and the This Week @NASA report.<br><br> <table width="225"> <tbody><tr> <td valign="middle"> <b>Audio</b>:</td> <td><a href="http://www.nasa.gov/rss/NASAcast_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/173608main_subscribe_pod-2.gif" border="0"></a></td> <td><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661540"><img alt="iTunes" title="iTunes" src="NASA.opml_files/173607main_itunes_icon-2.gif" border="0"></a></td> </tr> <tr> <td valign="middle"><b> Video</b>:</td> <td><a href="http://www.nasa.gov/rss/NASAcast_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/173608main_subscribe_pod-2.gif" border="0"></a> </td> <td><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661703"><img alt="iTunes" title="iTunes" src="NASA.opml_files/173607main_itunes_icon-2.gif" border="0"></a> </td> </tr> </tbody></table></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108518" id="testrss108518" type="hidden">
+<div id="placeholder108518"></div>
+<script>
+   var rssholderid_label='testrss108518';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>NASA on iTunes</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags"><center><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewArtist?id=121678267" target="new"><img alt="NASA on iTunes" title="NASA on iTunes" src="NASA.opml_files/201541main_itunes_226.jpg" border="0" height="123" width="216" align="Top"></a></center><br> <b><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewArtist?id=121678267">›&nbsp;&nbsp;Visit the NASA room on iTunes&nbsp;→</a> (iTunes required)</b><br></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108531" id="testrss108531" type="hidden">
+<div id="placeholder108531"></div>
+<script>
+   var rssholderid_label='testrss108531';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><!--Left collection endsHere --><!--Middle Left ends here --></div><!--Middle Right starts here --><div class="middle_right"><!--Center Collection  Starts Here --><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>Audio Podcasts</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags"><!--<IMG WIDTH="216" ALT="Audio Podcasts" TITLE="Audio Podcasts" SRC="/images/content/201540main_audio_226.jpg" HEIGHT="123" ALIGN="Center" BORDER="0" />--><br> <table width="225"> <tbody><tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/twan_index.html"><b>›&nbsp;&nbsp;This Week @NASA</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/TWAN_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/moments_index.html"><b>›&nbsp;&nbsp;NASA Moments</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/moments_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/shuttle_station_index.html"><b>›&nbsp;&nbsp;Shuttle &amp; Station</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/shuttle_station_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/solar_system_index.html"><b>›&nbsp;&nbsp;Solar System</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/solar_system_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/universe_index.html"><b>›&nbsp;&nbsp;Universe</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/universe_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/earth_index.html"><b>›&nbsp;&nbsp;Earth</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/earth_podcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <!--<tr> <td> <a href="/multimedia/podcasting/education/ED_NSO.html"><b>&rsaquo;&nbsp;&nbsp;Student Opportunities</b></a></td> <td width="70"><a href="/rss/ED_NSO_podcast.rss"><IMG ALT="subscribe" TITLE="subscribe" SRC="/images/content/199530main_rss_xml.gif" BORDER="0" /></a></td> </tr>--> </tbody></table></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108521" id="testrss108521" type="hidden">
+<div id="placeholder108521"></div>
+<script>
+   var rssholderid_label='testrss108521';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>Resources</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags">Other Podcast Directories:<br><br> <a href="http://www.learnoutloud.com/" target="new"> <img alt="Learn out loud directory" title="Learn out loud directory" src="NASA.opml_files/135013main_learnoutloud.jpg" border="0" height="15" width="80" align="Bottom"> </a> <br> <a href="http://www.odeo.com/" target="new"> <img alt="Odeo directory" title="Odeo directory" src="NASA.opml_files/135014main_odeo.jpg" border="0" height="15" width="80" align="Bottom"> </a> <br> <!--<a href="http://www.podcast.net" target="new"> <IMG WIDTH="80" ALT="Podcastnet directory" TITLE="Podcastnet directory" SRC="/images/content/135017main_podcastnet.gif" HEIGHT="15" ALIGN="Bottom" BORDER="0" /> </a> <br />--> <a href="http://www.podcastalley.com/" target="new"> <img alt="Podcast Alley directory" title="Podcast Alley directory" src="NASA.opml_files/135015main_podcastalley_icon.gif" border="0" height="15" width="80" align="Bottom"> </a> <br> <a href="http://www.podcastpickle.com/" target="new"> <img alt="Podcast Pickle directory" title="Podcast Pickle directory" src="NASA.opml_files/135018main_podcastpickle.gif" border="0" height="15" width="80" align="Bottom"> </a> <br> <a href="http://www.podnova.com/" target="new"> <img alt="PodNova directory" title="PodNova directory" src="NASA.opml_files/135011main_img_chicklet_podnova.gif" border="0" height="15" width="80" align="Bottom"> </a> <br> <a href="http://www.podcastdirectory.com/" target="new"> <img alt="" title="" podcast="" directory="" src="NASA.opml_files/135030main_podcastdirectory.jpg" border="0" height="15" width="80" align="Bottom"> </a> <br> <a href="http://podcasts.yahoo.com/" target="new"> <img alt="Yahoo podcast directory" title="Yahoo podcast directory" src="NASA.opml_files/174392main_yahoo_podcast.jpg" border="0" height="15" width="80" align="Bottom"> </a> <br> <b><a href="http://www.nasa.gov/multimedia/podcasting/help.html">›&nbsp;&nbsp;NASA Podcasting Help Page</a> <br> <a href="http://www.apple.com/quicktime/download/">›&nbsp;&nbsp;Download QuickTime</a> </b></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108437" id="testrss108437" type="hidden">
+<div id="placeholder108437"></div>
+<script>
+   var rssholderid_label='testrss108437';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><!--Center collection Ends Here --><!--Middle Right ends here --></div><!--Middle Holder Ends Here--></div><!--Middle ends here --></div><!--Right starts here --><div class="right_232"><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>Video Podcasts</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags"><!--<IMG WIDTH="216" ALT="NASACast Video" TITLE="NASACast Video" SRC="/images/content/201543main_video_226.jpg" HEIGHT="123" ALIGN="Center" BORDER="0" />--><br> <table width="225"> <tbody><tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/twan_index.html"><b>›&nbsp;&nbsp;This Week @NASA</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/TWAN_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/moments_index.html"><b>›&nbsp;&nbsp;NASA Moments</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/moments_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/mission_update_index.html"><b>›&nbsp;&nbsp;NASA Mission Update</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/mission_update_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/nasa360/index.html"><b>›&nbsp;&nbsp;NASA 360</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/nasa360_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/nasaedge/index.html"><b>›&nbsp;&nbsp;NASA Edge</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/NASAEdge_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/hubble/index.html"><b>›&nbsp;&nbsp;Last Mission to Hubble</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/hubble_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/shuttle_station_index.html"><b>›&nbsp;&nbsp;Shuttle &amp; Station</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/shuttle_station_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/exploration_index.html"><b>›&nbsp;&nbsp;To the Moon</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/exploration_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/solar_system_index.html"><b>›&nbsp;&nbsp;Solar System</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/solar_system_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/universe_index.html"><b>›&nbsp;&nbsp;Universe</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/universe_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/earth_index.html"><b>›&nbsp;&nbsp;Earth</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/Earth_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> <tr> <td> <a href="http://www.nasa.gov/multimedia/podcasting/whatsup_index.html"><b>›&nbsp;&nbsp;What's Up?</b></a></td> <td width="70"><a href="http://www.nasa.gov/rss/whatsup_vodcast.rss"><img alt="subscribe" title="subscribe" src="NASA.opml_files/199530main_rss_xml.gif" border="0"></a></td> </tr> </tbody></table></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108523" id="testrss108523" type="hidden">
+<div id="placeholder108523"></div>
+<script>
+   var rssholderid_label='testrss108523';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><script>
+     document.getElementById('curr_rssurl').value='none';
+</script><!-- Collection Body starts -->
+<!--Content  For Landing-NoBlinds-Blue-Sm Starts Here--><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="box_230_cap">
+<div class="top_cap"></div>
+<div style="text-align: left;" class="box_230 box_blue box_230_tall narrow_blue_news" id="narrow_blue_news">
+<h2>Other NASA Podcasts</h2>
+<div class="content_outline_blue">
+<ul style="height: auto;" class="content_outline_black"><div xmlns:java_code="xalan://gov.nasa.build.Utils2" class="blue_article_wrap_detail">
+<div class="default_style_wrap">
+<div id="ullitags"><a href="http://streaming.msfc.nasa.gov/podcast/ares/ARES_SD.xml">›&nbsp;Ares: America's Rocket </a> | <a href="http://streaming.msfc.nasa.gov/podcast/ares/ARES.xml">›&nbsp;HD</a> <br> <a href="http://coolcosmos.ipac.caltech.edu/cosmic_classroom/ask_astronomer/video/podcast/askfeed.xml">›&nbsp;Ask an Astronomer</a> <br> <a href="http://www.astrobio.net/podcast.xml">›&nbsp;Astrobiology Magazine</a> <br> <a href="http://astrophysics.gsfc.nasa.gov/outreach/podcast//podcast.xml">›&nbsp;Blueshift</a> <br> <a href="http://chandra.harvard.edu/resources/podcasts/podcasts.xml">›&nbsp;Chandra </a> | <a href="http://chandra.harvard.edu/resources/podcasts/hd/podcasts.xml">›&nbsp;HD</a> <br> <a href="http://svs.gsfc.nasa.gov/vis/a010000/a010200/a010250/GLAST_RSS_feed.xml">›&nbsp;GLASTcast</a> | <a href="http://svs.gsfc.nasa.gov/vis/iTunes/f0003.xml">›&nbsp;HD</a> <br> <a href="http://svs.gsfc.nasa.gov/vis/iTunes/f0001.xml">›&nbsp;Goddard Shorts </a> | <a href="http://svs.gsfc.nasa.gov/vis/iTunes/f0004.xml">›&nbsp;HD</a> <br> <a href="http://www.spacetelescope.org/rss/vodcast.xml">›&nbsp;Hubblecast</a> | <a href="http://www.spacetelescope.org/rss/vodcasthd.xml">›&nbsp;HD</a> | <a href="http://www.spacetelescope.org/rss/vodcastfullhd.xml">›&nbsp;Full HD</a> <br> <a href="http://hubblesite.org/skywatch.xml">›&nbsp;Hubble Skywatch</a> <br> <a href="http://coolcosmos.ipac.caltech.edu/videos/irrelevant/">›&nbsp;IRrelevant Astronomy</a> | <a href="http://coolcosmos.ipac.caltech.edu/videos/irrelevant/">›&nbsp;HD</a> <br> <a href="http://www.jpl.nasa.gov/multimedia/podcast/podfeed.xml">›&nbsp;&nbsp;JPL </a> | <a href="http://www.jpl.nasa.gov/multimedia/rss/podfeed-hd.xml">›&nbsp;&nbsp;HD</a> <br> <!-- <a href="http://www.aeronautics.nasa.gov/techseminar.rss">&rsaquo;&nbsp;&nbsp;NASA Aeronautics Seminars</a> <br /> <a href="http://planetquest.jpl.nasa.gov/podcast.xml">&rsaquo;&nbsp;PlanetQuest</a> <br />--> <a href="http://science.nasa.gov/podcast.xml">›&nbsp;Science@NASA</a> <br> <!--<a href="http://sdo.gsfc.nasa.gov/xml/SDOcast.php">&rsaquo;&nbsp;Solar Dynamics Observatory</a> <br />--> <a href="http://spaceplace.jpl.nasa.gov/en/educators/podcast/">›&nbsp;Space Place Musings</a> <br> <a href="http://www.spitzer.caltech.edu/features/podcasts/podfeed.xml">›&nbsp;Spitzer Audio</a> | <a href="http://www.spitzer.caltech.edu/features/hiddenuniverse/hufeed.xml">›&nbsp;Video</a> | <a href="http://www.spitzer.caltech.edu/espanol/podcasts/hues/">›&nbsp;Spanish</a> <br></div>
+</div>
+</div>
+</ul>
+</div>
+<input value="placeholder108438" id="testrss108438" type="hidden">
+<div id="placeholder108438"></div>
+<script>
+   var rssholderid_label='testrss108438';
+   if (document.getElementById(rssholderid_label) != null) {
+       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssurl=$('curr_rssurl');
+       if ( rssurl != null) { 
+           var rssurlval=rssurl.value;
+           if ( rssurlval.length==0 || rssurlval=='None') rssurlval='none';
+           if ( rssurlval != 'none') { 
+               showBlueIconRSS(rssholder,rssurlval);
+          }
+      }
+}
+</script>
+</div>
+<div class="bottom_cap"></div>
+<!--Content  For Landing-Blinds-Blue-Sm Ends Here-->
+</div>
+
+<!-- Collection Body ends --><!--Right Ends here --></div><!--Content Body Ends Here--></div><!--Footer Include Here--><!--Footer Starts Here--><div id="footer"><script type="text/javascript">
+                     createFooterlogo();
+                     createFooterContent('Jim Wilson',
+                                    'November 4, 2009',
+                                    'Brian Dunbar',
+                                   'Contact NASA',
+                                   '/about/contact/index.html',
+                                   '/sitemap/sitemap_nasa.html');
+                  </script><a href="http://www.nasa.gov/home/index.html" class="nasa_logo_footer"><span class="hide">NASA Home</span></a><p id="footercol1">Page Last Updated: November 4, 2009 <br>Page Editor: Jim Wilson <br>NASA Official: Brian Dunbar</p><div id="footercol2"><ul><li><a href="http://www.nasa.gov/news/budget/index.html">Budgets, Strategic Plans and Accountability Reports</a></li><li><a href="http://www.hq.nasa.gov/office/codee/nofear.html">Equal Employment Opportunity Data Posted Pursuant to the No Fear Act</a></li><li><a href="http://www.nasa.gov/about/contact/information_inventories_schedules.html">Information-Dissemination Policies and Inventories</a></li></ul></div><div id="footercol3"><ul><li><a href="http://www.hq.nasa.gov/office/pao/FOIA/agency/">Freedom of Information Act</a></li><li><a href="http://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy Policy &amp; Important Notices</a></li><li><a href="http://www.nasa.gov/offices/nac/home/index.html">NASA Advisory Council</a></li><li><a href="http://oig.nasa.gov/hotline.html">Inspector General Hotline</a></li><li><a href="http://oig.nasa.gov/">Office of the Inspector General</a></li><li><a href="http://www.nasa.gov/audience/formedia/features/communication_policy.html">NASA Communications Policy</a></li></ul></div><div id="footercol4"><ul><li><a href="http://www.nasa.gov/about/contact/index.html">Contact NASA</a></li><li><a href="http://www.nasa.gov/sitemap/sitemap_nasa.html">Site Map</a></li><li><a href="http://www.usa.gov/">USA.gov</a></li><li><a href="http://www.whitehouse.gov/omb/expectmore/">ExpectMore.gov</a></li><li><a href="http://www.nasa.gov/help/about/index.html">Help and Preferences</a></li></ul></div><!--Footer Ends Here--></div><!--Footer Include ends Here--><div class="background_layer">&nbsp;</div><script src="NASA.opml_files/196888main_externalsource_footer.js" type="text/javascript" language="javascript"></script><span id="bn_placeholder_global"></span><div id="bn_placeholder0"></div><iframe src="NASA.opml_files/sh10.html" style="border: 0pt none ; height: 1px; width: 1px; position: absolute; z-index: 100000; left: 0pt; top: 0pt;" id="_atssh"></iframe></body><div style="position: absolute; z-index: 9999; width: 4px; height: 22px; cursor: w-resize; left: 1012px; top: 81px;" id="gripH_1"></div><div style="position: absolute; z-index: 9999; width: 4px; height: 1px; cursor: w-resize; left: -1px; top: 0px;" id="gripH_0"></div><div style="position: absolute; z-index: 9999; width: 1px; height: 4px; cursor: n-resize; left: 0px; top: -1px;" id="gripV_0"></div><div style="position: absolute; z-index: 9999; width: 10px; height: 10px; cursor: se-resize; left: -7px; top: -7px;" id="gripX_0"></div><div style="position: absolute; z-index: 9999; width: 0px; height: 0px; cursor: w-resize; left: 0px; top: 0px;" id="showCursor"></div></html>

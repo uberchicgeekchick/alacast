@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Call of the Herald]]>" xmlUrl="http://www.podiobooks.com/title/call-of-the-herald/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/call-of-the-herald/" text="<![CDATA[Call of the Herald - a podcast novel by Brian Rathbone]]>" description="<![CDATA[<p>Book One of The Dawning of Power trilogy. A World of Godsland Novel.</p><p>Echoes of the ancients' power are distant memories, tattered and faded by the passage of eons, but that is about to change. A new dawn has arrived. Latent abilities, harbored in mankind's deepest fibers, wait to be unleashed. Ancient evils awaken, and old fears ignite the fires of war. In times such as these, ordinary people have the power to save the world . . . or destroy it.</p>]]>"/>
+		<outline title="<![CDATA[Inherited Danger]]>" xmlUrl="http://www.podiobooks.com/title/inherited-danger/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/inherited-danger/" text="<![CDATA[Inherited Danger - a podcast novel by Brian Rathbone]]>" description="<![CDATA[<p>Book Two of The Dawning of Power trilogy. A World of Godsland Novel.</p><p>Catrin leaves her homeland behind as she goes in search of knowledge and peace, unaware that she will face the greatest evil her world has ever known.</p>]]>"/>
+		<outline title="<![CDATA[Dragon Ore]]>" xmlUrl="http://www.podiobooks.com/title/dragon-ore/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/dragon-ore/" text="<![CDATA[Dragon Ore - a podcast novel by Brian Rathbone]]>" description="<![CDATA[<p>Book Three of The Dawning of Power trilogy. A World of Godsland Novel.</p><p>Clinging to life, Catrin Volker struggles to regain her strength as her foes go in search of even greater power. Ancient enemies threaten and forgotten alliances emerge in the exciting conclusion of The Dawning of Power trilogy.</p>]]>"/>
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by Brian Rathbone]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

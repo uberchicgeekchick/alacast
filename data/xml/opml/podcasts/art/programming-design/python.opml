@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Python Programming News &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Python 411 Podcast Series]]>" xmlUrl="http://www.awaretek.com/python/index.xml" type="rss" text="<![CDATA[Python 411 Podcast Series]]>" htmlUrl="http://www.awaretek.com/python/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[PyCon 2007]]>" xmlUrl="http://advocacy.python.org/podcasts/pycon2007-ogg.rss" type="rss" text="<![CDATA[PyCon 2007]]>" htmlUrl="http://pycon.blogspot.com/2007/11/pycon-2007-podcast.html" description="<![CDATA[Listen to talks and recordings from PyCon, the premier North American Python conference.   Hear the talks you missed!<br/>Episodes are 30-45 minutes long.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

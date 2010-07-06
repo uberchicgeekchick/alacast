@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Hacking &amp; Modding vodcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Hak.5]]>" xmlUrl="http://hak5xvid.libsyn.com/rss" type="rss" text="<![CDATA[Hak.5]]>" htmlUrl="http://hak5.org/" description="<![CDATA[>Hak5 isn't your typical tech show. It's hacking in the old-school sense, covering everything from network security, open source and forensics, to DIY modding and the homebrew scene.  Damn the warranties, it's time to Trust your Technolust.]]>"/>
+		<outline title="<![CDATA[Bastard Sons of Dialup]]>" xmlUrl="http://bsodtv.org/videofeeds/xvid.rss" type="rss" text="<![CDATA[BSoD TV: Bastard Sons of Dialup ]]>" htmlUrl="http://bsodtv.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[stage6: IPTV]]>" xmlUrl="http://www.stage6.com/rss/channel/channel:IPTV" type="rss" text="<![CDATA[stage6: IPTV]]>" htmlUrl="http://www.stage6.com/IPTV" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Old Time Radio Programs &amp; Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[The Zombie Astronaut's Frequency Of Fear]]>" xmlUrl="http://frequencyoffear.com/podcasts-only/rss2.aspx" type="rss" text="<![CDATA[<h1>The Zombie Astronaut&apos;s Frequency Of Fear</h1>]]>" htmlUrl="http://frequencyoffear.com/" description="<![CDATA[Join the Zombie Astronaut and his fellow fiends as they serve up the best in horror and sci-fi OTR, novelty records and sci-fi/monster rock music!]]>"/>
+		<outline title="<![CDATA[Cornucopia Radio Show Podcast]]>" xmlUrl="http://cornucopia.jellycast.com/podcast/feed/2" type="rss" text="<![CDATA[Cornucopia Radio Show Podcast]]>" htmlUrl="http://www.cornucopia-radio.co.uk" description="<![CDATA[<h1>Cornucopia Radio Show Podcast</h1><p>A collection of the best sketches, jokes, music, radio plays and creative madness broadcast on &quot;The Cornucopia Radio Show&quot;</p><p>The very best of the &quot;Cornucopia Radio Show&quot;, broadcast every month on SheffieldLive 93.2fm. Featuring sketches, jokes,funny stuff, music, radio plays and unbridled creative madness. Think of it like dental floss; FOR YOUR MIND!!!</p>]]>" />
+		<outline title="<![CDATA[Radio Yesterday]]>" xmlUrl="http://feeds.feedburner.com/RadioYesterday" type="rss" text="<![CDATA[Radio Yesterday]]>" htmlUrl="http://radioyesterday.chuckchat.com" description="<![CDATA[<h1>Radio Yesterday</h1><p>Relive fond memories or discover new ones. Listen to old time radio shows ranging from the 1930s-1960s with the greatest collection of old time radio in podcast form.</p>]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

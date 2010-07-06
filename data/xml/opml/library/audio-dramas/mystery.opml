@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Mystery Audio Dramas</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Wormwood: A Serialized Mystery]]>" xmlUrl="http://feeds.feedburner.com/WormwoodMystery" type="rss" text="<![CDATA[Wormwood: A Serialized Mystery]]>" htmlUrl="http://wormwoodshow.com/" description="<![CDATA[A weekly mystery podcast from Habit Forming Films, LLC.]]>"/>
+		<outline title="<![CDATA[The O-Line Mysteries]]>" xmlUrl="http://www.olinemysteries.com/Podcast/rss.xml" type="rss" text="<![CDATA[The O-Line Mysteries - Free Comedy Audio Series]]>" htmlUrl="http://www.olinemysteries.com/Welcome.html" description="<![CDATA[Welcome to The O Line Mystery show - an original scripted work of audio fiction, told in the fashion of radio serials from the 1920&apos;s-1950&apos;s.&nbsp;  Each week our characters battle for truth or justice or some other random pillar of jurisprudence.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
