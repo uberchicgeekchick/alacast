@@ -356,7 +356,7 @@
 				||
 				(mkdir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title'], 0774, TRUE))
 			)) {
-				$GLOBALS['alacast']->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
+				$GLOBALS['alacast']->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory. Please edit '{$podcastsXML_filename}' to fix this issue.", TRUE, TRUE);//*wink*, it just kinda felt like a printf moment :P
 				continue;
 			}
 
@@ -370,7 +370,8 @@
 					? "s!  They're"
 					: "!  Its"
 				)
-				. ":"
+				. ":",
+				TRUE
 			);
 			
 			leave_symlink_trail($podcastsGUID, $podcastsInfo[0]['title']);
@@ -474,7 +475,15 @@
 				$link_check=-1;
 				exec($cmd, $null_output, $link_check);
 				if($link_check){
-					$GLOBALS['alacast']->output(sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output), TRUE);
+					$GLOBALS['alacast']->output(
+						"\n\t\t**ERROR:** failed to move podcast."
+							."\n\t\tlink command used:"
+							."\n\t\t\t{$cmd}"
+							."\n\t\terror(errno:{$link_check}):"
+							."\n\t\t{$null_output}\n",
+						TRUE,
+						TRUE
+					);
 					continue;
 				}
 			}
@@ -485,8 +494,9 @@
 			$movedPodcasts++;
 			
 			//Prints the new episodes name:
-			$GLOBALS['alacast']->output("\n\t\tTitle: {$Podcasts_New_Filename}\n\t\tURI: {$podcastsInfo[$z]['url']}\n");
-			$GLOBALS['alacast']->output("\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, TRUE);
+			$GLOBALS['alacast']->output("\n\t\tTitle: {$Podcasts_New_Filename}", TRUE);
+			$GLOBALS['alacast']->output("\n\t\tURI: {$podcastsInfo[$z]['url']}", TRUE);
+			$GLOBALS['alacast']->output("\n\t\twget -O \"".preg_replace("/([\"\!\`\$])/", "\"\\\\\\1\"", $podcasts_new_file)."\" \"{$podcastsInfo[$z]['url']}\";\n", FALSE, FALSE, TRUE);
 			
 			unset($Podcasts_New_Filename);
 			unset($podcasts_new_file);

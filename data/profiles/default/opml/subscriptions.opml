@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Fri Jul  9 05:36:31 2010
+            Fri Jul  9 07:21:16 2010
         </dateCreated>
     </head>
     <body>
@@ -120,7 +120,6 @@
         <outline text="Insight, wit and analysis as the BBC's foreign correspondents take a closer look at the stories behind the headlines. Presented by Kate Adie. Broadcast on BBC Radio 4 in the UK on Thursdays at 1100 (local time) and Saturdays at 1130 (local time) for about 25 weeks of the year. BBC World Service broadcasts on Saturdays and Sundays all year round, presented by Alan Johnston. For more information, a full list of programme broadcast times and the podcast Terms of Use go to www.bbc.co.uk/fromourowncorrespondent" title="From Our Own Correspondent" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio4/fooc/rss.xml"/>
         <outline text="Public Radio's guide to the modern world." title="Future Tense" type="rss" xmlUrl="http://www.publicradio.org/columns/futuretense/podcast.xml"/>
         <outline text="Antony Funnell presents this weekly half-hour program and podcast on ABC Radio National that takes a critical look at new technologies, new approaches and new ways of thinking. From politics to media to environmental sustainability, nothing is outside its brief." title="Future Tense - full program" type="rss" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/fte.xml"/>
-        <outline text="Explore the world of cloning, protein folding, genome mapping, and more with the most important researchers in the field. Hosted by Marc Pelletier. Part of the TWiT Netcast Network." title="Futures in Biotech" type="rss" xmlUrl="http://leoville.tv/podcasts/fib.xml"/>
         <outline text="Science, music and geekery at the world's only virtual sci-pop festival. Be there *and* be square." title="geek pop" type="rss" xmlUrl="http://geekpop.podbean.com/category/music/feed/"/>
         <outline text="http://www.geologicpodcast.com/rss" title="Geologic Podcast" type="rss" xmlUrl="http://www.geologicpodcast.com/rss"/>
         <outline text="Star Trek Audio Drama From Giant Gnome Productions. After the USS Churchill is destroyed, its crew is forced to travel to the mirror universe. &quot;In space, even the bravest sometimes face their worst nightmares...nothing has prepared us for the enemy we fig" title="Giant Gnome Productions » Star Trek: Dimensions Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/GGP_StarTrekDimensions"/>
@@ -387,6 +386,7 @@
         <outline text="Join The Book Club as we celebrate a new book every month. Host Hannah Sung checks in regularly with our featured authors and interviews special guests.  You can get involved and send in questions for the author of our current book pick." title="The Book Club Podcast from CBC" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/canreadsbookclub.xml"/>
         <outline text="A regularly published podcast by a self-described hacker, curmudgeon and hacktivist about the practice and profession of programming drawing on over a decade of professional experience and a lifetime spent hacking, the intersection of politics and society" title="The Command Line Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/cmdln_free"/>
         <outline text="Tom Brady has won the 'hardship' scholarship to the prestigous Hillford Conservatory for Music.  He faces not only stiff competition from the other 'more privileged' students but he also faces the horror of the darkness and curse that surrounds the school." title="The Conservatory - A free audiobook by Michele Roger" type="rss" xmlUrl="http://www.micheleroger.com/TheConservatory.xml"/>
+        <outline text="The Dark Side is a weekly ADULT BDSM Alternative Lifestyle Discussion podcast" title="The Dark Side" type="rss" xmlUrl="http://thedarksidepodcast.podbean.com/feed/"/>
         <outline text="The world's longest running fan production of Doctor Who - Since 1982" title="The Doctor Who Audio Dramas" type="rss" xmlUrl="http://www.dwad.net/podcast.xml"/>
         <outline text="The Best Short Stories in Science Fiction, Fantasy, Horror and Other Genres" title="The Dunesteef Audio Fiction Magazine" type="rss" xmlUrl="http://feeds.feedburner.com/TheDunesteefAudioFictionMagazine"/>
         <outline text="A fantasy novel podcast by Paulette Jaxton." title="The Empress Sword Podcast" type="rss" xmlUrl="http://empresssword.com/?feed=podcast"/>
@@ -447,6 +447,5 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="The Dark Side is a weekly ADULT BDSM Alternative Lifestyle Discussion podcast" title="The Dark Side" type="rss" xmlUrl="http://thedarksidepodcast.podbean.com/feed/"/>
     </body>
 </opml>

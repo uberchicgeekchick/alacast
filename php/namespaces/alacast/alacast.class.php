@@ -67,8 +67,8 @@
 			$this->titles=new \alacast\titles($this);
 		}/*\alacast\load_classes();*/
 		
-		public function output($string, $error=FALSE, $silent=FALSE){
-			return $this->logger->output($string, $error, $silent);
+		public function output($string, $wordwrap=FALSE, $error=FALSE, $silent=FALSE){
+			return $this->logger->output($string, $wordwrap, $error, $silent);
 		}/*$this->output();*/
 		
 		

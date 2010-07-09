@@ -190,7 +190,7 @@
 			return TRUE;
 		}//method: private function log_output();
 		
-		public function output($string, $error=FALSE, $silent=FALSE) {
+		public function output($string, $wordwrap=FALSE, $error=FALSE, $silent=FALSE){
 			if(!($string && "{$string}" != "" && preg_replace( "/^[\s\r\n\ \t]*(.*)[\s\r\n\ \t]*/", "$1", $string) != "")) return;
 			
 			if($this->enabled)
@@ -199,17 +199,24 @@
 			if( $silent || $this->silent)
 				return FALSE;
 			
-			/*$string=utf8_encode($string);*/
-			if( ($word_wrap_padding=preg_replace("/^(\n*)(\t*).*$/", "$2", $string)) != "$string" )
-				$word_wrap_padding="\n\t{$word_wrap_padding}";
+			if( $wordwrap ) {
+				if( ($word_wrap_padding=preg_replace("/^(\n\t*).*$/", "$1", $string)) != "$string" )
+					$word_wrap_padding="{$word_wrap_padding}\t";
+				else
+					unset($word_wrap_padding);
+			}
+			
+			if($error === TRUE){
+				if( $wordwrap && isset($word_wrap_padding) )
+					return fprintf(STDERR, "**%s error:** %s", $this->applications_title, wordwrap($string, 75, $word_wrap_padding));
+				else
+					return fprintf(STDERR, "**%s error:** %s", $this->applications_title, $string);
+			}
+			
+			if( $wordwrap && isset($word_wrap_padding) )
+				return fprintf(STDOUT, "%s", wordwrap($string, 75, $word_wrap_padding));
 			else
-				$word_wrap_padding="\n\t";
-			
-			if($error === TRUE)
-				return fprintf(STDERR, "**%s error:** %s", $this->applications_title, $string);
-				/*return fprintf(STDERR, "**%s error:** %s", $this->applications_title, wordwrap($string, 72, $word_wrap_padding));*/
-			
-			return fprintf(STDOUT, "%s", $string);
+				return fprintf(STDOUT, "%s", $string);
 		}//method:public function output("mixed $value string", $error=FALSE);
 		
 		private function close_log() {
