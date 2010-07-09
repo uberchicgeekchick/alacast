@@ -9,6 +9,7 @@ setup:
 	set website="`basename "\""${0}"\"" | sed -r 's/^(.*)\.tcsh"\$"/\1/'`";
 	set target_dir="`dirname "\""${0}"\""`/../../data/xml/opml/podcasts/technology/networks/${website}";
 	set website="podcast.${website}";
+	alias ex "ex -E -X -n --noplugin";
 	#set target_dir="${website}";
 #goto setup;
 

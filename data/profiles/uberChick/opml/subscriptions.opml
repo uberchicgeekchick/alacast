@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Tue Jul  6 13:58:06 2010
+            Thu Jul  8 02:54:50 2010
         </dateCreated>
     </head>
     <body>
@@ -151,7 +151,6 @@
         <outline text="free public domain audiobooks" title="LibriVox" type="rss" xmlUrl="http://librivox.org/feed/"/>
         <outline text="Free, public domain audio books, recorded by volunteers" title="LibriVox Audiobooks" type="rss" xmlUrl="http://librivox.org/podcast.xml"/>
         <outline text="A weekly podcast for the Librivox Community. Librivox.org encourages volunteers to record audio from public domain texts which can then be made available in the public domain." title="LibriVox » Librivox Community Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxCommunityPodcast"/>
-        <outline text="A biweekly listing of recent new releases from librivox.org" title="LibriVox » New Releases Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/LibrivoxNewReleasesPodcast"/>
         <outline text="Personal broadcast by tanja631, This is a place where I will be posting my original or adapted radio productions. Also, chek out www.lightningbolttheaterofthemind.mypodcast.com for the cast lists in writing and to download the same shows featured here. This GCast site can also be found at www.lightningbolttheaterofthemind.com I do lots of sound engeneering on my own, and enjoy writing. I write scripts and adapt stories for radio dramas which I produce. Of course, I record volunteers for my radio dramas. I am still very new at this, so please bear with me, and if anyone wishes to submit a script or story for adapting, please feel free to email me, and I will work with you on that. I hope you enjoy this podcast, and please please email me at: tanja631@gmail.com with your feedback. Thank you powered by GCast" title="LightningBolt Theater of the Mind" type="rss" xmlUrl="http://www.gcast.com/u/tanja631/main.xml"/>
         <outline text="http://lightningbolttheaterofthemind.mypodcast.com/rss.xml" title="LightningBolt Theater of the Mind" type="rss" xmlUrl="http://lightningbolttheaterofthemind.mypodcast.com/rss.xml"/>
         <outline text="A vampire podiobook written and read by Dan Shaurette" title="Lilith's Love - A Podcast Novel" type="rss" xmlUrl="http://feeds.feedburner.com/LilithsLove"/>

@@ -15,16 +15,18 @@
 	 */
 	class alacast{
 		/* variables */
-		public	$path;
+		public $applications_title;
+		public $path;
 
 		/* objects */
-		public	$options;
-		public	$logger;
-		public	$podcatch;
-		public	$ini;
-		public	$playlist;
+		public $options;
+		public $logger;
+		public $podcatch;
+		public $ini;
+		public $playlist;
 		
-		public function __construct(){
+		public function __construct($applications_title="alacast"){
+			$this->applications_title=$applications_title;
 			$this->path=preg_replace("/(.*)\/[^\/]+/", "$1", ( (dirname($_SERVER['argv'][0])!=".") ? (dirname( $_SERVER['argv'][0])) : $_SERVER['PWD']));
 			$this->load_classes();
 			
@@ -44,9 +46,9 @@
 			
 			require("{$this->path}/php/namespaces/alacast/logger.class.php");
 			$this->logger=new \alacast\logger(
-						$this,
+					$this,
 						$this->ini->save_to_dir,
-						"alacast",
+						$this->applications_title,
 						$this->options->logging,
 						$this->options->quiet
 			);
@@ -78,7 +80,7 @@
 			$this->playlist=new \alacast\playlist(
 				$this,
 				$this->ini->playlist_dir,
-				"alacast",
+				$this->applications_title,
 				$this->options->playlist,
 				$this->options->titles_append_pubdate
 			);

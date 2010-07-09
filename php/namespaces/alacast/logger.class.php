@@ -44,7 +44,7 @@
 		public $alacast;
 		
 		
-		private $programs_name;
+		private $applications_title;
 		
 		private $enabled;
 		private $silent;
@@ -64,11 +64,11 @@
 		public $error_log_file;
 		private $error_logs_fp;
 		
-		public function __construct(&$alacast, $logs_path=".", $programs_name="alacast", $enable=TRUE, $silent=FALSE) {
+		public function __construct(&$alacast, $logs_path=".", $applications_title="alacast", $enable=TRUE, $silent=FALSE) {
 			$this->alacast=&$alacast;
 			
 			
-			$this->program_name=$programs_name;
+			$this->applications_title=$applications_title;
 			
 			if(!$silent)
 				$this->silent=FALSE;
@@ -158,7 +158,7 @@
 			
 			$this->init();
 			
-			$log_file=sprintf("%s/%s's log for %s-%s-%s from %s%s:00 through %s%s:59.%s.log", $this->logs_path, $this->program_name, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour, ($error ?"error" :"output"));
+			$log_file=sprintf("%s/%s's log for %s-%s-%s from %s%s:00 through %s%s:59.%s.log", $this->logs_path, $this->applications_title, $this->year, $this->month, $this->day, (($this->starting_hour<10) ?"0" :""), $this->starting_hour, (($this->ending_hour<10) ?"0" :""), $this->ending_hour, ($error ?"error" :"output"));
 			if(!($logs_fp=fopen( $log_file, "a" ))){
 				fprintf(STDERR, "I was unable to open the %s log file:\n\t\<%s>\n\t\tor for writing.\nLogging will be disabled.\n", ($error ?"error" :"output"), $log_file);
 				$this->disable();
@@ -185,7 +185,7 @@
 			if(!$error)
 				fprintf($this->output_logs_fp, "%s", $string);
 			else
-				fprintf($this->error_logs_fp, "**%s error:** %s", $this->program_name, $string);
+				fprintf($this->error_logs_fp, "**%s error:** %s", $this->applications_title, $string);
 			
 			return TRUE;
 		}//method: private function log_output();
@@ -193,16 +193,21 @@
 		public function output($string, $error=FALSE, $silent=FALSE) {
 			if(!($string && "{$string}" != "" && preg_replace( "/^[\s\r\n\ \t]*(.*)[\s\r\n\ \t]*/", "$1", $string) != "")) return;
 			
-			/*$string=utf8_encode($string);*/
-			
 			if($this->enabled)
 				$this->log_output($string, $error);
 			
 			if( $silent || $this->silent)
 				return FALSE;
 			
+			/*$string=utf8_encode($string);*/
+			if( ($word_wrap_padding=preg_replace("/^(\n*)(\t*).*$/", "$2", $string)) != "$string" )
+				$word_wrap_padding="\n\t{$word_wrap_padding}";
+			else
+				$word_wrap_padding="\n\t";
+			
 			if($error === TRUE)
-				return fprintf(STDERR, "**%s error:** %s", $this->program_name, $string);
+				return fprintf(STDERR, "**%s error:** %s", $this->applications_title, $string);
+				/*return fprintf(STDERR, "**%s error:** %s", $this->applications_title, wordwrap($string, 72, $word_wrap_padding));*/
 			
 			return fprintf(STDOUT, "%s", $string);
 		}//method:public function output("mixed $value string", $error=FALSE);

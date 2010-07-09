@@ -359,22 +359,18 @@
 				$GLOBALS['alacast']->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory.\n\t\tPlease edit '{$podcastsXML_filename}' to fix this issue.", TRUE);//*wink*, it just kinda felt like a printf moment :P
 				continue;
 			}
-			
-			$GLOBALS['alacast']->output(
-				(wordwrap(
-					(
-						"\n\t*w00t*! {$podcastsInfo[0]['title']} has "
-						.($podcastsFiles['total']-1)
-						." new episode"
-						.( ($podcastsFiles['total']>2)
-							? "s!  They're"
-							: "!  Its"
-						)
-						.":"
-					),
-					72,
-					"\n\t\t"
-				))
+
+			$GLOBALS['alacast']->output( 
+				"\n\t*w00t*! "
+				. $podcastsInfo[0]['title']
+				. " has "
+				. ( $podcastsFiles['total']-1)
+				. " new episode"
+				. ( $podcastsFiles['total'] > 2
+					? "s!  They're"
+					: "!  Its"
+				)
+				. ":"
 			);
 			
 			leave_symlink_trail($podcastsGUID, $podcastsInfo[0]['title']);
@@ -478,7 +474,7 @@
 				$link_check=-1;
 				exec($cmd, $null_output, $link_check);
 				if($link_check){
-					$GLOBALS['alacast']->output("\n\t\t" . (wordwrap( sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output))), TRUE);
+					$GLOBALS['alacast']->output(sprintf("\n\t\t**ERROR:** failed to move podcast.\n\t link used:%s\n\terrno:%d\n\terror:\n\t%s\n", $cmd, $link_check, $null_output), TRUE);
 					continue;
 				}
 			}
@@ -514,8 +510,8 @@
 	 * 	it also define's configuration options.
 	 */
 	require(ALACASTS_PATH."/php/namespaces/alacast/alacast.class.php");
-	if(!($alacast=new alacast()))
-		exit(-1);
+	if(!($alacast=new alacast("alacast")))
+		isexit(-1);
 	
 	if($alacast->options->diagnosis){
 		fprintf(STDOUT, "\$alacast:\n");

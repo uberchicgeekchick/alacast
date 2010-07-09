@@ -114,7 +114,7 @@
 				)
 			)){
 				$this->podcatcher=NULL;
-				return $GLOBALS['alacast']->logger->output("I can't try to download any new podcasts because I can't find alacast.", TRUE);
+				return $this->alacast->output("I can't try to download any new podcasts because I can't find alacast.", TRUE);
 			}
 			
 			$this->podcatcher="./".(basename($this->podcatcher))." --local";
@@ -168,7 +168,7 @@
 			 * alacast 0.10.0 need a lot longer than 5 seconds.
 			 * So I've moved it to 31 seconds just to be okay.
 			 */
-			$GLOBALS['alacast']->logger->output("\nPlease wait while alacast finishes downloading your podcasts new episodes");
+			$this->alacast->output("\nPlease wait while alacast finishes downloading your podcasts new episodes");
 			for($i=0; $i<33; $i++) {
 				if(!($i%3))
 					print(".");
@@ -187,21 +187,21 @@
 					unlink("{$this->profiles_path}/.status.{$this->status}");
 			}else{
 				if(file_exists("{$this->profiles_path}/.status.{$this->status}") && is_writable("{$this->profiles_path}/.status.{$this->status}") ){
-					$GLOBALS['alacast']->logger->output("Another process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
+					$this->alacast->output("Another process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
 				}else{
 					if(!$downloading)
 						$this->status="syncronizing";
 					else
-						$this->status="downloading";
+						$this->status="downloading ";
 					touch("{$this->profiles_path}/.status.{$this->status}");
 				}
 			}
 			
-			$GLOBALS['alacast']->logger->output(
+			$this->alacast->output(
 				sprintf(
 					"\n~*~*~* I've %s %s new podcasts @ %s *~*~*~\n",
 					( $starting
-						?"started"
+						?" started"
 						:"finished"
 					),
 					$this->status,

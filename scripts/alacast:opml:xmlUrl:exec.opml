@@ -8,6 +8,7 @@ if(!( ${?1} && "${1}" != "" && "${1}" != "--help")) then
 	goto usage
 endif
 unsetenv GREP_OPTIONS;
+	
 
 next_option:
 while( ${?1} && "${1}" != "" )
@@ -34,7 +35,7 @@ while( ${?1} && "${1}" != "" )
 		
 		case "fetch":
 			set message="Fetching:";
-			set exec="feed:fetch:all:enclosures.tcsh --disable=logging --xmlUrl";
+			set exec="alacast:feed:fetch:all:enclosures.tcsh --disable=logging --xmlUrl";
 			breaksw;
 		
 		case "del":
