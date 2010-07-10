@@ -208,13 +208,13 @@
 			
 			if($error === TRUE){
 				if( $wordwrap && isset($word_wrap_padding) )
-					return fprintf(STDERR, "**%s error:** %s", $this->applications_title, wordwrap($string, 75, $word_wrap_padding));
+					return fprintf(STDERR, "**%s error:** %s", $this->applications_title, wordwrap($string, 75, $word_wrap_padding, TRUE));
 				else
 					return fprintf(STDERR, "**%s error:** %s", $this->applications_title, $string);
 			}
 			
 			if( $wordwrap && isset($word_wrap_padding) )
-				return fprintf(STDOUT, "%s", wordwrap($string, 75, $word_wrap_padding));
+				return fprintf(STDOUT, "%s", wordwrap($string, 75, $word_wrap_padding, TRUE));
 			else
 				return fprintf(STDOUT, "%s", $string);
 		}//method:public function output("mixed $value string", $error=FALSE);
