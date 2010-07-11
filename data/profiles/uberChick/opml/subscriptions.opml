@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sat Jul 10 06:08:48 2010
+            Sun Jul 11 06:45:02 2010
         </dateCreated>
     </head>
     <body>
@@ -294,7 +294,7 @@
         <outline text="An original, OTR-style aerial sci-fi adventure serial" title="Pendant Productions - The Dixie Stenberg and Brassy Battalion Adventure Theater" type="rss" xmlUrl="http://www.pendantaudio.com/dixie-podcast.xml"/>
         <outline text="http://www.pendantaudio.com/ww_podcast.xml" title="Pendant Productions - Wonder Woman: Champion of Themyscira, presented by AmazonArchives.com" type="rss" xmlUrl="http://www.pendantaudio.com/ww_podcast.xml"/>
         <outline text="What are You Listening to?" title="podcastjunky's Podcast" type="rss" xmlUrl="http://podcastjunky.libsyn.com/rss"/>
-        <outline text="The Fantasy Podcast Magazine" title="PodCastle" type="rss" xmlUrl="http://feeds.escapeartists.net/PodCastle_Main?format=xml"/>
+        <outline text="The Fantasy Podcast Magazine" title="PodCastle" type="rss" xmlUrl="http://feeds.escapeartists.net/PodCastle_Main"/>
         <outline text="News, new books, completed books and more. If it's info on our serialized audiobooks, it's in here." title="Podiobooker" type="rss" xmlUrl="http://feeds.feedburner.com/podiobooks"/>
         <outline text="Our goal is to provide an inclusive podcast for listeners on upcoming Podiobooks.com releases and give authors a voice in promoting their works to an interested audience." title="PodioRacket.com | Blog Talk Radio Feed" type="rss" xmlUrl="http://www.blogtalkradio.com/podioracket.rss"/>
         <outline text="Science, Skepticism, Rationalism, Humanism -- The Podcast and Radio Show of the Center for Inquiry" title="Point of Inquiry" type="rss" xmlUrl="http://pointofinquiry.libsyn.com/rss"/>
@@ -314,7 +314,7 @@
         <outline text="http://prometheus.libsyn.com/rss" title="Prometheus Radio Theatre" type="rss" xmlUrl="http://prometheus.libsyn.com/rss"/>
         <outline text="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw"/>
         <outline text="A free audiobook by Brenda Wamsley" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/520/book.xml"/>
-        <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod?format=xml"/>
+        <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod"/>
         <outline text="Disability RadioNow Airing 1st, 3rd, and 5th Fridays at 2:30 pm      * Leave a message for Pushing Limits at: (510) 848-6767 ext. 636     * Email: pushinglimits[a]kpfa.org" title="Pushing Limits [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://www.kpfa.org/podcast/pod.php?show=pushinglimits"/>
         <outline text="CBC Radio's Quirks &amp; Quarks covers the quirks of the expanding universe to the quarks within a single atom… and everything in between." title="Quirks &amp; Quarks Complete Show from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/quirksaio.xml"/>
         <outline text="What are you putting in your ears?" title="Raise a Racket" type="rss" xmlUrl="http://feeds.feedburner.com/RaiseARacket"/>
@@ -336,7 +336,7 @@
         <outline text="How people would talk about science at a party, if anyone talked about science at parties." title="scienceTASTIC" type="rss" xmlUrl="http://sciencetastic.net/rss"/>
         <outline text="A weekly exploration of the latest developments in science and technology" title="Scientific American Podcast" type="rss" xmlUrl="http://rss.sciam.com/sciam/science-talk"/>
         <outline text="Free audiobooks by Scott Sigler" title="Scott Sigler Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/scottsigler"/>
-        <outline text="The podcast that predicts the present: host Jesse Brown and guests explore the Internet's impact on politics and culture." title="Search Engine" type="rss" xmlUrl="http://feeds.tvo.org/tvo/searchengine?format=xml"/>
+        <outline text="The podcast that predicts the present: host Jesse Brown and guests explore the Internet's impact on politics and culture." title="Search Engine" type="rss" xmlUrl="http://feeds.tvo.org/tvo/searchengine"/>
         <outline text="Second Shift: Third-string delivery, First-string chaos!" title="Second Shift: An original fantasy Podplay (high-quality audio version)" type="rss" xmlUrl="http://secondshiftpodcast.com/xml/2shifthq.xml"/>
         <outline text="Young Junius and JACK PALMS CRIME" title="Seth Harwood Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/sethharwood"/>
         <outline text="Jesse and Scott discuss audio." title="SFFaudio » Podcasts" type="rss" xmlUrl="http://www.sffaudio.com/?cat=52&amp;feed=rss2"/>
@@ -394,12 +394,12 @@
         <outline text="Magic, Adventure and Gunfights!" title="The Gearheart (Audiobook)" type="rss" xmlUrl="http://www.thegearheart.com/?feed=podcast&amp;format=audiobook"/>
         <outline text="Music That Reeks of Geek!" title="The GeekSpin" type="rss" xmlUrl="http://feeds.feedburner.com/TheGeekSpin"/>
         <outline text="http://gigcast.nightgig.com/?feed=podcast" title="The Gigcast" type="rss" xmlUrl="http://gigcast.nightgig.com/?feed=podcast"/>
-        <outline text="A podcast audio novel" title="The HeavenField" type="rss" xmlUrl="http://feeds.theheavenfield.com/heavenfield?format=xml"/>
+        <outline text="A podcast audio novel" title="The HeavenField" type="rss" xmlUrl="http://feeds.theheavenfield.com/heavenfield"/>
         <outline text="The best in new audio comedy, suspense and horror from the Icebox of the Nation, International Falls, Minnesota" title="The Icebox Radio Podcast" type="rss" xmlUrl="http://iceboxradio.libsyn.com/rss"/>
         <outline text="The Leviathan Chronicles is a sci-fi podcast that tracks Macallan Orsel, a young genetic scientist in present-day New York City who discovers that immortality is not a fool's fantasy, but rather a reality for a several factions of powerful immortals livin" title="The Leviathan Chronicles" type="rss" xmlUrl="http://feeds.feedburner.com/TheLeviathanChroniclesPodcasts"/>
         <outline text="The official site of the Merseyside Skeptics Society" title="The Merseyside Skeptics Society » Podcast" type="rss" xmlUrl="http://www.merseysideskeptics.org.uk/category/podcast/feed/"/>
         <outline text="A sci-fi/fantasy podcast series created by Chris Lester" title="The Metamor City Podcast" type="rss" xmlUrl="http://www.metamorcity.com/feed/"/>
-        <outline text="The Moth features people telling true, engaging, funny, touching and eye-opening stories from their lives. Hailed as &quot;New York's hottest and hippest literary ticket&quot; by the Wall Street Journal, The Moth has been producing sold-out storytelling shows for o" title="The Moth Podcast" type="rss" xmlUrl="http://feeds.themoth.org/themothpodcast?format=xml"/>
+        <outline text="The Moth features people telling true, engaging, funny, touching and eye-opening stories from their lives. Hailed as &quot;New York's hottest and hippest literary ticket&quot; by the Wall Street Journal, The Moth has been producing sold-out storytelling shows for o" title="The Moth Podcast" type="rss" xmlUrl="http://feeds.themoth.org/themothpodcast"/>
         <outline text="Hosted by Denis Loubet, Russell Glasser, Matt Dillahunty, Shilling Cadena, and Thad Engling. Blasphemously entertaining current events commentary from Austin's loudest, funniest atheists, on the front lines against the fundie onslaught! The Atheist Community of Austin is organized as a nonprofit educational corporation to develop and support the atheist community, to provide opportunities for socializing and friendship, to promote secular viewpoints, to encourage positive atheist culture, to defend the first amendment principle of state-church separation, to oppose discrimination against atheists and to work with other organizations in pursuit of common goals." title="The Non-Prophets" type="rss" xmlUrl="http://www.nonprophetsradio.com/nonprophets.xml"/>
         <outline text="Welcome to The O Line Mystery show - an original scripted work of audio fiction, fashioned after the classic radio serials.   Each week our characters battle for truth or justice or some other random pillar of jurisprudence." title="The O-Line Mysteries Free Comedy Audio Series" type="rss" xmlUrl="http://www.olinemysteries.com/Podcast/rss.xml"/>
         <outline text="The Best in Adult radio!" title="The Oh Team!" type="rss" xmlUrl="http://www.theohteam.com/feed/"/>
@@ -423,10 +423,9 @@
         <outline text="sci-fi &amp; horror OTR, novelty records and sci-fi and monster rock" title="The Zombie Astronaut's Frequency Of Fear" type="rss" xmlUrl="http://frequencyoffear.com/podcasts-only/rss2.aspx"/>
         <outline text="the_source is a video podcast/IPTV show that discusses open source and includes news, events, reviews, demos and interviews. Hosted by Aaron Newcomb." title="the_source (Video) - w/Aaron Newcomb, Ben Weber &amp; Brian Burgess" type="rss" xmlUrl="http://www.thesourceshow.org/theora.xml"/>
         <outline text="Short Story Play Podcasts" title="Theater of the Midnight Sun - science fiction and fantasy audio stories" type="rss" xmlUrl="http://www.theaterofthemidnightsun.com/TOTMS.rss"/>
-        <outline text="Official free, weekly podcast of the award-winning radio show &quot;This American Life.&quot; First-person stories and short fiction pieces that are touching, funny, and surprising. Hosted by Ira Glass, from WBEZ Chicago Public Radio. In mp3 and updated Mondays." title="This American Life" type="rss" xmlUrl="http://feeds.thisamericanlife.org/talpodcast?format=xml"/>
+        <outline text="Official free, weekly podcast of the award-winning radio show &quot;This American Life.&quot; First-person stories and short fiction pieces that are touching, funny, and surprising. Hosted by Ira Glass, from WBEZ Chicago Public Radio. In mp3 and updated Mondays." title="This American Life" type="rss" xmlUrl="http://feeds.thisamericanlife.org/talpodcast"/>
         <outline text="Join legal bloggers (and trained attorneys) Denise Howell, Ernie &quot;The Attorney&quot; Svenson, Colette Vogele and Evan Brown as they discuss breaking issues in technology law, including patents, copyrights, and more." title="this WEEK in LAW" type="rss" xmlUrl="http://leoville.tv/podcasts/twil.xml"/>
-        <outline text="http://feeds.twis.org/twis/science?format=xml" title="This Week in Science - The Kickass Science Podcast" type="rss" xmlUrl="http://feeds.twis.org/twis/science?format=xml"/>
-        <outline text="A netcast about viruses - the kind that make you sick" title="This Week in Virology - MP3 Edition" type="rss" xmlUrl="http://feeds.feedburner.com/twivmp3"/>
+        <outline text="http://feeds.twis.org/twis/science" title="This Week in Science - The Kickass Science Podcast" type="rss" xmlUrl="http://feeds.twis.org/twis/science"/>
         <outline text="Three Edged Sword" title="Three Edged Sword » Three Edged Sword" type="rss" xmlUrl="http://www.voicesofbabylon.com/category/tes/feed/"/>
         <outline text="Catch up on your favorite TLC shows and stars!  Get behind-the-scenes video, extra footage and more." title="TLC Podcasts" type="rss" xmlUrl="http://tlc.discovery.com/audio_podcasts/tlc_audio_podcast.xml"/>
         <outline text="Token Skeptic" title="Token Skeptic - Making Sense From Superstition" type="rss" xmlUrl="http://tokenskeptic.libsyn.com/rss"/>
