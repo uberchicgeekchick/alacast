@@ -200,7 +200,7 @@
 				return FALSE;
 			
 			if( $wordwrap ) {
-				if( ($word_wrap_padding=preg_replace("/^(\n\t*).*$/", "$1", $string)) != "$string" )
+				if( ($word_wrap_padding=preg_replace("/^\n*(\n\t*).*$/", "$1", $string)) != "$string" )
 					$word_wrap_padding="{$word_wrap_padding}\t";
 				else
 					unset($word_wrap_padding);
