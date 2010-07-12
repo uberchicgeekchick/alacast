@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<outline title="<![CDATA[]]>" url="http://www.1stdraftproductions.com/" type="link" text="<![CDATA[ - a podcast audio drama from 1st Draft Production]]>" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Butajin News and Updates&apos;s blog]]>" xmlUrl="http://www.1stdraftproductions.com/?q=blog/13/feed" type="rss" text="<![CDATA[Butajin News and Updates&apos;s blog]]>" htmlUrl="http://www.1stdraftproductions.com/?q=blog/13" description="<![CDATA[Butajin is an adventure set in an alternate Edo-period Japan. It is the story of the swords-woman Eden and her quest for vengeance against the man/monster that killed her parents, the dreaded Buta Otoko.]]>" />
+		<outline title="<![CDATA[Butajin News and Updates&apos;s blog]]>" xmlUrl="http://www.1stdraftproductions.com/?q=blog/13/feed" type="rss" text="<![CDATA[Butajin News and Updates&apos;s blog]]>" htmlUrl="http://1stdraftproductions.com/?q=node/17" description="<![CDATA[Butajin is an adventure set in an alternate Edo-period Japan. It is the story of the swords-woman Eden and her quest for vengeance against the man/monster that killed her parents, the dreaded Buta Otoko.]]>" />
 		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

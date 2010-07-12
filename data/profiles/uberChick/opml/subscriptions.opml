@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Mon Jul 12 01:24:25 2010
+            Mon Jul 12 08:57:17 2010
         </dateCreated>
     </head>
     <body>
@@ -340,7 +340,6 @@
         <outline text="The podcast that predicts the present: host Jesse Brown and guests explore the Internet's impact on politics and culture." title="Search Engine" type="rss" xmlUrl="http://feeds.tvo.org/tvo/searchengine"/>
         <outline text="Second Shift: Third-string delivery, First-string chaos!" title="Second Shift: An original fantasy Podplay (high-quality audio version)" type="rss" xmlUrl="http://secondshiftpodcast.com/xml/2shifthq.xml"/>
         <outline text="Young Junius and JACK PALMS CRIME" title="Seth Harwood Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/sethharwood"/>
-        <outline text="Jesse and Scott discuss audio." title="SFFaudio » Podcasts" type="rss" xmlUrl="http://www.sffaudio.com/?cat=52&amp;feed=rss2"/>
         <outline text="Chronicles of Libidacoria" title="Shades of K--: Chronicles of Libidacoria" type="rss" xmlUrl="http://shadesofk.podbean.com/feed/"/>
         <outline text="The sci-fi, fantasy, and horror of Shawn Lewis." title="Shawn Lewis Audiobooks" type="rss" xmlUrl="http://feeds.feedburner.com/shawn-lewis"/>
         <outline text="Reality Never Sounded So Good" title="Skepchick Podcast" type="rss" xmlUrl="http://skepchick.libsyn.com/rss"/>
@@ -387,6 +386,7 @@
         <outline text="Join The Book Club as we celebrate a new book every month. Host Hannah Sung checks in regularly with our featured authors and interviews special guests.  You can get involved and send in questions for the author of our current book pick." title="The Book Club Podcast from CBC" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/canreadsbookclub.xml"/>
         <outline text="A regularly published podcast by a self-described hacker, curmudgeon and hacktivist about the practice and profession of programming drawing on over a decade of professional experience and a lifetime spent hacking, the intersection of politics and society" title="The Command Line Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/cmdln_free"/>
         <outline text="Tom Brady has won the 'hardship' scholarship to the prestigous Hillford Conservatory for Music.  He faces not only stiff competition from the other 'more privileged' students but he also faces the horror of the darkness and curse that surrounds the school." title="The Conservatory - A free audiobook by Michele Roger" type="rss" xmlUrl="http://www.micheleroger.com/TheConservatory.xml"/>
+        <outline text="A free audiobook by Michael J. Sullivan" title="The Crown Conspiracy" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/523/book.xml"/>
         <outline text="The Dark Side is a weekly ADULT BDSM Alternative Lifestyle Discussion podcast" title="The Dark Side" type="rss" xmlUrl="http://thedarksidepodcast.podbean.com/feed/"/>
         <outline text="The world's longest running fan production of Doctor Who - Since 1982" title="The Doctor Who Audio Dramas" type="rss" xmlUrl="http://www.dwad.net/podcast.xml"/>
         <outline text="The Best Short Stories in Science Fiction, Fantasy, Horror and Other Genres" title="The Dunesteef Audio Fiction Magazine" type="rss" xmlUrl="http://feeds.feedburner.com/TheDunesteefAudioFictionMagazine"/>
@@ -447,6 +447,5 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="A free audiobook by Michael J. Sullivan" title="The Crown Conspiracy" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/523/book.xml"/>
     </body>
 </opml>
