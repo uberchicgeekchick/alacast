@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Sun Jul 11 06:45:02 2010
+            Mon Jul 12 01:24:25 2010
         </dateCreated>
     </head>
     <body>
@@ -54,6 +54,7 @@
         <outline text="A weekly tour of the periodic table, from Chemistry World, the magazine of the Royal Society of Chemistry." title="Chemistry in its element" type="rss" xmlUrl="http://www.rsc.org/chemistryworld/podcast/elements_podcast.xml"/>
         <outline text="Monthly podcast from Chemistry World, the magazine of the Royal Society of Chemistry." title="Chemistry World Podcast" type="rss" xmlUrl="http://www.rsc.org/chemistryworld/podcast/cw_podcast.xml"/>
         <outline text="A war we cannot lose. An enemy we cannot defeat. A destiny we will not escape. Join humanity's fight for survival in this epic original sci-fi adventure podcast!" title="Children Of The Gods" type="rss" xmlUrl="http://feeds.feedburner.com/cotg"/>
+        <outline text="Science Fiction and Fantasy Short Stories" title="Clarkesworld Magazine - Online Science Fiction and Fantasy" type="rss" xmlUrl="http://feeds.feedburner.com/clarkesworldmagazine/podcast"/>
         <outline text="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss" title="CNET UK Podcast" type="rss" xmlUrl="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss"/>
         <outline text="CBC Radio knows that if a joke's worth telling, it's worth repeating. The Comedy Factory collects our favourite skits, commentaries and funny bits that appeared on CBC Radio over the past week. It's an assembly line of humour, safety-tested and priced to move!" title="Comedy Factory from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/cf.xml"/>
         <outline text="commandN is a weekly tech news video show with hosts/producers Amber MacArthur, Brian McKechnie and Jeff MacArthur." title="commandN XviD" type="rss" xmlUrl="http://feeds.feedburner.com/command-n/xvid"/>
@@ -446,5 +447,6 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
+        <outline text="A free audiobook by Michael J. Sullivan" title="The Crown Conspiracy" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/523/book.xml"/>
     </body>
 </opml>
