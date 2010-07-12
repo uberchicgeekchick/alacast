@@ -5,6 +5,8 @@ if(! ${?0} ) then
 	exit ${status};
 endif
 
+	set scripts_basename="`basename "\""${0}"\""`";
+
 if(!( ${?1} && "${1}" != "" && "${1}" != "--help" )) \
 	goto usage;
 	
@@ -55,138 +57,184 @@ parse_argv:
 	@ argc=${#argv};
 	while( $arg < $argc )
 		@ arg++;
-	set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed "\""s/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
-	
-	if( ${?debug} ) \
-		printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
-	
-	if( "${equals}" == "" && "${value}" == "" ) then
-		@ arg++;
-		if( $arg <= $argc ) then
-			set equals=" ";
-			set value="$argv[$arg]";
-			if( ${?debug} ) \
-				printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
+		set dashes="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\1/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		if( "${dashes}" == "$argv[$arg]" ) \
+			set dashes="";
+		
+		set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\2/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		if( "${option}" == "$argv[$arg]" ) \
+			set option="";
+		
+		set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\3/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		if( "${equals}" == "$argv[$arg]" ) \
+			set equals="";
+		
+		set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\4/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		
+		if( ${?debug} ) \
+			printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
+		
+		if( "${dashes}" != "" && "${option}" != "" && "${equals}" == "" && "${value}" == "" ) then
+			@ arg++;
+			if( $arg <= $argc ) then
+				set equals=" ";
+				set value="$argv[$arg]";
+				set value_shifted;
+				if( ${?debug} ) \
+					printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
+			endif
+			@ arg--;
 		endif
-		@ arg--;
-	endif
-	switch ( "${option}" )
-		case "o":
-		case "abs":
-		case "only":
-		case "absolute-match":
-			if(! ${?absolute_match} ) \
-				set absolute_match;
+		switch ( "${option}" )
+			case "o":
+			case "abs":
+			case "only":
+			case "absolute-match":
+				if(! ${?absolute_match} ) \
+					set absolute_match;
+				breaksw;
+			
+			case "diagnosis":
+			case "diagnostic-mode":
+			case "debug":
+				breaksw;
+				
+			case "browse":
+			case "visit-site":
+			case "visit-sites":
+				if(!( "${value}" != "" && -x "`which "\""${value}"\""`" )) then
+					set browser="browser";
+				else
+					set browser="${value}";
+				endif
+				
+				switch("${browser}")
+					case "browser":
+					case "firefox":
+					case "links":
+					case "lynx":
+						if( ${?value_shifted} ) then
+							@ arg++;
+							unset value_shifted;
+						endif
+						
+						breaksw;
+					
+					default:
+						printf "**error:** %s is an unsupported web browser.\n\tBrowsing web sites has been disabled.\n" "${value}" > /dev/stderr;
+						unset browser;
+						breaksw;
+				endsw
+				breaksw;
+			
+			case "title":
+			case "description":
+			case "link":
+			case "url":
+			case "guid":
+			case 'link':
+			case "pubDate":
+				set attrib="${option}";
+				set attribute_value="${value}";
+				if( ${?value_shifted} ) then
+					@ arg++;
+					unset value_shifted;
+				endif
+						
 			breaksw;
 		
-		case "browse":
-		case "visit-site":
-		case "visit-sites":
-			if(!( "${value}" != "" && -x "`which "\""${value}"\""`" )) then
-				set browser="browser";
-			else
-				set browser="${value}";
+		case "output":
+			switch ( "${value}" )
+				case "title":
+				case "description":
+				case "url":
+				case "guid":
+				case "pubDate":
+			if( ${?value_shifted} ) then
+				@ arg++;
+				unset value_shifted;
 			endif
-			
-			switch("${browser}")
-				case "browser":
-				case "firefox":
-				case "links":
-				case "lynx":
+			if( ${?value_shifted} ) then
+				@ arg++;
+				unset value_shifted;
+			endif
+				case "link":
+					if( ${?value_shifted} ) then
+						@ arg++;
+						unset value_shifted;
+					endif
+					
+					if(! ${?output} ) \
+						set output="${value}";
+					foreach item(${outputs})
+						if("${value}" == "${item}" ) \
+							break;
+						unset item;
+					end
+					if( ${?item} ) then
+						unset item;
+						breaksw;
+					endif
+					set outputs[${#outputs}]="${value}";
+					breaksw;
+				
+				case "outline":
+					set be_verbose;
 					breaksw;
 				
 				default:
-					printf "**error:** %s is an unsupported web browser.\n\tBrowsing web sites has been disabled.\n" "${value}" > /dev/stderr;
-					unset browser;
+					if( ${?debug} ) \
+						printf "%s is not a valid --output value.\nPlease see %s --help\n\n" "${value}" "`basename '${0}'`" > /dev/stderr;
 					breaksw;
 			endsw
 			breaksw;
 		
-		case "title":
-		case "description":
-		case "link":
-		case "url":
-		case "guid":
-		case 'link':
-		case "pubDate":
-			set attrib="${option}";
-			set attribute_value="${value}";
-		breaksw;
-	
-	case "output":
-		switch ( "${value}" )
-			case "title":
-			case "description":
-			case "url":
-			case "guid":
-			case "pubDate":
-			case "link":
-				if(! ${?output} ) \
-					set output="${value}";
-				foreach item(${outputs})
-					if("${value}" == "${item}" ) \
-						break;
-					unset item;
-				end
-				if( ${?item} ) then
-					unset item;
-					breaksw;
+		case "verbose":
+			set be_verbose;
+			breaksw;
+		
+		case "match-only":
+			set match_only;
+			breaksw;
+		
+		case "episodes-only":
+			@ limit=2;
+			breaksw;
+		
+		case "refetch":
+			set refetch;
+			set silent;
+			if( "${value}" == "silent" ) then
+				set silent="--silent";
+				if( ${?value_shifted} ) then
+					@ arg++;
+					unset value_shifted;
 				endif
-				set outputs[${#outputs}]="${value}";
-				breaksw;
-			
-			case "outline":
-				set be_verbose;
-				breaksw;
-			
-			default:
-				if( ${?debug} ) \
-					printf "%s is not a valid --output value.\nPlease see %s --help\n\n" "${value}" "`basename '${0}'`" > /dev/stderr;
-				breaksw;
-		endsw
-		breaksw;
-	
-	case "verbose":
-		set be_verbose;
-		breaksw;
-	
-	case "match-only":
-		set match_only;
-		breaksw;
-	
-	case "episodes-only":
-		@ limit=2;
-		breaksw;
-	
-	case "refetch":
-		set refetch;
-		set silent="";
-		if( "${value}" == "silent" ) then
-			set silent="--silent";
-		else if( "${value}" == "all" ) then
+			else if( "${value}" == "all" ) then
+				set refetch="all"
+				if( ${?value_shifted} ) then
+					@ arg++;
+					unset value_shifted;
+				endif
+			endif
+			breaksw;
+		
+		case "all":
+		case "force":
+		case "fetch-all":
 			set refetch="all"
-		endif
-		breaksw;
-	
-	case "all":
-	case "force":
-	case "fetch-all":
-		set refetch="all"
-		breaksw;
-	
-	case "help":
-		goto usage;
-		breaksw;
-	
-	default:
-		if( ${?debug} ) \
-			printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;
-		breaksw;
-	
-	endsw
-end
+			breaksw;
+		
+		case "help":
+			goto usage;
+			breaksw;
+		
+		default:
+			if( ${?debug} ) \
+				printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "`basename '${0}'`" > /dev/stderr;
+			breaksw;
+		endsw
+	end
 	if(! ${?attribute_value} ) \
 		goto usage;
 	

@@ -56,11 +56,17 @@ debug_check:
 
 parse_argv:
 	while ( "${1}" != "" )
-		set option="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\1/g'`"
-		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\2/g'`"
-		set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed 's/\-\-\([^=]\+\)\(=\?\)\(.*\)/\3/g'`"
-		if( "${option}" != "${1}" && "${equals}" == "" && "${options_value}" == "" && "${2}" != "" )	\
+		if( ${?value_shifted} ) \
+			unset value_shifted;
+		
+		set dashes="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\1/g'`"
+		set option="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\2/g'`"
+		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\3/g'`"
+		set options_value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\4/g'`"
+		if( "${option}" != "${1}" && "${equals}" == "" && "${options_value}" == "" && "${2}" != "" ) then
+			set value_shifted;
 			set options_value="${2}";
+		endif
 		#echo "Checking ${option}\n";
 		
 		switch ( "${option}" )
@@ -71,14 +77,21 @@ parse_argv:
 			case "description":
 				set search_attribute="${option}";
 				set search_value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
+				if( ${?value_shifted} ) then
+					unset value_shifted;
+					shift;
+				endif
 				breaksw;
+			
 			case "help":
 				goto usage;
 				breaksw;
+			
 			case "s":
 			case "silent":
 				set silent;
 				breaksw;
+			
 			case "diagnosis":
 				if(! ${?diagnosis} ) \
 					set diagnosis;
@@ -87,6 +100,7 @@ parse_argv:
 				if(! ${?debug} ) \
 					set debug;
 				breaksw;
+			
 			case "f":
 			case "fetch-all":
 			case "r":
@@ -95,6 +109,7 @@ parse_argv:
 			case "continue":
 				set fetch_all;
 				breaksw;
+			
 			case "debug":
 				if(! ${?debug} ) \
 					set debug;
@@ -106,6 +121,7 @@ parse_argv:
 				breaksw;
 			
 			case "enable":
+				set handling_option;
 				switch ( "${options_value}" )
 					case "diagnosis":
 						if(! ${?diagnosis} ) \
@@ -116,16 +132,25 @@ parse_argv:
 						if(! ${?debug} ) \
 							set debug;
 						breaksw;
+					
 					case "verbose":
 						if( ${?silent} ) \
 							unset silent;
 						breaksw;
+					
 					default:
 						printf "%s cannot be %sd" "${options_value}" "${option}";
+						unset handling_option;
 						breaksw;
 				endsw
+				if( ${?handling_option} && ${?value_shifted} ) then
+					unset value_shifted;
+					shift;
+				endif
 				breaksw;
+			
 			case "disable":
+				set handling_option;
 				switch( "${options_value}" )
 					case "diagnosis":
 						if( ${?diagnosis} ) \
@@ -136,24 +161,37 @@ parse_argv:
 						if( ${?debug} ) \
 							unset debug;
 						breaksw;
+					
 					case "verbose":
 						if( ${?silent} ) \
 							unset silent;
 						breaksw;
+					
 					default:
 						printf "%s cannot be %sd" "${options_value}" "${option}";
+						unset handling_option;
 						breaksw;
 				endsw
+				if( ${?handling_option} && ${?value_shifted} ) then
+					unset value_shifted;
+					shift;
+				endif
 				breaksw;
+			
 			case "k":
 			case "keep-script":
 				if(! ${?keep_script} ) \
 					set keep_script;
 				breaksw;
+			
 			default:
 				printf "%s is not a valid option.\nPlease see %s --help\n\n" "${option}" "${script_name}" > /dev/stderr;
 				breaksw;
 		endsw
+		
+		if( ${?value_shifted} ) \
+			unset value_shifted;
+		
 		shift;
 		
 		if( ${?search_attribute} && ${?search_value} ) \
