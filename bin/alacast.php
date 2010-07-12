@@ -361,7 +361,7 @@
 			}
 
 			$GLOBALS['alacast']->output( 
-				"\n\t*w00t*! "
+				"\n\n\t*w00t*! "
 				. $podcastsInfo[0]['title']
 				. " has "
 				. ( $podcastsFiles['total']-1)
