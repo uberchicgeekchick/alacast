@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Mon Jul 12 21:29:04 2010
+            Wed Jul 14 14:21:51 2010
         </dateCreated>
     </head>
     <body>
@@ -74,7 +74,6 @@
         <outline text="Original Modern Fantasy Audio Theater Podcast" title="Darker Projects: The Byron Chronicles" type="rss" xmlUrl="http://feeds.feedburner.com/DarkerProjectsTheByronChronicles"/>
         <outline text="Audio Theater in a Darker Shade" title="DarkerProjects-NewReleases" type="rss" xmlUrl="http://www.darkerprojects.com/feeds/DarkerProjects.xml"/>
         <outline text="Vanilla tastes better with a little topping. . ." title="Dart's Domain" type="rss" xmlUrl="http://feeds.feedburner.com/DartsDomain"/>
-        <outline text="The World's First Drabble Novel" title="Dead Mech" type="rss" xmlUrl="http://jakebible.podomatic.com/rss2.xml"/>
         <outline text="Adventure! Mystery! All-New Audio Drama in the OTR tradition" title="Decoder Ring Theatre" type="rss" xmlUrl="http://decoderring.libsyn.com/rss"/>
         <outline text="If you like a good, broad mix of Science - new science, hard science, pop science, historical science and very silly science, listen to Diffusion. Broadcast from Sydney, Australia every Monday 6:30pm. email: diffusion@2ser.com" title="Diffusion Science radio" type="rss" xmlUrl="http://feeds.feedburner.com/diffusionradio"/>
         <outline text="Skepticism and critical thinking in a world of new age, religion and credulous pop culture" title="Digital Bits Skeptic" type="rss" xmlUrl="http://www.dbskeptic.com/podcast"/>
@@ -143,6 +142,7 @@
         <outline text="Designed with the novice in mind, The Intro to Poetry podcast is a carefully selected series that will expose the listener to a broad range of poetic eras and styles." title="Intro to Poetry Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/IntroToPoetry"/>
         <outline text="The official webspace of J.C. Hutchins, author and podcaster." title="J.C. Hutchins: New Fiction And Author Updates" type="rss" xmlUrl="http://feeds.feedburner.com/jchutchins?formt=xml"/>
         <outline text="When it has to be there, dead or alive" title="J.R. Murdock - Main Feed" type="rss" xmlUrl="http://feeds.feedburner.com/VAShipping"/>
+        <outline text="Free serialized audio fiction from the mind of Jake Bible!" title="Jake Bible Audio Fiction" type="rss" xmlUrl="http://jakebible.libsyn.com/rss"/>
         <outline text="Theorizing that one could time travel by means of a time machine, Dr. Elijah Sloan led a group of his friends from the bar into a secret laboratory to develop a top-secret project known as &quot;building a time machine.&quot; Pressured by his long-time drinking buddies to send three intoxicated pigeons back into dinosaur times, Dr. Sloan carelessly sent Jules Ismail, humanity's last hope to prevent the apocalypse before it happened, to the wrong time period.  Jules arrived in 1947, disoriented and confused.  Fortunately, there was never cause to feel alone as RayRay, an artificial intelligence originally a navigational assistant in the Roachmobile, had been downloaded into the interlink device attached to Jules' spine, and communicated through neural impulses manifesting themselves as coherent phrases.  Eventually managing to jump to 2010, Jules must fight evil demons from the future while endeavoring to solve the intricate mystery that is the end of the world... and thwart it." title="jaypokalyptica" type="rss" xmlUrl="http://jaypokalyptica.mypodcast.com/rss.xml"/>
         <outline text="http://feeds.feedburner.com/JustForWomen" title="Just For Women: Dating, Relationships and Sex with Alissa Kriteman" type="rss" xmlUrl="http://feeds.feedburner.com/JustForWomen"/>
         <outline text="http://feeds.feedburner.com/kexp/mindovermatterssustainability" title="KEXP Presents Mind Over Matters Sustainability Segment" type="rss" xmlUrl="http://feeds.feedburner.com/kexp/mindovermatterssustainability"/>
@@ -318,7 +318,6 @@
         <outline text="In-depth interviews with nationally and internationally-known guests whose passion for new ideas challenge and engage." title="PRI: To the Best of Our Knowledge Podcast" type="rss" xmlUrl="http://www.npr.org/rss/podcast.php?id=510011"/>
         <outline text="http://prometheus.libsyn.com/rss" title="Prometheus Radio Theatre" type="rss" xmlUrl="http://prometheus.libsyn.com/rss"/>
         <outline text="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.brendawamsley.net/index.php?option=com_podcast&amp;view=feed&amp;format=raw"/>
-        <outline text="A free audiobook by Brenda Wamsley" title="Prophecy Blossoms" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/520/book.xml"/>
         <outline text="Prurient Lifestyle is a sex positive podcast hosted by Xena and her team on The Prurient Couples Social Network." title="Prurient Lifestyle Show" type="rss" xmlUrl="http://prurient.podbean.com/feed/"/>
         <outline text="The Sound of Horror" title="Pseudopod" type="rss" xmlUrl="http://feeds.pseudopod.org/Pseudopod"/>
         <outline text="Disability RadioNow Airing 1st, 3rd, and 5th Fridays at 2:30 pm      * Leave a message for Pushing Limits at: (510) 848-6767 ext. 636     * Email: pushinglimits[a]kpfa.org" title="Pushing Limits [KPFA 94.1 FM, Berkeley CA - kpfa.org]" type="rss" xmlUrl="http://www.kpfa.org/podcast/pod.php?show=pushinglimits"/>
@@ -374,6 +373,7 @@
         <outline text="Original Pulp Mystery Audio Theater Podcast" title="Tales From The Museum" type="rss" xmlUrl="http://feeds.feedburner.com/TalesFromTheMuseum"/>
         <outline text="A 1920's Pulp Adventure Serial" title="Tales of the Extraordinary" type="rss" xmlUrl="http://emptysea.net/tote/podcast1.xml"/>
         <outline text="&quot;Talk Geek To Me&quot; interweb radio tech show.  This is the OGG feed." title="Talk Geek To Me RSS feed OGG format" type="rss" xmlUrl="http://talkgeektome.us/ogg.xml"/>
+        <outline text="http://feeds.feedburner.com/RealityAudio" title="Taste of Sex - Reality Audio: A Reality Audio Show on Life in an Orgasm-Based Community" type="rss" xmlUrl="http://feeds.feedburner.com/RealityAudio"/>
         <outline text="The TeachOutLoud Podcast features free offerings published through LearnOutLoud.com's TeachOutLoud service." title="TeachOutLoud Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/TeachoutloudPodcast"/>
         <outline text="http://teamironangel.kungfuactiontheatre.com/?feed=rss2" title="Team Iron Angel" type="rss" xmlUrl="http://teamironangel.kungfuactiontheatre.com/?feed=rss2"/>
         <outline text="Tech Policy Weekly from the Technology Liberation Front is a weekly discussion about technology policy from techliberation.coms learned band of contributors. It features some of the brightest and most provocative minds in the field of technology pub" title="Technology Liberation Front » Podcast" type="rss" xmlUrl="http://feeds.feedburner.com/tlf-podcast"/>
@@ -453,6 +453,5 @@
         <outline text="CBC Radio's Writers &amp; Company offers an opportunity to explore in depth the lives, thoughts and works of remarkable writers from around the world. Hosted by Eleanor Wachtel." title="Writers &amp; Company from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/writersandco.xml"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="Taste of Sex - Reality Audio: A Reality Audio Show on Life in an Orgasm-Based Community" title="Taste of Sex - Reality Audio: A Reality Audio Show on Life in an Orgasm-Based Community" type="rss" xmlUrl="http://feeds.feedburner.com/RealityAudio"/>
     </body>
 </opml>

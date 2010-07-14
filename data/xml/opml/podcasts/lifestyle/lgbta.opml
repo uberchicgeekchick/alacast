@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
 	<head>
-		<title>New Podcasts</title>
+		<title>
+			LGBTA community podcasts
+		</title>
 	</head>
 	<body>
 		<outline title="<![CDATA[The Lesbian Podcast]]>" xmlUrl="http://www.thelesbianpodcast.com/templates/thelesbianpodcastfeed.xml/" type="rss" text="<![CDATA[The Lesbian Podcast - Two lesbians spill the T on queer life in San Francisco.]]]>" htmlUrl="http://www.thelesbianpodcast.com//" description="<![CDATA[<h1>The Lesbian Podcast</h1><h3>Two lesbians spill the T on queer life in San Francisco.</h3><p>Our hope is that we attract listeners not just from San Francisco but from all walks of life, all over the world.   People who are questioning their sexuality or who live in a place with no lesbian subculture.</p>]]>" />

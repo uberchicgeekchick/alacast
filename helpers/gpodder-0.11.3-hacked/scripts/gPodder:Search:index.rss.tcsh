@@ -265,6 +265,7 @@ alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename 
 alias ex "ex -E -n -X --noplugin";
 
 foreach index( ${dl_dir}/*/index.xml )
+#foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' "\""${dl_dir}"\""/*/index.xml.tmp | sed -r 's/^([^:]+):[0-9]+:.*"\$"/\1/'`")
 	cp "${index}" "${index}.tmp";
 	ex -s '+1,$s/\v\r\_$//g' '+1,$s/\n//g' '+1s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
