@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Wed Jul 14 14:21:51 2010
+            Wed Jul 14 18:13:04 2010
         </dateCreated>
     </head>
     <body>
@@ -55,7 +55,6 @@
         <outline text="Monthly podcast from Chemistry World, the magazine of the Royal Society of Chemistry." title="Chemistry World Podcast" type="rss" xmlUrl="http://www.rsc.org/chemistryworld/podcast/cw_podcast.xml"/>
         <outline text="A war we cannot lose. An enemy we cannot defeat. A destiny we will not escape. Join humanity's fight for survival in this epic original sci-fi adventure podcast!" title="Children Of The Gods" type="rss" xmlUrl="http://feeds.feedburner.com/cotg"/>
         <outline text="Science Fiction and Fantasy Short Stories" title="Clarkesworld Magazine - Online Science Fiction and Fantasy" type="rss" xmlUrl="http://feeds.feedburner.com/clarkesworldmagazine/podcast"/>
-        <outline text="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss" title="CNET UK Podcast" type="rss" xmlUrl="http://podcasts.cnet.co.uk/CNET_co_uk_Podcast.rss"/>
         <outline text="CBC Radio knows that if a joke's worth telling, it's worth repeating. The Comedy Factory collects our favourite skits, commentaries and funny bits that appeared on CBC Radio over the past week. It's an assembly line of humour, safety-tested and priced to move!" title="Comedy Factory from CBC Radio" type="rss" xmlUrl="http://www.cbc.ca/podcasting/includes/cf.xml"/>
         <outline text="commandN is a weekly tech news video show with hosts/producers Amber MacArthur, Brian McKechnie and Jeff MacArthur." title="commandN XviD" type="rss" xmlUrl="http://feeds.feedburner.com/command-n/xvid"/>
         <outline text="A free audiobook by Maya Lassiter" title="Conjuring Raine" type="rss" xmlUrl="http://www.podiobooks.com/bookfeed/29127/509/book.xml"/>
@@ -165,7 +164,6 @@
         <outline text="Uber-Feed from the mind of J. Daniel Sawyer" title="Literary Abominations: J. Daniel Sawyer's Audiobooks and Interviews" type="rss" xmlUrl="http://jdsawyer.net/?feed=podcast"/>
         <outline text="Official Podcast of The Skeptic magazine" title="Little Atoms" type="rss" xmlUrl="http://feeds.feedburner.com/littleatomspodcast"/>
         <outline text="Interviews with kinky people about BDSM, sex, kink, fetish, dominance and submission." title="Masocast" type="rss" xmlUrl="http://masocast.com/feed/"/>
-        <outline text="Welcome to the No BS Podcast." title="Maximum PC No BS Podcast RSS Feed" type="rss" xmlUrl="http://feeds.feedburner.com/maximumpc/1337"/>
         <outline text="Mike Bennett: Horror Author. Complete Works" title="Mike Bennett's Big Feed: Original and Classic Fict" type="rss" xmlUrl="http://mikebennett.libsyn.com/rss"/>
         <outline text="Audio Drama for everyone" title="MisfitsAudio Productions" type="rss" xmlUrl="http://misfitsaudio.com/comments/?feed=podcast"/>
         <outline text="Audio Drama for everyone" title="MisfitsAudio Productions » Miranda" type="rss" xmlUrl="http://misfitsaudio.com/comments/archives/category/miranda/feed"/>
