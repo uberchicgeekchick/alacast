@@ -264,23 +264,24 @@ parse_argv:
 alias egrep "/usr/bin/grep --binary-files=without-match --color --with-filename --line-number --no-messages --perl-regexp -i";
 alias ex "ex -E -n -X --noplugin";
 
-foreach index( ${dl_dir}/*/index.xml )
-#foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' "\""${dl_dir}"\""/*/index.xml.tmp | sed -r 's/^([^:]+):[0-9]+:.*"\$"/\1/'`")
+#foreach index( ${dl_dir}/*/index.xml )
+foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' "\""${dl_dir}"\""/*/index.xml | sed -r 's/^([^:]+):[0-9]+:.*"\$"/\1/'`")
+	#printf "-->%s\n" "${index}";
 	cp "${index}" "${index}.tmp";
 	ex -s '+1,$s/\v\r\_$//g' '+1,$s/\n//g' '+1s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
-	#if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
-	#	ex -s '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
+	if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
+		ex -s '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
-	set found="`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' '${index}.tmp' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`";
+	#set found="`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' '${index}.tmp' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`";
 	
-	if( "${found}" == "" ) then
-		rm -f "${index}.tmp";
-		unset found index;
-		continue;
-	endif
+	#if( "${found}" == "" ) then
+	#	rm -f "${index}.tmp";
+	#	unset found index;
+	#	continue;
+	#endif
 	
-	unset found;
+	#unset found;
 	
 	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1/g"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
 		
@@ -300,8 +301,8 @@ foreach index( ${dl_dir}/*/index.xml )
 		set item_for_grep="`printf "\""%s"\"" "\""${item}"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`";
 		foreach output_attrib(${outputs})
 			foreach item_found("`grep "\""<${output}>${item_for_grep}<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
-				set this_item="`printf "\""%s"\"" "\""${item_found}"\"" | sed -r "\""s/.*<${output_attrib}>([^<]*)<\/${output_attrib}>.*/\1/g"\""`";
-				if( "${this_item}" == "`printf "\""%s"\"" "\""${item_found}"\""`" ) \
+				set this_item="`printf "\""%s"\"" "\""${item_found}"\"" | sed -r "\""s/.*<${output_attrib}>([^<]+)<\/${output_attrib}>.*/\1/g"\""`";
+				if( "${this_item}" == "" || "${this_item}" == "`printf "\""%s"\"" "\""${item_found}"\""`" ) \
 					continue;
 				
 				if( ${?browser} && "${output_attrib}" == "link" ) then

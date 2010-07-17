@@ -4,6 +4,7 @@
 		<title>Podcasts for &amp; by Skeptics</title>
 	</head>
 	<body>
+		<outline title="<![CDATA[Inquiry FM]]>" xmlUrl="http://inquiryfm.podbean.com/feed/" type="rss" text="<![CDATA[Inquiry FM]]>" htmlUrl="http://inquiryfm.podbean.com/" description="<![CDATA[<h1>Inquiry FM</h1><p>Discussing the world, one topic at a time.&nbsp; Freethinking for the 20/30-something crowd.</p>]]>" />
 		<outline title="<![CDATA[Skepchick Podcast]]>" xmlUrl="http://skepchick.libsyn.com/rss" type="rss" text="<![CDATA[Skepchick Podcast]]>" htmlUrl="http://skepchick.libsyn.com/" description="<![CDATA[The official podcast of Skepchick.org]]>"/>
 		<outline title="<![CDATA[Token Skeptic]]>" xmlUrl="http://tokenskeptic.libsyn.com/rss" type="rss" text="<![CDATA[Token Skeptic - Making Sense From Superstition]]>" htmlUrl="http://tokenskeptic.org/" description="<![CDATA[Token Skeptic: Making Sense of Superstition - A Podcast.&nbsp; A weekly look at superstition, paranormal belief and the science behind it all.&nbsp; Hosted and produced by Kylie Sturgess.]]>"/>
 		<!--<outline title="<![CDATA[Token Skeptic]]>" xmlUrl="http://feeds.feedburner.com/Tokenskeptic" type="rss" text="<![CDATA[Token Skeptic]]>" htmlUrl="http://tokenskeptic.org/" description="<![CDATA[Token Skeptic: Making Sense of Superstition - A Podcast.&nbsp; A weekly look at superstition, paranormal belief and the science behind it all.&nbsp; Hosted and produced by Kylie Sturgess.]]>"/>-->

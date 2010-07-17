@@ -6,6 +6,7 @@ if(! ${?0} ) then
 endif
 	
 setup:
+	onintr exit_script;
 	set gPodders_path="`dirname ${0}`";
 	set gPodder_script="gpodder-0.11.3-hacked";
 	
@@ -81,9 +82,30 @@ exit_script:
 	
 	if( ${?gpodder_run_once} ) \
 		unset gpodder_run_once;
+	
 	if( ${?debug} ) \
 		unset debug;
 	
+	if( "${argz}" != "" ) then
+		set escaped_argz="`printf "\""%s"\"" "\""${argz}"\"" | sed -r 's/\//\\\//g'`";
+		set gPodder_PID=`/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${escaped_argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
+		while( "${gPodder_PID}" != "" )
+			if(! -e "${gPodders_path}/.action.pid" ) then
+				printf "%s" "${gPodder_PID}" >! "${gPodders_path}/.action.pid";
+			else
+				if( `cat "${gPodders_path}/.action.pid"` != "${gPodder_PID}" ) \
+					printf "%s\n" "${gPodder_PID}" >! "${gPodders_path}/.action.pid";
+			endif
+			if( ${?debug} ) \
+				printf "Attempting to interupt: %s\n" $gPodder_PID;
+			kill -INT $gPodder_PID;
+			set gPodder_PID=`/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${escaped_argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
+		end
+	endif
+	unset argz;
+	
+	if( -e "${gPodders_path}/.action.pid" ) \
+		rm -f "${gPodders_path}/.action.pid";
 	cd "${owd}";
 	
 	if( ${?oldcwdcmd} ) then
@@ -150,6 +172,7 @@ run_progie:
 	if( -e "${gPodders_path}/.action.pid" ) \
 		rm -f "${gPodders_path}/.action.pid";
 	cd "${owd}";
+	set argz="";
 	if(! ${?gpodder_run_once} ) \
 		goto next_argv;
 #goto run_progie;
