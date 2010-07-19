@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Fri Jul 16 20:54:50 2010
+            Sat Jul 17 19:56:26 2010
         </dateCreated>
     </head>
     <body>
@@ -120,6 +120,7 @@
         <outline text="Insight, wit and analysis as the BBC's foreign correspondents take a closer look at the stories behind the headlines. Presented by Kate Adie. Broadcast on BBC Radio 4 in the UK on Thursdays at 1100 (local time) and Saturdays at 1130 (local time) for about 25 weeks of the year. BBC World Service broadcasts on Saturdays and Sundays all year round, presented by Alan Johnston. For more information, a full list of programme broadcast times and the podcast Terms of Use go to www.bbc.co.uk/fromourowncorrespondent" title="From Our Own Correspondent" type="rss" xmlUrl="http://downloads.bbc.co.uk/podcasts/radio4/fooc/rss.xml"/>
         <outline text="Public Radio's guide to the modern world." title="Future Tense" type="rss" xmlUrl="http://www.publicradio.org/columns/futuretense/podcast.xml"/>
         <outline text="Antony Funnell presents this weekly half-hour program and podcast on ABC Radio National that takes a critical look at new technologies, new approaches and new ways of thinking. From politics to media to environmental sustainability, nothing is outside its brief." title="Future Tense - full program" type="rss" xmlUrl="http://www.abc.net.au/rn/podcast/feeds/fte.xml"/>
+        <outline text="The adventures of five hillbillies in space taking the universe by surprise." title="GalaxyBillies" type="rss" xmlUrl="http://www.michellplested.com/category/galaxybillies/feed"/>
         <outline text="Visit us online at WWW.GalorePodcast.com, email us at email@galorepodcast.com" title="Galore Podcast" type="rss" xmlUrl="http://galorepodcast.libsyn.com/rss"/>
         <outline text="Science, music and geekery at the world's only virtual sci-pop festival. Be there *and* be square." title="geek pop" type="rss" xmlUrl="http://geekpop.podbean.com/category/music/feed/"/>
         <outline text="http://www.geologicpodcast.com/rss" title="Geologic Podcast" type="rss" xmlUrl="http://www.geologicpodcast.com/rss"/>
@@ -458,6 +459,6 @@
         <outline text="JamesMelzer.net" title="You have no idea what you've just done..." type="rss" xmlUrl="http://jamesmelzer.net/feed/"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="The adventures of five hillbillies in space taking the universe by surprise." title="GalaxyBillies" type="rss" xmlUrl="http://www.michellplested.com/category/galaxybillies/feed"/>
+        <outline text="Omaha Will Stand" title="Undead Air" type="rss" xmlUrl="http://undeadair.libsyn.com/rss"/>
     </body>
 </opml>

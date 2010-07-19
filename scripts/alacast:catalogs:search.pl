@@ -145,13 +145,13 @@ sub display_outputs{
 			next;
 		}
 		
-		if( $debug_mode ) {
-			printf "Looking for:\n\t$alacast_catalog_search_outputs[$i]\n";
+		if( $debug_mode && $be_verbose ) {
+			printf "\nLooking for:\n\t$alacast_catalog_search_outputs[$i]\n";
 		}
 		
 		if("$alacast_catalog_search_outputs[$i]"eq"outline"){
 			$results_displayed++;
-			if( $debug_mode ){
+			if( $debug_mode && $be_verbose ){
 				printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
 			}
 			printf("\n\t%s\n", "$opml_outline");
@@ -176,7 +176,7 @@ sub display_outputs{
 		
 		$opml_attribute=~s/\&amp;/\&/g;
 		
-		if( $debug_mode ){
+		if( $debug_mode && $be_verbose ){
 			printf("\n\nSearch command:\n\t%s%s%s\n", "`", $grep_command, "`");
 		}
 		$results_displayed++;
@@ -189,7 +189,7 @@ sub display_outputs{
 
 sub search_catalogs{
 	foreach my $catalog ( @catalogs ) {
-		if( $debug_mode ){ printf("Searching: %s\n", $catalog); }
+		if( $debug_mode && $be_verbose ){ printf("Searching: %s\n", $catalog); }
 		if ("$searching_list"eq""){ search_catalog($catalog); }
 		else {
 			if($be_verbose &&  $debug_mode) { printf( "\nSearching catalogs listed in:\n\t%s\n", $searching_list); }
@@ -281,7 +281,7 @@ sub parse_option{
 	if($debug_mode){printf("Parsing option: [%s]%s\n", "$option", ("$value"eq"" ?"" :"=<$value>")); }
 	if("$option"eq"output" && "$value"ne""){
 		if($debug_mode){ printf( "\tHandling output argument: [%s].\n", $value ); }
-		if( parse_output($option, $value) ){ return $args_parsed; }
+		if( parse_output($value) ){ return $args_parsed; }
 	}
 	
 	if($option=~/^(download\-limit|start\-with)$/ && $value=~/^[0-9]+$/){
