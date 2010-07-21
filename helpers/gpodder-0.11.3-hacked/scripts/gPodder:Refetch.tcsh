@@ -102,12 +102,8 @@ parse_argv:
 				breaksw;
 			
 			case "f":
-			case "fetch-all":
-			case "r":
-			case "refetch":
-			case "c":
-			case "continue":
-				set fetch_all;
+			case "fetch-new-only":
+				set fetch_new_only;
 				breaksw;
 			
 			case "debug":
@@ -269,7 +265,7 @@ find_podcasts:
 		if( "`printf "\""${podcast_match}"\"" | sed -r 's/(the) (.*)/\L\1/ig'`" == "the" ) \
 			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(the) (.*)/\2, \1/ig'`";
 		
-		if(! ${?fetch_all} ) then
+		if( ${?fetch_new_only} ) then
 			set line_condition="\rif\(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) then";
 			set line_padding="\t";
 			set line_condition_end="\relse\r\tprintf "\""\\t\\t\<file:\/\/"\$"{cwd}\/${podcast_match}\/\1, released on: \5\.\3\> already exists.\\n\\n"\"";\rendif";

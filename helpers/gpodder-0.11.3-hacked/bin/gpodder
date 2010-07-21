@@ -75,6 +75,7 @@ next_argv:
 
 
 exit_script:
+	onintr -;
 	if(! ${?gpodder_ran} ) then
 		set gpodder_run_once message feed argz;
 		goto run_progie;
@@ -126,7 +127,7 @@ run_progie:
 		switch("${action}")
 			case "del":
 			case "add":
-				if(! -e "${gPodders_path}/.action.pid" ) then
+				if( ! -e "${gPodders_path}/.action.pid" || `/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local --(add|del).*" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'` == "" ) then
 					touch "${gPodders_path}/.action.pid";
 				else
 					printf "Another process: %s is currently accessing gPodder's catalog.\nPlease wait for it to finish." "`cat "\""${gPodders_path}/.action.pid"\""`" > /dev/stderr;
@@ -151,7 +152,7 @@ run_progie:
 		switch("${action}")
 			case "del":
 			case "add":
-				sleep 2;
+				sleep 4;
 				set escaped_argz="`printf "\""%s"\"" "\""${argz}"\"" | sed -r 's/\//\\\//g'`";
 				set gPodder_PID=`/bin/ps -A -c -F | /bin/grep -P "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ./${gPodder_script} --local ${escaped_argz}" | sed -r 's/^[0-9]+[\\ ]+([0-9]+).*[\r\n]*/\1/'`;
 				while( "${gPodder_PID}" != "" )

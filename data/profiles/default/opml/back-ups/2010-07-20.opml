@@ -5,7 +5,7 @@
             gPodder subscriptions
         </title>
         <dateCreated>
-            Tue Jul 20 18:46:07 2010
+            Tue Jul 20 17:22:09 2010
         </dateCreated>
     </head>
     <body>
@@ -460,6 +460,5 @@
         <outline text="JamesMelzer.net" title="You have no idea what you've just done..." type="rss" xmlUrl="http://jamesmelzer.net/feed/"/>
         <outline text="A sanctuary for young free-thinkers" title="Young Australian Skeptics » Podcast" type="rss" xmlUrl="http://www.youngausskeptics.com/category/podcast/feed/"/>
         <outline text="Young and Kinky is a youthful look at the kink and BDSM world intended for people 18 to 35 from the perspective of a kinky couple in their 20s and their views on BDSM, kink, and sex." title="youngandkinky's Podcast" type="rss" xmlUrl="http://youngandkinky.libsyn.com/rss"/>
-        <outline text="Finding Peace in the Spaces Between" title="Zen of Being Digital" type="rss" xmlUrl="http://zenofdigital.wordpress.com/feed/"/>
     </body>
 </opml>

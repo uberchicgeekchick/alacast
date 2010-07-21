@@ -22,14 +22,14 @@ setenv:
 
 parse_argv:
 	while("${1}" != "")
-		set dashes="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=)?(.*)/\1/'`";
+		set dashes="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([-]{1,2})([^=]+)(=)?(.*)/\1/'`";
 		if( "${dashes}" == "${1}" ) \
 			set dashes="";
-		set option="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=)?(.*)/\2/'`";
+		set option="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([-]{1,2})([^=]+)(=)?(.*)/\2/'`";
 		if( "${option}" == "${1}" ) \
 			set option="";
-		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=)?(.*)/\3/'`";
-		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([\-]{1,2})([^\=]+)(=)?(.*)/\4/'`";
+		set equals="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([-]{1,2})([^=]+)(=)?(.*)/\3/'`";
+		set value="`printf "\""%s"\"" "\""${1}"\"" | sed -r 's/([-]{1,2})([^=]+)(=)?(.*)/\4/'`";
 		if( "${option}" != "" && "${value}" == "" && "${equals}" == "" && "${2}" != "" )	\
 			set value="${2}";
 		
@@ -39,6 +39,11 @@ parse_argv:
 			case "skip-clean-up":
 				if(! ${?skip_clean_up} ) \
 					set skip_clean_up;
+				breaksw;
+			
+			case "interactive":
+				if(! ${?interactive} ) \
+					set interactive;
 				breaksw;
 			
 			case "check":
@@ -58,7 +63,7 @@ parse_argv:
 			case "verbose":
 				if(! ${?be_verbose} ) \
 					set be_verbose;
-			breaksw;
+				breaksw;
 			
 			case "force":
 				if(! ${?force_clean_up} ) \
@@ -103,15 +108,15 @@ check_indexes:
 		ex '+1,$s/\v\r\n?\_$//' '+1,$s/\n//g' '+wq' "./index.swp" > /dev/null;
 		
 		set title="`cat "\""./index.swp"\"" | sed -r 's/.*<channel><title>([^<]+)<\/title>.*/\1/' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`";
-		set escaped_index="`echo "\""${index}"\"" | sed -r 's/([/.])/\\\1/g'`";
-		ex "+1,"\$"s/\v.*\<channel\>\<title\>([^<]+)\<\/title\>.*\<item\>\<title\>([^<]+)\<\/title\>.*\<url\>(.*)(\.[^<\.?]+)([\.?]?[^<]*)\<\/url\>.*\<pubDate\>([^<]+)\<\/pubDate\>\<\/item\>\<\/rss\>.*$/${escaped_cwd}\/${escaped_index} \-\- <\1>, \<\2\>, released on: \6\4/g" '+wq!' index.swp > /dev/null;
+		set escaped_index="`printf "\""%s"\"" "\""${index}"\"" | sed -r 's/([/.])/\\\1/g'`";
+		ex "+1,"\$"s/\v.*\<channel\>\<title\>([^<]+)\<\/title\>.*\<item\>\<title\>([^<]+)\<\/title\>.*\<url\>(.*)(\.[^<\.?]+)([\.?]?[^<]*)\<\/url\>.*\<pubDate\>([^<]+)\<\/pubDate\>\<\/item\>\<\/rss\>.*"\$"/${escaped_cwd}\/${escaped_index} \-\- <\1>, \<\2\>, released on: \6\4/g" '+wq!' index.swp > /dev/null;
 		
 		if( ${?be_verbose} ) \
 			printf "Checking <%s>'s pubDate.\n" "${title}" > /dev/stdout;
 		
 		if(! ${?skip_clean_up} ) then
 			set escaped_title="`printf "\""${title}"\"" | sed -r 's/([\(\)\[\.\|])/\\\1/g' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`";# | sed -r 's/'\''/'\'''\\\\\'''\''/g'`";
-			if( "`/bin/grep -Pi '^[ \t]+\<outline.*title\="\""${escaped_title}"\"".*"\$"' "\""${HOME}/.config/gpodder/channels.opml"\""`" == "" ) then
+			if( "`/bin/grep -Pi '^[ \t]+\<outline.*title\="\""${escaped_title}"\"".*"\$"' "\""${HOME}/.config/gpodder/channels.opml"\""`" == "" && ${?interactive} ) then
 				set confirmation;
 				if(! ${?force_clean_up} ) then
 					printf "You are no longer subscribed to <%s>'s feed.\n\tWould you like to delete it? [Yes(default)/No] " "${title}";
@@ -137,7 +142,7 @@ check_indexes:
 					unset escaped_index index title;
 					continue;
 				endif
-			else
+			else if( ${?interactive} ) then
 				set podcast_pubdate="`tail -1 "\""${pubDate_log}"\"" | sed -r 's/(.*)\ \:\ (.*)(\/index\.xml)\ \-\-\ <(.*)>,\ <(.*)>(,.*)/\1/'`";
 				printf "<%s>'s last episode was released on [%s].\n\tWould you like to unsubscribe from it's feed? [Yes/No(default)] " "${title}" "${podcast_pubdate}";
 				set confirmation="$<";
