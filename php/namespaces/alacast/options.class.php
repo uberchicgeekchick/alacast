@@ -90,7 +90,6 @@
 		
 		
 		private function parse(){
-			$interactive_set=FALSE;
 			foreach($_SERVER['argv'] as $index=>$argv_value){
 				$option=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$1", $argv_value);
 				$value=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$2", $argv_value);
@@ -134,11 +133,9 @@
 							$this->continuous=TRUE;
 						break;
 					
-					case "non-interactive":
-						if(!$interactive_set)
-							$interactive_set=TRUE;
-						if($this->interactive)
-							$this->interactive=FALSE;
+					case "interactive":
+						if(!$this->interactive)
+							$this->interactive=TRUE;
 						if(!$this->continuous)
 							$this->continuous=TRUE;
 						break;
@@ -223,7 +220,6 @@
 					*/
 				}
 			}
-			unset($interactive_set);
 		}/*\alacast\options\parse();*/
 		
 		

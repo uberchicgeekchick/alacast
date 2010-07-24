@@ -516,7 +516,7 @@
 	 */
 	require(ALACASTS_PATH."/php/namespaces/alacast/alacast.class.php");
 	if(!($alacast=new alacast("alacast")))
-		isexit(-1);
+		exit(-1);
 	
 	if($alacast->options->diagnosis){
 		fprintf(STDOUT, "\$alacast:\n");
@@ -530,7 +530,7 @@
 	
 	
 	function main(&$alacast){
-		do{
+		while($alacast->options->continuous){
 			$new_podcasts=0;
 			if(!($new_podcasts=syncronize($alacast)))
 				$alacast->output("\n\n\t^_^' you have no");
@@ -540,13 +540,16 @@
 			
 			$alacast->output(" new podcasts.  Have fun! ^_^\n\n");
 			
-			if($alacast->options->interactive) {
-				print("\nPlease press [enter] to continue; [enter] 'q' to quit: ");
-				if( (strtolower(trim(fgetc(STDIN)))) == 'q')
-					$alacast->options->continuous=FALSE;
-			}else if( $alacast->options->update_delay && $alacast->options->update_delay > 0 )
-				sleep( $alacast->options->update_delay );
-		}while($alacast->options->continuous);
+			if( $alacast->options->update_delay > 0 )
+				sleep($alacast->options->update_delay);
+			
+			if(!$alacast->options->interactive)
+				continue;
+			
+			print("\nPlease press [enter] to continue; [enter] 'q' to quit: ");
+			if( strtolower(trim( (fgetc(STDIN)) )) == "q")
+				$alacast->options->continuous=FALSE;
+		}
 	}/*main($alacast);*/
 	
 	main($alacast);
