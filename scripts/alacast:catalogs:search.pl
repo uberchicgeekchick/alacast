@@ -38,7 +38,7 @@ my @websites_to_visit=();
 my $global_search_attribute;
 my $global_search_attributes_value;
 my $searching_list="";
-my @alacast_catalog_search_outputs=("title", "htmlUrl", "xmlUrl");
+my @alacast_catalog_search_outputs=("title", "htmlUrl", "xmlUrl", "description");
 
 sub usage{
 	printf( "Usage:\n\t %s [options...]\n\t[--(enable|disable)-(feature)\n\t\tfeature may include any of the following:\n", $scripts_basename);

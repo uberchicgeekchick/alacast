@@ -21,7 +21,7 @@
 		/* objects */
 		public $options;
 		public $logger;
-		public $podcatch;
+		public $podcatcher;
 		public $ini;
 		public $playlist;
 		
@@ -59,7 +59,7 @@
 						$this->path,
 						$this->ini->profiles_path,
 						$this->options->update,
-						$this->options->nice,
+						$this->options->priority,
 						$this->options->debug
 			);
 			

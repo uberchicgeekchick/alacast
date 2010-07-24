@@ -42,15 +42,15 @@
 	
 	class update{
 		public	$detailed;
-		public	$nice;
+		public	$priority;
 		public	$debug;
 		
 		
-		public function __construct( $update_type, $nice, $debug ){
-			if(!preg_match("/^[0-9]+$/", $nice))
-				$this->nice=5;
+		public function __construct( $update_type, $priority, $debug ){
+			if(!preg_match("/^[0-9]+$/", $priority))
+				$this->priority=5;
 			else
-				$this->nice=$nice;
+				$this->priority=$priority;
 			
 			if($debug!=TRUE)
 				$this->debug=FALSE;
@@ -73,15 +73,15 @@
 		
 		private $profiles_path;
 		
-		private	$command;
-		private	$podcatcher_path;
-		private	$podcatcher;
+		private	$path;
+		private	$script;
+		private	$command_line;
 		
 		private	$update;
 		
 		public $status;
 		
-		public function __construct(&$alacast, $alacasts_path, $profiles_path, $update_type, $nice, $debug){
+		public function __construct(&$alacast, $alacasts_path, $profiles_path, $update_type, $priority, $debug){
 			$this->alacast=&$alacast;
 			
 			
@@ -91,84 +91,91 @@
 			$this->working_dir=exec( "pwd" );
 			chdir( $this->starting_dir );
 			
-			$this->podcatcher_path=NULL;
-			$this->podcatcher=NULL;
+			$this->path=NULL;
+			$this->script=NULL;
 			
 			$this->status="waiting";
 			
-			$this->update=new update($update_type, $nice, $debug);
+			$this->update=new update($update_type, $priority, $debug);
 			
-			$this->command=$this->set_podcatcher($alacasts_path);
+			$this->prepare_command_line($alacasts_path);
 		}//method:public function __construct( ALACASTS_PATH, 1-20, $profiles_path="~/.config/gpodder/gpodder.conf" );
 
 		
 		
-		private function set_podcatcher(&$alacasts_path){
-			$this->podcatcher_path=sprintf("%s/helpers/gpodder-0.11.3-hacked/bin", $alacasts_path);
-			$this->podcatcher=sprintf("%s/gpodder-0.11.3-hacked", $this->podcatcher_path);
+		private function prepare_command_line(&$alacasts_path){
+			$this->path=sprintf("%s/helpers/gpodder-0.11.3-hacked/bin", $alacasts_path);
+			$this->script="gpodder-0.11.3-hacked";
+			
 			if(!(
-				(
-					(is_executable( ($this->podcatcher)))
-					&&
-					(chdir( (dirname( $this->podcatcher))))
-				)
+				(chdir($this->path))
+				&&
+				is_executable("./{$this->script}")
 			)){
-				$this->podcatcher=NULL;
-				return $this->alacast->output("I can't try to download any new podcasts because I can't find alacast.", TRUE);
+				$this->script=NULL;
+				return $this->alacast->output("\n\tI can't try to download any new podcasts because I can't find alacast.\n", TRUE);
 			}
 			
-			$this->podcatcher="./".(basename($this->podcatcher))." --local";
-			
-			if($this->update->nice){
-				if($this->update->nice > 0)
-					$this->podcatcher="nice --adjustment={$this->update->nice} {$this->podcatcher}";
-				else
-					$this->podcatcher="nice --adjustment=5 {$this->podcatcher}";
+			$this->command_line="if [ \"\$http_proxy\" == \"\" ]; then unset http_proxy; fi; cd \"{$this->path}\"";
+			if($this->update->priority && $this->update->priority < 20 && $this->update->priority > -21){
+				if($this->update->priority < 0)
+					$this->command_line.="sudo ";
+				
+				$this->command_line="nice --adjustment={$this->update->priority} ";
 			}
 			
-			$this->podcatcher="unset http_proxy; {$this->podcatcher}";
-		}/*$this->set_podcatcher();*/
+			$this->command_line.="./{$this->script} --local --run";
+			
+			
+			if(!$this->update->detailed)
+				$this->command_line.=" > /dev/null";
+			else
+				$this->command_line.=" > /dev/tty";
+			
+			if(!$this->update->debug)
+				$this->command_line.=" 2> /dev/null";
+			else
+				$this->command_line.=" 2> /dev/stderr";
+		}/*$this->prepare_command_line();*/
 		
 		
 		
 		public function download(&$error_log_file){
 			$this->set_status( TRUE, TRUE );
 			
-			if(!$this->update->debug)
-				$error_output=" 2> /dev/null";
-			else{
-				$GLOBALS['alacast']->logger->output("Running Podcatcher backend in debug mode.", TRUE);
-				$error_output=" 2> /dev/stderr";
-				$error_output=" 2>> \"{$error_log_file}\"";
-			}
+			if($this->update->debug)
+				$this->alacast->output("\n\tRunning:\n\t\t\`{$this->command_line}\`\n");
 			
 			$lastLine="";
-			/*if($GLOBALS['alacast']->podcatcher->update->update){
+			if(!$this->update->detailed)
+				$lastLine=exec($this->command_line);
+			else
+				$lastLine=system($this->command_line);
+			
+			/*if($this->update->detailed){
 				$alacast_Output=array();
-				$lastLine=exec("{$this->podcatcher} --run > /dev/tty{$error_output}", $alacast_Output);
+				$lastLine=exec("{$this->command}", $alacast_Output);
 				
 				if($this->update->detailed)
-					$GLOBALS['alacast']->logger->output((helper::array_to_string( $alacast_Output, "\n")), "", TRUE);
+					$this->alacast->output((helper::array_to_string( $alacast_Output, "\n\t")), "", TRUE);
 				
 				if((preg_match("/^D/", (ltrim($lastLine)))))
 					log_alacast_downloadss($alacast_Output);
-			}else*/
-			
-			if(!$this->update->detailed)
-				$lastLine=exec("{$this->podcatcher} --run > /dev/null{$error_output}");
-			else
-				$lastLine=system("{$this->podcatcher} --run > /dev/tty{$error_output}");
+			}*/
 			
 			$this->set_status( TRUE, FALSE );
 			
-			if(!( (preg_match("/^D/", (ltrim($lastLine))))))
+			if(!( (preg_match("/^D/", (ltrim($lastLine)))))){
+				unset($lastline);
 				return FALSE;
+			}
+			unset($lastline);
 			
 			/*
 			 * alacast 0.10.0 need a lot longer than 5 seconds.
 			 * So I've moved it to 31 seconds just to be okay.
 			 */
-			$this->alacast->output("\nPlease wait while alacast finishes downloading your podcasts new episodes");
+			$this->alacast->output("\n\tPlease wait while alacast finishes downloading your podcasts new episodes.\n");
 			for($i=0; $i<33; $i++) {
 				if(!($i%3))
 					print(".");
@@ -187,7 +194,7 @@
 					unlink("{$this->profiles_path}/.status.{$this->status}");
 			}else{
 				if(file_exists("{$this->profiles_path}/.status.{$this->status}") && is_writable("{$this->profiles_path}/.status.{$this->status}") ){
-					$this->alacast->output("Another process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
+					$this->alacast->output("\n\tAnother process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
 				}else{
 					if(!$downloading)
 						$this->status="syncronizing";
@@ -208,6 +215,7 @@
 					date( "c" )
 				)
 			);
+			
 			if(!$starting)
 				$this->status="waiting";
 		}//method:public function set_status( $action="running", $finished=false );

@@ -318,23 +318,24 @@
 	}//end:function set_podcasts_new_episodes_filename()
 	
 	
-	function move_podcasts() {
-		if($GLOBALS['alacast']->options->update)
-			$GLOBALS['alacast']->podcatcher->download($GLOBALS['alacast']->logger->error_log_file);
+	function syncronize(&$alacast) {
+		if($alacast->options->update)
+			if($alacast->podcatcher->download($alacast->logger->error_log_file))
+				return 0;
 		
-		$GLOBALS['alacast']->podcatcher->set_status( FALSE, TRUE );
+		$alacast->podcatcher->set_status( FALSE, TRUE );
 		
-		$GLOBALS['alacast']->playlist_open();
+		$alacast->playlist_open();
 		
-		$totalMovedPodcasts=0;
-		$alacastsPodcastDir=opendir($GLOBALS['alacast']->ini->download_dir);
+		$new_podcasts=0;
+		$alacastsPodcastDir=opendir($alacast->ini->download_dir);
 		while($podcastsGUID=readdir($alacastsPodcastDir)) {
 			if(!(
-				(is_dir( (sprintf( "%s/%s", $GLOBALS['alacast']->ini->download_dir, $podcastsGUID))))
+				(is_dir( (sprintf( "%s/%s", $alacast->ini->download_dir, $podcastsGUID))))
 				&&
 				(preg_match("/^[^.]+/", $podcastsGUID))
 				&&
-				(file_exists( ($podcastsXML_filename=(sprintf( "%s/%s/index.xml", $GLOBALS['alacast']->ini->download_dir, $podcastsGUID)))))
+				(file_exists( ($podcastsXML_filename=(sprintf( "%s/%s/index.xml", $alacast->ini->download_dir, $podcastsGUID)))))
 			))
 				continue;
 			
@@ -343,7 +344,7 @@
 			if((isset( $podcastsFiles)))
 				unset($podcastsFiles);
 			$podcastsFiles=array();
-			exec((sprintf( "/bin/ls -t --width=1 --quoting-style=c %s/%s/*.*", $GLOBALS['alacast']->ini->download_dir, $podcastsGUID)), $podcastsFiles);
+			exec((sprintf( "/bin/ls -t --width=1 --quoting-style=c %s/%s/*.*", $alacast->ini->download_dir, $podcastsGUID)), $podcastsFiles);
 			
 			if(( ($podcastsFiles['total']=(count($podcastsFiles))) <= 1)) continue;
 			
@@ -352,15 +353,15 @@
 			set_podcasts_info($podcastsXML_filename, $podcastsInfo, $podcastsGUID, $podcastsFiles['total']);
 			
 			if(!(
-				(is_dir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title']))
+				(is_dir($alacast->ini->save_to_dir."/".$podcastsInfo[0]['title']))
 				||
-				(mkdir($GLOBALS['alacast']->ini->save_to_dir."/".$podcastsInfo[0]['title'], 0774, TRUE))
+				(mkdir($alacast->ini->save_to_dir."/".$podcastsInfo[0]['title'], 0774, TRUE))
 			)) {
-				$GLOBALS['alacast']->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory. Please edit '{$podcastsXML_filename}' to fix this issue.", TRUE, TRUE);//*wink*, it just kinda felt like a printf moment :P
+				$alacast->output("\n\tI've had to skip {$podcastsInfo[0]['title']} because I couldn't create it's directory. Please edit '{$podcastsXML_filename}' to fix this issue.", TRUE, TRUE);//*wink*, it just kinda felt like a printf moment :P
 				continue;
 			}
 
-			$GLOBALS['alacast']->output( 
+			$alacast->output( 
 				"\n\n\t*w00t*! "
 				. $podcastsInfo[0]['title']
 				. " has "
@@ -376,7 +377,7 @@
 			
 			leave_symlink_trail($podcastsGUID, $podcastsInfo[0]['title']);
 			
-			$totalMovedPodcasts+=move_podcasts_episodes($podcastsXML_filename, $podcastsGUID, $podcastsFiles, $podcastsInfo);
+			$new_podcasts+=move_podcasts_episodes($podcastsXML_filename, $podcastsGUID, $podcastsFiles, $podcastsInfo);
 			
 			unset($podcastsFiles);
 			unset($podcastsInfo);
@@ -384,18 +385,12 @@
 		}
 		closedir($alacastsPodcastDir);
 		
-		if($totalMovedPodcasts)
-			$GLOBALS['alacast']->output("\n\n\t^_^ *w00t*, you have {$totalMovedPodcasts} new podcasts!");
-		else
-			$GLOBALS['alacast']->output("\n\t^_^ There are no new podcasts.");
+		$alacast->podcatcher->set_status( FALSE, FALSE );
 		
-		$GLOBALS['alacast']->output("  Have fun! ^_^\n\n");
-		$GLOBALS['alacast']->podcatcher->set_status( FALSE, FALSE );
+		$alacast->playlist_close();
 		
-		$GLOBALS['alacast']->playlist_close();
-		
-		return TRUE;
-	}/*move_podcasts();*/
+		return $new_podcasts;
+	}/*syncronize($alacast);*/
 	
 	
 	
@@ -534,18 +529,27 @@
 	}
 	
 	
-	while((move_podcasts())) {
-		if(!$alacast->options->interactive){
-			if(!( $alacast->options->update_delay && $alacast->options->update_delay > 0 ))
-				break;
-			sleep( $alacast->options->update_delay );
-			continue;
-		}
-		
-		print("\nPlease press [enter] to continue; [enter] 'q' to quit: ");
-		if( (trim( (fgetc( STDIN )) )) == 'q')
-			break;
-	}//while((move_podcasts()));
+	function main(&$alacast){
+		do{
+			$new_podcasts=0;
+			if(!($new_podcasts=syncronize($alacast)))
+				$alacast->output("\n\n\t^_^' you have no");
+			else
+				$alacast->output("\n\n\t^_^ *w00t*, you have {$new_podcasts}");
+			unset($new_podcasts);
+			
+			$alacast->output(" new podcasts.  Have fun! ^_^\n\n");
+			
+			if($alacast->options->interactive) {
+				print("\nPlease press [enter] to continue; [enter] 'q' to quit: ");
+				if( (strtolower(trim(fgetc(STDIN)))) == 'q')
+					$alacast->options->continuous=FALSE;
+			}else if( $alacast->options->update_delay && $alacast->options->update_delay > 0 )
+				sleep( $alacast->options->update_delay );
+		}while($alacast->options->continuous);
+	}/*main($alacast);*/
+	
+	main($alacast);
 	
 	unset($alacast);
 ?>

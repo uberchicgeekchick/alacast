@@ -4,9 +4,7 @@
 		<title>Web Design &amp; Programming podcasts</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
-		<outline title="<![CDATA[P3::C7Y]]>" xmlUrl="http://c7y.phparch.com/c/tag/podcast?feed=atom" type="rss" text="<![CDATA[P3::C7Y]]>" htmlUrl="http://c7y.phparch.com/" description="<![CDATA[php|architect&apos;s: c<sub>7</sub>y p<sup>3</sup> podcast]]>"/>
+		<outline title="<![CDATA[php|architect podcast]]>" xmlUrl="http://feeds.feedburner.com/phpa/podcast" type="rss" text="<![CDATA[php|architect podcast]]>" htmlUrl="http://www.phparch.com/category/podcast/" description="<![CDATA[<h1>php|architect podcast</h1><p>Each week we cover new topics relating to PHP. From the latest trends to best practices, it's everything but the code.</p>]]>" />
 		<outline title="<![CDATA[PHP Podcasts]]>" xmlUrl="http://www.phppodcasts.com/feed/" type="rss" text="<![CDATA[PHP Podcasts]]>" htmlUrl="http://www.phppodcasts.com/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[The ZendCon Sessions]]>" xmlUrl="http://feeds.feedburner.com/ZendDeveloperZone" type="rss" text="<![CDATA[The ZendCon Sessions]]>" htmlUrl="http://devzone.zend.com/article/2757-The-ZendCon-Sessions-Podcast-Homepage" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[php_abstract]]>" xmlUrl="http://feeds.feedburner.com/phpabstract" type="rss" text="<![CDATA[php_abstract]]>" htmlUrl="http://devzone.zend.com/article/2046-Announcing-PHP-Abstract-DevZones-new-PodCast-for-PHP-Developers" description="<![CDATA[]]>"/>
@@ -18,6 +16,5 @@
 		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Python 411 Podcast Series]]>" xmlUrl="http://www.awaretek.com/python/index.xml" type="rss" text="<![CDATA[Python 411 Podcast Series]]>" htmlUrl="http://www.awaretek.com/python/" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Perlcast]]>" xmlUrl="http://www.perlcast.com/rss/current.xml" type="rss" text="<![CDATA[Perlcast]]>" htmlUrl="http://www.perlcast.com/" description="<![CDATA[]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 	</body>
 </opml>

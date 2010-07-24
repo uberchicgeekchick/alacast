@@ -23,7 +23,6 @@
 		
 		private $path;
 		private $prefix;
-		private $playlist;
 		private $type;
 		private $append_pubdate;
 		
@@ -31,6 +30,9 @@
 		private $created_dirs;
 		
 		private $total;
+		
+		private $playlist;
+		private $symlink;
 		
 		public function __construct(&$alacast, $path=".", $prefix="alacast", $type="m3u", $append_pubdate=FALSE){
 			$this->alacast=&$alacast;
@@ -45,6 +47,11 @@
 			$this->created_dirs=array( 'total'=>0 );
 			$this->fp=NULL;
 
+			$this->type=NULL;
+			$this->extension=NULL;
+			$this->playlist=NULL;
+			$this->symlink=NULL;
+			
 			$this->type=$type;
 			if(!$this->validate())
 				return FALSE;
@@ -59,6 +66,7 @@
 					$this->type=NULL;
 					$this->extension=NULL;
 					$this->playlist=NULL;
+					$this->symlink=NULL;
 					return ($this->enabled=FALSE);
 				
 				case "toxine":
@@ -84,6 +92,8 @@
 					break;
 			}
 			$this->playlist=sprintf("%s/%s's %s playlist from: %s.%s", $this->path, $this->prefix, $this->type, date("Y:m:d @ H:i:s"), $this->extension);
+			
+			$this->symlink=sprintf("%s/%s's latest %s playlist.%s", $this->path, $this->prefix, $this->type, $this->extension);
 			return ($this->enabled=TRUE);
 		}/*$this->validate();*/
 
@@ -92,7 +102,7 @@
 				return FALSE;
 			
 			if(!($filename && file_exists($filename))){
-				$GLOBALS['alacast']->logger->output("**error:** adding: <file://{$filename}> to playlist: <file://{$this->playlist}>\t[failed]\n\n\t<file://{$filename}> does not exists.\n", TRUE);
+				$this->alacast->logger->output("**error:** adding: <file://{$filename}> to playlist: <file://{$this->playlist}>\t[failed]\n\n\t<file://{$filename}> does not exists.\n", TRUE);
 				return FALSE;
 			}
 			
@@ -176,6 +186,14 @@
 			if(!$this->created_dirs['total'])
 				return;
 			
+			if($this->playlist){
+				if( file_exists($this->playlist) )
+					unlink($this->playlist);
+			}
+			if($this->symlink){
+				if( file_exists($this->symlink) )
+					unlink($this->symlink);
+			}
 			$dir=$this->path;
 			while($this->created_dirs['total'])
 				rmdir($this->created_dirs[$this->created_dirs['total']--]);
@@ -205,6 +223,12 @@
 			
 			if($this->fp)
 				fclose($this->fp);
+			
+			/*if($this->symlink){
+				if( file_exists($this->symlink) )
+					unlink($this->symlink);
+				symlink($this->playlist, $this->symlink);
+			}*/
 		}/*__destruct();*/
 		
 	}

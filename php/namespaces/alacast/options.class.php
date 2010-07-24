@@ -20,7 +20,7 @@
 		
 		
 		public $mode;
-		public $nice;
+		public $priority;
 		public $debug;
 		public $diagnosis;
 		public $quiet;
@@ -28,6 +28,7 @@
 		public $update;
 		public $leave_trails;
 		public $clean_trails;
+		public $continuous;
 		public $interactive;
 		public $update_delay;
 		public $verbose;
@@ -63,10 +64,11 @@
 			$this->mode=NULL;
 			
 			$this->update_delay=0;
-			$this->interactive=FALSE;
+			$this->continuous=FALSE;
+			$this->interactive=TRUE;
 			$this->verbose=FALSE;
 			
-			$this->nice=0;
+			$this->priority=0;
 			$this->debug=FALSE;
 			$this->diagnosis=FALSE;
 			$this->quiet=FALSE;
@@ -88,6 +90,7 @@
 		
 		
 		private function parse(){
+			$interactive_set=FALSE;
 			foreach($_SERVER['argv'] as $index=>$argv_value){
 				$option=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$1", $argv_value);
 				$value=preg_replace("/^[\-]{1,2}([^=]*)[=]?['\"]?([^'\"]*)['\"]?$/", "$2", $argv_value);
@@ -112,9 +115,32 @@
 							$this->diagnosis=TRUE;
 						break;
 					
-					case "interactive":
-						if(!$this->interactive)
-							$this->interactive=TRUE;
+					case "continuous":
+						if(!$this->continuous)
+							$this->continuous=TRUE;
+						break;
+					
+					case "loop":
+					case "delay":
+					case "repeat":
+					case "repetitive":
+					case "update-delay":
+						if(!($value && preg_match("/^[0-9]+$/", $value)))
+							$this->update_delay=1000000; /* 10 seconds */
+						else
+							$this->update_delay=$value*1000000;
+						
+						if(!$this->continuous)
+							$this->continuous=TRUE;
+						break;
+					
+					case "non-interactive":
+						if(!$interactive_set)
+							$interactive_set=TRUE;
+						if($this->interactive)
+							$this->interactive=FALSE;
+						if(!$this->continuous)
+							$this->continuous=TRUE;
 						break;
 					
 					case "logging":
@@ -162,23 +188,17 @@
 							$this->update=$value;
 						break;
 					
-					case "update-delay":
-						if(!($value && preg_match("/^[0-9]+$/", $value)))
-							$this->update_delay=10000000; /* 10 seconds */
-						else
-							$this->update_delay=$value*1000000;
-						break;
-					
 					case "nice":
-						if(!($value && preg_match("/^[0-9]+$/", $value) && $value < 20 && $value > -21)){
-							$this->nice=5;
+					case "priority":
+						if(!($value && preg_match("/^-?[1,2]?[0-9]$/", "{$value}") && $value < 20 && $value > -21)){
+							$this->priority=5;
 							break;
 						}
 						
 						if($value <= 0)
-							$this->nice=5;
+							$this->priority=5;
 						else
-							$this->nice=$value;
+							$this->priority=$value;
 						break;
 					
 					case "strip-characters":
@@ -203,6 +223,7 @@
 					*/
 				}
 			}
+			unset($interactive_set);
 		}/*\alacast\options\parse();*/
 		
 		
