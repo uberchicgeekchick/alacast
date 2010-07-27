@@ -96,7 +96,7 @@ init:
 	if( -e "${pubDate_log}" ) rm "${pubDate_log}";
 	touch "${pubDate_log}";
 	
-	set escaped_cwd="`echo '${cwd}' | sed -r 's/([/.])/\\\1/g'`";
+	set escaped_cwd="`printf "\""%s"\"" "\""${cwd}"\"" | sed -r 's/([/.])/\\\1/g'`";
 	#@ max_indexes=200;
 #goto init;
 
@@ -211,6 +211,10 @@ finalize:
 	>! "${pubDate_log}.swp";
 	
 	mv -f "${pubDate_log}.swp" "${pubDate_log}";
+	
+	printf "Saving name value sorted log to [%s.names]..." "${pubDate_log}";
+	sort "${pubDate_log}" >! "${pubDate_log}.names";
+	printf "\t[finished]\n";
 
 	if( ${?skip_clean_up} ) \
 		unset skip_clean_up;
