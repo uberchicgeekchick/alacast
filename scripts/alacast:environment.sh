@@ -91,13 +91,10 @@ else
 	
 	
 	alias "alacast:feed:fetch:all:enclosures.tcsh"="${ALACASTS_GTK_PATH}alacast:feed:fetch:all:enclosures.tcsh --disable=logging"
+	#alias "alacast:feed:fetch:enclosures:latest.tcsh" "alacast:feed:fetch:enclosures.tcsh --download-limit=1";
+	#alias "alacast:feed:fetch:podiobooks.com:enclosures:latest.tcsh" "alacast:feed:fetch:enclosures.tcsh --start-with=2 --download-limit=1";
 	
 	export ALACASTS_OPTIONS='--logging --titles-reformat-numerical --titles-append-pubdate --playlist=m3u --strip-characters=#;!';
-	
-	# when no option are given alacast:cli uses the environmental variable: $ALACAST_OPTIONS.
-	alias "alacast:php:cli:sync"="${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=sync";
-	# --with-defaults prepends $ALACAST_OPTIONS
-	alias "alacast:php:cli:update"="${ALACASTS_CLI_PATH}/bin/alacast.php --with-defaults=update";
 	
 	if test -e "${HOME}/.alacast/alacast.ini"; then
 		alacast_ini="${HOME}/.alacast/alacast.ini";

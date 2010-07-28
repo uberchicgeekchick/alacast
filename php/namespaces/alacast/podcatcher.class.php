@@ -116,12 +116,17 @@
 				return $this->alacast->output("\n\tI can't try to download any new podcasts because I can't find alacast.\n", TRUE);
 			}
 			
-			$this->command_line="if [ \"\$http_proxy\" == \"\" ]; then unset http_proxy; fi; cd \"{$this->path}\"";
+			if(!$this->alacast->ini->proxy)
+				$this->command_line="if [ \"\$http_proxy\" == \"\" ]; then unset http_proxy; fi;";
+			else
+				$this->command_line="export http_proxy=\"{$this->alacast->ini->proxy}\";";
+			
+			$this->command_line.=" cd \"{$this->path}\"; ";
 			if($this->update->priority && $this->update->priority < 20 && $this->update->priority > -21){
 				if($this->update->priority < 0)
 					$this->command_line.="sudo ";
 				
-				$this->command_line="nice --adjustment={$this->update->priority} ";
+				$this->command_line.="nice --adjustment={$this->update->priority} ";
 			}
 			
 			$this->command_line.="./{$this->script} --local --run";

@@ -9,9 +9,11 @@
 		public $profiles_path;
 		
 		private $ini;
-		private $mode;
 		private $helper_config;
-
+		
+		private $mode;
+		
+		public $proxy;
 		public $media_dir;
 		
 		public $download_dir;
@@ -38,6 +40,8 @@
 			
 			$this->ini=NULL;
 			$this->helper_config=NULL;
+			
+			$this->proxy=NULL;
 			
 			$this->media_dir=NULL;
 			
@@ -95,6 +99,10 @@
 				unset($alacast_config);
 				return FALSE;
 			}
+			
+			if(preg_match("/.*proxy=\"([^\"]+)\".*/", $alacast_config))
+				if(!($this->proxy=(preg_replace("/.*proxy=\"([^\"]+)\".*/", "$1", $alacast_config))))
+					$this->proxy=NULL;
 			
 			chdir(dirname( $this->download_dir));
 			
