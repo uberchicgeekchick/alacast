@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>NOVA Video Podcasts &raquo; PBS</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Nova Vodcast]]>" xmlUrl="http://www.pbs.org/wgbh/nova/rss/nova-vodcast-pb.xml" type="rss" text="<![CDATA[Nova Vodcast | PBS Video | Short video stories from the world of science.]]>" htmlUrl="http://www.pbs.org/wgbh/nova/rss/podcasting.html" description="<![CDATA[NOVA brings you short video stories from the world of science, including excerpts from our television programs, video dispatches from producers and correspondents in the field, animations, and much more. For more science programming online and on air, visit NOVA's Web site at http://www.pbs.org/nova and watch NOVA broadcasts Tuesday nights on PBS.]]>"/>
+		<outline title="<![CDATA[Nova | PBS ScienceNOW]]>" xmlUrl="http://www.pbs.org/wgbh/nova/sciencenow/rss/nsn-podcast-pb.xml" type="rss" text="<![CDATA[Nova | PBS ScienceNOW]]>" htmlUrl="http://www.pbs.org/wgbh/nova/rss/podcasting.html" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Nova | PBS]]>" xmlUrl="http://www.pbs.org/wgbh/nova/rss/nova-podcast-pb.xml" type="rss" text="<![CDATA[Nova | PBS]]>" htmlUrl="http://www.pbs.org/wgbh/nova/rss/podcasting.html" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

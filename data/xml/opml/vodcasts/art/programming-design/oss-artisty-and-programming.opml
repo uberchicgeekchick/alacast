@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>open source software artistry &amp; programming podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[openSuSE.TV]]>" xmlUrl="http://opensuse.blip.tv/rss" type="rss" text="<![CDATA[openSuSE.TV]]>" htmlUrl="http://opensuse.blip.tv/" description="<![CDATA[The openSUSE channel contains videos for and by the openSUSE community. These are educational screencasts, talks and presentations given at events and anything inbetween :-)]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

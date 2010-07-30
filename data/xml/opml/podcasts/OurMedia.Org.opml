@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" type="link" text="<![CDATA[]]>" url="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[OurMedia.Org]]>" xmlUrl="" type="rss" text="<![CDATA[OurMedia.Org]]>" htmlUrl="http://ourmedia.org/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[New Media]]>" xmlUrl="http://ourmedia.org/mediarss" type="rss" text="<![CDATA[New Media]]>" htmlUrl="http://ourmedia.org/" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[New Channels]]>" xmlUrl="http://channels.ourmedia.org/og/all/feed" type="rss" text="<![CDATA[New Channels]]>" htmlUrl="http://ourmedia.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Featured Videos]]>" xmlUrl="http://channels.ourmedia.org/mediarss/channel?gid=3" type="rss" text="<![CDATA[Featured Videos]]>" htmlUrl="http://ourmedia.org/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Featured Podcast]]>" xmlUrl="http://channels.ourmedia.org/mediarss/channel?gid=10" type="rss" text="<![CDATA[Featured Podcast]]>" htmlUrl="http://ourmedia.org/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

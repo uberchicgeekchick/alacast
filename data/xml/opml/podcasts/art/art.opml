@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Art &amp; Artistic podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Ill Doctrine]]>" xmlUrl="http://feeds.feedburner.com/illdoctrine" type="rss" text="<![CDATA[Ill Doctrine]]>" htmlUrl="http://www.illdoctrine.com/" description="<![CDATA[<h1>Ill Doctrine:</h1><p>ill Doctrine is a hip-hop video blog hosted by Jay Smooth, creator of the hip hop music blog and founder of New York&apos;s longest running hip-hop radio show, WBAI&apos;s Underground Railroad.</p>]]>" />
+		<outline title="<![CDATA[The Gigcast]]>" type="rss" xmlUrl="http://gigcast.nightgig.com/?feed=podcast" text="<![CDATA[The Gigcast: Your webcomics podcast]]>" htmlUrl="http://gigcast.nightgig.com/" description="<![CDATA[The Podcast that covers the world of webcomics. News Reviews and Commentary from and about webcomics and interviews with the people behind the best comics on the web.]]>"/>
+		<!--<outline title="<![CDATA[]]>" type="rss" xmlUrl="" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

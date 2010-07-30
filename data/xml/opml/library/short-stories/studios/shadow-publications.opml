@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Shadow Publications&apos;s podcast novels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The ShadowCast Audio Anthology]]>" xmlUrl="http://feeds.feedburner.com/TheShadowcastAudioAnthology" type="rss" text="<![CDATA[The ShadowCast Audio Anthology]]>" htmlUrl="http://shadowpress.wordpress.com/" description="<![CDATA[A Podcast of Dark Stories.  Short, story, flash, fiction, Horror, science, fiction, fantasy, speculative, fiction, Novella, short, fiction, story, stories, escape, Pod, submissions, podcast, audio, book, Unknown, Author, Dark, audiobook]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[ - a podcast novel by ]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[ » podiobooks.com feed]]>" xmlUrl="http://www.podiobooks.com/title/?title=/feed/" type="rss" htmlUrl="http://www.podiobooks.com/title/?title=/" text="<![CDATA[ - a podcast novel by .  Brought to you by podiobooks.com]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

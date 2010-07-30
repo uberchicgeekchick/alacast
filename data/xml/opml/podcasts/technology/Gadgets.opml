@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Technology Podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[gdgt weekly]]>" xmlUrl="http://feeds.gdgt.com/gdgt/podcast-mp3" type="rss" text="<![CDATA[gdgt weekly]]>" htmlUrl="http://www.gdgt.com/" description="<![CDATA[gdgt weekly, distributed in MP3]]>"/>
+	</body>
+</opml>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Technology IP.TV</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[Category5 Technology TV]]>" xmlUrl="http://vodcast.category5.tv/main_divx.rss" type="rss" text="<![CDATA[Category5 Technology TV&apos; (DIVX feed)]]>" htmlUrl="http://category5.tv/" description="<![CDATA[Category5 Technology TV with technologist, Robbie Ferguson.  A weekly live TV-style show.  Ask your questions and get live answers.  This service is free of charge.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

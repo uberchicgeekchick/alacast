@@ -1,0 +1,2 @@
+document.write(' <!--[if lte IE 6]><link rel="stylesheet" href="/templateimages/redesign/browser/css/lessthanequalsie6.css" type="text/css" /><![endif]-->'+
+'<!--[if gte IE 7]><link rel="stylesheet" href="/templateimages/redesign/browser/css/greaterthanequalsie7.css" type="text/css" /><![endif]-->');

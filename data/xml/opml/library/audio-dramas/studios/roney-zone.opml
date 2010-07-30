@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>&apos;s Works &amp; Podnovels</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[RoneyZone Productions]]>" url="http://roneyzone.com/" type="link" text="<![CDATA[RoneyZone Productions]]>" description="<![CDATA[New Media, Technology, Pop Culture, News, Reviews, Films, Entrepreneur, Saving Money, Saving Time, Internet Marketing.]]>"/>
+		<outline title="<![CDATA[New World Army]]>" xmlUrl="http://feeds.feedburner.com/NewWorldArmy" type="rss" text="<![CDATA[New-World-Army]]>" htmlUrl="http://alt.roneyzone.com/audio/new-world-army/" description="<![CDATA[A serialized thriller about a band of rebels fighting to survive against a mysterious, tyrannical army of robots.  In Another Time, On Another Planet: Servants, Become Rulers.  Rulers, Become Outcasts.  Rebels are Hunted.  Few will Survive, but Who will Lead them?  As they Stand Against-the New-World-Army]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
