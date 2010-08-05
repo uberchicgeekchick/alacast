@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Writing podcasts</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" url="http:///" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Tale Chasing]]>" xmlUrl="http://www.talechasing.com/categories/episodes/feed/" type="rss" text="<![CDATA[Tale Chasing &#187; Episodes]]>" htmlUrl="http://www.talechasing.com/" description="<![CDATA[Getting Published is easier than you think!  Urban Fantasy Podcast for Readers and Writers.  Discussion on writing urban fantasy and podcasting your writing. The bonus content on the making of Guardians, the podcast novel.]]>" />
+		<outline title="<![CDATA[I Should Be Writing]]>" xmlUrl="http://murverse.com/category/projects/i-should-be-writing/feed/" type="rss" text="<![CDATA[The Murverse &#187; I Should Be Writing]]>" htmlUrl="http://murverse.com/category/projects/i-should-be-writing/" description="<![CDATA[The home page for writing, podcasts, and projects of Mur Lafferty.]]>" />
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>" />-->
+	</body>
+</opml>

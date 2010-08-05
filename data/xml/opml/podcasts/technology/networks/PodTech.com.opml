@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[PodTech]]>" xmlUrl="http://www.podtech.net/home/category/tech/feed" type="rss" text="<![CDATA[PodTech]]>" htmlUrl="http://www.podtech.net/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[TechOne]]>" xmlUrl="http://www.podtech.net/home/category/techone/feed" type="rss" text="<![CDATA[TechOne]]>" htmlUrl="http://www.podtech.net/home/index.php?cat=195" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Rocky Mountain Voices]]>" xmlUrl="http://feeds.feedburner.com/rockymountainvoices" type="rss" text="<![CDATA[Rocky Mountain Voices]]>" htmlUrl="http://www.rockymountainvoices.com/blog/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Inside Silicon Valley]]>" xmlUrl="http://www.podtech.net/home/category/tech/feed" type="rss" text="<![CDATA[Inside Silicon Valley]]>" htmlUrl="http://www.podtech.net/home/category/inside-silicon-valley/" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Social Media]]>" xmlUrl="http://www.podtech.net/home/category/social-media/feed" type="rss" text="<![CDATA[Social Media]]>" htmlUrl="http://www.podtech.net/home/index.php?cat=174" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Clean Tech]]>" xmlUrl="http://www.podtech.net/home/category/clean-tech/feed" type="rss" text="<![CDATA[Clean Tech]]>" htmlUrl="http://www.podtech.net/home/index.php?cat=171" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[Digital Entertainment]]>" xmlUrl="http://www.podtech.net/home/category/entertainment/feed" type="rss" text="<![CDATA[Digital Entertainment]]>" htmlUrl="http://www.podtech.net/home/index.php?cat=151" description="<![CDATA[]]>"/>
+	</body>
+</opml>

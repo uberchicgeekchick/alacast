@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>Audio Dramas from Podiobooks.com</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Masha Chronicles]]>" xmlUrl="http://www.podiobooks.com/title/the-masha-chronicles/feed/" type="rss" text="<![CDATA[The Masha Chronoicles - A free audiobook by Lisa Beth Kovetz]]>" htmlUrl="http://www.podiobooks.com/title/the-masha-chronicles/" description="<![CDATA[A noir page-turner detailing the roller-coaster adventures of Masha, a reluctant young assassin.&nbsp; When Masha meets American businessman, Charlie Hammerschmidt, she thinks she&#039;s found the ticket out of Kiev&#039;s underworld.&nbsp; When Charlie is murdered in her apartment, she discovers the ride is just beginning.The Masha Chronicles is a full cast PodioDrama featuring Margot Avery, Nina Bernstein-Simmons, Brendan Corbalis, John Farrell, Maggie Low, Willard Morgan.&nbsp; Engineered by Dan Molad.]]>"/>
+		<outline title="<![CDATA[Outlaws]]>" xmlUrl="http://www.podiobooks.com/title/outlaw-series-one/feed/" type="rss" text="<![CDATA[Outlaws - a free audio drama writen &amp; produced by Steve DeWinter]]>" htmlUrl="http://www.podiobooks.com/title/outlaw-series-one/" description="<![CDATA[Steve DeWinter's latest thriller brings his own retelling of the ultimate American legend, that of the lone ranger. Recorded with a full cast, musical score and sound effects, this re-imagining of America's favorite hero proves that one man can fight against insurmountable odds to keep the Wild West from falling into the hands of a ruthless tyrant.]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[ - a free audio drama writen &amp; produced by ]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>computer science podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[IEEE Spectrum]]>" xmlUrl="http://www.spectrum.ieee.org/snippet/radio_podcast_xml" type="rss" text="<![CDATA[IEEE Spectrum Radio]]>" htmlUrl="http://www.spectrum.ieee.org/podcasts" description="<![CDATA[The broadcast edition of IEEE Spectrum magazine]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>
+

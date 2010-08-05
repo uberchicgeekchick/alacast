@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>GimpGirl Podcasts.</title>
+	</head>
+	<body>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Dystonia Living Magazine]]>" xmlUrl="http://dystonia.podbean.com/feed/" type="rss" text="<![CDATA[Dystonia Living Magazine: Dystonia Living Podcast]]>" htmlUrl="http://dystonia.podbean.com/" description="<![CDATA[Dystonia Living Podcast: Articles and information about the practical side of living with a movement disorder.]]>"/>
+		<outline title="<![CDATA[Disability411]]>" xmlUrl="http://disability411.jinkle.com/disability411.xml" type="rss" text="<![CDATA[Disability 411]]>" htmlUrl="http://disability411.jinkle.com/" description="<![CDATA[]]>"/>
+		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" text="<![CDATA[]]>" htmlUrl="" description="<![CDATA[]]>"/>-->
+	</body>
+</opml>

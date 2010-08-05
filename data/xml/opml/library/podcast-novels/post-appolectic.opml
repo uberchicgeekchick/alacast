@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>
+			Post-Appolictic podcast novels, fiction, &amp; audio dramas.
+		</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[ENEMY LINES - John Mierau.com]]>" xmlUrl="http://feeds.feedburner.com/johnmierau" type="rss" text="<![CDATA[ENEMY LINES - John Mierau.com]]>" htmlUrl="http://johnmierau.wordpress.com/" description="<![CDATA[<h1>ENEMY LINES</h1><h3>by John Mierau.com</h1><p>Aliens, spies, treason, corporate warfare, a secret society, the future of the human race. ...ENEMY LINES.</p><p>Stories, audio fiction, commentary &amp; author info</p>]]>" />
+		<!-- <outline title="<![CDATA[John Mierau.com]]>" xmlUrl="http://johnmierau.wordpress.com/feed/" type="rss" text="<![CDATA[John Mierau.com]]>" htmlUrl="http://johnmierau.wordpress.com/" description="<![CDATA[<h1>John Mierau.com</h1><p>Stories, audio fiction, commentary &#38; author info</p>]]>" /> -->
+	</body>
+</opml>
+
