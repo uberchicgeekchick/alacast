@@ -263,10 +263,10 @@ sub parse_option{
 	my $option=$argv;
 	my $equals=$argv;
 	my $value=$argv;
-	$dashes=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$1/g;
-	$option=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$2/g;
-	$equals=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$3/g;
-	$value=~s/^([\-]{1,2})([^=]+)([\=]?)(.*)$/$4/g;
+	$dashes=~s/^([-]{1,2})([^=]+)([=]?)(.*)$/$1/g;
+	$option=~s/^([-]{1,2})([^=]+)([=]?)(.*)$/$2/g;
+	$equals=~s/^([-]{1,2})([^=]+)([=]?)(.*)$/$3/g;
+	$value=~s/^([-]{1,2})([^=]+)([=]?)(.*)$/$4/g;
 	
 	my $args_parsed=1;
 	if("$equals"eq"" && "$value"eq""){
@@ -311,15 +311,34 @@ sub parse_option{
 	return $FALSE;
 }#parse_option
 
+
+sub erica_eval_exec{
+	my $option=shift;
+	$option=~s/^e\.\/(.+)$/$1/g;
+	my $value=shift;
+	printf("Calling e./%s.\n", "$option");
+	if("$option"eq"feed::edit();"){
+		return xmlUrl_parser_set("enable", "wget -O feed.\$i.xml \"\$xmlUrl\"; vim-enhanced feed.\$i.xml; rm -v feed.\$i.xml;");
+	}
+}#erica_eval_exec(...);
+
 sub parse_options_action{
 	my $option=shift;
 	my $value=shift;
 	
+	if("$option"=~/^e\.\/(.+)$/ ){
+		erica_eval_exec("$option", $value);
+		return $TRUE;
+	}
+	
 	if("$option"eq"xmlUrl-parser" && "$value"ne"" ){
+		if("$value" eq "e./feed::edit();" ){
+			return erica_eval_exec("$value", $value);
+		}
 		return xmlUrl_parser_set("enable", $value);
 	}
 	
-	if($option=~/^browse(r=)?.*/){
+	if("$option"=~/^browse(r=)?.*/){
 		return www_browser_set("enable", $value);
 	}
 	
@@ -463,6 +482,10 @@ sub xmlUrl_parser_set{
 	}
 		printf("Further xmlUrls will not be passed to any parser/handler.\n");
 		return $TRUE;
+	}
+	
+	if( "$parser" eq "e./feed::edit();" ){
+		$parser="wget -O feed.\$i.xml \"\$xmlUrl\"; vim-enhanced feed.\$i.xml; rm -v feed.\$i.xml;";
 	}
 	
 	$xmlUrl_parser=$parser;

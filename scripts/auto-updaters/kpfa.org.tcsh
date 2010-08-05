@@ -1,9 +1,18 @@
 #!/bin/tcsh -f
 init:
+	set scripts_basename="kpfa.org.tcsh";
+	onintr exit_script;
+	
 	if(! ${?0} ) then
-		printf "This script cannot be sourced.\n" > /dev/stderr;
-		exit -1;
+		set being_sourced;
+	else
+		if( "`basename "\""${0}"\""`" != "${scripts_basename}" ) then
+			set being_sourced;
+		endif
 	endif
+	
+	if( ${?being_sourced} ) \
+		goto exit_script;
 	
 	set scripts_dir="`dirname "\""${0}"\""`/../../data/xml/opml/radiocasts/`basename "\""${0}"\"" | sed -r 's/^(.*)\.tcsh"\$"/\1/'`";
 	if(! -d "${scripts_dir}" ) \
@@ -12,7 +21,24 @@ init:
 	
 	alias "wget" "wget --no-check-certificate --quiet";
 	alias "ex" "ex -E -n -X --noplugin";
+	goto update_index_opml;
 #init:
+
+exit_script:
+	if( ${?scripts_basename} ) \
+		unset scripts_basename;
+	
+	if( ${?being_sourced} && ! ${?supports_being_sourced} ) then
+		@ errno=-9;
+		printf "This script cannot be sourced.\n" > /dev/stderr;
+		unset being_sourced;
+	endif
+	
+	if(! ${?errno} ) \
+		@ errno=0;
+	set status=$errno;
+	exit $errno;
+#goto exit_script;
 
 
 update_index_opml:

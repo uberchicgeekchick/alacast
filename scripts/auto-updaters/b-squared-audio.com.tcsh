@@ -1,6 +1,8 @@
 #!/bin/tcsh -f
 init:
-	set scripts_basename="npr.tcsh";
+	set scripts_basename="b-squared-audio.com.tcsh";
+	set scripts_dir="`printf "\""%s"\"" "\""${scripts_basename}"\"" | sed -r 's/^(.*)\.tcsh"\$"/\1/`";
+	set website="`printf "\""%s"\"" "\""${scripts_dir}"\"" | sed -r 's/-//g'`";
 	onintr exit_script;
 	if(! ${?0} ) then
 		set being_sourced;
@@ -16,10 +18,10 @@ init:
 		exit -1;
 	endif
 	
-	set scripts_dir="`dirname "\""${0}"\""`/../../data/xml/opml/library/`basename "\""${0}"\"" | sed -r 's/^(.*)\.tcsh"\$"/\1/`";
-	if(! -d "${scripts_dir}" ) \
-		mkdir -vp "${scripts_dir}";
-	cd "${scripts_dir}";
+	set scripts_path="`dirname "\""${0}"\""`/../../data/xml/opml/library/audio-dramas/studios/${scripts_dir}/";
+	if(! -d "${scripts_path}" ) \
+		mkdir -vp "${scripts_path}";
+	cd "${scripts_path}";
 	
 	alias "wget" "wget --no-check-certificate --quiet";
 	alias "ex" "ex -E -n -X --noplugin";
@@ -29,6 +31,12 @@ init:
 exit_script:
 	if( ${?scripts_basename} ) \
 		unset scripts_basename;
+	
+	if( ${?scripts_dir} ) \
+		unset scripts_dir;
+	
+	if( ${?website} ) \
+		unset website;
 	
 	if( ${?being_sourced} && ! ${?supports_being_sourced} ) then
 		@ errno=-9;
@@ -47,11 +55,14 @@ update_index_opml:
 	if( -e "index.opml.tmp" ) \
 		rm "index.opml.tmp";
 	
-	printf "Downloading NPR's latest podcasts";
-	wget -O 'index.opml.tmp' 'http://www.npr.org/rss/podcast/podcast_directory.php?type=topic';
+	printf "Downloading %s latest podcasts" "${website}";
+	wget -O 'index.opml' "http://www.${website}/audio.html";
 	printf "\t[finished]\n";
 	
 	
+	set categories=( "series" "one-shot" );
+	foreach category( ${categories} )
+		grep "${catagory}<\/" "index.opml" >! "${category}.opml";
 	
 	# these regex's will make sure that each catagory is placed on one line for each catagory.
 	printf "\nConverting NPR's latest podcasts xhtml into opml";
@@ -114,4 +125,5 @@ find_xmlUrls:
 		sleep 2;
 	end
 #find_xmlUrls:
+
 

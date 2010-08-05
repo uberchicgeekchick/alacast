@@ -32,7 +32,7 @@ init:
 	
 	alias ${download_command} "${download_command_with_options}";
 	
-	set alacast_feed_downloader_script="alacast:feed:fetch:all:enclosures.tcsh";
+	set alacast_feed_downloader_script="alacast:feed:fetch:enclosures.tcsh";
 	set alacast_fetch_all_script="`dirname '${0}'`/${alacast_feed_downloader_script}";
 	if(! -x "${alacast_fetch_all_script}" ) then
 		foreach alacast_fetch_all_script("`where '${alacast_feed_downloader_script}'`")

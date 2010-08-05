@@ -4,6 +4,6 @@
 		<title>New Podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Undead Air]]>" xmlUrl="http://undeadair.libsyn.com/rss" type="rss" text="<![CDATA[Undead Air]]>" htmlUrl="http://undeadair.libsyn.com/" description="<![CDATA[<h1>Undead Air</h1><p>A podcast of zombie survival tips, along with stories, songs, and reviews.</p>]]>" />
+		<outline title="<![CDATA[Rationally Speaking]]>" xmlUrl="http://www.nycskeptics.org/feeds/rs.xml" type="rss" text="<![CDATA[Rationally Speaking]]>" htmlUrl="http://www.rationallyspeakingpodcast.org/" description="<![CDATA[<h1>Rationally Speaking</h1><p>Rationally Speaking is the bi-weekly podcast of New York City Skeptics.&nbsp; Join hosts Massimo Pigliucci and Julia Galef as they explore the borderlands between reason and nonsense, likely from unlikely, and science from pseudoscience.&nbsp; Any topic is fair game as long as we can bring reason to bear upon it, with both a skeptical eye and a good dose of humor!</p><p>We agree with the Marquis de Condorcet, who said that in an open society we ought to devote ourselves to &quot;the tracking down of prejudices in the hiding places where priests, the schools, the government, and all long-established institutions had gathered and protected them.&quot;</p><p>Rationally Speaking is recorded in the heart of New York City&apos;s Greenwich Village and is produced by Benny Pollak.</p>]]>" />
 	</body>
 </opml>
