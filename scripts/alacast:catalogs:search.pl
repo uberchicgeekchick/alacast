@@ -31,6 +31,7 @@ my $xmlUrl_parser="";#NULL
 my $start_with=0;
 my $download_limit=0;
 
+my $alacast_feed_fetch_enclosures_tcsh="";#NULL
 my $www_browser="";#NULL
 my $previous_www_browser="";#NULL
 my @websites_to_visit=();
@@ -278,6 +279,10 @@ sub parse_option{
 		return $FALSE;
 	}
 	
+	if($option=~/^browse(r=)?.*/){
+		return www_browser_set("enable", $value);
+	}
+	
 	if($debug_mode){printf("Parsing option: [%s]%s\n", "$option", ("$value"eq"" ?"" :"=<$value>")); }
 	if("$option"eq"output" && "$value"ne""){
 		if($debug_mode){ printf( "\tHandling output argument: [%s].\n", $value ); }
@@ -315,10 +320,27 @@ sub parse_option{
 sub erica_eval_exec{
 	my $option=shift;
 	$option=~s/^e\.\/(.+)$/$1/g;
-	my $value=shift;
-	printf("Calling e./%s.\n", "$option");
-	if("$option"eq"feed::edit();"){
-		return xmlUrl_parser_set("enable", "wget -O feed.\$i.xml \"\$xmlUrl\"; vim-enhanced feed.\$i.xml; rm -v feed.\$i.xml;");
+	my $erica=$option;
+	my $method=$erica;
+	$erica=~s/^([:]+)(:{1,2}).*$/\1/;
+	$method=~s/^([:]+)(:{1,2})(.*)$/\3/;
+	printf("Calling erica's: [%s]'s [%s] method.\n", "$erica", "$method");
+	if($erica=~/^feed$/){
+		if($method=~/^edit\(\);$/){
+			return xmlUrl_parser_set("enable", "wget -O feed.\$i.xml \"\$xmlUrl\"; vim-enhanced feed.\$i.xml; rm -v feed.\$i.xml;");
+		}
+	}
+	if($erica=~/^enclosures$/){
+		if($method=~/^download\( ?([0-9]+) ?, ?([0-9]+) ?\);$/){
+			my $dowload_limit=$method;
+			my $start_with=$method;
+			$download_limit=~s/^download\( ?([0-9]+) ?, ?([0-9]+) ?\);$/\1/;
+			$start_with=~s/^download\( ?([0-9]+) ?, ?([0-9]+) ?\);$/\2/;
+			if("$alacast_feed_fetch_enclosures_tcsh" == ""){
+				set_alacast_feed_fetch_enclosures_tcsh();
+			}
+			return xmlUrl_parser_set("$alacast_feed_fetch_enclosures_tcsh --download-limit=$download_limit --start-with=$start_with \"\$xmlUrl\";");
+		}
 	}
 }#erica_eval_exec(...);
 
@@ -326,19 +348,19 @@ sub parse_options_action{
 	my $option=shift;
 	my $value=shift;
 	
-	if("$option"=~/^e\.\/(.+)$/ ){
+	if($option=~/^e\.\/(.+);$/ ){
 		erica_eval_exec("$option", $value);
 		return $TRUE;
 	}
 	
 	if("$option"eq"xmlUrl-parser" && "$value"ne"" ){
-		if("$value" eq "e./feed::edit();" ){
+		if($value=~/^e\.\/(.+);$/ ){
 			return erica_eval_exec("$value", $value);
 		}
 		return xmlUrl_parser_set("enable", $value);
 	}
 	
-	if("$option"=~/^browse(r=)?.*/){
+	if($option=~/^browse(r=)?.*/){
 		return www_browser_set("enable", $value);
 	}
 	
@@ -401,10 +423,6 @@ sub parse_setting{
 		return $TRUE;
 	}
 	
-	if("$value"eq"www-browser"){
-		return www_browser_set($action, $parameter);
-	}
-	
 	if("$value"eq"xmlUrl-parser" && "$parameter"ne"" ){
 		return xmlUrl_parser_set($action, $parameter);
 	}
@@ -458,7 +476,7 @@ sub www_browser_set{
 		}
 	}
 	system("rm \"$browser_list\";");
-	if(!$www_browser_found){ return $TRUE; }
+	if(!$www_browser_found){ return $FALSE; }
 	
 	if("$previous_www_browser"ne"" && "$previous_www_browser"ne"$www_browser"){
 		@websites_to_visit=();
@@ -467,6 +485,41 @@ sub www_browser_set{
 	printf("Further websites will be passed to\t\t[%s]\n", $www_browser);
 	return $TRUE;
 }#www_browser_set();
+
+
+sub set_alacast_feed_fetch_enclosures_tcsh{
+	if($alacast_feed_fetch_enclosures_tcsh=get_exec("alacast_feed_fetch_enclosures_tcsh") ){
+		printf("Further feeds will be processed by:\t\t[%s]\n", $alacast_feed_fetch_enclosures_tcsh);
+	}
+	return $TRUE;
+}#alacast_feed_fetch_enclosures_tcsh();
+
+sub get_exec{
+	my $exec=shift;
+	my $exec_list=`mktemp --tmpdir -u alacast.$exec.list.XXXXXX`;
+	chomp($exec_list);
+	if($debug_mode){ printf("Searching for:\t[alacast:feed:fetch:enclosures.tcsh]\n"); }
+	my $command="tcsh -f -c '(where \"alacast:feed:fetch:enclosures.tcsh\" >! $exec_list) >& /dev/null';";
+	if($debug_mode){ printf("Searching for [%s] using:\n\t%s", $exec, $command); }
+	system($command);
+	my $exec_found=$FALSE;
+	my @all_execs=`cat \"$exec_list\";`;
+	for(my $x=0; $x<@all_execs && !$exec_found; $x++){
+		$exec=$all_execs[$x];
+		chomp($exec);
+		if(! -x "$exec" ){
+			$exec="";
+		} else {
+			$exec_found=$TRUE;
+		}
+	}
+	system("rm \"$exec_list\";");
+	if(!$exec_found){
+		printf("Cannot process further requests. [%s] could not be fount.", "$exec");
+		exit( $FALSE );
+	}
+	return $exec;
+}#get_exec("command");
 
 
 sub xmlUrl_parser_set{

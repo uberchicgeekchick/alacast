@@ -305,6 +305,7 @@ parse_argv:
 				else
 					set equals=" ";
 					set value="$argv[$arg]";
+					set argv_shifted;
 				endif
 				unset test_dashes test_option test_equals test_value;
 			endif
@@ -364,27 +365,12 @@ parse_argv:
 			case "output-document":
 			case "script":
 			case "save-script":
-				if( "${value}" != "" && -d "`dirname '${value}'`" ) then
-					set save_script="${value}";
-					printf "Enclosures will not be downloaded but instead the script: <file://%s> will be created.\n" "${save_script}";
-					breaksw;
-				endif
-				
-				@ arg++;
-				if( $arg > $argc ) then
-					@ arg--;
+				if(!( "${value}" != "" && -d "`dirname "\""${value}"\""`" )) then
 					printf "%s%s script's target must be within existing directory.  The script cannot be saved.\n" "${dashes}" "${option}" > /dev/stderr;
 					goto exit_script;
 				endif
 				
-				if(!( "$argv[$arg]" != "" && -d "`dirname '$argv[$arg]'`" )) then
-					printf "%s%s script's target must be within existing directory.  The script cannot be saved.\n" "${dashes}" "${option}" > /dev/stderr;
-					goto exit_script;
-				endif
-				
-				set save_script="$argv[$arg]";
-				printf "Enclosures will not be downloaded but instead the script: <file://%s> will be created.\n" "${save_script}";
-				
+				set save_script="${value}";
 				breaksw;
 			
 			case "l":
@@ -412,6 +398,11 @@ parse_argv:
 					continue;
 				else
 					set podcast_xmlUrl="${value}";
+				endif
+				if( ${?argv_shifted} ) then
+					@ arg--;
+					set argv[$arg]="";
+					@ arg++;
 				endif
 				set argv[$arg]="";
 				breaksw;
@@ -454,6 +445,11 @@ parse_argv:
 			case "description":
 				set alacasts_catalog_search_attribute="${option}";
 				set alacasts_catalog_search_phrase="${value}";
+				if( ${?argv_shifted} ) then
+					@ arg--;
+					set argv[$arg]="";
+					@ arg++;
+				endif
 				set argv[$arg]="";
 				breaksw;
 			
