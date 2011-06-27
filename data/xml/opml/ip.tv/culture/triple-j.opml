@@ -28,10 +28,10 @@
 <script language="JavaScript" type="text/JavaScript">
 <!--
 function goToPage(){
-chosen = document.navform.shortcuts.options.selectedIndex;
-whichPage = document.navform.shortcuts.options[chosen].value;
+chosen=document.navform.shortcuts.options.selectedIndex;
+whichPage=document.navform.shortcuts.options[chosen].value;
       if(whichPage != ''){
-           window.location.href = whichPage;
+           window.location.href=whichPage;
       }
 }
 function MM_openBrWindow(theURL,winName,features) { //v2.0
@@ -67,7 +67,7 @@ function MM_findObj(n, d) { //v4.01
 }
 
 function MM_jumpMenuGo(selName,targ,restore){ //v3.0
-  var selObj = MM_findObj(selName); 
+  var selObj=MM_findObj(selName); 
   
   if (selObj) 
 	MM_jumpMenu(targ,selObj,restore);
@@ -125,7 +125,7 @@ input {
     <script type="text/javascript">
 	<!--
 	var randomnumber=Math.floor(Math.random()*1000000);
-	var loginCheck = 'http://'+location.hostname+'/cgi-bin/profilecentral/flchecklogin.pl?'+randomnumber;
+	var loginCheck='http://'+location.hostname+'/cgi-bin/profilecentral/flchecklogin.pl?'+randomnumber;
 	addLoadEvent(makeRequest(loginCheck));
 	//-->
 	</script>

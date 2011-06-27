@@ -5,8 +5,8 @@
 
 
 
-var basePolicyJSON = '{\"guide\":{\"ok\":true},\"baynoteObserver\":{\"dt\":60,\"so\":true,\"uhd\":false,\"cds\":false,\"cdt\":true,\"hn\":\"handler2.js\",\"ec\":false,\"alt\":true,\"ep\":50,\"om\":2,\"ub\":false,\"sv\":true,\"sdl\":true,\"ok\":true,\"st\":false},\"search\":{\"ok\":true},\"inf\":{\"dt\":\"Sun Nov 08 14:19:25 CST 2009\",\"exp\":86400,\"u\":\"ANONYMOUS\",\"cn\":\"nasa\",\"ve\":\"V1\",\"cc\":\"gov\",\"cd\":\"default:g=on\"},\"baynoteGuide\":{\"ok\":true},\"guidePro\":{\"ok\":true}}';
-var userPolicyJSON = '{\"baynoteObserver\":{\"so\":false},\"dir\":{\"au\":true},\"inf\":{\"dt\":\"Fri Jan 15 00:49:41 CST 2010\",\"u\":\"6922844945255498463\",\"ve\":\"V1\",\"cd\":\"obs:r=0.1&default:g=on\"}}';
+var basePolicyJSON='{\"guide\":{\"ok\":true},\"baynoteObserver\":{\"dt\":60,\"so\":true,\"uhd\":false,\"cds\":false,\"cdt\":true,\"hn\":\"handler2.js\",\"ec\":false,\"alt\":true,\"ep\":50,\"om\":2,\"ub\":false,\"sv\":true,\"sdl\":true,\"ok\":true,\"st\":false},\"search\":{\"ok\":true},\"inf\":{\"dt\":\"Sun Nov 08 14:19:25 CST 2009\",\"exp\":86400,\"u\":\"ANONYMOUS\",\"cn\":\"nasa\",\"ve\":\"V1\",\"cc\":\"gov\",\"cd\":\"default:g=on\"},\"baynoteGuide\":{\"ok\":true},\"guidePro\":{\"ok\":true}}';
+var userPolicyJSON='{\"baynoteObserver\":{\"so\":false},\"dir\":{\"au\":true},\"inf\":{\"dt\":\"Fri Jan 15 00:49:41 CST 2010\",\"u\":\"6922844945255498463\",\"ve\":\"V1\",\"cd\":\"obs:r=0.1&default:g=on\"}}';
 
 bnPolicy.registerPolicy(basePolicyJSON, userPolicyJSON);
 

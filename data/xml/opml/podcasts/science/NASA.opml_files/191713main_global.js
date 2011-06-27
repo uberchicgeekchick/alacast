@@ -12,14 +12,14 @@ document.write('<script type="text/javascript" src="http://s7.addthis.com/js/250
 */
 Event.observe(window, 'load', function() {
 	if($$('.section_nav_blinds .content').length > 0){
-		var s3 = new Blinds($$('.section_nav_blinds .content'),$$('.section_nav_blinds')[0],null,{'current_id':$('menu_item_id').value});
+		var s3=new Blinds($$('.section_nav_blinds .content'),$$('.section_nav_blinds')[0],null,{'current_id':$('menu_item_id').value});
 	}
 	if($$('.section_nav_blinds .no_content_section').length > 0){
 			if($('menu_item_id') != null && $('menu_item_id').value != '')
 			{
-				var idVal = $('menu_item_id').value;
+				var idVal=$('menu_item_id').value;
 				if(document.getElementById(idVal) != null){
-					document.getElementById(idVal).style.color  = "#99CCFF";
+					document.getElementById(idVal).style.color ="#99CCFF";
 				}
 			}
 	}
@@ -28,7 +28,7 @@ Event.observe(window, 'load', function() {
 
 /*This is for On Demand Video. Calls function in plgindemandtv.js*/
 Event.observe(window, 'load', function() {
-	var nasatv = document.getElementById("NASATV");
+	var nasatv=document.getElementById("NASATV");
 	if (nasatv)
 	{
 		getSelectedVideoChannel();
@@ -38,7 +38,7 @@ Event.observe(window, 'load', function() {
 
 /*This is for NASA TV */
 Event.observe(window, 'load', function() {
-	var nasa_tv_rd = document.getElementById("nasa_tv_rd");
+	var nasa_tv_rd=document.getElementById("nasa_tv_rd");
 	if (nasa_tv_rd)
 	{
 		GetSelectedChannelNASATV();
@@ -51,11 +51,11 @@ Event.observe(window, 'load', function() {
 	if($$('.input_clear')){
 		$$('.input_clear').each(function(element){
 			
-			element.oldValue = element.value;
+			element.oldValue=element.value;
 			
 			Event.observe(element, "focus", function(e) {
 				if(element.value == element.oldValue) {
-					element.value = "";
+					element.value="";
 				}
 				Event.stop(e);
 			});
@@ -67,17 +67,17 @@ Event.observe(window, 'load', function() {
 /* popular content blinds bootstrap */
 
 Event.observe(window, 'load', function() {
-	var allBlinds = $$('.narrow_blue_blinds').map(function(narrow_blue_blinds){
-		var contents = narrow_blue_blinds.getElementsBySelector('.content');
-		var cap = narrow_blue_blinds.getElementsBySelector('.cap')[0];
+	var allBlinds=$$('.narrow_blue_blinds').map(function(narrow_blue_blinds){
+		var contents=narrow_blue_blinds.getElementsBySelector('.content');
+		var cap=narrow_blue_blinds.getElementsBySelector('.cap')[0];
 		return new Blinds(contents,narrow_blue_blinds,cap);
 	});
 }, false);
 
 Event.observe(window, 'load', function() {
-	var allBlinds = $$('.narrow_blue_blinds_img').map(function(narrow_blue_blinds_img){
-		var contents = narrow_blue_blinds_img.getElementsBySelector('.content');
-		var cap = narrow_blue_blinds_img.getElementsBySelector('.cap')[0];
+	var allBlinds=$$('.narrow_blue_blinds_img').map(function(narrow_blue_blinds_img){
+		var contents=narrow_blue_blinds_img.getElementsBySelector('.content');
+		var cap=narrow_blue_blinds_img.getElementsBySelector('.cap')[0];
 		return new Blinds(contents,narrow_blue_blinds_img,cap);
 	});
 }, false);
@@ -85,7 +85,7 @@ Event.observe(window, 'load', function() {
 /* Modules_Widgets-style grey accordions */
 Event.observe(window, 'load', function() {
 	$$('.grip_accordion').each(function(item){
-		var s3 = new Blinds(item.getElementsBySelector('.content'),item, item.getElementsBySelector('.cap')[0]);
+		var s3=new Blinds(item.getElementsBySelector('.content'),item, item.getElementsBySelector('.cap')[0]);
 	});
 }, false);
 
@@ -93,9 +93,9 @@ Event.observe(window, 'load', function() {
 Event.observe(window, 'load', function() {
 	if ($$('.main_news_accordion .content').length > 0) {
 		$$('.main_news_accordion').each(function(item){
-			var content = item.getElementsBySelector('.content');
-			var cap = item.getElementsBySelector('.cap')[0];
-			var s3 = new Blinds(content,item,cap);
+			var content=item.getElementsBySelector('.content');
+			var cap=item.getElementsBySelector('.cap')[0];
+			var s3=new Blinds(content,item,cap);
 		});
 	}
 }, false);	
@@ -103,10 +103,10 @@ Event.observe(window, 'load', function() {
 Event.observe(window, 'load', function() {
 	if($$('.top_middle_blinds .content').length > 0){
 		$$('.top_middle_blinds').each(function(item){
-			var content = item.getElementsBySelector('.content');
-			var cap = item.getElementsBySelector('.cap')[0];
+			var content=item.getElementsBySelector('.content');
+			var cap=item.getElementsBySelector('.cap')[0];
 			
-			var s3 = new Blinds(content,item,cap);		
+			var s3=new Blinds(content,item,cap);		
 		});
 
 	}
@@ -116,9 +116,9 @@ Event.observe(window, 'load', function() {
 Event.observe(window, 'load', function() {
 	if ($$('.main_video_accordion .content').length > 0) {
 		$$('.main_video_accordion').each(function(item){
-			var content = item.getElementsBySelector('.content');
-			var cap = item.getElementsBySelector('.cap')[0];
-			var s4 = new Blinds(content,item,cap);
+			var content=item.getElementsBySelector('.content');
+			var cap=item.getElementsBySelector('.cap')[0];
+			var s4=new Blinds(content,item,cap);
 		});
 	}
 }, false);
@@ -127,9 +127,9 @@ Event.observe(window, 'load', function() {
 Event.observe(window, 'load', function() {
 	if ($$('.main_video_accordion_landing .content').length > 0) {
 		$$('.main_video_accordion_landing').each(function(item){
-			var content = item.getElementsBySelector('.content');
-			var cap = item.getElementsBySelector('.cap')[0];
-			var s4 = new Blinds(content,item,cap);
+			var content=item.getElementsBySelector('.content');
+			var cap=item.getElementsBySelector('.cap')[0];
+			var s4=new Blinds(content,item,cap);
 		});
 	}
 }, false);
@@ -138,9 +138,9 @@ Event.observe(window, 'load', function() {
 Event.observe(window, 'load', function() {
 	if ($$('.main_video_accordion_popup .content').length > 0) {
 		$$('.main_video_accordion_popup').each(function(item){
-			var content = item.getElementsBySelector('.content');
-			var cap = item.getElementsBySelector('.cap')[0];
-			var s4 = new Blinds(content,item,cap);
+			var content=item.getElementsBySelector('.content');
+			var cap=item.getElementsBySelector('.cap')[0];
+			var s4=new Blinds(content,item,cap);
 		});
 	}
 }, false);
@@ -158,77 +158,77 @@ Event.observe(window, 'load', function() {
 /* Overlays RSS bootstrap */
 Event.observe(window, 'load', function() {
 	if($$('.myOverlayRSS')){
-		var allOverlays = $$('.myOverlayRSS').map(function(myOverlay){
+		var allOverlays=$$('.myOverlayRSS').map(function(myOverlay){
 			
-			var theHref = myOverlay.href;
+			var theHref=myOverlay.href;
 
 			function renderOverlayRss(contentElement, theHref){
-				contentElement.innerHTML = "";
+				contentElement.innerHTML="";
 				
 				function addRssPop(w, h, url){
 					window.open(url, '', 'width='+ w +', height='+ h +', toolbar=no, resizable=yes, scrollbars=yes');
 				}
 				
 				if(!Prototype.Browser.WebKit){
-					var fieldFocus = "javascript: $$('.copy_bookmark')[0].select();";
+					var fieldFocus="javascript: $$('.copy_bookmark')[0].select();";
 				}
 			
-				var rssTitle = document.title;
+				var rssTitle=document.title;
 				
-				var title = new Element('h5',{});
+				var title=new Element('h5',{});
 				title.update("Add RSS");
 				
-				var description = new Element("p",{});
+				var description=new Element("p",{});
 				description.update('Select a web-based rss site:');
 
 
 				function makeListLink(title,classname,hideText){
-					var link = new Element('a',{'className':classname,'href':'#'});
+					var link=new Element('a',{'className':classname,'href':'#'});
 					if(hideText){
-						var span = new Element('span',{'className':'hide'});
+						var span=new Element('span',{'className':'hide'});
 						span.update(title);
 						link.insert(span);
 					} else {
 						link.update(title);
 					}
-					var li = new Element('li',{});
+					var li=new Element('li',{});
 					li.insert(link);
 					return li;
 				}
 
-				var links1 = [
+				var links1=[
 					{className:'bookmark_msn',title:'My MSN'},
 					{className:'bookmark_technorati',title:'Technorati'},
 					{className:'bookmark_aol',title:'My Aol'}
 				];
-				var list1 = new Element('ul',{'className':'rss_left_ul'});
+				var list1=new Element('ul',{'className':'rss_left_ul'});
 				for(var i=0;i<links1.length;i++){
 					list1.insert(makeListLink(links1[i]['title'],links1[i]['className'],links1[i]['hideText']));
 				}
 							
-				var links2 = [
+				var links2=[
 					{className:'rss_google',title:'Google',hideText:true},
 					{className:'bookmark_yahoo',title:'Yahoo!'}
 				];
-				var list2 = new Element('ul',{'className':'rss_right_ul'});
+				var list2=new Element('ul',{'className':'rss_right_ul'});
 				for(var i=0;i<links2.length;i++){
 					list2.insert(makeListLink(links2[i]['title'],links2[i]['className'],links2[i]['hideText']));
 				}
 	
 
-				var br = new Element('br',{'className':'clear'});
+				var br=new Element('br',{'className':'clear'});
 
-				var footer = new Element('p',{});
+				var footer=new Element('p',{});
 				footer.update('Or copy the link below:');
 
-				var textArea = new Element('textarea',{'className':'copy_bookmark','onfocus':fieldFocus});
+				var textArea=new Element('textarea',{'className':'copy_bookmark','onfocus':fieldFocus});
 				textArea.update(theHref);
 				
-				list1 = $(list1);
-				list2 = $(list2);
+				list1=$(list1);
+				list2=$(list2);
 				
-				var rssTechnorati = list1.getElementsBySelector('.bookmark_technorati')[0];
-				var rssTechnoratiURL = 'http://technorati.com/faves?add='+ theHref;
+				var rssTechnorati=list1.getElementsBySelector('.bookmark_technorati')[0];
+				var rssTechnoratiURL='http://technorati.com/faves?add='+ theHref;
 				
 				Event.observe(rssTechnorati, "click", function(e) {
 					addRssPop(980, 460, rssTechnoratiURL);
@@ -236,32 +236,32 @@ Event.observe(window, 'load', function() {
 				});
 				
 				
-				var rssAol = list1.getElementsBySelector('.bookmark_aol')[0];
-				var rssAolURL = 'http://feeds.my.aol.com/add.jsp?url='+ theHref;
+				var rssAol=list1.getElementsBySelector('.bookmark_aol')[0];
+				var rssAolURL='http://feeds.my.aol.com/add.jsp?url='+ theHref;
 				
 				Event.observe(rssAol, "click", function(e) {
 					addRssPop(980, 460, rssAolURL);
 					Event.stop(e);
 				});
 				
-				var rssGoogle = list2.getElementsBySelector('.rss_google')[0];
-				var rssGoogleURL = 'http://fusion.google.com/add?feedurl='+ theHref;
+				var rssGoogle=list2.getElementsBySelector('.rss_google')[0];
+				var rssGoogleURL='http://fusion.google.com/add?feedurl='+ theHref;
 				
 				Event.observe(rssGoogle, "click", function(e) {
 					addRssPop(920, 460, rssGoogleURL);
 					Event.stop(e);
 				});
 				
-				var rssYahoo = list2.getElementsBySelector('.bookmark_yahoo')[0];
-				var rssYahooURL = 'http://add.my.yahoo.com/rss?url='+ theHref;
+				var rssYahoo=list2.getElementsBySelector('.bookmark_yahoo')[0];
+				var rssYahooURL='http://add.my.yahoo.com/rss?url='+ theHref;
 				
 				Event.observe(rssYahoo, "click", function(e) {
 					addRssPop(920, 460, rssYahooURL);
 					Event.stop(e);
 				});
 				
-				var rssMsn = list1.getElementsBySelector('.bookmark_msn')[0];
-				var rssMsnURL = 'http://my.msn.com/addtomymsn.armx?id=rss&ut='+ theHref;
+				var rssMsn=list1.getElementsBySelector('.bookmark_msn')[0];
+				var rssMsnURL='http://my.msn.com/addtomymsn.armx?id=rss&ut='+ theHref;
 				
 				Event.observe(rssMsn, "click", function(e) {
 					addRssPop(980, 460, rssMsnURL);
@@ -278,9 +278,9 @@ Event.observe(window, 'load', function() {
 			
 			}
 			
-			var classSplit = myOverlay.classNames().toString();
-			var floatType = new Array();
-			floatType = classSplit.split(" ");
+			var classSplit=myOverlay.classNames().toString();
+			var floatType=new Array();
+			floatType=classSplit.split(" ");
 	
 			Event.observe(myOverlay, "mouseover", function(cellElement, floatDirection, cellContent) {
 				return function (event) {
@@ -337,14 +337,14 @@ Event.observe(window, 'load', function() {
 /* Overlays bootstrap */
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myOverlayVideo').map(function(myOverlay){
+	var allOverlays=$$('.myOverlayVideo').map(function(myOverlay){
 
-		var infoBody = myOverlay.getElementsBySelector("div")[0].innerHTML;
-		var selectorCell = myOverlay.getElementsBySelector("a")[0];
+		var infoBody=myOverlay.getElementsBySelector("div")[0].innerHTML;
+		var selectorCell=myOverlay.getElementsBySelector("a")[0];
 		
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
 
 		Event.observe(myOverlay, "mouseover", function(cellElement, floatDirection, cellContent, widthClass) {
 			return function (event) {
@@ -394,14 +394,14 @@ Event.observe(window, 'load', function() {
 
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myMyNASAAdd').map(function(myOverlay){
+	var allOverlays=$$('.myMyNASAAdd').map(function(myOverlay){
 
-		var infoBody = $(myOverlay.parentNode).getElementsBySelector("div")[0].innerHTML;
-		var selectorCell = myOverlay.getElementsBySelector("a")[0];
+		var infoBody=$(myOverlay.parentNode).getElementsBySelector("div")[0].innerHTML;
+		var selectorCell=myOverlay.getElementsBySelector("a")[0];
 		
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
 
 		Event.observe(selectorCell, "mouseover", function(cellElement, floatDirection, cellContent, widthClass) {
 			return function (event) {
@@ -452,14 +452,14 @@ Event.observe(window, 'load', function() {
 
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myMyNASABookmarks').map(function(myOverlay){
+	var allOverlays=$$('.myMyNASABookmarks').map(function(myOverlay){
 
-		var infoBody = myOverlay.getElementsBySelector("span")[0].innerHTML;
-		var selectorCell = myOverlay.getElementsBySelector("a")[0];
+		var infoBody=myOverlay.getElementsBySelector("span")[0].innerHTML;
+		var selectorCell=myOverlay.getElementsBySelector("a")[0];
 		
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
 
 		Event.observe(myOverlay, "mouseover", function(cellElement, floatDirection, cellContent, widthClass) {
 			return function (event) {
@@ -508,14 +508,14 @@ Event.observe(window, 'load', function() {
 
 
 	
-	var theHrefShare = getmetacontents('dc.identifier');;
-	var bookmarkTitleShare = getmetacontents('dc.title');
-	var documentIdShare = getmetacontents('CMS Document Id');
-	var shareTitle = "";
-	var shareURL = "";
-	var documentId = "";
+	var theHrefShare=getmetacontents('dc.identifier');;
+	var bookmarkTitleShare=getmetacontents('dc.title');
+	var documentIdShare=getmetacontents('CMS Document Id');
+	var shareTitle="";
+	var shareURL="";
+	var documentId="";
 
-	var addthis_config = {
+	var addthis_config={
 		username:"addthisforshare",
 		services_custom:{name: "My NASA",url: "http://mynasa.nasa.gov/portal/bookmarks/BookmarkServlet?bookmark_title="+encodeURI(bookmarkTitleShare)+"&bookmark_url="+encodeURI(theHrefShare)+
 										"&bookmark_label="+documentIdShare,icon: "http://www.nasa.gov/mynasatemplateimages/redesign/modules/imagegallery/mynasa_1.gif"},
@@ -525,102 +525,102 @@ Event.observe(window, 'load', function() {
 
 	}
 
-	var addthis_share =  {
+	var addthis_share= {
 			url:"",
 			title:""
 	};
 
 	Event.observe(window, 'load', function() {
 		if($('url')){
-			shareURL = $('url').value;
+			shareURL=$('url').value;
 		}
 		if($('titleUrl')){
-			shareTitle = $('titleUrl').value;
+			shareTitle=$('titleUrl').value;
 		}
 		if($('documentId')){
-			documentId = $('documentId').value;
+			documentId=$('documentId').value;
 		}
 
 		if(shareURL!=null && shareURL!="" && shareTitle!=null && shareTitle!="" && documentId!=null && documentId!=""){
-			addthis_config.services_custom.url = "http://mynasa.nasa.gov/portal/bookmarks/BookmarkServlet?bookmark_title="+encodeURI(shareTitle)+"&bookmark_url="+encodeURI(shareURL)+
+			addthis_config.services_custom.url="http://mynasa.nasa.gov/portal/bookmarks/BookmarkServlet?bookmark_title="+encodeURI(shareTitle)+"&bookmark_url="+encodeURI(shareURL)+
 										"&bookmark_label="+documentId;
 		}
 		
 		if(shareURL!=null && shareURL!=""){
-			addthis_share.url = shareURL;
+			addthis_share.url=shareURL;
 		}
 		else{
-			addthis_share.url = theHrefShare;
+			addthis_share.url=theHrefShare;
 		}
 	
 		if(shareTitle!=null && shareTitle!=""){
-			addthis_share.title = shareTitle;
+			addthis_share.title=shareTitle;
 		}else{
-			addthis_share.title = bookmarkTitleShare;
+			addthis_share.title=bookmarkTitleShare;
 		}
 
 	});
 
 Event.observe(window, 'load', function() {
 	
-	var ulTag = $('utilities_nav');
+	var ulTag=$('utilities_nav');
 
 	if(typeof(ulTag)!='undefined' && ulTag != null){
 
-		var ulChild = ulTag.childElements();
-		var liTag1 = "";
-		var liTag2 = "";
-		var liTag3 = "";
-		var liTag = "";
+		var ulChild=ulTag.childElements();
+		var liTag1="";
+		var liTag2="";
+		var liTag3="";
+		var liTag="";
 
-		liTag1 = ulTag.childElements()[0].childElements()[0].innerHTML;
-		liTag2 = ulTag.childElements()[1].childElements()[0].innerHTML;
+		liTag1=ulTag.childElements()[0].childElements()[0].innerHTML;
+		liTag2=ulTag.childElements()[1].childElements()[0].innerHTML;
 
 		if(ulChild.length > 2){
-			liTag3 = ulTag.childElements()[2].childElements()[0].innerHTML;
+			liTag3=ulTag.childElements()[2].childElements()[0].innerHTML;
 		}
 
-		var checkVal = false;
+		var checkVal=false;
 
 		if(liTag1 == "Bookmark"){
-			liTag = ulTag.childElements()[0];
-			checkVal = true;
+			liTag=ulTag.childElements()[0];
+			checkVal=true;
 		}else if (liTag2 == "Bookmark")
 		{
-			liTag = ulTag.childElements()[1];
-			checkVal = true;
+			liTag=ulTag.childElements()[1];
+			checkVal=true;
 		}else if(liTag3 == "Bookmark"){
-			liTag = ulTag.childElements()[2];
-			checkVal = true;
+			liTag=ulTag.childElements()[2];
+			checkVal=true;
 		}
 
 
-		var footerInfo = $('footercol1').innerHTML;
+		var footerInfo=$('footercol1').innerHTML;
 
-		var index1 = "Page Last Updated:".length;
-		var index2  = footerInfo.indexOf("<BR>");
+		var index1="Page Last Updated:".length;
+		var index2 =footerInfo.indexOf("<BR>");
 		if(index2 == -1){
-			index2  = footerInfo.indexOf("<br>");
+			index2 =footerInfo.indexOf("<br>");
 		}
-		var footerDate = "";
-		var footerDate2 = "";
+		var footerDate="";
+		var footerDate2="";
 
 
-		var checkDate = Date.parse("Mar 28 2008");
+		var checkDate=Date.parse("Mar 28 2008");
 
 		if(index2!=-1){
-			footerDate = Date.parse(footerInfo.substring(index1,index2));
+			footerDate=Date.parse(footerInfo.substring(index1,index2));
 			
 		}
 
 		if(footerDate > checkDate ){
 			if(checkVal){
-				var spanShare = new Element('span',{'className':'skiplinklogin'});
-				var skipAnc = new Element('a',{'href':'javascript:openUserPref("http://www.addthis.com/bookmark.php")'});
+				var spanShare=new Element('span',{'className':'skiplinklogin'});
+				var skipAnc=new Element('a',{'href':'javascript:openUserPref("http://www.addthis.com/bookmark.php")'});
 				skipAnc.update('Follow this link to Share this Page');
 				spanShare.appendChild(skipAnc);
 
-				var shareAnc = new Element('a',{'href':'#','className':'myOverlayBookmark myOverlayShare bookmark bottom null icons_black icon_share'});
+				var shareAnc=new Element('a',{'href':'#','className':'myOverlayBookmark myOverlayShare bookmark bottom null icons_black icon_share'});
 				shareAnc.update('Share');
 				
 
@@ -631,33 +631,33 @@ Event.observe(window, 'load', function() {
 				liTag.insert(shareAnc);
 			}
 		}else{
-			var checkVal = false;
+			var checkVal=false;
 
 			if(liTag1 == "Bookmark"){
-				liTag = ulTag.childElements()[0];
-				checkVal = true;
+				liTag=ulTag.childElements()[0];
+				checkVal=true;
 			}else if (liTag2 == "Bookmark")
 			{
-				liTag = ulTag.childElements()[1];
-				checkVal = true;
+				liTag=ulTag.childElements()[1];
+				checkVal=true;
 			}else if(liTag3 == "Bookmark"){
-				liTag = ulTag.childElements()[2];
-				checkVal = true;
+				liTag=ulTag.childElements()[2];
+				checkVal=true;
 			}
 			if(checkVal){
-				var allOverlays = $$('.myOverlayBookmark').map(function(myOverlay){
+				var allOverlays=$$('.myOverlayBookmark').map(function(myOverlay){
 				
-					var theHref = myOverlay.href;
-					var classSplit = myOverlay.classNames().toString();
-					var floatType = new Array();
-					floatType = classSplit.split(" ");
+					var theHref=myOverlay.href;
+					var classSplit=myOverlay.classNames().toString();
+					var floatType=new Array();
+					floatType=classSplit.split(" ");
 
 						
 					function renderOverlayBookmarks(contentElement, theHref){
-						contentElement.innerHTML = "";
+						contentElement.innerHTML="";
 						
 						if($('url')){
-							theHref = $('url').value;
+							theHref=$('url').value;
 						}
 
 						function addBookPop(w, h, url){
@@ -665,43 +665,43 @@ Event.observe(window, 'load', function() {
 						}
 						
 						if(!Prototype.Browser.WebKit){
-							var fieldFocus = "javascript: $$('.copy_bookmark')[0].select();";
+							var fieldFocus="javascript: $$('.copy_bookmark')[0].select();";
 						}
 					
 						if($('titleUrl')){
-							var bookmarkTitle = $('titleUrl').value;
+							var bookmarkTitle=$('titleUrl').value;
 						}
-						//var bookmarkTitle = document.title;
+						//var bookmarkTitle=document.title;
 						if($('documentId')){
-							var documentId = $('documentId').value;
+							var documentId=$('documentId').value;
 						}
 						var mynasaUrl	=	"http://mynasa.nasa.gov/portal/bookmarks/BookmarkServlet?bookmark_title="+encodeURI(bookmarkTitle)+"&bookmark_url="+encodeURI(theHref)+
 											"&bookmark_label="+documentId;
 						
-						var title = new Element('h5',{});
+						var title=new Element('h5',{});
 						title.update('Bookmark this');
 						
-						var description = new Element('p',{});
+						var description=new Element('p',{});
 						description.update('Select a bookmarking site.');
 						
-						var nasaLink = new Element('a',{'className':'rss_mynasa', 'href':mynasaUrl});
+						var nasaLink=new Element('a',{'className':'rss_mynasa', 'href':mynasaUrl});
 						nasaLink.update('MyNASA');
 						
 						function makeListLink(title,classname,hideText){
-							var link = new Element('a',{'className':classname,'href':'#'});
+							var link=new Element('a',{'className':classname,'href':'#'});
 							if(hideText){
-								var span = new Element('span',{'className':'hide'});
+								var span=new Element('span',{'className':'hide'});
 								span.update(title);
 								link.insert(span);
 							} else {
 								link.update(title);
 							}
-							var li = new Element('li',{});
+							var li=new Element('li',{});
 							li.insert(link);
 							return li;
 						}
 
-						var links = [
+						var links=[
 							{className:'bookmark_digg', 'title':'Digg It'},
 							{className:'bookmark_delicious', 'title':'del.icio.us'},
 							{className:'bookmark_stumble', 'title':'StumbleUpon'},
@@ -710,71 +710,71 @@ Event.observe(window, 'load', function() {
 							{className:'bookmark_facebook', 'title':'Facebook'},
 							{className:'bookmark_twitter', 'title':'Twitter'}
 						];
-						var list = new Element('ul');
+						var list=new Element('ul');
 						for(var i=0;i<links.length;i++){
 							list.insert(makeListLink(links[i]['title'],links[i]['className'],links[i]['hideText']));
 						}
 
-						var br = new Element('br',{className:'clear'});
+						var br=new Element('br',{className:'clear'});
 									
-						var footer = new Element('p',{});
+						var footer=new Element('p',{});
 						footer.update('Or copy the link below:');
 						
-						var textArea = new Element('textarea',{'className':'copy_bookmark','onfocus':fieldFocus});
+						var textArea=new Element('textarea',{'className':'copy_bookmark','onfocus':fieldFocus});
 						textArea.update(theHref);
 						
-						list = $(list);
+						list=$(list);
 									
-						var bookDigg = list.getElementsBySelector('.bookmark_digg')[0];
-						var bookDiggURL = 'http://digg.com/submit?phase=2&title=' + encodeURI(bookmarkTitle) + '&url=' + encodeURI(theHref);
+						var bookDigg=list.getElementsBySelector('.bookmark_digg')[0];
+						var bookDiggURL='http://digg.com/submit?phase=2&title=' + encodeURI(bookmarkTitle) + '&url=' + encodeURI(theHref);
 						
 						Event.observe(bookDigg, "click", function(e) {
 							addBookPop(960, 450, bookDiggURL);
 							Event.stop(e);
 						});		
 
-						var bookDelicious = list.getElementsBySelector('.bookmark_delicious')[0];
-						var bookDeliciousURL = 'http://del.icio.us/post?t&v=4&noui&jump=close&title='+ encodeURI(bookmarkTitle) +'&url='+ theHref;
+						var bookDelicious=list.getElementsBySelector('.bookmark_delicious')[0];
+						var bookDeliciousURL='http://del.icio.us/post?t&v=4&noui&jump=close&title='+ encodeURI(bookmarkTitle) +'&url='+ theHref;
 						
 						Event.observe(bookDelicious, "click", function(e) {
 							addBookPop(750, 450, bookDeliciousURL);
 							Event.stop(e);
 						});
 						
-						var bookStumble = list.getElementsBySelector('.bookmark_stumble')[0];
-						var bookStumbleURL = 'http://www.stumbleupon.com/submit?title='+ encodeURI(bookmarkTitle) +'&url='+ theHref;
+						var bookStumble=list.getElementsBySelector('.bookmark_stumble')[0];
+						var bookStumbleURL='http://www.stumbleupon.com/submit?title='+ encodeURI(bookmarkTitle) +'&url='+ theHref;
 						
 						Event.observe(bookStumble, "click", function(e) {
 							addBookPop(750, 450, bookStumbleURL);
 							Event.stop(e);
 						});
 
-						var bookTechnorati = list.getElementsBySelector('.bookmark_technorati')[0];
-						var bookTechnoratiURL = 'http://technorati.com/faves?add='+ theHref;
+						var bookTechnorati=list.getElementsBySelector('.bookmark_technorati')[0];
+						var bookTechnoratiURL='http://technorati.com/faves?add='+ theHref;
 						
 						Event.observe(bookTechnorati, "click", function(e) {
 							addBookPop(980, 460, bookTechnoratiURL);
 							Event.stop(e);
 						});
 						
-						var bookYahoo = list.getElementsBySelector('.bookmark_yahoo')[0];
-						var bookYahooURL = 'http://bookmarks.yahoo.com/toolbar/savebm?t='+ encodeURI(bookmarkTitle) +'&u='+ theHref;
+						var bookYahoo=list.getElementsBySelector('.bookmark_yahoo')[0];
+						var bookYahooURL='http://bookmarks.yahoo.com/toolbar/savebm?t='+ encodeURI(bookmarkTitle) +'&u='+ theHref;
 						
 						Event.observe(bookYahoo, "click", function(e) {
 							addBookPop(750, 450, bookYahooURL);
 							Event.stop(e);
 						});	
 
-						var bookFacebook = list.getElementsBySelector('.bookmark_facebook')[0];
-						var bookFacebookURL = 'http://www.facebook.com/sharer.php?t='+ encodeURI(bookmarkTitle) +'&u='+ theHref;
+						var bookFacebook=list.getElementsBySelector('.bookmark_facebook')[0];
+						var bookFacebookURL='http://www.facebook.com/sharer.php?t='+ encodeURI(bookmarkTitle) +'&u='+ theHref;
 				
 						Event.observe(bookFacebook, "click", function(e) {
 							addBookPop(750, 450, bookFacebookURL);
 							Event.stop(e);
 						});	
 
-						var bookTwitter = list.getElementsBySelector('.bookmark_twitter')[0];
-						var bookTwitterURL = 'http://twitter.com/home?status='+ theHref +'&title='+ encodeURI(bookmarkTitle);
+						var bookTwitter=list.getElementsBySelector('.bookmark_twitter')[0];
+						var bookTwitterURL='http://twitter.com/home?status='+ theHref +'&title='+ encodeURI(bookmarkTitle);
 
 						Event.observe(bookTwitter, "click", function(e) {
 							addBookPop(980, 460, bookTwitterURL);
@@ -848,13 +848,13 @@ Event.observe(window, 'load', function() {
 
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myOverlayHelp').map(function(myOverlay){
-		var theHref = myOverlay.href;
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
-		var theHelpContents = floatType[4];
-		var helpContents = $H({
+	var allOverlays=$$('.myOverlayHelp').map(function(myOverlay){
+		var theHref=myOverlay.href;
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
+		var theHelpContents=floatType[4];
+		var helpContents=$H({
 			'materials_filter_help': $H({
 				'title': '<h5>Education Materials Filter</h5>',
 				'body': '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>\n'
@@ -919,7 +919,7 @@ Event.observe(window, 'load', function() {
 			 })
 		});
 		
-		var infoBody = helpContents[theHelpContents]['title'] + helpContents[theHelpContents]['body'];
+		var infoBody=helpContents[theHelpContents]['title'] + helpContents[theHelpContents]['body'];
 		
 		Event.observe(myOverlay, "mouseover", function(cellElement, floatDirection, cellContent) {
 			return function (event) {
@@ -945,8 +945,8 @@ Event.observe(window, 'load', function() {
 
 /*
 document.observe('contentloaded', function() {
-	var allOverlays = $$('.myOverlayLogin').map(function(myOverlay){
-		var loginContents = $H({
+	var allOverlays=$$('.myOverlayLogin').map(function(myOverlay){
+		var loginContents=$H({
 			'login_error': $H({
 				'title': '<h5>Error!</h5>',
 				'body': '<p>Your name and password do not match our records. Please re-enter.</p>\n<p><a href="#" class="errorGetPassword">&rsaquo; Forgot Username<br />or Password?</a></p>'
@@ -965,9 +965,9 @@ document.observe('contentloaded', function() {
 			 })
 		});
 
-		var infoBody =  loginContents['login_error']['title'] + loginContents['login_error']['body'];
+		var infoBody= loginContents['login_error']['title'] + loginContents['login_error']['body'];
 
-		_displayError = function(){
+		_displayError=function(){
 			new safariHover('over',myOverlay, "mouseover", function(){
 				new FloatingInfo(myOverlay, {
 					'float':'auto',
@@ -986,21 +986,21 @@ document.observe('contentloaded', function() {
 			});	
 		};
 		
-		var url = '../temp-resources/scripts/login.php';
+		var url='../temp-resources/scripts/login.php';
 
 		Event.observe(myOverlay, "click", function(url) {
 			return function (event) {
-				var form = $('login_form');
-				var formUserInput = form['user'];
-				var formPassInput = form['pass'];
-				var myRequest = new Ajax.Request( url, 
+				var form=$('login_form');
+				var formUserInput=form['user'];
+				var formPassInput=form['pass'];
+				var myRequest=new Ajax.Request( url, 
 				{
 					method:'post',
 					postBody:'user=' + $('user').getValue() + '&pass=' + $('pass').getValue(),
 					onSuccess:function(transport)
 					{
 						if(transport.responseText != 'error'){
-							window.location = transport.responseText;
+							window.location=transport.responseText;
 						}else{
 							_displayError();
 						}
@@ -1019,74 +1019,74 @@ document.observe('contentloaded', function() {
 
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myOverlayLogin').map(function(myOverlay){
+	var allOverlays=$$('.myOverlayLogin').map(function(myOverlay){
 		
-		var theHref = myOverlay.href;
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
+		var theHref=myOverlay.href;
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
 
 			
 		function renderOverlayLogin(contentElement){
-			contentElement.innerHTML = "";
+			contentElement.innerHTML="";
 		    
 			
 			var mynasaUrl	=	"http://mynasa.nasa.gov/portal/site/mynasa/template.REGISTER/";
-			var forgotPassUrl = "http://mynasa.nasa.gov/portal/site/mynasa/template.FORGOT_PASSWORD";
+			var forgotPassUrl="http://mynasa.nasa.gov/portal/site/mynasa/template.FORGOT_PASSWORD";
 			
-			var title = new Element('h5',{'id':'mynasah5'});
+			var title=new Element('h5',{'id':'mynasah5'});
 			title.update('Login to MyNASA');
 			
 			
-			var closelink = new Element('a',{className:'module_close icons_black icon_close','href':'#','id':'closelink'});
+			var closelink=new Element('a',{className:'module_close icons_black icon_close','href':'#','id':'closelink'});
 
-			var nasaLink = new Element('a',{'href':mynasaUrl,className:'signup'});
+			var nasaLink=new Element('a',{'href':mynasaUrl,className:'signup'});
 			nasaLink.update('&rsaquo;&nbsp;Sign Up for MyNASA');
 
-			var nasaForgot = new Element('a',{'href':forgotPassUrl,className:'signup'});
+			var nasaForgot=new Element('a',{'href':forgotPassUrl,className:'signup'});
 			nasaForgot.update('&rsaquo;&nbsp;Forgot Password');
 			
 			
-			var inputtext = new Element('input',{'type':'text','id':'logon','name':'logon','value':''});
-			var spaninput = new Element('span');
+			var inputtext=new Element('input',{'type':'text','id':'logon','name':'logon','value':''});
+			var spaninput=new Element('span');
 			spaninput.update('Username:&nbsp;');
 				
 			
-					inputtext.onfocus = function() {   
+					inputtext.onfocus=function() {   
 						// if already cleared, do nothing 
 						if (this._cleared) 
 							return;   // when this code is executed, "this" keyword will in fact be the field itself 
 						this.clear();
-						this._cleared = true ;
+						this._cleared=true ;
 					}
 	
 
-				var inputpass = new Element('input',{'type':'password','id':'password','name':'password','alt':'Password'});
-				var spanpass = new Element('span');
+				var inputpass=new Element('input',{'type':'password','id':'password','name':'password','alt':'Password'});
+				var spanpass=new Element('span');
 				spanpass.update('Password:&nbsp;');
 
-				var inputrealm = new Element('input',{'type':'hidden','id':'realm','name':'realm','value':'realm1'});
+				var inputrealm=new Element('input',{'type':'hidden','id':'realm','name':'realm','value':'realm1'});
 			
 				
-				var gridform =  new Element('form',{'id':'gridLogin','name':'gridLogin','method':'post','action':'http://mynasa.nasa.gov/portal/site/mynasa/template.NASA_LOGIN_PROCESS'});
+				var gridform= new Element('form',{'id':'gridLogin','name':'gridLogin','method':'post','action':'http://mynasa.nasa.gov/portal/site/mynasa/template.NASA_LOGIN_PROCESS'});
 			
-				var loginbtn = new Element('a',{className:'linkbutton_tiny','href':"javascript:gridLoginSubmit();"});
+				var loginbtn=new Element('a',{className:'linkbutton_tiny','href':"javascript:gridLoginSubmit();"});
 				loginbtn.update('Log In');
 
-				var cancelbtn = new Element('a',{className:'linkbutton_tiny','href':"#",'id':'cancellogin'});
+				var cancelbtn=new Element('a',{className:'linkbutton_tiny','href':"#",'id':'cancellogin'});
 				cancelbtn.update('Cancel');
 				
 			
-			var br = new Element('br',{className:'clear'});
-			var br1 = new Element('br',{className:'clear'});
-			var br2 = new Element('br',{className:'clear'});
+			var br=new Element('br',{className:'clear'});
+			var br1=new Element('br',{className:'clear'});
+			var br2=new Element('br',{className:'clear'});
 
-			var ullist = new Element('ul',{className:'loginoverlay'});
-			var litag1 = new Element('li',{className:'inputFields'});
-			var litag2 = new Element('li',{className:'inputFields'});
-			var litag3 = new Element('li',{'id':'loginbtn'});
-			var litag4 = new Element('li');
-			var litag5 = new Element('li');
+			var ullist=new Element('ul',{className:'loginoverlay'});
+			var litag1=new Element('li',{className:'inputFields'});
+			var litag2=new Element('li',{className:'inputFields'});
+			var litag3=new Element('li',{'id':'loginbtn'});
+			var litag4=new Element('li');
+			var litag5=new Element('li');
 			
 
 			
@@ -1178,15 +1178,15 @@ Event.observe(window, 'load', function() {
 	
 Event.observe(window, 'load', function() {
 	
-	var allOverlays = $$('.myOverlayError').map(function(myOverlay){
+	var allOverlays=$$('.myOverlayError').map(function(myOverlay){
 
-		var classSplit = myOverlay.classNames().toString();
-		var floatType = new Array();
-		floatType = classSplit.split(" ");
+		var classSplit=myOverlay.classNames().toString();
+		var floatType=new Array();
+		floatType=classSplit.split(" ");
 		
-		var theErrorContents = floatType[4];
+		var theErrorContents=floatType[4];
 		
-		var errorContents = $H({
+		var errorContents=$H({
 			'login_error': $H({
 				'title': '<h5>Error!</h5>',
 				'body': '<p>Your name and password do not match our records. Please re-enter.</p>\n<p><a href="#" class="errorGetPassword">&rsaquo; Forgot Username<br />or Password?</a></p>'
@@ -1213,7 +1213,7 @@ Event.observe(window, 'load', function() {
 			 })
 		});
 
-		var infoBody =  errorContents[theErrorContents]['title'] + errorContents[theErrorContents]['body'];
+		var infoBody= errorContents[theErrorContents]['title'] + errorContents[theErrorContents]['body'];
 
 		Event.observe(myOverlay, "mousedown", function(cellElement, floatDirection, cellContent) {
 			return function (event) {
@@ -1237,20 +1237,20 @@ Event.observe(window, 'load', function() {
 	});
 }, false);
 
-var mouseOverClassify = Class.create();
-mouseOverClassify.prototype = { 
+var mouseOverClassify=Class.create();
+mouseOverClassify.prototype={ 
 	initialize: function(options){
 		//
 		// Note: Positioning-based logic does not work for elements which are heavily z-indexed and overlapping (like StackedDeck)
 		// in those cases, options must have ignore_position set to true
 		//
-		this.options = {};
+		this.options={};
 		if(typeof(options)=='object' && options!=null){
-			this.options = options;
+			this.options=options;
 		} else {
-			this.options['ignore_position'] = false;
+			this.options['ignore_position']=false;
 		}
-		this.options['ignore_position'] = true;
+		this.options['ignore_position']=true;
 	},
 	classify: function(element, nameOfClass) {
 		Event.observe(element, "mouseover",
@@ -1262,9 +1262,9 @@ mouseOverClassify.prototype = {
 						element.addClassName(nameOfClass);
 					}
 				} else {
-					var IsItIn = Position.within(element, Event.pointerX(e), Event.pointerY(e));
+					var IsItIn=Position.within(element, Event.pointerX(e), Event.pointerY(e));
 					if(IsItIn && !element.ItIsIn) {
-						element.ItIsIn = true;
+						element.ItIsIn=true;
 						if(typeof(this.options['adderFunction'])=='function'){
 							this.options['adderFunction'](element);
 						} else {
@@ -1284,9 +1284,9 @@ mouseOverClassify.prototype = {
 						element.removeClassName(nameOfClass);
 					}
 				} else {
-					var IsItIn = Position.within(element, Event.pointerX(e), Event.pointerY(e));
+					var IsItIn=Position.within(element, Event.pointerX(e), Event.pointerY(e));
 					if(!IsItIn && element.ItIsIn) {
-						element.ItIsIn = false;
+						element.ItIsIn=false;
 						if(typeof(this.options['removerFunction'])=='function'){
 							this.options['removerFunction'](element);
 						} else {
@@ -1305,14 +1305,14 @@ mouseOverClassify.prototype = {
 Event.observe(window, 'load', function() {
 	
 	if ($$('.select_dropdown')[0]) {
-		var allDropDowns = $$('.select_dropdown').map(function(elm){
+		var allDropDowns=$$('.select_dropdown').map(function(elm){
 			if (detectBrowser.whichBrowser() != 'ie') {
-				var classSplit = elm.parentNode.classNames().toString();
-				var classType = new Array();
-				classType = classSplit.split(" ");
+				var classSplit=elm.parentNode.classNames().toString();
+				var classType=new Array();
+				classType=classSplit.split(" ");
 
 				return new SkinnedSelect(elm.parentNode, elm, function(){
-					window.location.href = elm.value;
+					window.location.href=elm.value;
 				}, '', classType[0]);
 			}
 			else {
@@ -1320,7 +1320,7 @@ Event.observe(window, 'load', function() {
 				elm.removeClassName('hide');
 				elm.addClassName('select_dropdown_ie');
 				Event.observe(elm, "change", function(e){
-					window.location.href = elm.value;
+					window.location.href=elm.value;
 					Event.stop(e);
 				});
 			}
@@ -1334,28 +1334,28 @@ document.observe ('contentloaded', function(){
 	// listen for clicks and adjust size appropriately.
 
 	$$('.text_adjust').each(function(adjuster){
-		var adjustee = adjuster.up().getElementsBySelector('.text_adjust_me')[0];
+		var adjustee=adjuster.up().getElementsBySelector('.text_adjust_me')[0];
 		if(adjustee){
-			var inTheMiddle = true;
-			var inTheMax = false;
-			var inTheMin = false;
-			var adjustBox = adjuster;
-			var boxToAdjust = adjustee;
-			var growButton = adjustBox.getElementsByClassName('icon_plus')[0];
-			var shrinkButton = adjustBox.getElementsByClassName('icon_minus')[0];
+			var inTheMiddle=true;
+			var inTheMax=false;
+			var inTheMin=false;
+			var adjustBox=adjuster;
+			var boxToAdjust=adjustee;
+			var growButton=adjustBox.getElementsByClassName('icon_plus')[0];
+			var shrinkButton=adjustBox.getElementsByClassName('icon_minus')[0];
 
 			Event.observe (growButton, 'click', function(ev) {
 				if(inTheMiddle == true) {
 					boxToAdjust.addClassName('article_grow');
 					growButton.addClassName('icon_plus_inactive');
-					inTheMiddle = false;
-					inTheMax = true;
+					inTheMiddle=false;
+					inTheMax=true;
 				} else 
 				if(inTheMin == true) {
 					boxToAdjust.removeClassName('article_shrink');
 					shrinkButton.removeClassName('icon_minus_inactive');
-					inTheMiddle = true;
-					inTheMin = false;
+					inTheMiddle=true;
+					inTheMin=false;
 				}
 				ev.stop();
 				return false;
@@ -1364,14 +1364,14 @@ document.observe ('contentloaded', function(){
 				if(inTheMiddle == true) {
 					boxToAdjust.addClassName('article_shrink');
 					shrinkButton.addClassName('icon_minus_inactive');
-					inTheMiddle = false;
-					inTheMin = true;
+					inTheMiddle=false;
+					inTheMin=true;
 				} else 
 				if(inTheMax == true) {
 					boxToAdjust.removeClassName('article_grow');
 					growButton.removeClassName('icon_plus_inactive');
-					inTheMiddle = true;
-					inTheMax = false;
+					inTheMiddle=true;
+					inTheMax=false;
 				}
 				ev.stop();
 				return false;
@@ -1382,46 +1382,46 @@ document.observe ('contentloaded', function(){
 });*/
 
 /* text size adjuster */
-var inTheMiddle = true;
-var inTheMax = false;
-var inTheMin = false;
+var inTheMiddle=true;
+var inTheMax=false;
+var inTheMin=false;
 
 function textSizeAdjuster(click){
   // find each text adjuster, find its adjustee (thing to be adjusted in size), and
   // listen for clicks and adjust size appropriately.
   $$('.text_adjust').each(function(adjuster){
-    var adjustee = adjuster.up().getElementsBySelector('.text_adjust_me')[0];
+    var adjustee=adjuster.up().getElementsBySelector('.text_adjust_me')[0];
     if(adjustee){
-      var adjustBox = adjuster;
-      var boxToAdjust = adjustee;
-      var growButton = adjustBox.getElementsByClassName('icon_plus')[0];
-      var shrinkButton = adjustBox.getElementsByClassName('icon_minus')[0];
+      var adjustBox=adjuster;
+      var boxToAdjust=adjustee;
+      var growButton=adjustBox.getElementsByClassName('icon_plus')[0];
+      var shrinkButton=adjustBox.getElementsByClassName('icon_minus')[0];
       if(click == 'grow') {
         if(inTheMiddle == true) {
           boxToAdjust.addClassName('article_grow');
           growButton.addClassName('icon_plus_inactive');
-          inTheMiddle = false;
-          inTheMax = true;
+          inTheMiddle=false;
+          inTheMax=true;
         } else
         if(inTheMin == true) {
           boxToAdjust.removeClassName('article_shrink');
           shrinkButton.removeClassName('icon_minus_inactive');
-          inTheMiddle = true;
-          inTheMin = false;
+          inTheMiddle=true;
+          inTheMin=false;
         }
       }
       if (click == 'shrink') {
         if(inTheMiddle == true) {
           boxToAdjust.addClassName('article_shrink');
           shrinkButton.addClassName('icon_minus_inactive');
-          inTheMiddle = false;
-          inTheMin = true;
+          inTheMiddle=false;
+          inTheMin=true;
         } else
         if(inTheMax == true) {
           boxToAdjust.removeClassName('article_grow');
           growButton.removeClassName('icon_plus_inactive');
-          inTheMiddle = true;
-          inTheMax = false;
+          inTheMiddle=true;
+          inTheMax=false;
         }
       }
     }
@@ -1445,27 +1445,27 @@ function textSizeAdjuster(click){
 */
 document.observe("contentloaded",function(){
 	$$('.filterset').each(function(filterSetContainer){
-		var setNumOnce = false;
-		var found = false;
-		var p = filterSetContainer;
+		var setNumOnce=false;
+		var found=false;
+		var p=filterSetContainer;
 		while(found==false){
-			counterElement = p.getElementsBySelector(".totalweight")[0];
+			counterElement=p.getElementsBySelector(".totalweight")[0];
 			if(p.hasClassName("filter_container") || p.nodeName=='BODY' || p.nodeName=='body'){
 				// we've gone too far up the ancestry chain and there is no visual counter associated with this filter.
-				counterElement = null;
-				found = true;
+				counterElement=null;
+				found=true;
 			} else if(counterElement && counterElement.hasClassName('totalweight')){
-				found = true;
+				found=true;
 			} else {
-				p = p.up();
+				p=p.up();
 			}
 			// if we've found element.totalweight, we'll be exiting here, else we move up the ancestry chain
 		}
 		if(counterElement){
-			var pc = new PrettyCounter(counterElement,4,0,true);
-			var educators_filter = new SetFilter(filterSetContainer,function(updateText){
+			var pc=new PrettyCounter(counterElement,4,0,true);
+			var educators_filter=new SetFilter(filterSetContainer,function(updateText){
 				pc.setNum(parseInt(updateText),!setNumOnce);
-				setNumOnce = true;
+				setNumOnce=true;
 			},true);
 		}
 	});
@@ -1473,15 +1473,15 @@ document.observe("contentloaded",function(){
 
 // detect any scrollbars
 document.observe("contentloaded",function(){
-	var sFactory = new ScrollFactory();
+	var sFactory=new ScrollFactory();
 });
 
 /* Search results dropdown */
 Event.observe(window, 'load', function() {
 	if($$('select.browse_relevance').length > 0){
-		var dds = new SkinnedSelect($$('select.browse_relevance')[0].parentNode,$$('select.browse_relevance')[0], function(){
+		var dds=new SkinnedSelect($$('select.browse_relevance')[0].parentNode,$$('select.browse_relevance')[0], function(){
 			if($$('select.browse_relevance')[0].value != 0) {
-				document.location.href = "search_results.html?sort=" + $$('select.browse_relevance')[0].value;
+				document.location.href="search_results.html?sort=" + $$('select.browse_relevance')[0].value;
 			}
 		},'','white');
 	}
@@ -1489,7 +1489,7 @@ Event.observe(window, 'load', function() {
 
 /*
 Event.observe(window, 'load', function() {
- var faqpage = $$('.hideanswer');
+ var faqpage=$$('.hideanswer');
  if(faqpage != null){
      showfaq('1');
     }
@@ -1497,7 +1497,7 @@ Event.observe(window, 'load', function() {
 */
 
 Event.observe(window, 'load', function() {
- var nasalogo = $$('.nasa_logo');
+ var nasalogo=$$('.nasa_logo');
  if(nasalogo != null){
         if(nasalogo[0] != null && nasalogo[0].readAttribute('href') != null) {
             nasalogo[0].writeAttribute("href","/home/index.html"); 
@@ -1511,70 +1511,70 @@ Event.observe(window, 'load', function() {
 /*iCal Calendar Overlay*/
 Event.observe(window, 'load', function() {
 	if($$('.myOverlayCalendar')){
-		var allOverlays = $$('.myOverlayCalendar').map(function(myOverlay){
+		var allOverlays=$$('.myOverlayCalendar').map(function(myOverlay){
 			
-			var theHref = myOverlay.href;
+			var theHref=myOverlay.href;
 
 			function renderOverlayRss(contentElement, theHref){
-				contentElement.innerHTML = "";
+				contentElement.innerHTML="";
 				
 				function addRssPop(w, h, url){
 					window.open(url, '', 'width='+ w +', height='+ h +', toolbar=no, resizable=yes, scrollbars=yes');
 				}
 				
 				if(!Prototype.Browser.WebKit){
-					var fieldFocus = "javascript: $$('.iCal_bookmark')[0].select();";
+					var fieldFocus="javascript: $$('.iCal_bookmark')[0].select();";
 				}
 			
-				var rssTitle = document.title;
+				var rssTitle=document.title;
 				
-				var title = new Element('h5',{});
+				var title=new Element('h5',{});
 				title.update("Subscribe/Import Calendar Events");
 				
-				var description = new Element("p",{});
+				var description=new Element("p",{});
 				description.update('');
 
 
 				function makeListLink(title,classname,hideText){
-					var link = new Element('a',{'className':classname,'href':'#'});
+					var link=new Element('a',{'className':classname,'href':'#'});
 					if(hideText){
-						var span = new Element('span',{'className':'hide'});
+						var span=new Element('span',{'className':'hide'});
 						span.update(title);
 						link.insert(span);
 					} else {
 						link.update(title);
 					}
-					var li = new Element('li',{});
+					var li=new Element('li',{});
 					li.insert(link);
 					return li;
 				}
 
-				var links1 = [
+				var links1=[
 					{className:'calendar_msn',title:'Download'},
 					{className:'calendar_aol',title:'Help'}
 				];
-				var list1 = new Element('ul',{'className':'rss_left_ul'});
+				var list1=new Element('ul',{'className':'rss_left_ul'});
 				for(var i=0;i<links1.length;i++){
 					list1.insert(makeListLink(links1[i]['title'],links1[i]['className'],links1[i]['hideText']));
 				}
 							
 				
-				var br = new Element('br',{'className':'clear'});
+				var br=new Element('br',{'className':'clear'});
 
-				var footer = new Element('p',{});
+				var footer=new Element('p',{});
 				footer.update('Copy Subscribe Link');
 
-				var textArea = new Element('textarea',{'className':'iCal_bookmark','onfocus':fieldFocus});
+				var textArea=new Element('textarea',{'className':'iCal_bookmark','onfocus':fieldFocus});
 				textArea.update(theHref);
 				
-				list1 = $(list1);
-				//list2 = $(list2);
+				list1=$(list1);
+				//list2=$(list2);
 				
 				
 				
 				
-				var rssAol = list1.getElementsBySelector('.calendar_aol')[0];
-				var rssAolURL = 'http://www.nasa.gov/ical/';
+				var rssAol=list1.getElementsBySelector('.calendar_aol')[0];
+				var rssAolURL='http://www.nasa.gov/ical/';
 				
 				Event.observe(rssAol, "click", function(e) {
 					addRssPop(980, 460, rssAolURL);
@@ -1582,8 +1582,8 @@ Event.observe(window, 'load', function() {
 				});
 				
 								
-				var rssMsn = list1.getElementsBySelector('.calendar_msn')[0];
-				var rssMsnURL = theHref;
+				var rssMsn=list1.getElementsBySelector('.calendar_msn')[0];
+				var rssMsnURL=theHref;
 				
 				Event.observe(rssMsn, "click", function(e) {
 					addRssPop(980, 460, rssMsnURL);
@@ -1600,9 +1600,9 @@ Event.observe(window, 'load', function() {
 			
 			}
 			
-			var classSplit = myOverlay.classNames().toString();
-			var floatType = new Array();
-			floatType = classSplit.split(" ");
+			var classSplit=myOverlay.classNames().toString();
+			var floatType=new Array();
+			floatType=classSplit.split(" ");
 	
 			Event.observe(myOverlay, "mouseover", function(cellElement, floatDirection, cellContent) {
 				return function (event) {
@@ -1692,10 +1692,10 @@ if(!Object.extend){Object.extend=function(destination,source){for(property in so
 return destination;}}
 Object.extend(Plugin,(new PluginFactory()));
 
-var findNavigatorPluginByName = function(name) {
+var findNavigatorPluginByName=function(name) {
     if (supportsNavigatorPlugins()) {
       for(var i=0;i<navigator.plugins.length;++i) {
-        var plugin = navigator.plugins[i];
+        var plugin=navigator.plugins[i];
         if (plugin.name.indexOf(name) != -1) {
           return plugin;
         }
@@ -1704,7 +1704,7 @@ var findNavigatorPluginByName = function(name) {
     return null;
   }
 
-   var supportsNavigatorPlugins = function() {
+   var supportsNavigatorPlugins=function() {
     return (navigator.plugins && (navigator.plugins.length > 0));
   }
 
@@ -1725,50 +1725,50 @@ var findNavigatorPluginByName = function(name) {
  * The date defaults to the current date/time.
  * The mask defaults to dateFormat.masks.default.
  */
-var dateFormat = function () {
-	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
-		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
-		timezoneClip = /[^-+\dA-Z]/g,
-		pad = function (val, len) {
-			val = String(val);
-			len = len || 2;
-			while (val.length < len) val = "0" + val;
+var dateFormat=function () {
+	var	token=/d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
+		timezone=/\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
+		timezoneClip=/[^-+\dA-Z]/g,
+		pad=function (val, len) {
+			val=String(val);
+			len=len || 2;
+			while (val.length < len) val="0" + val;
 			return val;
 		};
 
 	// Regexes and supporting functions are cached through closure
 	return function (date, mask, utc) {
-		var dF = dateFormat;
+		var dF=dateFormat;
 
 		// You can't provide utc if you skip other args (use the "UTC:" mask prefix)
 		if (arguments.length == 1 && (typeof date == "string" || date instanceof String) && !/\d/.test(date)) {
-			mask = date;
-			date = undefined;
+			mask=date;
+			date=undefined;
 		}
 
 		// Passing date through Date applies Date.parse, if necessary
-		date = date ? new Date(date) : new Date();
+		date=date ? new Date(date) : new Date();
 		if (isNaN(date)) throw new SyntaxError("invalid date");
 
-		mask = String(dF.masks[mask] || mask || dF.masks["default"]);
+		mask=String(dF.masks[mask] || mask || dF.masks["default"]);
 
 		// Allow setting the utc argument via the mask
 		if (mask.slice(0, 4) == "UTC:") {
-			mask = mask.slice(4);
-			utc = true;
+			mask=mask.slice(4);
+			utc=true;
 		}
 
-		var	_ = utc ? "getUTC" : "get",
-			d = date[_ + "Date"](),
-			D = date[_ + "Day"](),
-			m = date[_ + "Month"](),
-			y = date[_ + "FullYear"](),
-			H = date[_ + "Hours"](),
-			M = date[_ + "Minutes"](),
-			s = date[_ + "Seconds"](),
-			L = date[_ + "Milliseconds"](),
-			o = utc ? 0 : date.getTimezoneOffset(),
-			flags = {
+		var	_=utc ? "getUTC" : "get",
+			d=date[_ + "Date"](),
+			D=date[_ + "Day"](),
+			m=date[_ + "Month"](),
+			y=date[_ + "FullYear"](),
+			H=date[_ + "Hours"](),
+			M=date[_ + "Minutes"](),
+			s=date[_ + "Seconds"](),
+			L=date[_ + "Milliseconds"](),
+			o=utc ? 0 : date.getTimezoneOffset(),
+			flags={
 				d:    d,
 				dd:   pad(d),
 				ddd:  dF.i18n.dayNames[D],
@@ -1805,7 +1805,7 @@ var dateFormat = function () {
 }();
 
 // Some common format strings
-dateFormat.masks = {
+dateFormat.masks={
 	"default":      "ddd mmm dd yyyy HH:MM:ss",
 	shortDate:      "m/d/yy",
 	mediumDate:     "mmm d, yyyy",
@@ -1821,7 +1821,7 @@ dateFormat.masks = {
 };
 
 // Internationalization strings
-dateFormat.i18n = {
+dateFormat.i18n={
 	dayNames: [
 		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
 		"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
@@ -1833,7 +1833,7 @@ dateFormat.i18n = {
 };
 
 // For convenience...
-Date.prototype.format = function (mask, utc) {
+Date.prototype.format=function (mask, utc) {
 	return dateFormat(this, mask, utc);
 };
 
@@ -1842,8 +1842,8 @@ Date.prototype.format = function (mask, utc) {
 // Requires Date Format <http://blog.stevenlevithan.com/archives/date-time-format>
 
 function validateDateToMask (date, mask) {
-	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]/g,
-		flags = {
+	var	token=/d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]/g,
+		flags={
 			d:    "(?:[1-9]|[12]\\d|3[01])",
 			dd:   "(?:0[1-9]|[12]\\d|3[01])",
 			ddd:  "(?:" + dateFormat.i18n.dayNames.slice(0,7).join("|") + ")",
@@ -1872,7 +1872,7 @@ function validateDateToMask (date, mask) {
 			o:    "[-+]\\d{4}",
 			S:    "(?:th|st|nd|rd)"
 		},
-		escape = function (str) {
+		escape=function (str) {
 			return str.replace(/[[\]{}()*+?.\\^$|]/g, "\\$&");
 		};
 	
@@ -1889,7 +1889,7 @@ function backtogallery(ref){
    window.location.href=ref;
 }
 document.observe('contentloaded', function() {
-	var btnBacktogallery = $('btn_backtogallery');
+	var btnBacktogallery=$('btn_backtogallery');
 	if (btnBacktogallery) {		
 	   if (btnBacktogallery.hasClassName('icons_gallery icon_back')) {
 		   galLink=btnBacktogallery.href;
@@ -1915,31 +1915,31 @@ function newBookmark(){
 	if($('utilities_nav')){
 		
 		
-		var footerInfo = $('footercol1').innerHTML;
+		var footerInfo=$('footercol1').innerHTML;
 
-		var index1 = "Page Last Updated:".length;
-		var index2  = footerInfo.indexOf("<BR>");
+		var index1="Page Last Updated:".length;
+		var index2 =footerInfo.indexOf("<BR>");
 		if(index2 == -1){
-			index2  = footerInfo.indexOf("<br>");
+			index2 =footerInfo.indexOf("<br>");
 		}
-		var footerDate = "";
-		var footerDate2 = "";
+		var footerDate="";
+		var footerDate2="";
 
 
-		var checkDate = Date.parse("Mar 28 2008");
+		var checkDate=Date.parse("Mar 28 2008");
 
 		if(index2!=-1){
-			footerDate = Date.parse(footerInfo.substring(index1,index2));
+			footerDate=Date.parse(footerInfo.substring(index1,index2));
 			
 		}
 
 
 
 		if(footerDate > checkDate ){
-			var shareBookmark = $('utilities_nav').getElementsBySelector('.myOverlayBookmark')[0];
-			var shareBookmarkJS = $('utilities_nav').getElementsBySelector('.myOverlayShare')[0];
-			var liTag =  shareBookmark.up();
-			var nAgent = navigator.userAgent;
+			var shareBookmark=$('utilities_nav').getElementsBySelector('.myOverlayBookmark')[0];
+			var shareBookmarkJS=$('utilities_nav').getElementsBySelector('.myOverlayShare')[0];
+			var liTag= shareBookmark.up();
+			var nAgent=navigator.userAgent;
 			//if(typeof(shareBookmarkJS) == 'undefined'){
 				if(nAgent.indexOf('MSIE') !=-1){
 					if(!liTag.hasClassName('marginCSS'))
@@ -1954,7 +1954,7 @@ function newBookmark(){
 			/*Added to fix the focus error for invisible field in IE*/
 					
 				/*if(nAgent.indexOf('MSIE') !=-1){
-					 var div = $$('div#at16pib div#at16psf')[0];
+					 var div=$$('div#at16pib div#at16psf')[0];
 					 if(div!=null)
 					 div.remove();
 				}*/
@@ -1965,7 +1965,7 @@ function newBookmark(){
 }
 
 function getmetacontents(mn){ 
-  var metas = document.getElementsByTagName('META'); 
+  var metas=document.getElementsByTagName('META'); 
   for (var x=0,y=metas.length; x<y; x++) {
    if(metas[x].name == mn){ 
     return metas[x].content; 

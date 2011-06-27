@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>
+			Discovery Channel&apos;s &raquo; ip.tv &amp; vodcasts.
+		</title>
+	</head>
+	<body>
+		<outline type="link" title="<![CDATA[Discovery Channel Vodcasts]]>" url="http://www.discovery.com/radio/videos.html" text="<![CDATA[Discovery Channel Vodcasts]]>" description="<![CDATA[Discovery Channel Vodcasts]]>"/>
+		<!-- Begin Atom/RSS feeds. -->
+		<outline title="<![CDATA[Discovery News (Video)]]>" xmlUrl="http://www.discovery.com/radio/xml/news_video.xml" type="rss" text="<![CDATA[Discovery  News  (Video)]]>" htmlUrl="http://dsc.discovery.com/news/news.html" description="<![CDATA[<h1></h1><p>Stay on top of the latest developments in science news, including space exploration, technological breakthroughs, archaeological findings, animals, environmental research and more.>/p>]]>" />
+		<outline title="<![CDATA[TLC Podcasts]]>" xmlUrl="http://tlc.discovery.com/audio_podcasts/tlc_audio_podcast.xml" type="rss" text="<![CDATA[TLC Podcasts]]>" htmlUrl="http://www.tlc.com" description="<![CDATA[Catch up on your favorite TLC shows and stars!&nbsp; Get behind-the-scenes video, extra footage and more.]]>" />
+		<outline title="<![CDATA[Science Channel Video]]>" xmlUrl="http://www.discovery.com/radio/xml/sciencevideo.xml" type="rss" text="<![CDATA[Science Channel Video]]>" htmlUrl="http://science.discovery.com" description="<![CDATA[Watch the latest Science Channel video shorts and special features, science news, breakthroughs, discoveries and more.]]>" />
+		<outline title="<![CDATA[Discovery Channel Video Podcasts]]>" xmlUrl="http://www.discovery.com/radio/xml/discovery_video.xml" type="rss" text="<![CDATA[Discovery Channel Video Podcasts]]>" htmlUrl="http://www.discovery.com/" description="<![CDATA[Explore your world with Discovery Channel video podcasts!  Watch behind-the-scenes interviews with your favorite Discovery Channel hosts; go inside the making of Discovery specials and hit series; get an inside glimpse into the world of Discovery.]]>" />
+		<outline title="<![CDATA[Animal Planet Video Podcast]]>" xmlUrl="http://www.discovery.com/radio/xml/apl_podcasts.xml" type="rss" text="<![CDATA[Animal Planet Video Podcast]]>" htmlUrl="http://www.discovery.com/" description="<![CDATA[Get amazing Animal Planet video, behind-the-scenes features and much more!]]>" />
+	</body>
+</opml>

@@ -34,5 +34,5 @@
 	 * |		http://opensource.org/licenses/rpl1.5.txt                    |
 	 * ---------------------------------------------------------------------------
 	 */
-	$page_feed = new xhtml_2_rss ("http://www.zombieastronaut.net/frequencylite.html", '/<a href=("[^\."]+\.mp3")[^>]+>([^<]+)<\/a>/' );
+	$page_feed=new xhtml_2_rss ("http://www.zombieastronaut.net/frequencylite.html", '/<a href=("[^\."]+\.mp3")[^>]+>([^<]+)<\/a>/' );
 ?>

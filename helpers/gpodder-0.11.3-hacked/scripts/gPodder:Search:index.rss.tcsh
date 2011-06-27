@@ -20,8 +20,8 @@ init:
 	if(! ${?config} ) \
 		set config="${HOME}/.config/gpodder/gpodder.conf";
 	
-	set dl_dir = "`grep 'download_dir' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
-	set mp3_dir = "`grep 'mp3_player_folder' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
+	set dl_dir="`grep 'download_dir' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
+	set mp3_dir="`grep 'mp3_player_folder' '${config}' | cut -d= -f2 | cut -d' ' -f2`";
 	set outputs=("title" "link" "url" "description" "guid");
 #init:
 
@@ -57,19 +57,19 @@ parse_argv:
 	@ argc=${#argv};
 	while( $arg < $argc )
 		@ arg++;
-		set dashes="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\1/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		set dashes="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\1/g'`";
 		if( "${dashes}" == "$argv[$arg]" ) \
 			set dashes="";
 		
-		set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\2/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		set option="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\2/g'`";
 		if( "${option}" == "$argv[$arg]" ) \
 			set option="";
 		
-		set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\3/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		set equals="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\3/g'`";
 		if( "${equals}" == "$argv[$arg]" ) \
 			set equals="";
 		
-		set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\4/g' | sed -r "\""s/(['])/\1\\\1\1/g"\""`"
+		set value="`printf "\""%s"\"" "\""$argv[$arg]"\"" | sed -r 's/^(-{1,2})([^=]+)(=)?(.*)"\$"/\4/g'`";
 		
 		if( ${?debug} ) \
 			printf "--%s%s%s\n" "${option}" "${equals}" "${value}";
@@ -270,8 +270,8 @@ foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/$
 	cp "${index}" "${index}.tmp";
 	ex -s '+1,$s/\v\r\_$//g' '+1,$s/\n//g' '+1s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
-	if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` == 2 ) \
-		ex -s '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
+	if( `wc -l "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` > 1 ) \
+		ex -s -E -n -X --noplugin '+2s/\v(\<item\>)/\r\1/g' '+wq!' "${index}.tmp";
 	
 	#set found="`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/${attrib}>' '${index}.tmp' | sed -r 's/[\r\n]+//' | sed -r 's/<${attrib}>/\n&/g' | sed -r 's/^(.*)<\/${attrib}>.*/\1\r/g' | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`";
 	
@@ -283,9 +283,14 @@ foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/$
 	
 	#unset found;
 	
-	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.*)<\/${output}>.*/\1/g"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
+	foreach item("`egrep "\""<${output}>[^<]+<\/${output}>"\"" "\""${index}.tmp"\"" | sed -r 's/[\r\n]+//' | sed -r "\""s/<${output}>/\n&/g"\"" | sed -r "\""s/^<${output}>(.+)<\/${output}>.*/\1/g"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`")
 		
 		@ items++;
+		if( ${?match_only} && `printf "%d%%2\n" "${items}" | bc` == 1 ) then
+			unset item;
+			continue;
+		endif
+		
 		if( $items <= $limit ) then
 			unset item;
 			continue;
@@ -330,16 +335,22 @@ foreach index("`egrep '<${attrib}>${wild_card}${attribute_value}${wild_card}<\/$
 	endif
 	
 	while( `/bin/grep -P -c '.*\<title\>[^<]*\/[^<]*\<\/title\>' "${index}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` != 0 )
-		ex -s '+1,$s/\v(.*\<title\>[^<]*)\/([^<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${index}.tmp";
+		ex -s -E -n -X --noplugin '+1,$s/\v(.*\<title\>[^<]*)\/([^<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${index}.tmp";
 	end
 	printf "#\!/bin/tcsh -f\ncd "\""%s"\"";\n" "${mp3_dir}" >! "${index}.tcsh";
 	cat "${index}.tmp" >> "${index}.tcsh";
-	ex -s '+3d' '+3,$s/\v\r\n?\_$//g' '+3,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+3,$s/\(<title>\)/\r\1/g' '+3d' '+$d' '+3,$s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${index}.tcsh";
+	ex -s '+3d' '+3,$s/\v\r\n?\_$//g' '+3,$s/\n//g' '+s/\(<\/item>\)/\1\r/g' '+1,$s/\v\<item\>\n*//' '+3,$s/\(<title>\)/\r\1/g' '+3d' '+$d' '+3,$s/\v([\"\!\$\`])/\"\\\1\"/g' '+wq!' "${index}.tcsh";
 	ex -s '+3s/\v.*\<title\>([^<]+)\<\/title\>.*/\1/' '+3s/"/"\\""/' '+wq!' "${index}.tcsh";
 	ex -s '+3s/\v(.*)/set podcasts_title="\1";\rif\( "\`printf "\\""${podcasts_title}"\\"" \| sed -r '\''s\/\(The\)\(\.*\)\/\\1\/g'\''\`" == "The" \)\ \\\r\tset podcasts_title="\`printf "\\""${podcasts_title}"\\"" \| sed -r '\''s\/\(The\)\ \(\.*\)\/\\2,\ \\1\/g'\''\`";\rif(\! -d "${podcasts_title}" ) then\r\tset new_dir;\r\tmkdir -p "${podcasts_title}";\rendif\r/' '+11,$s/\v\<title\>([^\<]+)\<\/title\>.*\<url\>(.*)\.([^\.\<]+)\<\/url\>.*\<pubDate\>([^\<]+)\<\/pubDate\>.*/if(! -e "${podcasts_title}\/\1, released on: \4\.\3" ) then\r\tprintf "Downloading ${podcasts_title} episode: \1\\n";\r\tcurl '${silent}'--location --fail --show-error --output "${podcasts_title}\/\1, released on: \4\.\3" "\2.\3";\r\tif( -e "${podcasts_title}\/\1, released on: \4\.\3" ) then\r\t\tif(\! ${?podcast_downloaded} ) set podcast_downloaded;\r\telse\r\t\tprintf "\\n**error:** <%s> could not be downloaded.\\n\\n" "${podcasts_title}\/\1, released on: \4\.\3";\r\tendif\rendif\r/' '+wq!' "${index}.tcsh";
 	printf 'if( ${?new_dir} && ! ${?podcast_downloaded} ) then\n\trmdir "${podcasts_title}";\n\tif( ${?new_dir} ) \\\n\t\tunset new_dir;\nendif\n' >> "${index}.tcsh";
-	chmod u+x "${index}.tcsh";
-	"${index}.tcsh";
+	#ex -s '+3,$s/\v^(\<item\>)$//g' '+wq!' "${index}.tcsh";
+	printf "Hello World\n";
+	set mode="u+x";
+	vim-enhanced "${index}.tcsh";
+	chmod $mode "${index}.tcsh";
+	unset mode;
+	${index}.tcsh;
+	printf "Hello World\n";
 	if( ${?diagnostic_mode} ) then
 		set index_xml_hash="`dirname '${index}'`";
 		set index_xml_hash="`basename '${index}'`";

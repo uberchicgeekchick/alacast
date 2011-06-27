@@ -62,11 +62,11 @@ import xml.dom.minidom
 
 
 if gpodder.interface == gpodder.GUI:
-    ICON_UNPLAYED = gtk.STOCK_YES
-    ICON_LOCKED = 'emblem-nowrite'
+    ICON_UNPLAYED=gtk.STOCK_YES
+    ICON_LOCKED='emblem-nowrite'
 elif gpodder.interface == gpodder.MAEMO:
-    ICON_UNPLAYED = 'qgn_list_gene_favor'
-    ICON_LOCKED = 'qgn_indi_KeypadLk_lock'
+    ICON_UNPLAYED='qgn_list_gene_favor'
+    ICON_LOCKED='qgn_indi_KeypadLk_lock'
 
 def make_directory( path):
     """
@@ -101,10 +101,10 @@ def normalize_feed_url( url):
         return None
 
     if url.startswith('itms://'):
-        url = parse_itunes_xml(url)
+        url=parse_itunes_xml(url)
 
     # Links to "phobos.apple.com"
-    url = itunes_discover_rss(url)
+    url=itunes_discover_rss(url)
     if url is None:
         return None
     
@@ -123,18 +123,18 @@ def username_password_from_url( url):
     data from the specified URL or (None,None) if no authentication
     data can be found in the URL.
     """
-    (username, password) = (None, None)
+    (username, password)=(None, None)
 
-    (scheme, netloc, path, params, query, fragment) = urlparse.urlparse( url)
+    (scheme, netloc, path, params, query, fragment)=urlparse.urlparse( url)
 
     if '@' in netloc:
-        (authentication, netloc) = netloc.rsplit('@', 1)
+        (authentication, netloc)=netloc.rsplit('@', 1)
         if ':' in authentication:
-            (username, password) = authentication.split(':', 1)
-            username = urllib.unquote(username)
-            password = urllib.unquote(password)
+            (username, password)=authentication.split(':', 1)
+            username=urllib.unquote(username)
+            password=urllib.unquote(password)
         else:
-            username = urllib.unquote(authentication)
+            username=urllib.unquote(authentication)
 
     return (username, password)
 
@@ -164,7 +164,7 @@ def calculate_size( path):
         return os.path.getsize( path)
 
     if os.path.isdir( path) and not os.path.islink( path):
-        sum = os.path.getsize( path)
+        sum=os.path.getsize( path)
 
         try:
             for item in os.listdir(path):
@@ -193,8 +193,8 @@ def file_modification_datetime(filename):
         return None
 
     try:
-        s = os.stat(filename)
-        timestamp = s[stat.ST_MTIME]
+        s=os.stat(filename)
+        timestamp=s[stat.ST_MTIME]
         return datetime.datetime.fromtimestamp(timestamp)
     except:
         log('Cannot get modification timestamp for %s', filename)
@@ -206,7 +206,7 @@ def file_age_in_days(filename):
     Returns the age of the specified filename in days or
     zero if the modification date cannot be determined.
     """
-    dt = file_modification_datetime(filename)
+    dt=file_modification_datetime(filename)
     if dt is None:
         return 0
     else:
@@ -242,11 +242,11 @@ def get_free_disk_space(path):
     function returns zero.
     """
 
-    path = os.path.dirname(path)
+    path=os.path.dirname(path)
     if not os.path.exists(path):
         return 0
 
-    s = os.statvfs(path)
+    s=os.statvfs(path)
 
     return s.f_bavail * s.f_bsize
 
@@ -261,9 +261,9 @@ def format_date(timestamp):
     Returns None if there has been an error converting the
     timestamp to a string representation.
     """
-    seconds_in_a_day = 60*60*24
+    seconds_in_a_day=60*60*24
     try:
-        diff = int((time.time()+1)/seconds_in_a_day) - int(timestamp/seconds_in_a_day)
+        diff=int((time.time()+1)/seconds_in_a_day) - int(timestamp/seconds_in_a_day)
     except:
         log('Warning: Cannot convert "%s" to date.', timestamp, traceback=True)
         return None
@@ -287,20 +287,20 @@ def format_filesize(bytesize, use_si_units=False, digits=2):
     Returns a localized "(unknown)" string when the bytesize
     has a negative value.
     """
-    si_units = (
+    si_units=(
             ( 'kB', 10**3 ),
             ( 'MB', 10**6 ),
             ( 'GB', 10**9 ),
     )
 
-    binary_units = (
+    binary_units=(
             ( 'KiB', 2**10 ),
             ( 'MiB', 2**20 ),
             ( 'GiB', 2**30 ),
     )
 
     try:
-        bytesize = float( bytesize)
+        bytesize=float( bytesize)
     except:
         return _('(unknown)')
 
@@ -308,16 +308,16 @@ def format_filesize(bytesize, use_si_units=False, digits=2):
         return _('(unknown)')
 
     if use_si_units:
-        units = si_units
+        units=si_units
     else:
-        units = binary_units
+        units=binary_units
 
-    ( used_unit, used_value ) = ( 'B', bytesize )
+    ( used_unit, used_value )=( 'B', bytesize )
 
     for ( unit, value ) in units:
         if bytesize >= value:
-            used_value = bytesize / float(value)
-            used_unit = unit
+            used_value=bytesize / float(value)
+            used_unit=unit
 
     return ('%.'+str(digits)+'f %s') % (used_value, used_unit)
 
@@ -347,18 +347,18 @@ def remove_html_tags(html):
     HTML text can be displayed in a simple text view.
     """
     # If we would want more speed, we could make these global
-    re_strip_tags = re.compile('<[^>]*>')
-    re_unicode_entities = re.compile('&#(\d{2,4});')
-    re_html_entities = re.compile('&(.{2,8});')
+    re_strip_tags=re.compile('<[^>]*>')
+    re_unicode_entities=re.compile('&#(\d{2,4});')
+    re_html_entities=re.compile('&(.{2,8});')
 
     # Remove all HTML/XML tags from the string
-    result = re_strip_tags.sub('', html)
+    result=re_strip_tags.sub('', html)
 
     # Convert numeric XML entities to their unicode character
-    result = re_unicode_entities.sub(lambda x: unichr(int(x.group(1))), result)
+    result=re_unicode_entities.sub(lambda x: unichr(int(x.group(1))), result)
 
     # Convert named HTML entities to their unicode character
-    result = re_html_entities.sub(lambda x: unicode(entitydefs.get(x.group(1),''), 'iso-8859-1'), result)
+    result=re_html_entities.sub(lambda x: unicode(entitydefs.get(x.group(1),''), 'iso-8859-1'), result)
 
     return result.strip()
 
@@ -375,14 +375,14 @@ def torrent_filename( filename):
     if not os.path.exists( filename):
         return None
 
-    header = open( filename).readline()
+    header=open( filename).readline()
     try:
         header.index( '6:pieces')
-        name_length_pos = header.index('4:name') + 6
+        name_length_pos=header.index('4:name') + 6
 
-        colon_pos = header.find( ':', name_length_pos)
-        name_length = int(header[name_length_pos:colon_pos]) + 1
-        name = header[(colon_pos + 1):(colon_pos + name_length)]
+        colon_pos=header.find( ':', name_length_pos)
+        name_length=int(header[name_length_pos:colon_pos]) + 1
+        name=header[(colon_pos + 1):(colon_pos + name_length)]
         return name
     except:
         return None
@@ -403,9 +403,9 @@ def file_extension_from_url( url):
     http://my.net/redirect.php?my.net/file.ogg => ".ogg"
     http://server/get.jsp?file=/episode0815.MOV => ".mov"
     """
-    (scheme, netloc, path, para, query, fragid) = urlparse.urlparse(url)
-    filename = os.path.basename( urllib.unquote(path))
-    (filename, extension) = os.path.splitext(filename)
+    (scheme, netloc, path, para, query, fragid)=urlparse.urlparse(url)
+    filename=os.path.basename( urllib.unquote(path))
+    (filename, extension)=os.path.splitext(filename)
 
     if file_type_by_extension(extension) is not None:
         # We have found a valid extension (audio, video, torrent)
@@ -413,8 +413,8 @@ def file_extension_from_url( url):
     
     # If the query string looks like a possible URL, try that first
     if len(query.strip()) > 0 and query.find('/') != -1:
-        query_url = '://'.join((scheme, urllib.unquote(query)))
-        query_extension = file_extension_from_url(query_url)
+        query_url='://'.join((scheme, urllib.unquote(query)))
+        query_extension=file_extension_from_url(query_url)
 
         if file_type_by_extension(query_extension) is not None:
             return query_extension
@@ -430,7 +430,7 @@ def file_type_by_extension( extension):
     the type as string ("audio", "video" or "torrent") or 
     None if the file type cannot be determined.
     """
-    types = {
+    types={
             'audio': [ 'mp3', 'ogg', 'wav', 'wma', 'aac', 'm4a' ],
             'video': [ 'mp4', 'avi', 'mpg', 'mpeg', 'm4v', 'mov', 'divx', 'flv', 'wmv', '3gp' ],
             'torrent': [ 'torrent' ],
@@ -440,9 +440,9 @@ def file_type_by_extension( extension):
         return None
 
     if extension[0] == '.':
-        extension = extension[1:]
+        extension=extension[1:]
 
-    extension = extension.lower()
+    extension=extension.lower()
 
     for type in types:
         if extension in types[type]:
@@ -471,37 +471,37 @@ def get_tree_icon(icon_name, add_bullet=False, add_padlock=False, icon_cache=Non
     if icon_cache is not None and (icon_name,add_bullet,add_padlock,icon_size) in icon_cache:
         return icon_cache[(icon_name,add_bullet,add_padlock,icon_size)]
     
-    icon_theme = gtk.icon_theme_get_default()
+    icon_theme=gtk.icon_theme_get_default()
 
     try:
-        icon = icon_theme.load_icon(icon_name, icon_size, 0)
+        icon=icon_theme.load_icon(icon_name, icon_size, 0)
     except:
         log( '(get_tree_icon) Warning: Cannot load icon with name "%s", will use  default icon.', icon_name)
-        icon = icon_theme.load_icon(gtk.STOCK_DIALOG_QUESTION, icon_size, 0)
+        icon=icon_theme.load_icon(gtk.STOCK_DIALOG_QUESTION, icon_size, 0)
 
     if icon and (add_bullet or add_padlock):
         # We'll modify the icon, so use .copy()
         if add_bullet:
             try:
-                icon = icon.copy()
-                emblem = icon_theme.load_icon(ICON_UNPLAYED, int(float(icon_size)*1.2/3.0), 0)
-                (width, height) = (emblem.get_width(), emblem.get_height())
-                xpos = icon.get_width() - width
-                ypos = icon.get_height() - height
+                icon=icon.copy()
+                emblem=icon_theme.load_icon(ICON_UNPLAYED, int(float(icon_size)*1.2/3.0), 0)
+                (width, height)=(emblem.get_width(), emblem.get_height())
+                xpos=icon.get_width() - width
+                ypos=icon.get_height() - height
                 emblem.composite(icon, xpos, ypos, width, height, xpos, ypos, 1, 1, gtk.gdk.INTERP_BILINEAR, 255)
             except:
                 log('(get_tree_icon) Error adding emblem to icon "%s".', icon_name)
         if add_padlock:
             try:
-                icon = icon.copy()
-                emblem = icon_theme.load_icon(ICON_LOCKED, int(float(icon_size)/2.0), 0)
-                (width, height) = (emblem.get_width(), emblem.get_height())
+                icon=icon.copy()
+                emblem=icon_theme.load_icon(ICON_LOCKED, int(float(icon_size)/2.0), 0)
+                (width, height)=(emblem.get_width(), emblem.get_height())
                 emblem.composite(icon, 0, 0, width, height, 0, 0, 1, 1, gtk.gdk.INTERP_BILINEAR, 255)
             except:
                 log('(get_tree_icon) Error adding emblem to icon "%s".', icon_name)
 
     if icon_cache is not None:
-        icon_cache[(icon_name,add_bullet,add_padlock,icon_size)] = icon
+        icon_cache[(icon_name,add_bullet,add_padlock,icon_size)]=icon
 
     return icon
 
@@ -525,9 +525,9 @@ def updated_parsed_to_rfc2822( updated_parsed):
     if updated_parsed is None or len(updated_parsed) != 9:
         return None
 
-    old_locale = locale.getlocale( locale.LC_TIME)
+    old_locale=locale.getlocale( locale.LC_TIME)
     locale.setlocale( locale.LC_TIME, 'C')
-    result = time.strftime( '%a, %d %b %Y %H:%M:%S GMT', updated_parsed)
+    result=time.strftime( '%a, %d %b %Y %H:%M:%S GMT', updated_parsed)
     if old_locale != (None, None):
         try:
             locale.setlocale( locale.LC_TIME, old_locale)
@@ -547,22 +547,22 @@ def object_string_formatter( s, **kwargs):
 
     Example:
 
-    e = Episode()
-    e.title = 'Hello'
-    s = '{episode.title} World'
+    e=Episode()
+    e.title='Hello'
+    s='{episode.title} World'
     
-    print object_string_formatter( s, episode = e)
+    print object_string_formatter( s, episode=e)
           => 'Hello World'
     """
-    result = s
+    result=s
     for ( key, o ) in kwargs.items():
-        matches = re.findall( r'\{%s\.([^\}]+)\}' % key, s)
+        matches=re.findall( r'\{%s\.([^\}]+)\}' % key, s)
         for attr in matches:
             if hasattr( o, attr):
                 try:
-                    from_s = '{%s.%s}' % ( key, attr )
-                    to_s = getattr( o, attr)
-                    result = result.replace( from_s, to_s)
+                    from_s='{%s.%s}' % ( key, attr )
+                    to_s=getattr( o, attr)
+                    result=result.replace( from_s, to_s)
                 except:
                     log( 'Could not replace attribute "%s" in string "%s".', attr, s)
 
@@ -579,7 +579,7 @@ def format_desktop_command( command, filename):
 
     See http://standards.freedesktop.org/desktop-entry-spec/1.0/ar01s06.html
     """
-    items = {
+    items={
             '%U': 'file://%s' % filename,
             '%u': 'file://%s' % filename,
             '%F': filename,
@@ -605,7 +605,7 @@ def find_command( command):
         return None
 
     for path in os.environ['PATH'].split( os.pathsep):
-        command_file = os.path.join( path, command)
+        command_file=os.path.join( path, command)
         if os.path.isfile( command_file) and os.access( command_file, os.X_OK):
             return command_file
         
@@ -623,14 +623,14 @@ def parse_itunes_xml(url):
     This returns the RSS feed URL for Apple iTunes Podcast XML
     documents that are retrieved by itunes_discover_rss().
     """
-    url = url.replace('itms://', 'http://')
-    doc = http_get_and_gunzip(url)
+    url=url.replace('itms://', 'http://')
+    doc=http_get_and_gunzip(url)
     try:
-        d = xml.dom.minidom.parseString(doc)
+        d=xml.dom.minidom.parseString(doc)
     except Exception, e:
         log('Error parsing document from itms:// URL: %s', e)
         return None
-    last_key = None
+    last_key=None
     for pairs in d.getElementsByTagName('dict'):
         for node in pairs.childNodes:
             if node.nodeType != node.ELEMENT_NODE:
@@ -638,7 +638,7 @@ def parse_itunes_xml(url):
 
             if node.tagName == 'key' and node.childNodes.length > 0:
                 if node.firstChild.nodeType == node.TEXT_NODE:
-                    last_key = node.firstChild.data
+                    last_key=node.firstChild.data
 
             if last_key != 'feedURL':
                 continue
@@ -659,12 +659,12 @@ def http_get_and_gunzip(uri):
 
     Returns the uncompressed document at the given URI.
     """
-    request = urllib2.Request(uri)
+    request=urllib2.Request(uri)
     request.add_header("Accept-encoding", "gzip")
-    usock = urllib2.urlopen(request)
-    data = usock.read()
+    usock=urllib2.urlopen(request)
+    data=usock.read()
     if usock.headers.get('content-encoding', None) == 'gzip':
-        data = gzip.GzipFile(fileobj=StringIO.StringIO(data)).read()
+        data=gzip.GzipFile(fileobj=StringIO.StringIO(data)).read()
     return data
 
 
@@ -686,8 +686,8 @@ def itunes_discover_rss(url):
         return url
 
     try:
-        data = http_get_and_gunzip(url)
-        (url,) = re.findall("itmsOpen\('([^']*)", data)
+        data=http_get_and_gunzip(url)
+        (url,)=re.findall("itmsOpen\('([^']*)", data)
         return parse_itunes_xml(url)
     except:
         return None
@@ -735,11 +735,11 @@ def discover_bluetooth_devices():
         if find_command('hcitool') is not None:
             log('Using hcitool to find nearby bluetooth devices')
             # If the user has "hcitool" installed
-            p = subprocess.Popen(['hcitool', 'scan'], stdout=subprocess.PIPE)
+            p=subprocess.Popen(['hcitool', 'scan'], stdout=subprocess.PIPE)
             for line in p.stdout:
-                match = re.match('^\t([^\t]+)\t([^\t]+)\n$', line)
+                match=re.match('^\t([^\t]+)\t([^\t]+)\n$', line)
                 if match is not None:
-                    (addr, name) = match.groups()
+                    (addr, name)=match.groups()
                     yield (name, addr)
         else:
             log('Cannot find either python-bluez or hcitool - no bluetooth?')
@@ -759,20 +759,20 @@ def bluetooth_send_file(filename, device=None, callback_finished=None):
     This function tries to use "bluetooth-sendto", and if
     it is not available, it also tries "gnome-obex-send".
     """
-    command_line = None
+    command_line=None
 
     if find_command('bluetooth-sendto'):
-        command_line = ['bluetooth-sendto']
+        command_line=['bluetooth-sendto']
         if device is not None:
             command_line.append('--device=%s' % device)
     elif find_command('gnome-obex-send'):
-        command_line = ['gnome-obex-send']
+        command_line=['gnome-obex-send']
         if device is not None:
             command_line += ['--dest', device]
 
     if command_line is not None:
         command_line.append(filename)
-        result = (subprocess.Popen(command_line).wait() == 0)
+        result=(subprocess.Popen(command_line).wait() == 0)
         if callback_finished is not None:
             callback_finished(result)
         return result
@@ -799,13 +799,13 @@ def format_seconds_to_hour_min_sec(seconds):
     if seconds < 1:
         return _('0 seconds')
 
-    result = []
+    result=[]
 
-    hours = seconds/3600
-    seconds = seconds%3600
+    hours=seconds/3600
+    seconds=seconds%3600
 
-    minutes = seconds/60
-    seconds = seconds%60
+    minutes=seconds/60
+    seconds=seconds%60
 
     if hours == 1:
         result.append(_('1 hour'))
@@ -849,32 +849,32 @@ def get_episode_info_from_url(url, proxy=None):
         return {}
 
     if proxy is None or proxy.strip() == '':
-        (scheme, netloc, path, parms, qry, fragid) = urlparse.urlparse(url)
-        conn = httplib.HTTPConnection(netloc)
-        start = len(scheme) + len('://') + len(netloc)
+        (scheme, netloc, path, parms, qry, fragid)=urlparse.urlparse(url)
+        conn=httplib.HTTPConnection(netloc)
+        start=len(scheme) + len('://') + len(netloc)
         conn.request('HEAD', url[start:])
     else:
-        (scheme, netloc, path, parms, qry, fragid) = urlparse.urlparse(proxy)
-        conn = httplib.HTTPConnection(netloc)
+        (scheme, netloc, path, parms, qry, fragid)=urlparse.urlparse(proxy)
+        conn=httplib.HTTPConnection(netloc)
         conn.request('HEAD', url)
 
-    r = conn.getresponse()
-    result = {}
+    r=conn.getresponse()
+    result={}
 
     log('Trying to get metainfo for %s', url)
 
     if 'content-length' in r.msg:
         try:
-            length = int(r.msg['content-length'])
-            result['length'] = length
+            length=int(r.msg['content-length'])
+            result['length']=length
         except ValueError, e:
             log('Error converting content-length header.')
 
     if 'last-modified' in r.msg:
         try:
-            parsed_date = feedparser._parse_date(r.msg['last-modified'])
-            pubdate = updated_parsed_to_rfc2822(parsed_date)
-            result['pubdate'] = pubdate
+            parsed_date=feedparser._parse_date(r.msg['last-modified'])
+            pubdate=updated_parsed_to_rfc2822(parsed_date)
+            result['pubdate']=pubdate
         except:
             log('Error converting last-modified header.')
 
@@ -911,16 +911,16 @@ def sanitize_filename(filename):
     """
     # Try to detect OS encoding (by Leonid Ponomarev)
     if 'LANG' in os.environ and '.' in os.environ['LANG']:
-        lang = os.environ['LANG']
-        (language, encoding) = lang.rsplit('.', 1)
+        lang=os.environ['LANG']
+        (language, encoding)=lang.rsplit('.', 1)
         log('Detected encoding: %s', encoding)
-        enc = encoding
+        enc=encoding
     else:
         # Using iso-8859-15 here as (hopefully) sane default
         # see http://en.wikipedia.org/wiki/ISO/IEC_8859-1
         log('Using ISO-8859-15 as encoding. If this')
         log('is incorrect, please set your $LANG variable.')
-        enc = 'iso-8859-15'
+        enc='iso-8859-15'
 
     return re.sub('[/|?*<>:+\[\]\"\\\]', '_', filename.strip().encode(enc, 'ignore'))
 
@@ -937,7 +937,7 @@ def find_mount_point(directory):
         if os.path.ismount(directory):
             return directory
         else:
-            (directory, tail_data) = os.path.split(directory)
+            (directory, tail_data)=os.path.split(directory)
 
     return '/'
 

@@ -8,12 +8,12 @@ source `dirname "${0}"`/alacast:catalogs:load.tcsh
 
 while ( "${?1}" == "1" && "${1}" != "" )
 	foreach podcast_uri ( "`/usr/bin/grep -r --perl-regex -e '^[\ \s\t]+<outline.*xmlUrl=["\""'\''][^"\""'\'']+["\""'\''].*\/>' '${1}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' | sed 's/\(&amp;\)/\&/g' | sed 's/\([?+]\)/\\\1/g'`" )
-		set found_podcast = "FALSE"
+		set found_podcast="FALSE"
 		foreach podcast_catalog ( ${catalogs} )
-			set result = ""
+			set result=""
 			foreach result ( "`/usr/bin/grep -r --perl-regex -e 'xmlUrl=["\""'\'']${podcast_uri}[^"\""'\'']*["\""'\'']' '${podcast_catalog}' | sed 's/.*xmlUrl=["\""'\'']\([^"\""'\'']\+\)["\""'\''].*/\1/g' | sed 's/\([?&+]\)/\\\1/g'`" )
 				if ( "${result}" != "" ) then
-					set found_podcast = "TRUE"
+					set found_podcast="TRUE"
 					break
 				endif
 			end

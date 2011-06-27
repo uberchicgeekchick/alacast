@@ -194,19 +194,18 @@
 			
 		
 		public function set_status( $downloading, $starting ) {
-			if(!$starting){
-				if(file_exists("{$this->profiles_path}/.status.{$this->status}") && is_writable("{$this->profiles_path}/.status.{$this->status}") )
-					unlink("{$this->profiles_path}/.status.{$this->status}");
-			}else{
-				if(file_exists("{$this->profiles_path}/.status.{$this->status}") && is_writable("{$this->profiles_path}/.status.{$this->status}") ){
-					$this->alacast->output("\n\tAnother process appears to be {$this->status} podcasts already\nPlease wait a moment.\n");
-				}else{
-					if(!$downloading)
-						$this->status="syncronizing";
-					else
-						$this->status="downloading ";
-					touch("{$this->profiles_path}/.status.{$this->status}");
+			if( $starting && ! $downloading ){
+				while(file_exists("{$this->profiles_path}/.syncronizing") && is_writable("{$this->profiles_path}/.syncronizing") ){
+					$this->alacast->output("\n\tAnother alacast process is syncronizing podcasts.\nPlease wait a moment.\n");
+					sleep(200);
 				}
+				
+				$this->status="syncronizing";
+				touch("{$this->profiles_path}/.syncronizing");
+			} else {
+				$this->status="downloading ";
+				if(file_exists("{$this->profiles_path}/.syncronizing") && is_writable("{$this->profiles_path}/.syncronizing") )
+					unlink("{$this->profiles_path}/.syncronizing");
 			}
 			
 			$this->alacast->output(

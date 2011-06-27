@@ -37,9 +37,9 @@ import threading
 
 class ObservableService(object):
     def __init__(self, signal_names=[]):
-        self.observers = {}
+        self.observers={}
         for signal in signal_names:
-            self.observers[signal] = []
+            self.observers[signal]=[]
 
     def register(self, signal_name, observer):
         if signal_name in self.observers:
@@ -68,35 +68,35 @@ class ObservableService(object):
 
 
 class DownloadStatusManager(ObservableService):
-    COLUMN_NAMES = { 0: 'episode', 1: 'speed', 2: 'progress', 3: 'url' }
-    COLUMN_TYPES = ( gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_FLOAT, gobject.TYPE_STRING )
+    COLUMN_NAMES={ 0: 'episode', 1: 'speed', 2: 'progress', 3: 'url' }
+    COLUMN_TYPES=( gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_FLOAT, gobject.TYPE_STRING )
 
     def __init__( self):
-        self.status_list = {}
-        self.next_status_id = 0
+        self.status_list={}
+        self.next_status_id=0
 
-        self.last_progress_status  = ( 0, 0 )
+        self.last_progress_status =( 0, 0 )
         
         # use to correctly calculate percentage done
-        self.downloads_done_bytes = 0
+        self.downloads_done_bytes=0
         
-        self.max_downloads = gl.config.max_downloads
-        self.semaphore = threading.Semaphore( self.max_downloads)
+        self.max_downloads=gl.config.max_downloads
+        self.semaphore=threading.Semaphore( self.max_downloads)
 
-        self.tree_model = gtk.ListStore( *self.COLUMN_TYPES)
-        self.tree_model_lock = threading.Lock()
+        self.tree_model=gtk.ListStore( *self.COLUMN_TYPES)
+        self.tree_model_lock=threading.Lock()
 
         # batch add in progress?
-        self.batch_mode_enabled = False
+        self.batch_mode_enabled=False
         # we set this flag if we would notify inside batch mode
-        self.batch_mode_notify_flag = False
+        self.batch_mode_notify_flag=False
 
         # Used to notify all threads that they should
         # re-check if they can acquire the lock
-        self.notification_event = threading.Event()
-        self.notification_event_waiters = 0
+        self.notification_event=threading.Event()
+        self.notification_event_waiters=0
         
-        signal_names = ['list-changed', 'progress-changed', 'progress-detail', 'download-complete']
+        signal_names=['list-changed', 'progress-changed', 'progress-detail', 'download-complete']
         ObservableService.__init__(self, signal_names)
 
     def start_batch_mode(self):
@@ -108,7 +108,7 @@ class DownloadStatusManager(ObservableService):
         After all episodes have been added, you MUST call
         the end_batch_mode() method to trigger a notification.
         """
-        self.batch_mode_enabled = True
+        self.batch_mode_enabled=True
 
     def end_batch_mode(self):
         """
@@ -117,17 +117,17 @@ class DownloadStatusManager(ObservableService):
 
         This sends out a notification that the list has changed.
         """
-        self.batch_mode_enabled = False
+        self.batch_mode_enabled=False
         if self.batch_mode_notify_flag:
             self.notify('list-changed')
-        self.batch_mode_notify_flag = False
+        self.batch_mode_notify_flag=False
 
     def notify_progress( self):
-        now = ( self.count(), self.average_progress() )
+        now=( self.count(), self.average_progress() )
         
         if now != self.last_progress_status:
             self.notify( 'progress-changed', *now)
-            self.last_progress_status = now
+            self.last_progress_status=now
 
     def s_acquire( self):
         if not gl.config.max_downloads_enabled:
@@ -168,13 +168,13 @@ class DownloadStatusManager(ObservableService):
         # Notify all threads that the limit might have been changed
         self.notification_event.set()
 
-    def s_release( self, acquired = True):
+    def s_release( self, acquired=True):
         if acquired:
             self.semaphore.release()
 
     def reserve_download_id( self):
-        id = self.next_status_id
-	self.next_status_id = id + 1
+        id=self.next_status_id
+	self.next_status_id=id + 1
 	return id
 
     def remove_iter( self, iter):
@@ -183,9 +183,9 @@ class DownloadStatusManager(ObservableService):
 
     def register_download_id( self, id, thread):
         self.tree_model_lock.acquire()
-        self.status_list[id] = { 'iter': self.tree_model.append(), 'thread': thread, 'progress': 0.0, 'speed': _('Queued'), }
+        self.status_list[id]={ 'iter': self.tree_model.append(), 'thread': thread, 'progress': 0.0, 'speed': _('Queued'), }
         if self.batch_mode_enabled:
-            self.batch_mode_notify_flag = True
+            self.batch_mode_notify_flag=True
         else:
             self.notify('list-changed')
         self.tree_model_lock.release()
@@ -193,19 +193,19 @@ class DownloadStatusManager(ObservableService):
     def remove_download_id( self, id):
         if not id in self.status_list:
             return
-        iter = self.status_list[id]['iter']
+        iter=self.status_list[id]['iter']
 	if iter is not None:
             self.tree_model_lock.acquire()
             util.idle_add(self.remove_iter, iter)
             self.tree_model_lock.release()
-            self.status_list[id]['iter'] = None
+            self.status_list[id]['iter']=None
             self.status_list[id]['thread'].cancel()
             del self.status_list[id]
             if not self.has_items():
                 # Reset the counter now
-                self.downloads_done_bytes = 0
+                self.downloads_done_bytes=0
         if self.batch_mode_enabled:
-            self.batch_mode_notify_flag = True
+            self.batch_mode_notify_flag=True
         else:
             self.notify('list-changed')
         self.notify_progress()
@@ -220,8 +220,8 @@ class DownloadStatusManager(ObservableService):
         if not len(self.status_list):
             return 0
 
-        done = sum(status['progress']/100. * status['thread'].total_size for status in self.status_list.values())
-        total = sum(status['thread'].total_size for status in self.status_list.values())
+        done=sum(status['progress']/100. * status['thread'].total_size for status in self.status_list.values())
+        total=sum(status['thread'].total_size for status in self.status_list.values())
         if total + self.downloads_done_bytes == 0:
             return 0
         return float(done + self.downloads_done_bytes) / float(total + self.downloads_done_bytes) * 100
@@ -230,13 +230,13 @@ class DownloadStatusManager(ObservableService):
         if not id in self.status_list:
             return
 
-        iter = self.status_list[id]['iter']
+        iter=self.status_list[id]['iter']
         if iter:
             self.tree_model_lock.acquire()
             for ( column, key ) in self.COLUMN_NAMES.items():
                 if key in kwargs:
                     util.idle_add(self.tree_model.set, iter, column, kwargs[key])
-                    self.status_list[id][key] = kwargs[key]
+                    self.status_list[id][key]=kwargs[key]
             self.tree_model_lock.release()
 
         if 'progress' in kwargs and 'speed' in kwargs and 'url' in self.status_list[id]:
@@ -259,9 +259,9 @@ class DownloadStatusManager(ObservableService):
             # We need this, because status_list is modified from other threads
             if element in self.status_list:
                 try:
-                    thread = self.status_list[element]['thread']
+                    thread=self.status_list[element]['thread']
                 except:
-                    thread = None
+                    thread=None
 
                 if thread is not None and thread.url == url:
                     return True
@@ -270,15 +270,15 @@ class DownloadStatusManager(ObservableService):
 
     def cancel_all( self):
         for element in self.status_list:
-	    self.status_list[element]['iter'] = None
+	    self.status_list[element]['iter']=None
 	    self.status_list[element]['thread'].cancel()
         # clear the tree model after cancelling
         util.idle_add(self.tree_model.clear)
-        self.downloads_done_bytes = 0
+        self.downloads_done_bytes=0
 
     def cancel_by_url( self, url):
         for element in self.status_list:
-	    thread = self.status_list[element]['thread']
+	    thread=self.status_list[element]['thread']
 	    if thread is not None and thread.url == url:
                 self.remove_download_id( element)
 		return True
@@ -286,5 +286,5 @@ class DownloadStatusManager(ObservableService):
         return False
 
 
-download_status_manager = DownloadStatusManager()
+download_status_manager=DownloadStatusManager()
 

@@ -63,10 +63,10 @@ class Importer(object):
     contains workarounds to support odeo.com feeds.
     """
 
-    VALID_TYPES = ( 'rss', 'link' )
+    VALID_TYPES=( 'rss', 'link' )
 
     def read_url( self, url):
-        request = urllib2.Request( url, headers = {'User-agent': gpodder.user_agent})
+        request=urllib2.Request( url, headers={'User-agent': gpodder.user_agent})
         return urllib2.urlopen( request).read()
 
     def __init__( self, url):
@@ -74,33 +74,33 @@ class Importer(object):
         Parses the OPML feed from the given URL into 
         a local data structure containing channel metadata.
         """
-        self.items = []
+        self.items=[]
         try:
             if os.path.exists( url):
                 # assume local filename
-                doc = xml.dom.minidom.parse( url)
+                doc=xml.dom.minidom.parse( url)
             else:
-                doc = xml.dom.minidom.parseString( self.read_url( url))
+                doc=xml.dom.minidom.parseString( self.read_url( url))
 
             for outline in doc.getElementsByTagName('outline'):
                 if outline.getAttribute('type') in self.VALID_TYPES and outline.getAttribute('xmlUrl') or outline.getAttribute('url'):
-                    channel = {
+                    channel={
                         'url': outline.getAttribute('xmlUrl') or outline.getAttribute('url'),
                         'title': outline.getAttribute('title') or outline.getAttribute('text') or outline.getAttribute('xmlUrl') or outline.getAttribute('url'),
                         'description': outline.getAttribute('text') or outline.getAttribute('xmlUrl') or outline.getAttribute('url'),
                     }
 
                     if channel['description'] == channel['title']:
-                        channel['description'] = channel['url']
+                        channel['description']=channel['url']
 
                     for attr in ( 'url', 'title', 'description' ):
-                        channel[attr] = channel[attr].strip()
+                        channel[attr]=channel[attr].strip()
 
                     self.items.append( channel)
             if not len(self.items):
-                log( 'OPML import finished, but no items found: %s', url, sender = self)
+                log( 'OPML import finished, but no items found: %s', url, sender=self)
         except:
-            log( 'Cannot import OPML from URL: %s', url, sender = self)
+            log( 'Cannot import OPML from URL: %s', url, sender=self)
 
     def format_channel( self, channel):
         """
@@ -121,7 +121,7 @@ class Importer(object):
            by calling self.format_channel()
          - the URL of the channel as string
         """
-        model = gtk.ListStore( gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, gobject.TYPE_STRING)
+        model=gtk.ListStore( gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, gobject.TYPE_STRING)
 
         for channel in self.items:
             model.append( [ False, self.format_channel( channel), channel['url'] ])
@@ -138,13 +138,13 @@ class Exporter(object):
     See www.opml.org for the OPML specification.
     """
 
-    FEED_TYPE = 'rss'
+    FEED_TYPE='rss'
 
     def __init__( self, filename):
         if filename.endswith( '.opml') or filename.endswith( '.xml'):
-            self.filename = filename
+            self.filename=filename
         else:
-            self.filename = '%s.opml' % ( filename, )
+            self.filename='%s.opml' % ( filename, )
 
     def create_node( self, doc, name, content):
         """
@@ -152,7 +152,7 @@ class Exporter(object):
         with tag name "name" and text content "content", 
         as in <name>content</name> and returns the element.
         """
-        node = doc.createElement( name)
+        node=doc.createElement( name)
         node.appendChild( doc.createTextNode( content))
         return node
 
@@ -161,7 +161,7 @@ class Exporter(object):
         Creates a OPML outline as XML Element node in a
         document for the supplied channel.
         """
-        outline = doc.createElement( 'outline')
+        outline=doc.createElement( 'outline')
         outline.setAttribute( 'title', channel.title)
         outline.setAttribute( 'text', channel.description)
         outline.setAttribute( 'xmlUrl', channel.url)
@@ -177,38 +177,38 @@ class Exporter(object):
         Returns True on success or False when there was an 
         error writing the file.
         """
-        doc = xml.dom.minidom.Document()
+        doc=xml.dom.minidom.Document()
 
-        opml = doc.createElement( 'opml')
+        opml=doc.createElement( 'opml')
         opml.setAttribute( 'version', '1.1')
         doc.appendChild( opml)
 
-        head = doc.createElement( 'head')
+        head=doc.createElement( 'head')
         head.appendChild( self.create_node( doc, 'title', 'gPodder subscriptions'))
         head.appendChild( self.create_node( doc, 'dateCreated', datetime.datetime.now().ctime()))
         opml.appendChild( head)
 
-        body = doc.createElement( 'body')
+        body=doc.createElement( 'body')
         for channel in channels:
             body.appendChild( self.create_outline( doc, channel))
         opml.appendChild( body)
 
         try:
-            data = doc.toprettyxml(encoding='utf-8', indent='    ', newl=os.linesep)
+            data=doc.toprettyxml(encoding='utf-8', indent='    ', newl=os.linesep)
             # We want to have at least 512 KiB free disk space after
             # saving the opml data, if this is not possible, don't 
             # try to save the new file, but keep the old one so we
             # don't end up with a clobbed, empty opml file.
-            FREE_DISK_SPACE_AFTER = 1024*512
+            FREE_DISK_SPACE_AFTER=1024*512
             if util.get_free_disk_space(self.filename) < 2*len(data)+FREE_DISK_SPACE_AFTER:
-                log('Not enough free disk space to save channel list to %s', self.filename, sender = self)
+                log('Not enough free disk space to save channel list to %s', self.filename, sender=self)
                 return False
-            fp = open(self.filename+'.tmp', 'w')
+            fp=open(self.filename+'.tmp', 'w')
             fp.write(data)
             fp.close()
             os.rename(self.filename+'.tmp', self.filename)
         except:
-            log( 'Could not open file for writing: %s', self.filename, sender = self)
+            log( 'Could not open file for writing: %s', self.filename, sender=self)
             return False
 
         return True

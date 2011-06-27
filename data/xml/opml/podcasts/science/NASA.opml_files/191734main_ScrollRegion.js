@@ -11,14 +11,14 @@ if(detectBrowser.modernBrowser()){
  * 
  */
 
-var ScrollFactory = Class.create();
-ScrollFactory.prototype = {
+var ScrollFactory=Class.create();
+ScrollFactory.prototype={
 	initialize:function(){
 		if (ScrollFactory.prototype.runOnce!=true) {
-			this.scrollers = $$('.scrollbarize').map(function(scrollableElement){
+			this.scrollers=$$('.scrollbarize').map(function(scrollableElement){
 				return new ScrollRegion(scrollableElement);
 			});
-			ScrollFactory.prototype.runOnce = true;
+			ScrollFactory.prototype.runOnce=true;
 		}
 	}	
 };
@@ -33,35 +33,35 @@ ScrollFactory.prototype = {
  * 
  */
 
-var ScrollRegion = Class.create();
-ScrollRegion.prototype = {
+var ScrollRegion=Class.create();
+ScrollRegion.prototype={
 	initialize:function(scrollableElement,noScrollHandle){
 
-		this.downFlag = false;
-		this.upFlag = false;
+		this.downFlag=false;
+		this.upFlag=false;
 
-		var currentFrameScroll = 0;
+		var currentFrameScroll=0;
 		var scrollableElementIframe;
-		this.scrollableElement = scrollableElement;
+		this.scrollableElement=scrollableElement;
 		
 		try
 		{
 		if(this.scrollableElement.immediateDescendants()[0]) {
 			if(this.scrollableElement.immediateDescendants()[0].tagName == 'IFRAME') {
-				scrollableElementIframe = this.scrollableElement.immediateDescendants()[0];
+				scrollableElementIframe=this.scrollableElement.immediateDescendants()[0];
 			}
 		}
 		}
 		catch(err)
 		{}
 		
-		this.btnUp = this.scrollableElement.appendChild(new Element("div",{'className':'track_up','id':'track_up'}));
-		this.scrollBody = this.scrollableElement.appendChild(new Element("div",{'className':'track'}));
-		this.btnDown = this.scrollableElement.appendChild(new Element("div",{'className':'track_down','id':'track_down'}));
+		this.btnUp=this.scrollableElement.appendChild(new Element("div",{'className':'track_up','id':'track_up'}));
+		this.scrollBody=this.scrollableElement.appendChild(new Element("div",{'className':'track'}));
+		this.btnDown=this.scrollableElement.appendChild(new Element("div",{'className':'track_down','id':'track_down'}));
 
 		if(!scrollableElementIframe && noScrollHandle!=true){
 			this.scrollBody.setStyle({'overflow':'hidden'});
-			var scrollHandle = new Element("div",{
+			var scrollHandle=new Element("div",{
 				'className':'track_handle'
 			});
 			scrollHandle.setStyle({
@@ -69,25 +69,25 @@ ScrollRegion.prototype = {
 				'backgroundColor':'#eee'*/
 			});
 
-			this.scrollHandle = scrollHandle;
+			this.scrollHandle=scrollHandle;
 			this.scrollBody.insert(scrollHandle);
-			scrollHandle = $(this.scrollBody.firstChild);
+			scrollHandle=$(this.scrollBody.firstChild);
 
-			var dragger = new Draggable(scrollHandle,{
+			var dragger=new Draggable(scrollHandle,{
 				'constraint':'vertical',
 				'snap':function(x,y){					
-					var sinMotion = false;
+					var sinMotion=false;
 					if(window['sinMotion']==true){
-						sinMotion = true;
+						sinMotion=true;
 					}
 					if(sinMotion){
-						dragger.options.constraint = null;
-						x = Math.round(Math.sin(y/32) * 16);
+						dragger.options.constraint=null;
+						x=Math.round(Math.sin(y/32) * 16);
 					}
 
-					var scrollbarheight = this.scrollBody.getHeight();
-					var scrollhandleheight = scrollHandle.getHeight();
-					var totalheight = (scrollbarheight - scrollhandleheight);
+					var scrollbarheight=this.scrollBody.getHeight();
+					var scrollhandleheight=scrollHandle.getHeight();
+					var totalheight=(scrollbarheight - scrollhandleheight);
 					
 					if(this.scrollableElement.scrollHeight <= this.scrollableElement.getHeight()){
 						this.resetScroll();
@@ -95,43 +95,43 @@ ScrollRegion.prototype = {
 					}
 					var result;
 					if(y < 0){
-						result = [x,0];
+						result=[x,0];
 					} else if(y > totalheight) {
-						result = [x,totalheight];
+						result=[x,totalheight];
 					} else {
-						result = [x,y];
+						result=[x,y];
 					}
-					var ratio = Math.max(0, Math.min(1, y / totalheight));
+					var ratio=Math.max(0, Math.min(1, y / totalheight));
 					doScroll(null,ratio);
 					return result;
 				}.bind(this)
 			});
 		}
 		
-		var moveScrollHandle = function(newRatio){
+		var moveScrollHandle=function(newRatio){
 			if(newRatio>1.0){
 				newRatio=1.0;
 			}
-			var scrollbarheight = this.scrollBody.getHeight();
-			var scrollhandleheight = scrollHandle.getHeight();
-			var totalheight = (scrollbarheight - scrollhandleheight);		
+			var scrollbarheight=this.scrollBody.getHeight();
+			var scrollhandleheight=scrollHandle.getHeight();
+			var totalheight=(scrollbarheight - scrollhandleheight);		
 			if(scrollHandle){
 				scrollHandle.setStyle({'top':(totalheight*newRatio)+'px'});
 			}
 		}.bind(this);
 		
-		var doScroll = function(by,toRatio){
-			var scrollbarheight = this.scrollBody.getHeight();
-			var scrollhandleheight = scrollHandle.getHeight();
-			var totalheight = (scrollbarheight - scrollhandleheight);
+		var doScroll=function(by,toRatio){
+			var scrollbarheight=this.scrollBody.getHeight();
+			var scrollhandleheight=scrollHandle.getHeight();
+			var totalheight=(scrollbarheight - scrollhandleheight);
 			
 	  	if(!scrollableElementIframe) {
 				if(typeof(toRatio)=='number'){
 					// moving with scroll handle
-					this.scrollableElement.scrollTop = (this.scrollableElement.scrollHeight - this.scrollableElement.getHeight()) * toRatio;
+					this.scrollableElement.scrollTop=(this.scrollableElement.scrollHeight - this.scrollableElement.getHeight()) * toRatio;
 				} else {
 					// moving with buttons
-	  			this.scrollableElement.scrollTop = this.scrollableElement.scrollTop + by;
+	  			this.scrollableElement.scrollTop=this.scrollableElement.scrollTop + by;
 					if(noScrollHandle!=true){
 						moveScrollHandle(this.scrollableElement.scrollTop / (this.scrollableElement.scrollHeight - this.scrollableElement.getHeight()));
 					}
@@ -143,12 +143,12 @@ ScrollRegion.prototype = {
 		}.bind(this);
 
 		Event.observe(this.btnDown,'mousedown',function(ev){
-			this.downFlag = true;
-			var timer = setInterval(function(){
+			this.downFlag=true;
+			var timer=setInterval(function(){
 			  if(this.downFlag == false){
 			   // stop this function from running 100ms from now
 			   clearInterval(timer);
-			   this.downFlag = null;
+			   this.downFlag=null;
 			  } else if(this.downFlag == true) {
 					doScroll(12);
 			  }
@@ -156,17 +156,17 @@ ScrollRegion.prototype = {
 			ev.stop();
 		}.bind(this));
 		Event.observe(this.btnDown,'mouseup',function(ev){
-			this.downFlag = false;
+			this.downFlag=false;
 			ev.stop();
 		}.bind(this));
 
 		Event.observe(this.btnUp,'mousedown',function(ev){
-			this.upFlag = true;
-			var timer = setInterval(function(){
+			this.upFlag=true;
+			var timer=setInterval(function(){
 			  if(this.upFlag == false){
 			   // stop this function from running 100ms from now
 			   clearInterval(timer);
-			   this.upFlag = null;
+			   this.upFlag=null;
 			  } else if(this.upFlag == true) {
 					doScroll(-12);
 			  }
@@ -174,7 +174,7 @@ ScrollRegion.prototype = {
 			ev.stop();
 		}.bind(this));
 		Event.observe(this.btnUp,'mouseup',function(ev){
-			this.upFlag = false;
+			this.upFlag=false;
 			ev.stop();
 		}.bind(this));
 		
@@ -213,7 +213,7 @@ ScrollRegion.prototype = {
 			this.btnDown.show();			
 		}
 		if(this.scrollHandle!=null && typeof(this.scrollHandle)=='object'){
-			this.scrollableElement.scrollTop = 0;
+			this.scrollableElement.scrollTop=0;
 			this.scrollHandle.setStyle({'top':'0px'});
 		}}
 		catch(err)

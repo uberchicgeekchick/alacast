@@ -34,7 +34,7 @@
 			);
 		
 		case "podnova": default:
-			$_GET['subscribe'] = "podnova";
+			$_GET['subscribe']="podnova";
 			return array(
 				'uri'   =>      "http://www.podnova.com/add.srf",
 				'get'   =>      "url",

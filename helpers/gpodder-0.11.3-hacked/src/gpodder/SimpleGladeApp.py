@@ -34,8 +34,8 @@ import gtk
 import gtk.glade
 import inspect
 
-__version__ = "1.0"
-__author__ = 'Sandino "tigrux" Flores-Moreno'
+__version__="1.0"
+__author__='Sandino "tigrux" Flores-Moreno'
 
 def bindtextdomain(app_name, locale_dir=None):
     """    
@@ -58,7 +58,7 @@ def bindtextdomain(app_name, locale_dir=None):
         gettext.install(app_name, locale_dir, unicode=1)
     except (IOError,locale.Error), e:
         print "Warning", app_name, e
-        __builtins__.__dict__["_"] = lambda x : x
+        __builtins__.__dict__["_"]=lambda x : x
 
 
 class SimpleGladeApp:
@@ -88,34 +88,34 @@ class SimpleGladeApp:
         **kwargs:
             a dictionary representing the named extra arguments.
             It is useful to set attributes of new instances, for example:
-                glade_app = SimpleGladeApp("ui.glade", foo="some value", bar="another value")
+                glade_app=SimpleGladeApp("ui.glade", foo="some value", bar="another value")
             sets two attributes (foo and bar) to glade_app.
         """        
         if os.path.isfile(path):
-            self.glade_path = path
+            self.glade_path=path
         else:
-            glade_dir = os.path.dirname( sys.argv[0] )
-            self.glade_path = os.path.join(glade_dir, path)
+            glade_dir=os.path.dirname( sys.argv[0] )
+            self.glade_path=os.path.join(glade_dir, path)
         for key, value in kwargs.items():
             setattr( self, key, value)
-        self.glade = None
+        self.glade=None
         self.install_custom_handler(self.custom_handler)
-        self.glade = self.create_glade(self.glade_path, root, domain)
+        self.glade=self.create_glade(self.glade_path, root, domain)
         if root:
-            self.main_widget = self.get_widget(root)
+            self.main_widget=self.get_widget(root)
         else:
-            self.main_widget = None
+            self.main_widget=None
         self.normalize_names()
         self.add_callbacks(self)
         self.new()
 
     def __repr__(self):
-        class_name = self.__class__.__name__
+        class_name=self.__class__.__name__
         if self.main_widget:
-            root = gtk.Widget.get_name(self.main_widget)
-            repr = '%s(path="%s", root="%s")' % (class_name, self.glade_path, root)
+            root=gtk.Widget.get_name(self.main_widget)
+            repr='%s(path="%s", root="%s")' % (class_name, self.glade_path, root)
         else:
-            repr = '%s(path="%s")' % (class_name, self.glade_path)
+            repr='%s(path="%s")' % (class_name, self.glade_path)
         return repr
 
     def new(self):
@@ -151,11 +151,11 @@ class SimpleGladeApp:
         prefixes a widget has for each widget.
         """
         for widget in self.get_widgets():
-            widget_name = gtk.Widget.get_name(widget)
-            prefixes_name_l = widget_name.split(":")
-            prefixes = prefixes_name_l[ : -1]
-            widget_api_name = prefixes_name_l[-1]
-            widget_api_name = "_".join( re.findall(tokenize.Name, widget_api_name) )
+            widget_name=gtk.Widget.get_name(widget)
+            prefixes_name_l=widget_name.split(":")
+            prefixes=prefixes_name_l[ : -1]
+            widget_api_name=prefixes_name_l[-1]
+            widget_api_name="_".join( re.findall(tokenize.Name, widget_api_name) )
             gtk.Widget.set_name(widget, widget_api_name)
             if hasattr(self, widget_api_name):
                 raise AttributeError("instance %s already has an attribute %s" % (self,widget_api_name))
@@ -179,24 +179,24 @@ class SimpleGladeApp:
             An instance with methods as prefix actions.
             It means it has methods like prefix_foo, prefix_bar, etc.
         """        
-        prefix_s = "prefix_"
-        prefix_pos = len(prefix_s)
+        prefix_s="prefix_"
+        prefix_pos=len(prefix_s)
 
-        is_method = lambda t : callable( t[1] )
-        is_prefix_action = lambda t : t[0].startswith(prefix_s)
-        drop_prefix = lambda (k,w): (k[prefix_pos:],w)
+        is_method=lambda t : callable( t[1] )
+        is_prefix_action=lambda t : t[0].startswith(prefix_s)
+        drop_prefix=lambda (k,w): (k[prefix_pos:],w)
 
-        members_t = inspect.getmembers(prefix_actions_proxy)
-        methods_t = filter(is_method, members_t)
-        prefix_actions_t = filter(is_prefix_action, methods_t)
-        prefix_actions_d = dict( map(drop_prefix, prefix_actions_t) )
+        members_t=inspect.getmembers(prefix_actions_proxy)
+        methods_t=filter(is_method, members_t)
+        prefix_actions_t=filter(is_prefix_action, methods_t)
+        prefix_actions_d=dict( map(drop_prefix, prefix_actions_t) )
 
         for widget in self.get_widgets():
-            prefixes = gtk.Widget.get_data(widget, "prefixes")
+            prefixes=gtk.Widget.get_data(widget, "prefixes")
             if prefixes:
                 for prefix in prefixes:
                     if prefix in prefix_actions_d:
-                        prefix_action = prefix_actions_d[prefix]
+                        prefix_action=prefix_actions_d[prefix]
                         prefix_action(widget)
 
     def custom_handler(self,
@@ -217,7 +217,7 @@ class SimpleGladeApp:
         method named create_foo is called with str1,str2,int1,int2 as arguments.
         """
         try:
-            handler = getattr(self, function_name)
+            handler=getattr(self, function_name)
             return handler(str1, str2, int1, int2)
         except AttributeError:
             return None

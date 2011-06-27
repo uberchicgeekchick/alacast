@@ -5,7 +5,7 @@
 // script.aculo.us is freely distributable under the terms of an MIT-style license.
 // For details, see the script.aculo.us web site: http://script.aculo.us/
 
-var Builder = {
+var Builder={
   NODEMAP: {
     AREA: 'map',
     CAPTION: 'table',
@@ -25,22 +25,22 @@ var Builder = {
   // note: For Firefox < 1.5, OPTION and OPTGROUP tags are currently broken,
   //       due to a Firefox bug
   node: function(elementName) {
-    elementName = elementName.toUpperCase();
+    elementName=elementName.toUpperCase();
     
     // try innerHTML approach
-    var parentTag = this.NODEMAP[elementName] || 'div';
-    var parentElement = document.createElement(parentTag);
+    var parentTag=this.NODEMAP[elementName] || 'div';
+    var parentElement=document.createElement(parentTag);
     try { // prevent IE "feature": http://dev.rubyonrails.org/ticket/2707
-      parentElement.innerHTML = "<" + elementName + "></" + elementName + ">";
+      parentElement.innerHTML="<" + elementName + "></" + elementName + ">";
     } catch(e) {}
-    var element = parentElement.firstChild || null;
+    var element=parentElement.firstChild || null;
       
     // see if browser added wrapping tags
     if(element && (element.tagName.toUpperCase() != elementName))
-      element = element.getElementsByTagName(elementName)[0];
+      element=element.getElementsByTagName(elementName)[0];
     
     // fallback to createElement approach
-    if(!element) element = document.createElement(elementName);
+    if(!element) element=document.createElement(elementName);
     
     // abort if nothing could be created
     if(!element) return;
@@ -52,21 +52,21 @@ var Builder = {
         arguments[1].tagName) {
           this._children(element, arguments[1]);
         } else {
-          var attrs = this._attributes(arguments[1]);
+          var attrs=this._attributes(arguments[1]);
           if(attrs.length) {
             try { // prevent IE "feature": http://dev.rubyonrails.org/ticket/2707
-              parentElement.innerHTML = "<" +elementName + " " +
+              parentElement.innerHTML="<" +elementName + " " +
                 attrs + "></" + elementName + ">";
             } catch(e) {}
-            element = parentElement.firstChild || null;
+            element=parentElement.firstChild || null;
             // workaround firefox 1.0.X bug
             if(!element) {
-              element = document.createElement(elementName);
+              element=document.createElement(elementName);
               for(attr in arguments[1]) 
-                element[attr == 'class' ? 'className' : attr] = arguments[1][attr];
+                element[attr == 'class' ? 'className' : attr]=arguments[1][attr];
             }
             if(element.tagName.toUpperCase() != elementName)
-              element = parentElement.getElementsByTagName(elementName)[0];
+              element=parentElement.getElementsByTagName(elementName)[0];
           }
         } 
 
@@ -86,7 +86,7 @@ var Builder = {
   },
 
   _attributes: function(attributes) {
-    var attrs = [];
+    var attrs=[];
     for(attribute in attributes)
       attrs.push((attribute in this.ATTR_MAP ? this.ATTR_MAP[attribute] : attribute) +
           '="' + attributes[attribute].toString().escapeHTML().gsub(/"/,'&quot;') + '"');
@@ -113,14 +113,14 @@ var Builder = {
     return(typeof param=='string' || typeof param=='number');
   },
   build: function(html) {
-    var element = this.node('div');
+    var element=this.node('div');
     $(element).update(html.strip());
     return element.down();
   },
   dump: function(scope) { 
-    if(typeof scope != 'object' && typeof scope != 'function') scope = window; //global scope 
+    if(typeof scope != 'object' && typeof scope != 'function') scope=window; //global scope 
   
-    var tags = ("A ABBR ACRONYM ADDRESS APPLET AREA B BASE BASEFONT BDO BIG BLOCKQUOTE BODY " +
+    var tags=("A ABBR ACRONYM ADDRESS APPLET AREA B BASE BASEFONT BDO BIG BLOCKQUOTE BODY " +
       "BR BUTTON CAPTION CENTER CITE CODE COL COLGROUP DD DEL DFN DIR DIV DL DT EM FIELDSET " +
       "FONT FORM FRAME FRAMESET H1 H2 H3 H4 H5 H6 HEAD HR HTML I IFRAME IMG INPUT INS ISINDEX "+
       "KBD LABEL LEGEND LI LINK MAP MENU META NOFRAMES NOSCRIPT OBJECT OL OPTGROUP OPTION P "+
@@ -128,7 +128,7 @@ var Builder = {
       "TEXTAREA TFOOT TH THEAD TITLE TR TT U UL VAR").split(/\s+/);
   
     tags.each( function(tag){ 
-      scope[tag] = function() { 
+      scope[tag]=function() { 
         return Builder.node.apply(Builder, [tag].concat($A(arguments)));  
       } 
     });

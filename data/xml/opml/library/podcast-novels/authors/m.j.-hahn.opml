@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>New Podcasts</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[The Bellefaire Podcast]]>" xmlUrl="http://bellefairepodcast.com/podcasts-only/rss2.aspx/" type="rss" text="<![CDATA[The Bellefaire Podcast: Victorian Horror in modern day San Francisco]]]>" htmlUrl="http://bellefairepodcast.com//" description="<![CDATA[<h1>Victorian Horror in modern day San Francisco</h1><h3>by The Bellefaire Podcast</h3><p>Yuki O'Malley and the Bellefaire — a novel by M.J. Hahn.</p><p>A modern day phantasmagoria set in San Francisco —</p><p>A city where the "everyday" isn't exactly ordinary. . .</p><p>Yuki O'Malley is thirteen and seems to have a talent for attracting unwanted attention from the spirit world —</p><p>Good thing she's moving into one of the most notoriously haunted mansions in San Francisco!</p><p>While Yuki explores the Curse Castle, she discovers long hidden secrets from the past, as well as an unhealthy dose of mortal peril —</p><p>Unravel the riddle of the Bellefaire — and discover if beauty is truly just skin deep.</p>]]>" />
+		<outline title="<![CDATA[The Isis Heart Podcast]]>" xmlUrl="http://isisheartpodcast.com/podcasts-only/rss2.aspx" type="rss" text="<![CDATA[The Isis Heart Podcast: Egyptian Revival from the Heart of San Francisco]]>" htmlUrl="http://isisheartpodcast.com/" description="<![CDATA[<h1>The Isis Heart Podcast: Egyptian Revival from the Heart of San Francisco</h1><p>In this sequel to the Bellefaire Podcast, our friends in the City find themselves in familiar territory.&nbsp; More supernatural high jinks are afoot, as well as a another dose of mortal peril.</p><p>And this time, it&apos;s Crowley Golden, the somewhat sorcerous boy-next-door, who needs to worry about surviving all the way to the story&apos;s conclusion.&nbsp; Good luck to him!&nbsp; Since those who fall under the spell of the mysterious and ancient Isis Heart, have a tendency to end up not at all well!</p>]]>" />
+	</body>
+</opml>

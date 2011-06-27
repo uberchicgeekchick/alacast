@@ -46,7 +46,6 @@
 		public function __construct(&$alacast){
 			$this->alacast=&$alacast;
 			
-			
 			$this->init();
 			
 			$this->parse();
@@ -65,7 +64,7 @@
 			
 			$this->update_delay=0;
 			$this->continuous=FALSE;
-			$this->interactive=TRUE;
+			$this->interactive=FALSE;
 			$this->verbose=FALSE;
 			
 			$this->priority=0;
@@ -114,30 +113,21 @@
 							$this->diagnosis=TRUE;
 						break;
 					
-					case "continuous":
-						if(!$this->continuous)
-							$this->continuous=TRUE;
-						break;
-					
 					case "loop":
 					case "delay":
 					case "repeat":
 					case "repetitive":
 					case "update-delay":
+					case "continuous":
 						if(!($value && preg_match("/^[0-9]+$/", $value)))
 							$this->update_delay=1000000; /* 10 seconds */
 						else
 							$this->update_delay=$value*1000000;
-						
-						if(!$this->continuous)
-							$this->continuous=TRUE;
 						break;
 					
 					case "interactive":
 						if(!$this->interactive)
 							$this->interactive=TRUE;
-						if(!$this->continuous)
-							$this->continuous=TRUE;
 						break;
 					
 					case "logging":
@@ -220,6 +210,11 @@
 					*/
 				}
 			}
+			
+			/*$this->alacast->output( sprintf("**notice:** mode: %s; interactive: %s; update_delay: %s.\n", $this->mode, ($this->interactive ?"TRUE" :"FALSE"), $this->update_delay) );*/
+			
+			if( (!$this->continuous) && ($this->interactive || $this->update_delay))
+				$this->continuous=TRUE;
 		}/*\alacast\options\parse();*/
 		
 		

@@ -46,19 +46,19 @@ def patch_feedparser():
     Added by Thomas Perl for gPodder 2007-12-29
     """
     def mapContentType2(self, contentType):
-        contentType = contentType.lower()
+        contentType=contentType.lower()
         if contentType == 'text' or contentType == 'plain':
-            contentType = 'text/plain'
+            contentType='text/plain'
         elif contentType == 'html':
-            contentType = 'text/html'
+            contentType='text/html'
         elif contentType == 'xhtml':
-            contentType = 'application/xhtml+xml'
+            contentType='application/xhtml+xml'
         return contentType
 
     try:
         if feedparser._FeedParserMixin().mapContentType('plain') == 'plain':
             log('Patching feedparser module... (mapContentType bugfix)')
-            feedparser._FeedParserMixin.mapContentType = mapContentType2
+            feedparser._FeedParserMixin.mapContentType=mapContentType2
     except:
         log('Warning: feedparser unpatched - might be broken!')
 
@@ -84,23 +84,23 @@ class Cache:
           timeToLiveSeconds=300 -- The length of time content should
           live in the cache before an update is attempted.
         """
-        self.storage = storage
-        self.time_to_live = timeToLiveSeconds
-        self.user_agent = gpodder.user_agent
+        self.storage=storage
+        self.time_to_live=timeToLiveSeconds
+        self.user_agent=gpodder.user_agent
         return
 
-    def fetch(self, url, force_update = False, offline = False):
+    def fetch(self, url, force_update=False, offline=False):
         """
         Returns an (updated, feed) tuple for the feed at the specified
         URL. If the feed hasn't updated since the last run, updated
         will be False. If it has been updated, updated will be True.
         """
 
-        modified = None
-        etag = None
-        now = time.time()
+        modified=None
+        etag=None
+        now=time.time()
 
-        cached_time, cached_content = self.storage.get(url, (None, None))
+        cached_time, cached_content=self.storage.get(url, (None, None))
 
         if offline and cached_content is not None:
             return (False, cached_content)
@@ -109,49 +109,49 @@ class Cache:
         # which is older than the time-to-live?
         if cached_time is not None:
             if self.time_to_live:
-                age = now - cached_time
+                age=now - cached_time
                 if age <= self.time_to_live and not force_update:
                     return (False, cached_content)
             
             # The cache is out of date, but we have
             # something.  Try to use the etag and modified_time
             # values from the cached content.
-            etag = cached_content.get('etag')
-            modified = cached_content.get('modified')
+            etag=cached_content.get('etag')
+            modified=cached_content.get('modified')
 
         # We know we need to fetch, so go ahead and do it.
-        parsed_result = feedparser.parse(url,
+        parsed_result=feedparser.parse(url,
                                          agent=self.user_agent,
                                          modified=modified,
                                          etag=etag,
                                          )
 
-        updated = False
-        status = parsed_result.get('status', None)
+        updated=False
+        status=parsed_result.get('status', None)
         if status == 304:
             # No new data, based on the etag or modified values.
             # We need to update the modified time in the
             # storage, though, so we know that what we have
             # stored is up to date.
-            self.storage[url] = (now, cached_content)
+            self.storage[url]=(now, cached_content)
             log('Using cached feed: %s', url, sender=self)
 
             # Return the data from the cache, since
             # the parsed data will be empty.
-            parsed_result = cached_content
+            parsed_result=cached_content
         elif status in (200, 301, 302, 307):
-            updated = True
+            updated=True
             # There is new content, so store it unless there was an error.
             # Store it regardless of errors when we don't have anything yet
-            error = parsed_result.get('bozo_exception')
+            error=parsed_result.get('bozo_exception')
             if error:
-                log('Warning: %s (%s)', url, str(error), sender = self)
+                log('Warning: %s (%s)', url, str(error), sender=self)
                 # Convert the exception to a string, so we can pickle it
-                parsed_result['bozo_exception'] = str(error)
+                parsed_result['bozo_exception']=str(error)
 
-            self.storage[url] = (now, parsed_result)
+            self.storage[url]=(now, parsed_result)
         else:
-            log('Strange status code: %s ("%s")', url, status, sender = self)
+            log('Strange status code: %s ("%s")', url, status, sender=self)
 
         return (updated, parsed_result)
 

@@ -6,30 +6,30 @@ import sys
 
 
 class DAAPProxy(object):
-    def __init__( self, host, port = 3689):
-        self.host = host
-        self.port = port
+    def __init__( self, host, port=3689):
+        self.host=host
+        self.port=port
 
-        self.client = DAAPClient()
+        self.client=DAAPClient()
         self.client.connect( host, port)
-        self.session = self.client.login()
-        self.databases = self.session.databases()
+        self.session=self.client.login()
+        self.databases=self.session.databases()
 
-        libid = self.session.library().id
-        self.database = None
+        libid=self.session.library().id
+        self.database=None
         for d in self.databases:
             if str( d.id) == str( id):
-                self.database = d
+                self.database=d
 
         if self.database is None:
-            self.database = d
+            self.database=d
 
-        self.tracks = self.database.tracks()
+        self.tracks=self.database.tracks()
 
     def generate_url( self, track):
         return 'http://%s:%d/databases/%d/items/%d.%s?session-id=%d' % ( self.host, self.port, self.database.id, track.id, track.type, self.session.sessionid )
 
-    def print_rss( self, file = sys.stdout):
+    def print_rss( self, file=sys.stdout):
         file.write( '<?xml version="1.0"?>\n')
         file.write( '<rss version="2.0">\n')
         file.write( '<channel>\n')
@@ -38,9 +38,9 @@ class DAAPProxy(object):
         file.write( '<link>http://%s:%s/</link>\n' % ( self.host, self.port ))
         for t in self.tracks:
             try:
-                name = ascii( '%s - %s' % ( t.artist, t.name ))
+                name=ascii( '%s - %s' % ( t.artist, t.name ))
             except:
-                name = '%s - %s' % ( repr( t.artist), repr( t.name) )
+                name='%s - %s' % ( repr( t.artist), repr( t.name) )
 
             file.write( '<item>\n')
             file.write( '<title>%s</title>\n' % ( name ))
@@ -51,7 +51,7 @@ class DAAPProxy(object):
 
 
 # testing code
-proxy = DAAPProxy( "ignition")
+proxy=DAAPProxy( "ignition")
 proxy.print_rss()
 proxy.print_rss( open( "test.rss", "w"))
 sys.stdin.readline()

@@ -5,8 +5,8 @@ printf "${cwd}"
 
 source `dirname "${0}"`/alacast:catalogs:load.tcsh
 
-set attrib = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
-set value = "`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
+set attrib="`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\1/g'`"
+set value="`printf '${1}' | sed 's/\-\-\([^=]\+\)=\(.*\)/\2/g'`"
 
 if ( ! ( "${attrib}" != "" && "${value}" != "" ) ) goto usage
 
@@ -38,8 +38,8 @@ usage:
 wget_newest:
 	if ( -e .newest.feed.xml ) rm -f .newest.feed.xml
 	wget -O .newest.feed.xml --quiet "${podcasts_xmlUrl}"
-	set title = "`grep '<title.*>.*<\/title>' .newest.feed.xml | head -3 | tail -1 | sed 's/<title.*>\([^<]\+\)<\/title>/\1/g'`"
-	set enclosure = "`grep '<enclosure.*>' .newest.feed.xml | head -1 | sed 's/<enclosure.*url=["\""]\([^"\""]\+\)["\""].*>/\1/g'`"
+	set title="`grep '<title.*>.*<\/title>' .newest.feed.xml | head -3 | tail -1 | sed 's/<title.*>\([^<]\+\)<\/title>/\1/g'`"
+	set enclosure="`grep '<enclosure.*>' .newest.feed.xml | head -1 | sed 's/<enclosure.*url=["\""]\([^"\""]\+\)["\""].*>/\1/g'`"
 	if ( -e .newest.feed.xml ) rm -f .newest.feed.xml
 	goto find_next_newest
 

@@ -8,7 +8,7 @@ function flashURL(id) {
 	} else if(id==2) {
 		s='#';
 	}
-	window.location.href = s;
+	window.location.href=s;
 }
 
 // Left Navigation Links
@@ -44,7 +44,7 @@ function homeNav(id) {
 	} else if(id==13) {
 	  s='/audience/forindustry/home/index.html';
 	}
-	window.location.href = s;
+	window.location.href=s;
 }
 
 // Left Navigation Links for ForKids Leftnav
@@ -69,15 +69,15 @@ function kidsNav(id) {
 	} else if(id==8) {
 	  s='#';
 	}
-	window.location.href = s;
+	window.location.href=s;
 }
 
 
 // Banner Select Code
-var sBanner = 0;
+var sBanner=0;
 function switchBanner(id) {
   swapImg('banner','/images/banner/home/banner_'+id+'.jpg');
-	sBanner = id;
+	sBanner=id;
 }
 
 // Navigation Item String Concat

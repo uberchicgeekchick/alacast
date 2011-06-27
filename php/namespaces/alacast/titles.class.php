@@ -57,7 +57,7 @@
 							$podcasts_info[$i]['title']
 						)) ){
 							/*printf("\nRenaming: [%s]\n\tusing using regular_expression[%d][%d]: %s %s\n", $podcasts_info[$i]['title'], $a, $n,$this->regular_expression[$a][$n][0],$this->regular_expression[$a][$n][1]);*/
-							$podcasts_info[$i]['title'] = preg_replace(
+							$podcasts_info[$i]['title']=preg_replace(
 								$this->regular_expression[$a][$n][0],
 								$this->regular_expression[$a][$n][1],
 								$podcasts_info[$i]['title'],
@@ -94,7 +94,7 @@
 		public function prefix_episope_titles_with_podcasts_title(&$podcasts_info){
 			for( $i=1; $i<$podcasts_info['total']; $i++ )
 				if( !(preg_match( "/^{$podcasts_info[0]}/", $podcastInfo[$i] )) )
-					$podcasts_info[$i] = "{$podcasts_info[0]} - "
+					$podcasts_info[$i]="{$podcasts_info[0]} - "
 					.(preg_replace(
 						"/{$podcasts_info[0]}/",
 						"",

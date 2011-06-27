@@ -4,10 +4,8 @@
 		<title>Science video podcasts</title>
 	</head>
 	<body>
-		<outline title="<![CDATA[Science Channel Video]]>" xmlUrl="http://www.discovery.com/radio/xml/sciencevideo.xml" type="rss" text="<![CDATA[Science Channel Video]]>" htmlUrl="http://science.discovery.com/" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[Discovery News Video]]>" xmlUrl="http://www.discovery.com/radio/xml/news_video.xml" type="rss" text="<![CDATA[Discovery News Video]]>" htmlUrl="http://dsc.discovery.com/news/news.html" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[NASACast Video]]>" xmlUrl="http://www.nasa.gov/rss/NASAcast_vodcast.rss" type="rss" text="<![CDATA[NASA Cast]]>" htmlUrl="http://www.nasa.gov/rss/index.html" description="<![CDATA[]]>"/>
-		<outline title="<![CDATA[NASA Edge]]>" xmlUrl="http://www.nasa.gov/rss/NASAEdge_vodcast.rss" type="rss" text="<![CDATA[NASA Edge]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/nasaedge/index.html" description="<![CDATA[]]>"/>
+		<outline title="<![CDATA[NASAEdge]]>" xmlUrl="http://www.nasa.gov/rss/NASAEdge_vodcast.rss" type="rss" text="<![CDATA[NASA Edge]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/nasaedge/index.html" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[NPR: Science Friday Podcast: Video]]>" type="rss" xmlUrl="http://www.sciencefriday.com/video/scifrivideo.xml" htmlUrl="http://www.sciencefriday.com/feeds/extras/" text="<![CDATA[NPR: Science Friday Podcast: Video]]>" description="<![CDATA[We are creating and collecting science videos of all kinds--from spider-milking demonstrations to studio interviews with Ira.]]>"/>
 		<outline title="<![CDATA[TERRA: The Nature of Our World]]>" xmlUrl="http://feeds.feedburner.com/Terravideos" type="rss" text="<![CDATA[TERRA: The Nature of Our World]]>" htmlUrl="http://lifeonterra.com/" description="<![CDATA[TERRA: The Nature of Our World]]>"/>
 	</body>

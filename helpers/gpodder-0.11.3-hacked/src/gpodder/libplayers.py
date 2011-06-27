@@ -38,17 +38,17 @@ from gpodder.liblogger import log
 
 
 # where are the .desktop files located?
-userappsdirs = [ '/usr/share/applications/', '/usr/local/share/applications/', '/usr/share/applications/kde/' ]
+userappsdirs=[ '/usr/share/applications/', '/usr/local/share/applications/', '/usr/share/applications/kde/' ]
 
 # the name of the section in the .desktop files
-sect = 'Desktop Entry'
+sect='Desktop Entry'
 
 class UserApplication(object):
     def __init__(self, name, cmd, mime, icon):
-        self.name = name
-        self.cmd = cmd
-        self.icon = icon
-        self.mime = mime
+        self.name=name
+        self.cmd=cmd
+        self.icon=icon
+        self.mime=mime
 
     def get_icon(self):
         if self.icon is not None:
@@ -57,8 +57,8 @@ class UserApplication(object):
                 return gtk.gdk.pixbuf_new_from_file_at_size(self.icon, 24, 24)
 
             # Load it from the current icon theme
-            (icon_name, extension) = os.path.splitext(os.path.basename(self.icon))
-            theme = gtk.IconTheme()
+            (icon_name, extension)=os.path.splitext(os.path.basename(self.icon))
+            theme=gtk.IconTheme()
             if theme.has_icon(icon_name):
                 return theme.load_icon(icon_name, 24, 0)
 
@@ -68,17 +68,17 @@ class UserApplication(object):
 
 class UserAppsReader(object):
     def __init__(self, mimetypes):
-        self.apps = []
-        self.mimetypes = mimetypes
-        self.__model_cache = {}
-        self.__has_read = False
-        self.__finished = threading.Event()
+        self.apps=[]
+        self.mimetypes=mimetypes
+        self.__model_cache={}
+        self.__has_read=False
+        self.__finished=threading.Event()
 
     def read( self):
         if self.__has_read:
             return
 
-        self.__has_read = True
+        self.__has_read=True
         log('start reader', bench_start=True)
         for dir in userappsdirs:
             if os.path.exists( dir):
@@ -90,19 +90,19 @@ class UserAppsReader(object):
 
     def parse_and_append( self, filename):
         try:
-            parser = RawConfigParser()
+            parser=RawConfigParser()
             parser.read([filename])
             if not parser.has_section(sect):
                 return
             
             # Find out if we need it by comparing mime types
-            app_mime = parser.get(sect, 'MimeType')
+            app_mime=parser.get(sect, 'MimeType')
             for needed_type in self.mimetypes:
                 if app_mime.find(needed_type+'/') != -1:
                     log('Player found: %s', filename, sender=self)
-                    app_name = parser.get(sect, 'Name')
-                    app_cmd = parser.get(sect, 'Exec')
-                    app_icon = parser.get(sect, 'Icon')
+                    app_name=parser.get(sect, 'Name')
+                    app_cmd=parser.get(sect, 'Exec')
+                    app_icon=parser.get(sect, 'Icon')
                     self.apps.append(UserApplication(app_name, app_cmd, app_mime, app_icon))
                     return
         except:
@@ -111,11 +111,11 @@ class UserAppsReader(object):
     def get_applications_as_model(self, mimetype, return_model=True):
         self.__finished.wait()
         if mimetype not in self.__model_cache:
-            result = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gtk.gdk.Pixbuf)
+            result=gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gtk.gdk.Pixbuf)
             for app in self.apps:
                 if app.is_mime(mimetype):
                     result.append([app.name, app.cmd, app.get_icon()])
-            self.__model_cache[mimetype] = result
+            self.__model_cache[mimetype]=result
         else:
             log('Using cached application list model for %s', mimetype, sender=self)
 

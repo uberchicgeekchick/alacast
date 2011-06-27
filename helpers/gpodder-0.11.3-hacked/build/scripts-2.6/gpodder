@@ -29,11 +29,11 @@ or played back on the user's desktop.
 
 # PLEASE DO NOT CHANGE FORMAT OF __version__ LINE (setup.py reads this)
 
-__author__    = "Thomas Perl <thp@perli.net>"
-__version__   = "0.11.3"
-__date__      = "2008-06-01"
-__copyright__ = "Copyright (c) 2005-2008 %s. All rights reserved." % __author__
-__licence__   = "GPL"
+__author__   ="Thomas Perl <thp@perli.net>"
+__version__  ="0.11.3"
+__date__     ="2008-06-01"
+__copyright__="Copyright (c) 2005-2008 %s. All rights reserved." % __author__
+__licence__  ="GPL"
 
 import sys
 import os
@@ -52,20 +52,20 @@ except:
     sys.exit( -1)
 
 
-def main( argv = sys.argv):
-    prefix = os.path.abspath( os.path.normpath( os.path.join( os.path.dirname( argv[0]), '..')))
-    locale_dir = os.path.join( prefix, 'share', 'locale')
+def main( argv=sys.argv):
+    prefix=os.path.abspath( os.path.normpath( os.path.join( os.path.dirname( argv[0]), '..')))
+    locale_dir=os.path.join( prefix, 'share', 'locale')
 
     # Enable i18n support
-    domain = 'gpodder'
+    domain='gpodder'
     gettext.bindtextdomain( domain, locale_dir)
     gettext.textdomain( domain)
     gettext.install(domain, locale_dir, unicode=True)
 
-    s_usage = 'usage: %%prog [options]\n\n%s' % ( __doc__.strip() )
-    s_version = '%%prog %s' % ( __version__ )
+    s_usage='usage: %%prog [options]\n\n%s' % ( __doc__.strip() )
+    s_version='%%prog %s' % ( __version__ )
 
-    parser = OptionParser( usage = s_usage, version = s_version)
+    parser=OptionParser( usage=s_usage, version=s_version)
 
     parser.add_option("-v", "--verbose",
                       action="store_true", dest="verbose", default=False,
@@ -102,21 +102,21 @@ def main( argv = sys.argv):
                       help=_("Delete channel specified by URL"), metavar="URL")
 
 
-    (options, args) = parser.parse_args(argv)
+    (options, args)=parser.parse_args(argv)
 
     if options.local:
-        sys.path = [ os.path.join( prefix, 'src') ] + sys.path
+        sys.path=[ os.path.join( prefix, 'src') ] + sys.path
 
     import gpodder
-    gpodder.user_agent = 'gPodder/%s (+http://gpodder.berlios.de/)' % __version__
+    gpodder.user_agent='gPodder/%s (+http://gpodder.berlios.de/)' % __version__
     
     if options.maemo:
-        gpodder.interface = gpodder.MAEMO
+        gpodder.interface=gpodder.MAEMO
     elif options.list or options.run or options.update or \
             options.sync or options.add or options.delete:
-        gpodder.interface = gpodder.CLI
+        gpodder.interface=gpodder.CLI
     else:
-        gpodder.interface = gpodder.GUI
+        gpodder.interface=gpodder.GUI
 
     if options.verbose:
         from gpodder.liblogger import enable_verbose
@@ -147,18 +147,18 @@ def main( argv = sys.argv):
             print 'Your DISPLAY variable is not set correctly. Cannot start GUI.'
             sys.exit( -1)
 
-        gui.glade_dir = os.path.join( prefix, *gui.glade_dir)
-        gui.icon_dir = os.path.join( prefix, *gui.icon_dir)
-        gui.scalable_dir = os.path.join( prefix, *gui.scalable_dir)
+        gui.glade_dir=os.path.join( prefix, *gui.glade_dir)
+        gui.icon_dir=os.path.join( prefix, *gui.icon_dir)
+        gui.scalable_dir=os.path.join( prefix, *gui.scalable_dir)
 
         if options.local:
-            gui.glade_dir = os.path.join( prefix, 'data')
-            gui.icon_dir = os.path.join( prefix, 'data', 'gpodder.png')
-            gui.scalable_dir = os.path.join( prefix, 'data', 'gpodder.svg')
-            locale_dir = os.path.join( prefix, 'data', 'locale')
+            gui.glade_dir=os.path.join( prefix, 'data')
+            gui.icon_dir=os.path.join( prefix, 'data', 'gpodder.png')
+            gui.scalable_dir=os.path.join( prefix, 'data', 'gpodder.svg')
+            locale_dir=os.path.join( prefix, 'data', 'locale')
 
         bindtextdomain( domain, locale_dir)
-        gui.app_version = __version__
+        gui.app_version=__version__
         gui.main()
 
 

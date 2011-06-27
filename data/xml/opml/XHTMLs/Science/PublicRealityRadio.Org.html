@@ -7,8 +7,8 @@
 
 function newImage(arg) {
 	if (document.images) {
-		rslt = new Image();
-		rslt.src = arg;
+		rslt=new Image();
+		rslt.src=arg;
 		return rslt;
 	}
 }
@@ -16,23 +16,23 @@ function newImage(arg) {
 function changeImages() {
 	if (document.images && (preloadFlag == true)) {
 		for (var i=0; i<changeImages.arguments.length; i+=2) {
-			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+			document[changeImages.arguments[i]].src=changeImages.arguments[i+1];
 		}
 	}
 }
 
-var preloadFlag = false;
+var preloadFlag=false;
 function preloadImages() {
 	if (document.images) {
-		buttonr_01_over = newImage("images/buttonr_01-over.png");
-		buttonr_02_over = newImage("images/buttonr_02-over.png");
-		buttonr_03_over = newImage("images/buttonr_03-over.png");
-		buttonr_04_over = newImage("images/buttonr_04-over.png");
-		buttonr_05_over = newImage("images/buttonr_05-over.png");
-		buttonr_06_over = newImage("images/buttonr_06-over.png");
-		buttonr_07_over = newImage("images/buttonr_07-over.png");
-		button2_07_over = newImage("images/button2_07-over.png");
-		preloadFlag = true;
+		buttonr_01_over=newImage("images/buttonr_01-over.png");
+		buttonr_02_over=newImage("images/buttonr_02-over.png");
+		buttonr_03_over=newImage("images/buttonr_03-over.png");
+		buttonr_04_over=newImage("images/buttonr_04-over.png");
+		buttonr_05_over=newImage("images/buttonr_05-over.png");
+		buttonr_06_over=newImage("images/buttonr_06-over.png");
+		buttonr_07_over=newImage("images/buttonr_07-over.png");
+		button2_07_over=newImage("images/button2_07-over.png");
+		preloadFlag=true;
 	}
 }
 

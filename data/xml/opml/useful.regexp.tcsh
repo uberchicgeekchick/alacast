@@ -45,20 +45,7 @@
 #		1,$s/'/\&apos;/g
 #		1,$s/"/\&quot;/g
 #		1,$s/& /\&amp; /g
-#		1,$s/\v([a-z][\?\.\!])[ ]*([A-Z])/\1\&nbsp;\ \2/ig
-#
-#-----------------------------------------------------------------------------------
-#	Reordering <outline/> attributes:
-#		1,$s/^\([\t]\+\)\(<outline \)\(.*\)\(title='[^']\+' \)\(.*\)$/\1\2\4\3\5/g
-#		1,$s/^\([\t]\+<outline \)\(.*\)\(htmlUrl='[^']*' \)\(.*\)\(description='[^']*'\/>\)$/\1\2\4\3\5/g
-#		1,$s/^\([\t]\+<outline title='[^']*'\)\(.*\)\( type='rss'\)\(.*\)\( xmlUrl='[^']*'\)\(.*\)$/\1\5\3\2\4\5\6/g
-#
-#-----------------------------------------------------------------------------------
-#	Adding CDATA padding to outlines:
-#		1,$s/\v(title|text|description)(\=")(\<\!\[CDATA\[)@!([^"]+)(\]\]\>)@!(")/\1\2\<\!\[CDATA\[\3\4\]\]\>\6/g
-#
-#	Fixing quotes inside of titles, texts, and descriptions:
-#		1,$s/\v(title|text|description)(\="\<\!\[CDATA\[[^"\]]+)"([^\]]+\]\]>")/\1\2\&quot;\3/g
+#		1,$s/\v([a-zA-Z0-9][\?\.\!])[ ]+([A-Z])/\1\&nbsp;\ \2/ig
 #
 #-----------------------------------------------------------------------------------
 #	Auto-format podiobooks.com search result <tr> into opml outline(s):
@@ -77,30 +64,44 @@
 #
 #-----------------------------------------------------------------------------------
 #	Auto-formatting an Atom feed's info into an opml <outline>:
-#		For podiobooks.com feeds:
-#			7s/\v.*title[^>]*\>(\<\!\[CDATA\[)?([^\<]+)(\]\]\>)?\<.*[\r\n]*.*\<link[^>]*rel\="alternate"[^>]*href\="([^"]*)".*[\r\n]*.*\<link[^>]*rel\="self"[^>]*href\="([^"]*)".*[\r\n]*.*\<subtitle[^>]*\>(\<\!\[CDATA\[)?(.*)(\]\]\>)?\<\/subtitle\>.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4\/" description="\<\!\[CDATA\[\<h1\>\2\<\/h1\>\<p\>\7\<\/p\>\]\]\>" \/\>/ig
-#
 #-----------------------------------------------------------------------------------
 #	Auto-formatting an RSS' channel & info into an opml <outline>:
-#		For podiobooks.com feeds:
-#			3s/\v\<channel\>\r*\n*.*title\>(.+)(\ \-\ .*)(by\ [^\<]+)\<.*\r*\n*.*link\>([^\<]*)\<.*\r*\n*.*href\="([^"]*)".*\r*\n*.*(description)\>([^:]*:[ ]*)?(.*)\<\/description\>.*/\r\t\t\<outline title\=\"\<\!\[CDATA\[\1\]\]\>\"\ xmlUrl\=\"\5\/\"\ type=\"rss\"\ text\=\"\<\!\[CDATA\[\1\2\3\]\]\]\>\"\ htmlUrl\=\"\4\/\"\ \6=\"\<\!\[CDATA\[\<h1\>\1\<\/h1\>\<h3\>\3\<\/h3\>\<p\>\8\<\/p\>\]\]\>\"\ \/\>/ig
+#
+#	NOTE: be sure to add a line for, or move, the xmlUrl to the line after RSS's: <link>{htmlUrl}</link> element.
+#	Usually its:
+#		<atom10:link href="{xmlUrl}" rel="self" type="application/rss+xml" />
+#	But could be as simply as adding:
+#		<a href="{xmlUrl}">
+#
+#	And for those with <link> attributes before <atom:link href="{xmlUrl}">:
+#		3s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
+#
+#	Lastly, for the rest, those with <atom:link href="{xmlUrl}"> attributes before <link>:
+#		3s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\4" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\5" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
+#
+#
+#	For podiobooks.com feeds:
+#		3s/\v\<channel\>\r*\n*.*title\>(.+)(\ \-\ .*)(by\ [^\<]+)\<.*\r*\n*.*link\>([^\<]*)\<.*\r*\n*.*href\="([^"]*)".*\r*\n*.*(description)\>([^:]*:[ ]*)?(.*)\<\/description\>.*/\r\t\t\<outline title\=\"\<\!\[CDATA\[\1\]\]\>\"\ xmlUrl\=\"\5\/\"\ type=\"rss\"\ text\=\"\<\!\[CDATA\[\1\2\3\]\]\]\>\"\ htmlUrl\=\"\4\/\"\ \6=\"\<\!\[CDATA\[\<h1\>\1\<\/h1\>\<h3\>\3\<\/h3\>\<p\>\8\<\/p\>\]\]\>\"\ \/\>/ig
+#	Alternative podiobooks.com feeds:
+#		3s/\v.*title[^>]*\>(\<\!\[CDATA\[)?([^\<]+)(\]\]\>)?\<.*[\r\n]*.*\<link[^>]*rel\="alternate"[^>]*href\="([^"]*)".*[\r\n]*.*\<link[^>]*rel\="self"[^>]*href\="([^"]*)".*[\r\n]*.*\<subtitle[^>]*\>(\<\!\[CDATA\[)?(.*)(\]\]\>)?\<\/subtitle\>.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4\/" description="\<\!\[CDATA\[\<h1\>\2\<\/h1\>\<p\>\7\<\/p\>\]\]\>" \/\>/ig
+#
 #
 #-----------------------------------------------------------------------------------
-#		For all others:
-#			<link> before <atom:link href="{xmlUrl}">:
-#				s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\5" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\4" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
-#			<atom:link href="{xmlUrl}"> before <link>:
-#				s/\v\<channel\>[\r\n]+.*title\>(\<\!\[CDATA\[)?([^\<]*)(\]\]\>)?\<.*[\r\n]+.*href\="([^"]*)".*[\r\n]+.*link\>([^\<]*)\<.*[\r\n]+.*(description)\>(\<\!\[CDATA\[)?([^\<\]]+)(\]\]\>)?\<.*/\r\t\t\<outline title="\<\!\[CDATA\[\2\]\]\>" xmlUrl="\4" type="rss" text="\<\!\[CDATA\[\2\]\]\>" htmlUrl="\5" \6="\<\!\[CDATA\[\8\]\]\>" \/\>/
-#
-#		NOTE: be sure to add a line for, or move, the xmlUrl to the line after RSS's: <link>{htmlUrl}</link> element.
-#		Usually its:
-#			<atom10:link href="{xmlUrl}" rel="self" type="application/rss+xml" />
-#		But could be as simply as adding:
-#			<href="{xmlUrl}">
+#	Reordering <outline/> attributes:
+#		1,$s/^\([\t]\+\)\(<outline \)\(.*\)\(title='[^']\+' \)\(.*\)$/\1\2\4\3\5/g
+#		1,$s/^\([\t]\+<outline \)\(.*\)\(htmlUrl='[^']*' \)\(.*\)\(description='[^']*'\/>\)$/\1\2\4\3\5/g
+#		1,$s/^\([\t]\+<outline title='[^']*'\)\(.*\)\( type='rss'\)\(.*\)\( xmlUrl='[^']*'\)\(.*\)$/\1\5\3\2\4\5\6/g
 #
 #-----------------------------------------------------------------------------------
 #	Finding a feed's interal atom/rss link:
 #		s/\v\<atom(10)?:link[^\>]+(href\=\"[^\"]+\")([^\>]+\>).*$/\<atom10:link \2\3/
+#
+#-----------------------------------------------------------------------------------
+#	Adding CDATA padding to outlines:
+#		1,$s/\v(title|text|description)(\=")(\<\!\[CDATA\[)@!([^"]+)(\]\]\>)@!(")/\1\2\<\!\[CDATA\[\3\4\]\]\>\6/g
+#
+#	Fixing quotes inside of titles, texts, and descriptions:
+#		1,$s/\v(title|text|description)(\="\<\!\[CDATA\[[^"\]]+)"([^\]]+\]\]>")/\1\2\&quot;\3/g
 #
 #-----------------------------------------------------------------------------------
 #

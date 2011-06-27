@@ -530,7 +530,7 @@
 	
 	
 	function main(&$alacast){
-		while($alacast->options->continuous){
+		do{
 			$new_podcasts=0;
 			if(!($new_podcasts=syncronize($alacast)))
 				$alacast->output("\n\n\t^_^' you have no");
@@ -539,6 +539,9 @@
 			unset($new_podcasts);
 			
 			$alacast->output(" new podcasts.  Have fun! ^_^\n\n");
+			
+			if(!$alacast->options->continuous)
+				continue;
 			
 			if( $alacast->options->update_delay > 0 )
 				sleep($alacast->options->update_delay);
@@ -549,7 +552,7 @@
 			print("\nPlease press [enter] to continue; [enter] 'q' to quit: ");
 			if( strtolower(trim( (fgetc(STDIN)) )) == "q")
 				$alacast->options->continuous=FALSE;
-		}
+		}while($alacast->options->continuous);
 	}/*main($alacast);*/
 	
 	main($alacast);

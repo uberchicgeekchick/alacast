@@ -135,7 +135,7 @@
 						$title=preg_replace("/;/", "", $title);
 					
 					if($this->total==1)
-						fprintf($this->fp, "#toxine playlist\n\n");
+						fprintf($this->fp, "# toxine playlist\n\n");
 					
 					fprintf($this->fp, "entry {\n\tidentifier = %s;\n\tmrl = %s;\n\tav_offset = 3600;\n};\n\n", $title, $filename);
 					break;
@@ -210,7 +210,7 @@
 			switch($this->type){
 				case "toxine":
 				case "tox":
-					fprintf($this->fp, "#END\n");
+					fprintf($this->fp, "# END\n");
 					break;
 				
 				case "pls":

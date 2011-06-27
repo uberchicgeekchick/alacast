@@ -76,7 +76,7 @@ parse_argv:
 			case "text":
 			case "description":
 				set search_attribute="${option}";
-				set search_value="`echo "\""${options_value}"\"" | sed -r "\""s/(['])/\1\\\1\1/g"\""`";
+				set search_value="`printf "\""%s"\"" "\""${options_value}"\"" | sed -r 's/(['\''])/'\''/g'`";
 				if( ${?value_shifted} ) then
 					unset value_shifted;
 					shift;
@@ -220,7 +220,8 @@ find_podcasts:
 	
 	if( ${?debug} ) \
 		printf "Search for podcasts who <%s> matches: %s\n\tUsing:\n\t%s --match-only --%s="\""%s"\""" "${search_attribute}" "${search_value}" "${search_script}" "${search_attribute}" "${search_value}";
-	foreach podcast_match( "`${search_script} --match-only --edisodes-only --${search_attribute}="\""${search_value}"\""`" )
+	echo "${search_script} --match-only --${search_attribute}="\""${search_value}"\""";
+	foreach podcast_match( "`${search_script} --match-only --${search_attribute}="\""${search_value}"\""`" )
 		if( ${?debug} ) \
 			printf "%s found: --%s="\""%s"\""\n" "${search_script}" "${search_attribute}" "${podcast_match}";
 		set index_xml="`printf "\""${podcast_match}"\"" | sed -r 's/^<file:\/\/([^>]+)>:(.*)"\$"/\1/'`";
@@ -245,6 +246,7 @@ find_podcasts:
 		
 		set podcasts=( ${podcasts} ${index_xml} );
 		
+		printf "%s\n" "${podcast_match}";
 		set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/^<file:\/\/([^>]+)>:(.*)"\$"/\2/' | sed 's/\([-!\(\)]\)/\\\1/g' | sed -r 's/[ \t]*"\$"//' | sed -r 's/\// \- /g'`";
 		
 		if( ${?debug} ) \
@@ -266,7 +268,7 @@ find_podcasts:
 			set podcast_match="`printf "\""${podcast_match}"\"" | sed -r 's/(the) (.*)/\2, \1/ig'`";
 		
 		if( ${?fetch_new_only} ) then
-			set line_condition="\rif\(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) then";
+			set line_condition="\rif\("\!" -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) then";
 			set line_padding="\t";
 			set line_condition_end="\relse\r\tprintf "\""\\t\\t\<file:\/\/"\$"{cwd}\/${podcast_match}\/\1, released on: \5\.\3\> already exists.\\n\\n"\"";\rendif";
 		else
@@ -276,10 +278,10 @@ find_podcasts:
 		endif
 		
 		while( `/bin/grep -P -c '.*\<title\>[^\<]*\/[^\<]*\<\/title\>' "${refetch_script}.tmp" | sed -r 's/^([0-9]+).*$/\1/'` != 0 )
-			ex -s '+1,$s/\v(.*\<title\>[^\<]*)\/([^\<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${refetch_script}.tmp";
+			ex -s -E -n -X --noplugin '+1,$s/\v(.*\<title\>[^\<]*)\/([^\<]*\<\/title\>.*)/\1\-\2/g' '+wq' "${refetch_script}.tmp";
 		end
 		
-		ex -s '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' '+s/\v(\<\/item\>)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/\v.*\<item\>.*\<title\>([^<]+)\<\/title\>.*\<url\>(.*)\.([^<\.?]+)([\.?]?[^<]*)\<\/url\>.*\<pubDate\>([^<]+)\<\/pubDate\>.*\<\/item\>/if\(\! -d "\""${podcast_match}"\"" \) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${line_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \5\.\3\\n"\"";\r${line_padding}${download_command} "\""${podcast_match}\/\1, released on: \5\.\3"\"" '\2\.\3\4';\r${line_padding}if\(\! -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3\4';${line_condition_end}\rif\( "\$"{?new_dir} \) then\r\tif\( "\"\`"ls "\""\\"\"""\""${podcast_match}"\""\\"\"""\"""\`\"" \=\= "\"""\"" \) \\\r\t\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp";
+		ex -s '+1,$s/\v\r\n?\_$//g' '+1,$s/\n//g' '+s/\v(\<\/item\>)/\1\r/g' '+1,$s/[#\!]*//g' "+1,"\$"s/\v.*\<item\>.*\<title\>([^<]+)\<\/title\>.*\<url\>(.*)\.([^<\.?]+)([\.?]?[^<]*)\<\/url\>.*\<pubDate\>([^<]+)\<\/pubDate\>.*\<\/item\>/if\(\! -d "\""${podcast_match}"\"" \) then\r\tset new_dir;\r\tmkdir "\""${podcast_match}"\"";\rendif${line_condition}\r${line_padding}printf "\""Downloading: \\n\\t${podcast_match}\/\1, released on: \5\.\3\\n"\"";\r${line_padding}${download_command} "\""${podcast_match}\/\1, released on: \5\.\3"\"" '\2\.\3\4';\r${line_padding}if\("\!" -e "\""${podcast_match}\/\1, released on: \5\.\3"\"" \) printf "\""\\n**error:** <%s> could not be downloaded.\\n\\n"\"" '\2\.\3\4';${line_condition_end}\rif\( "\$"{?new_dir} \) then\r\tif\( "\"\`"ls "\""\\"\"""\""${podcast_match}"\""\\"\"""\"""\`\"" \=\= "\"""\"" \) \\\r\t\trmdir "\""${podcast_match}"\"";\r\tunset new_dir;\rendif\r/g" '+$d' '+wq!' "${refetch_script}.tmp";
 		
 		if( `wc -l "${refetch_script}.tmp" | sed 's/^\([0-9]\+\)\ .*/\1/g'` > 0 ) then
 			printf "#\!/bin/tcsh -f\ncd "\""%s"\"";\n" "${mp3_player_folder}" >! "${refetch_script}";

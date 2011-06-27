@@ -21,12 +21,12 @@ import re
 
 # Try to detect OS encoding (by Leonid Ponomarev)
 if 'LANG' in os.environ and '.' in os.environ['LANG']:
-    lang = os.environ['LANG']
-    enc = lang.split('.')[-1]
+    lang=os.environ['LANG']
+    enc=lang.split('.')[-1]
 else:
     print >>sys.stderr, 'Warning: No encoding detected in environment ($LANG).'
     print >>sys.stderr, 'Warning: Defaulting to iso-8859-1 encoding.'
-    enc = 'iso-8859-1'
+    enc='iso-8859-1'
 
 def cb_url( url):
     print 'Loading %s...' % url
@@ -48,24 +48,24 @@ if len(sys.argv) < 2:
     """ % os.path.basename( sys.argv[0])
     sys.exit( -1)
 
-dest_dir = sys.argv[-1]
+dest_dir=sys.argv[-1]
 
 if os.path.exists( dest_dir):
     if '--yes' not in sys.argv and (raw_input( '"%s" exists, remove and rebuild? [y|N] ' % ( os.path.abspath( dest_dir), )).strip().lower()+'n')[0] != 'y':
         sys.exit( -1)
     shutil.rmtree( dest_dir)
 
-for channel in gpodder.libpodcasts.load_channels( callback_url = cb_url, offline = True):
+for channel in gpodder.libpodcasts.load_channels( callback_url=cb_url, offline=True):
     print channel.title
-    channel_dir = os.path.join( dest_dir, os.path.basename( channel.title))
+    channel_dir=os.path.join( dest_dir, os.path.basename( channel.title))
 
     for episode in channel.get_all_episodes():
-        episode_file = os.path.join( channel_dir, os.path.basename( episode.title))
-        filename = episode.local_filename()
+        episode_file=os.path.join( channel_dir, os.path.basename( episode.title))
+        filename=episode.local_filename()
         episode_file += os.path.splitext( os.path.basename( filename))[1]
-        episode_file = re.sub('[|?*<>:+\[\]\"\\\]*', '', episode_file.encode(enc, 'ignore'))
+        episode_file=re.sub('[|?*<>:+\[\]\"\\\]*', '', episode_file.encode(enc, 'ignore'))
         if os.path.exists( filename):
-            channel_dir = re.sub('[|?*<>:+\[\]\"\\\]*', '', channel_dir.encode(enc, 'ignore'))
+            channel_dir=re.sub('[|?*<>:+\[\]\"\\\]*', '', channel_dir.encode(enc, 'ignore'))
             if not os.path.exists( channel_dir):
                 os.makedirs( channel_dir)
             os.link( filename, episode_file)

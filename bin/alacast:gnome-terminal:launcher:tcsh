@@ -12,7 +12,7 @@ endif
 if(!(${?ALACASTS_OPTIONS})) setenv ALACASTS_OPTIONS '--logging --titles-append-pubdate --strip-characters=#;! --update=detailed --interactive';
 
 
-set alacasts_resolution = "";
+set alacasts_resolution="";
 if ( -e "${HOME}/.alacast/alacast.ini" ) then
 	set alacasts_ini="${HOME}/.alacast/alacast.ini";
 else if( -e "${HOME}/.alacast/profiles/${USER}/alacast.ini" ) then

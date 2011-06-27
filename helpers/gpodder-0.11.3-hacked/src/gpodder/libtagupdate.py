@@ -32,12 +32,12 @@ import subprocess
 from liblogger import log
 
 # for mp3 files
-has_eyed3 = True
+has_eyed3=True
 try:
     import eyeD3
 except:
     log('(tagupdate) eyed3 not found -- tag update disabled')
-    has_eyed3 = False
+    has_eyed3=False
 
 # do we provide tagging functions to the user?
 def tagging_supported():
@@ -45,12 +45,12 @@ def tagging_supported():
     return has_eyed3
 
 
-tag_update_methods = {}
+tag_update_methods={}
 
 def update_metadata_on_file( filename, **metadata):
     global tag_update_methods
 
-    ext = filename[-3:]
+    ext=filename[-3:]
     if ext in tag_update_methods:
         log('Updating tag for %s', filename)
         return tag_update_methods[ext]( filename, **metadata)
@@ -60,22 +60,22 @@ def update_metadata_on_file( filename, **metadata):
 
 
 def update_tag_ogg( filename, **metadata):
-    data = '\n'.join( [ '%s=%s' % ( i.upper(), metadata[i] ) for i in metadata ] + [''])
+    data='\n'.join( [ '%s=%s' % ( i.upper(), metadata[i] ) for i in metadata ] + [''])
 
-    p = subprocess.Popen3('vorbiscomment -w "%s"' % filename)
+    p=subprocess.Popen3('vorbiscomment -w "%s"' % filename)
 
-    writer = p.tochild
+    writer=p.tochild
     writer.write(data)
     writer.close()
 
-    result = p.wait() == 0
+    result=p.wait() == 0
 
     if not result:
         log('Error while running vorbiscomment. Is it installed?! (vorbis-tools)')
 
     return result
 
-tag_update_methods['ogg'] = update_tag_ogg
+tag_update_methods['ogg']=update_tag_ogg
 
 
 def update_tag_mp3( filename, **metadata):
@@ -83,7 +83,7 @@ def update_tag_mp3( filename, **metadata):
         log('eyeD3 not found -> please install. no tags have been updated.')
         return False
 
-    tag = eyeD3.tag.Tag( fileName = filename)
+    tag=eyeD3.tag.Tag( fileName=filename)
     tag.remove( eyeD3.tag.ID3_ANY_VERSION)
     tag.setVersion( eyeD3.tag.ID3_ANY_VERSION)
 
@@ -97,6 +97,6 @@ def update_tag_mp3( filename, **metadata):
 
     return tag.update( eyeD3.tag.ID3_V2) == 1 and tag.update( eyeD3.tag.ID3_V1) == 1
 
-tag_update_methods['mp3'] = update_tag_mp3
+tag_update_methods['mp3']=update_tag_mp3
 
 

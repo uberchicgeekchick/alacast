@@ -8,8 +8,8 @@
  * 
  */
 	
-var ElementUtility = (!detectBrowser.modernBrowser())?function(){}:Class.create();
-ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
+var ElementUtility=(!detectBrowser.modernBrowser())?function(){}:Class.create();
+ElementUtility.prototype=(!detectBrowser.modernBrowser())?{}:{
 	
 	initialize: function(element)
 	{
@@ -18,7 +18,7 @@ ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
 	
 	setElement: function(element)
 	{
-		this.el = element;
+		this.el=element;
 	},
 	
 	getElement: function()
@@ -34,10 +34,10 @@ ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
 		 	this.setElement(element);
 		}
 				
-		var elOffset = this.el.cumulativeOffset();
-		var vpOffset = document.viewport.getScrollOffsets();
-		var elDim = this.el.getDimensions();
-		var vpDim = document.viewport.getDimensions();
+		var elOffset=this.el.cumulativeOffset();
+		var vpOffset=document.viewport.getScrollOffsets();
+		var elDim=this.el.getDimensions();
+		var vpDim=document.viewport.getDimensions();
 		
 		if ( (elOffset[1] + elDim.height) > vpOffset[1] + vpDim.height || (elOffset[0] + elDim.width) > vpOffset[0] + vpDim.width - 25 )
 		{
@@ -51,14 +51,14 @@ ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
 	},
 	
 	cumulativeOffsetBorders: function(element) {
-		var valueT = 0, valueL = 0;
+		var valueT=0, valueL=0;
 		do
 		{
 			valueT += element.offsetTop  || 0;
 			valueL += element.offsetLeft || 0;
 			
 			
-			element = element.offsetParent;
+			element=element.offsetParent;
 			if(element)
 			{
 				valueT += parseInt(Element.getStyle(element, 'borderTopWidth')) || 0;
@@ -70,15 +70,15 @@ ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
 		if (Prototype.Browser.IE)
 		{
 			// why does IE add 2px borders??
-			valueT = valueT - 2;
-			valueL = valueL - 2;
+			valueT=valueT - 2;
+			valueL=valueL - 2;
 		}
 		
-		_returnOffset = function(l, t)
+		_returnOffset=function(l, t)
 		{
-  			var result = [l, t];
-			result.left = l;
-			result.top = t;
+  			var result=[l, t];
+			result.left=l;
+			result.top=t;
 			return result;
 		};
 		
@@ -95,27 +95,27 @@ ElementUtility.prototype = (!detectBrowser.modernBrowser())?{}:{
  * 
  */
 
-var FloatingInfo = (!detectBrowser.modernBrowser())?function(){}:Class.create();
-FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new ElementUtility(), {
+var FloatingInfo=(!detectBrowser.modernBrowser())?function(){}:Class.create();
+FloatingInfo.prototype=(!detectBrowser.modernBrowser())?{}:Object.extend( new ElementUtility(), {
 	initialize: function(element, parameters)
 	{
 		// set element
 		this.setElement(element);
 		
 		// set parameters 
-		this.content = parameters.contentRender;
-		this.positionObj = parameters.positionObject;
-		this.floatByType = 'element';	
-		this.floatDirection = parameters.floatDirection;
-		this.widthClass = parameters.widthClass;
+		this.content=parameters.contentRender;
+		this.positionObj=parameters.positionObject;
+		this.floatByType='element';	
+		this.floatDirection=parameters.floatDirection;
+		this.widthClass=parameters.widthClass;
 		
 		if( typeof(parameters.padding) == "number" )
 		{
-			this.arrowPadding = parameters.padding;
+			this.arrowPadding=parameters.padding;
 		}
 		else
 		{
-			this.arrowPadding = 0;
+			this.arrowPadding=0;
 		}
 		
 		this.setOverlayClasses(parameters.overlayClasses);
@@ -123,32 +123,32 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 		
 		if (typeof(parameters.timeOut) == "number")
 		{
-			this.timeOut = parameters.timeOut;
+			this.timeOut=parameters.timeOut;
 		}else{
-			this.timeOut = 600;
+			this.timeOut=600;
 		}
 		
 		// fetch existing overlay elements
-		this.arrow = $('floatArrow');
-		this.floatMessage = $('floatMessage');
+		this.arrow=$('floatArrow');
+		this.floatMessage=$('floatMessage');
 		
 
 		if(Prototype.Browser.IE)
 		{
-			this.floatMessageIFrame = $('floatMessageIFrame');
-			this.floatMessageIFrame2 = $('floatMessageIFrame2');
+			this.floatMessageIFrame=$('floatMessageIFrame');
+			this.floatMessageIFrame2=$('floatMessageIFrame2');
 		}
-		this.floatMessageInner = $('floatMessageInner');
-		this.floatMessageTop = $('floatMessageTop');
-		this.floatMessageBottom = $('floatMessageBottom');
+		this.floatMessageInner=$('floatMessageInner');
+		this.floatMessageTop=$('floatMessageTop');
+		this.floatMessageBottom=$('floatMessageBottom');
 
 		// render content
 		this.fetchOverlay();
 		this.renderContent();
 		
-		this.cancellogin = $('cancellogin');
-		this.closelink = $('closelink');
-		//this.mynasa = $('mynasah5');
+		this.cancellogin=$('cancellogin');
+		this.closelink=$('closelink');
+		//this.mynasa=$('mynasah5');
 		// create and set location of float
 		if(this.floatDirection == 'auto'){
 			
@@ -185,7 +185,7 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 		
 		// hide element on window resize
 		Event.observe(window,'resize',function(){
-			FloatingInfo.prototype.currentLivingElement = null;
+			FloatingInfo.prototype.currentLivingElement=null;
 			FloatingInfo.prototype.hideOverlay();
 		});
 
@@ -193,21 +193,21 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 		this.saveLifeFunction();
 		
 		// delegate mouseout, mouseover events
-		this.floatMessage.onmouseover = this.saveLifeFunction.bind(this);
-		this.arrow.onmouseover = this.saveLifeFunction.bind(this);
+		this.floatMessage.onmouseover=this.saveLifeFunction.bind(this);
+		this.arrow.onmouseover=this.saveLifeFunction.bind(this);
 
-		this.floatMessage.onmouseout = this.endLifeFunction.bind(this);
-		this.arrow.onmouseout = this.endLifeFunction.bind(this);
+		this.floatMessage.onmouseout=this.endLifeFunction.bind(this);
+		this.arrow.onmouseout=this.endLifeFunction.bind(this);
 		
 		//if($('mynasah5')){
-		//	this.mynasa.onmousedown = this.saveLifeFunction.bind(this);
-		//	this.arrow.onmousedown = this.saveLifeFunction.bind(this);
+		//	this.mynasa.onmousedown=this.saveLifeFunction.bind(this);
+		//	this.arrow.onmousedown=this.saveLifeFunction.bind(this);
 		//}
 		/*if($('cancellogin')){
-			this.cancellogin.onmousedown = this.endLifeFunction.bind(this);
+			this.cancellogin.onmousedown=this.endLifeFunction.bind(this);
 		}
 		if($('closelink')){
-			this.closelink.onmousedown = this.endLifeFunction.bind(this);
+			this.closelink.onmousedown=this.endLifeFunction.bind(this);
 		}*/
 		// start observing on our element for a mouseout 
 		if(!this.el.hasClassName('observe_click')){
@@ -241,42 +241,42 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	{
 		if( typeof(classes) == "object" )
 		{
-			this.topOverlayClass = classes.top;
-			this.innerOverlayClass = classes.inner;
-			this.bottomOverlayClass = classes.bottom;
+			this.topOverlayClass=classes.top;
+			this.innerOverlayClass=classes.inner;
+			this.bottomOverlayClass=classes.bottom;
 		}
 	},
 	
 	setArrowClass: function(myClass)
 	{
-		this.arrowClass = myClass;
+		this.arrowClass=myClass;
 	},
 	
 	applyClasses: function(direction)
 	{		
 		
-		this.floatMessage.className = "normal_overlay_float";
+		this.floatMessage.className="normal_overlay_float";
 		if(this.widthClass && this.widthClass != 'null'){
-			this.floatMessage.className = this.widthClass + '_float';
+			this.floatMessage.className=this.widthClass + '_float';
 		}
 		
 		if(Prototype.Browser.IE)
 		{
-			var arrowchild = document.getElementById( 'floatArrow');
+			var arrowchild=document.getElementById( 'floatArrow');
 			
 			if(arrowchild != null)
 			{
 				document.body.removeChild(arrowchild);
-				this.arrow = new Element("div",{'id':'floatArrow'});
+				this.arrow=new Element("div",{'id':'floatArrow'});
 				document.body.appendChild(this.arrow);
 			}	
 		}
 		
 		// first remove all classes
-		this.floatMessageTop.className = '';
-		this.floatMessageInner.className = '';
-		this.floatMessageBottom.className = '';
-		this.arrow.className = '';
+		this.floatMessageTop.className='';
+		this.floatMessageInner.className='';
+		this.floatMessageBottom.className='';
+		this.arrow.className='';
 
 		//apply classes
 		this.floatMessageTop.addClassName(this.topOverlayClass);
@@ -290,34 +290,34 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	{		
 		if(!this.floatMessage)
 		{
-			this.arrow = new Element("div",{'id':'floatArrow'});
-			this.floatMessageTop = new Element("div",{'id':'floatMessageTop'});
-			this.floatMessageBottom = new Element("div",{'id':'floatMessageBottom'});
-			this.floatMessageInner = new Element("div",{'id':'floatMessageInner'});
-			this.floatMessage = new Element("div",{'id':'floatMessage'});
+			this.arrow=new Element("div",{'id':'floatArrow'});
+			this.floatMessageTop=new Element("div",{'id':'floatMessageTop'});
+			this.floatMessageBottom=new Element("div",{'id':'floatMessageBottom'});
+			this.floatMessageInner=new Element("div",{'id':'floatMessageInner'});
+			this.floatMessage=new Element("div",{'id':'floatMessage'});
 			if(Prototype.Browser.IE)
 			{
-				this.floatMessageIFrame = new Element("iframe",{
+				this.floatMessageIFrame=new Element("iframe",{
 					'id':'floatMessageIFrame',
 					'src':'javascr'+'ipt:\'<ht'+'ml></ht'+'ml>\''
 //					'src':'/blank.html'
 				});
 				this.floatMessageIFrame.frameBorder=0;
 //				this.floatMessageIFrame.allowTransparency="yes";
-//				this.floatMessageIFrame.style.cssText = 'background:transparent';
+//				this.floatMessageIFrame.style.cssText='background:transparent';
 				this.floatMessageIFrame.setStyle({
 					'backgroundColor':'#000000',
 					'zIndex':9997,
 					'position':'absolute'
 				});
-				this.floatMessageIFrame2 = new Element("iframe",{
+				this.floatMessageIFrame2=new Element("iframe",{
 					'id':'floatMessageIFrame2',
 					'src':'javascr'+'ipt:\'<ht'+'ml></ht'+'ml>\''
 //					'src':'/blank.html'
 				});
 				this.floatMessageIFrame2.frameBorder=0;
 //				this.floatMessageIFrame.allowTransparency="yes";
-//				this.floatMessageIFrame.style.cssText = 'background:transparent';
+//				this.floatMessageIFrame.style.cssText='background:transparent';
 				this.floatMessageIFrame2.setStyle({
 					'backgroundColor':'#000000',
 					'zIndex':9997,
@@ -340,12 +340,12 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	
 	hideOverlay: function()
 	{
-		_quickHide = function()
+		_quickHide=function()
 		{
 			if(Prototype.Browser.IE)
 			{
-				var i1 = $('floatMessageIframe');
-				var i2 = $('floatMessageIframe2');
+				var i1=$('floatMessageIframe');
+				var i2=$('floatMessageIframe2');
 				if(i1){
 					i1.hide();
 				}
@@ -353,8 +353,8 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 					i2.hide();
 				}
 			}
-			var fm = $('floatMessage');
-			var fa = $('floatArrow');
+			var fm=$('floatMessage');
+			var fa=$('floatArrow');
 			if(fm){
 				fm.hide();
 			}
@@ -394,32 +394,32 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 		// float absolutely 
 		if( this.positionObj && this.positionObj.x != null && this.positionObj.y != null && typeof(Number(this.positionObj.x)) == "number" && typeof(Number(this.positionObj.y)) == "number" )
 		{
-			var posY = this.positionObj.y;
-			var posx = this.positionObj.x;
-			this.floatByType = 'absolute';
+			var posY=this.positionObj.y;
+			var posx=this.positionObj.x;
+			this.floatByType='absolute';
 		}
 		// float by mouse
 		else if( this.positionObj && this.positionObj.event != null )
 		{
 			Event.observe(document, this.positionObj.event, function(){
 				return function (event) {
-					var posY = Event.pointerY(event);
-					var posX = Event.pointerX(event);
+					var posY=Event.pointerY(event);
+					var posX=Event.pointerX(event);
 				};
 			}, false);
 
-			this.floatByType = 'mouse';
+			this.floatByType='mouse';
 		}
 		// float by element
 		else
 		{
-			var posArr = ElementUtility.prototype.cumulativeOffsetBorders(this.el);
-			var posY = posArr[1];
-			var posX = posArr[0];
-			this.floatByType = 'element';
+			var posArr=ElementUtility.prototype.cumulativeOffsetBorders(this.el);
+			var posY=posArr[1];
+			var posX=posArr[0];
+			this.floatByType='element';
 		}
 		
-		var position = {"x": posX, "y": posY};
+		var position={"x": posX, "y": posY};
 			
 		return position;
 	},
@@ -427,14 +427,14 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	getDimensions: function(){
 		
 		// get dimensions by style properties to offset issues with getHeight() and getWidth
-		var valueElementH = parseInt(Element.getStyle(this.el, 'height')) || 0;
-		var valueElementW = parseInt(Element.getStyle(this.el, 'width')) || 0;
-		var valueArrowH = parseInt(Element.getStyle(this.arrow, 'height')) || 0;
-		var valueArrowW = parseInt(Element.getStyle(this.arrow, 'width')) || 0;
-		var valueFloatH = parseInt(Element.getStyle(this.floatMessage, 'height')) || 0;
-		var valueFloatW = parseInt(Element.getStyle(this.floatMessage, 'width')) || 0;
+		var valueElementH=parseInt(Element.getStyle(this.el, 'height')) || 0;
+		var valueElementW=parseInt(Element.getStyle(this.el, 'width')) || 0;
+		var valueArrowH=parseInt(Element.getStyle(this.arrow, 'height')) || 0;
+		var valueArrowW=parseInt(Element.getStyle(this.arrow, 'width')) || 0;
+		var valueFloatH=parseInt(Element.getStyle(this.floatMessage, 'height')) || 0;
+		var valueFloatW=parseInt(Element.getStyle(this.floatMessage, 'width')) || 0;
 		
-		var dimensions = {
+		var dimensions={
 			"element": { "h":valueElementH, "w":valueElementW },
 			"arrow": { "h":valueArrowH, "w":valueArrowW },			
 			"floatMessage": { "h":valueFloatH, "w":valueFloatW }	
@@ -445,12 +445,12 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	
 	saveLifeFunction: function()
 	{
-		FloatingInfo.prototype.currentLivingElement = this.el;
+		FloatingInfo.prototype.currentLivingElement=this.el;
 	},
 	
 	endLifeFunction: function()
 	{
-		FloatingInfo.prototype.currentLivingElement = null;	
+		FloatingInfo.prototype.currentLivingElement=null;	
 	},
     
 	focusHandler: function(privateElement){
@@ -472,13 +472,13 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 			// ignore child elements in this handler
 			if(privateElement.target==this.el || privateElement.target==this.el.firstChild)
 			{
-				FloatingInfo.prototype.previousLivingElement = this.el;
+				FloatingInfo.prototype.previousLivingElement=this.el;
 				this.endLifeFunction();
 				
 				// create timers hash if we don't yet have one.
 				if( typeof(FloatingInfo.prototype.timers)=='undefined' )
 				{
-					FloatingInfo.prototype.timers = {};
+					FloatingInfo.prototype.timers={};
 				}
 				// clean up previous timer for a given element
 				if(FloatingInfo.prototype.timers[this.el])
@@ -487,7 +487,7 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 				}
 				
 				// create a new interval timer for a given element
-				FloatingInfo.prototype.timers[this.el] = setInterval(function()
+				FloatingInfo.prototype.timers[this.el]=setInterval(function()
 				{
 					if(!$('floatMessage')) {
 						// if the float message is gone, shut the timer down.
@@ -518,27 +518,27 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	floatRight: function()
 	{
 		// get x,y co-ordinates
-		var position = this.overlayPosition();
+		var position=this.overlayPosition();
 		
 		// set classes
 		this.applyClasses('left');
 		
 		// get dimensions of all elements
-		var dimensions = this.getDimensions();
+		var dimensions=this.getDimensions();
 		
 		if(this.floatByType == 'element')
 		{
-			var floatY = position.y - ( ( this.floatMessage.getHeight() - dimensions.element.h  ) / 2);
-			var floatX = position.x + this.arrowPadding + this.arrow.getWidth() + dimensions.element.w;
-			var arrowY = position.y - (( this.arrow.getHeight() - dimensions.element.h  ) / 2);
-			var arrowX = position.x + this.arrowPadding + dimensions.element.w;
+			var floatY=position.y - ( ( this.floatMessage.getHeight() - dimensions.element.h  ) / 2);
+			var floatX=position.x + this.arrowPadding + this.arrow.getWidth() + dimensions.element.w;
+			var arrowY=position.y - (( this.arrow.getHeight() - dimensions.element.h  ) / 2);
+			var arrowX=position.x + this.arrowPadding + dimensions.element.w;
 		}
 		else
 		{
-			var floatY = position.y - ( this.floatMessage.getHeight() / 2 );
-			var floatX = position.x - this.arrowPadding - dimensions.arrow.w;
-			var arrowY = position.y - ( dimensions.arrow.h / 2 );
-			var arrowX = position.x - this.arrowPadding;	
+			var floatY=position.y - ( this.floatMessage.getHeight() / 2 );
+			var floatX=position.x - this.arrowPadding - dimensions.arrow.w;
+			var arrowY=position.y - ( dimensions.arrow.h / 2 );
+			var arrowX=position.x - this.arrowPadding;	
 		}
 			
 		this.arrow.setStyle({	
@@ -581,27 +581,27 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	floatLeft: function()
 	{
 		// get x,y co-ordinates
-		var position = this.overlayPosition();
+		var position=this.overlayPosition();
 		
 		// set classes
 		this.applyClasses('right');
 		
 		// get dimensions of all elements
-		var dimensions = this.getDimensions();
+		var dimensions=this.getDimensions();
 		
 		if(this.floatByType == 'element')
 		{
-			var floatY = position.y - ( ( this.floatMessage.getHeight() - dimensions.element.h  ) / 2);
-			var floatX = position.x - this.arrowPadding - this.arrow.getWidth() - this.floatMessage.getWidth();
-			var arrowY = position.y - (( this.arrow.getHeight() - dimensions.element.h  ) / 2);
-			var arrowX = position.x - this.arrowPadding - this.arrow.getWidth();
+			var floatY=position.y - ( ( this.floatMessage.getHeight() - dimensions.element.h  ) / 2);
+			var floatX=position.x - this.arrowPadding - this.arrow.getWidth() - this.floatMessage.getWidth();
+			var arrowY=position.y - (( this.arrow.getHeight() - dimensions.element.h  ) / 2);
+			var arrowX=position.x - this.arrowPadding - this.arrow.getWidth();
 		}
 		else
 		{
-			var floatY = position.y - ( this.floatMessage.getHeight() / 2 );
-			var floatX = position.x - this.arrowPadding - dimensions.arrow.w;
-			var arrowY = position.y - ( dimensions.arrow.h / 2 );
-			var arrowX = position.x - this.arrowPadding;	
+			var floatY=position.y - ( this.floatMessage.getHeight() / 2 );
+			var floatX=position.x - this.arrowPadding - dimensions.arrow.w;
+			var arrowY=position.y - ( dimensions.arrow.h / 2 );
+			var arrowX=position.x - this.arrowPadding;	
 		}
 			
 		this.arrow.setStyle({	
@@ -644,28 +644,28 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	floatUp: function()
 	{
 		// get x,y co-ordinates
-		var position = this.overlayPosition();
+		var position=this.overlayPosition();
 		
 		// set classes
 		this.applyClasses('down');
 		
 		// get dimensions of all elements
-		var dimensions = this.getDimensions();
+		var dimensions=this.getDimensions();
 		
 		if(this.floatByType == 'element')
 		{
-			var floatY = position.y - this.arrowPadding - this.floatMessage.getHeight() - dimensions.arrow.h;
-			var floatX = position.x - (( this.floatMessage.getWidth() - this.el.getWidth()  ) / 2);
-			var arrowY = position.y - this.arrowPadding - dimensions.arrow.h;
-			var arrowX = position.x - ( ( this.arrow.getWidth() / 2 ) - ( this.el.getWidth() / 2 ) );
+			var floatY=position.y - this.arrowPadding - this.floatMessage.getHeight() - dimensions.arrow.h;
+			var floatX=position.x - (( this.floatMessage.getWidth() - this.el.getWidth()  ) / 2);
+			var arrowY=position.y - this.arrowPadding - dimensions.arrow.h;
+			var arrowX=position.x - ( ( this.arrow.getWidth() / 2 ) - ( this.el.getWidth() / 2 ) );
 
 		}
 		else
 		{
-			var floatY = position.y + this.arrowPadding + this.floatMessage.getHeight();
-			var floatX = position.x - ( this.floatMessage.getWidth() / 2 );
-			var arrowY = position.y + this.arrowPadding;
-			var arrowX = position.x - ( dimensions.arrow.w / 2 );	
+			var floatY=position.y + this.arrowPadding + this.floatMessage.getHeight();
+			var floatX=position.x - ( this.floatMessage.getWidth() / 2 );
+			var arrowY=position.y + this.arrowPadding;
+			var arrowX=position.x - ( dimensions.arrow.w / 2 );	
 		}
 
 		this.arrow.setStyle({	
@@ -708,28 +708,28 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
 	floatDown: function()
 	{
 		// get x,y co-ordinates
-		var position = this.overlayPosition();
+		var position=this.overlayPosition();
 		
 		// set classes
 		this.applyClasses('up');
 		
 		// get dimensions of all elements
-		var dimensions = this.getDimensions();
+		var dimensions=this.getDimensions();
 		
 		if(this.floatByType == 'element')
 		{
-			var floatY = position.y + this.arrowPadding + this.arrow.getHeight() + this.el.getHeight();
-			var floatX = position.x - (( this.floatMessage.getWidth() - this.el.getWidth()  ) / 2);
-			var arrowY = position.y + this.arrowPadding + this.el.getHeight();
-			var arrowX = position.x - ( ( this.arrow.getWidth() / 2 ) - ( this.el.getWidth() / 2 ) );
+			var floatY=position.y + this.arrowPadding + this.arrow.getHeight() + this.el.getHeight();
+			var floatX=position.x - (( this.floatMessage.getWidth() - this.el.getWidth()  ) / 2);
+			var arrowY=position.y + this.arrowPadding + this.el.getHeight();
+			var arrowX=position.x - ( ( this.arrow.getWidth() / 2 ) - ( this.el.getWidth() / 2 ) );
 
 		}
 		else
 		{
-			var floatY = position.y + this.arrowPadding + dimensions.arrow.h;
-			var floatX = position.x - ( this.floatMessage.getWidth() / 2 );
-			var arrowY = position.y + this.arrowPadding;
-			var arrowX = position.x - ( dimensions.arrow.w / 2 );	
+			var floatY=position.y + this.arrowPadding + dimensions.arrow.h;
+			var floatX=position.x - ( this.floatMessage.getWidth() / 2 );
+			var arrowY=position.y + this.arrowPadding;
+			var arrowX=position.x - ( dimensions.arrow.w / 2 );	
 		}
 		
 		this.arrow.setStyle({	
@@ -777,21 +777,21 @@ FloatingInfo.prototype = (!detectBrowser.modernBrowser())?{}:Object.extend( new 
  * @Description: class to handle safari 2 issue with inner element
  * 
  */
-var safariHover = (!detectBrowser.modernBrowser())?function(){}:Class.create();
-safariHover.prototype = (!detectBrowser.modernBrowser())?{}:{
+var safariHover=(!detectBrowser.modernBrowser())?function(){}:Class.create();
+safariHover.prototype=(!detectBrowser.modernBrowser())?{}:{
 	
 	initialize: function(hoverState, hoverElement, hoverEvent, callBack)
 	{
-		this.callBack = callBack;
+		this.callBack=callBack;
 		if(Prototype.Browser.WebKit && hoverElement.tagName.toLowerCase() != 'td' && detectBrowser.whichVersion() == '2')
 			{
 			if(hoverState == 'over')
 			{
-				var IsItIn = Position.within(hoverElement, Event.pointerX(hoverEvent), Event.pointerY(hoverEvent));
+				var IsItIn=Position.within(hoverElement, Event.pointerX(hoverEvent), Event.pointerY(hoverEvent));
 				
 				if(IsItIn && !hoverElement.ItIsIn)
 				{
-					hoverElement.ItIsIn = true;
+					hoverElement.ItIsIn=true;
 					
 					if(typeof(this.callBack)=='function')
 					{
@@ -802,11 +802,11 @@ safariHover.prototype = (!detectBrowser.modernBrowser())?{}:{
 			
 			if(hoverState == 'out')
 			{
-				var IsItIn = Position.within(hoverElement, Event.pointerX(hoverEvent), Event.pointerY(hoverEvent));
+				var IsItIn=Position.within(hoverElement, Event.pointerX(hoverEvent), Event.pointerY(hoverEvent));
 				
 				if(!IsItIn && hoverElement.ItIsIn)
 				{
-					hoverElement.ItIsIn = false;
+					hoverElement.ItIsIn=false;
 					
 					if(typeof(this.callBack)=='function')
 					{

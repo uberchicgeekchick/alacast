@@ -94,12 +94,12 @@ find_titles:
 			set attribute="title";
 		
 		foreach attribute_value( "`cat "\""$argv[$arg]"\"" | sed -r 's/(["\"\$\!\`"])/"\""\\\1"\""/g'`" )
-			printf "Validating: <%s>\n" "${attribute_value}" > /dev/stdout;
+			printf "Validating: <%s>\n" "${attribute_value}" > /dev/tty;
 			
-			printf "Searching catalogs for: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/stdout;
+			printf "Searching catalogs for: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/tty;
 			alacast:catalogs:search.pl --${attribute}="${attribute_value}";
 			
-			printf "Searching subscriptions for: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/stdout;
+			printf "Searching subscriptions for: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/tty;
 			foreach gpodder_search_output("`gPodder:Search:channels.opml.tcsh --${attribute}="\""${attribute_value}"\""`")
 				if( "${gpodder_search_output}" != "" ) then
 					if(! ${?gpodder_channel_found} ) \
@@ -128,7 +128,7 @@ find_titles:
 					if(! ${?gpodder_channel_found} ) \
 						breaksw;
 					
-					printf "Deleting subscriptions whose: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/stdout;
+					printf "Deleting subscriptions whose: <%s="\""%s"\"">\n" "${attribute}" "${attribute_value}" > /dev/tty;
 					gPodder:Delete.tcsh --${attribute}="${attribute_value}";
 					printf "\n\n";
 					breaksw;

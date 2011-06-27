@@ -3,90 +3,90 @@
  * 
  * @Description: A dropdown navigation menu with sliding animation.
  * 
- * @Usage: var dd = new DropDownMenu(list of dropdown elements, overall parent element with CSS class parameters);
+ * @Usage: var dd=new DropDownMenu(list of dropdown elements, overall parent element with CSS class parameters);
  *	
  * @Methods: no public methods
  * 
  */
 
-DropDownMenu = (!detectBrowser.modernBrowser())?function(){}:Class.create();
-DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
+DropDownMenu=(!detectBrowser.modernBrowser())?function(){}:Class.create();
+DropDownMenu.prototype=(!detectBrowser.modernBrowser())?{}:{
 
 
 	dropDownDisabledCheck: function(){
 		if(window['dropDownMenusDisabled']==true){
-			this.springloaderDelay = 1;
-			this.downDelay = 1;
-			this.upDelay = 1;
-			this.hoverOutDelay = 1;
+			this.springloaderDelay=1;
+			this.downDelay=1;
+			this.upDelay=1;
+			this.hoverOutDelay=1;
 		} else {
-			this.downDelay = 570;
-			this.upDelay = 450;
-			this.springloaderDelay = 200;
-			this.hoverOutDelay = 250;
+			this.downDelay=570;
+			this.upDelay=450;
+			this.springloaderDelay=200;
+			this.hoverOutDelay=250;
 		}
 	},
 
 	initialize: function(droppers,dropcontainer){
 		// TODO make these parametric from dropcontainer's CSS class
-		this.downDelay = 570;
-		this.upDelay = 450;
-		this.springloaderDelay = 200;
-		this.hoverOutDelay = 250;
+		this.downDelay=570;
+		this.upDelay=450;
+		this.springloaderDelay=200;
+		this.hoverOutDelay=250;
 		this.dropDownDisabledCheck();
 		
 		// classname can be something like "dropper [otherstyle otherstyle otherstyle] INT INT INT .."
-		this.dropperWidths = droppers.map(function(item){
+		this.dropperWidths=droppers.map(function(item){
 			return item.classNames().toString().split(" ").select(function(token){
 				return parseInt(token) > -1;
 			})[0];
 		});
 
 		// calculate horizontal offset locations of each dropdown
-		this.dropperOffsets = this.dropperWidths.inject([0],function(acc,item){
+		this.dropperOffsets=this.dropperWidths.inject([0],function(acc,item){
 			acc.push(acc[acc.length - 1] + parseInt(item));
 			return acc;
 		});
 
 		// fetch header height from the container's CSS class names
-		var headerHeight = dropcontainer.classNames().toString().split(" ").select(function(token){
+		var headerHeight=dropcontainer.classNames().toString().split(" ").select(function(token){
 			return parseInt(token) > -1;
 		})[0];
 
-		this.iframesEnabled = false;
-		this.droppers = droppers;
-		this.dropperiFrames = [];
-		this.hoverStates = [];
-		this.states = [];
-		this.visibilityInitialized = [];
+		this.iframesEnabled=false;
+		this.droppers=droppers;
+		this.dropperiFrames=[];
+		this.hoverStates=[];
+		this.states=[];
+		this.visibilityInitialized=[];
 		// there exists a "next action" for every given dropdown. This way we can queue the next state
 		// that a dropdown wants to go to if a dropdown is too busy animating while we interrupt it
 		// with another target state.
-		this.nextAction = [];
+		this.nextAction=[];
 		
 		//	next actions are baskets in which a waiting action can drop in a closure to be executed after the current action
-		for(var i=0;i<this.droppers.length;i++) { this.nextAction[i] = null; }
+		for(var i=0;i<this.droppers.length;i++) { this.nextAction[i]=null; }
 
 		//	we need to do some things to hide droppers
-		for(var i=0;i<this.droppers.length;i++) { this.visibilityInitialized[i] = false; }
+		for(var i=0;i<this.droppers.length;i++) { this.visibilityInitialized[i]=false; }
 
 		//	states: closed, opening, open, closing, closed
-		for(var i=0;i<this.droppers.length;i++) { this.states[i] = "closed"; }
+		for(var i=0;i<this.droppers.length;i++) { this.states[i]="closed"; }
 		
 		//	hover states: in, out
-		for(var i=0;i<this.droppers.length;i++) { this.hoverStates[i] = "out"; }
+		for(var i=0;i<this.droppers.length;i++) { this.hoverStates[i]="out"; }
 
 		for(var i=0;i<this.droppers.length;i++){
-			var dropper = this.droppers[i];
+			var dropper=this.droppers[i];
 
 			dropper.setStyle({'zIndex':800});
 
-			var lis = dropper.getElementsBySelector('li');
-			var hasItems = lis.length > 0;
+			var lis=dropper.getElementsBySelector('li');
+			var hasItems=lis.length > 0;
 
 			if(hasItems && this.iframesEnabled){
 
-				var zfixIFrame = new Element("iframe",{
+				var zfixIFrame=new Element("iframe",{
 					'id':'floatMessageIFrame',
 					'src':'javascr'+'ipt:\'<ht'+'ml></ht'+'ml>\''
 				});
@@ -98,13 +98,13 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 					// 'height':'0px'
 				});
 
-				var ul = $(lis[0].parentNode);
+				var ul=$(lis[0].parentNode);
 				ul.setStyle({
 					'zIndex':805
 				});
 
-				zfixIFrame = dropper.appendChild(zfixIFrame);
-				this.dropperiFrames[i] = zfixIFrame;
+				zfixIFrame=dropper.appendChild(zfixIFrame);
+				this.dropperiFrames[i]=zfixIFrame;
 				// console.debug(this.dropperiFrames[i]);
 			}
 
@@ -112,9 +112,9 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 			// Make two re-useable, cloneable handlers that fire when the mouse leaves or enters
 			// either the dropper or the heading for each dropdown menu.
 			//
-			var mouseout = (function(dropdownDiv,dropperIndex,dropperHasItems){
+			var mouseout=(function(dropdownDiv,dropperIndex,dropperHasItems){
 				return function(ev){
-					this.hoverStates[dropperIndex] = "out";
+					this.hoverStates[dropperIndex]="out";
 					setTimeout(function(){
 						// if still hovering outside... go ahead and slide back up
 						if(this.hoverStates[dropperIndex]=="out"){
@@ -127,7 +127,7 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 							} else {
 								// reject mouse-out, but queue up the next action
 								// fill nextAction basket with a close action
-								this.nextAction[dropperIndex] = function(){
+								this.nextAction[dropperIndex]=function(){
 									if(this.hoverStates[dropperIndex]=='out' && this.states[dropperIndex]=="open"){
 										this.applyHoverClasses(dropdownDiv,"over","out");	// wrapper div
 										this.applyHoverClasses(dropdownDiv.previous(),"over","out"); // heading
@@ -142,8 +142,8 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 				}.bind(this);
 			}.bind(this))(dropper,i,hasItems);
 
-			var mouseover = (function(dropdownDiv,dropperIndex,dropperHasItems){
-				var dropperHasBeenInitialized = false;
+			var mouseover=(function(dropdownDiv,dropperIndex,dropperHasItems){
+				var dropperHasBeenInitialized=false;
 				return function(ev){
 					
 					if(!dropperHasBeenInitialized){
@@ -155,8 +155,8 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 						});
 
 						if(dropperHasItems){
-							var lis = dropdownDiv.getElementsBySelector("li");
-							var totalHeight = 0;			
+							var lis=dropdownDiv.getElementsBySelector("li");
+							var totalHeight=0;			
 							for(var l=0;l<lis.length;l++){
 								totalHeight += lis[l].getHeight();
 							}
@@ -169,10 +169,10 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 							});
 							this.initializeDropperDisplay(dropdownDiv);
 						}
-						dropperHasBeenInitialized = true;
+						dropperHasBeenInitialized=true;
 					}
 
-					this.hoverStates[dropperIndex] = "in";
+					this.hoverStates[dropperIndex]="in";
 					// moused in over ev.target
 					if(this.states[dropperIndex]=="closed"){
 						setTimeout(function(){
@@ -190,7 +190,7 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 						//
 						if(ev.target!=dropdownDiv){
 							// queue up next action to open up this dropdown
-							this.nextAction[dropperIndex] = function(){
+							this.nextAction[dropperIndex]=function(){
 								if(this.hoverStates[dropperIndex]=='in' && this.states[dropperIndex]=="closed"){
 									this.applyHoverClasses(dropdownDiv,"out","over");	// wrapper div
 									this.applyHoverClasses(dropdownDiv.previous(),"out","over");	// heading
@@ -222,9 +222,9 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 	},
 
 	initializeDropperDisplay: function(dropper){
-		var ul = dropper.getElementsBySelector('ul')[0];
-		var iframe = dropper.getElementsBySelector('iframe')[0];
-		var ulHeight = ul.getHeight();
+		var ul=dropper.getElementsBySelector('ul')[0];
+		var iframe=dropper.getElementsBySelector('iframe')[0];
+		var ulHeight=ul.getHeight();
 		ul.setStyle({'top':'-'+ulHeight+'px'});
 		if(iframe){
 			iframe.setStyle({'top':'-'+ulHeight+'px'});
@@ -237,15 +237,15 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 	doSlideUp: function(dropper,dropperIndex,dropperHasItems){
 		this.dropDownDisabledCheck();
 		if(!dropperHasItems || window['dropDownMenusDisabled']==true){ // if there are no items, don't waste time or CPU on transitions
-			this.states[dropperIndex] = "closed";
+			this.states[dropperIndex]="closed";
 			this.checkForNextAction(dropperIndex);
 		} else {
 			var iframe;
 			if(this.iframesEnabled==true){
-				iframe = dropper.getElementsBySelector("iframe")[0];
+				iframe=dropper.getElementsBySelector("iframe")[0];
 			}
-			var ul = dropper.getElementsBySelector("ul")[0];
-			var ulHeight = ul.getHeight();
+			var ul=dropper.getElementsBySelector("ul")[0];
+			var ulHeight=ul.getHeight();
 			if(iframe && this.iframesEnabled==true){
 				new Effect.Parallel([
 					new Effect.Move(iframe,{
@@ -262,11 +262,11 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 						'duration':this.upDelay/1000,
 						'transition':Effect.Transitions.EaseFromTo,
 						'beforeStart':function(effect){
-							this.states[dropperIndex] = "closing";				
+							this.states[dropperIndex]="closing";				
 						}.bind(this),
 						'afterFinish':function(effect){
 							dropper.setStyle({'height':'0px'});
-							this.states[dropperIndex] = "closed";
+							this.states[dropperIndex]="closed";
 							this.checkForNextAction(dropperIndex);
 						}.bind(this)
 					})
@@ -280,11 +280,11 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 					'duration':this.upDelay/1000,
 					'transition':Effect.Transitions.EaseFromTo,
 					'beforeStart':function(effect){
-						this.states[dropperIndex] = "closing";				
+						this.states[dropperIndex]="closing";				
 					}.bind(this),
 					'afterFinish':function(effect){
 						dropper.setStyle({'height':'0px'});
-						this.states[dropperIndex] = "closed";
+						this.states[dropperIndex]="closed";
 						this.checkForNextAction(dropperIndex);
 					}.bind(this)
 				});
@@ -296,15 +296,15 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 	doSlideDown: function(dropper,dropperIndex,dropperHasItems){
 		this.dropDownDisabledCheck();
 		if(!dropperHasItems || window['dropDownMenusDisabled']==true){ // if there are no items, don't waste time or CPU on transitions
-			this.states[dropperIndex] = "open";
+			this.states[dropperIndex]="open";
 			this.checkForNextAction(dropperIndex);			
 		} else {
 			var iframe;
 			if(this.iframesEnabled==true){
-				iframe = dropper.getElementsBySelector("iframe")[0];
+				iframe=dropper.getElementsBySelector("iframe")[0];
 			}
-			var ul = dropper.getElementsBySelector("ul")[0];
-			var ulHeight = ul.getHeight();
+			var ul=dropper.getElementsBySelector("ul")[0];
+			var ulHeight=ul.getHeight();
 			if(iframe && this.iframesEnabled==true){
 				new Effect.Parallel([
 					new Effect.Move(iframe,{
@@ -322,14 +322,14 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 						'duration':this.downDelay/1000,
 						'beforeStart':function(effect){
 							dropper.setStyle({'height':ulHeight+'px'});
-							this.states[dropperIndex] = "opening";
+							this.states[dropperIndex]="opening";
 							if(this.visibilityInitialized[dropperIndex]==false){
 								this.visibilityInitialized[dropperIndex]=true;
 								dropper.setStyle({'visibility':'visible'});
 							}
 						}.bind(this),
 						'afterFinish':function(effect){
-							this.states[dropperIndex] = "open";
+							this.states[dropperIndex]="open";
 							this.checkForNextAction(dropperIndex);
 						}.bind(this)
 					})
@@ -344,14 +344,14 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 					'transition':Effect.Transitions.EaseFromTo,
 					'beforeStart':function(effect){
 						dropper.setStyle({'height':ulHeight+'px'});
-						this.states[dropperIndex] = "opening";
+						this.states[dropperIndex]="opening";
 						if(this.visibilityInitialized[dropperIndex]==false){
 							this.visibilityInitialized[dropperIndex]=true;
 							dropper.setStyle({'visibility':'visible'});
 						}
 					}.bind(this),
 					'afterFinish':function(effect){
-						this.states[dropperIndex] = "open";
+						this.states[dropperIndex]="open";
 						this.checkForNextAction(dropperIndex);
 					}.bind(this)
 				});
@@ -364,7 +364,7 @@ DropDownMenu.prototype = (!detectBrowser.modernBrowser())?{}:{
 		if(this.nextAction[dropperIndex]!=null && typeof(this.nextAction[dropperIndex])=='function'){
 			// perform the next action by calling it, then remove it from the next action basket
 			this.nextAction[dropperIndex]();
-			this.nextAction[dropperIndex] = false;
+			this.nextAction[dropperIndex]=false;
 		} else {
 			// no next action to do 
 		}
@@ -375,7 +375,7 @@ if(detectBrowser.modernBrowser()){
 	// dropdown menu bootstrap.
 	document.observe("contentloaded",function(){
 		if($('main-nav')) {
-			var dd = new DropDownMenu($$('#main-nav div.dropper'),$$('#main-nav')[0]);
+			var dd=new DropDownMenu($$('#main-nav div.dropper'),$$('#main-nav')[0]);
 		}
 	});
 }

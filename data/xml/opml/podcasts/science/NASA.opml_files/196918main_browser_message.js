@@ -1,4 +1,4 @@
-var legacyMsg = '<center><div class="site_errors">' + "\n" +
+var legacyMsg='<center><div class="site_errors">' + "\n" +
 				'<div class="floatType_site_error_top"></div>' + "\n" +
 				'<div class="floatType_site_error">' + "\n" +
 				'<table cellpadding="8"> <tr> <td bgcolor="#000000">' + 

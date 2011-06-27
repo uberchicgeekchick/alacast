@@ -1889,8 +1889,8 @@
         $('adMiniPremiere').getElements('.premiereBrand').addEvents({mouseenter: function() {
 			this.addClass('hover');
 
-			var flyoutBtmY = this.getElement('ul').getCoordinates().top+this.getElement('ul').getComputedSize().totalHeight;
-			var windowHeight = window.getScroll().y + window.getSize().y;
+			var flyoutBtmY=this.getElement('ul').getCoordinates().top+this.getElement('ul').getComputedSize().totalHeight;
+			var windowHeight=window.getScroll().y + window.getSize().y;
 
 			if(windowHeight<flyoutBtmY){
 				this.getElement('ul').setPosition({

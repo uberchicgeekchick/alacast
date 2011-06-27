@@ -73,7 +73,7 @@
 				touch($this->helper_config);
 				if(!($hc_fp=fopen($this->helper_config, "w+")))
 					return $this->error(sprintf("%s could not be created", $this->helper_config));//exit(-1);
-				fprintf($hc_fp, "[gpodder-conf-1]\nmp3_player_folder = %s\ndownload_dir = %s\n", $this->save_to_dir, $this->download_dir);
+				fprintf($hc_fp, "[gpodder-conf-1]\nmp3_player_folder=%s\ndownload_dir=%s\n", $this->save_to_dir, $this->download_dir);
 				
 				fclose($this->helper_config);
 			}

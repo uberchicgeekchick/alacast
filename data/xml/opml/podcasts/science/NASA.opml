@@ -9,6 +9,7 @@
 		
 		<!-- NASA"s Podcasts -->
 		<outline title="<![CDATA[NASACast Podcast]]>" xmlUrl="http://www.nasa.gov/rss/NASAcast_podcast.rss" type="rss" text="<![CDATA[NASACast Podcast]]>" htmlUrl="" description="<![CDATA[Our omnibus NASACast. Includes the latest mission news, features and the This Week @NASA report.]]>"/>
+		<outline title="<![CDATA[NASA 360 Vodcasts]]>" xmlUrl="http://www.nasa.gov/rss/nasa360_vodcast.rss" type="rss" text="<![CDATA[NASA 360 Vodcasts]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/nasa360/index.html" description="<![CDATA[Join hosts Johnny Alonso and Jennifer Pulley as they take a 360-degree look at how NASA has changed life on Earth.]]>" />
 		<outline title="<![CDATA[This Week @NASA Podcast]]>" xmlUrl="http://www.nasa.gov/rss/TWAN_podcast.rss" type="rss" text="<![CDATA[This Week @NASA]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/twan_index.html" description="<![CDATA[The This Week @NASA report.]]>"/>
 		<outline title="<![CDATA[NASA Moments Podcast]]>" xmlUrl="http://www.nasa.gov/rss/moments_podcast.rss" type="rss" text="<![CDATA[NASA Moments Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/moments_index.html" description="<![CDATA[]]>"/>
 		<outline title="<![CDATA[Shuttle &amp; Station Podcast]]>" xmlUrl="http://www.nasa.gov/rss/shuttle_station_podcast.rss" type="rss" text="<![CDATA[Shuttle &amp; Station Podcast]]>" htmlUrl="http://www.nasa.gov/multimedia/podcasting/shuttle_station_index.html" description="<![CDATA[Shuttle &amp; Station Podcast]]>"/>

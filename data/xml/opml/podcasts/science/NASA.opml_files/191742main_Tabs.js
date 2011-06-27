@@ -2,20 +2,20 @@ if(detectBrowser.modernBrowser()){
 
 
 
-// Tabs class. Usage: var dd = new TabFactory();
-var TabFactory = Class.create();
-TabFactory.prototype = {
+// Tabs class. Usage: var dd=new TabFactory();
+var TabFactory=Class.create();
+TabFactory.prototype={
 	initialize:function(){
-		this.tabs = $$('.tabs').map(function(el){ return new Tabs(el); });
+		this.tabs=$$('.tabs').map(function(el){ return new Tabs(el); });
 	}
 };
 
-var Tabs = Class.create();
-Tabs.prototype = {
+var Tabs=Class.create();
+Tabs.prototype={
 	initialize:function(tabContainer){
-		tabContainer = $(tabContainer);
+		tabContainer=$(tabContainer);
 
-		var classNames = $A(tabContainer.classNames());
+		var classNames=$A(tabContainer.classNames());
 		// Some elements look bizarre during initial load until javascript gets to them.
 		// For those elements, we apply a class called "prejs" so that once the code is 
 		// running it can remove that CSS class. This way, a "pre-rendered" state can be
@@ -30,7 +30,7 @@ Tabs.prototype = {
 		}
 
 		// 1. Seek out list items in container
-		this.tabButtons = tabContainer.immediateDescendants().select(function(childNode){
+		this.tabButtons=tabContainer.immediateDescendants().select(function(childNode){
 			return (childNode.nodeName.toLowerCase()=="li");
 		}).map(function(currentTab,i){
 			currentTab.removeClassName((i==0)?"tab_inactive":"tab_active");
@@ -38,8 +38,8 @@ Tabs.prototype = {
 			Event.observe(currentTab,'click',function(ev){
 				ev.stop();
 				for(var j=0;j<this.tabButtons.length;j++){
-					var btn = this.tabButtons[j];
-					var content = this.tabContents[j];					
+					var btn=this.tabButtons[j];
+					var content=this.tabContents[j];					
 					btn.removeClassName((btn==currentTab)?"tab_inactive":"tab_active");
 					btn.addClassName((btn==currentTab)?"tab_active":"tab_inactive");
 					content.removeClassName((btn==currentTab)?"tab_content_inactive":"tab_content_active");
@@ -52,7 +52,7 @@ Tabs.prototype = {
 		
 		// 2. Seek out same-sized set of element.tab somewhere after tabContainer who share the same parent
 		//    Make sure to only grab as many of these as there are actual tabs
-		this.tabContents = tabContainer.up().immediateDescendants().select(function(childNode){
+		this.tabContents=tabContainer.up().immediateDescendants().select(function(childNode){
 			return childNode.hasClassName("tab");
 		}).map(function(item,i){
 			return (i<this.tabButtons.length)?item:null;
@@ -62,7 +62,7 @@ Tabs.prototype = {
 
 		this.tabContents.each(function(item,i){
 			// remove any classes that are meant for the moments of time before rendering kicks in
-			var classNames = $A(item.classNames());
+			var classNames=$A(item.classNames());
 			// Some elements look bizarre during initial load until javascript gets to them.
 			// For those elements, we apply a class called "prejs" so that once the code is 
 			// running it can remove that CSS class. This way, a "pre-rendered" state can be
@@ -84,7 +84,7 @@ Tabs.prototype = {
 };
 
 Event.observe(window, 'load', function() {
-   var dd = new TabFactory();
+   var dd=new TabFactory();
 });
 
 

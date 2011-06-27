@@ -23,42 +23,42 @@ import os
 from distutils.core import setup
 
 # build targets
-(DEFAULT, MAEMO) = range(2)
+(DEFAULT, MAEMO)=range(2)
 
 # read the version from the gpodder main program
-gpodder_version = os.popen( "cat bin/gpodder |grep ^__version__.*=|cut -d\\\" -f2").read().strip()
+gpodder_version=os.popen( "cat bin/gpodder |grep ^__version__.*=|cut -d\\\" -f2").read().strip()
 
 # translations
-languages = [ "de", "fr", "sv", "it", "pt", "es", "nl", "ru", "uk", "gl", "cs" ]
-translation_files = []
+languages=[ "de", "fr", "sv", "it", "pt", "es", "nl", "ru", "uk", "gl", "cs" ]
+translation_files=[]
 
 # build target
 if 'TARGET' in os.environ:
     if os.environ['TARGET'].strip().lower() == 'maemo':
-        target = MAEMO
+        target=MAEMO
 else:
-    target = DEFAULT
+    target=DEFAULT
 
 # add translated files to translations dictionary
 for l in languages:
     translation_files.append( ("share/locale/%s/LC_MESSAGES" % l, [ "data/locale/%s/LC_MESSAGES/gpodder.mo" % l ]) )
 
 # files to install
-inst_manpages = glob.glob( 'doc/man/*.1')
-inst_share    = [ 'data/gpodder.glade' ]
-inst_desktop  = [ 'data/gpodder.desktop' ]
-inst_desktop_maemo  = [ 'data/maemo/gpodder.desktop' ]
+inst_manpages=glob.glob( 'doc/man/*.1')
+inst_share   =[ 'data/gpodder.glade' ]
+inst_desktop =[ 'data/gpodder.desktop' ]
+inst_desktop_maemo =[ 'data/maemo/gpodder.desktop' ]
 
-inst_icons    = [ 'data/gpodder.png' ]
-inst_icons_64 = [ 'data/icons/64/gpodder.png' ]
-inst_icons_40 = [ 'data/icons/40/gpodder.png' ]
-inst_icons_26 = [ 'data/icons/26/gpodder.png' ]
-inst_icons_24 = [ 'data/icons/24/gpodder.png' ]
-inst_icons_22 = [ 'data/icons/22/gpodder.png' ]
-inst_icons_16 = [ 'data/icons/16/gpodder.png' ]
-inst_icons_svg = [ 'data/gpodder.svg' ]
+inst_icons   =[ 'data/gpodder.png' ]
+inst_icons_64=[ 'data/icons/64/gpodder.png' ]
+inst_icons_40=[ 'data/icons/40/gpodder.png' ]
+inst_icons_26=[ 'data/icons/26/gpodder.png' ]
+inst_icons_24=[ 'data/icons/24/gpodder.png' ]
+inst_icons_22=[ 'data/icons/22/gpodder.png' ]
+inst_icons_16=[ 'data/icons/16/gpodder.png' ]
+inst_icons_svg=[ 'data/gpodder.svg' ]
 
-data_files = [
+data_files=[
   ('share/man/man1',       inst_manpages),
   ('share/gpodder',        inst_share),
   ('share/pixmaps',        inst_icons),
@@ -84,15 +84,15 @@ elif target == MAEMO:
 
 
 setup(
-  name         = 'gpodder',
-  version      = gpodder_version,
-  package_dir  = { '':'src' },
-  packages     = [ 'gpodder' ],
-  description  = 'media aggregator',
-  author       = 'Thomas Perl',
-  author_email = 'thp@thpinfo.com',
-  url          = 'http://www.gpodder.org/',
-  scripts      = [ 'bin/gpodder' ],
-  data_files   = data_files + translation_files
+  name        ='gpodder',
+  version     =gpodder_version,
+  package_dir ={ '':'src' },
+  packages    =[ 'gpodder' ],
+  description ='media aggregator',
+  author      ='Thomas Perl',
+  author_email='thp@thpinfo.com',
+  url         ='http://www.gpodder.org/',
+  scripts     =[ 'bin/gpodder' ],
+  data_files  =data_files + translation_files
 )
 

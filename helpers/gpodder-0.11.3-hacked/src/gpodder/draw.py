@@ -32,16 +32,16 @@ import StringIO
 
 class TextExtents(object):
     def __init__(self, ctx, text):
-        tuple = ctx.text_extents(text)
-        (self.x_bearing, self.y_bearing, self.width, self.height, self.x_advance, self.y_advance) = tuple
+        tuple=ctx.text_extents(text)
+        (self.x_bearing, self.y_bearing, self.width, self.height, self.x_advance, self.y_advance)=tuple
 
 
-RRECT_LEFT_SIDE = 1
-RRECT_RIGHT_SIDE = 2
+RRECT_LEFT_SIDE=1
+RRECT_RIGHT_SIDE=2
 
-def draw_rounded_rectangle(ctx, x, y, w, h, r=10, left_side_width = None, sides_to_draw=0):
+def draw_rounded_rectangle(ctx, x, y, w, h, r=10, left_side_width=None, sides_to_draw=0):
     if left_side_width is None:
-        left_side_width = w/2
+        left_side_width=w/2
 
     if sides_to_draw & RRECT_LEFT_SIDE:
         ctx.move_to(x+left_side_width, y+h)
@@ -62,41 +62,41 @@ def draw_rounded_rectangle(ctx, x, y, w, h, r=10, left_side_width = None, sides_
 
 def draw_text_pill(left_text, right_text, x=0, y=0, border=3, radius=11):
     # Create temporary context to calculate the text size
-    ctx = cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1))
+    ctx=cairo.Context(cairo.ImageSurface(cairo.FORMAT_ARGB32, 1, 1))
 
     # Use GTK+ style of a normal Button
-    widget = gtk.ProgressBar()
-    style = widget.rc_get_style()
+    widget=gtk.ProgressBar()
+    style=widget.rc_get_style()
 
-    font_desc = style.font_desc
-    font_size = float(font_desc.get_size())/float(pango.SCALE)
-    font_name = font_desc.get_family()
+    font_desc=style.font_desc
+    font_size=float(font_desc.get_size())/float(pango.SCALE)
+    font_name=font_desc.get_family()
 
     ctx.set_font_size(font_size)
     ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
 
-    left_text_e = TextExtents(ctx, left_text)
-    right_text_e = TextExtents(ctx, right_text)
-    text_height = max(left_text_e.height, right_text_e.height)
+    left_text_e=TextExtents(ctx, left_text)
+    right_text_e=TextExtents(ctx, right_text)
+    text_height=max(left_text_e.height, right_text_e.height)
     
-    image_height = int(y+text_height+border*2)
-    image_width = int(x+left_text_e.width+right_text_e.width+border*4)
-    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, image_width, image_height)
+    image_height=int(y+text_height+border*2)
+    image_width=int(x+left_text_e.width+right_text_e.width+border*4)
+    surface=cairo.ImageSurface(cairo.FORMAT_ARGB32, image_width, image_height)
 
-    ctx = cairo.Context(surface)
+    ctx=cairo.Context(surface)
     ctx.set_font_size(font_size)
     ctx.select_font_face(font_name, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
 
     if left_text == '0':
-        left_text = None
+        left_text=None
     if right_text == '0':
-        right_text = None
+        right_text=None
 
-    left_side_width = left_text_e.width + border*2
-    right_side_width = right_text_e.width + border*2
+    left_side_width=left_text_e.width + border*2
+    right_side_width=right_text_e.width + border*2
 
-    rect_width = left_side_width + right_side_width
-    rect_height = text_height + border*2
+    rect_width=left_side_width + right_side_width
+    rect_height=text_height + border*2
     if left_text is not None:
         draw_rounded_rectangle(ctx,x,y,rect_width,rect_height,radius, left_side_width, RRECT_LEFT_SIDE)
         ctx.set_source_rgba( 0, 0, 0, 0.5)
@@ -133,7 +133,7 @@ def cairo_surface_to_pixbuf(s):
     Converts a Cairo surface to a Gtk Pixbuf by
     encoding it as PNG and using the PixbufLoader.
     """
-    sio = StringIO.StringIO()
+    sio=StringIO.StringIO()
     try:
         s.write_to_png(sio)
     except:
@@ -144,27 +144,27 @@ def cairo_surface_to_pixbuf(s):
         # Thanks to Chris Arnold for reporting this bug
         sio.write('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A\n/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9cMEQkqIyxn3RkAAAAZdEVYdENv\nbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAADUlEQVQI12NgYGBgAAAABQABXvMqOgAAAABJ\nRU5ErkJggg==\n'.decode('base64'))
 
-    pbl = gtk.gdk.PixbufLoader()
+    pbl=gtk.gdk.PixbufLoader()
     pbl.write(sio.getvalue())
     pbl.close()
 
-    pixbuf = pbl.get_pixbuf()
+    pixbuf=pbl.get_pixbuf()
     return pixbuf
 
 
 def progressbar_pixbuf(width, height, percentage):
-    COLOR_BG = (.4, .4, .4, .4)
-    COLOR_FG = (.2, .9, .2, 1.)
-    COLOR_FG_HIGH = (1., 1., 1., .5)
-    COLOR_BORDER = (0., 0., 0., 1.)
+    COLOR_BG=(.4, .4, .4, .4)
+    COLOR_FG=(.2, .9, .2, 1.)
+    COLOR_FG_HIGH=(1., 1., 1., .5)
+    COLOR_BORDER=(0., 0., 0., 1.)
 
-    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
-    ctx = cairo.Context(surface)
+    surface=cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
+    ctx=cairo.Context(surface)
 
-    padding = int(float(width)/8.0)
-    bar_width = 2*padding
-    bar_height = height - 2*padding
-    bar_height_fill = bar_height*percentage
+    padding=int(float(width)/8.0)
+    bar_width=2*padding
+    bar_height=height - 2*padding
+    bar_height_fill=bar_height*percentage
 
     # Background
     ctx.rectangle(padding, padding, bar_width, bar_height)

@@ -18,32 +18,32 @@ import os.path
 import stat
 
 def get_files_from( top_path):
-    result = {}
+    result={}
 
     for ( dirpath, dirnames, filenames ) in os.walk( os.path.abspath( top_path)):
         for filename in ( os.path.join( dirpath, filename) for filename in filenames ):
-            s = os.stat( filename)
+            s=os.stat( filename)
             if stat.S_ISREG(s[stat.ST_MODE]):
-                device = s[stat.ST_DEV]
-                inode = s[stat.ST_INO]
-                result[(device,inode)] = filename
+                device=s[stat.ST_DEV]
+                inode=s[stat.ST_INO]
+                result[(device,inode)]=filename
 
     return result
 
 def filter_dict( d, keys_exclude):
-    result = {}
+    result={}
 
     for key, value in d.items():
         if key not in keys_exclude:
-            result[key] = value
+            result[key]=value
 
     return result
 
 def filter_gpodder_metadata( d):
-    result = {}
+    result={}
     for key, value in d.items():
         if not value.endswith( '/cover') and not value.endswith('/index.xml'):
-            result[key] = value
+            result[key]=value
 
     return result
 
@@ -66,11 +66,11 @@ if len(sys.argv) != 3:
     usage()
     sys.exit( -1)
 
-files_in_dir1 = get_files_from(gl.downloaddir)
-files_in_dir2 = get_files_from( sys.argv[-1])
+files_in_dir1=get_files_from(gl.downloaddir)
+files_in_dir2=get_files_from( sys.argv[-1])
 
-files_missing_in_dir2 = filter_gpodder_metadata( filter_dict( files_in_dir1, files_in_dir2.keys())).values()
-files_missing_in_dir1 = filter_gpodder_metadata( filter_dict( files_in_dir2, files_in_dir1.keys())).values()
+files_missing_in_dir2=filter_gpodder_metadata( filter_dict( files_in_dir1, files_in_dir2.keys())).values()
+files_missing_in_dir1=filter_gpodder_metadata( filter_dict( files_in_dir2, files_in_dir1.keys())).values()
 
 if sys.argv[1].find( 'from-podcasts') >= 0:
     if len( files_missing_in_dir2):

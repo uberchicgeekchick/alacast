@@ -1,10 +1,10 @@
-var auto_complete_flag = true;
-var auto_complete_delay = 500;
-var auto_complete_timeout = 2500;
-var auto_complete_max_entries = 10;
-var auto_complete_max_results = 201;
+var auto_complete_flag=true;
+var auto_complete_delay=500;
+var auto_complete_timeout=2500;
+var auto_complete_max_entries=10;
+var auto_complete_max_results=201;
 
-var ahCalls = {
+var ahCalls={
 	
 	theReturnType:null,
 	called:false,
@@ -16,27 +16,27 @@ var ahCalls = {
 	createAhCall:function(httpType,url,returnType,callBackFunction,params,proxyPath)
 	{
 		if(!document.getElementById || !document.createTextNode){return;}
-		this.theReturnType = returnType;
+		this.theReturnType=returnType;
 		
 		if(httpType != 'scriptTag'){//is not using script tag
-			this.queryStr = (!params) ? null : encodeURIComponent(params);
-			var xmlHttp = ahCalls.createXmlHttpObject();
+			this.queryStr=(!params) ? null : encodeURIComponent(params);
+			var xmlHttp=ahCalls.createXmlHttpObject();
 			if (xmlHttp.readyState == 4 || xmlHttp.readyState == 0){// proceed only if the xmlHttp object isn't busy
 				
-				xmlHttp.onreadystatechange = function(){// define the method to handle server responses
+				xmlHttp.onreadystatechange=function(){// define the method to handle server responses
 				
 					switch(xmlHttp.readyState){
-						case 1: if(!this.called){/*alert('waiting on server!');*/this.called = true} break;
+						case 1: if(!this.called){/*alert('waiting on server!');*/this.called=true} break;
 						case 2: break;
 						case 3: break;
 						case 4:
 							if ( xmlHttp.status == 200 ){// only if "OK"
 								try{
-									responseObj = ahCalls.parseXmlHttpResponse(xmlHttp);
-									success = true;
+									responseObj=ahCalls.parseXmlHttpResponse(xmlHttp);
+									success=true;
 								}catch(e){ 
 									alert('Parsing Error: The value returned could not be evaluated.');
-									success = false;
+									success=false;
 								}
 								if(success) callBackFunction( responseObj ); //if all is good send the response to the callback function
 							}else{ 
@@ -64,14 +64,14 @@ var ahCalls = {
 				setTimeout('ahCalls.createAhCall();', 1000);
 			}
 		}else{//using scriptTag
-			this.scriptTagCallBackFunction = callBackFunction;
+			this.scriptTagCallBackFunction=callBackFunction;
 			//alert(callBackFunction);
 			if(returnType == 'jsonObject' || returnType == 'jsonString'){//getting json return via script tag
 			    //alert('jsonObject or jsonString');
 				//ahCalls.JsonXmlScriptRequest(ahCalls.noCache(url+'&callback=ahCalls.JsonXmlScriptHandleRequest'));
 				ahCalls.JsonXmlScriptRequest(url+'&callback=ahCalls.JsonXmlScriptHandleRequest');
 			}else{//getting xml return via script tag
-				var xmlPath = encodeURIComponent(url);
+				var xmlPath=encodeURIComponent(url);
 				ahCalls.JsonXmlScriptRequest(proxyPath+'?path='+xmlPath);
 			}
 		}	
@@ -82,13 +82,13 @@ var ahCalls = {
 		var ahCalls; // will store the reference to the XMLHttpRequest Object
 		
 		try{
-			ahCalls = new XMLHttpRequest();// this should work for all browsers except IE6 and older
+			ahCalls=new XMLHttpRequest();// this should work for all browsers except IE6 and older
 		}catch(e){
-			var XmlHttpVersions = new Array('MSXML2.XMLHTTP.6.0','MSXML2.XMLHTTP.5.0','MSXML2.XMLHTTP.4.0','MSXML2.XMLHTTP.3.0','MSXML2.XMLHTTP','Microsoft.XMLHTTP');
+			var XmlHttpVersions=new Array('MSXML2.XMLHTTP.6.0','MSXML2.XMLHTTP.5.0','MSXML2.XMLHTTP.4.0','MSXML2.XMLHTTP.3.0','MSXML2.XMLHTTP','Microsoft.XMLHTTP');
 			for (var i=0; i<XmlHttpVersions.length && !ahCalls; i++) {
 				try { 
 					// try to create XMLHttpRequest object
-					ahCalls = new ActiveXObject(XmlHttpVersions[i]);
+					ahCalls=new ActiveXObject(XmlHttpVersions[i]);
 				}catch (e) {}
 			}
 		}
@@ -101,15 +101,15 @@ var ahCalls = {
 		//alert('Inside JsonXmlScriptRequest()');
 		//alert(fullUrl);
 		ahCalls.counter += 1;
-		var scriptId = 'JscriptId' + ahCalls.counter;
+		var scriptId='JscriptId' + ahCalls.counter;
 		
-		var scriptObj = document.createElement("script");// Create the script tag
+		var scriptObj=document.createElement("script");// Create the script tag
 		
     	scriptObj.setAttribute("type", "text/javascript");   // Add script object attributes
 		scriptObj.setAttribute("charset", "utf-8");
 		scriptObj.setAttribute("src", fullUrl);
 		scriptObj.setAttribute("id", scriptId);
-		var headLoc = document.getElementsByTagName("head").item(0);
+		var headLoc=document.getElementsByTagName("head").item(0);
 		headLoc.appendChild(scriptObj);
 	},
 	
@@ -117,18 +117,18 @@ var ahCalls = {
 	{
 		//alert('Inside JsonXmlScriptHandleRequest()');
 		switch(ahCalls.theReturnType) {
-		case "xmlObject": var xmlDataObject = ahCalls.xmlTextToObject(jsonData); ahCalls.scriptTagCallBackFunction(xmlDataObject);break;
+		case "xmlObject": var xmlDataObject=ahCalls.xmlTextToObject(jsonData); ahCalls.scriptTagCallBackFunction(xmlDataObject);break;
 		case "xmlString": ahCalls.scriptTagCallBackFunction(jsonData); break;
 		case "jsonObject": this.scriptTagCallBackFunction.processReqChange(jsonData) /*ahCalls.scriptTagCallBackFunction(jsonData)*/; break;
-		case "jsonString": /*var jsonDataString = jsonData.toJSONString();ahCalls.scriptTagCallBackFunction(jsonDataString);*/ break;
+		case "jsonString": /*var jsonDataString=jsonData.toJSONString();ahCalls.scriptTagCallBackFunction(jsonDataString);*/ break;
 		default: 
 			// if there is no case "*" match, execute this code
 			alert("error")
 		};
 		
 		var scriptElement;
-		for (var i = 1; i < 10; i++) {
-			scriptElement = document.getElementById('JscriptId' + i);
+		for (var i=1; i < 10; i++) {
+			scriptElement=document.getElementById('JscriptId' + i);
 			if(scriptElement){
 			document.getElementsByTagName("head")[0].removeChild(scriptElement);
 			}
@@ -136,7 +136,7 @@ var ahCalls = {
 	},
 	
 	parseXmlHttpResponse:function(responseObject){
-		var theType = ahCalls.theReturnType;
+		var theType=ahCalls.theReturnType;
 		if(theType != 'proxyPost' || theType != 'proxyGet'){//local xhr call
 			switch(theType) {
 			case "string": return responseObject.responseText; break;
@@ -168,15 +168,15 @@ var ahCalls = {
 		}
 		else if (typeof ActiveXObject != "undefined") {
 			// Internet Explorer.
-			var doc = new ActiveXObject("MSXML2.DOMDocument");  // Create an empty document
+			var doc=new ActiveXObject("MSXML2.DOMDocument");  // Create an empty document
 			doc.loadXML(text);            // Parse text into it
 			return doc;                   // Return it
 		}
 		else {
 			// As a last resort, try loading the document from a data: URL
 			// This is supposed to work in Safari.
-			var url = "data:text/xml;charset=utf-8," + encodeURIComponent(text);
-			var request = new XMLHttpRequest();
+			var url="data:text/xml;charset=utf-8," + encodeURIComponent(text);
+			var request=new XMLHttpRequest();
 			request.open("GET", url, false);
 			request.send(null);
 			return request.responseXML;
@@ -185,10 +185,10 @@ var ahCalls = {
 	
 	noCache:function (url){
 		//alert('Inside noCache()');
-		var qs = new Array();
-		var arr = url.split('?');
-		var scr = arr[0];
-		if(arr[1]) qs = arr[1].split('&');
+		var qs=new Array();
+		var arr=url.split('?');
+		var scr=arr[0];
+		if(arr[1]) qs=arr[1].split('&');
 		qs[qs.length]='nocache='+new Date().getTime();
 		//alert(scr+'?'+qs.join('&'));
 		return scr+'?'+qs.join('&');
@@ -351,7 +351,7 @@ _b.AutoSuggest.prototype.getSuggestions=function(a){
 		 }else{
 		   if(l > 1) {
 		      var initial=(this.aSug[0].value.length>1)?this.aSug[0].value.substr(0,1):this.aSug[0].value;
-		      var temp = (a.length>1)?a.substr(0,1):a;
+		      var temp=(a.length>1)?a.substr(0,1):a;
 		      if(initial.toLowerCase()==temp.toLowerCase())
 		         return false;	
 		   }
@@ -408,9 +408,9 @@ _b.AutoSuggest.prototype.setSuggestions=function(a,b,sudata){
 		   //var c=a.responseText.evalJSON(true);
 		   /*
 		   alert('in suggest' + sudata);
-			 var txt = '';  
+			 var txt='';  
 			 for(var key in sudata) {  
-				 txt += key + " = " + sudata[key];  
+				 txt += key + "=" + sudata[key];  
 				 txt += "\n";  
 			 }  
 			 alert(txt);  
@@ -467,7 +467,7 @@ _b.AutoSuggest.prototype.createList=function(b){
 	d.appendChild(g);
 	var h=_b.DOM.cE("ul",{id:"as_ul"});
 	var displaylen=this.oP.maxentries < b.length?this.oP.maxentries:b.length; 
-	//alert("createList : length = "+displaylen);
+	//alert("createList : length="+displaylen);
 	for(var i=0;i<displaylen;i++){
 		var j=b[i].value;
 		var k=j.toLowerCase().indexOf(this.sInp.toLowerCase());
@@ -639,7 +639,7 @@ _b.Ajax.prototype.processReqChange=function(sudata){
 	if(this.req.readyState==4){
 		if(this.req.status==200 || 301){
 			alert('test2');
-			this.req.responseText = suggData;
+			this.req.responseText=suggData;
 			this.onComplete(this.req)
 		}else{
 			this.onError(this.req.status)
@@ -769,7 +769,7 @@ _b.Fader.prototype._fade=function(){
 _b.Fader.prototype._tween=function(t,b,c,d){return b+((c-b)*(t/d))};
 
 /******* Suggestive Search Implementation ********/
-var hdr_options = {
+var hdr_options={
 	script:"http://search.nasa.gov/search/suggestiveSearch?",
 	varname:"nasaInclude",
 	json:true,

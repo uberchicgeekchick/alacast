@@ -5,7 +5,7 @@
  * 
  * @Usage: 
  *	
- *	var s3 = new Blinds(collection contentElements,element containerElement, capElement, options hash);
+ *	var s3=new Blinds(collection contentElements,element containerElement, capElement, options hash);
  *
  *	<div id="" class="blinds 89 auto click closeable closed">
  *
@@ -29,8 +29,8 @@
  * 
  */
 
-var Blinds = (!detectBrowser.modernBrowser())?function(){}:Class.create();
-Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{	
+var Blinds=(!detectBrowser.modernBrowser())?function(){}:Class.create();
+Blinds.prototype=(!detectBrowser.modernBrowser())?{}:{	
 	initialize: function(elements,containerElement,capElement,options,id){ //extra id  param
 		if(!elements){
 			return false;
@@ -38,10 +38,10 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 		if(!containerElement){
 			return false;
 		}
-		this.contentHeight = 80;
-		var classNames = $A(containerElement.classNames());
+		this.contentHeight=80;
+		var classNames=$A(containerElement.classNames());
 
-		this.containerElement = containerElement;		
+		this.containerElement=containerElement;		
 		// Some elements look bizarre during initial load until javascript gets to them.
 		// For those elements, we apply a class called "prejs" so that once the code is 
 		// running it can remove that CSS class. This way, a "pre-rendered" state can be
@@ -55,19 +55,19 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 			}
 		}
 
-		this.contentHeight = parseInt(classNames.find(function(cname){ return parseInt(cname)>0; }));
-		this.eventType = (classNames.include("click")?"click":"mouseover");
-		this.autoHeight = classNames.include("auto") || (typeof(this.contentHeight)!='number');
-		this.isAnimating = false;
-		this.nextEffect = null;
-		this.initiallyClosed = classNames.include("closed");
-		this.closeable = this.initiallyClosed || classNames.include("closeable");
+		this.contentHeight=parseInt(classNames.find(function(cname){ return parseInt(cname)>0; }));
+		this.eventType=(classNames.include("click")?"click":"mouseover");
+		this.autoHeight=classNames.include("auto") || (typeof(this.contentHeight)!='number');
+		this.isAnimating=false;
+		this.nextEffect=null;
+		this.initiallyClosed=classNames.include("closed");
+		this.closeable=this.initiallyClosed || classNames.include("closeable");
 		if(options!=null && typeof(options)=='object' && typeof(options['current_id'])=='string' && options['current_id'].strip()!=""){
-			var currentItemClass = "current_item";
+			var currentItemClass="current_item";
 			if(typeof(options['current_item_class'])=='string'){
-				options['current_item_class'] = currentItemClass;
+				options['current_item_class']=currentItemClass;
 			}
-			var currentItem = $(options['current_id'].strip());
+			var currentItem=$(options['current_id'].strip());
 			if(currentItem){
 				currentItem.addClassName(currentItemClass);
 				// climb up to .content
@@ -76,35 +76,35 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 			
 				// if this is NOT the content node, we have to climb up to it
 				if(currentItem.hasClassName("content")!=true){
-					var p = currentItem;
-					var done = false;
+					var p=currentItem;
+					var done=false;
 					while(!done && p!=document.body){
-						p = p.up();
+						p=p.up();
 						if(p.hasClassName("content")){
 							p.addClassName(currentItemClass);
-							this.contentElementToOpen = p;
+							this.contentElementToOpen=p;
 							if(p.previous()){
 								p.previous().addClassName(currentItemClass);
 							}
-							done = true;
+							done=true;
 						}
 					}
 				} else {
-					this.contentElementToOpen = currentItem;
+					this.contentElementToOpen=currentItem;
 				}
 			}
 		
 		}
 		if(this.contentElementToOpen){
-			this.previousElement = this.contentElementToOpen;
+			this.previousElement=this.contentElementToOpen;
 		} else {
-			this.previousElement = elements[0];
+			this.previousElement=elements[0];
 		}
-		this.elements = elements;
-		this.capElement = capElement;
-		this.currentlyHoveredElement = -1;	 // index of currently hovered element. Used to track if we have "committed" to hovering over a blind
-		this.measuredSizes = [];
-		this.transition = (classNames.include("click")?Effect.Transitions.EaseTo:Effect.Transitions.EaseFromTo);
+		this.elements=elements;
+		this.capElement=capElement;
+		this.currentlyHoveredElement=-1;	 // index of currently hovered element. Used to track if we have "committed" to hovering over a blind
+		this.measuredSizes=[];
+		this.transition=(classNames.include("click")?Effect.Transitions.EaseTo:Effect.Transitions.EaseFromTo);
 		this.makeSliders();
 		// id check
 		if (id != null) {
@@ -114,15 +114,15 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 	
 	/*eTouch - Parag*/
 	activateBlind: function (id) {
-		var element = null;
-		var tokens = id.split ('_');
+		var element=null;
+		var tokens=id.split ('_');
 		this.elements.each (function(item){
 			if (item.getAttribute ("blindsindex") == $(tokens[0]).parentNode.parentNode.getAttribute ("blindsindex")) {
-				element = item;
+				element=item;
 			}
 		})
 		if (element != null) {
-			var func = this.makeSlideFunc (this.elements, element, 
+			var func=this.makeSlideFunc (this.elements, element, 
 					$(id).parentNode.parentNode.getAttribute ("blindsindex"));
 			func ();
 		}
@@ -133,7 +133,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 	// iterate through the content blocks and make assign event listeners which trigger the sliding animation
 	makeSliders: function(elements){
 		this.elements.each(function(item,i){
-			item = $(item);
+			item=$(item);
 
 			item.setAttribute("blindsindex",i);
 			if(this.contentElementToOpen){
@@ -192,7 +192,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 
 			// measure size of the content area
 			if(this.autoHeight) {
-				this.measuredSizes[i] = item.getHeight();
+				this.measuredSizes[i]=item.getHeight();
 			}
 
 			if(this.initiallyClosed==true){
@@ -226,7 +226,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 			item.isContent=true;
 			// observe the header, content, and footer of each blind panel with mouse events (click or hover depending on config)
 			[item.previous(),item,item.next()].each(function(subItem){
-				var slideFunc = this.makeSlideFunc(this.elements,item,i);
+				var slideFunc=this.makeSlideFunc(this.elements,item,i);
 				
 				// 	Allow the keyboard focus to actually activate this blind section
 				subItem.getElementsBySelector("a").each(function(focusableItem){
@@ -235,19 +235,19 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 						// kill all links that have class "deadmouse"
 						
 						// both of these events fire when a click happens so we don't want the side to happen twice
-						var focusHasFired = false;
+						var focusHasFired=false;
 						Event.observe(focusableItem,'click',function(ev){
 							if(focusHasFired){
-								focusHasFired = false;
+								focusHasFired=false;
 							} else {
 								slideFunc();
 							}
 							ev.stop();
-							focusHasFired = false;
+							focusHasFired=false;
 							return false;
 						}.bind(this));
 						Event.observe(focusableItem,'focus',function(ev){
-							focusHasFired = true;
+							focusHasFired=true;
 							slideFunc();
 							ev.stop();
 							return false;
@@ -290,10 +290,10 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 
 	// check for a queued effect. If one is present cancel the current one and start the new one
 	checkForNextEffect: function(effect){
-		this.isAnimating = false;
+		this.isAnimating=false;
 		if(typeof(this.nextEffect)=='function'){
-			var f = this.nextEffect;
-			this.nextEffect = null;
+			var f=this.nextEffect;
+			this.nextEffect=null;
 			f();
 		}
 	},
@@ -315,7 +315,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 	// a footer can either be above an inactive header, or above an active header, or not above any header at all. 
 	// Append appropriate CSS classes
 	setFooterBlendingClasses: function(currentElement,activeIndex){
-		if(typeof(activeIndex)!='number') activeIndex = parseInt(currentElement.getAttribute("blindsindex"));
+		if(typeof(activeIndex)!='number') activeIndex=parseInt(currentElement.getAttribute("blindsindex"));
 		for(var i=0;i<this.elements.length;i++){
 			if(i==activeIndex - 1){
 				this.elements[i].next().removeClassName("above_inactive");
@@ -332,7 +332,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 	makeMouseOutFunc:function(elements,currentElement,i){
 		return function(){
 			if(this.currentlyHoveredElement==i){ // clear commitment to this hover
-				this.currentlyHoveredElement = -1;
+				this.currentlyHoveredElement=-1;
 			}
 		}.bind(this);
 	},
@@ -340,22 +340,22 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 	// return a function that makes element, the i'th element, slide to its open location. All other 
 	// elements should slide to their locations too
 	makeSlideFunc: function(elements, currentElement, i){
-		var newEffect = function(dontQueueIfAnimating, dontQueueElementObject){
+		var newEffect=function(dontQueueIfAnimating, dontQueueElementObject){
 			// drop self into basket. This slide gets queued up to be the next slide to happen (unless another one comes along)
 			if(this.isAnimating==true){
 				// this effect can be called with a flag that indicates not to queue after the current transition is finished,
 				// but rather just let this attempt go ignored. This is used for keyboard focus control for links inside of the 
 				// content region of the blind
 				if(dontQueueIfAnimating!=true){
-					this.nextEffect = newEffect;
+					this.nextEffect=newEffect;
 				} else {
 					if(dontQueueElementObject!=currentElement){
-						this.nextEffect = newEffect;
+						this.nextEffect=newEffect;
 					}
 				}
 				return;
 			}
-			this.currentlyHoveredElement = i;
+			this.currentlyHoveredElement=i;
 			// if closing elements is not permitted and the to-slide element matches 
 			// the previously-slid element, don't allow a close
 			if(this.closeable!=true && this.previousElement==currentElement) {
@@ -364,7 +364,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 			setTimeout(function(){
 				if(this.currentlyHoveredElement==i){
 				
-					var swapBlindStyles = function(){
+					var swapBlindStyles=function(){
 						// apply active + inactive classes
 					
 						// if previous==current, that means the to-be-slid element matches the previously-slid element
@@ -410,19 +410,19 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 
 					// The target height for the content region is either the automatically-measured height or 
 					// a strictly-defined height in the CSS class of the blinds
-					var targetHeight = (this.autoHeight?this.measuredSizes[i]:this.contentHeight)+'px';
+					var targetHeight=(this.autoHeight?this.measuredSizes[i]:this.contentHeight)+'px';
 					var fx;
 					if(this.previousElement==currentElement && this.closeable==true){
 						// next element is also current
 						if(currentElement.getAttribute("blindstatus")=="closed"){
 							// open it
-							fx = [new Effect.RoundedMorph(currentElement,{style:{'height':targetHeight},sync:true,transition:this.transition})];
+							fx=[new Effect.RoundedMorph(currentElement,{style:{'height':targetHeight},sync:true,transition:this.transition})];
 						} else {
 							// close it
-							fx = [new Effect.RoundedMorph(currentElement,{style:{'height':'0px'},sync:true,transition:this.transition})];
+							fx=[new Effect.RoundedMorph(currentElement,{style:{'height':'0px'},sync:true,transition:this.transition})];
 						}
 					} else {
-						fx = [
+						fx=[
 							new Effect.RoundedMorph(currentElement,{style:{'height':targetHeight},sync:true,transition:this.transition}),
 							new Effect.RoundedMorph(this.previousElement,{style:{'height':'0px'},sync:true,transition:this.transition})
 						];
@@ -439,7 +439,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 								// note: WHEN the blindstyles are swapped is order-of-operations sensitive, it must happen 
 								// before setClosed() or setOpen() run.
 								swapBlindStyles();
-								this.isAnimating = true;
+								this.isAnimating=true;
 								// about to open, so remove the content hiding for Safari2
 								if(this.previousElement==currentElement && this.closeable){
 									if(currentElement.getAttribute("blindstatus")=="closed"){
@@ -465,12 +465,12 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 									// has just finished closing, add content hiding for Safari2
 									this.previousElement.addClassName('hide_blind');
 								}
-								this.previousElement = currentElement;
+								this.previousElement=currentElement;
 								this.checkForNextEffect();
 							}.bind(this)
 						}
 					);
-					this.currentlyHoveredElement = -1;
+					this.currentlyHoveredElement=-1;
 				}
 			}.bind(this),(this.eventType=='click')?15:225);
 			// setTimeout
@@ -480,7 +480,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 
 	// given elem the CSS classes which indicate it is an open blind
 	setOpen:function(elem){
-		elem = $(elem);
+		elem=$(elem);
 		elem.setAttribute("blindstatus","open");
 		elem.addClassName("blind_open");
 		elem.removeClassName("blind_closed");		
@@ -488,7 +488,7 @@ Blinds.prototype = (!detectBrowser.modernBrowser())?{}:{
 
 	// given elem the CSS classes which indicate it is a closed blind
 	setClosed:function(elem){
-		elem = $(elem);
+		elem=$(elem);
 		elem.setAttribute("blindstatus","closed");
 		elem.addClassName("blind_closed");
 		elem.removeClassName("blind_open");

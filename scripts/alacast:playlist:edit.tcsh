@@ -600,7 +600,7 @@ callback_handler:
 		unset callback;
 	endif
 	if( ${?debug} || ${?diagnostic_mode} )	\
-		printf "handling callback to [%s].\n" "${last_callback}" > /dev/stdout;
+		printf "handling callback to [%s].\n" "${last_callback}" > /dev/tty;
 	
 	goto $last_callback;
 #callback_handler:

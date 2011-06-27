@@ -9,69 +9,69 @@ NASA Podcasting
 	 *  Browser Detect Class
 	 */
 	function detectBrowserClass(modern){
-		var nBrowser = navigator.appName;
-		var nVersion = navigator.appVersion;
-		var nAgent = navigator.userAgent;
+		var nBrowser=navigator.appName;
+		var nVersion=navigator.appVersion;
+		var nAgent=navigator.userAgent;
 		this.version;
 		this.browser;
 		this.os;
-		this.modern = (typeof modern == 'object') == true ? modern:0;
+		this.modern=(typeof modern == 'object') == true ? modern:0;
 		if(nVersion.indexOf('Windows') !=-1){
-		     this.os = 'win';
+		     this.os='win';
 		}else{
-		    this.os = (nVersion.indexOf('Macintosh') !=-1) == true ? 'mac':'other';
+		    this.os=(nVersion.indexOf('Macintosh') !=-1) == true ? 'mac':'other';
 		}
 		if (nAgent.indexOf('Opera') !=-1){
-		    var strIndex = nAgent.indexOf('Opera');
-		    this.version = nAgent.substring((strIndex + 6), (strIndex + 9));
-		    this.browser = 'opera';
+		    var strIndex=nAgent.indexOf('Opera');
+		    this.version=nAgent.substring((strIndex + 6), (strIndex + 9));
+		    this.browser='opera';
 		}
 		else if (nAgent.indexOf('Firefox') !=-1){
-		    var strIndex = nAgent.indexOf('Firefox');
-		    this.version = nAgent.substring((strIndex + 8), (strIndex + 11));
-		    this.browser = 'firefox';
+		    var strIndex=nAgent.indexOf('Firefox');
+		    this.version=nAgent.substring((strIndex + 8), (strIndex + 11));
+		    this.browser='firefox';
 		}
 		else if(nAgent.indexOf('MSIE') !=-1){
-		    var strIndex = nAgent.indexOf('MSIE');
-		    this.version = nAgent.substring((strIndex + 5), (strIndex + 8));
-		    this.browser = 'ie';
+		    var strIndex=nAgent.indexOf('MSIE');
+		    this.version=nAgent.substring((strIndex + 5), (strIndex + 8));
+		    this.browser='ie';
 		}
 		else if (nAgent.indexOf('Safari') !=-1){
 		     if (nAgent.indexOf('Version') !=-1){
-		          var strIndex = nAgent.indexOf('Version')
-		          this.version = nAgent.substring((strIndex + 8), (strIndex + 11))
+		          var strIndex=nAgent.indexOf('Version')
+		          this.version=nAgent.substring((strIndex + 8), (strIndex + 11))
 		     }else{
-		          this.version = 2;
+		          this.version=2;
 		     }
-		this.browser = 'safari';
+		this.browser='safari';
 		}
 		else if (nAgent.indexOf('Netscape') !=-1){
-		     var strIndex = nAgent.indexOf('Netscape');
-		     this.version = nAgent.substring((strIndex + 9), (strIndex + 12));
-		     this.browser = 'netscape';
+		     var strIndex=nAgent.indexOf('Netscape');
+		     this.version=nAgent.substring((strIndex + 9), (strIndex + 12));
+		     this.browser='netscape';
 		}else{
-		     this.browser = nBrowser.toLowerCase();
-		     this.version = null;
+		     this.browser=nBrowser.toLowerCase();
+		     this.version=null;
 		}
-		this.whichBrowser = function (){ return this.browser; }
-		this.whichVersion = function (){ return this.version; }
-		this.whichOS = function (){	return this.os; }
-		this.getInfo = function (){
-		     var info = "Browser name: " + nBrowser + "<br />" +
+		this.whichBrowser=function (){ return this.browser; }
+		this.whichVersion=function (){ return this.version; }
+		this.whichOS=function (){	return this.os; }
+		this.getInfo=function (){
+		     var info="Browser name: " + nBrowser + "<br />" +
 		     "Browser version: "+ nVersion + "<br />" +
 		     "User Agent: " + nAgent;
 		      return info;
 		}
-		this.modernBrowser = function (){
-		     var isModern = false;
+		this.modernBrowser=function (){
+		     var isModern=false;
 		     if(typeof(this.modern[this.browser])=='number' || this.version === null){
-		     isModern = ( this.modern[this.browser] <= this.version || this.version === null ) == true ? true :0;
+		     isModern=( this.modern[this.browser] <= this.version || this.version === null ) == true ? true :0;
 		}
 		return isModern;
 		}
 		}
 		// Instantiate browser detect
-		var detectBrowser = new detectBrowserClass({
+		var detectBrowser=new detectBrowserClass({
 		      'opera': 9,
 		      'safari': 2,
 		      'firefox': 1.5,
@@ -79,7 +79,7 @@ NASA Podcasting
 		});			
                                 /* Support legacy browsers*/
 		if(detectBrowser.modernBrowser() == true){
-                                     var css = '<link href="/css/207071main_allpages.css" rel="stylesheet" type="text/css" />';
+                                     var css='<link href="/css/207071main_allpages.css" rel="stylesheet" type="text/css" />';
                                  if(detectBrowser.whichBrowser()=='firefox'){
 			 css= css + '<link href="/css/207947main_etouch_firefox.css" rel="stylesheet" type="text/css" />';
 			 }
@@ -112,17 +112,17 @@ class="floatType_site_error_bottom"></div> </div> </center>
 </noscript>
 <!--googleon: snippet-->
 <!--No Script Include ends here--><!--Content Body Starts Here--><div class="content_body"><!--Top Starts Here --><div class="top"><script src="NASA.opml_files/194928main_ShowRSS.js" type="text/javascript" language="javascript"></script><input value="none" id="curr_rssurl" type="hidden"><!-- Skip navigation link --><div class="skiplink"><a href="#maincontent">Follow this link to skip to the main content</a></div><div id="top_header" class="top_header"><div class="header"><h1><a class="nasa_logo" href="http://www.nasa.gov/home/index.html"><span class="hide">NASA - National Aeronautics and Space Administration</span></a></h1><div id="header_form"><div id="login_form_nodrop"><span id="login_links"><span>›&nbsp;<div class="skiplinklogin"><a href="http://mynasa.nasa.gov/portal/site/mynasa/template.NASA_LOGIN_PROCESS">Follow this link to Login to MyNASA</a></div><a href="#" class="myOverlayLogin null bottom null observe_click" id="loginnasa">Log In To MyNASA</a></span>|<span>›&nbsp;<a href="http://mynasa.nasa.gov/portal/site/mynasa/template.REGISTER">Sign Up</a></span></span></div><form action="javascript:searchformsubmit();" method="get" id="search"><div id="search_form_nodrop"><span id="inputfield"><input autocomplete="off" class="searchbox" name="nasaInclude" id="nasaInclude" title="searchfield" type="text"></span><script charset="UTF-8" type="text/javascript" src="NASA.opml_files/bsn.js"></script><div id="searchselector"></div><span id="searchbutton"><input value="" class="searchbtn" title="searchbutton" type="submit"></span></div></form></div><script language="javascript" type="text/javascript">
-		var search_list = [   ];
+		var search_list=[   ];
                              </script><script>createLoginForm();</script><script>createSearchForm();</script></div><div class="dropper 74" id="main-nav"><script type="text/javascript">
              addMenuSupport();
      </script><div id="dropper_wrapper"><h2 class="nav-home" id="nav-home"><a href="http://www.nasa.gov/home/index.html"><span>Home</span></a></h2><div style="z-index: 800;" class="dropper 129"><ul></ul></div><h2 id="nav-news"><a href="http://www.nasa.gov/news/index.html"><span>News</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/news/index.html">News &amp; Features</a></li><li><a href="http://www.nasa.gov/recovery/index.html">Recovery Information</a></li><li><a href="http://www.nasa.gov/topics/shuttle_station/index.html">Shuttle &amp; Station</a></li><li><a href="http://www.nasa.gov/topics/moonmars/index.html">Moon &amp; Mars</a></li><li><a href="http://www.nasa.gov/topics/solarsystem/index.html">Solar System</a></li><li><a href="http://www.nasa.gov/topics/universe/index.html">Universe</a></li><li><a href="http://www.nasa.gov/topics/aeronautics/index.html">Aeronautics</a></li><li><a href="http://www.nasa.gov/topics/earth/index.html">Earth</a></li><li><a href="http://www.nasa.gov/topics/technology/index.html">Technology</a></li><li><a href="http://www.nasa.gov/topics/nasalife/index.html">NASA in Your Life</a></li><li><a href="http://www.nasa.gov/topics/people/index.html">NASA People</a></li><li><a href="http://www.nasa.gov/topics/history/index.html">NASA History</a></li></ul></div><h2 id="nav-missions"><a href="http://www.nasa.gov/missions/index.html"><span>Missions</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/missions/index.html">Missions</a></li><li><a href="http://www.nasa.gov/missions/calendar/index.html">Mission Calendar</a></li><li><a href="http://www.nasa.gov/missions/highlights/schedule.html">Launch Schedule</a></li></ul></div><h2 id="nav-multimedia"><a href="http://www.nasa.gov/multimedia/index.html"><span>Multimedia</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/multimedia/index.html">Multimedia</a></li><li><a href="http://www.nasa.gov/multimedia/imagegallery/index.html">Images</a></li><li><a href="http://www.nasa.gov/multimedia/videogallery/index.html">Video</a></li><li><a href="http://www.nasa.gov/multimedia/podcasting/index.html">Podcasts</a></li><li><a href="http://www.nasa.gov/multimedia/nasatv/index.html">NASA TV</a></li><li><a href="http://www.nasa.gov/multimedia/mmgallery/index.html">Interactive Features</a></li><li><a href="http://www.nasa.gov/multimedia/3d_resources/index.html">3D  Resources</a></li><li><a href="http://www.nasa.gov/rss/index.html">RSS Feeds</a></li><li><a href="http://www.nasa.gov/multimedia/blogs/index.html">Blogs</a></li><li><a href="http://www.nasa.gov/worldbook/index.html">Worldbook@NASA</a></li></ul></div><h2 id="nav-aboutnasa"><a href="http://www.nasa.gov/about/index.html"><span>About NASA</span></a></h2><div style="z-index: 800;" class="dropper 140"><ul><li><a href="http://www.nasa.gov/about/index.html">About NASA</a></li><li><a href="http://www.nasa.gov/about/highlights/what_does_nasa_do.html">What NASA Does</a></li><li><a href="http://www.nasa.gov/recovery/index.html">Recovery Information</a></li><li><a href="http://www.nasa.gov/about/admin.html">NASA Leadership</a></li><li><a href="http://www.nasa.gov/about/career/index.html">Careers@NASA</a></li><li><a href="http://www.nasa.gov/about/sites/index.html">NASA Locations</a></li><li><a href="http://www.nasa.gov/about/events/index.html">NASA Calendar</a></li><li><a href="http://www.nasa.gov/news/budget/index.html">Budget and Performance</a></li><li><a href="http://www.nasa.gov/news/reports/index.html">Reports</a></li><li><a href="http://www.nasa.gov/about/research/index.html">Research Opportunities</a></li><li><a href="http://www.nasa.gov/about/speakers/index.html">Request a NASA Speaker</a></li><li><a href="http://www.nasa.gov/about/exhibits/index.html">Request a NASA Exhibit</a></li></ul></div><h2 id="nav-connect" style="width: 125px;"><a style="width: 125px; background-image: url(/templateimages/redesign/navigation/TopNav/navtitle-connect.gif);" href="http://www.nasa.gov/connect/index.html"><span style="display: none;">Connect</span></a></h2><div style="z-index: 800;" class="dropper 125"><ul><li style="line-height: 18px; height: 20px;"><a href="http://blogs.nasa.gov/"><img style="border: medium none ; margin-right: 5px;" alt="Blogs Icon" title="Blogs Icon" src="NASA.opml_files/Blogs_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://blogs.nasa.gov/">Blogs</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.nasa.gov/rss"><img style="border: medium none ; margin-right: 5px;" src="NASA.opml_files/Feeds_20x20.gif" title="RSS Feeds Icon" alt="RSS Feeds Icon" border="0" height="20" width="20" align="left"></a><a href="http://www.nasa.gov/rss">RSS</a></li><li style="line-height: 18px; height: 20px;"><a href="http://twitter.com/nasa"><img style="border: medium none ; margin-right: 5px;" alt="Twitter Icon" title="Twitter Icon" src="NASA.opml_files/Twitter_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://twitter.com/nasa">Twitter</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.facebook.com/nasa.gov"><img style="border: medium none ; margin-right: 5px;" alt="Facebook Icon" title="Facebook Icon" src="NASA.opml_files/Facebook_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.facebook.com/nasa.gov">Facebook</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.youtube.com/NASATelevision"><img style="border: medium none ; margin-right: 5px;" alt="YouTube Icon" title="YouTube Icon" src="NASA.opml_files/Youtube_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.youtube.com/NASATelevision">YouTube</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.flickr.com/photos/nasahqphoto/"><img style="border: medium none ; margin-right: 5px;" alt="Flickr Icon" title="Flickr Icon" src="NASA.opml_files/Flickr1_20x20.gif" border="0" height="20" width="20" align="Left"></a><a href="http://www.flickr.com/photos/nasahqphoto/">Flickr</a></li><li style="line-height: 18px; height: 20px;"><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661703"><img style="border: medium none ; margin-right: 5px;" src="NASA.opml_files/iTunes_20x20.gif" title="iTunes Icon" alt="iTunes Icon" border="0" height="20" width="20" align="left"></a><a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=201661703">iTunes</a></li><li style="line-height: 18px; height: 20px;"><a href="http://www.nasa.gov/connect/index.html">More Social Media ...</a></li></ul></div></div></div></div><div class="top_audience"><ul class="audiences_nav"><!----><a name="top" id="bctop"></a><li><a href="http://www.nasa.gov/home/index.html">NASA Home</a></li><!----><li><span class="light_grey">&nbsp;&nbsp;&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="http://www.nasa.gov/multimedia/index.html">Multimedia</a></li><!----><li><span class="light_grey">&nbsp;&nbsp;&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;&nbsp;&nbsp;</span>NASA Podcasts</li><li id="right_menu"><ul id="utilities_nav"><li><span class="hide"><form method="post" target="myNewWin" name="emailForm" action="http://mynasa.nasa.gov/portal/util/email/nasa_emailform_2007.jsp"><input value="http://www.nasa.gov/multimedia/podcasting/index.html" id="url" name="url" type="hidden"><input value="NASA Podcasting" id="titleUrl" name="titleUrl" type="hidden"><input value="NASA Podcasting" id="promoTitle" name="promoTitle" type="hidden"><input value="" id="promoDate" name="promoDate" type="hidden"><input value="asan" id="flag" name="flag" type="hidden"><input value="" id="leaderSentence" name="leaderSentence" type="hidden"><input value="108516" id="documentId" name="documentId" type="hidden"></form></span><a class="icons_black icon_send" href="javascript:submitPopUpEmail();">Send</a></li><li><span class="skiplinklogin"><a href="javascript:openUserPref(%22http://www.addthis.com/bookmark.php%22)">Follow this link to Share This Page</a></span><a class="myOverlayBookmark bookmark bottom null icons_black icon_share" href="#">Share</a></li></ul></li></ul></div><!--Top ends Here --></div><!--Left Starts Here --><input name="menu_item_id" id="menu_item_id" value="multimedia_podcasting" type="hidden"><div id="left" class="left_232"><script type="text/javascript">	
 		var itemIdAndJSFileURL= 'multimedia_podcasting$/templateimages/redesign/leftnav-htmls/multimedia_.js';
-		var splitResult = itemIdAndJSFileURL.split("$");
-		  $('menu_item_id').value = splitResult[0];		
+		var splitResult=itemIdAndJSFileURL.split("$");
+		  $('menu_item_id').value=splitResult[0];		
 		
-		var url = splitResult[1];
-		var defPage = '/templateimages/redesign/leftnav-htmls/home_.js';
-		if(url == '.js') url = defPage;
+		var url=splitResult[1];
+		var defPage='/templateimages/redesign/leftnav-htmls/home_.js';
+		if(url == '.js') url=defPage;
 
                                                          
  document.write('<script src=' + url + ' type="text/javascript" language="javascript" >' + '</scr' + 'ipt>');
@@ -146,7 +146,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108518';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;
@@ -182,7 +182,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108531';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;
@@ -218,7 +218,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108521';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;
@@ -254,7 +254,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108437';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;
@@ -290,7 +290,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108523';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;
@@ -326,7 +326,7 @@ class="floatType_site_error_bottom"></div> </div> </center>
 <script>
    var rssholderid_label='testrss108438';
    if (document.getElementById(rssholderid_label) != null) {
-       var rssholder = document.getElementById(rssholderid_label).value;
+       var rssholder=document.getElementById(rssholderid_label).value;
        var rssurl=$('curr_rssurl');
        if ( rssurl != null) { 
            var rssurlval=rssurl.value;

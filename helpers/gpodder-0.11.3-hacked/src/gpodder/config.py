@@ -38,13 +38,13 @@ import threading
 import ConfigParser
 
 if gpodder.interface == gpodder.MAEMO:
-    default_bittorrent_dir = '/media/mmc2/gpodder/torrents'
-    default_download_dir = '/media/mmc2/gpodder/downloads'
+    default_bittorrent_dir='/media/mmc2/gpodder/torrents'
+    default_download_dir='/media/mmc2/gpodder/downloads'
 else:
-    default_bittorrent_dir = os.path.expanduser('~/gpodder-downloads/torrents')
-    default_download_dir = os.path.expanduser('~/gpodder-downloads')
+    default_bittorrent_dir=os.path.expanduser('~/gpodder-downloads/torrents')
+    default_download_dir=os.path.expanduser('~/gpodder-downloads')
 
-gPodderSettings = {
+gPodderSettings={
     # General settings
     'player': ( str, 'xdg-open' ),
     'videoplayer': (str, 'unspecified'),
@@ -121,20 +121,20 @@ gPodderSettings = {
 }
 
 class Config(dict):
-    Settings = gPodderSettings
+    Settings=gPodderSettings
     
     # Number of seconds after which settings are auto-saved
-    WRITE_TO_DISK_TIMEOUT = 60
+    WRITE_TO_DISK_TIMEOUT=60
 
-    def __init__( self, filename = 'gpodder.conf'):
+    def __init__( self, filename='gpodder.conf'):
         dict.__init__( self)
-        self.__save_thread = None
-        self.__filename = filename
-        self.__section = 'gpodder-conf-1'
-        self.__ignore_window_events = False
-        self.__observers = []
+        self.__save_thread=None
+        self.__filename=filename
+        self.__section='gpodder-conf-1'
+        self.__ignore_window_events=False
+        self.__observers=[]
         # Name, Type, Value, Type(python type), Editable?, Font weight
-        self.__model = gtk.ListStore(str, str, str, object, bool, int)
+        self.__model=gtk.ListStore(str, str, str, object, bool, int)
 
         atexit.register( self.__atexit)
 
@@ -142,7 +142,7 @@ class Config(dict):
     
     def __getattr__( self, name):
         if name in self.Settings:
-            ( fieldtype, default ) = self.Settings[name]
+            ( fieldtype, default )=self.Settings[name]
             return self[name]
         else:
             raise AttributeError
@@ -181,7 +181,7 @@ class Config(dict):
     def connect_gtk_paned( self, name, paned):
         if name in self.Settings:
             paned.set_position( getattr( self, name))
-            paned_child = paned.get_child1()
+            paned_child=paned.get_child1()
             paned_child.connect( 'size-allocate', lambda x, y: setattr( self, name, paned.get_position()))
         else:
             raise ValueError( '%s is not a setting' % name)
@@ -194,7 +194,7 @@ class Config(dict):
             raise ValueError( '%s is not a setting' % name)
     
     def filechooser_selection_changed(self, name, filechooser):
-        filename = filechooser.get_filename()
+        filename=filechooser.get_filename()
         if filename is not None:
             setattr(self, name, filename)
 
@@ -211,9 +211,9 @@ class Config(dict):
             raise ValueError('%s is not a setting'%name)
 
     def receive_configure_event( self, widget, event, config_prefix):
-        ( x, y, width, height ) = map( lambda x: config_prefix + '_' + x, [ 'x', 'y', 'width', 'height' ])
-        ( x_pos, y_pos ) = widget.get_position()
-        ( width_size, height_size ) = widget.get_size()
+        ( x, y, width, height )=map( lambda x: config_prefix + '_' + x, [ 'x', 'y', 'width', 'height' ])
+        ( x_pos, y_pos )=widget.get_position()
+        ( width_size, height_size )=widget.get_size()
         if not self.__ignore_window_events:
             setattr( self, x, x_pos)
             setattr( self, y, y_pos)
@@ -221,13 +221,13 @@ class Config(dict):
             setattr( self, height, height_size)
 
     def enable_window_events(self):
-        self.__ignore_window_events = False
+        self.__ignore_window_events=False
 
     def disable_window_events(self):
-        self.__ignore_window_events = True
+        self.__ignore_window_events=True
 
-    def connect_gtk_window( self, window, config_prefix = 'main_window'):
-        ( x, y, width, height ) = map( lambda x: config_prefix + '_' + x, [ 'x', 'y', 'width', 'height' ])
+    def connect_gtk_window( self, window, config_prefix='main_window'):
+        ( x, y, width, height )=map( lambda x: config_prefix + '_' + x, [ 'x', 'y', 'width', 'height' ])
         if set( ( x, y, width, height )).issubset( set( self.Settings)):
             window.resize( getattr( self, width), getattr( self, height))
             window.move( getattr( self, x), getattr( self, y))
@@ -239,7 +239,7 @@ class Config(dict):
 
     def schedule_save( self):
         if self.__save_thread is None:
-            self.__save_thread = threading.Thread( target = self.save_thread_proc)
+            self.__save_thread=threading.Thread( target=self.save_thread_proc)
             self.__save_thread.start()
 
     def save_thread_proc( self):
@@ -253,13 +253,13 @@ class Config(dict):
         if self.__save_thread is not None:
             self.save()
 
-    def save( self, filename = None):
+    def save( self, filename=None):
         if filename is not None:
-            self.__filename = filename
+            self.__filename=filename
 
-        log( 'Flushing settings to disk', sender = self)
+        log( 'Flushing settings to disk', sender=self)
 
-        parser = ConfigParser.RawConfigParser()
+        parser=ConfigParser.RawConfigParser()
         parser.add_section( self.__section)
 
         for ( key, ( fieldtype, default ) ) in self.Settings.items():
@@ -270,39 +270,39 @@ class Config(dict):
         except:
             raise IOError( 'Cannot write to file: %s' % self.__filename)
 
-        self.__save_thread = None
+        self.__save_thread=None
 
-    def load( self, filename = None):
+    def load( self, filename=None):
         if filename is not None:
-            self.__filename = filename
+            self.__filename=filename
 
         self.__model.clear()
 
-        parser = ConfigParser.RawConfigParser()
+        parser=ConfigParser.RawConfigParser()
         try:
             parser.read( self.__filename)
         except:
             pass
 
         for key in sorted(self.Settings):
-            (fieldtype, default) = self.Settings[key]
+            (fieldtype, default)=self.Settings[key]
             try:
                 if fieldtype == int:
-                    value = parser.getint( self.__section, key)
+                    value=parser.getint( self.__section, key)
                 elif fieldtype == float:
-                    value = parser.getfloat( self.__section, key)
+                    value=parser.getfloat( self.__section, key)
                 elif fieldtype == bool:
-                    value = parser.getboolean( self.__section, key)
+                    value=parser.getboolean( self.__section, key)
                 else:
-                    value = fieldtype(parser.get( self.__section, key))
+                    value=fieldtype(parser.get( self.__section, key))
             except:
-                value = default
+                value=default
 
-            self[key] = value
+            self[key]=value
             if value == default:
-                weight = pango.WEIGHT_NORMAL
+                weight=pango.WEIGHT_NORMAL
             else:
-                weight = pango.WEIGHT_BOLD
+                weight=pango.WEIGHT_BOLD
             self.__model.append([key, self.type_as_string(fieldtype), str(value), fieldtype, fieldtype is not bool, weight])
 
     def model(self):
@@ -310,7 +310,7 @@ class Config(dict):
 
     def toggle_flag(self, name):
         if name in self.Settings:
-            (fieldtype, default) = self.Settings[name]
+            (fieldtype, default)=self.Settings[name]
             if fieldtype == bool:
                 setattr(self, name, not getattr(self, name))
             else:
@@ -320,9 +320,9 @@ class Config(dict):
 
     def update_field(self, name, new_value):
         if name in self.Settings:
-            (fieldtype, default) = self.Settings[name]
+            (fieldtype, default)=self.Settings[name]
             try:
-                new_value = fieldtype(new_value)
+                new_value=fieldtype(new_value)
             except:
                 log('Cannot convert "%s" to %s. Ignoring.', str(new_value), fieldtype.__name__, sender=self)
                 return False
@@ -344,12 +344,12 @@ class Config(dict):
 
     def __setattr__( self, name, value):
         if name in self.Settings:
-            ( fieldtype, default ) = self.Settings[name]
+            ( fieldtype, default )=self.Settings[name]
             try:
                 if self[name] != fieldtype(value):
-                    log( 'Update: %s = %s', name, value, sender = self)
-                    old_value = self[name]
-                    self[name] = fieldtype(value)
+                    log( 'Update: %s=%s', name, value, sender=self)
+                    old_value=self[name]
+                    self[name]=fieldtype(value)
                     for observer in self.__observers:
                         try:
                             # Notify observer about config change
@@ -358,12 +358,12 @@ class Config(dict):
                             log('Error while calling observer: %s', repr(observer), sender=self)
                     for row in self.__model:
                         if row[0] == name:
-                            row[2] = str(fieldtype(value))
+                            row[2]=str(fieldtype(value))
                             if self[name] == default:
-                                weight = pango.WEIGHT_NORMAL
+                                weight=pango.WEIGHT_NORMAL
                             else:
-                                weight = pango.WEIGHT_BOLD
-                            row[5] = weight
+                                weight=pango.WEIGHT_BOLD
+                            row[5]=weight
                     self.schedule_save()
             except:
                 raise ValueError( '%s has to be of type %s' % ( name, fieldtype.__name__ ))

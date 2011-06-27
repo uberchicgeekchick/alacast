@@ -16,7 +16,8 @@ kill_progie:
 		while( $killed < $total && `/bin/ps -A -c -F | /bin/grep --perl-regexp "^[0-9]+[\t\ ]+([0-9]+).*[0-9]{2}:[0-9]{2}:[0-9]{2}\ python ${gPodderCmd}" | sed -r "s/^[0-9]+[\\ ]+.*(${pid}).*[\r\n]*/\1/"` == $pid )
 			kill -$signal $pid;
 			printf ".";
-			if( $killed > 0 ) sleep $timeout;
+			if( $killed > 0 ) \
+				sleep $timeout;
 			@ killed++;
 		end
 		printf "[finished]\n";

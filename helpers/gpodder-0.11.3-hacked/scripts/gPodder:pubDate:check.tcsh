@@ -7,7 +7,7 @@ setenv:
 		exit -1;
 	endif
 	
-	set download_dir = "`grep 'download_dir' '${HOME}/.config/gpodder/gpodder.conf' | cut -d= -f2 | cut -d' ' -f2`"
+	set download_dir="`grep 'download_dir' '${HOME}/.config/gpodder/gpodder.conf' | cut -d= -f2 | cut -d' ' -f2`"
 	if(!( "${download_dir}" != "" && -d "${download_dir}" )) then
 		printf "Unable to find gpodder's download directory.\n" > /dev/stderr;
 		exit -1;

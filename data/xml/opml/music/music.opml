@@ -4,8 +4,7 @@
 		<title>Online music sites, news, &amp; podcasts feeds.</title>
 	</head>
 	<body>
-		<!--<outline title="<![CDATA[]]>" url="" type="link" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
 		<outline title="<![CDATA[Live @ Lunch]]>" xmlUrl="http://krfcfm.org/audio/LiveAtLunch_feed_rss.xml" type="rss" text="<![CDATA[Live @ Lunch on krfc 88.9]]>" htmlUrl="http://krfcfm.org/live_at_lunch.php" description="<![CDATA[Live @ Lunch is a daily showcase of live music by KRFC fm in Fort Collins, Colorado.]]>"/>
-		<!--<outline title="<![CDATA[]]>" xmlUrl="" type="rss" htmlUrl="" text="<![CDATA[]]>" description="<![CDATA[]]>"/>-->
+		<outline title="<![CDATA[Sub Pop Records]]>" xmlUrl="http://picklemonkey.net/flipper/convert.php?feed=http://itunes.apple.com/us/podcast/sub-pop-records/id73330678/" type="rss" text="<![CDATA[Sub Pop Records]]]>" htmlUrl="http://www.subpop.com/" description="<![CDATA[<h1>Sub Pop Records</h1><p>RSS 2.0 Digital asset feed for Sub Pop Records. All media for personal use only.</p>]]>" />
 	</body>
 </opml>

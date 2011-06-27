@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+	<head>
+		<title>
+			&apos; podcast novels, fiction, &amp; audio dramas.
+			&nbsp; Presented by: .
+		</title>
+	</head>
+	<body>
+		<outline title="<![CDATA[New Yorker: Fiction]]>" xmlUrl="http://feeds.newyorker.com/services/rss/feeds/fiction_podcast.xml" type="rss" text="<![CDATA[New Yorker: Fiction]]>" htmlUrl="http://www.newyorker.com/online/podcasts/fiction" description="<![CDATA[<h1>New Yorker: Fiction</h1><p>A monthly reading and conversation with the New Yorker fiction editor Deborah Treisman.&lt;img src="http://feeds.newyorker.com/rss_views/fiction_podcast.gif"&gt;</p>]]>" />
+	</body>
+</opml>
+

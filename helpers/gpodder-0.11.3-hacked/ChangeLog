@@ -2432,7 +2432,7 @@ Last batch of experimental change merges (up to svn r398)
 	* doc/dev/tepache-howto.txt: Removed
 	* doc/dev/tepache: Removed
 	* src/gpodder/gui.py.orig: Removed
-	* src/gpodder/libwget.py: Send progress = 0.0 on inital status update
+	* src/gpodder/libwget.py: Send progress=0.0 on inital status update
 	* src/gpodder/libpodcasts.py: Try to get episode metadata from several
 	different properties of the corresponding feedparser entries; warn
 	user when we couldn't get the episode title and try to get the episode

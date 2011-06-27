@@ -34,5 +34,5 @@
 	 * |		http://opensource.org/licenses/rpl1.5.txt                    |
 	 * ---------------------------------------------------------------------------
 	 */
-	$page_feed = new rss_gateway ("http://www.theskepticsguide.org/5x5/rss_5x5.xml", "/<description>Skepticism\ 101\ \-\ .*<\/description>/" );
+	$page_feed=new rss_gateway ("http://www.theskepticsguide.org/5x5/rss_5x5.xml", "/<description>Skepticism\ 101\ \-\ .*<\/description>/" );
 ?>

@@ -32,17 +32,17 @@ class DumbShelve(UserDict.UserDict):
     """
     def __init__(self, filename=None):
         UserDict.UserDict.__init__(self)
-        self.__filename = filename
-        self.__dirty = False
+        self.__filename=filename
+        self.__dirty=False
 
     def sync(self, filename=None):
         if not self.__dirty:
             return True
 
         if filename is not None:
-            self.__filename = filename
+            self.__filename=filename
         try:
-            self.__dirty = False
+            self.__dirty=False
             cPickle.dump(self, open(self.__filename, 'w'))
             return True
         except:
@@ -50,11 +50,11 @@ class DumbShelve(UserDict.UserDict):
             return False
 
     def __setitem__(self, key, item):
-        self.__dirty = True
+        self.__dirty=True
         UserDict.UserDict.__setitem__(self, key, item)
 
     def __delitem__(self, key):
-        self.__dirty = True
+        self.__dirty=True
         UserDict.UserDict.__delitem__(self, key)
 
 def open_shelve(filename):
